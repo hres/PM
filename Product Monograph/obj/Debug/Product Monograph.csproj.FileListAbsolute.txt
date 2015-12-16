@@ -1,0 +1,10 @@
+C:\Development\HC\Product Monograph\Product Monograph\bin\Product Monograph.dll.config
+C:\Development\HC\Product Monograph\Product Monograph\bin\Product Monograph.dll
+C:\Development\HC\Product Monograph\Product Monograph\bin\Product Monograph.pdb
+C:\Development\HC\Product Monograph\Product Monograph\bin\AjaxControlToolkit.dll
+C:\Development\HC\Product Monograph\Product Monograph\bin\AjaxControlToolkit.HtmlEditor.Sanitizer.dll
+C:\Development\HC\Product Monograph\Product Monograph\bin\HtmlAgilityPack.dll
+C:\Development\HC\Product Monograph\Product Monograph\bin\HtmlAgilityPack.pdb
+C:\Development\HC\Product Monograph\Product Monograph\bin\HtmlAgilityPack.xml
+C:\Development\HC\Product Monograph\Product Monograph\obj\Debug\Product Monograph.dll
+C:\Development\HC\Product Monograph\Product Monograph\obj\Debug\Product Monograph.pdb
