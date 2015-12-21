@@ -31,7 +31,7 @@
         min_height: 50,
         plugins: [
         ],
-        toolbar1: "bold italic | bullist numlist",
+        toolbar1: "bold italic | bullist numlist | indent",
         menubar: false,
         resize: "both",
         toolbar_items_size: 'small',
@@ -85,7 +85,7 @@
             min_height: 50,
             plugins: [
             ],
-            toolbar1: "bold italic | bullist numlist",
+            toolbar1: "bold italic | bullist numlist | indent",
             menubar: false,
             toolbar_items_size: 'small',
             style_formats: [
