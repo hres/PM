@@ -157,6 +157,15 @@ namespace Product_Monograph {
         protected global::System.Web.UI.HtmlControls.HtmlTextArea tbInteractionWithMed;
         
         /// <summary>
+        /// tbProperUseMed control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.HtmlControls.HtmlTextArea tbProperUseMed;
+        
+        /// <summary>
         /// tbUsualDose control.
         /// </summary>
         /// <remarks>
@@ -236,6 +245,15 @@ namespace Product_Monograph {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Label lblBrandNameTbl;
+        
+        /// <summary>
+        /// tbSideEffectsWhatToDo control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.HtmlControls.HtmlTextArea tbSideEffectsWhatToDo;
         
         /// <summary>
         /// tbHowToStore control.

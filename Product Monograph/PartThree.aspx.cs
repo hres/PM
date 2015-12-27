@@ -642,6 +642,8 @@ namespace Product_Monograph
                               MedicationDosageForm = (string)item.Element("MedicationDosageForm"),
                               MedicationInteractionWithMed = (string)item.Element("MedicationInteractionWithMed"),
 
+                              ProperUseMed = (string)item.Element("ProperUseMed"),
+
                               MedicationUsualDose = (string)item.Element("MedicationUsualDose"),
                               MedicationUsualDoseImagename = (string)item.Element("MedicationUsualDoseImagename"),
                               MedicationUsualDoseImagedata = (string)item.Element("MedicationUsualDoseImagedata"),
@@ -659,6 +661,8 @@ namespace Product_Monograph
                               TalkwithDocIfSever = (string)item.Element("TalkwithDocIfSever"),
                               TalkwithDocAllCases = (string)item.Element("TalkwithDocAllCases"),
                               Stoptakingdrug = (string)item.Element("Stoptakingdrug"),
+
+                              SideEffectsWhatToDo = (string)item.Element("SideEffectsWhatToDo"),
 
                               MedicationHowToStore = (string)item.Element("MedicationHowToStore"),
 
@@ -680,6 +684,8 @@ namespace Product_Monograph
                 tbMedicationNonmed.Value = xmldataitem.MedicationNonmed;
                 tbMedicationDosageForm.Value = xmldataitem.MedicationDosageForm;
                 tbInteractionWithMed.Value = xmldataitem.MedicationInteractionWithMed;
+
+                tbProperUseMed.Value = xmldataitem.ProperUseMed;
 
                 tbUsualDose.Value = xmldataitem.MedicationUsualDose;
                 strscript += "$('#fuimage0').attr('src', " + "'" + xmldataitem.MedicationUsualDoseImagedata + "');";
@@ -730,7 +736,7 @@ namespace Product_Monograph
                     tbStoptakingdrug.Text = xmldataitem.Stoptakingdrug;
                 }
 
-
+                tbSideEffectsWhatToDo.Value = xmldataitem.SideEffectsWhatToDo;
                 tbHowToStore.Value = xmldataitem.MedicationHowToStore;
                 tbLastrRevised.Text = xmldataitem.MedicationLastrRevised;
 
@@ -899,6 +905,9 @@ namespace Product_Monograph
             #endregion
 
             helpers.Processes.ValidateAndSave(doc, rootnode, "MedicationInteractionWithMed", "", tbInteractionWithMed.Value, false);
+
+
+            helpers.Processes.ValidateAndSave(doc, rootnode, "ProperUseMed", "", tbProperUseMed.Value, false);
 
             #region UsualDose
             helpers.Processes.ValidateAndSave(doc, rootnode, "MedicationUsualDose", "", tbUsualDose.Value, false);
@@ -1850,6 +1859,8 @@ namespace Product_Monograph
                 return null;
             }
             #endregion
+
+            helpers.Processes.ValidateAndSave(doc, rootnode, "SideEffectsWhatToDo", "", tbSideEffectsWhatToDo.Value, false);
 
             helpers.Processes.ValidateAndSave(doc, rootnode, "MedicationHowToStore", "", tbHowToStore.Value, false);
 

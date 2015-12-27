@@ -646,6 +646,11 @@
 
 <details style="clear:both; padding-top: 20px;">
     <summary>PROPER USE OF THIS MEDICATION</summary>  
+    <div style="width:84.5%; text-align:center; clear:both; padding-left: 0px; padding-top:4px;">
+        <div style="text-align:left;">                        
+            <textarea id="tbProperUseMed" name="tbProperUseMed" runat="server" class="textarea"></textarea>                            
+        </div>
+    </div> 
 
     <div style="padding-left: 0px; clear:both; padding-top:20px;">
         Usual Dose:
@@ -965,6 +970,12 @@
             <asp:Label ID="lblBrandNameTbl" runat="server">BRAND NAME</asp:Label>
             , contact your doctor or pharmacist.</asp:Label>
     </section>    
+
+    <div style="width:84.5%; text-align:center; clear:both; padding-left: 0px; padding-top:4px;">
+        <div style="text-align:left;">                        
+            <textarea id="tbSideEffectsWhatToDo" name="tbSideEffectsWhatToDo" runat="server" class="textarea"></textarea>                            
+        </div>
+    </div>     
 </details>
 
 <details style="clear:both; padding-top: 20px;">
