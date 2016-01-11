@@ -778,6 +778,7 @@
     <Content Include="images\x.png" />
     <Content Include="PartOne.aspx" />
     <Content Include="PartThree.aspx" />
+    <Content Include="PartThreeVer2.aspx" />
     <Content Include="PartTwo.aspx" />
     <Content Include="ProdMono.Master" />
     <Content Include="GCWeb\fonts\gcweb_0c4a4eb7974d0a7287c93c02965f9b3f.eot" />
@@ -1574,6 +1575,13 @@
     </Compile>
     <Compile Include="PartThree.aspx.designer.cs">
       <DependentUpon>PartThree.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="PartThreeVer2.aspx.cs">
+      <DependentUpon>PartThreeVer2.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="PartThreeVer2.aspx.designer.cs">
+      <DependentUpon>PartThreeVer2.aspx</DependentUpon>
     </Compile>
     <Compile Include="PartTwo.aspx.cs">
       <DependentUpon>PartTwo.aspx</DependentUpon>

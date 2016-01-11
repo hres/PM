@@ -666,7 +666,7 @@
     <summary>CLINICAL TRIALS</summary>
 
     <div style="width:84.5%; text-align:center; clear:both;; padding-left: 0px; text-align:left;">
-        <div style="padding: 4px 4px 4px 0px">Clinical Trials Overview</div>                         
+        <div style="padding: 4px 4px 4px 0px">Clinical Trials</div>                         
         <textarea id="tbClinicalTrialsOverview" name="tbClinicalTrialsOverview" runat="server"></textarea>                            
     </div>
 
@@ -681,7 +681,7 @@
     </div>  
 
 
-    <div style="padding-left: 0px; padding-top:20px; clear:both; width:90%;">    
+    <div style="padding-left: 0px; padding-top:20px; clear:both; width:90%; display:none">    
         <div style="width:93%; float:left; clear:both;">
             <h4>Comparative Bioavailability Studies</h4>
         </div>  
@@ -690,7 +690,7 @@
         </div>   
     </div>
 
-    <div id="AnalyteName0">
+    <div id="AnalyteName0" style="display:none">
         <div style="padding-left: 0px; padding-top:0px; clear:both;">
             Analyte Name
         </div> 
@@ -813,17 +813,16 @@
             </div>   
         </div>
     </div>
-
-
-    <div id="dvExtraAnalyteName">
+    
+    <div id="dvExtraAnalyteName" style="display:none">
     </div>
 
-    <div style="clear:both; padding-left: 0px;">*	Identity of the test product.</div>
-    <div style="clear:both; padding-left: 0px;">†	Identity of the reference product, including the manufacturer, and origin (country of purchase).</div>
-    <div style="clear:both; padding-left: 0px;">‡	For drugs with a half-life greater than 24 hours AUCT should be replaced with AUC0-72.</div>
-    <div style="clear:both; padding-left: 0px;">§	Expressed as either the arithmetic mean (CV%) or the median (range) only.</div>
-    <div style="clear:both; padding-left: 0px;">[]	Expressed as the arithmetic mean (CV%) only.</div>
-    <div style="clear:both; padding-left: 0px;">#	Indicate % Confidence Interval (i.e., 90% or 95%) in the column heading and list for the AUCT, AUCI and CMAX (if required).</div>
+    <div style="clear:both; padding-left: 0px; display:none">*	Identity of the test product.</div>
+    <div style="clear:both; padding-left: 0px; display:none">†	Identity of the reference product, including the manufacturer, and origin (country of purchase).</div>
+    <div style="clear:both; padding-left: 0px; display:none">‡	For drugs with a half-life greater than 24 hours AUCT should be replaced with AUC0-72.</div>
+    <div style="clear:both; padding-left: 0px; display:none">§	Expressed as either the arithmetic mean (CV%) or the median (range) only.</div>
+    <div style="clear:both; padding-left: 0px; display:none">[]	Expressed as the arithmetic mean (CV%) only.</div>
+    <div style="clear:both; padding-left: 0px; display:none">#	Indicate % Confidence Interval (i.e., 90% or 95%) in the column heading and list for the AUCT, AUCI and CMAX (if required).</div>
 </details>
 
 <details style="clear:both; padding-top: 20px;">
