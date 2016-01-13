@@ -63,7 +63,8 @@ namespace Product_Monograph
             xnode.AppendChild(doc.CreateTextNode(Session["TemplateVersion"].ToString()));
             rootnode.AppendChild(xnode);
 
-            helpers.Processes.XMLDraft = doc;
+            //helpers.Processes.XMLDraft = doc;
+            Session["draft"] = doc;
 
             Response.Redirect("Coverpage.aspx");
         }

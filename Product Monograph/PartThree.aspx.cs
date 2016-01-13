@@ -95,7 +95,7 @@ namespace Product_Monograph
 
         private void LoadFromXML()
         {
-            XmlDocument xmldoc = (XmlDocument)helpers.Processes.XMLDraft;
+            XmlDocument xmldoc = (XmlDocument)Session["draft"]; // helpers.Processes.XMLDraft;
             XDocument doc = XDocument.Parse(xmldoc.OuterXml);
 
             //populate labels
@@ -781,7 +781,7 @@ namespace Product_Monograph
 
         private XmlDocument SaveInMemory()
         {
-            XmlDocument doc = (XmlDocument)helpers.Processes.XMLDraft;
+            XmlDocument doc = (XmlDocument)Session["draft"]; // helpers.Processes.XMLDraft;
             XmlNode rootnode = doc.SelectSingleNode("ProductMonographTemplate");
 
             helpers.Processes.ValidateAndSave(doc, rootnode, "MedicationIsUsedFor", "", tbMedicationForText.Value, false);
@@ -1871,7 +1871,8 @@ namespace Product_Monograph
             string tbLastrRevisedVal = Request.Form[tbLastrRevised.UniqueID];
             helpers.Processes.ValidateAndSave(doc, rootnode, "MedicationLastrRevised", "", tbLastrRevisedVal, false);
 
-            helpers.Processes.XMLDraft = doc;
+            //helpers.Processes.XMLDraft = doc;
+            Session["draft"] = doc;
 
             return doc;
         }

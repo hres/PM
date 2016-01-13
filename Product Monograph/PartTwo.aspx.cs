@@ -69,7 +69,7 @@ namespace Product_Monograph
 
             string lblpropername = "";
 
-            XmlDocument xmldoc = (XmlDocument)helpers.Processes.XMLDraft;
+            XmlDocument xmldoc = (XmlDocument)Session["draft"]; // helpers.Processes.XMLDraft;
             XDocument doc = XDocument.Parse(xmldoc.OuterXml);
 
             //populate labels
@@ -562,7 +562,7 @@ namespace Product_Monograph
 
         private XmlDocument SaveInMemory()
         {
-            XmlDocument doc = (XmlDocument)helpers.Processes.XMLDraft;
+            XmlDocument doc = (XmlDocument)Session["draft"]; // helpers.Processes.XMLDraft;
             XmlNode rootnode = doc.SelectSingleNode("ProductMonographTemplate");
 
             #region ScientificInformation
@@ -1508,7 +1508,8 @@ namespace Product_Monograph
             helpers.Processes.ValidateAndSave(doc, rootnode, "StudyToxicology", "", tbToxicology.Value, false);
             helpers.Processes.ValidateAndSave(doc, rootnode, "StudyReferences", "", tbReferences.Value, false);
 
-            helpers.Processes.XMLDraft = doc;
+            //helpers.Processes.XMLDraft = doc;
+            Session["draft"] = doc;
 
             return doc;
         }

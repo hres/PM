@@ -47,7 +47,8 @@ namespace Product_Monograph
 
                 XmlDocument doc = new XmlDocument();
                 doc.Load(fuXmlDraft.PostedFile.InputStream);
-                helpers.Processes.XMLDraft = doc;
+                //helpers.Processes.XMLDraft = doc;
+                Session["draft"] = doc;
                 Response.Redirect("Coverpage.aspx");
             }
             catch (Exception err)

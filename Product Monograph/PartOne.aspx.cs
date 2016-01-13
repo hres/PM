@@ -94,7 +94,7 @@ namespace Product_Monograph
 
         private XmlDocument SaveInMemory()
         {
-            XmlDocument doc = (XmlDocument)helpers.Processes.XMLDraft;
+            XmlDocument doc = (XmlDocument)Session["draft"]; // helpers.Processes.XMLDraft;
             XmlNode rootnode = doc.SelectSingleNode("ProductMonographTemplate");
 
             #region RouteOfAdministration
@@ -1947,15 +1947,16 @@ namespace Product_Monograph
             helpers.Processes.ValidateAndSave(doc, rootnode, "StorageAndStability", "", tbStorageStability.Value, false);
             helpers.Processes.ValidateAndSave(doc, rootnode, "SpecialHandling", "", tbSpecialHandling.Value, false);
             helpers.Processes.ValidateAndSave(doc, rootnode, "DosageFormsComposition", "", tbDosageFormsComposition.Value, false);
-
-            helpers.Processes.XMLDraft = doc;
+                        
+            //helpers.Processes.XMLDraft = doc;
+            Session["draft"] = doc;
 
             return doc;
         }
 
         private void LoadFromXML()
         {
-            XmlDocument xmldoc = (XmlDocument)helpers.Processes.XMLDraft;
+            XmlDocument xmldoc = (XmlDocument)Session["draft"]; // helpers.Processes.XMLDraft;
             XDocument doc = XDocument.Parse(xmldoc.OuterXml);
 
             //populate labels
