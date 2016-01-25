@@ -77,7 +77,8 @@
                 <div class="row">
                     <div class="col-md-12">
                         <ul class="list-inline margin-bottom-none">
-                            <li><a lang="fr" href="home-fr.html">Français</a></li>
+                            <li><a lang="fr" href="PMForm.aspx?lang=en-us">English</a></li>
+                            <li><a lang="fr" href="PMForm.aspx?lang=fr">Français</a></li>
                         </ul>
                     </div>
                 </div>

@@ -13,6 +13,8 @@ using System.ComponentModel;
 using System.Text;
 using System.Net;
 using System.Xml.Linq;
+using System.Threading;
+using System.Globalization;
 
 namespace Product_Monograph
 {
@@ -20,6 +22,25 @@ namespace Product_Monograph
     {
         protected void Page_Load(object sender, EventArgs e)
         {
+            string lang = "";
+            if (Request.QueryString["lang"] == null)
+            { }
+            else
+            {
+                lang = Request.QueryString["lang"].ToString();
+            }
+            
+            Thread.CurrentThread.CurrentUICulture = new CultureInfo( (lang == "" ) ? "en-us" : lang );
+            Thread.CurrentThread.CurrentCulture = Thread.CurrentThread.CurrentUICulture;
+
+            lblUsingxml.Text = Resources.Resource.UsingXMLPM;
+
+            lblBody.Text = ResourceHelpers.WrapTextBlockIntoParagraphs(Resources.Resource.Body).ToString().Replace("qmark","<img src='images/qmark.jpg' style='width: 15px; height: 15px;' />");
+            
+            lblTechSpec.Text = Resources.Resource.TechnicalSpecs;
+
+            lblBottomBody.Text = ResourceHelpers.WrapTextBlockIntoParagraphs(Resources.Resource.BottomBody).ToString();
+
             lblError.Text = "";
         }
 
@@ -56,5 +77,24 @@ namespace Product_Monograph
                 lblError.Text = err.ToString();
             }
         }  
+    }
+
+    public static class ResourceHelpers
+    {
+        public static IHtmlString WrapTextBlockIntoParagraphs(string s)
+        {
+            if (s == null) return new HtmlString(string.Empty);
+
+            var blocks = s.Split(new string[] { "\r\n", "\n" },
+                                  StringSplitOptions.RemoveEmptyEntries);
+
+            StringBuilder htmlParagraphs = new StringBuilder();
+            foreach (string block in blocks)
+            {
+                htmlParagraphs.Append("<p>" + block + "</p>");
+            }
+
+            return new HtmlString(htmlParagraphs.ToString());
+        }
     }
 }

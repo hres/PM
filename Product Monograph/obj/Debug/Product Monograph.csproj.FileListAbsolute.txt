@@ -8,3 +8,4 @@ C:\Development\HC\Product Monograph\Product Monograph\bin\HtmlAgilityPack.pdb
 C:\Development\HC\Product Monograph\Product Monograph\bin\HtmlAgilityPack.xml
 C:\Development\HC\Product Monograph\Product Monograph\obj\Debug\Product Monograph.dll
 C:\Development\HC\Product Monograph\Product Monograph\obj\Debug\Product Monograph.pdb
+C:\Development\HC\Product Monograph\Product Monograph\obj\Debug\Product Monograph.csprojResolveAssemblyReference.cache
