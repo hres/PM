@@ -85,6 +85,15 @@ namespace Product_Monograph {
         protected global::System.Web.UI.HtmlControls.HtmlTextArea tbMedicationForText;
         
         /// <summary>
+        /// lblMedicationForItem control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label lblMedicationForItem;
+        
+        /// <summary>
         /// tbMedicationDoes control.
         /// </summary>
         /// <remarks>

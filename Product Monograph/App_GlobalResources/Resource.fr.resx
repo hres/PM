@@ -138,6 +138,9 @@
 •	You can navigate the form using any mobile device (such as a tablet or a smart phone). The information displayed will be adapted for your device.
 •	No download required.</value>
   </data>
+  <data name="MedicationForItem" xml:space="preserve">
+    <value>Medication For Items 0_fr :</value>
+  </data>
   <data name="TechnicalSpecs" xml:space="preserve">
     <value>Spécifications techniques</value>
   </data>

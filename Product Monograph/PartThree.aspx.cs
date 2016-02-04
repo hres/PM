@@ -16,7 +16,8 @@ using System.Xml.Linq;
 using System.Configuration;
 using System.Collections;
 using System.IO.Compression;
-
+using System.Threading;
+using System.Globalization;
 namespace Product_Monograph
 {
     public partial class PartThree : System.Web.UI.Page
@@ -38,6 +39,22 @@ namespace Product_Monograph
                     lblError.Text = err.ToString();// "Please load a new template or a previously saved draft.";
                 }
             }
+            string lang = "";
+            if (Request.QueryString["lang"] == null)
+            { }
+            else
+            {
+                lang = Request.QueryString["lang"].ToString();
+            }
+
+            //set the new lang pass via parameter
+            Thread.CurrentThread.CurrentUICulture = new CultureInfo((lang == "") ? "en-CA" : lang);
+            Thread.CurrentThread.CurrentCulture = Thread.CurrentThread.CurrentUICulture;
+            
+            lblMedicationForItem.Text = Resources.Resource.MedicationForItem;
+
+            
+
         }
 
         private void SaveProcess()

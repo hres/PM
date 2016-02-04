@@ -84,6 +84,15 @@ namespace Resources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Medication For Items 0:.
+        /// </summary>
+        internal static string MedicationForItem {
+            get {
+                return ResourceManager.GetString("MedicationForItem", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Technical specifications.
         /// </summary>
         internal static string TechnicalSpecs {
