@@ -139,9 +139,15 @@
 •	No download required.</value>
   </data>
   <data name="TechnicalSpecs" xml:space="preserve">
-    <value>Technical Specifications [french]</value>
+    <value>Spécifications techniques</value>
+  </data>
+  <data name="TitleForm" xml:space="preserve">
+    <value>Formulaire de la monographie de produit - Registre des médicaments et des produits de santé</value>
+  </data>
+  <data name="TitleFormInstructions" xml:space="preserve">
+    <value>Instructions pour le formulaire</value>
   </data>
   <data name="UsingXMLPM" xml:space="preserve">
-    <value>Using the XML Product Monograph (PM) Web Form [french]</value>
+    <value>Utiliser le formulaire web pour monographie de produit - xml</value>
   </data>
 </root>

@@ -14,7 +14,8 @@ using System.Text;
 using System.Net;
 using System.Xml.Linq;
 using System.Configuration;
-
+using System.Threading;
+using System.Globalization;
 namespace Product_Monograph
 {
     public partial class ProdMono : System.Web.UI.MasterPage
@@ -22,12 +23,16 @@ namespace Product_Monograph
         protected void Page_Load(object sender, EventArgs e)
         {
             lblError.InnerText = "";
-
+            headEn.Visible = false;
+            headFr.Visible = false;
+            footEn.Visible = false;
+            footFr.Visible = false;
             if (!IsPostBack)
             {
                 //all pages
                 if (Session["TemplateVersion"] != null)
                 {
+                    lblSelectTemplate.Visible = false;
                     ddlTemplate.Disabled = true;
                     ddlTemplate.Value = Session["TemplateVersion"].ToString();
                     btnLoadTemplate.Visible = false;
@@ -40,6 +45,40 @@ namespace Product_Monograph
                     btnLoadTemplate.Visible = true;
                 }
             }
+
+            string lang = "";
+            if (Request.QueryString["lang"] == null)
+            {
+                CultureInfo current = Thread.CurrentThread.CurrentUICulture;
+                lang = current.TwoLetterISOLanguageName;
+            }
+            else
+            {
+                //set lang variable to new lang value
+                lang = Request.QueryString["lang"].ToString();
+                //set the new lang pass via parameter
+                Thread.CurrentThread.CurrentUICulture = new CultureInfo((lang == "") ? "en-CA" : lang);
+                Thread.CurrentThread.CurrentCulture = Thread.CurrentThread.CurrentUICulture;
+                
+            }
+
+           // CultureInfo current = Thread.CurrentThread.CurrentUICulture;
+            if (lang != "fr")
+            {
+                headEn.Visible = true;
+                footEn.Visible = true;
+            }
+            else if(lang != "en")
+            {
+                headFr.Visible = true;
+                footFr.Visible = true;
+            }
+         
+
+            lblTitleForm.Text = Resources.Resource.TitleForm;
+
+          
+
         }
 
         protected void btnLoadTemplate_Click(object sender, EventArgs e)

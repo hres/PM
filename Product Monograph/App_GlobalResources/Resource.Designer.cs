@@ -84,7 +84,7 @@ namespace Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Technical Specifications.
+        ///   Looks up a localized string similar to Technical specifications.
         /// </summary>
         internal static string TechnicalSpecs {
             get {
@@ -93,7 +93,25 @@ namespace Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Using the XML Product Monograph (PM) Web Form.
+        ///   Looks up a localized string similar to Drug and health product register - product monograph form.
+        /// </summary>
+        internal static string TitleForm {
+            get {
+                return ResourceManager.GetString("TitleForm", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Form instructions.
+        /// </summary>
+        internal static string TitleFormInstructions {
+            get {
+                return ResourceManager.GetString("TitleFormInstructions", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Using the XML product monograph (PM) web form.
         /// </summary>
         internal static string UsingXMLPM {
             get {

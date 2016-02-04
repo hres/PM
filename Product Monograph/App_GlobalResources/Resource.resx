@@ -139,9 +139,15 @@
 •	No download required.</value>
   </data>
   <data name="TechnicalSpecs" xml:space="preserve">
-    <value>Technical Specifications</value>
+    <value>Technical specifications</value>
+  </data>
+  <data name="TitleForm" xml:space="preserve">
+    <value>Drug and health product register - product monograph form</value>
+  </data>
+  <data name="TitleFormInstructions" xml:space="preserve">
+    <value>Form instructions</value>
   </data>
   <data name="UsingXMLPM" xml:space="preserve">
-    <value>Using the XML Product Monograph (PM) Web Form</value>
+    <value>Using the XML product monograph (PM) web form</value>
   </data>
 </root>

@@ -30,15 +30,18 @@ namespace Product_Monograph
                 lang = Request.QueryString["lang"].ToString();
             }
             
-            Thread.CurrentThread.CurrentUICulture = new CultureInfo( (lang == "" ) ? "en-us" : lang );
+            //set the new lang pass via parameter
+            Thread.CurrentThread.CurrentUICulture = new CultureInfo((lang == "") ? "en-CA" : lang);
             Thread.CurrentThread.CurrentCulture = Thread.CurrentThread.CurrentUICulture;
+
+
 
             lblUsingxml.Text = Resources.Resource.UsingXMLPM;
 
             lblBody.Text = ResourceHelpers.WrapTextBlockIntoParagraphs(Resources.Resource.Body).ToString().Replace("qmark","<img src='images/qmark.jpg' style='width: 15px; height: 15px;' />");
             
             lblTechSpec.Text = Resources.Resource.TechnicalSpecs;
-
+            lblTitleFormInstructions.Text = Resources.Resource.TitleFormInstructions;
             lblBottomBody.Text = ResourceHelpers.WrapTextBlockIntoParagraphs(Resources.Resource.BottomBody).ToString();
 
             lblError.Text = "";
