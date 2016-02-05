@@ -34,8 +34,6 @@ namespace Product_Monograph
             Thread.CurrentThread.CurrentUICulture = new CultureInfo((lang == "") ? "en-CA" : lang);
             Thread.CurrentThread.CurrentCulture = Thread.CurrentThread.CurrentUICulture;
 
-
-
             lblUsingxml.Text = Resources.Resource.UsingXMLPM;
 
             lblBody.Text = ResourceHelpers.WrapTextBlockIntoParagraphs(Resources.Resource.Body).ToString().Replace("qmark","<img src='images/qmark.jpg' style='width: 15px; height: 15px;' />");
@@ -58,14 +56,14 @@ namespace Product_Monograph
                     FileInfo fi = new FileInfo(fuXmlDraft.FileName);
                     if (!fi.Extension.ToString().ToLower().Contains("xml"))
                     {
-                        lblError.Text = "Choose an xml file";
+                        lblError.Text = "Please choose an xml file.";
                         return;
                     }
 
                 }
                 else
                 {
-                    lblError.Text = "Choose a file";
+                    lblError.Text = "Please choose an xml file.";
                     return;
                 }
 
