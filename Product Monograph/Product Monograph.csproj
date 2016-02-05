@@ -282,7 +282,6 @@
     <Content Include="distro\4.0.9\js\theme.min.js" />
     <Content Include="distro\4.0.9\js\wet-boew.min.js" />
     <Content Include="distro\4.0.9\metaData.aspx" />
-    <Content Include="Global.asax" />
     <Content Include="images\btnAdd.png" />
     <Content Include="images\btnRemove.png" />
     <Content Include="images\c.jpg" />
@@ -327,6 +326,9 @@
     <Content Include="distro\4.0.9\timeout.jsp" />
     <Content Include="packages.config" />
     <Content Include="PMForm.aspx" />
+    <Content Include="shared\Error404.htm" />
+    <Content Include="shared\Error500.htm" />
+    <Content Include="shared\GenericError.htm" />
     <Content Include="tinymce\changelog.txt" />
     <Content Include="tinymce\Gruntfile.js" />
     <Content Include="tinymce\js\tinymce\classes\AddOnManager.js" />
@@ -852,19 +854,12 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>Resource.fr.resx</DependentUpon>
     </Compile>
-    <Compile Include="App_Start\BundleConfig.cs" />
-    <Compile Include="App_Start\FilterConfig.cs" />
-    <Compile Include="App_Start\RouteConfig.cs" />
-    <Compile Include="controller\LanguageController.cs" />
     <Compile Include="Coverpage.aspx.cs">
       <DependentUpon>Coverpage.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
     <Compile Include="Coverpage.aspx.designer.cs">
       <DependentUpon>Coverpage.aspx</DependentUpon>
-    </Compile>
-    <Compile Include="Global.asax.cs">
-      <DependentUpon>Global.asax</DependentUpon>
     </Compile>
     <Compile Include="helpers\Processes.cs" />
     <Compile Include="PartOne.aspx.cs">
@@ -912,10 +907,6 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="Views\Shared\Error.cshtml" />
-    <Content Include="Views\_ViewStart.cshtml" />
-    <Content Include="Views\Shared\_Layout.cshtml" />
-    <Content Include="Views\web.config" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
@@ -935,10 +926,7 @@
       <LastGenOutput>Resource.fr.designer.cs</LastGenOutput>
     </Content>
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="App_Data\" />
-    <Folder Include="Views\Language\" />
-  </ItemGroup>
+  <ItemGroup />
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
     <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>
