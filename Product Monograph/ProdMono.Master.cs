@@ -52,7 +52,6 @@ namespace Product_Monograph
                 CultureInfo current = Thread.CurrentThread.CurrentUICulture;
                 lang = current.TwoLetterISOLanguageName;
 
-                lblError.InnerText = lang;
             }
             else
             {
@@ -67,13 +66,17 @@ namespace Product_Monograph
            // CultureInfo current = Thread.CurrentThread.CurrentUICulture;
             if (lang == "en")
             {
-                headEn.Visible = false;
-                footEn.Visible = false;
+                headEn.Visible = true;
+                footEn.Visible = true;
+                headFr.Visible = false;
+                footFr.Visible = false;
             }
             else if(lang == "fr")
             {
-                headFr.Visible = false;
-                footFr.Visible = false;
+                headEn.Visible = false;
+                footEn.Visible = false;
+                headFr.Visible = true;
+                footFr.Visible = true;
             }
          
 
