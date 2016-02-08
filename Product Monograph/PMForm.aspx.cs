@@ -20,20 +20,21 @@ namespace Product_Monograph
 {
     public partial class PMForm2 : System.Web.UI.Page
     {
+        
         protected void Page_Load(object sender, EventArgs e)
         {
-            string lang = "";
-            if (Request.QueryString["lang"] == null)
-            { }
-            else
-            {
-                lang = Request.QueryString["lang"].ToString();
-            }
+            //string lang = "";
+            //if (Request.QueryString["lang"] == null)
+            //{ }
+            //else
+            //{
+            //    lang = Request.QueryString["lang"].ToString();
+            //}
             
             //set the new lang pass via parameter
-            Thread.CurrentThread.CurrentUICulture = new CultureInfo((lang == "") ? "en" : lang);
-            Thread.CurrentThread.CurrentCulture = Thread.CurrentThread.CurrentUICulture;
-
+            //Thread.CurrentThread.CurrentUICulture = new CultureInfo((lang == "") ? "en" : lang);
+           // Thread.CurrentThread.CurrentCulture = Thread.CurrentThread.CurrentUICulture;
+           
             lblUsingxml.Text = Resources.Resource.UsingXMLPM;
 
             lblBody.Text = ResourceHelpers.WrapTextBlockIntoParagraphs(Resources.Resource.Body).ToString().Replace("qmark","<img src='images/qmark.jpg' style='width: 15px; height: 15px;' />");
@@ -42,7 +43,7 @@ namespace Product_Monograph
             lblTitleFormInstructions.Text = Resources.Resource.TitleFormInstructions;
             lblBottomBody.Text = ResourceHelpers.WrapTextBlockIntoParagraphs(Resources.Resource.BottomBody).ToString();
 
-            lblError.Text = "";
+           //lblError.Text = "";
         }
 
         protected void btnLoadXml_Click(object sender, EventArgs e)

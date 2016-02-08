@@ -6,7 +6,7 @@
 
     </section>
 
-     <asp:Label runat="server" id="lblError" clientIDMode="Static" foreColor="Red"></asp:Label>
+     
 
 
     <section class="margin-bottom-small">   
@@ -25,6 +25,7 @@
     <section>
         <h3><asp:Label runat="server" ID="lblTechSpec"></asp:Label></h3>
         <p><asp:Label runat="server" id="lblBottomBody"></asp:Label></p>
+        <p><asp:Label runat="server" id="lblError"></asp:Label></p>
     </section>
 
 

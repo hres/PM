@@ -51,6 +51,8 @@ namespace Product_Monograph
             {
                 CultureInfo current = Thread.CurrentThread.CurrentUICulture;
                 lang = current.TwoLetterISOLanguageName;
+
+                lblError.InnerText = lang;
             }
             else
             {
