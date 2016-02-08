@@ -57,7 +57,7 @@ namespace Product_Monograph
                 //set lang variable to new lang value
                 lang = Request.QueryString["lang"].ToString();
                 //set the new lang pass via parameter
-                Thread.CurrentThread.CurrentUICulture = new CultureInfo((lang == "") ? "en-CA" : lang);
+                Thread.CurrentThread.CurrentUICulture = new CultureInfo((lang == "") ? "en" : lang);
                 Thread.CurrentThread.CurrentCulture = Thread.CurrentThread.CurrentUICulture;
                 
             }

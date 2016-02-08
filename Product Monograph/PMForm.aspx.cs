@@ -31,7 +31,7 @@ namespace Product_Monograph
             }
             
             //set the new lang pass via parameter
-            Thread.CurrentThread.CurrentUICulture = new CultureInfo((lang == "") ? "en-CA" : lang);
+            Thread.CurrentThread.CurrentUICulture = new CultureInfo((lang == "") ? "en" : lang);
             Thread.CurrentThread.CurrentCulture = Thread.CurrentThread.CurrentUICulture;
 
             lblUsingxml.Text = Resources.Resource.UsingXMLPM;
