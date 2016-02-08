@@ -20,6 +20,7 @@ namespace Product_Monograph
 {
     public partial class ProdMono : System.Web.UI.MasterPage
     {
+        public string lang = "";
         protected void Page_Load(object sender, EventArgs e)
         {
             lblError.InnerText = "";
@@ -46,7 +47,7 @@ namespace Product_Monograph
                 }
             }
 
-            string lang = "";
+            
             if (Request.QueryString["lang"] == null)
             {
                 CultureInfo current = Thread.CurrentThread.CurrentUICulture;
