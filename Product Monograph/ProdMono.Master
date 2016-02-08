@@ -2,7 +2,7 @@
 <!DOCTYPE html>
 <!--[if lt IE 9]><html class="no-js lt-ie9" lang="en" dir="ltr"><![endif]-->
 <!--[if gt IE 8]><!-->
-<html class="no-js" lang=<%:Session["lang"]%> dir="ltr">
+<html class="no-js" lang= '<%=Session["lang"]%>' dir="ltr">
 <!--<![endif]-->
 <head runat="server">
 <meta charset="utf-8">
