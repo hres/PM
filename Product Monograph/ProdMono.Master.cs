@@ -52,7 +52,7 @@ namespace Product_Monograph
             {
                 CultureInfo current = Thread.CurrentThread.CurrentUICulture;
                 lang = current.TwoLetterISOLanguageName;
-
+                Session["lang"] = lang;
             }
             else
             {
@@ -61,7 +61,7 @@ namespace Product_Monograph
                 //set the new lang pass via parameter
                 Thread.CurrentThread.CurrentUICulture = new CultureInfo((lang == "") ? "en" : lang);
                 Thread.CurrentThread.CurrentCulture = Thread.CurrentThread.CurrentUICulture;
-                
+                Session["lang"] = lang;
             }
 
            // CultureInfo current = Thread.CurrentThread.CurrentUICulture;
