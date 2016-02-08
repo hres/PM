@@ -470,10 +470,10 @@ namespace Product_Monograph
                                     }
                                     colcounter++;
                                 }
-
-                              continue;
-
                             rowcounter++;
+                            continue;
+
+                         
                         }
                         #endregion
                     }
