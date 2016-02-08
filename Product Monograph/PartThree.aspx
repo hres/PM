@@ -530,7 +530,7 @@
 <div>
     <asp:Label runat="server" ID="lblError" ClientIDMode="Static" ForeColor="Red"></asp:Label>
 </div>
-<div><h2 id="PartIII" >Part III</h2></div>
+<div><h2 id="PartIII" runat="server" ><%$ Resources:resource,PartIII %>"</h2></div>
 <section>
     <h4><asp:Label ID="lblBrandNameProprietary" runat="server">Brand name</asp:Label></h4>
 </section>
