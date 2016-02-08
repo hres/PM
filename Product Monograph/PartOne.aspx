@@ -1324,9 +1324,9 @@
 </div>
 <!-- Main Content For Submenu Item of "Part I" and Use WET Standard -->
 <div class="form-group">
-<div class="row">
+<section>
    <h2 id="subTitlePartI" lang="en">Part I</h2>
-</div>
+</section>
 <div style="float:left; padding:10px 10px 10px 10px; clear:both;">
     <asp:Label runat="server" ID="lblError" ClientIDMode="Static" ForeColor="Red"></asp:Label>
 </div>

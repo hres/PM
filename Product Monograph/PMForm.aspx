@@ -1,17 +1,14 @@
 ﻿<%@ Page Title="" Language="C#" MasterPageFile="~/ProdMono.Master" AutoEventWireup="true" CodeBehind="PMForm.aspx.cs" Inherits="Product_Monograph.PMForm2" ValidateRequest="false" %>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
-    <div class="container">
-  
 
-<div class="row profile">
-    <div class="row">
-        <h2><asp:Label runat="server" id="lblTitleFormInstructions"></asp:Label></h2>
-    </div>
-</div>
-<div class="row">
+    <section>
+            <h2><asp:Label runat="server" id="lblTitleFormInstructions"></asp:Label></h2>
+
+    </section>
+
      <asp:Label runat="server" id="lblError" clientIDMode="Static" foreColor="Red"></asp:Label>
-</div>
-<div class="row">
+
+
     <section class="margin-bottom-small">   
         <asp:FileUpload id="fuXmlDraft" runat="server"/>
         <div class="mrgn-bttm-lg"></div>
@@ -23,14 +20,14 @@
         <h3><asp:Label runat="server" id="lblUsingxml"></asp:Label></h3>                   
         <p><asp:Label runat="server" id="lblBody"></asp:Label></p>
     </section>
-</div>
-<div class="row">
+
+
     <section>
         <h3><asp:Label runat="server" ID="lblTechSpec"></asp:Label></h3>
         <p><asp:Label runat="server" id="lblBottomBody"></asp:Label></p>
     </section>
-</div>
 
 
-</div>
+
+
 </asp:Content>
