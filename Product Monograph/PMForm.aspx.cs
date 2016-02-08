@@ -43,7 +43,7 @@ namespace Product_Monograph
             lblTitleFormInstructions.Text = Resources.Resource.TitleFormInstructions;
             lblBottomBody.Text = ResourceHelpers.WrapTextBlockIntoParagraphs(Resources.Resource.BottomBody).ToString();
 
-           //lblError.Text = "";
+           lblError.Text = "";
         }
 
         protected void btnLoadXml_Click(object sender, EventArgs e)

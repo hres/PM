@@ -67,13 +67,13 @@ namespace Product_Monograph
            // CultureInfo current = Thread.CurrentThread.CurrentUICulture;
             if (lang == "en")
             {
-                headEn.Visible = true;
-                footEn.Visible = true;
+                headEn.Visible = false;
+                footEn.Visible = false;
             }
             else if(lang == "fr")
             {
-                headFr.Visible = true;
-                footFr.Visible = true;
+                headFr.Visible = false;
+                footFr.Visible = false;
             }
          
 
