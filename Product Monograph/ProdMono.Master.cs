@@ -26,8 +26,9 @@ namespace Product_Monograph
         {
           
             lblError.InnerText = "";
-            var lang = "fr";
-            currentLang.Text = string.Format("this is sesson lang : ", lang);
+            //var lang = "fr";
+            //currentLang.Text = string.Format("this is sesson lang : ", lang);
+            currentLang.Text = Thread.CurrentThread.CurrentCulture.TwoLetterISOLanguageName;
             //if (lang == "en")
             //{
             //    headEn.Visible = true;
@@ -57,20 +58,20 @@ namespace Product_Monograph
                     btnLoadTemplate.Visible = true;
                 }
 
-                if (lang == "en")
-                {
-                    Thread.CurrentThread.CurrentCulture = CultureInfo.CreateSpecificCulture("en-CA");
-                    Thread.CurrentThread.CurrentUICulture = CultureInfo.CreateSpecificCulture("en-CA");
-                }
-                else
-                {
-                    Thread.CurrentThread.CurrentCulture = CultureInfo.CreateSpecificCulture("fr-CA");
-                    Thread.CurrentThread.CurrentUICulture = CultureInfo.CreateSpecificCulture("fr-CA");
-                }
-                currentLang.Text = string.Format("this is sesson lang : {0}, lang :{1}", Session["lang"], lang);
+               
+               // currentLang.Text = string.Format("this is sesson lang : {0}, lang :{1}", Session["lang"], lang);
             }
 
-       
+            //if (lang == "en")
+            //{
+            //    Thread.CurrentThread.CurrentCulture = CultureInfo.CreateSpecificCulture("en-CA");
+            //    Thread.CurrentThread.CurrentUICulture = CultureInfo.CreateSpecificCulture("en-CA");
+            //}
+            //else
+            //{
+            //    Thread.CurrentThread.CurrentCulture = CultureInfo.CreateSpecificCulture("fr-CA");
+            //    Thread.CurrentThread.CurrentUICulture = CultureInfo.CreateSpecificCulture("fr-CA");
+            //}
             //if (Request.QueryString["lang"] == null)
             //{
             //    CultureInfo current = Thread.CurrentThread.CurrentUICulture;
@@ -94,7 +95,7 @@ namespace Product_Monograph
             //{
             //    headFr.Visible = true;
             //    footFr.Visible = true;
-                
+
             //}
             //currentLang.Text = string.Format("this is sesson lang : {0}, lang :{1}", Session["lang"], lang);
 
