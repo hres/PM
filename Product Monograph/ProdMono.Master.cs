@@ -20,11 +20,14 @@ namespace Product_Monograph
 {
     public partial class ProdMono : System.Web.UI.MasterPage
     {
+       
         //public string lang = "";
         protected void Page_Load(object sender, EventArgs e)
         {
+            headEn.Visible = false;
             lblError.InnerText = "";
             var lang = "fr";
+            currentLang.Text = string.Format("this is sesson lang : ", lang);
 
             if (!Page.IsPostBack)
             {
@@ -83,7 +86,7 @@ namespace Product_Monograph
                 footFr.Visible = true;
                 
             }
-            currentLang.Text = string.Format("this is sesson lang : {0}, lang :{1}", Session["lang"], lang);
+            //currentLang.Text = string.Format("this is sesson lang : {0}, lang :{1}", Session["lang"], lang);
 
             lblTitleForm.Text = Resources.Resource.TitleForm;
 

@@ -88,7 +88,7 @@
     </asp:ContentPlaceHolder>
     <asp:ContentPlaceHolder ID="head" runat="server">
     </asp:ContentPlaceHolder>
-    <asp:ContentPlaceHolder ID="headEn" runat="server" Visible="false">
+    <asp:ContentPlaceHolder ID="headEn" runat="server" >
         <header role="banner"> 
             <!--#include file="/distro/4.0.19/header-en.aspx"-->
          </header> 
@@ -136,7 +136,7 @@
 </main>   
          
 <!-- FOOTER STARTS | DEBUT DU PIED DE LA PAGE --> 
-    <asp:ContentPlaceHolder ID="footEn" runat="server" Visible="false">
+    <asp:ContentPlaceHolder ID="footEn" runat="server">
         <!--#include file="/distro/4.0.19/footer-en.aspx"-->
     </asp:ContentPlaceHolder>
     <asp:ContentPlaceHolder ID="footFr" runat="server" Visible="false">
