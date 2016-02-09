@@ -46,18 +46,21 @@ namespace Product_Monograph
                     ddlTemplate.Disabled = false;
                     btnLoadTemplate.Visible = true;
                 }
+
+                if (lang == "en")
+                {
+                    Thread.CurrentThread.CurrentCulture = CultureInfo.CreateSpecificCulture("en-CA");
+                    Thread.CurrentThread.CurrentUICulture = CultureInfo.CreateSpecificCulture("en-CA");
+                }
+                else
+                {
+                    Thread.CurrentThread.CurrentCulture = CultureInfo.CreateSpecificCulture("fr-CA");
+                    Thread.CurrentThread.CurrentUICulture = CultureInfo.CreateSpecificCulture("fr-CA");
+                }
+                currentLang.Text = string.Format("this is sesson lang : {0}, lang :{1}", Session["lang"], lang);
             }
 
-            if (lang == "en")
-            {
-                Thread.CurrentThread.CurrentCulture = CultureInfo.CreateSpecificCulture("en-CA");
-                Thread.CurrentThread.CurrentUICulture = CultureInfo.CreateSpecificCulture("en-CA");
-            }
-            else
-            {
-                Thread.CurrentThread.CurrentCulture = CultureInfo.CreateSpecificCulture("fr-CA");
-                Thread.CurrentThread.CurrentUICulture = CultureInfo.CreateSpecificCulture("fr-CA");
-            }
+       
             //if (Request.QueryString["lang"] == null)
             //{
             //    CultureInfo current = Thread.CurrentThread.CurrentUICulture;
@@ -75,8 +78,8 @@ namespace Product_Monograph
             //}
 
             //// CultureInfo current = Thread.CurrentThread.CurrentUICulture;
-            currentLang.Text = string.Format("this is sesson lang : {0}, lang :{1}", Session["lang"], lang);
-           if (lang == "en")
+
+            if (lang == "en")
             {                
                 headEn.Visible = true;
                 footEn.Visible = true;
