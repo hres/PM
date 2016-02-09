@@ -23,13 +23,13 @@ namespace Product_Monograph
         //public string lang = "";
         protected void Page_Load(object sender, EventArgs e)
         {
-            lblError.InnerText = "";
+            lblError.InnerText = "This is my problem";
             var lang = "fr";
-           // headEn.Visible = false;
-           // headFr.Visible = false;
-           // footEn.Visible = false;
-           // footFr.Visible = false;
-            if (!IsPostBack)
+            // headEn.Visible = false;
+            // headFr.Visible = false;
+            // footEn.Visible = false;
+            // footFr.Visible = false;
+            if (!Page.IsPostBack)
             {
                 //all pages
                 if (Session["TemplateVersion"] != null)
