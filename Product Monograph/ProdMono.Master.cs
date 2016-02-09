@@ -24,24 +24,21 @@ namespace Product_Monograph
         //public string lang = "";
         protected void Page_Load(object sender, EventArgs e)
         {
-            headEn.Visible = false;
-            headFr.Visible = false;
-            footEn.Visible = false;
-            footFr.Visible = false;
+          
             lblError.InnerText = "";
             var lang = "fr";
             currentLang.Text = string.Format("this is sesson lang : ", lang);
-            if (lang == "en")
-            {
-                headEn.Visible = true;
-                footEn.Visible = true;
-            }
-            else if (lang == "fr")
-            {
-                headFr.Visible = true;
-                footFr.Visible = true;
+            //if (lang == "en")
+            //{
+            //    headEn.Visible = true;
+            //    footEn.Visible = true;
+            //}
+            //else if (lang == "fr")
+            //{
+            //    headFr.Visible = true;
+            //    footFr.Visible = true;
 
-            }
+            //}
             if (!Page.IsPostBack)
             {
                 //all pages
@@ -88,17 +85,17 @@ namespace Product_Monograph
             //    Thread.CurrentThread.CurrentCulture = Thread.CurrentThread.CurrentUICulture;
             //}
 
-            if (lang == "en")
-            {                
-                headEn.Visible = true;
-                footEn.Visible = true;
-            }
-            else if (lang == "fr")
-            {
-                headFr.Visible = true;
-                footFr.Visible = true;
+            //if (lang == "en")
+            //{                
+            //    headEn.Visible = true;
+            //    footEn.Visible = true;
+            //}
+            //else if (lang == "fr")
+            //{
+            //    headFr.Visible = true;
+            //    footFr.Visible = true;
                 
-            }
+            //}
             //currentLang.Text = string.Format("this is sesson lang : {0}, lang :{1}", Session["lang"], lang);
 
             lblTitleForm.Text = Resources.Resource.TitleForm;
