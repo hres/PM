@@ -18,7 +18,9 @@
 
 
     <section>
-        <h3><asp:Label runat="server" ID="lblTechSpec"></asp:Label></h3>
+        <h3><asp:Label runat="server" ID="lblTechSpec" ></asp:Label></h3>
         <p><asp:Label runat="server" id="lblBottomBody"></asp:Label></p>
+
+ 
     </section>
  </asp:Content>

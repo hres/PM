@@ -24,10 +24,10 @@ namespace Product_Monograph
         protected void Page_Load(object sender, EventArgs e)
         {
             lblError.InnerText = "";
-            headEn.Visible = false;
-            headFr.Visible = false;
-            footEn.Visible = false;
-            footFr.Visible = false;
+           // headEn.Visible = false;
+           // headFr.Visible = false;
+           // footEn.Visible = false;
+           // footFr.Visible = false;
             if (!IsPostBack)
             {
                 //all pages

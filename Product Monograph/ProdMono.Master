@@ -136,10 +136,10 @@
 </main>   
          
 <!-- FOOTER STARTS | DEBUT DU PIED DE LA PAGE --> 
-    <asp:ContentPlaceHolder ID="footEn" runat="server">
+    <asp:ContentPlaceHolder ID="footEn" runat="server" Visible="false">
         <!--#include file="/distro/4.0.19/footer-en.aspx"-->
     </asp:ContentPlaceHolder>
-    <asp:ContentPlaceHolder ID="footFr" runat="server">
+    <asp:ContentPlaceHolder ID="footFr" runat="server" Visible="false">
         <!--#include file="/distro/4.0.19/footer-fr.aspx"-->
     </asp:ContentPlaceHolder>
 
