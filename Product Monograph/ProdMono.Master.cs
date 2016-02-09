@@ -65,7 +65,7 @@ namespace Product_Monograph
             }
 
             // CultureInfo current = Thread.CurrentThread.CurrentUICulture;
-            currentLang.InnerText = string.Format("this is sesson lang : {0}, lang :{1}", Session["lang"], lang);
+            currentLang.Text = string.Format("this is sesson lang : {0}, lang :{1}", Session["lang"], lang);
             if (lang == "en")
             {                
                 headEn.Visible = true;
@@ -77,7 +77,7 @@ namespace Product_Monograph
                 footFr.Visible = true;
                 
             }
-         
+            footFr.Visible = true;
 
             lblTitleForm.Text = Resources.Resource.TitleForm;
 

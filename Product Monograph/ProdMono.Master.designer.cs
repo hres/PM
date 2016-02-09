@@ -109,7 +109,7 @@ namespace Product_Monograph {
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlGenericControl currentLang;
+        protected global::System.Web.UI.WebControls.Label currentLang;
         
         /// <summary>
         /// ContentPlaceHolder1 control.
