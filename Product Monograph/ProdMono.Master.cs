@@ -29,17 +29,6 @@ namespace Product_Monograph
             //var lang = "fr";
             //currentLang.Text = string.Format("this is sesson lang : ", lang);
             currentLang.Text = Thread.CurrentThread.CurrentCulture.TwoLetterISOLanguageName;
-            //if (lang == "en")
-            //{
-            //    headEn.Visible = true;
-            //    footEn.Visible = true;
-            //}
-            //else if (lang == "fr")
-            //{
-            //    headFr.Visible = true;
-            //    footFr.Visible = true;
-
-            //}
             if (!Page.IsPostBack)
             {
                 //all pages
@@ -61,7 +50,20 @@ namespace Product_Monograph
                
                // currentLang.Text = string.Format("this is sesson lang : {0}, lang :{1}", Session["lang"], lang);
             }
-
+            if (Thread.CurrentThread.CurrentCulture.TwoLetterISOLanguageName == "en")
+            {
+                headEn.Visible = true;
+                footEn.Visible = true;
+                headFr.Visible = false;
+                footFr.Visible = false;
+            }
+            if (Thread.CurrentThread.CurrentCulture.TwoLetterISOLanguageName == "fr")
+            {
+                headEn.Visible = false;
+                footEn.Visible = false;
+                headFr.Visible = true;
+                footFr.Visible = true;
+            }
             //if (lang == "en")
             //{
             //    Thread.CurrentThread.CurrentCulture = CultureInfo.CreateSpecificCulture("en-CA");
