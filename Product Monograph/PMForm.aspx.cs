@@ -23,18 +23,23 @@ namespace Product_Monograph
         
         protected void Page_Load(object sender, EventArgs e)
         {
-            //string lang = "";
-            //if (Request.QueryString["lang"] == null)
-            //{ }
-            //else
-            //{
-            //    lang = Request.QueryString["lang"].ToString();
-            //}
-            
+
+           // headEn.Visible = false;
+           // headFr.Visible = false;
+           // footEn.Visible = false;
+           // footFr.Visible = false;
+            string lang = "";
+            if (Request.QueryString["lang"] == null)
+            { }
+            else
+            {
+                lang = Request.QueryString["lang"].ToString();
+            }
+
             //set the new lang pass via parameter
-            //Thread.CurrentThread.CurrentUICulture = new CultureInfo((lang == "") ? "en" : lang);
-           // Thread.CurrentThread.CurrentCulture = Thread.CurrentThread.CurrentUICulture;
-           
+            Thread.CurrentThread.CurrentUICulture = new CultureInfo((lang == "") ? "en" : lang);
+            Thread.CurrentThread.CurrentCulture = Thread.CurrentThread.CurrentUICulture;
+
             lblUsingxml.Text = Resources.Resource.UsingXMLPM;
 
             lblBody.Text = ResourceHelpers.WrapTextBlockIntoParagraphs(Resources.Resource.Body).ToString().Replace("qmark","<img src='images/qmark.jpg' style='width: 15px; height: 15px;' />");

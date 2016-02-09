@@ -64,17 +64,17 @@ namespace Product_Monograph
                 Session["lang"] = lang;
             }
 
-           // CultureInfo current = Thread.CurrentThread.CurrentUICulture;
+            // CultureInfo current = Thread.CurrentThread.CurrentUICulture;
+            currentLang.InnerText = string.Format("this is sesson lang : {0}, lang :{1}", Session["lang"], lang);
             if (lang == "en")
-            {
-                
-                headFr.Visible = false;
-                footFr.Visible = false;
+            {                
+                headEn.Visible = true;
+                footEn.Visible = true;
             }
             else if(lang == "fr")
             {
-                headEn.Visible = false;
-                footEn.Visible = false;
+                headFr.Visible = true;
+                footFr.Visible = true;
                 
             }
          
