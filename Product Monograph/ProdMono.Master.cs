@@ -23,12 +23,9 @@ namespace Product_Monograph
         //public string lang = "";
         protected void Page_Load(object sender, EventArgs e)
         {
-            lblError.InnerText = "This is my problem";
+            lblError.InnerText = "";
             var lang = "fr";
-            // headEn.Visible = false;
-            // headFr.Visible = false;
-            // footEn.Visible = false;
-            // footFr.Visible = false;
+
             if (!Page.IsPostBack)
             {
                 //all pages
@@ -61,23 +58,19 @@ namespace Product_Monograph
             }
 
        
-            //if (Request.QueryString["lang"] == null)
-            //{
-            //    CultureInfo current = Thread.CurrentThread.CurrentUICulture;
-            //    lang = current.TwoLetterISOLanguageName;
-            //    Session["lang"] = lang;
-            //}
-            //else
-            //{
-            //    //set lang variable to new lang value
-            //    lang = Request.QueryString["lang"].ToString();
-            //    //set the new lang pass via parameter
-            //    Thread.CurrentThread.CurrentUICulture = new CultureInfo((lang == "") ? "en" : lang);
-            //    Thread.CurrentThread.CurrentCulture = Thread.CurrentThread.CurrentUICulture;
-            //    Session["lang"] = lang;
-            //}
-
-            //// CultureInfo current = Thread.CurrentThread.CurrentUICulture;
+            if (Request.QueryString["lang"] == null)
+            {
+                CultureInfo current = Thread.CurrentThread.CurrentUICulture;
+                lang = current.TwoLetterISOLanguageName;
+            }
+            else
+            {
+                //set lang variable to new lang value
+                lang = Request.QueryString["lang"].ToString();
+                //set the new lang pass via parameter
+                Thread.CurrentThread.CurrentUICulture = new CultureInfo((lang == "") ? "en" : lang);
+                Thread.CurrentThread.CurrentCulture = Thread.CurrentThread.CurrentUICulture;
+            }
 
             if (lang == "en")
             {                
@@ -90,7 +83,7 @@ namespace Product_Monograph
                 footFr.Visible = true;
                 
             }
-            footFr.Visible = true;
+            currentLang.Text = string.Format("this is sesson lang : {0}, lang :{1}", Session["lang"], lang);
 
             lblTitleForm.Text = Resources.Resource.TitleForm;
 

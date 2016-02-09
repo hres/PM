@@ -1,7 +1,7 @@
 ﻿<%@ Page Title="" Language="C#" MasterPageFile="~/ProdMono.Master" AutoEventWireup="true" CodeBehind="PMForm.aspx.cs" Inherits="Product_Monograph.PMForm2" ValidateRequest="false" %>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
-   <asp:Label runat="server" id="lblError" Text="this is test"></asp:Label>
-    <%-- <section>  
+   
+     <section>  
             <h2><asp:Label runat="server" id="lblTitleFormInstructions"></asp:Label></h2>
     </section>
      <asp:Label runat="server" id="lblError" clientIDMode="Static" foreColor="Red"></asp:Label>
@@ -23,5 +23,5 @@
         <p><asp:Label runat="server" id="lblBottomBody"></asp:Label></p>
 
  
-    </section>--%>
+    </section>
  </asp:Content>
