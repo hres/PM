@@ -25,6 +25,9 @@ namespace Product_Monograph
         protected void Page_Load(object sender, EventArgs e)
         {
             headEn.Visible = false;
+            headFr.Visible = false;
+            footEn.Visible = false;
+            footFr.Visible = false;
             lblError.InnerText = "";
             var lang = "fr";
             currentLang.Text = string.Format("this is sesson lang : ", lang);
@@ -80,7 +83,7 @@ namespace Product_Monograph
                 headEn.Visible = true;
                 footEn.Visible = true;
             }
-            else
+            else if (lang == "fr")
             {
                 headFr.Visible = true;
                 footFr.Visible = true;
