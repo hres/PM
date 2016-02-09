@@ -1,6 +1,6 @@
 ﻿<%@ Page Title="" Language="C#" MasterPageFile="~/ProdMono.Master" AutoEventWireup="true" CodeBehind="PMForm.aspx.cs" Inherits="Product_Monograph.PMForm2" ValidateRequest="false" %>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
-   <asp:Label runat="server" id="lblError" Text="this is jangyoung"></asp:Label>
+   <asp:Label runat="server" id="lblError" Text="this is test"></asp:Label>
     <%-- <section>  
             <h2><asp:Label runat="server" id="lblTitleFormInstructions"></asp:Label></h2>
     </section>
