@@ -31,7 +31,17 @@ namespace Product_Monograph
             lblError.InnerText = "";
             var lang = "fr";
             currentLang.Text = string.Format("this is sesson lang : ", lang);
+            if (lang == "en")
+            {
+                headEn.Visible = true;
+                footEn.Visible = true;
+            }
+            else if (lang == "fr")
+            {
+                headFr.Visible = true;
+                footFr.Visible = true;
 
+            }
             if (!Page.IsPostBack)
             {
                 //all pages
@@ -64,19 +74,19 @@ namespace Product_Monograph
             }
 
        
-            if (Request.QueryString["lang"] == null)
-            {
-                CultureInfo current = Thread.CurrentThread.CurrentUICulture;
-                lang = current.TwoLetterISOLanguageName;
-            }
-            else
-            {
-                //set lang variable to new lang value
-                lang = Request.QueryString["lang"].ToString();
-                //set the new lang pass via parameter
-                Thread.CurrentThread.CurrentUICulture = new CultureInfo((lang == "") ? "en" : lang);
-                Thread.CurrentThread.CurrentCulture = Thread.CurrentThread.CurrentUICulture;
-            }
+            //if (Request.QueryString["lang"] == null)
+            //{
+            //    CultureInfo current = Thread.CurrentThread.CurrentUICulture;
+            //    lang = current.TwoLetterISOLanguageName;
+            //}
+            //else
+            //{
+            //    //set lang variable to new lang value
+            //    lang = Request.QueryString["lang"].ToString();
+            //    //set the new lang pass via parameter
+            //    Thread.CurrentThread.CurrentUICulture = new CultureInfo((lang == "") ? "en" : lang);
+            //    Thread.CurrentThread.CurrentCulture = Thread.CurrentThread.CurrentUICulture;
+            //}
 
             if (lang == "en")
             {                

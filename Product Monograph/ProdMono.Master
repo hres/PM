@@ -93,7 +93,7 @@
             <!--#include file="/distro/4.0.19/header-en.aspx"-->
          </header> 
     </asp:ContentPlaceHolder>
-    <asp:ContentPlaceHolder ID="headFr" runat="server" Visible="false">
+    <asp:ContentPlaceHolder ID="headFr" runat="server" >
         <header role="banner"> 
             <!--#include file="/distro/4.0.19/header-fr.aspx"-->
          </header> 
@@ -139,7 +139,7 @@
     <asp:ContentPlaceHolder ID="footEn" runat="server">
         <!--#include file="/distro/4.0.19/footer-en.aspx"-->
     </asp:ContentPlaceHolder>
-    <asp:ContentPlaceHolder ID="footFr" runat="server" Visible="false">
+    <asp:ContentPlaceHolder ID="footFr" runat="server" >
         <!--#include file="/distro/4.0.19/footer-fr.aspx"-->
     </asp:ContentPlaceHolder>
 
