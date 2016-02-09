@@ -20,10 +20,11 @@ namespace Product_Monograph
 {
     public partial class ProdMono : System.Web.UI.MasterPage
     {
-        public string lang = "";
+        //public string lang = "";
         protected void Page_Load(object sender, EventArgs e)
         {
             lblError.InnerText = "";
+            var lang = "fr";
            // headEn.Visible = false;
            // headFr.Visible = false;
            // footEn.Visible = false;
@@ -47,31 +48,40 @@ namespace Product_Monograph
                 }
             }
 
-            
-            if (Request.QueryString["lang"] == null)
+            if (lang == "en")
             {
-                CultureInfo current = Thread.CurrentThread.CurrentUICulture;
-                lang = current.TwoLetterISOLanguageName;
-                Session["lang"] = lang;
+                Thread.CurrentThread.CurrentCulture = CultureInfo.CreateSpecificCulture("en-CA");
+                Thread.CurrentThread.CurrentUICulture = CultureInfo.CreateSpecificCulture("en-CA");
             }
             else
             {
-                //set lang variable to new lang value
-                lang = Request.QueryString["lang"].ToString();
-                //set the new lang pass via parameter
-                Thread.CurrentThread.CurrentUICulture = new CultureInfo((lang == "") ? "en" : lang);
-                Thread.CurrentThread.CurrentCulture = Thread.CurrentThread.CurrentUICulture;
-                Session["lang"] = lang;
+                Thread.CurrentThread.CurrentCulture = CultureInfo.CreateSpecificCulture("fr-CA");
+                Thread.CurrentThread.CurrentUICulture = CultureInfo.CreateSpecificCulture("fr-CA");
             }
+            //if (Request.QueryString["lang"] == null)
+            //{
+            //    CultureInfo current = Thread.CurrentThread.CurrentUICulture;
+            //    lang = current.TwoLetterISOLanguageName;
+            //    Session["lang"] = lang;
+            //}
+            //else
+            //{
+            //    //set lang variable to new lang value
+            //    lang = Request.QueryString["lang"].ToString();
+            //    //set the new lang pass via parameter
+            //    Thread.CurrentThread.CurrentUICulture = new CultureInfo((lang == "") ? "en" : lang);
+            //    Thread.CurrentThread.CurrentCulture = Thread.CurrentThread.CurrentUICulture;
+            //    Session["lang"] = lang;
+            //}
 
-            // CultureInfo current = Thread.CurrentThread.CurrentUICulture;
+            //// CultureInfo current = Thread.CurrentThread.CurrentUICulture;
             currentLang.Text = string.Format("this is sesson lang : {0}, lang :{1}", Session["lang"], lang);
-            if (lang == "en")
+           if (lang == "en")
             {                
                 headEn.Visible = true;
                 footEn.Visible = true;
             }
-            else if(lang == "fr")
+            else
             {
                 headFr.Visible = true;
                 footFr.Visible = true;
