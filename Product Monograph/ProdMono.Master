@@ -89,12 +89,12 @@
     <asp:ContentPlaceHolder ID="head" runat="server">
     </asp:ContentPlaceHolder>
     <asp:ContentPlaceHolder ID="headEn" runat="server" >
-        <header role="banner"> 
+        <header role="banner" runat="server" ID="headerEn"> 
             <!--#include file="/distro/4.0.19/header-en.aspx"-->
          </header> 
     </asp:ContentPlaceHolder>
     <asp:ContentPlaceHolder ID="headFr" runat="server" >
-        <header role="banner"> 
+        <header role="banner" runat="server" ID="headerFr"> 
             <!--#include file="/distro/4.0.19/header-fr.aspx"-->
          </header> 
     </asp:ContentPlaceHolder>

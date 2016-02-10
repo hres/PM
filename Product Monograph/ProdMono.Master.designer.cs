@@ -40,6 +40,15 @@ namespace Product_Monograph {
         protected global::System.Web.UI.WebControls.ContentPlaceHolder headEn;
         
         /// <summary>
+        /// headerEn control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.HtmlControls.HtmlGenericControl headerEn;
+        
+        /// <summary>
         /// headFr control.
         /// </summary>
         /// <remarks>
@@ -47,6 +56,15 @@ namespace Product_Monograph {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.ContentPlaceHolder headFr;
+        
+        /// <summary>
+        /// headerFr control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.HtmlControls.HtmlGenericControl headerFr;
         
         /// <summary>
         /// lblTitleForm control.

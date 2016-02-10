@@ -38,6 +38,7 @@ namespace Product_Monograph
                     ddlTemplate.Disabled = true;
                     ddlTemplate.Value = Session["TemplateVersion"].ToString();
                     btnLoadTemplate.Visible = false;
+                    
                 }
 
                 //only for landing page
@@ -52,18 +53,23 @@ namespace Product_Monograph
             }
             if (Thread.CurrentThread.CurrentCulture.TwoLetterISOLanguageName == "en")
             {
-                headEn.Visible = true;
-                footEn.Visible = true;
-                headFr.Visible = false;
-                footFr.Visible = false;
+                headerFr.Visible = true;
+                headerEn.Visible = false;
             }
-            if (Thread.CurrentThread.CurrentCulture.TwoLetterISOLanguageName == "fr")
-            {
-                headEn.Visible = false;
-                footEn.Visible = false;
-                headFr.Visible = true;
-                footFr.Visible = true;
-            }
+            //if (Thread.CurrentThread.CurrentCulture.TwoLetterISOLanguageName == "en")
+            //{
+            //    headEn.Visible = true;
+            //    footEn.Visible = true;
+            //    headFr.Visible = false;
+            //    footFr.Visible = false;
+            //}
+            //if (Thread.CurrentThread.CurrentCulture.TwoLetterISOLanguageName == "fr")
+            //{
+            //    headEn.Visible = false;
+            //    footEn.Visible = false;
+            //    headFr.Visible = true;
+            //    footFr.Visible = true;
+            //}
             //if (lang == "en")
             //{
             //    Thread.CurrentThread.CurrentCulture = CultureInfo.CreateSpecificCulture("en-CA");
