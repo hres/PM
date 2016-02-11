@@ -1,4 +1,6 @@
 ﻿using System;
+using System.Globalization;
+using System.Threading;
 using System.Web.UI;
 using System.Web.UI.WebControls;
 using System.Xml;
@@ -6,38 +8,18 @@ namespace Product_Monograph
 {
     public partial class ProdMono : System.Web.UI.MasterPage
     {
-       
+
         //public string lang = "";
         protected void Page_Load(object sender, EventArgs e)
         {
-
             lblError.InnerText = "";
 
-            if (!Page.IsPostBack)
-            {
-                //all pages
-                if (Session["TemplateVersion"] != null)
-                {
-                    lblSelectTemplate.Visible = false;
-                    ddlTemplate.Disabled = true;
-                    ddlTemplate.Value = Session["TemplateVersion"].ToString();
-                    btnLoadTemplate.Visible = false;
-
-                }
-
-                //only for landing page
-                if (Request.Url.ToString().ToLower().Contains("pmform"))
-                {
-
-                    ddlTemplate.Disabled = false;
-                    btnLoadTemplate.Visible = true;
-                }
-            }
             lblTitleForm.Text = Resources.Resource.TitleForm;
         }
         protected void RequestLanguageChange_Click(object sender, EventArgs e)
         {
-            try { 
+            try
+            {
                 LinkButton senderLink = sender as LinkButton;
 
                 //store requested language as new culture in the session
@@ -46,12 +28,20 @@ namespace Product_Monograph
                 if (Session["SelectedLanguage"].ToString().Contains("en"))
                 {
                     Session["masterpage"] = "ProdMono.master";
+                    //set the new lang pass via parameter
+                    Thread.CurrentThread.CurrentUICulture = new CultureInfo("en-CA");
+                    Thread.CurrentThread.CurrentCulture = new CultureInfo("en-CA");
+
+
                 }
                 else
                 {
                     Session["masterpage"] = "ProdMonoFr.master";
+                    Thread.CurrentThread.CurrentUICulture = new CultureInfo("fr-CA");
+                    Thread.CurrentThread.CurrentCulture = new CultureInfo("fr-CA");
+
                 }
-                
+
             }
             catch (Exception ex)
             {
@@ -67,35 +57,9 @@ namespace Product_Monograph
             Server.Transfer(Request.Path);
 
         }
-        protected void btnLoadTemplate_Click(object sender, EventArgs e)
-        {
-            if (ddlTemplate.Value == "Select")
-            {
-                lblError.InnerText = "Please select a template";
-                return;
-            }
 
-            Session["TemplateVersion"] = ddlTemplate.Value;
-
-            XmlDocument doc = new XmlDocument();
-            XmlNode docNode = doc.CreateXmlDeclaration("1.0", "UTF-8", null);
-            doc.AppendChild(docNode);
-
-            XmlNode rootnode = doc.CreateElement("ProductMonographTemplate");
-            doc.AppendChild(rootnode);
-
-            XmlNode xnode = doc.CreateElement("TemplateVersion");
-            xnode.AppendChild(doc.CreateTextNode(Session["TemplateVersion"].ToString()));
-            rootnode.AppendChild(xnode);
-
-            //helpers.Processes.XMLDraft = doc;
-            Session["draft"] = doc;
-
-            Response.Redirect("Coverpage.aspx");
-        }
     }
 }
-
 // <nav role="navigation" id="wb-sm-hc-prodmono" class="wb-menu visible-md visible-lg" data-trgt="mb-pnl">
 //            <div class="container nvbar">
 //                <div class="row">

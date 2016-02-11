@@ -25,25 +25,7 @@ namespace Product_Monograph
         {
 
             lblError.InnerText = "";
-            if (!Page.IsPostBack)
-            {
-                //all pages
-                if (Session["TemplateVersion"] != null)
-                {
-                    lblSelectTemplate.Visible = false;
-                    ddlTemplate.Disabled = true;
-                    ddlTemplate.Value = Session["TemplateVersion"].ToString();
-                    btnLoadTemplate.Visible = false;
-
-                }
-
-                //only for landing page
-                if (Request.Url.ToString().ToLower().Contains("pmform"))
-                {
-                    ddlTemplate.Disabled = false;
-                    btnLoadTemplate.Visible = true;
-                }
-            }
+            
             lblTitleForm.Text = Resources.Resource.TitleForm;
         }
         protected void RequestLanguageChange_Click(object sender, EventArgs e)
@@ -106,32 +88,7 @@ namespace Product_Monograph
             Server.Transfer(Request.Path);
         }
 
-        protected void btnLoadTemplate_Click(object sender, EventArgs e)
-        {
-            if (ddlTemplate.Value == "Select")
-            {
-                lblError.InnerText = "Please select a template";
-                return;
-            }
-
-            Session["TemplateVersion"] = ddlTemplate.Value;
-
-            XmlDocument doc = new XmlDocument();
-            XmlNode docNode = doc.CreateXmlDeclaration("1.0", "UTF-8", null);
-            doc.AppendChild(docNode);
-
-            XmlNode rootnode = doc.CreateElement("ProductMonographTemplate");
-            doc.AppendChild(rootnode);
-
-            XmlNode xnode = doc.CreateElement("TemplateVersion");
-            xnode.AppendChild(doc.CreateTextNode(Session["TemplateVersion"].ToString()));
-            rootnode.AppendChild(xnode);
-
-            //helpers.Processes.XMLDraft = doc;
-            Session["draft"] = doc;
-
-            Response.Redirect("Coverpage.aspx");
-        }
+       
     }
 }
 

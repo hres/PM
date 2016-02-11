@@ -16,7 +16,8 @@
 
 <!-- Web Experience Toolkit (WET) / Boite a  outils de l'experience Web (BOEW)
 	 wet-boew.github.io/wet-boew/License-en.html / wet-boew.github.io/wet-boew/Licence-fr.html -->
-<!-- TITLE BEGINS | DEBUT DU TITRE -->	
+<!-- TITLE BEGINS | DEBUT DU TITRE -->
+    <title>Formulaire de la monographie de produit - Registre des médicaments et des produits de santé</title>	
 <!-- TITLE ENDS | FIN DU TITRE -->
 <!-- METADATA BEGINS | DEBUT DES METADONNEES -->
 <!-- #include file="/distro/4.0.19/metaData.aspx"-->
@@ -146,46 +147,21 @@
 <!-- Main Content Page -->    
 <main role="main" property="mainContentOfPage" class="container">
     <h1 property="name" id="wb-cont"><asp:Label runat="server" ID="lblTitleForm" ></asp:Label></h1>
-    <form id="form1"  runat="server">
-       <div class="form-group mrgn-tp-lg">       
-           <div class="col-sm-2">
-               <asp:Label ID="lblSelectTemplate" runat="server" CssClass="control-label">Select a template:</asp:Label> 
-           </div>
-           <div class="col-sm-3">
-               <select id="ddlTemplate" runat="server" class="form-control">
-                  <option value="Select">Template</option>
-                  <option value="2014 Standard" disabled="disabled">2014 Standard</option>
-                  <option value="2014 NOCC" disabled="disabled">2014 NOCC</option>
-                  <option value="2014 Subsequent Entry Product" disabled="disabled">2014 Subsequent Entry Product</option>
-                  <option value="2014 Schedule C" disabled="disabled">2014 Schedule C</option>
-                  <option value="2014 Schedule D" disabled="disabled">2014 Schedule D</option>
-                  <option value="2004 Standard" selected="selected">2004 Standard</option>
-                  <option value="2004 NOCC" disabled="disabled">2004 NOCC</option>
-                  <option value="2004 Subsequent Entry Product" disabled="disabled">2004 Subsequent Entry Product</option>
-                  <option value="2004 Schedule C" disabled="disabled">2004 Schedule C</option>
-                  <option value="2004 Schedule D" disabled="disabled">2004 Schedule D</option>
-               </select>
-           </div>  
-           <div class="col-sm-7">
-              <asp:Button ID="btnLoadTemplate" runat="server" CssClass="btn btn-default" Text="Load template" OnClick="btnLoadTemplate_Click"/> 
-           </div>   
-                                                                                                                 
-           <div class="col-lg-12">
-               <label id="lblError" runat="server" style="color:red;"></label>
-           </div>
+    <div class="col-lg-12">
+        <label id="lblError" runat="server" style="color:red;"></label>
     </div>
+     <form id="form1"  runat="server">
+    
         <section id="wb-lng" class="visible-md visible-lg text-right">
 	      <h2 class="wb-inv">Sélection de la langue</h2>
 	      <div class="row">
 	        <div class="col-md-12">
-	          <ul class="list-inline margin-bottom-none">
-	            <li>           		
+	                  		
                      <asp:LinkButton ID="btnSetEnglish" runat="server" Text="English" 
                        CommandArgument="en-CA" OnClick="RequestLanguageChange_Click">
                     </asp:LinkButton>	
                     				
-				</li>
-	          </ul>
+				
 	        </div>
 	      </div>
 	</section>    
