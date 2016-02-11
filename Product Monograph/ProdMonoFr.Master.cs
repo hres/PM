@@ -28,7 +28,7 @@ namespace Product_Monograph
             
             lblTitleForm.Text = Resources.Resource.TitleForm;
         }
-        protected void RequestLanguageChange_Click(object sender, EventArgs e)
+        public void RequestLanguageChange(object sender, EventArgs e)
         {
             try { 
                 LinkButton senderLink = sender as LinkButton;

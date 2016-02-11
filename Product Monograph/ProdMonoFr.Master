@@ -158,7 +158,7 @@
 	        <div class="col-md-12">
 	                  		
                      <asp:LinkButton ID="btnSetEnglish" runat="server" Text="English" 
-                       CommandArgument="en-CA" OnClick="RequestLanguageChange_Click">
+                       CommandArgument="en-CA" OnClick="RequestLanguageChange">
                     </asp:LinkButton>	
                     				
 				
