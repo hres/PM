@@ -979,6 +979,7 @@
     <Compile Include="Coverpage.aspx.designer.cs">
       <DependentUpon>Coverpage.aspx</DependentUpon>
     </Compile>
+    <Compile Include="ExceptionHelper.cs" />
     <Compile Include="helpers\Processes.cs" />
     <Compile Include="PartOne.aspx.cs">
       <DependentUpon>PartOne.aspx</DependentUpon>
@@ -1075,7 +1076,9 @@
       <SubType>Designer</SubType>
     </Content>
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <Folder Include="logs\" />
+  </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
     <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>

@@ -48,18 +48,59 @@ namespace Product_Monograph
         }
         protected void RequestLanguageChange_Click(object sender, EventArgs e)
         {
-            LinkButton senderLink = sender as LinkButton;
+            try { 
+                LinkButton senderLink = sender as LinkButton;
 
-            //store requested language as new culture in the session
-            Session["SelectedLanguage"] = senderLink.CommandArgument;
+                //store requested language as new culture in the session
+                Session["SelectedLanguage"] = senderLink.CommandArgument;
 
-            if (Session["SelectedLanguage"].ToString().Contains("en"))
-            {
-                Session["masterpage"] = "ProdMono.master";
+                if (Session["SelectedLanguage"].ToString().Contains("en"))
+                {
+                    Session["masterpage"] = "ProdMono.master";
+                }
+                else
+                {
+                    Session["masterpage"] = "ProdMonoFr.master";
+                }
+                
             }
-            else
+            catch (Exception ex)
             {
-                Session["masterpage"] = "ProdMonoFr.master";
+                var errorMessages = string.Format("ProdMono.Master.cs - Error Message:{0}", ex.Message);
+                ExceptionHelper.LogException(ex, errorMessages);
+            }
+            finally
+            {
+                //reload last requested page with new culture
+                Server.Transfer(Request.Path);
+            }
+            //reload last requested page with new culture
+            Server.Transfer(Request.Path); try
+            {
+                LinkButton senderLink = sender as LinkButton;
+
+                //store requested language as new culture in the session
+                Session["SelectedLanguage"] = senderLink.CommandArgument;
+
+                if (Session["SelectedLanguage"].ToString().Contains("en"))
+                {
+                    Session["masterpage"] = "ProdMono.master";
+                }
+                else
+                {
+                    Session["masterpage"] = "ProdMonoFr.master";
+                }
+
+            }
+            catch (Exception ex)
+            {
+                var errorMessages = string.Format("ProdMonoFr.Master.cs - Error Message:{0}", ex.Message);
+                ExceptionHelper.LogException(ex, errorMessages);
+            }
+            finally
+            {
+                //reload last requested page with new culture
+                Server.Transfer(Request.Path);
             }
             //reload last requested page with new culture
             Server.Transfer(Request.Path);
