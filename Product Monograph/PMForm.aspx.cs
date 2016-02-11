@@ -1,26 +1,24 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
 using System.Web;
-using System.Web.UI;
-using System.Web.UI.WebControls;
-using System.Data;
 using System.IO;
-using System.Xml.Serialization;
 using System.Xml;
-using System.Drawing;
-using System.ComponentModel;
 using System.Text;
-using System.Net;
-using System.Xml.Linq;
 using System.Threading;
 using System.Globalization;
 
+
 namespace Product_Monograph
 {
-    public partial class PMForm2 : System.Web.UI.Page
+    public partial class PMForm : BasePage
     {
-        
+        void Page_PreInit(Object sender, EventArgs e)
+        {
+            if (Session["masterpage"] != null)
+            {
+                this.MasterPageFile = (String)Session["masterpage"];
+            }
+        }
+
         protected void Page_Load(object sender, EventArgs e)
         {
 

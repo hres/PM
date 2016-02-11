@@ -128,6 +128,8 @@
       <SubType>Designer</SubType>
     </Content>
     <Content Include="Coverpage.aspx" />
+    <Content Include="distro\4.0.19\ajax\sitemenu-en.html" />
+    <Content Include="distro\4.0.19\ajax\sitemenu-fr.html" />
     <Content Include="distro\4.0.19\assets\backdrop.png" />
     <Content Include="distro\4.0.19\assets\cloud-popup-relative.png" />
     <Content Include="distro\4.0.19\assets\favicon-mobile.png" />
@@ -967,6 +969,9 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>Resource.fr.resx</DependentUpon>
     </Compile>
+    <Compile Include="BasePage.cs">
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
     <Compile Include="Coverpage.aspx.cs">
       <DependentUpon>Coverpage.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -1010,6 +1015,13 @@
     <Compile Include="PMForm.aspx.designer.cs">
       <DependentUpon>PMForm.aspx</DependentUpon>
     </Compile>
+    <Compile Include="ProdMonoFr.Master.cs">
+      <DependentUpon>ProdMonoFr.Master</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ProdMonoFr.Master.designer.cs">
+      <DependentUpon>ProdMonoFr.Master</DependentUpon>
+    </Compile>
     <Compile Include="ProdMono.Master.cs">
       <DependentUpon>ProdMono.Master</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -1042,6 +1054,7 @@
     <Content Include="distro\4.0.19\js\polyfills\svg.min.js.map" />
     <Content Include="distro\4.0.19\js\wet-boew.min.js.map" />
     <Content Include="distro\4.0.19\timeout.jsp" />
+    <Content Include="ProdMonoFr.Master" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
@@ -1059,6 +1072,7 @@
     <Content Include="App_GlobalResources\Resource.fr.resx">
       <Generator>GlobalResourceProxyGenerator</Generator>
       <LastGenOutput>Resource.fr.designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
     </Content>
   </ItemGroup>
   <ItemGroup />

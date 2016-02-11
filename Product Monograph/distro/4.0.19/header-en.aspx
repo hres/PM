@@ -6,7 +6,9 @@
 	          <ul class="list-inline margin-bottom-none">
 	            <li>
             		<a lang="fr" href="PMForm.aspx?lang=fr">Français</a>
-                   
+                   <asp:LinkButton ID="btnSetFrench" runat="server" Text="French" 
+                       CommandArgument="fr-CA" OnClick="RequestLanguageChange_Click">
+                    </asp:LinkButton>
                     		
 				</li>
 	          </ul>

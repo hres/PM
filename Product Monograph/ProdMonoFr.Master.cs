@@ -1,18 +1,30 @@
 ﻿using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
+using System.Data;
+using System.IO;
+using System.Xml.Serialization;
 using System.Xml;
+using System.Drawing;
+using System.ComponentModel;
+using System.Text;
+using System.Net;
+using System.Xml.Linq;
+using System.Configuration;
+using System.Threading;
+using System.Globalization;
 namespace Product_Monograph
 {
-    public partial class ProdMono : System.Web.UI.MasterPage
+    public partial class ProdMonoFr : System.Web.UI.MasterPage
     {
-       
-        //public string lang = "";
+
         protected void Page_Load(object sender, EventArgs e)
         {
 
             lblError.InnerText = "";
-
             if (!Page.IsPostBack)
             {
                 //all pages
@@ -28,7 +40,6 @@ namespace Product_Monograph
                 //only for landing page
                 if (Request.Url.ToString().ToLower().Contains("pmform"))
                 {
-
                     ddlTemplate.Disabled = false;
                     btnLoadTemplate.Visible = true;
                 }
@@ -53,6 +64,7 @@ namespace Product_Monograph
             //reload last requested page with new culture
             Server.Transfer(Request.Path);
         }
+
         protected void btnLoadTemplate_Click(object sender, EventArgs e)
         {
             if (ddlTemplate.Value == "Select")

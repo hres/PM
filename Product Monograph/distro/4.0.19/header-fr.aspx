@@ -5,7 +5,11 @@
 	        <div class="col-md-12">
 	          <ul class="list-inline margin-bottom-none">
 	            <li>
-            		<a lang="en" href="PMForm.aspx?lang=en">English</a>					
+            		<a lang="en" href="PMForm.aspx?lang=en">English</a>
+                     <asp:LinkButton ID="btnSetEnglish" runat="server" Text="English" 
+                       CommandArgument="en-CA" OnClick="RequestLanguageChange_Click">
+                    </asp:LinkButton>	
+                    				
 				</li>
 	          </ul>
 	        </div>

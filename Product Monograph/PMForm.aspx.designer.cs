@@ -10,7 +10,7 @@
 namespace Product_Monograph {
     
     
-    public partial class PMForm2 {
+    public partial class PMForm {
         
         /// <summary>
         /// lblTitleFormInstructions control.
