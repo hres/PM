@@ -191,7 +191,7 @@
 	        <div class="col-md-12">
 	          <ul class="list-inline margin-bottom-none">
 	            <li>
-                   <asp:LinkButton ID="btnSetFrench" runat="server" Text="French" 
+                   <asp:LinkButton ID="btnSetFrench" runat="server" Text="French1" 
                        CommandArgument="fr-CA" OnClick="RequestLanguageChange_Click">
                     </asp:LinkButton>                    		
 				</li>
