@@ -1,9 +1,8 @@
 ﻿using System;
 using System.Globalization;
 using System.Threading;
-using System.Web.UI;
 using System.Web.UI.WebControls;
-using System.Xml;
+
 namespace Product_Monograph
 {
     public partial class ProdMono : System.Web.UI.MasterPage
@@ -39,7 +38,6 @@ namespace Product_Monograph
                     Session["masterpage"] = "ProdMonoFr.master";
                     Thread.CurrentThread.CurrentUICulture = new CultureInfo("fr-CA");
                     Thread.CurrentThread.CurrentCulture = new CultureInfo("fr-CA");
-
                 }
 
             }
