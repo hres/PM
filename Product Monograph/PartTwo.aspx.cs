@@ -1,21 +1,14 @@
 ﻿using System;
-using System.Collections.Generic;
 using System.Linq;
 using System.Web;
-using System.Web.UI;
 using System.Web.UI.WebControls;
-using System.Data;
 using System.IO;
-using System.Xml.Serialization;
 using System.Xml;
-using System.Drawing;
-using System.ComponentModel;
 using System.Text;
-using System.Net;
-using System.Xml.Linq;
-using System.Configuration;
 using System.Collections;
 using System.IO.Compression;
+using System.Xml.Linq;
+using System.Web.UI;
 
 namespace Product_Monograph
 {
@@ -341,7 +334,7 @@ namespace Product_Monograph
                 #endregion
             }
 
-            ScriptManager.RegisterStartupScript(this.Page, this.GetType(), "LoadEventsScript", strscript.ToString(), true);
+            ScriptManager.RegisterStartupScript(Page, this.GetType(), "LoadEventsScript", strscript.ToString(), true);
 
             var xmldata = from item in doc.Elements("ProductMonographTemplate")
                           select new
