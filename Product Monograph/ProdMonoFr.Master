@@ -157,7 +157,7 @@
 	      <div class="row">
 	        <div class="col-md-12">
 	                  		
-                     <asp:LinkButton ID="btnSetEnglish" runat="server" Text="English" AutoPostBack="false" OnClick="RequestLanguageChangeEnglish_Click">
+                     <asp:LinkButton ID="btnSetEnglish" runat="server" Text="English" OnClick="SwitchLanguage_Click">
                     </asp:LinkButton>	
                     				
 				

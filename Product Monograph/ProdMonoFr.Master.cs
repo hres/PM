@@ -13,30 +13,40 @@ namespace Product_Monograph
             lblError.InnerText = "";
             
             lblTitleForm.Text = Resources.Resource.TitleForm;
-           // btnSetEnglish.Attributes.Add("OnClick", "RequestLanguageChange_Click()");
-            btnSetEnglish.Click += new EventHandler(RequestLanguageChangeEnglish_Click);
-            HtmlButton buttonControl = new HtmlButton();
-            buttonControl.ServerClick += new System.EventHandler(RequestLanguageChangeEnglish_Click);
+            btnSetEnglish.Attributes.Add("OnClick", "SwitchLangauge_Click()");
+           // btnSetEnglish.Click += new EventHandler(SwitchLanguage_Click);
+           HtmlButton buttonControl = new HtmlButton();
+           buttonControl.ServerClick += new EventHandler(SwitchLanguage_Click);
         }
 
-        protected void RequestLanguageChangeEnglish_Click(object sender, EventArgs e)
+
+        protected void SwitchLanguage_Click(object sender, EventArgs e)
         {
-            //LinkButton senderLink = sender as LinkButton;
 
-            ////store requested language as new culture in the session
-            Session["SelectedLanguage"] = "en";
-
-            //if (Session["SelectedLanguage"].ToString().Contains("en"))
-            //{
-                Session["masterpage"] = "ProdMono.master";
-            //}
-            //else
-            //{
-            //    Session["masterpage"] = "ProdMonoFr.master";
-            //}
-            //reload last requested page with new culture
+            Session["SelectedLanguage"] = "en-CA";
+            Session["masterpage"] = "ProdMono.master";
             Server.Transfer(Request.Path);
         }
+
+
+        //protected void RequestLanguageChangeEnglish_Click(object sender, EventArgs e)
+        //{
+        //    //LinkButton senderLink = sender as LinkButton;
+
+        //    ////store requested language as new culture in the session
+        //    Session["SelectedLanguage"] = "en";
+
+        //    //if (Session["SelectedLanguage"].ToString().Contains("en"))
+        //    //{
+        //        Session["masterpage"] = "ProdMono.master";
+        //    //}
+        //    //else
+        //    //{
+        //    //    Session["masterpage"] = "ProdMonoFr.master";
+        //    //}
+        //    //reload last requested page with new culture
+        //    Server.Transfer(Request.Path);
+        //}
 
     }
 }
