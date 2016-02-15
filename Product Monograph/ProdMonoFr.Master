@@ -1,4 +1,4 @@
-﻿<%@ Master Language="C#" AutoEventWireup="true" CodeFile="ProdMonoFr.Master.cs" Inherits="Product_Monograph.ProdMonoFr" %>
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="ProdMonoFr.Master.cs" Inherits="Product_Monograph.ProdMonoFr" %>
 <!DOCTYPE html>
 <!--[if lt IE 9]><html class="no-js lt-ie9" lang="fr" dir="ltr"><![endif]-->
 <!--[if gt IE 8]><!-->
