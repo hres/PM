@@ -24,11 +24,11 @@ namespace Product_Monograph
 
             if (Session["SelectedLanguage"].ToString().Contains("en"))
             {
-                Session["masterpage"] = "MasterPage.master";
+                Session["masterpage"] = "ProdMono.master";
             }
             else
             {
-                Session["masterpage"] = "MasterPageFr.master";
+                Session["masterpage"] = "ProdMonoFr.master";
             }
             //reload last requested page with new culture
             Server.Transfer(Request.Path);
