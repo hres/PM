@@ -117,6 +117,12 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
+  <data name="Activity" xml:space="preserve">
+    <value>Activities (Warnings and Precautions, e,g, under Occupational Hazards)</value>
+  </data>
+  <data name="Allergy" xml:space="preserve">
+    <value>Any allergies to this drug or its ingredients or components of the container (Contraindications)</value>
+  </data>
   <data name="Body" xml:space="preserve">
     <value>•	To load a new blank PM template for the creation of XML file, select a template type from the drop menu, and press the "Load template" button.
             •	To load an existing XML file, press the “Choose File” button ("Browse..." in Internet Explorer and Firefox), select the file and press the "Open" button in the file browser. Press the "Load XML" button.
@@ -138,8 +144,119 @@
 •	You can navigate the form using any mobile device (such as a tablet or a smart phone). The information displayed will be adapted for your device.
 •	No download required.</value>
   </data>
-  <data name="MedicationForItem" xml:space="preserve">
-    <value>Medication For Items 0_fr :</value>
+  <data name="Comment1" xml:space="preserve">
+    <value>This is not a complete list of side effects.  For any unexpected effects while taking_fr</value>
+  </data>
+  <data name="Comment2" xml:space="preserve">
+    <value>, contact your doctor or pharmacist._fr</value>
+  </data>
+  <data name="Common" xml:space="preserve">
+    <value>Common_fr</value>
+  </data>
+  <data name="Condition" xml:space="preserve">
+    <value>Current conditions (Contraindications, Warnings and Precautions)</value>
+  </data>
+  <data name="ConsumerInfo" xml:space="preserve">
+    <value>Consumer information_fr</value>
+  </data>
+  <data name="Diseases" xml:space="preserve">
+    <value>Past diseases (Contraindications, Warnings and Precautions)</value>
+  </data>
+  <data name="DosageForm" xml:space="preserve">
+    <value>What dosage forms it comes in:_fr</value>
+  </data>
+  <data name="Interactions" xml:space="preserve">
+    <value>Interactions with this medication_fr</value>
+  </data>
+  <data name="Issues" xml:space="preserve">
+    <value>Reproductive issues (Contraindications, Warnings and Precautions)</value>
+  </data>
+  <data name="LastRevised" xml:space="preserve">
+    <value>Last revised:_fr</value>
+  </data>
+  <data name="Medication" xml:space="preserve">
+    <value>About this medication_fr</value>
+  </data>
+  <data name="MedicationNotUsed" xml:space="preserve">
+    <value>When it should not be used:_fr</value>
+  </data>
+  <data name="MedicationUse" xml:space="preserve">
+    <value>What the medication is used for:_fr</value>
+  </data>
+  <data name="MedIngredient" xml:space="preserve">
+    <value>What the medicinal ingredient is:_fr</value>
+  </data>
+  <data name="MissedDose" xml:space="preserve">
+    <value>Missed dose_fr</value>
+  </data>
+  <data name="MoreInfo" xml:space="preserve">
+    <value>More information:_fr</value>
+  </data>
+  <data name="NonMedicinalIng" xml:space="preserve">
+    <value>What the nonmedicinal ingredients are:_fr</value>
+  </data>
+  <data name="OverDose" xml:space="preserve">
+    <value>Over dose:_fr</value>
+  </data>
+  <data name="PartIII" xml:space="preserve">
+    <value>Part III_fr</value>
+  </data>
+  <data name="PointForm" xml:space="preserve">
+    <value>Point form:_fr</value>
+  </data>
+  <data name="Procedure" xml:space="preserve">
+    <value>Anticipated medical procedures (Warnings and Precautions)</value>
+  </data>
+  <data name="ProperNameMI" xml:space="preserve">
+    <value>Proper Name_fr</value>
+  </data>
+  <data name="ProperUse" xml:space="preserve">
+    <value>Proper use of this medication</value>
+  </data>
+  <data name="Rare" xml:space="preserve">
+    <value>Rare_fr</value>
+  </data>
+  <data name="Reporting" xml:space="preserve">
+    <value>Reporting suspected side effects_fr</value>
+  </data>
+  <data name="SeriousSideEffect" xml:space="preserve">
+    <value>Serious side effects, how often they happen and what to do about them_fr</value>
+  </data>
+  <data name="SeriousWarning" xml:space="preserve">
+    <value>Serious Warnings and Precautions_fr</value>
+  </data>
+  <data name="SideEffect" xml:space="preserve">
+    <value>Side effects and what to do about them:_fr</value>
+  </data>
+  <data name="SideEffectsWhatToDo" xml:space="preserve">
+    <value>Side effects what to do:_fr</value>
+  </data>
+  <data name="Store" xml:space="preserve">
+    <value>How to store it:_fr</value>
+  </data>
+  <data name="SumInteractions" xml:space="preserve">
+    <value>Interactions with this medication_fr</value>
+  </data>
+  <data name="SumMoreInfo" xml:space="preserve">
+    <value>More information_fr</value>
+  </data>
+  <data name="SumProperUse" xml:space="preserve">
+    <value>Proper use of this medication_fr</value>
+  </data>
+  <data name="SumReporting" xml:space="preserve">
+    <value>Reporting suspected side effects_fr</value>
+  </data>
+  <data name="SumSideEffect" xml:space="preserve">
+    <value>Side effects and what to do about them_fr</value>
+  </data>
+  <data name="SumStore" xml:space="preserve">
+    <value>How to store it_fr</value>
+  </data>
+  <data name="SumWarningsPrecautions" xml:space="preserve">
+    <value>Warnings and precautions_fr</value>
+  </data>
+  <data name="Symptom" xml:space="preserve">
+    <value>Symptom_fr</value>
   </data>
   <data name="TechnicalSpecs" xml:space="preserve">
     <value>Spécifications techniques</value>
@@ -150,7 +267,73 @@
   <data name="TitleFormInstructions" xml:space="preserve">
     <value>Instructions pour le formulaire</value>
   </data>
+  <data name="Uncommon" xml:space="preserve">
+    <value>Uncommon_fr</value>
+  </data>
+  <data name="Unkown" xml:space="preserve">
+    <value>Unkown_fr</value>
+  </data>
   <data name="UsingXMLPM" xml:space="preserve">
     <value>Utiliser le formulaire web pour monographie de produit - xml</value>
+  </data>
+  <data name="UsualDose" xml:space="preserve">
+    <value>Usual dose:_fr</value>
+  </data>
+  <data name="VeryRare" xml:space="preserve">
+    <value>Very rare_fr</value>
+  </data>
+  <data name="WhatDoes" xml:space="preserve">
+    <value>What it does:_fr</value>
+  </data>
+  <data name="ClinicalTrials" xml:space="preserve">
+    <value>Clinical trials_fr</value>
+  </data>
+  <data name="DetailedPharma" xml:space="preserve">
+    <value>Detailed Pharmacology:_fr</value>
+  </data>
+  <data name="Microbiology" xml:space="preserve">
+    <value>Microbiology_fr</value>
+  </data>
+  <data name="PartII" xml:space="preserve">
+    <value>Part II:  Scientific information_fr</value>
+  </data>
+  <data name="References" xml:space="preserve">
+    <value>References:_fr</value>
+  </data>
+  <data name="SumCT" xml:space="preserve">
+    <value>Clinical Trials_fr</value>
+  </data>
+  <data name="SumMicrobiology" xml:space="preserve">
+    <value>Microbiology_fr</value>
+  </data>
+  <data name="SumPharmacology" xml:space="preserve">
+    <value>Detailed Pharmacology_fr</value>
+  </data>
+  <data name="SumPharmInfo" xml:space="preserve">
+    <value>Pharmaceutical information_fr</value>
+  </data>
+  <data name="SumRef" xml:space="preserve">
+    <value>References_fr</value>
+  </data>
+  <data name="SumToxicology" xml:space="preserve">
+    <value>Toxicology_fr</value>
+  </data>
+  <data name="Toxicology" xml:space="preserve">
+    <value>Toxicology:_fr</value>
+  </data>
+  <data name="Chemicalname" xml:space="preserve">
+    <value>Chemical name_fr</value>
+  </data>
+  <data name="Molecularformula" xml:space="preserve">
+    <value>Molecular formula_fr</value>
+  </data>
+  <data name="Molecularmass" xml:space="preserve">
+    <value>Molecular mass_fr</value>
+  </data>
+  <data name="Physicochemicalproperties" xml:space="preserve">
+    <value>Physicochemical properties_fr</value>
+  </data>
+  <data name="Structuralformula" xml:space="preserve">
+    <value>Structural formula_fr</value>
   </data>
 </root>
