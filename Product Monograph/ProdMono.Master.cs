@@ -14,47 +14,28 @@ namespace Product_Monograph
             lblError.InnerText = "";
 
             lblTitleForm.Text = Resources.Resource.TitleForm;
+            btnSetFrench.Attributes.Add("OnClick", "RequestLanguageChange_Click()");
+
         }
-        public void RequestLanguageChange(object sender, EventArgs e)
+        protected void RequestLanguageChange_Click(object sender, EventArgs e)
         {
-            try
+            LinkButton senderLink = sender as LinkButton;
+
+            //store requested language as new culture in the session
+            Session["SelectedLanguage"] = senderLink.CommandArgument;
+
+            if (Session["SelectedLanguage"].ToString().Contains("en"))
             {
-                LinkButton senderLink = sender as LinkButton;
-
-                //store requested language as new culture in the session
-                Session["SelectedLanguage"] = senderLink.CommandArgument;
-
-                if (Session["SelectedLanguage"].ToString().Contains("en"))
-                {
-                    Session["masterpage"] = "ProdMono.master";
-                    //set the new lang pass via parameter
-                    Thread.CurrentThread.CurrentUICulture = new CultureInfo("en-CA");
-                    Thread.CurrentThread.CurrentCulture = new CultureInfo("en-CA");
-
-
-                }
-                else
-                {
-                    Session["masterpage"] = "ProdMonoFr.master";
-                    Thread.CurrentThread.CurrentUICulture = new CultureInfo("fr-CA");
-                    Thread.CurrentThread.CurrentCulture = new CultureInfo("fr-CA");
-                }
-
+                Session["masterpage"] = "MasterPage.master";
             }
-            catch (Exception ex)
+            else
             {
-                var errorMessages = string.Format("ProdMono.Master.cs - Error Message:{0}", ex.Message);
-                ExceptionHelper.LogException(ex, errorMessages);
-            }
-            finally
-            {
-                //reload last requested page with new culture
-                Server.Transfer(Request.Path);
+                Session["masterpage"] = "MasterPageFr.master";
             }
             //reload last requested page with new culture
             Server.Transfer(Request.Path);
-
         }
+
 
     }
 }
