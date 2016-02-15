@@ -14,12 +14,12 @@ namespace Product_Monograph
             
             lblTitleForm.Text = Resources.Resource.TitleForm;
            // btnSetEnglish.Attributes.Add("OnClick", "RequestLanguageChange_Click()");
-            btnSetEnglish.Click += new EventHandler(RequestLanguageChangeFrench_Click);
+            btnSetEnglish.Click += new EventHandler(RequestLanguageChangeEnglish_Click);
             HtmlButton buttonControl = new HtmlButton();
-            buttonControl.ServerClick += new System.EventHandler(RequestLanguageChangeFrench_Click);
+            buttonControl.ServerClick += new System.EventHandler(RequestLanguageChangeEnglish_Click);
         }
 
-        protected void RequestLanguageChangeFrench_Click(object sender, EventArgs e)
+        protected void RequestLanguageChangeEnglish_Click(object sender, EventArgs e)
         {
             LinkButton senderLink = sender as LinkButton;
 

@@ -167,7 +167,7 @@
                     
                      
                 <asp:LinkButton ID="btnSetFrench" runat="server" Text="French" AutoPostBack="true"
-                       CommandArgument="fr-CA" OnClick="RequestLanguageChange_Click">
+                       CommandArgument="fr-CA" OnClick="RequestLanguageChangeFrench_Click">
                     </asp:LinkButton>                    		
 	        </div>
 	      </div>
