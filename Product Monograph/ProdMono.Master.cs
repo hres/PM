@@ -23,19 +23,19 @@ namespace Product_Monograph
         }
         protected void RequestLanguageChangeFrench_Click(object sender, EventArgs e) 
         {
-            LinkButton senderLink = sender as LinkButton;
+            //LinkButton senderLink = sender as LinkButton;
 
-            //store requested language as new culture in the session
-            Session["SelectedLanguage"] = senderLink.CommandArgument;
+            ////store requested language as new culture in the session
+            Session["SelectedLanguage"] = "fr";
 
-            if (Session["SelectedLanguage"].ToString().Contains("en"))
-            {
-                Session["masterpage"] = "ProdMono.master";
-            }
-            else
-            {
+            //if (Session["SelectedLanguage"].ToString().Contains("en"))
+            //{
+            //    Session["masterpage"] = "ProdMono.master";
+            //}
+            //else
+            //{
                 Session["masterpage"] = "ProdMonoFr.master";
-            }
+            //}
             //reload last requested page with new culture
             Server.Transfer(Request.Path);
         }

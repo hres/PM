@@ -166,8 +166,7 @@
 	            <a lang="en" href="PMForm.aspx?lang=fr">French</a>
                     
                      
-                <asp:LinkButton ID="btnSetFrench" runat="server" Text="French" AutoPostBack="false"
-                       CommandArgument="fr-CA" OnClick="RequestLanguageChangeFrench_Click">
+                <asp:LinkButton ID="btnSetFrench" runat="server" Text="French" AutoPostBack="false" OnClick="RequestLanguageChangeFrench_Click">
                     </asp:LinkButton>                    		
 	        </div>
 	      </div>
