@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Web.UI.HtmlControls;
 using System.Web.UI.WebControls;
 
 namespace Product_Monograph
@@ -12,8 +13,10 @@ namespace Product_Monograph
             lblError.InnerText = "";
             
             lblTitleForm.Text = Resources.Resource.TitleForm;
-            btnSetEnglish.Attributes.Add("OnClick", "RequestLanguageChange_Click()");
-            btnSetEnglish.Click += new EventHandler(RequestLanguageChange_Click);
+           // btnSetEnglish.Attributes.Add("OnClick", "RequestLanguageChange_Click()");
+           // btnSetEnglish.Click += new EventHandler(RequestLanguageChange_Click);
+            HtmlButton buttonControl = new HtmlButton();
+            buttonControl.ServerClick += new System.EventHandler(RequestLanguageChange_Click);
         }
 
         protected void RequestLanguageChange_Click(object sender, EventArgs e)
