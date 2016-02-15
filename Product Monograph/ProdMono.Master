@@ -162,7 +162,11 @@
 	      <h2 class="wb-inv">Language selection</h2>
 	      <div class="row">
 	        <div class="col-md-12">
-	               <asp:LinkButton ID="btnSetFrench" runat="server" Text="French" 
+	            <div class="col-md-12">
+	            <a lang="en" href="PMForm.aspx?lang=fr">French</a>
+                    
+                     
+                <asp:LinkButton ID="btnSetFrench" runat="server" Text="French" 
                        CommandArgument="fr-CA" OnClick="RequestLanguageChange_Click">
                     </asp:LinkButton>                    		
 	        </div>

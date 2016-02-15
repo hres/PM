@@ -13,6 +13,7 @@ namespace Product_Monograph
             
             lblTitleForm.Text = Resources.Resource.TitleForm;
             btnSetEnglish.Attributes.Add("OnClick", "RequestLanguageChange_Click()");
+            btnSetEnglish.Click += new EventHandler(RequestLanguageChange_Click);
         }
 
         protected void RequestLanguageChange_Click(object sender, EventArgs e)
