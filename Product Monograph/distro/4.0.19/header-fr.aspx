@@ -5,9 +5,7 @@
 	        <div class="col-md-12">
 	          <ul class="list-inline margin-bottom-none">
 	            <li>
-            		<a lang="en" href="PMForm.aspx?lang=en">English</a>
-                    
-                    				
+                     <a href="#" runat="server" onserverclick="SwitchLanguageEnglish_Click">English</a>
 				</li>
 	          </ul>
 	        </div>

@@ -8,23 +8,15 @@ namespace Product_Monograph
 
         protected void Page_Load(object sender, EventArgs e)
         {
-
             lblError.InnerText = "";
-            
             lblTitleForm.Text = Resources.Resource.TitleForm;
-            //btnSetEnglish.Attributes.Add("OnClick", "SwitchLangauge_Click()");
-           // btnSetEnglish.Click += new EventHandler(SwitchLanguage_Click);
-           //HtmlButton buttonControl = new HtmlButton();
-         // btnSetEnglish.Click += new System.EventHandler(SwitchLanguage_Click);
-           // btnSetEnglish.PostBackUrl = Request.RawUrl;
         }
 
 
-        protected void SwitchLanguage_Click(object sender, EventArgs e)
+        protected void SwitchLanguageEnglish_Click(object sender, EventArgs e)
         {
-
             Session["SelectedLanguage"] = "en-CA";
-            Session["masterpage"] = "ProdMono.master";
+            Session["masterpage"] = "ProdMono.Master";
             Server.Transfer(Request.Path);
         }
 

@@ -5,8 +5,8 @@
 	        <div class="col-md-12">
 	          <ul class="list-inline margin-bottom-none">
 	            <li>
-            		<a lang="fr" href="PMForm.aspx?lang=fr">Français</a>
-  			</li>
+                    <a href="#" runat="server" onserverclick="SwitchLanguageFrench_Click">Français</a>
+  			    </li>
 	          </ul>
 	        </div>
 	      </div>

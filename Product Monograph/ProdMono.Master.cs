@@ -8,50 +8,18 @@ namespace Product_Monograph
 {
     public partial class ProdMono : System.Web.UI.MasterPage
     {
-
-        //public string lang = "";
         protected void Page_Load(object sender, EventArgs e)
         {
-            lblError.InnerText = "";
-
-            lblTitleForm.Text = Resources.Resource.TitleForm;
-           //  btnSetFrench.Attributes.Add("OnClick", "SwitchLanguage_Click()");
-           // HtmlButton buttonControl = new HtmlButton();
-           // btnSetFrench.Click += new System.EventHandler(SwitchLanguage_Click);
-            // btnSetFrench.Server += new EventHandler(SwitchLanguage_Click);
-           // btnSetFrench.PostBackUrl = Request.RawUrl;
-
+           lblError.InnerText = "";
+           lblTitleForm.Text = Resources.Resource.TitleForm;
         }
 
-        protected void SwitchLanguage_Click(object sender, EventArgs e)
+        protected void SwitchLanguageFrench_Click(object sender, EventArgs e)
         {
-
             Session["SelectedLanguage"] = "fr-CA";
-            Session["masterpage"] = "ProdMonoFr.master";
+            Session["masterpage"] = "ProdMonoFr.Master";
             Server.Transfer(Request.Path);
         }
-
-
-        //protected void RequestLanguageChangeFrench_Click(object sender, EventArgs e) 
-        //{
-        //    //LinkButton senderLink = sender as LinkButton;
-
-        //    ////store requested language as new culture in the session
-        //    Session["SelectedLanguage"] = "fr";
-
-        //    //if (Session["SelectedLanguage"].ToString().Contains("en"))
-        //    //{
-        //    //    Session["masterpage"] = "ProdMono.master";
-        //    //}
-        //    //else
-        //    //{
-        //        Session["masterpage"] = "ProdMonoFr.master";
-        //    //}
-        //    //reload last requested page with new culture
-        //    Server.Transfer(Request.Path);
-        //}
-
-
     }
 }
 // <nav role="navigation" id="wb-sm-hc-prodmono" class="wb-menu visible-md visible-lg" data-trgt="mb-pnl">
