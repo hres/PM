@@ -339,4 +339,7 @@
   <data name="BioStudy" xml:space="preserve">
     <value>Comparative Bioavailability Studies</value>
   </data>
+  <data name="Parameter" xml:space="preserve">
+    <value>Parameter</value>
+  </data>
 </root>

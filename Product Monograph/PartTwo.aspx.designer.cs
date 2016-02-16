@@ -184,6 +184,24 @@ namespace Product_Monograph {
         protected global::System.Web.UI.WebControls.Label lblBioStudy;
         
         /// <summary>
+        /// lblParameter control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label lblParameter;
+        
+        /// <summary>
+        /// l control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label l;
+        
+        /// <summary>
         /// lblSumPharmacology control.
         /// </summary>
         /// <remarks>

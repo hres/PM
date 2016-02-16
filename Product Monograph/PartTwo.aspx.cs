@@ -52,6 +52,7 @@ namespace Product_Monograph
             lblPhysicochemicalproperties.Text = Resources.Resource.Physicochemicalproperties;
             lblStructuraform.Text = Resources.Resource.Structuralformula;
             lblBioStudy.Text = Resources.Resource.BioStudy;
+            lblParameter.Text = Resources.Resource.Parameter;
         }
 
         private void LoadFromXML()

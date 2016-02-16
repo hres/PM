@@ -327,6 +327,15 @@ namespace Resources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Parameter.
+        /// </summary>
+        internal static string Parameter {
+            get {
+                return ResourceManager.GetString("Parameter", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Part II:  Scientific information.
         /// </summary>
         internal static string PartII {

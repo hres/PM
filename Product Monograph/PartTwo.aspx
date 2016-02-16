@@ -736,9 +736,10 @@
             <div class="panel-body">
                 <div class="row">
                     <div class="col-xs-2 text-right">
-                        Parameter
+                        <asp:Label ID="lblParameter" runat="server"></asp:Label>
                     </div>
                     <div class="col-xs-2 brdr-lft">
+                        <asp:Label ID="l" runat="server"></asp:Label>
                         Test*
                     </div>
                     <div class="col-xs-2 brdr-lft">
