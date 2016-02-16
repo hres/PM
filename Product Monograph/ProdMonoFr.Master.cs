@@ -1,6 +1,5 @@
 ﻿using System;
 using System.Web.UI.HtmlControls;
-using System.Web.UI.WebControls;
 
 namespace Product_Monograph
 {
@@ -15,8 +14,8 @@ namespace Product_Monograph
             lblTitleForm.Text = Resources.Resource.TitleForm;
             btnSetEnglish.Attributes.Add("OnClick", "SwitchLangauge_Click()");
            // btnSetEnglish.Click += new EventHandler(SwitchLanguage_Click);
-           HtmlButton buttonControl = new HtmlButton();
-           buttonControl.ServerClick += new EventHandler(SwitchLanguage_Click);
+           //HtmlButton buttonControl = new HtmlButton();
+          btnSetEnglish.Click += new System.EventHandler(SwitchLanguage_Click);
         }
 
 

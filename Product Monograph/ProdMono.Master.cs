@@ -16,8 +16,8 @@ namespace Product_Monograph
 
             lblTitleForm.Text = Resources.Resource.TitleForm;
              btnSetFrench.Attributes.Add("OnClick", "SwitchLanguage_Click()");
-            HtmlButton buttonControl = new HtmlButton();
-            buttonControl.ServerClick += new System.EventHandler(SwitchLanguage_Click);
+           // HtmlButton buttonControl = new HtmlButton();
+            btnSetFrench.Click += new System.EventHandler(SwitchLanguage_Click);
             // btnSetFrench.Server += new EventHandler(SwitchLanguage_Click);
 
         }
