@@ -336,4 +336,7 @@
   <data name="Structuralformula" xml:space="preserve">
     <value>Structural formula</value>
   </data>
+  <data name="BioStudy" xml:space="preserve">
+    <value>Comparative Bioavailability Studies</value>
+  </data>
 </root>
