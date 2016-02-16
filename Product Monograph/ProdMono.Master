@@ -170,6 +170,7 @@
                     </asp:LinkButton>                    		
 	        </div>
 	      </div>
+             </div>
 	</section>
            <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server">
            </asp:ContentPlaceHolder>
