@@ -15,15 +15,15 @@ namespace Product_Monograph
             lblError.InnerText = "";
 
             lblTitleForm.Text = Resources.Resource.TitleForm;
-             btnSetFrench.Attributes.Add("OnClick", "SwitchLanguage_Click()");
+           //  btnSetFrench.Attributes.Add("OnClick", "SwitchLanguage_Click()");
            // HtmlButton buttonControl = new HtmlButton();
-            btnSetFrench.Click += new System.EventHandler(SwitchLanguage_Click);
+           // btnSetFrench.Click += new System.EventHandler(SwitchLanguage_Click);
             // btnSetFrench.Server += new EventHandler(SwitchLanguage_Click);
-            btnSetFrench.PostBackUrl = Request.RawUrl;
+           // btnSetFrench.PostBackUrl = Request.RawUrl;
 
         }
 
-        public void SwitchLanguage_Click(object sender, EventArgs e)
+        protected void SwitchLanguage_Click(object sender, EventArgs e)
         {
 
             Session["SelectedLanguage"] = "fr-CA";
