@@ -199,7 +199,7 @@
     <value>Over dose:_fr</value>
   </data>
   <data name="PartIII" xml:space="preserve">
-    <value>Part III_fr</value>
+    <value>Partie III</value>
   </data>
   <data name="PointForm" xml:space="preserve">
     <value>Point form:_fr</value>
@@ -258,9 +258,6 @@
   <data name="Symptom" xml:space="preserve">
     <value>Symptom_fr</value>
   </data>
-  <data name="PartIII" xml:space="preserve">
-    <value>Partie III</value>
-  </data>
   <data name="TechnicalSpecs" xml:space="preserve">
     <value>Spécifications techniques</value>
   </data>
@@ -277,7 +274,7 @@
     <value>Unkown_fr</value>
   </data>
   <data name="UsingXMLPM" xml:space="preserve">
-    <value>Utiliser le formulaire web pour monographie de produit - xml</value>
+    <value>Utiliser le formulaire web pour monographie de produit - xml -1</value>
   </data>
   <data name="UsualDose" xml:space="preserve">
     <value>Usual dose:_fr</value>
