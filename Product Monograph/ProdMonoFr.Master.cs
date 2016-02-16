@@ -20,7 +20,7 @@ namespace Product_Monograph
         }
 
 
-        protected void SwitchLanguage_Click(object sender, EventArgs e)
+        public void SwitchLanguage_Click(object sender, EventArgs e)
         {
 
             Session["SelectedLanguage"] = "en-CA";
