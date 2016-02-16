@@ -93,7 +93,7 @@ namespace Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Part III.
+        ///   Looks up a localized string similar to Part III - test.
         /// </summary>
         internal static string PartIII {
             get {
