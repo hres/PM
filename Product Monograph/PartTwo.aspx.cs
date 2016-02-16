@@ -33,6 +33,25 @@ namespace Product_Monograph
                     lblError.Text = "Please load a new template or a previously saved draft.";
                 }
             }
+
+            lblPartII.Text = Resources.Resource.PartII;
+            lblSumPharmInfo.Text = Resources.Resource.SumPharmInfo;
+            lblSumCT.Text = Resources.Resource.SumCT;
+            lblSumPharmacology.Text = Resources.Resource.SumPharmacology;
+            lblSumMicrobiology.Text = Resources.Resource.SumMicrobiology;
+            lblSumToxicology.Text = Resources.Resource.SumToxicology;
+            lblSumRef.Text = Resources.Resource.SumRef;
+            lblRef.Text = Resources.Resource.References;
+            lblToxicology.Text = Resources.Resource.Toxicology;
+            lblMicrobiology.Text = Resources.Resource.Microbiology;
+            lblDetailedPharma.Text = Resources.Resource.DetailedPharma;
+            lblClinicalTrials.Text = Resources.Resource.ClinicalTrials;
+            lblChemicalname.Text = Resources.Resource.Chemicalname;
+            lblMolecularformula.Text = Resources.Resource.Molecularformula;
+            lblMolecularmass.Text = Resources.Resource.Molecularmass;
+            lblPhysicochemicalproperties.Text = Resources.Resource.Physicochemicalproperties;
+            lblStructuraform.Text = Resources.Resource.Structuralformula;
+            lblBioStudy.Text = Resources.Resource.BioStudy;
         }
 
         private void LoadFromXML()

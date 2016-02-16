@@ -44,11 +44,52 @@ namespace Product_Monograph
             //set the new lang pass via parameter
             Thread.CurrentThread.CurrentUICulture = new CultureInfo((lang == "") ? "en-CA" : lang);
             Thread.CurrentThread.CurrentCulture = Thread.CurrentThread.CurrentUICulture;
-            
-            lblMedicationForItem.Text = Resources.Resource.MedicationForItem;
-
-            
-
+                                  
+            Label5.Text = Resources.Resource.ConsumerInfo;
+            lblPartIII.Text = Resources.Resource.PartIII;
+            lblSumAbout.Text = Resources.Resource.Medication;
+            lblWHAT.Text = Resources.Resource.MedicationUse;
+            lblPointForm.Text = Resources.Resource.PointForm;
+            lblWHAT_IT_DOES.Text = Resources.Resource.WhatDoes;
+            lblWHEN_IT_SHOULD.Text = Resources.Resource.MedicationNotUsed;
+            lblWHAT_THE_MEDICINAL.Text = Resources.Resource.MedIngredient;
+            lblProperNameMI.Text = Resources.Resource.ProperNameMI;
+            lblWHAT_THE_NONMEDICINAL.Text = Resources.Resource.NonMedicinalIng;
+            lblWHAT_DOSAGE.Text = Resources.Resource.DosageForm;
+            lblSumWarningsPrecautions.Text = Resources.Resource.SumWarningsPrecautions;
+            lblSeriousWarnings.Text = Resources.Resource.SeriousWarning;
+            lblSumInteractions.Text = Resources.Resource.SumInteractions;
+            lblInteractions.Text = Resources.Resource.Interactions;
+            lblSumProperUse.Text = Resources.Resource.SumProperUse;
+            lblUsualDose.Text = Resources.Resource.UsualDose;
+            lblOverdose.Text = Resources.Resource.OverDose;
+            lblMissedDose.Text= Resources.Resource.MissedDose;
+            lblSumSideEffect.Text= Resources.Resource.SumSideEffect;
+            lblSideEffect.Text = Resources.Resource.SideEffect;
+            lblSERIOUS.Text = Resources.Resource.SeriousSideEffect;
+            LblSymptom.Text = Resources.Resource.Symptom;
+            lblCommon.Text = Resources.Resource.Common;
+            lblUncommon.Text = Resources.Resource.Uncommon;
+            lblRare.Text = Resources.Resource.Rare;
+            lblVeryRare.Text = Resources.Resource.VeryRare;
+            lblUnkown.Text = Resources.Resource.Unkown;
+            lblSumStore.Text = Resources.Resource.SumStore;
+            lblHowToStore.Text = Resources.Resource.Store;
+            lblSumReporting.Text = Resources.Resource.SumReporting;
+            lblSumMoreInfo.Text = Resources.Resource.SumMoreInfo;
+            lblMoreInfo.Text = Resources.Resource.MoreInfo;
+            lblLastRevised.Text = Resources.Resource.LastRevised;
+            lblProperUse.Text = Resources.Resource.ProperUse;
+            lblReporting.Text = Resources.Resource.Reporting;
+            lblSideEffectsWhatToDo.Text = Resources.Resource.SideEffectsWhatToDo;
+            lblComment1.Text = Resources.Resource.Comment1;
+            lblComment2.Text = Resources.Resource.Comment2;
+            lblActivity.Text = Resources.Resource.Activity;
+            lblCondition.Text = Resources.Resource.Condition;
+            lblDiseases.Text = Resources.Resource.Diseases;
+            lblIssues.Text = Resources.Resource.Issues;
+            lblProcedure.Text = Resources.Resource.Procedure;
+            lblAllergy.Text = Resources.Resource.Allergy;
         }
 
         private void SaveProcess()
