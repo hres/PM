@@ -9,3 +9,8 @@ C:\Development\HC\Product Monograph\Product Monograph\bin\HtmlAgilityPack.xml
 C:\Development\HC\Product Monograph\Product Monograph\obj\Debug\Product Monograph.dll
 C:\Development\HC\Product Monograph\Product Monograph\obj\Debug\Product Monograph.pdb
 C:\Development\HC\Product Monograph\Product Monograph\obj\Debug\Product Monograph.csprojResolveAssemblyReference.cache
+C:\Users\hcuser\Source\Repos\pmp\Product Monograph\bin\Product Monograph.dll.config
+C:\Users\hcuser\Source\Repos\pmp\Product Monograph\bin\Product Monograph.dll
+C:\Users\hcuser\Source\Repos\pmp\Product Monograph\bin\Product Monograph.pdb
+C:\Users\hcuser\Source\Repos\pmp\Product Monograph\obj\Debug\Product Monograph.dll
+C:\Users\hcuser\Source\Repos\pmp\Product Monograph\obj\Debug\Product Monograph.pdb
