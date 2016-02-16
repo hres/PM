@@ -16,6 +16,7 @@ namespace Product_Monograph
            // btnSetEnglish.Click += new EventHandler(SwitchLanguage_Click);
            //HtmlButton buttonControl = new HtmlButton();
           btnSetEnglish.Click += new System.EventHandler(SwitchLanguage_Click);
+            btnSetEnglish.PostBackUrl = Request.RawUrl;
         }
 
 
