@@ -897,7 +897,6 @@
     </Compile>
     <Compile Include="PMForm.aspx.cs">
       <DependentUpon>PMForm.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
     </Compile>
     <Compile Include="PMForm.aspx.designer.cs">
       <DependentUpon>PMForm.aspx</DependentUpon>

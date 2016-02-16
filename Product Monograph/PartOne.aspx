@@ -1,7 +1,7 @@
 ﻿<%@ Page Title="" Language="C#" MasterPageFile="~/ProdMono.Master" AutoEventWireup="true" CodeBehind="PartOne.aspx.cs" Inherits="Product_Monograph.PartOne" ValidateRequest="false" %>
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
-<script type="text/javascript">   
-    
+<!--Health Canada- PMP--> 
+<script type="text/javascript">
     $(document).ready(function () {
         $("#tooltipINDICATIONS").attr('title', 'Brief discussion of any relevant clinical information - if applicable\nDistribution restrictions - if applicable\nWhen the product is not recommended - if applicable');
         $("#tooltipCONTRAINDICATIONS").attr('title', 'Patients who are hypersensitive to this drug or to any ingredient in the formulation or component of the container. For a complete listing, see the Dosage Forms, Composition and Packaging section of the product monograph. [if applicable]');
@@ -203,15 +203,17 @@
                "<div style='width:23.5%; float:left;'><textarea id='" + sd + "' name='tbStrengthDynamic'></textarea></div>" +
                "<div style='width:23.5%; float:left;'><textarea id='" + crn + "' name='tbClinicallyRelevantNonmedicinalIngredientsDynamic'></textarea></div>" +
                "<div style='width:5%; float:left; padding-left:2px;'>" +
-                    '<img style="cursor:pointer !important;" src="images/btnRemove.png" onclick="RemoveRouteOfAdminTextBox(' + id + ')" width="58" height="40" />' +
-               "</div>";
+              //      '<img style="cursor:pointer !important;" src="images/btnRemove.png" onclick="RemoveRouteOfAdminTextBox(' + id + ')" width="58" height="40" />' +
+                '<input class="btn btn-default btn-xs" onclick="RemoveRouteOfAdminTextBox(' + id + ')" type="button" value="Remove" />' +
+            "</div>";
     }
 
     function GetAddContraindicationsTextBoxDynamicTextBox(id) {
         var con = "tbContraindicationsDynamic" + id.toString();
         return "<div style='width:94%; float:left;'><textarea id='" + con + "' name='tbContraindicationsDynamic'></textarea></div>" +
                "<div style='width:5%; float:left;'>" +
-                    '<img style="cursor:pointer !important;" src="images/btnRemove.png" onclick="RemoveContraindicationsTextBox(' + id + ')" width="58" height="40" />' +
+               '<input class="btn btn-default btn-xs" onclick="RemoveContraindicationsTextBox(' + id + ')" type="button" value="Remove" />' +
+                   // '<img style="cursor:pointer !important;" src="images/btnRemove.png" onclick="RemoveContraindicationsTextBox(' + id + ')" width="58" height="40" />' +
                "</div>";
     }
 
@@ -276,8 +278,9 @@
                         "</div>" +
 
                         '<div style="width:5%; float:left;">' +
-                            '<div style="float:left;">' +
-                                '<img style="cursor:pointer !important;" src="images/btnAdd.png" onclick="AddPharmacokineticsInnerTextBox(' + id + ')" width="58" height="40" />' +
+                           '<div style="float:left;">' +
+                             '<input class="btn btn-default btn-xs" id="AddPharmacokineticsInnerTextBox(' + id + ')" onclick="AddPharmacokineticsInnerTextBox(' + id + ')" type="button" value="Add" />' +
+                              //  '<img style="cursor:pointer !important;" src="images/btnAdd.png" onclick="AddPharmacokineticsInnerTextBox(' + id + ')" width="58" height="40" />' +
                             '</div>' +
                         '</div>' +
                     '</div>' +                   
@@ -289,7 +292,8 @@
                     '</div>' +
                 '</div>' +
                 '<div style="width:5%; float:left; margin-top:10px;">' +
-                    '<img style="cursor:pointer !important;" src="images/btnRemove.png"  onclick="RemovePharmacokineticsOuterSection(' + id + ')" width="58" height="40" />' +
+                 '<input class="btn btn-default btn-xs" onclick="RemovePharmacokineticsOuterSection(' + id + ')" type="button" value="Remove" />' +
+                  //  '<img style="cursor:pointer !important;" src="images/btnRemove.png"  onclick="RemovePharmacokineticsOuterSection(' + id + ')" width="58" height="40" />' +
                 '</div>';
 
     }
@@ -348,12 +352,14 @@
                 '<div style="width:5%; float:left; padding-top:6px;">' +
                     '<div style="height:70px; width:70px;">' +
                         '<div style="float:left;">' +
-                            '<img style="cursor:pointer !important;" src="images/btnRemove.png" onclick="RemovePharmacokineticsInnerTextBox(' + innerid + ')" width="58" height="40" />' +
+                         '<input class="btn btn-default tbtn-xs" onclick="RemovePharmacokineticsInnerTextBox(' + innerid + ')" type="button" value="Remove"/>' +
+                          // '<img style="cursor:pointer !important;" src="images/btnRemove.png" onclick="RemovePharmacokineticsInnerTextBox(' + innerid + ')" width="58" height="40" />' +
                         '</div>' +
                     '</div>' +
                     '<div style="height:70px; width:70px; display:none;">' +
                         '<div style="float:left;">' +
-                            '<img style="cursor:pointer !important;" src="images/plus_icon.png" onclick="AddPharmacokineticsColumn()" width="50" height="50" />' +
+                        '<input class="btn btn-default btn-xs" onclick="AddPharmacokineticsColumn()" type="button" value="Remove" />' +
+                           // '<img style="cursor:pointer !important;" src="images/plus_icon.png" onclick="AddPharmacokineticsColumn()" width="50" height="50" />' +
                         '</div>' +
                     '</div>' +
                 '</div>';
@@ -504,7 +510,8 @@
 
                         '<div style="width:5%; float:left;">' +
                             '<div style="float:left;">' +
-                                '<img style="cursor:pointer !important;" src="images/btnAdd.png" onclick="AddDrugInteractionsInnerTextBox(' + id + ')" width="58" height="40" />' +
+                            '<input class="btn btn-default btn-xs" onclick="AddDrugInteractionsInnerTextBox(' + id + ')" type="button" value="Add"/>' +
+                              //  '<img style="cursor:pointer !important;" src="images/btnAdd.png" onclick="AddDrugInteractionsInnerTextBox(' + id + ')" width="58" height="40" />' +
                             '</div>' +
                         '</div>' +
                     '</div>' +
@@ -516,7 +523,8 @@
                     '</div>' +
                 '</div>' +
                 '<div style="width:5%; float:left; margin-top:10px;">' +
-                    '<img style="cursor:pointer !important;" src="images/btnRemove.png"  onclick="RemoveDrugInteractionsOuterSection(' + id + ')" width="58" height="40" />' +
+                 '<input class="btn btn-default btn-xs" onclick="RemoveDrugInteractionsOuterSection(' + id + ')" type="button" value="Remove" />' +
+                   // '<img style="cursor:pointer !important;" src="images/btnRemove.png"  onclick="RemoveDrugInteractionsOuterSection(' + id + ')" width="58" height="40" />' +
                 '</div>';
 
     }
@@ -576,7 +584,8 @@
                 '<div style="width:5%; float:left; padding-top:6px;">' +
                     '<div style="height:70px; width:70px;">' +
                         '<div style="float:left;">' +
-                            '<img style="cursor:pointer !important;" src="images/btnRemove.png" onclick="RemoveDrugInteractionsInnerTextBox(' + innerid + ')" width="58" height="40" />' +
+                        '<input class="btn btn-default btn-xs" onclick="RemoveDrugInteractionsInnerTextBox(' + innerid + ')" type="button" value="Remove"/>' +
+                           // '<img style="cursor:pointer !important;" src="images/btnRemove.png" onclick="RemoveDrugInteractionsInnerTextBox(' + innerid + ')" width="58" height="40" />' +
                         '</div>' +
                     '</div>' +
                 '</div>';
@@ -640,7 +649,8 @@
 
                         '<div style="width:5%; float:left;">' +
                             '<div style="float:left;">' +
-                                '<img style="cursor:pointer !important;" src="images/btnAdd.png" onclick="AddAdverseReactionsInnerTextBox(' + id + ')" width="58" height="40" />' +
+                            '<input class="btn btn-default btn-xs" onclick="AddAdverseReactionsInnerTextBox(' + id + ')" ty[pe="button" value="Add" />' +
+                                //'<img style="cursor:pointer !important;" src="images/btnAdd.png" onclick="AddAdverseReactionsInnerTextBox(' + id + ')" width="58" height="40" />' +
                             '</div>' +
                         '</div>' +
                     '</div>' +
@@ -688,7 +698,8 @@
                     '</div>' +
                 '</div>' +
                 '<div style="width:5%; float:left; margin-top:10px;">' +
-                    '<img style="cursor:pointer !important;" src="images/btnRemove.png"  onclick="RemoveAdverseReactionsOuterSection(' + id + ')" width="58" height="40" />' +
+                '<input class="btn btn-default btn-xs" onclick="RemoveAdverseReactionsOuterSection(' + id + ')" type="button" value="Remove"/>' +
+                  //  '<img style="cursor:pointer !important;" src="images/btnRemove.png"  onclick="RemoveAdverseReactionsOuterSection(' + id + ')" width="58" height="40" />' +
                 '</div>';
             
     }
@@ -756,7 +767,8 @@
                 '<div style="width:5%; float:left; padding-top:6px;">' +
                     '<div style="height:70px; width:70px;">' +
                         '<div style="float:left;">' +
-                            '<img style="cursor:pointer !important;" src="images/btnRemove.png" onclick="RemoveAdverseReactionsInnerTextBox(' + innerid + ')" width="58" height="40" />' +
+                        '<input class="btn btn-default btn-xs" onclick="RemoveAdverseReactionsInnerTextBox(' + innerid + ')" type="button" value="Remove"/>' +
+                           // '<img style="cursor:pointer !important;" src="images/btnRemove.png" onclick="RemoveAdverseReactionsInnerTextBox(' + innerid + ')" width="58" height="40" />' +
                         '</div>' +
                     '</div>' +
                 '</div>';
@@ -926,7 +938,8 @@
         var swp = "tbSeriousWarningsPrecautions" + id.toString();
         return "<div style='width:94%; float:left;'><textarea id='" + swp + "' name='tbSeriousWarningsPrecautions'></textarea></div>" +
                "<div style='width:5%; float:left;'>" +
-                    '<img style="cursor:pointer !important;" src="images/btnRemove.png" onclick="RemoveSeriousWarningsPrecautionsTextBox(' + id + ')" width="58" height="40" />' +
+              '<input class="btn btn-defaule btn-xs"  onclick="RemoveSeriousWarningsPrecautionsTextBox(' + id + ')" type="button" value="Remove" />' +
+                  //  '<img style="cursor:pointer !important;" src="images/btnRemove.png" onclick="RemoveSeriousWarningsPrecautionsTextBox(' + id + ')" width="58" height="40" />' +
                "</div>";
     }
 
@@ -997,7 +1010,8 @@
                      "<textarea id='" + hstb + "' name='tbddHeadingSelections'></textarea>" +
                 "</div>" +
                 "<div style='width:5%; float:left;'>" +
-                    '<img style="cursor:pointer !important;" src="images/btnRemove.png" onclick="RemoveHeadingSelectionTextBox(' + id + ')" width="58" height="40" />' +
+                '<input class="btn btn-default btn-xs"  onclick="RemoveHeadingSelectionTextBox(' + id + ')" id="btnRemoveHeadingSelectionTextBox(' + id + ')" type="button" value="Remove"/>' +
+                  //  '<img style="cursor:pointer !important;" src="images/btnRemove.png" onclick="RemoveHeadingSelectionTextBox(' + id + ')" width="58" height="40" />' +
                "</div>";
     }
 
@@ -1064,7 +1078,8 @@
         var swp = "tbSeriousDrugInteractions" + id.toString();
         return "<div style='width:94%; float:left;'><textarea id='" + swp + "' name='tbSeriousDrugInteractions'></textarea></div>" +
                "<div style='width:5%; float:left;'>" +
-                    '<img style="cursor:pointer !important;" src="images/btnRemove.png" onclick="RemoveSeriousDrugInteractionsTextBox(' + id + ')" width="58" height="40" />' +
+               '<input class="btn btn-default btn-xs" onclick="RemoveSeriousDrugInteractionsTextBox(' + id + ')" type="button" value="Remove"/>' +
+                   // '<img style="cursor:pointer !important;" src="images/btnRemove.png" onclick="RemoveSeriousDrugInteractionsTextBox(' + id + ')" width="58" height="40" />' +
                "</div>";
     }
    
@@ -1096,7 +1111,8 @@
                "<div style='width:21%; float:left;'><textarea id='" + eff + "' name='tbEffect'></textarea></div>" +
                "<div style='width:28%; float:left;'><textarea id='" + clin + "' name='tbClinicalcomment'></textarea></div>" +
                "<div style='width:5%; float:left; padding-left:2px;'>" +
-                    '<img style="cursor:pointer !important;" src="images/btnRemove.png" onclick="RemoveDrugDrugInteractionsTextBox(' + id + ')" width="58" height="40" />' +
+                '<input class="btn btn-default btn-xs" onclick="RemoveDrugDrugInteractionsTextBox(' + id + ')" type="button" value="Remove"/>' +
+                    //'<img style="cursor:pointer !important;" src="images/btnRemove.png" onclick="RemoveDrugDrugInteractionsTextBox(' + id + ')" width="58" height="40" />' +
                "</div>";
     }
 
@@ -1157,7 +1173,8 @@
         var swp = "tbDosingConsiderations" + id.toString();
         return "<div style='width:94%; float:left;'><textarea id='" + swp + "' name='tbDosingConsiderations'></textarea></div>" +
                 "<div style='width:5%; float:left;'>" +
-                    '<img style="cursor:pointer !important;" src="images/btnRemove.png" onclick="RemoveDosingConsiderationsTextBox(' + id + ')" width="58" height="40" />' +
+                '<input class="btn bnt-default btn-xs" onclick="RemoveDosingConsiderationsTextBox(' + id + ')" id="btnRemoveDosingConsiderationsTextBox(' + id + ')" type="button" value="Remove" />' +
+                   // '<img style="cursor:pointer !important;" src="images/btnRemove.png" onclick="RemoveDosingConsiderationsTextBox(' + id + ')" width="58" height="40" />' +
                 "</div>";
     }
 
@@ -1189,7 +1206,8 @@
                "<div style='width:24%; float:left;'><textarea id='" + aa + "' name='tbApproxAvailable'></textarea></div>" +
                "<div style='width:24%; float:left; padding-right:2px;'><textarea id='" + nc + "' name='tbNominalConcentration'></textarea></div>" +
                 "<div style='width:5%; float:left;'>" +
-                    '<img style="cursor:pointer !important;" src="images/btnRemove.png" onclick="RemoveParenteralProductsTextBox(' + id + ')" width="58" height="40" />' +
+                '<input class="btn btn-default btn-xs" onclick="RemoveParenteralProductsTextBox(' + id + ')" type="button" value="Remove"/>' +
+                   // '<img style="cursor:pointer !important;" src="images/btnRemove.png" onclick="RemoveParenteralProductsTextBox(' + id + ')" width="58" height="40" />' +
                 "</div>";
     }
 
@@ -1287,38 +1305,42 @@
 </script>
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
-
-<div style="clear:both; padding-top: 20px;">
+<div class="row">
     <asp:Menu ClientIDMode="Static" ID="submenutabs" runat="server" Orientation="Horizontal" OnMenuItemClick="menutabs_MenuItemClick">
-        <StaticMenuStyle VerticalPadding="10px" />
-        <StaticMenuItemStyle HorizontalPadding="35px" />
+        <StaticMenuStyle VerticalPadding="5px" />
+        <StaticMenuItemStyle HorizontalPadding="25px" />
         <Items>
-            <asp:MenuItem Text="Cover page" Value="Coverpage"></asp:MenuItem>
-            <asp:MenuItem Text="Part I" Value="PartOne"></asp:MenuItem>
-            <asp:MenuItem Text="Part II" Value="PartTwo"></asp:MenuItem>
-            <asp:MenuItem Text="Part III" Value="PartThree"></asp:MenuItem>
+            <asp:MenuItem Text="Cover page" Value="Coverpage" toolTip="Cover page"></asp:MenuItem>
+            <asp:MenuItem Text="Part I" Value="PartOne" toolTip="Part I"></asp:MenuItem>
+            <asp:MenuItem Text="Part II" Value="PartTwo" toolTip="Part II"></asp:MenuItem>
+            <asp:MenuItem Text="Part III" Value="PartThree" toolTip="Part III"></asp:MenuItem>
+            <asp:MenuItem text="Form instruction" value="PMForm" toolTip="Back to the main page of DHPR form with form Instruction"></asp:MenuItem>
         </Items>
     </asp:Menu>
 </div>
 
-<section style="clear:both; text-align:left; padding-left:0px; padding-top: 8px;">  
-    <asp:Button ID="btnSave" runat="server" Text="Save draft" OnClick="btnSave_Click" />
+<div class="row mrgn-tp-md">
+    <asp:Button id="btnSave" class="btn btn-default btn-xs" runat="server" text="Save draft" onClick="btnSave_Click" />
+</div>
+<!-- Main Content For Submenu Item of "Part I" and Use WET Standard -->
+<div class="form-group">
+<section>
+   <h2 id="subTitlePartI" lang="en">Part I</h2>
 </section>
-
 <div style="float:left; padding:10px 10px 10px 10px; clear:both;">
     <asp:Label runat="server" ID="lblError" ClientIDMode="Static" ForeColor="Red"></asp:Label>
 </div>
 
-<section style="width:100%; padding-left:0px; clear:both;">
+<section class="col-sm-9">
     <h4 style="border: 0px !important;"><asp:Label ID="lblProprietaryBrandName" runat="server">PROPRIETARY OR BRAND NAME</asp:Label></h4>
 </section>
 
 <section style="width:100%; padding-left:0px; clear:both;">
-    <h4 style="border: 0px !important;"><asp:Label ID="lblProperName" runat="server">Proper NAME</asp:Label></h4>
+    <h4 style="border: 0px !important;"><asp:Label ID="lblProperName" runat="server">Proper name</asp:Label></h4>
 </section>
 
 <section style="width:100%; padding-left:0px; clear:both;">
-    <h4 style="border: 0px !important;"><asp:Label ID="Label2" runat="server">PART I: HEALTH PROFESSIONAL INFORMATION</asp:Label></h4>
+    <h4 style="border: 0px !important;"><asp:Label ID="Label2" runat="server">Part I: HEALTH PROFESSIONAL INFORMATION</asp:Label></h4>
 </section>
 
     
@@ -1680,20 +1702,21 @@
         </div>
     </details>
 
-    </div>
+</div>
 
-<div style="clear:both; padding-top:20px;">
+<section>
     <asp:Menu ClientIDMode="Static" ID="submenutabsbottom" runat="server" Orientation="Horizontal" OnMenuItemClick="submenutabsbottom_MenuItemClick">
-        <StaticMenuStyle VerticalPadding="10px" />
-        <StaticMenuItemStyle HorizontalPadding="35px" />
+        <StaticMenuStyle VerticalPadding="5px" />
+        <StaticMenuItemStyle HorizontalPadding="25px" />
         <Items>
-            <asp:MenuItem Text="Cover page" Value="Coverpage"></asp:MenuItem>
-            <asp:MenuItem Text="Part I" Value="PartOne"></asp:MenuItem>
-            <asp:MenuItem Text="Part II" Value="PartTwo"></asp:MenuItem>
-            <asp:MenuItem Text="Part III" Value="PartThree"></asp:MenuItem>
+            <asp:MenuItem Text="Cover page" Value="Coverpage" ToolTip="Cover page"></asp:MenuItem>
+            <asp:MenuItem Text="Part I" Value="PartOne" ToolTip="Part I"></asp:MenuItem>
+            <asp:MenuItem Text="Part II" Value="PartTwo" ToolTip="Part II"></asp:MenuItem>
+            <asp:MenuItem Text="Part III" Value="PartThree" ToolTip="Part III"></asp:MenuItem>
+            <asp:MenuItem text="Form instruction" value="PMForm" toolTip="Back to the main page of DHPR form with form Instruction"></asp:MenuItem>
         </Items>
     </asp:Menu>
-</div>
+</section>
 
 <asp:HiddenField runat="server" ID="hdParenteralProducts" ClientIDMode="Static" />
 <asp:HiddenField runat="server" ID="hdPharmacokineticParameters" ClientIDMode="Static" />
@@ -1709,4 +1732,5 @@
 
 <asp:HiddenField runat="server" ID="hdRouteCount" ClientIDMode="Static" />
 <asp:HiddenField runat="server" ID="hdContraCount" ClientIDMode="Static" />
+</div>
 </asp:Content>

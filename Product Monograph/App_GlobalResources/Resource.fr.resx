@@ -258,6 +258,9 @@
   <data name="Symptom" xml:space="preserve">
     <value>Symptom_fr</value>
   </data>
+  <data name="PartIII" xml:space="preserve">
+    <value>Partie III</value>
+  </data>
   <data name="TechnicalSpecs" xml:space="preserve">
     <value>Spécifications techniques</value>
   </data>

@@ -597,6 +597,15 @@ namespace Resources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Part III.
+        /// </summary>
+        internal static string PartIII {
+            get {
+                return ResourceManager.GetString("PartIII", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Technical specifications.
         /// </summary>
         internal static string TechnicalSpecs {

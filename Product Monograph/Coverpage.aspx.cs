@@ -2,21 +2,16 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
-using System.Web.UI;
 using System.Web.UI.WebControls;
-using System.Data;
 using System.IO;
-using System.Xml.Serialization;
 using System.Xml;
 using System.Drawing;
 using System.ComponentModel;
 using System.Text;
-using System.Net;
-using System.Xml.Linq;
-using System.Configuration;
 using System.Collections;
 using System.IO.Compression;
-using System.Text.RegularExpressions;
+using System.Xml.Linq;
+using System.Web.UI;
 
 namespace Product_Monograph
 {
@@ -67,7 +62,7 @@ namespace Product_Monograph
                                          select (string)column
                            };
 
-                bool ran = false;
+              
                 int rowcounter = 1;
 
                 foreach (var row in rows)
@@ -210,8 +205,7 @@ namespace Product_Monograph
         {
             XmlDocument doc = (XmlDocument)Session["draft"]; // helpers.Processes.XMLDraft;
             XmlNode rootnode = doc.SelectSingleNode("ProductMonographTemplate");
-
-            int maxchar = 1600;
+   
 
             #region symbol
             try
@@ -463,11 +457,34 @@ namespace Product_Monograph
         
         protected void btnSaveDraft_Click(object sender, EventArgs e)
         {
+            string strSaveFileName = string.Empty;
+            string strXmlExtension = ".xml";
+            string strZipExtension = ".zip";
             try
             {
+
                 XmlDocument doc = SaveInMemory();
 
                 LoadFromXML();
+
+                //get BrandName AS file name which saved as zip file -- Add code by Ching Chang
+                if (HttpContext.Current.Request.Form.GetValues("tbBrandName") != null)
+                {
+                    foreach (string item in HttpContext.Current.Request.Form.GetValues("tbBrandName"))
+                    {
+                        item.TrimEnd();
+                        if (item.Length > 0)
+                        {
+                            strSaveFileName = item;
+                            if (strSaveFileName.Length > 0)
+                            {
+                                break;
+                            }
+                        }
+                    }
+                }
+                else  //if not find the Brand name in the session, then use default TempfileName "ProductMonograph"
+                    strSaveFileName = "DraftPMForm";
 
                 #region zip
                 byte[] bytes = Encoding.Default.GetBytes(doc.OuterXml);
@@ -478,7 +495,7 @@ namespace Product_Monograph
                     {
                         if (doc != null)
                         {
-                            var zipEntry = zipArchive.CreateEntry("ProductMonograph.xml");
+                            var zipEntry = zipArchive.CreateEntry(strSaveFileName + strXmlExtension);
                             using (var originalFileStream = new MemoryStream(bytes))
                             {
                                 using (var zipEntryStream = zipEntry.Open())
@@ -487,17 +504,6 @@ namespace Product_Monograph
                                 }
                             }
                         }
-                        //if (Session["SymbolToByte"] != null)
-                        //{
-                        //    var zipEntry = zipArchive.CreateEntry(Session["SymbolFileName"].ToString());
-                        //    using (var originalFileStream = new MemoryStream((byte[])Session["SymbolToByte"]))
-                        //    {
-                        //        using (var zipEntryStream = zipEntry.Open())
-                        //        {
-                        //            originalFileStream.CopyTo(zipEntryStream);
-                        //        }
-                        //    }                            
-                        //}
                     }
 
                     var buffer = compressedFileStream.ToArray();
@@ -508,7 +514,7 @@ namespace Product_Monograph
                     {
                         Response.ContentType = "application/zip";
                         Response.BinaryWrite(buffer);
-                        var fileName = "ProductMonograph.zip";
+                        var fileName = strSaveFileName + strZipExtension;
                         Response.AddHeader("content-disposition", string.Format(@"attachment;filename=""{0}""", fileName));
                         Response.Flush();
                         Response.End();
@@ -524,8 +530,9 @@ namespace Product_Monograph
 
         protected void menutabs_MenuItemClick(object sender, MenuEventArgs e)
         {
-            if(SaveInMemory() != null)
-                Response.Redirect(submenutabs.SelectedValue + ".aspx");
+            //if(SaveInMemory() != null)  //ching disable it, because it was not the same code as the project on Feb 3, 2016
+            SaveInMemory();
+            Response.Redirect(submenutabs.SelectedValue + ".aspx");
         }
 
         protected void submenutabsbottom_MenuItemClick(object sender, MenuEventArgs e)

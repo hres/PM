@@ -1,28 +1,21 @@
 ﻿using System;
-using System.Collections.Generic;
 using System.Linq;
 using System.Web;
-using System.Web.UI;
 using System.Web.UI.WebControls;
-using System.Data;
 using System.IO;
-using System.Xml.Serialization;
 using System.Xml;
-using System.Drawing;
-using System.ComponentModel;
 using System.Text;
-using System.Net;
-using System.Xml.Linq;
-using System.Configuration;
 using System.Collections;
 using System.IO.Compression;
+using System.Xml.Linq;
+using System.Web.UI;
 
 namespace Product_Monograph
 {
     public partial class PartOne : System.Web.UI.Page
     {
         string strscript = "";
-
+        string strSaveFileName = "";
         protected void Page_Load(object sender, EventArgs e)
         {
             lblError.Text = "";
@@ -58,7 +51,11 @@ namespace Product_Monograph
                     {
                         if (doc != null)
                         {
-                            var zipEntry = zipArchive.CreateEntry("ProductMonograph.xml");
+                            if(strSaveFileName != "")
+                                  strSaveFileName = strSaveFileName + ".xml";
+                            else
+                                  strSaveFileName = "DraftPMForm" + ".xml";
+                            var zipEntry = zipArchive.CreateEntry(strSaveFileName);
                             using (var originalFileStream = new MemoryStream(bytes))
                             {
                                 using (var zipEntryStream = zipEntry.Open())
@@ -75,9 +72,15 @@ namespace Product_Monograph
                     Response.ClearHeaders();
                     if (buffer.Length > 0)
                     {
+                        if (lblProperName.Text != "")
+                        {
+                            strSaveFileName = lblProperName.Text.TrimEnd() + ".zip";
+                        }   
+                        else
+                            strSaveFileName = "DraftPMForm" + ".zip";
                         Response.ContentType = "application/zip";
                         Response.BinaryWrite(buffer);
-                        var fileName = "ProductMonograph.zip";
+                        var fileName = strSaveFileName;
                         Response.AddHeader("content-disposition", string.Format(@"attachment;filename=""{0}""", fileName));
                         Response.Flush();
                         Response.End();
@@ -1983,6 +1986,7 @@ namespace Product_Monograph
                         {
                             lblProprietaryBrandName.Text = helpers.Processes.CleanString(column);
                             lblBrandName.Text = helpers.Processes.CleanString(column);
+                            strSaveFileName = helpers.Processes.CleanString(column);
                         }
 
                         if (colarray[colcounter].Equals("tbProperName"))
@@ -2010,7 +2014,7 @@ namespace Product_Monograph
                                          select (string)column
                            };
 
-                bool ran = false;
+              
                 int rowcounter = 1;
 
                 foreach (var row in rows)
