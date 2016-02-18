@@ -1,9 +1,9 @@
 ﻿<%@ Page Title="" Language="C#" MasterPageFile="~/ProdMono.Master" AutoEventWireup="true" CodeBehind="Coverpage.aspx.cs" Inherits="Product_Monograph.Coverpage" ValidateRequest="false" %>
 <%@ Register Assembly="AjaxControlToolkit" Namespace="AjaxControlToolkit" TagPrefix="cc1" %>
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
-    <script type="text/javascript">    
-        tinymce.init({
-            //selector: "textarea",
+  <script type="text/javascript">    
+     tinymce.init({
+     //selector: "textarea",
             mode : "specific_textareas",
             editor_selector: "textarea",
             width: '100%',
@@ -30,7 +30,7 @@
                     $(this.contentAreaContainer.parentElement).find("div.mce-toolbar-grp").hide();
                 }),
                 theEditor.on('keyup', function (ed, e) {
-                   //not applicable
+                //not applicable
                 }),
                 theEditor.on('keydown', function (ed, e) {                   
                     var tinymax, tinylen, htmlcount;
@@ -120,19 +120,18 @@
         }
 
         var BrandProperDosageCounter = 0;
-
+        //excluded the cover page
         function RemoveBrandProperDosageTextBox(i) {
             var rowid = "#BrandProperDosage" + i;
             if (counter <= 1) {
                 //  lblError.Text = " ";
-                alert("We could not delete all the rows");
+               alert("We could not delete all the rows");
             }
             else
                $(rowid).remove();
         }
-
+        //excluded the cover page
         function AddBrandProperDosageTextBox() {
-
             BrandProperDosageCounter = BrandProperDosageCounter + 1;
             counter = BrandProperDosageCounter;
 
@@ -145,7 +144,6 @@
             div.setAttributeNode(identity);
             div.innerHTML = GetAddBrandProperDosageTextBoxDynamicTextBox(counter);
             document.getElementById("dvExtraBrandProperDosage").appendChild(div);
-
             //table - start
             $.get('ControlledList.xml', function (xmlcontolledlist) {
                 $(xmlcontolledlist).find('dosageform').each(function () {
@@ -166,12 +164,10 @@
                 });
             });
             //table - end
-
             setup();
         }
-
+        //still keep ?
         function AddBrandProperDosageTextBoxLoadFromXML() {
-
             BrandProperDosageCounter = BrandProperDosageCounter + 1;
             counter = BrandProperDosageCounter;
 
@@ -184,48 +180,10 @@
             div.setAttributeNode(identity);
             div.innerHTML = GetAddBrandProperDosageTextBoxDynamicTextBox(counter);
             document.getElementById("dvExtraBrandProperDosage").appendChild(div);
-
-            ////table - start
-            //$.get('ControlledList.xml', function (xmlcontolledlist) {
-            //    $(xmlcontolledlist).find('dosage').each(function () {
-            //        var $option = $(this).text();
-            //        $('<option>' + $option + '</option>').appendTo('#tbDosage' + counter);
-            //    });
-            //});
-            //$.get('ControlledList.xml', function (xmlcontolledlist) {
-            //    $(xmlcontolledlist).find('unit').each(function () {
-            //        var $option = $(this).text();
-            //        $('<option>' + $option + '</option>').appendTo('#tbUnitofMeasure' + counter);
-            //    });
-            //});
-            ////table - end
-
             setup();
         }
-
+        //still keep ?
         function GetAddBrandProperDosageTextBoxDynamicTextBox(id) {
-    //        <div style="width:18.88%; float:left; border: 1px solid #D9D9D9; height:54px; padding:2px;">
-    //    Brand name
-    //</div>
-    //<div style="width:18.88%; float:left; border: 1px solid #D9D9D9; height:54px; padding:2px;">
-    //    Proper name
-    //</div>
-    //<div style="width:18.88%; float:left; border: 1px solid #D9D9D9; height:54px; padding:2px;">
-    //    Dosage Form
-    //</div>
-    //<div style="width:18.88%; float:left; border: 1px solid #D9D9D9; height:54px; padding:2px;">
-    //    <div style="clear:both; width:100%; padding:2px;">Strength</div>
-    //    <div style="width:50%; float:left; padding:2px;">Value</div>
-    //    <div style="width:50%; float:left; padding:2px;">Unit</div>
-    //</div>
-    //<div style="width:18.88%; float:left; border: 1px solid #D9D9D9; height:54px; padding:2px;">
-    //    <div style="clear:both; width:100%; padding:2px;">Strength per Dosage</div>
-    //    <div style="width:50%; float:left; padding:2px;">Value</div>
-    //    <div style="width:50%; float:left; padding:2px;">Unit</div>
-    //</div>
-    //<div style="width:5%; float:left; padding-left:0px;">  
-    //    <input style="cursor:pointer !important; width:58px; height:40px; font-size:12px;" onclick="AddBrandProperDosageTextBox()" id="btnAddBrandProperDosage"  type="button" value="ADD"/>
-    //</div>  
             var bn = "tbBrandName" + id.toString();
             var pn = "tbProperName" + id.toString();
             var dos = "tbDosage" + id.toString();
@@ -260,59 +218,44 @@
                     '</div>' +  
                     '<div style="width:5%; float:left; padding-left: 0px;">' +
                          '<input class="btn btn-default btn-xs" onclick="RemoveBrandProperDosageTextBox(' + id + ')" id="btnRemoveBrandProperDosageTextBox(' + id + ')" type="button" value="Remove" />' +
-                      //  '<input style="cursor:pointer !important; width:58px; height:40px; font-size:12px; padding-left:2px;" onclick="RemoveBrandProperDosageTextBox(' + id + ')" type="button" value="REMOVE" />' +
-                    '</div>';  
-
-            //"<div style='width:31.6%; float:left;  border-top: 1px solid black; border-left: 1px solid black; border-bottom: 1px solid black;'><textarea id='" + bn + "' name='tbBrandName' style='width:318px; border:0px;'></textarea></div>" +
-            //"<div style='width:31.6%; float:left;  border-top: 1px solid black; border-left: 1px solid black; border-bottom: 1px solid black;'><textarea id='" + pn + "' name='tbProperName' style='width:317px; border:0px;'></textarea></div>" +
-            //"<div style='width:31%; float:left; border-top: 1px solid black; border-left: 1px solid black; border-bottom: 1px solid black;'><textarea id='" + ds + "' name='tbDosageAndStrength' style='width:312px;  border:0px;'></textarea></div>" +
-            //"<div style='width:5%; float:left; padding-left: 0px;'>" +
-            //    //'<img style="cursor:pointer !important;" src="images/minus_icon.png" onclick="RemoveBrandProperDosageTextBox(' + id + ')" width="50" height="50" />' +
-            //    '<input style="cursor:pointer !important; width:58px; height:40px; font-size:12px; padding-left:2px;" onclick="RemoveBrandProperDosageTextBox(' + id + ')" type="button" value="REMOVE" />' +
-            //"</div>";
-
-            
+                    '</div>';    
         }
         //Setup default values on first row of Dosage Form --- created by Ching Chang on Feb 8, 2016
         var countTBL = 0
         function AddBrandProperDosageDefaultRow() {
-
-         //   BrandProperDosageCounter = BrandProperDosageCounter;
-       //     counter = BrandProperDosageCounter;
-
-            countTBL = countTBL + 1;
-            //alert("call AddBrandProperDosageDefaultRow");
-            //first row of table - start
-            $.get('ControlledList.xml', function (xmlcontolledlist) {
-                $(xmlcontolledlist).find('routeofadmin').each(function () {
-                    var $option = $(this).text();
-                    var $val = $(this).attr("value");
-                  
-                    $('<option" value="' + $val + '">' + $option + '</option>').appendTo('#tbDosageIn' + countTBL);
-                  //  alert("DosageDefaultRow counter:" + counter);
-                });
-            });
-
-            //get strength value
-            //$.get('ControlledList.xml', function (xmlcontolledlist) {
-            //    $(xmlcontolledlist).find('value').each(function () {
-            //        var $option = $(this).text();
-            //        $('<option>' + $option + '</option>').appendTo('#tbStrengthValueIn' + counter); //tbUnitofMeasure
-            //        //
-            //        $('<option>' + $option + '</option>').appendTo('#tbStrengthperDosageValueIn' + counter);
-            //    });
-            //});
-
-            //$.get('ControlledList.xml', function (xmlcontolledlist) {
-            //    $(xmlcontolledlist).find('value').each(function () {
-            //        var $option = $(this).text();
-            //        $('<option>' + $option + '</option>').appendTo('#tbStrengthperDosageValueIn' + counter);
-            //    });
-            //});
-
+           //BrandProperDosageCounter = BrandProperDosageCounter;
+           //counter = BrandProperDosageCounter;
+           //countTBL = countTBL + 1;
            
-
-            //setup();
+           //first row of table - start
+           //ching test table default row--work!
+           $.get('ControlledList.xml', function (xmlcontolledlist) {
+              $(xmlcontolledlist).find('dosageform').each(function () {
+                 var $option = $(this).text();
+                 $('<option>' + $option + '</option>').appendTo('#tbDosage');
+              }).done(function () {
+                 $('#tbDosageIn').val("Select");
+              });
+           });
+          //get strength Unit
+          $.get('ControlledList.xml', function (xmlcontolledlist) {
+              $(xmlcontolledlist).find('unit').each(function () {
+                 var $option = $(this).text();
+                 $('<option>' + $option + '</option>').appendTo('#tbStrengthUnit');
+              }).done(function () {
+                 $('#tbStrengthUnitIn').val("Select");
+              });
+          });
+          //get strength per Dosage Unit
+          $.get('ControlledList.xml', function (xmlcontolledlist) {
+             $(xmlcontolledlist).find('unit').each(function () {
+                 var $option = $(this).text();
+                 $('<option>' + $option + '</option>').appendTo('#tbStrengthperDosageUnit');
+             }).done(function () {
+                 $('#tbStrengthperDosageUnitIn').val("Select");
+             });
+         });
+ 
         }
         //end of setup default values on first row
         $(function () {
@@ -327,7 +270,6 @@
         var selectedschedulingsymbol;
 
         $(document).ready(function () {
-
             //reset image on change of dropdown list
             $("#tbSchedulingSymbol").change(function () {
                 $('#imgSymbol').attr("src", "images/x.png");
@@ -345,36 +287,8 @@
                 $('#tbSchedulingSymbol option').each(function () { if ($(this).html() == selectedschedulingsymbol) { $(this).attr('selected', 'selected'); return; } });
             });
 
-            //ching test table default row--work!
-            $.get('ControlledList.xml', function (xmlcontolledlist) {
-                $(xmlcontolledlist).find('dosageform').each(function () {
-                    var $option = $(this).text();
-                    $('<option>' + $option + '</option>').appendTo('#tbDosageIn');
-                }).done(function () {
-                    $('#tbDosageIn').val("Select");
-                 });
-            });
-           
-         
-         
-            //get strength Unit
-            $.get('ControlledList.xml', function (xmlcontolledlist) {
-                $(xmlcontolledlist).find('unit').each(function () {
-                    var $option = $(this).text();
-                    $('<option>' + $option + '</option>').appendTo('#tbStrengthUnitIn');
-                }).done(function () {
-                    $('#tbStrengthUnitIn').val("Select");
-                });
-            });
-            //get strength per Dosage Unit
-            $.get('ControlledList.xml', function (xmlcontolledlist) {
-                $(xmlcontolledlist).find('unit').each(function () {
-                    var $option = $(this).text();
-                    $('<option>' + $option + '</option>').appendTo('#tbStrengthperDosageUnitIn');
-                }).done(function () {
-                    $('#tbStrengthperDosageUnitIn').val("Select");
-                });
-            });
+            //ching created table default row--work!
+            AddBrandProperDosageDefaultRow();
 
         });
 
@@ -475,30 +389,27 @@
            <tr>
                <td style="width: 26px"><input type="checkbox" id="tbChkRemove" /></td>
                <td style="width: 28px"><input type="button" id="tbBtnRemove" class="btn btn-default btn-xs" onclick="deleteRowBtnRow(this)" name="btnDelete" value="X" /></td>   
-               <th headers="thBrandName" style="width: 120px"><input type="text" id="tbBrandnameIn" /></th>
-               <td headers="thProperName" style="width: 120px"><input type="text" id="tbPropernameIn" /></td>
+               <th headers="thBrandName" style="width: 120px"><input type="text" id="tbBrandname" /></th>
+               <td headers="thProperName" style="width: 120px"><input type="text" id="tbPropername" /></td>
                <td headers="thDosageForm" style="width: 121px">
-                    <select id="tbDosageIn" style="width: 120px">
+                    <select id="tbDosage" style="width: 120px">
                     </select></td>                
                <td headers="thStrength" style="width: 158px">
                    <input type="number" id="tbStrengthValue" value="0" style="width: 52px"/>
-                 
-                                    <select id="tbStrengthUnitIn" style="width: 90px">             
-                                    </select>
-                                
+                   <select id="tbStrengthUnit" style="width: 90px">             
+                   </select>            
                </td>
                <td headers="thStrengthPerDosage" style="width: 158px">
                    <input type="number" id="tbStrengthperDosageValue" value="0" style="width: 52px"/>                     
-                                  
-                                    <select id="tbStrengthperDosageUnitIn" style="width: 90px">
-                                    </select>                               
-                    </td>
+                   <select id="tbStrengthperDosageUnit" style="width: 90px">
+                   </select>                               
+               </td>
           </tr>
        </tbody>
    </table> 
 </div>
 </section>
-<section class="margin-top-medium table-response hidden">
+<!--<section class="margin-top-medium table-response hidden">
     <div style="width:18.88%; float:left; border: 1px solid #D9D9D9; height:54px; padding:2px;">
         <label id="lblBrandname" lang="en" class="text-info">Brand name</label>
     </div>
@@ -526,7 +437,7 @@
   <div id="dvExtraBrandProperDosage" style="clear:both;">
 
    </div>   
-</section>
+</section> -->
 <!--End of Brand Table -->
 <section class="margin-top-medium">  
     <div>    
@@ -602,18 +513,20 @@
             var rowCount = table.rows.length;
             var row = table.insertRow(rowCount);
             var colCount = table.rows[1].cells.length;
-
+            var selectCount = 0;
+        
             try {
                 newRowCount = newRowCount + 1;
                 if(newRowCount < 50) {
                     for (var i = 0; i < colCount; i++) {
                         var newcell = row.insertCell(i);
-                        newcell.innerHTML = table.rows[1].cells[i].innerHTML;
-                     //   alert("id: " + newcell.childNodes[0].id);
-                      //  newcell.childNodes[0].id = newcell.childNodes[0].id + newRowCount;
+                        newcell.innerHTML = table.rows[1].cells[i].innerHTML;  
+                        newcell.type = table.rows[1].cells[i].nodeType;
+
                         switch (newcell.childNodes[0].type) {
                             case "text":
                                 newcell.childNodes[0].value = "";
+                                newcell.childNodes[0].id = newcell.childNodes[0].id + newRowCount;  //2 textbox
                                 break;
                             case "checkbox":
                                 newcell.childNodes[0].checked = false;
@@ -623,12 +536,25 @@
                                 break;
                             case "button":
                                 newcell.childNodes[0].clicked = false;
+                                break;                 
+                        }
+                        if (i == 4) 
+                            newcell.childNodes[0].id = "tbDosage" + newRowCount;  //3 select
+                        else if (i == 5)
+                        {
+                            newcell.childNodes[0].id = "tbStrengthValue" + newRowCount;   //first item in fifth column is spinner
+                            newcell.childNodes[1].id = "tbStrengthUnit" + newRowCount;   //second item in fifth column is select    
+                        }   
+                        else if (i == 6)
+                        {   
+                            newcell.childNodes[0].id = "tbStrengthperDosageValue" + newRowCount;   //first item in sixth column is spinner
+                            newcell.childNodes[1].id = "tbStrengthperDosageUnit" + newRowCount;   //second item in sixth column is select
                         }
                     }
                 }              
                 else
                 {
-                    alert("You reach Max row number 50, thanks!");
+                    alert("You reach Max row number 20, thanks!");
                 } 
          
             } catch(e)

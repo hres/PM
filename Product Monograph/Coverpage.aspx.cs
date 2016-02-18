@@ -72,9 +72,9 @@ namespace Product_Monograph
                 int rowcounter = 1;
 
                 foreach (var row in rows)
-                {                   
-                    strscript += "AddBrandProperDosageTextBoxLoadFromXML();";
-
+                {
+                    //strscript += "AddBrandProperDosageTextBoxLoadFromXML();";
+                    strscript += "AddRow('dataTable');";
                     string[] colarray = "tbBrandName;tbProperName;tbDosage;tbStrengthValue;tbStrengthUnit;tbStrengthperDosageValue;tbStrengthperDosageUnit".Split(';');
                     int colcounter = 0;
                     foreach (string column in row.columns)
