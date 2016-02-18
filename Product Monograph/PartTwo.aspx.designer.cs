@@ -58,6 +58,15 @@ namespace Product_Monograph {
         protected global::System.Web.UI.WebControls.Label lblSumPharmInfo;
         
         /// <summary>
+        /// lblDrugSub control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label lblDrugSub;
+        
+        /// <summary>
         /// lblChemicalname control.
         /// </summary>
         /// <remarks>
@@ -184,6 +193,15 @@ namespace Product_Monograph {
         protected global::System.Web.UI.WebControls.Label lblBioStudy;
         
         /// <summary>
+        /// lblAnalyteName control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label lblAnalyteName;
+        
+        /// <summary>
         /// lblParameter control.
         /// </summary>
         /// <remarks>
@@ -193,13 +211,94 @@ namespace Product_Monograph {
         protected global::System.Web.UI.WebControls.Label lblParameter;
         
         /// <summary>
-        /// l control.
+        /// lblTest control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label l;
+        protected global::System.Web.UI.WebControls.Label lblTest;
+        
+        /// <summary>
+        /// lblReference control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label lblReference;
+        
+        /// <summary>
+        /// lblRGM control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label lblRGM;
+        
+        /// <summary>
+        /// lblConfInter control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label lblConfInter;
+        
+        /// <summary>
+        /// lblNote1 control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label lblNote1;
+        
+        /// <summary>
+        /// lblNote2 control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label lblNote2;
+        
+        /// <summary>
+        /// lblNote3 control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label lblNote3;
+        
+        /// <summary>
+        /// lblNote4 control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label lblNote4;
+        
+        /// <summary>
+        /// lblNote5 control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label lblNote5;
+        
+        /// <summary>
+        /// lblNote6 control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label lblNote6;
         
         /// <summary>
         /// lblSumPharmacology control.

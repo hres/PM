@@ -44,8 +44,7 @@ namespace Product_Monograph
             //set the new lang pass via parameter
             Thread.CurrentThread.CurrentUICulture = new CultureInfo((lang == "") ? "en-CA" : lang);
             Thread.CurrentThread.CurrentCulture = Thread.CurrentThread.CurrentUICulture;
-                                  
-            Label5.Text = Resources.Resource.ConsumerInfo;
+                                 
             lblPartIII.Text = Resources.Resource.PartIII;
             lblSumAbout.Text = Resources.Resource.Medication;
             lblWHAT.Text = Resources.Resource.MedicationUse;

@@ -145,10 +145,10 @@
 •	No download required.</value>
   </data>
   <data name="Comment1" xml:space="preserve">
-    <value>This is not a complete list of side effects.  For any unexpected effects while taking_fr</value>
+    <value>Cette liste d’effets secondaires n’est pas exhaustive. Pour tout effet inattendu ressenti lors de la prise de</value>
   </data>
   <data name="Comment2" xml:space="preserve">
-    <value>, contact your doctor or pharmacist._fr</value>
+    <value>,veuillez communiquer avec votre médecin ou votre pharmacien.</value>
   </data>
   <data name="Common" xml:space="preserve">
     <value>Common_fr</value>
@@ -156,50 +156,47 @@
   <data name="Condition" xml:space="preserve">
     <value>Current conditions (Contraindications, Warnings and Precautions)</value>
   </data>
-  <data name="ConsumerInfo" xml:space="preserve">
-    <value>Consumer information_fr</value>
-  </data>
   <data name="Diseases" xml:space="preserve">
     <value>Past diseases (Contraindications, Warnings and Precautions)</value>
   </data>
   <data name="DosageForm" xml:space="preserve">
-    <value>What dosage forms it comes in:_fr</value>
+    <value>Les formes posologiques sont</value>
   </data>
   <data name="Interactions" xml:space="preserve">
-    <value>Interactions with this medication_fr</value>
+    <value>Interactions médicamenteuses</value>
   </data>
   <data name="Issues" xml:space="preserve">
     <value>Reproductive issues (Contraindications, Warnings and Precautions)</value>
   </data>
   <data name="LastRevised" xml:space="preserve">
-    <value>Last revised:_fr</value>
+    <value>Dernière révision:</value>
   </data>
   <data name="Medication" xml:space="preserve">
-    <value>About this medication_fr</value>
+    <value>Au sujet de ce médicament</value>
   </data>
   <data name="MedicationNotUsed" xml:space="preserve">
-    <value>When it should not be used:_fr</value>
+    <value>Les circonstances oû il est déconseillé d’utiliser ce médicament</value>
   </data>
   <data name="MedicationUse" xml:space="preserve">
-    <value>What the medication is used for:_fr</value>
+    <value>Les raisons d’utiliser ce médicament</value>
   </data>
   <data name="MedIngredient" xml:space="preserve">
-    <value>What the medicinal ingredient is:_fr</value>
+    <value>L’ingrédient médicinal est</value>
   </data>
   <data name="MissedDose" xml:space="preserve">
-    <value>Missed dose_fr</value>
+    <value>Dose oubliée</value>
   </data>
   <data name="MoreInfo" xml:space="preserve">
-    <value>More information:_fr</value>
+    <value>Pour de Plus Amples Renseignements</value>
   </data>
   <data name="NonMedicinalIng" xml:space="preserve">
-    <value>What the nonmedicinal ingredients are:_fr</value>
+    <value>Les ingrédients non médicinaux importants sont</value>
   </data>
   <data name="OverDose" xml:space="preserve">
-    <value>Over dose:_fr</value>
+    <value>Surdose</value>
   </data>
   <data name="PartIII" xml:space="preserve">
-    <value>Partie III</value>
+    <value>Partie III : Renseignements pour le consommateur</value>
   </data>
   <data name="PointForm" xml:space="preserve">
     <value>Point form:_fr</value>
@@ -208,55 +205,55 @@
     <value>Anticipated medical procedures (Warnings and Precautions)</value>
   </data>
   <data name="ProperNameMI" xml:space="preserve">
-    <value>Proper Name_fr</value>
+    <value>Nom propre</value>
   </data>
   <data name="ProperUse" xml:space="preserve">
-    <value>Proper use of this medication</value>
+    <value>Utilisation Appropriée de ce médicament</value>
   </data>
   <data name="Rare" xml:space="preserve">
     <value>Rare_fr</value>
   </data>
   <data name="Reporting" xml:space="preserve">
-    <value>Reporting suspected side effects_fr</value>
+    <value>Déclaration des effets indésirables soupçonnés</value>
   </data>
   <data name="SeriousSideEffect" xml:space="preserve">
-    <value>Serious side effects, how often they happen and what to do about them_fr</value>
+    <value>Effets secondaires graves : Fréquence et procédures à suivre</value>
   </data>
   <data name="SeriousWarning" xml:space="preserve">
-    <value>Serious Warnings and Precautions_fr</value>
+    <value>Mises en garde et précautions</value>
   </data>
   <data name="SideEffect" xml:space="preserve">
-    <value>Side effects and what to do about them:_fr</value>
+    <value>Procédures à suivre en ce qui concerne les effets secondaires</value>
   </data>
   <data name="SideEffectsWhatToDo" xml:space="preserve">
-    <value>Side effects what to do:_fr</value>
+    <value>Procédures à suivre en ce qui concerne les effets secondaires</value>
   </data>
   <data name="Store" xml:space="preserve">
-    <value>How to store it:_fr</value>
+    <value>Comment conserver le médicament</value>
   </data>
   <data name="SumInteractions" xml:space="preserve">
-    <value>Interactions with this medication_fr</value>
+    <value>Interactions médicamenteuses</value>
   </data>
   <data name="SumMoreInfo" xml:space="preserve">
-    <value>More information_fr</value>
+    <value>Pour de Plus Amples Renseignements</value>
   </data>
   <data name="SumProperUse" xml:space="preserve">
-    <value>Proper use of this medication_fr</value>
+    <value>Comment conserver le médicament</value>
   </data>
   <data name="SumReporting" xml:space="preserve">
-    <value>Reporting suspected side effects_fr</value>
+    <value>Déclaration des effets indésirables soupçonnés</value>
   </data>
   <data name="SumSideEffect" xml:space="preserve">
-    <value>Side effects and what to do about them_fr</value>
+    <value>Procédures à suivre en ce qui concerne les effets secondaires</value>
   </data>
   <data name="SumStore" xml:space="preserve">
-    <value>How to store it_fr</value>
+    <value>Comment conserver le médicament</value>
   </data>
   <data name="SumWarningsPrecautions" xml:space="preserve">
-    <value>Warnings and precautions_fr</value>
+    <value>Mises en garde et précautions</value>
   </data>
   <data name="Symptom" xml:space="preserve">
-    <value>Symptom_fr</value>
+    <value>Symptôme</value>
   </data>
   <data name="TechnicalSpecs" xml:space="preserve">
     <value>Spécifications techniques</value>
@@ -277,69 +274,105 @@
     <value>Utiliser le formulaire web pour monographie de produit - xml -1</value>
   </data>
   <data name="UsualDose" xml:space="preserve">
-    <value>Usual dose:_fr</value>
+    <value>Dose habituelle</value>
   </data>
   <data name="VeryRare" xml:space="preserve">
     <value>Very rare_fr</value>
   </data>
   <data name="WhatDoes" xml:space="preserve">
-    <value>What it does:_fr</value>
+    <value>Les effets de ce médicament</value>
   </data>
   <data name="ClinicalTrials" xml:space="preserve">
-    <value>Clinical trials_fr</value>
+    <value>Essais cliniques</value>
   </data>
   <data name="DetailedPharma" xml:space="preserve">
-    <value>Detailed Pharmacology:_fr</value>
+    <value>Pharmacologie détaillée</value>
   </data>
   <data name="Microbiology" xml:space="preserve">
-    <value>Microbiology_fr</value>
+    <value>Microbiologie</value>
   </data>
   <data name="PartII" xml:space="preserve">
-    <value>Part II:  Scientific information_fr</value>
+    <value>Partie II : Renseignements scientifiques</value>
   </data>
   <data name="References" xml:space="preserve">
-    <value>References:_fr</value>
+    <value>Références</value>
   </data>
   <data name="SumCT" xml:space="preserve">
-    <value>Clinical Trials_fr</value>
+    <value>Essais cliniques</value>
   </data>
   <data name="SumMicrobiology" xml:space="preserve">
-    <value>Microbiology_fr</value>
+    <value>Microbiologie</value>
   </data>
   <data name="SumPharmacology" xml:space="preserve">
-    <value>Detailed Pharmacology_fr</value>
+    <value>Pharmacologie détaillée</value>
   </data>
   <data name="SumPharmInfo" xml:space="preserve">
-    <value>Pharmaceutical information_fr</value>
+    <value>Renseignements pharmaceutiques</value>
   </data>
   <data name="SumRef" xml:space="preserve">
-    <value>References_fr</value>
+    <value>Références</value>
   </data>
   <data name="SumToxicology" xml:space="preserve">
-    <value>Toxicology_fr</value>
+    <value>Toxicologie</value>
   </data>
   <data name="Toxicology" xml:space="preserve">
-    <value>Toxicology:_fr</value>
+    <value>Toxicologie</value>
   </data>
   <data name="Chemicalname" xml:space="preserve">
-    <value>Chemical name_fr</value>
+    <value>Nom chimique</value>
   </data>
   <data name="Molecularformula" xml:space="preserve">
-    <value>Molecular formula_fr</value>
+    <value>Formule moléculaire</value>
   </data>
   <data name="Molecularmass" xml:space="preserve">
-    <value>Molecular mass_fr</value>
+    <value>masse moléculaire</value>
   </data>
   <data name="Physicochemicalproperties" xml:space="preserve">
-    <value>Physicochemical properties_fr</value>
+    <value>Propriétés physicochimiques</value>
   </data>
   <data name="Structuralformula" xml:space="preserve">
-    <value>Structural formula_fr</value>
+    <value>Formule développée</value>
   </data>
   <data name="BioStudy" xml:space="preserve">
-    <value>Comparative Bioavailability Studies_fr</value>
+    <value>Comparative bioavailability studies_fr</value>
   </data>
   <data name="Parameter" xml:space="preserve">
-    <value>Parameter_fr</value>
+    <value>Paramètre</value>
+  </data>
+  <data name="AnalyteName" xml:space="preserve">
+    <value>Nom de la substance à analyser</value>
+  </data>
+  <data name="ConfInter" xml:space="preserve">
+    <value>Intervalle de confiance</value>
+  </data>
+  <data name="DrugSub" xml:space="preserve">
+    <value>Substance pharmaceutique</value>
+  </data>
+  <data name="Note1" xml:space="preserve">
+    <value>Identification du produit à tester.</value>
+  </data>
+  <data name="Note2" xml:space="preserve">
+    <value>Identification du produit de référence, notamment le fabricant et la provenance (pays d’achat).</value>
+  </data>
+  <data name="Note3" xml:space="preserve">
+    <value>On recommande de remplacer les médicaments, surface sous la courbe de la dernière concentration quantifiable (SSCT) qui ont une demi-vie supérieure à vingt-quatre heures par des médicaments SSC0-72.</value>
+  </data>
+  <data name="Note4" xml:space="preserve">
+    <value>Représenté soit sous forme de moyenne arithmétique (Coefficient de variation (CV) %), soit sous forme de médiane (étendue) seulement.</value>
+  </data>
+  <data name="Note5" xml:space="preserve">
+    <value>Représenté sous forme de moyenne arithmétique seulement (CV %).</value>
+  </data>
+  <data name="Note6" xml:space="preserve">
+    <value>Indique le pourcentage de l’intervalle de confiance (c.-à-d., 90 p. 100 ou 95 p. 100) à l’en-tête de la colonne et la liste pour la SSCT, la surface sous la courbe à l’infini (SSCI) et la concentration maximale observée (Cmax) (au besoin).</value>
+  </data>
+  <data name="Reference" xml:space="preserve">
+    <value>Référence</value>
+  </data>
+  <data name="RGM" xml:space="preserve">
+    <value>Rapport des moyennes géométriques</value>
+  </data>
+  <data name="Test" xml:space="preserve">
+    <value>Test</value>
   </data>
 </root>

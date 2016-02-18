@@ -53,6 +53,18 @@ namespace Product_Monograph
             lblStructuraform.Text = Resources.Resource.Structuralformula;
             lblBioStudy.Text = Resources.Resource.BioStudy;
             lblParameter.Text = Resources.Resource.Parameter;
+            lblDrugSub.Text = Resources.Resource.DrugSub;
+            lblAnalyteName.Text = Resources.Resource.AnalyteName;
+            lblTest.Text = Resources.Resource.Test;
+            lblReference.Text = Resources.Resource.Reference;
+            lblRGM.Text = Resources.Resource.RGM;
+            lblConfInter.Text = Resources.Resource.ConfInter;
+            lblNote1.Text = Resources.Resource.Note1;
+            lblNote2.Text = Resources.Resource.Note2;
+            lblNote3.Text = Resources.Resource.Note3;
+            lblNote4.Text = Resources.Resource.Note4;
+            lblNote5.Text = Resources.Resource.Note5;
+            lblNote6.Text = Resources.Resource.Note6;
         }
 
         private void LoadFromXML()

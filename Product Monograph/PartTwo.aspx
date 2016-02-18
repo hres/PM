@@ -308,10 +308,10 @@
         var styling = document.createAttribute("style");
         att.value = "roadynarow";
         identity.value = "DrugSubstance" + counter;
-        styling.value = "border:1px solid #D9D9D9; margin-bottom:20px; width:90%; clear:both;";
+        //styling.value = "border:1px solid #D9D9D9; margin-bottom:20px; width:90%; clear:both;";
         div.setAttributeNode(att);
         div.setAttributeNode(identity);
-        div.setAttributeNode(styling);
+        //div.setAttributeNode(styling);
         div.innerHTML = GetDrugSubstanceDynamicTextBox(counter);
         document.getElementById("dvExtraDrugSubstance").appendChild(div);
 
@@ -332,37 +332,51 @@
         var tbfuimagebasesixtyfour = "tbfuimagebasesixtyfour" + id.toString();
         var tbPhysicochemicalproperties = "tbPhysicochemicalproperties" + id.toString();
 
-        return "<div style='width:94%; text-align:center; padding-left: 0px; float:left;'>" +
-                   "<div style='text-align:left;'>" +
-                       //"<textarea id='" + tbSciInfoProperName + "' name='tbSciInfoProperName'></textarea>" +
-                         '<input type="text" id="' + tbSciInfoProperName + '" name="tbSciInfoProperName" style="border:0px; height:27px;" readonly="true"/>' +
-                   "</div>" +
-               "</div>" +
-               "<div style='width:5%; float:left; margin-left: -8px;'>" +
-                    '<img style="cursor:pointer !important;" src="images/btnRemove.png" onclick="RemoveDrugSubstanceTextBox(' + id + ')" width="58" height="40" />' +
-                "</div>" +
-               "<div style='width:94%; text-align:center; clear:both; padding-left: 0px;'>" +
-                   "<div style='text-align:left;'>" +
-                       "<div style='padding: 20px 4px 4px 0px'>Chemical name</div>" +
-                       "<textarea id='" + tbSciInfoChemicalname + "' name='tbSciInfoChemicalname'></textarea>" +
-                   "</div>" +
-               "</div>" +
-               "<div style='width:94%; text-align:center; clear:both; padding-left: 0px;'>" +
-                    "<div style='text-align:left;'>" +
-                        "<div style='padding: 20px 4px 4px 0px'>Molecular formula</div>" +
-                        "<textarea id='" + tbSciInfoMolecularformula + "' name='tbSciInfoMolecularformula'></textarea>" +
+        return "<div class='brdr-bttm brdr-tp brdr-lft brdr-rght margin-top-large'>" +
+                    "<div class='row'>"+
+                       "<div class='col-xs-10 text-left'>" +
+                           //"<textarea id='" + tbSciInfoProperName + "' name='tbSciInfoProperName'></textarea>" +
+                             '<input type="text" id="' + tbSciInfoProperName + '" name="tbSciInfoProperName" readonly="readonly"/>' +
+                       "</div>" +
+                       "<div class='col-xs-2 pull-right'>" +
+                            '<img class="pull-right" style="cursor:pointer !important;" src="images/btnRemove.png" onclick="RemoveDrugSubstanceTextBox(' + id + ')" width="58" height="40" />' +
+                        "</div>" +
                     "</div>" +
-                "</div>" +
-                "<div style='width:94%; text-align:center; clear:both; padding-left: 0px;'>" +
-                    "<div style='text-align:left;'>" +
-                        "<div style='padding: 20px 4px 4px 0px'>Molecular mass</div>" +
-                        "<textarea id='" + tbSciInfoMolecularmass + "' name='tbSciInfoMolecularmass'></textarea>" +
-                    "</div>" +
-                "</div>" +
-                "<div style='width:94%; clear:both; padding-left: 0px;'>" +
-                    "<div class='symbolbrand' style='width:500px;'>" +
-                        "<div style='padding: 20px 4px 0px 0px; float:left;'>Structural formula</div>" +
-                        '<div style="clear:both; width:100%; padding: 4px 4px 4px 0px;"><input type="file"  id=' + fustrucform + ' style="width:400px;" onchange="loadFile(\'' + fustrucform + '\',\'' + fuimage + '\',\'' + tbfuimagename + '\',\'' + tbfuimagebasesixtyfour + '\')"/></div>' +
+                    "<div class='form-group'>" +                       
+                             "<div class='margin-top-medium'>" +
+                                     "<label for='" + tbSciInfoChemicalname + "'>Chemical name<label>" +
+                             "</div>" +
+                             "<div class='row'>" +
+                                 "<div class='col-xs-10 text-left'>" +                                
+                                    "<textarea id='" + tbSciInfoChemicalname + "' title='Chemical name' name='tbSciInfoChemicalname'></textarea>" +
+                                 "</div>" +
+                             "</div>"+
+                    "</div>"+
+                    "<div class='form-group'>" +
+                            "<div class='margin-top-medium'>" +
+                                    "<label for='" + tbSciInfoMolecularformula + "'>Molecular formula<label>" +
+                             "</div>" +
+                             "<div class='row'>" +
+                                 "<div class='col-xs-10 text-left'>" +
+                                     "<textarea id='" + tbSciInfoMolecularformula + "' title='Molecular formula' name='tbSciInfoMolecularformula'></textarea>" +
+                                 "</div>" +
+                            "</div>" +
+                     "</div>" +
+                    "<div class='form-group'>" +
+                            "<div class='margin-top-medium'>" +
+                                     "<label for='" + tbSciInfoMolecularmass + "'>Molecular mass<label>" +
+                             "</div>" +
+                             "<div class='row'>" +
+                                 "<div class='col-xs-10 text-left'>" +
+                                     "<textarea id='" + tbSciInfoMolecularmass + "' title='Molecular mass' name='tbSciInfoMolecularmass'></textarea>" +
+                                "</div>" +
+                            "</div>" +
+                     "</div>" +
+                   "<div class='form-group'>" +
+                     "<div class='row margin-top-medium margin-bottom-medium mrgn-lft-sm'>"+
+                        "<div class='col-xs-10 symbolbrand'>"+
+                            '<input type="file"  id=' + fustrucform + ' style="width:400px;" onchange="loadFile(\'' + fustrucform + '\',\'' + fuimage + '\',\'' + tbfuimagename + '\',\'' + tbfuimagebasesixtyfour + '\')"/>' +
+                        "</div>" +
                         "<div style='clear:both; border:1px solid #D9D9D9; width:103px; height:103px; padding-top:4px;'>" +
                             "<img  id='" + fuimage + "' src='images/x.png'/>" +
                             "<input type='text' id='" + tbfuimagename + "' name='tbfuimagename' style='display:none;' />" +
@@ -370,12 +384,17 @@
                         "</div>" +
                     "</div>" +
                 "</div>" +
-                "<div style='width:94%; text-align:center; clear:both; padding-left: 0px;'>" +
-                    "<div style='text-align:left;'>" +
-                        "<div style='padding: 20px 4px 4px 0px'>Physicochemical properties</div>" +
-                            "<textarea id='" + tbPhysicochemicalproperties + "' name='tbPhysicochemicalproperties'></textarea>" +
-                    "</div>" +
-                "</div>";
+                 "<div class='form-group'>" +
+                     "<div class='margin-top-medium'>" +
+                            "<label for='" + tbPhysicochemicalproperties + "'>Physicochemical properties<label>" +
+                     "</div>" +
+                     "<div class='row'>"+
+                          "<div class='col-xs-10 text-left'>"+
+                                "<textarea id='" + tbPhysicochemicalproperties + "' title='Physico chemical properties' name='tbPhysicochemicalproperties'></textarea>" +
+                          "</div>" +
+                     "</div>" +
+                "</div>"+
+           "</div>";
                 
     }
 
@@ -580,6 +599,7 @@
             <asp:MenuItem Text="Part I" Value="PartOne"></asp:MenuItem>
             <asp:MenuItem Text="Part II" Value="PartTwo"></asp:MenuItem>
             <asp:MenuItem Text="Part III" Value="PartThree"></asp:MenuItem>
+            <asp:MenuItem text="Form instruction" value="PMForm" toolTip="Back to the main page of DHPR form with form Instruction"></asp:MenuItem>
         </Items>
     </asp:Menu>
 </div>
@@ -599,7 +619,7 @@
     <div class="form-group">
         <div class="row text-left">
             <div class="col-xs-10">
-                <h4>Drug Substance</h4>
+                <h4><asp:Label ID="lblDrugSub" runat="server"></asp:Label></h4>
             </div>
             <div class="col-xs-2 mrgn-tp-md">
                 <img class="pull-right" style="cursor: pointer !important;" src="images/btnAdd.png" onclick="AddDrugSubstanceTextBox()" id="btnAddDrugSubstance" width="58" height="40" />
@@ -658,14 +678,14 @@
                         <div>
                             <input type="file" id="fustrucform0" runat="server" onchange="loadFile('fustrucform0','fuimage0','tbfuimagename0','tbfuimagebasesixtyfour0')" />
                         </div>
-                        <div style="clear: both; border: 1px solid #D9D9D9; width: 103px; height: 103px; padding-top: 4px;">
+                        <div class="margin-top-medium" style="border: 1px solid #D9D9D9; width: 103px; height: 103px;">
                             <img id="fuimage0" src="images/x.png" />
                             <input type="text" id="tbfuimagename0" name="tbfuimagename" class="hidden" />
                             <input type="text" id="tbfuimagebasesixtyfour0" name="tbfuimagebasesixtyfour" class="hidden" />
                         </div>
                     </div>
-                </div>
-
+               </div>
+            </div>
                 <div class="form-group">
                     <div class="margin-top-medium">
                         <asp:Label AssociatedControlID="tbPhysicochemicalproperties0" ID="lblPhysicochemicalproperties" CssClass="control-label" runat="server"></asp:Label>
@@ -675,11 +695,8 @@
                             <textarea id="tbPhysicochemicalproperties0" name="tbPhysicochemicalproperties" class="textarea form-control" runat="server"></textarea>
                         </div>
                     </div>
-                </div>
-
+                </div>         
             </div>
-
-        </div>
 
         <div id="dvExtraDrugSubstance"></div>
     </div>
@@ -723,7 +740,7 @@
     
         <section class="panel panel-default" id="AnalyteName0">
             <header class="panel-heading">
-                <div class="row text-center">Analyte Name</div>
+                <div class="row text-center"> <asp:Label ID="lblAnalyteName" runat="server"></asp:Label></div>
                 <div class="row text-center">                    
                     (            
                 <input type="number" id="tbAnalyteMultiplicand0" name="tbAnalyteMultiplicand" />
@@ -739,17 +756,16 @@
                         <asp:Label ID="lblParameter" runat="server"></asp:Label>
                     </div>
                     <div class="col-xs-2 brdr-lft">
-                        <asp:Label ID="l" runat="server"></asp:Label>
-                        Test*
+                        <asp:Label ID="lblTest" runat="server"></asp:Label>*
                     </div>
                     <div class="col-xs-2 brdr-lft">
-                        Reference
+                         <asp:Label ID="lblReference" runat="server"></asp:Label>
                     </div>
                     <div class="col-xs-3 brdr-lft">
-                        % Ratio of Geometric Means
+                        % <asp:Label ID="lblRGM" runat="server"></asp:Label>
                     </div>
                     <div class="col-xs-3 brdr-lft">
-                        Confidence Interval #
+                        <asp:Label ID="lblConfInter" runat="server"></asp:Label> #
                     </div>
                 </div>
                 <div class="row">
@@ -774,16 +790,17 @@
                         AUCI (units)
                     </div>
                     <div class="col-xs-2 brdr-tp brdr-lft">
-                        <textarea id="tbAUCITest0" name="tbAUCITest"></textarea>
+
+                        <textarea id="tbAUCITest0" title="AUCI test" name="tbAUCITest"></textarea>
                     </div>
                     <div class="col-xs-2 brdr-tp brdr-lft">
-                        <textarea id="tbAUCIReference0" name="tbAUCIReference"></textarea>
+                        <textarea id="tbAUCIReference0" title="AUCI reference" name="tbAUCIReference"></textarea>
                     </div>
                     <div class="col-xs-3 brdr-tp brdr-lft">
-                        <textarea id="tbAUCIPercentRatio0" name="tbAUCIPercentRatio"></textarea>
+                        <textarea id="tbAUCIPercentRatio0" title="AUCI percent ratio" name="tbAUCIPercentRatio"></textarea>
                     </div>
                     <div class="col-xs-3 brdr-tp brdr-lft">
-                        <textarea id="tbAUCIConfidenceInterval0" name="tbAUCIConfidenceInterval"></textarea>
+                        <textarea id="tbAUCIConfidenceInterval0" title="AUCI confidence interval" name="tbAUCIConfidenceInterval"></textarea>
                     </div>
                 </div>
                 <div class="row">
@@ -791,16 +808,16 @@
                         CMAX (units)
                     </div>
                     <div class="col-xs-2 brdr-tp brdr-lft">
-                        <textarea id="tbCMAXTest0" name="tbCMAXTest"></textarea>
+                        <textarea id="tbCMAXTest0" title="CMAX test" name="tbCMAXTest"></textarea>
                     </div>
                     <div class="col-xs-2 brdr-tp brdr-lft">
-                        <textarea id="tbCMAXReference0" name="tbCMAXReference"></textarea>
+                        <textarea id="tbCMAXReference0" title="CMAX reference" name="tbCMAXReference"></textarea>
                     </div>
                     <div class="col-xs-3 brdr-tp brdr-lft">
-                        <textarea id="tbCMAXPercentRatio0" name="tbCMAXPercentRatio"></textarea>
+                        <textarea id="tbCMAXPercentRatio0" title="CMAX percent ratio" name="tbCMAXPercentRatio"></textarea>
                     </div>
                     <div class="col-xs-3 brdr-tp brdr-lft">
-                        <textarea id="tbCMAXConfidenceInterval0" name="tbCMAXConfidenceInterval"></textarea>
+                        <textarea id="tbCMAXConfidenceInterval0" title="CMAX confidence interval" name="tbCMAXConfidenceInterval"></textarea>
                     </div>
                 </div>
                 <div class="row">
@@ -808,33 +825,33 @@
                         TMAX (h)
                     </div>
                     <div class="col-xs-2 brdr-tp brdr-lft">
-                        <textarea id="tbTMAXTest0" name="tbTMAXTest"></textarea>
+                        <textarea id="tbTMAXTest0" title="TMAX test" name="tbTMAXTest"></textarea>
                     </div>
                     <div class="col-xs-2 brdr-tp brdr-lft">
-                        <textarea id="tbTMAXReference0" name="tbTMAXReference"></textarea>
+                        <textarea id="tbTMAXReference0" title="TMAX reference" name="tbTMAXReference"></textarea>
                     </div>
                     <div class="col-xs-3 brdr-tp brdr-lft">
-                        <textarea id="tbTMAXPercentRatio0" name="tbTMAXPercentRatio"></textarea>
+                        <textarea id="tbTMAXPercentRatio0" title="TMAX percent ratio" name="tbTMAXPercentRatio"></textarea>
                     </div>
                     <div class="col-xs-3 brdr-tp brdr-lft">
-                        <textarea id="tbTMAXConfidenceInterval0" name="tbTMAXConfidenceInterval"></textarea>
+                        <textarea id="tbTMAXConfidenceInterval0" title="TMAX confidence interval" name="tbTMAXConfidenceInterval"></textarea>
                     </div>
                 </div>
                 <div class="row">
                     <div class="col-xs-2 brdr-tp text-right">
                         T1/2 (h)
                     </div>
-                    <div class="col-xs-2 brdr-tp brdr-lft brdr-bttm">
-                        <textarea id="tbTHalfTest0" name="tbTHalfTest"></textarea>
+                    <div class="col-xs-2 brdr-tp brdr-lft brdr-bttm">                        
+                        <textarea id="tbTHalfTest0" title="Half test" name="tbTHalfTest"></textarea>
                     </div>
-                    <div class="col-xs-2 brdr-tp brdr-lft brdr-bttm">
-                        <textarea id="tbTHalfReference0" name="tbTHalfReference"></textarea>
+                    <div class="col-xs-2 brdr-tp brdr-lft brdr-bttm">                        
+                        <textarea id="tbTHalfReference0" title="Half reference" name="tbTHalfReference"></textarea>
                     </div>
-                    <div class="col-xs-3 brdr-tp brdr-lft brdr-bttm">
-                        <textarea id="tbTHalfPercentRatio0" name="tbTHalfPercentRatio"></textarea>
+                    <div class="col-xs-3 brdr-tp brdr-lft brdr-bttm">                        
+                        <textarea id="tbTHalfPercentRatio0" title="Half percent ratio" name="tbTHalfPercentRatio"></textarea>
                     </div>
-                    <div class="col-xs-3 brdr-tp brdr-lft brdr-bttm">
-                        <textarea id="tbTHalfConfidenceInterval0" name="tbTHalfConfidenceInterval"></textarea>
+                    <div class="col-xs-3 brdr-tp brdr-lft brdr-bttm">                        
+                        <textarea id="tbTHalfConfidenceInterval0" title="Half confidence interval" name="tbTHalfConfidenceInterval"></textarea>
                     </div>
                 </div>
             </div>
@@ -843,12 +860,12 @@
     <div id="dvExtraAnalyteName" class="hidden">
     </div>
 
-    <div class="text-left">*	Identity of the test product.</div>
-    <div class="text-left">†	Identity of the reference product, including the manufacturer, and origin (country of purchase).</div>
-    <div class="text-left">‡	For drugs with a half-life greater than 24 hours AUCT should be replaced with AUC0-72.</div>
-    <div class="text-left">§	Expressed as either the arithmetic mean (CV%) or the median (range) only.</div>
-    <div class="text-left">[]	Expressed as the arithmetic mean (CV%) only.</div>
-    <div class="text-left">#	Indicate % Confidence Interval (i.e., 90% or 95%) in the column heading and list for the AUCT, AUCI and CMAX (if required).</div>
+    <div class="text-left">*	<asp:Label ID="lblNote1" runat="server"></asp:Label></div>
+    <div class="text-left">†	<asp:Label ID="lblNote2" runat="server"></asp:Label></div>
+    <div class="text-left">‡	<asp:Label ID="lblNote3" runat="server"></asp:Label></div>
+    <div class="text-left">§	<asp:Label ID="lblNote4" runat="server"></asp:Label></div>
+    <div class="text-left">[]	<asp:Label ID="lblNote5" runat="server"></asp:Label></div>
+    <div class="text-left">#	<asp:Label ID="lblNote6" runat="server"></asp:Label></div>
 </div>
 </details>
 
@@ -918,6 +935,7 @@
             <asp:MenuItem Text="Part I" Value="PartOne"></asp:MenuItem>
             <asp:MenuItem Text="Part II" Value="PartTwo"></asp:MenuItem>
             <asp:MenuItem Text="Part III" Value="PartThree"></asp:MenuItem>
+            <asp:MenuItem text="Form instruction" value="PMForm" toolTip="Back to the main page of DHPR form with form Instruction"></asp:MenuItem>
         </Items>
     </asp:Menu>
 </div>
