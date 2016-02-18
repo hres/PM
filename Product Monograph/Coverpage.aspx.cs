@@ -2,16 +2,21 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
+using System.Web.UI;
 using System.Web.UI.WebControls;
+using System.Data;
 using System.IO;
+using System.Xml.Serialization;
 using System.Xml;
 using System.Drawing;
 using System.ComponentModel;
 using System.Text;
+using System.Net;
+using System.Xml.Linq;
+using System.Configuration;
 using System.Collections;
 using System.IO.Compression;
-using System.Xml.Linq;
-using System.Web.UI;
+using System.Text.RegularExpressions;
 
 namespace Product_Monograph
 {
@@ -37,6 +42,7 @@ namespace Product_Monograph
                 try
                 {
                     LoadFromXML();
+
                 }
                 catch 
                 {
@@ -157,12 +163,14 @@ namespace Product_Monograph
                 tbSponsorName.Text = xmldataitem.Sponsorname;
                 tbSponsorAddress.Value = xmldataitem.Sponsoraddress;
                 tbFootnote.Value = xmldataitem.Sponsorfootnote;
+               
                 tbDateRev.Text = xmldataitem.DateofRevision;
                 tbDatePrep.Text = xmldataitem.DateofPreparation;
                 tbControNum.Text = xmldataitem.SubmissionControlNumber;
             }
 
             ScriptManager.RegisterStartupScript(this.Page, this.GetType(), "LoadEventsScript", strscript.ToString(), true);
+        
         }
 
         protected void btnApplySumbol_Click(object sender, EventArgs e)
@@ -431,10 +439,11 @@ namespace Product_Monograph
             helpers.Processes.ValidateAndSave(doc, rootnode, "Sponsorfootnote", "Sponsor Footnote", tbFootnote.Value, true);
 
             #region Revision and Preparation dates
+           
             string tbDatePrepVal = Request.Form[tbDatePrep.UniqueID];
             string tbDateRevVal = Request.Form[tbDateRev.UniqueID];
-            helpers.Processes.ValidateAndSave(doc, rootnode, "DateofPreparation", "", tbDatePrepVal, false);
-            helpers.Processes.ValidateAndSave(doc, rootnode, "DateofRevision", "", tbDateRevVal, false);
+           helpers.Processes.ValidateAndSave(doc, rootnode, "DateofPreparation", "", tbDatePrepVal, false);
+           helpers.Processes.ValidateAndSave(doc, rootnode, "DateofRevision", "", tbDateRevVal, false);
             //if (tbDatePrep.Text.Trim() == string.Empty)
             //{
             //    helpers.Processes.ValidateAndSave(doc, rootnode, "DateofRevision", "Date of Revision", tbDateRev.Text, true);

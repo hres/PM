@@ -1,14 +1,21 @@
 ﻿using System;
+using System.Collections.Generic;
 using System.Linq;
 using System.Web;
+using System.Web.UI;
 using System.Web.UI.WebControls;
+using System.Data;
 using System.IO;
+using System.Xml.Serialization;
 using System.Xml;
+using System.Drawing;
+using System.ComponentModel;
 using System.Text;
+using System.Net;
+using System.Xml.Linq;
+using System.Configuration;
 using System.Collections;
 using System.IO.Compression;
-using System.Xml.Linq;
-using System.Web.UI;
 
 namespace Product_Monograph
 {
@@ -33,26 +40,6 @@ namespace Product_Monograph
                     lblError.Text = "Please load a new template or a previously saved draft.";
                 }
             }
-
-            lblPartII.Text = Resources.Resource.PartII;
-            lblSumPharmInfo.Text = Resources.Resource.SumPharmInfo;
-            lblSumCT.Text = Resources.Resource.SumCT;
-            lblSumPharmacology.Text = Resources.Resource.SumPharmacology;
-            lblSumMicrobiology.Text = Resources.Resource.SumMicrobiology;
-            lblSumToxicology.Text = Resources.Resource.SumToxicology;
-            lblSumRef.Text = Resources.Resource.SumRef;
-            lblRef.Text = Resources.Resource.References;
-            lblToxicology.Text = Resources.Resource.Toxicology;
-            lblMicrobiology.Text = Resources.Resource.Microbiology;
-            lblDetailedPharma.Text = Resources.Resource.DetailedPharma;
-            lblClinicalTrials.Text = Resources.Resource.ClinicalTrials;
-            lblChemicalname.Text = Resources.Resource.Chemicalname;
-            lblMolecularformula.Text = Resources.Resource.Molecularformula;
-            lblMolecularmass.Text = Resources.Resource.Molecularmass;
-            lblPhysicochemicalproperties.Text = Resources.Resource.Physicochemicalproperties;
-            lblStructuraform.Text = Resources.Resource.Structuralformula;
-            lblBioStudy.Text = Resources.Resource.BioStudy;
-            lblParameter.Text = Resources.Resource.Parameter;
         }
 
         private void LoadFromXML()
@@ -354,7 +341,7 @@ namespace Product_Monograph
                 #endregion
             }
 
-            ScriptManager.RegisterStartupScript(Page, this.GetType(), "LoadEventsScript", strscript.ToString(), true);
+            ScriptManager.RegisterStartupScript(this.Page, this.GetType(), "LoadEventsScript", strscript.ToString(), true);
 
             var xmldata = from item in doc.Elements("ProductMonographTemplate")
                           select new

@@ -1,21 +1,28 @@
 ﻿using System;
+using System.Collections.Generic;
 using System.Linq;
 using System.Web;
+using System.Web.UI;
 using System.Web.UI.WebControls;
+using System.Data;
 using System.IO;
+using System.Xml.Serialization;
 using System.Xml;
+using System.Drawing;
+using System.ComponentModel;
 using System.Text;
+using System.Net;
+using System.Xml.Linq;
+using System.Configuration;
 using System.Collections;
 using System.IO.Compression;
-using System.Xml.Linq;
-using System.Web.UI;
 
 namespace Product_Monograph
 {
     public partial class PartOne : System.Web.UI.Page
     {
-        string strscript = "";
-        string strSaveFileName = "";
+        string strscript = string.Empty;
+        string strBrandName = string.Empty;
         protected void Page_Load(object sender, EventArgs e)
         {
             lblError.Text = "";
@@ -35,6 +42,9 @@ namespace Product_Monograph
 
         private void SaveProcess()
         {
+            string strSaveFileName = string.Empty;
+            string strXmlExtension = ".xml";
+            string strZipExtension = ".zip";
             try
             {
                 XmlDocument doc = SaveInMemory();
@@ -51,10 +61,15 @@ namespace Product_Monograph
                     {
                         if (doc != null)
                         {
-                            if(strSaveFileName != "")
-                                  strSaveFileName = strSaveFileName + ".xml";
+                            if (strBrandName.Length > 0)
+                            {
+                                strSaveFileName = strBrandName + strXmlExtension;
+                            }
                             else
-                                  strSaveFileName = "DraftPMForm" + ".xml";
+                            {
+                                strSaveFileName = "DraftPMForm" + strXmlExtension;
+                            }
+
                             var zipEntry = zipArchive.CreateEntry(strSaveFileName);
                             using (var originalFileStream = new MemoryStream(bytes))
                             {
@@ -70,14 +85,17 @@ namespace Product_Monograph
                     Response.Clear();
                     Response.ClearContent();
                     Response.ClearHeaders();
+                    strSaveFileName = string.Empty;
+                    if (strBrandName.Length > 0)
+                    {
+                        strSaveFileName = strBrandName + strZipExtension;
+                    }
+                    else
+                    {
+                        strSaveFileName = "DraftPMForm" + strZipExtension;
+                    }
                     if (buffer.Length > 0)
                     {
-                        if (lblProperName.Text != "")
-                        {
-                            strSaveFileName = lblProperName.Text.TrimEnd() + ".zip";
-                        }   
-                        else
-                            strSaveFileName = "DraftPMForm" + ".zip";
                         Response.ContentType = "application/zip";
                         Response.BinaryWrite(buffer);
                         var fileName = strSaveFileName;
@@ -1986,7 +2004,7 @@ namespace Product_Monograph
                         {
                             lblProprietaryBrandName.Text = helpers.Processes.CleanString(column);
                             lblBrandName.Text = helpers.Processes.CleanString(column);
-                            strSaveFileName = helpers.Processes.CleanString(column);
+                            strBrandName = helpers.Processes.CleanString(column);  //ching add code here
                         }
 
                         if (colarray[colcounter].Equals("tbProperName"))
@@ -2014,7 +2032,7 @@ namespace Product_Monograph
                                          select (string)column
                            };
 
-              
+                //bool ran = false;
                 int rowcounter = 1;
 
                 foreach (var row in rows)
