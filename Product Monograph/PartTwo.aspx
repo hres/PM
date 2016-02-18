@@ -2,7 +2,7 @@
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
 <!--Health Canada- PMP--> 
 <script type="text/javascript">
-    
+
     var loadFile = function (fuid, imgid, txtname, txtdata) {
 
         //input file element
@@ -186,7 +186,8 @@
 
                         '<div style="width:5%; float:left;">' +
                             '<div style="float:left;">' +
-                                '<img style="cursor:pointer !important;" src="images/btnAdd.png" onclick="AddClinicalTrialsInnerTextBox(' + id + ')" width="58" height="40" />' +
+                            '<input class="btn btn-default btn-xs" onclick="AddClinicalTrialsInnerTextBox(' + id + ')" type="button" value="Add" />' +
+                               // '<img style="cursor:pointer !important;" src="images/btnAdd.png" onclick="AddClinicalTrialsInnerTextBox(' + id + ')" width="58" height="40" />' +
                             '</div>' +
                         '</div>' +
                     '</div>' + 
@@ -219,7 +220,8 @@
 
                 '</div>' +
                 '<div style="width:5%; float:left; margin-top:10px;">' +
-                    '<img style="cursor:pointer !important;" src="images/btnRemove.png"  onclick="RemoveClinicalTrialsOuterSection(' + id + ')" width="58" height="40" />' +
+                '<input class="btn btn-default btn-xs" onclick="RemoveClinicalTrialsOuterSection(' + id + ')" id="btnRemoveClinicalTrialsOuterSection(' + id + ')" type="button" value="Remove" />' +
+                    // '<img style="cursor:pointer !important;" src="images/btnRemove.png"  onclick="RemoveClinicalTrialsOuterSection(' + id + ')" width="58" height="40" />' + 
                 '</div>';
 
     }
@@ -279,7 +281,8 @@
                 '<div style="width:5%; float:left; padding-top:6px;">' +
                     '<div style="height:70px; width:70px;">' +
                         '<div style="float:left;">' +
-                            '<img style="cursor:pointer !important;" src="images/btnRemove.png" onclick="RemoveClinicalTrialsInnerTextBox(' + innerid + ')" width="58" height="40" />' +
+                          '<input class="btn btn-default btn-xs" id="btnRemoveClinicalTrialsInnerTextBox(' + innerid + ')" onclick="RemoveClinicalTrialsInnerTextBox(' + innerid + ')" type="button" value="Remove" />' +
+                          //  '<img style="cursor:pointer !important;" src="images/btnRemove.png" onclick="RemoveClinicalTrialsInnerTextBox(' + innerid + ')" width="58" height="40" />' +
                         '</div>' +
                     '</div>' +
                 '</div>';
@@ -339,7 +342,8 @@
                    "</div>" +
                "</div>" +
                "<div style='width:5%; float:left; margin-left: -8px;'>" +
-                    '<img style="cursor:pointer !important;" src="images/btnRemove.png" onclick="RemoveDrugSubstanceTextBox(' + id + ')" width="58" height="40" />' +
+               '<input class="tbn btn-default btn-xs" onclick="RemoveDrugSubstanceTextBox(' + id + ')" id="btnRemoveDrugSubstanceTextBox(' + id + ')" type="button" value="Remove"/>' +
+                    //'<img style="cursor:pointer !important;" src="images/btnRemove.png" onclick="RemoveDrugSubstanceTextBox(' + id + ')" width="58" height="40" />' +
                 "</div>" +
                "<div style='width:94%; text-align:center; clear:both; padding-left: 0px;'>" +
                    "<div style='text-align:left;'>" +
@@ -451,7 +455,8 @@
                             "<div style='height:40px; float:left; font-size:xx-large'>&nbsp;mg)</div>" +
                         "</div>" +     
                         "<div style='width:5%; float:left; margin-left: -14px;'>" +
-                            '<img style="cursor:pointer !important;" src="images/btnRemove.png" onclick="RemoveAnalyteNameTextBox(' + id + ')" width="58" height="40" />' +
+                        '<input class="btn btn-defaul;t btn-xs" id="btnRemoveAnalyteNameTextBox(' + id + ')" onclick="RemoveAnalyteNameTextBox(' + id + ')" type="button" value="Remove" />' +
+                           // '<img style="cursor:pointer !important;" src="images/btnRemove.png" onclick="RemoveAnalyteNameTextBox(' + id + ')" width="58" height="40" />' +
                         "</div>" +  
                     "</div>" +                    
 
@@ -565,363 +570,331 @@
                     "</div>";
 
     }
-   
-
 </script>
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
 
-<div>
+<div style="clear:both; padding-top: 10px;">
     <asp:Menu ClientIDMode="Static" ID="submenutabs" runat="server" Orientation="Horizontal" OnMenuItemClick="menutabs_MenuItemClick">
-        <StaticMenuStyle VerticalPadding="10px" />
-        <StaticMenuItemStyle HorizontalPadding="35px" />
+        <StaticMenuStyle VerticalPadding="5px" />
+        <StaticMenuItemStyle HorizontalPadding="25px" />
         <Items>
-            <asp:MenuItem Text="Cover page" Value="Coverpage"></asp:MenuItem>
-            <asp:MenuItem Text="Part I" Value="PartOne"></asp:MenuItem>
-            <asp:MenuItem Text="Part II" Value="PartTwo"></asp:MenuItem>
-            <asp:MenuItem Text="Part III" Value="PartThree"></asp:MenuItem>
+            <asp:MenuItem Text="Cover page" Value="Coverpage" toolTip="Cover Page"></asp:MenuItem>
+            <asp:MenuItem Text="Part I" Value="PartOne" toolTip="Part I"></asp:MenuItem>
+            <asp:MenuItem Text="Part II" Value="PartTwo" toolTip="Part II"></asp:MenuItem>
+            <asp:MenuItem Text="Part III" Value="PartThree" toolTip="Part III"></asp:MenuItem>
+            <asp:MenuItem text="Form instruction" value="PMForm" toolTip="Back to the main page of DHPR form with form Instruction"></asp:MenuItem>
         </Items>
     </asp:Menu>
 </div>
 
-<div class="mrgn-tp-md">
-    <asp:Button ID="btnSave" class=" btn btn-primary" runat="server" Text="Save draft" OnClick="btnSave_Click" />
-</div>
+<section style="clear:both; text-align:left; padding-left:0px; padding-top: 8px;">
+    <asp:Button class="btn btn-default" ID="btnSave" runat="server" Text="Save draft" OnClick="btnSave_Click" />
+</section>
 
-<div>
+<div style="float:left; padding:10px 10px 10px 0px; clear:both;">
     <asp:Label runat="server" ID="lblError" ClientIDMode="Static" ForeColor="Red"></asp:Label>
 </div>
 
-<div><h2 id="PartII" ><asp:Label ID="lblPartII" runat="server"></asp:Label></h2></div>
+<section style="width:100%; padding-left: 0px; clear:both;">
+    <h4 style="border: 0px !important;"><asp:Label ID="Label2" runat="server">Part II:  Science Information</asp:Label></h4>
+</section>
 
-<details class="margin-top-medium">
-    <summary><asp:Label ID="lblSumPharmInfo" runat="server"></asp:Label></summary>
-    <div class="form-group">
-        <div class="row text-left">
-            <div class="col-xs-10">
-                <h4>Drug Substance</h4>
-            </div>
-            <div class="col-xs-2 mrgn-tp-md">
-                <img class="pull-right" style="cursor: pointer !important;" src="images/btnAdd.png" onclick="AddDrugSubstanceTextBox()" id="btnAddDrugSubstance" width="58" height="40" />
-            </div>
-        </div>
-
-        <div id="DrugSubstance0" class="brdr-bttm brdr-tp brdr-lft brdr-rght">
-            <div class="row">
-                <div class="col-xs-10 text-left">
-                    <input type="text" id="tbSciInfoProperName0" name="tbSciInfoProperName" readonly="readonly" />
-                </div>
-                <div class="col-xs-2 pull-right">
-                    <img class="pull-right" style="cursor: pointer !important;" src="images/btnRemove.png" onclick="RemoveDrugSubstanceTextBox(0)" width="58" height="40" />
-                </div>
-            </div>
-
-            <div class="form-group">
-                <div class="margin-top-medium">
-                    <asp:Label AssociatedControlID="tbSciInfoChemicalname0" ID="lblChemicalname" CssClass="control-label" runat="server"></asp:Label>
-                </div>
-                <div class="row">
-                    <div class="col-xs-10 text-left">
-                        <textarea id="tbSciInfoChemicalname0" name="tbSciInfoChemicalname" class="textarea form-control" runat="server"></textarea>
-                    </div>
-                </div>
-            </div>
-
-            <div class="form-group">
-                <div class="margin-top-medium">
-                    <asp:Label AssociatedControlID="tbSciInfoMolecularformula0" ID="lblMolecularformula" CssClass="control-label" runat="server"></asp:Label>
-                </div>
-                <div class="row">
-                    <div class="col-xs-10 text-left">
-                        <textarea id="tbSciInfoMolecularformula0" name="tbSciInfoMolecularformula" class="textarea form-control" runat="server"></textarea>
-                    </div>
-                </div>
-            </div>
-
-            <div class="form-group">
-                <div class="margin-top-medium">
-                    <asp:Label AssociatedControlID="tbSciInfoMolecularmass0" ID="lblMolecularmass" CssClass="control-label" runat="server"></asp:Label>
-                </div>
-                <div class="row">
-                    <div class="col-xs-10 text-left">
-                        <textarea id="tbSciInfoMolecularmass0" name="tbSciInfoMolecularmass" class="textarea form-control" runat="server"></textarea>
-                    </div>
-                </div>
-            </div>
-
-            <div class="form-group">
-                <div class="margin-top-medium">
-                    <asp:Label AssociatedControlID="fustrucform0" ID="lblStructuraform" CssClass="control-label" runat="server"></asp:Label>
-                </div>
-                <div class="row margin-top-medium margin-bottom-medium mrgn-lft-sm">
-                    <div class="col-xs-10 symbolbrand">
-                        <div>
-                            <input type="file" id="fustrucform0" runat="server" onchange="loadFile('fustrucform0','fuimage0','tbfuimagename0','tbfuimagebasesixtyfour0')" />
-                        </div>
-                        <div style="clear: both; border: 1px solid #D9D9D9; width: 103px; height: 103px; padding-top: 4px;">
-                            <img id="fuimage0" src="images/x.png" />
-                            <input type="text" id="tbfuimagename0" name="tbfuimagename" class="hidden" />
-                            <input type="text" id="tbfuimagebasesixtyfour0" name="tbfuimagebasesixtyfour" class="hidden" />
-                        </div>
-                    </div>
-                </div>
-
-                <div class="form-group">
-                    <div class="margin-top-medium">
-                        <asp:Label AssociatedControlID="tbPhysicochemicalproperties0" ID="lblPhysicochemicalproperties" CssClass="control-label" runat="server"></asp:Label>
-                    </div>
-                    <div class="row">
-                        <div class="col-xs-10 text-left">
-                            <textarea id="tbPhysicochemicalproperties0" name="tbPhysicochemicalproperties" class="textarea form-control" runat="server"></textarea>
-                        </div>
-                    </div>
-                </div>
-
-            </div>
-
-        </div>
-
-        <div id="dvExtraDrugSubstance"></div>
+<details style="clear:both;">
+     <summary id="SUM_PHARMACEUTICAL" lang="en">Pharmaceutical information</summary>  
+    
+    <div style="padding-left: 0px; padding-top:20px; clear:both; width:91%;">    
+            <div style="width:93%; float:left; clear:both;">
+                <h4 id="DRUG" lang="en">Drug substance</h4>
+            </div>  
+            <div style="width:5%; float:left; margin-left: -8px;">
+                     <input type="button" value="Add" onclick="AddDrugSubstanceTextBox()" id="btnAddDrugSubstance" class="btn btn-default btn-xs" />
+         
+             <!--   <img style="cursor:pointer !important;" src="images/btnAdd.png"  onclick="AddDrugSubstanceTextBox()" id="btnAddDrugSubstance" width="58" height="40" /> -->                                                         
+            </div>   
     </div>
+
+    <div id="DrugSubstance0" style="border:1px solid #D9D9D9; margin-bottom:20px; width:90%; clear:both;">
+    
+        <div style="width:94%; text-align:center; padding-left: 0px; float:left;">
+            <div style="text-align:left;">          
+                <input type="text" id="tbSciInfoProperName0" name="tbSciInfoProperName" style="border:0px; height:27px;" readonly="true"/>
+            </div>
+        </div>
+        <div style="width:5%; float:left; margin-left: -8px;">
+               <input type="button" value="Remove" onclick="RemoveDrugSubstanceTextBox(0)" id="btnRemoveDrugSubstanceTextBox" class="btn btn-default btn-xs" />
+     
+           <!-- <img style="cursor:pointer !important;" src="images/btnRemove.png"  onclick="RemoveDrugSubstanceTextBox(0)" width="58" height="40" /> -->                                                         
+        </div>  
+
+        <div style="width:94%; text-align:center; clear:both; padding-left: 0px;">
+            <div style="text-align:left;">          
+                <div style="padding: 20px 4px 4px 0px">Chemical name</div>                    
+                    <textarea id="tbSciInfoChemicalname0" name="tbSciInfoChemicalname"></textarea>                                 
+            </div>
+        </div>
+
+        <div style="width:94%; text-align:center; clear:both; padding-left: 0px;">
+            <div style="text-align:left;">          
+                <div style="padding: 20px 4px 4px 0px">Molecular formula</div>       
+                    <textarea id="tbSciInfoMolecularformula0" name="tbSciInfoMolecularformula"></textarea>                                     
+            </div>
+        </div> 
+        
+        <div style="width:94%; text-align:center; clear:both; padding-left: 0px;">
+            <div style="text-align:left;">          
+                <div style="padding: 20px 4px 4px 0px">Molecular mass</div>       
+                    <textarea id="tbSciInfoMolecularmass0" name="tbSciInfoMolecularmass"></textarea>                                     
+            </div>
+        </div>       
+
+        <div style="width:94%; clear:both; padding-left: 0px;">
+            <div class="symbolbrand" style="width:500px;">
+                <div style="padding: 20px 4px 0px 0px; float:left;">Structural formula</div>
+                <div style="clear:both; width:100%; padding: 4px 4px 4px 0px;"><input type="file" id="fustrucform0" style="width:400px;" onchange="loadFile('fustrucform0','fuimage0','tbfuimagename0','tbfuimagebasesixtyfour0')"/></div>            
+                <div style="clear:both; border:1px solid #D9D9D9; width:103px; height:103px; padding-top:4px;">
+                    <img id="fuimage0" src="images/x.png" width="100" height="100" />
+                    <input type="text" id="tbfuimagename0" name="tbfuimagename" style="display:none;" />
+                    <input type="text" id="tbfuimagebasesixtyfour0" name="tbfuimagebasesixtyfour" style="display:none;" />
+                </div>                      
+            </div>
+        </div>
+
+        <div style="width:94%; text-align:center; clear:both; padding-left: 0px;">
+            <div style="text-align:left;">          
+                <div style="padding: 20px 4px 4px 0px">Physicochemical properties</div>      
+                    <textarea id="tbPhysicochemicalproperties0" name="tbPhysicochemicalproperties"></textarea>                                                 
+            </div>
+        </div>
+
+    </div>
+
+    <div id="dvExtraDrugSubstance" style="width:100%">
+        </div>
 </details>
 
-<details class="margin-top-medium">
-    <summary><asp:Label ID="lblSumCT" runat="server"></asp:Label></summary>
+<details style="clear:both; padding-top: 20px;">
+      <summary id="SUM_CLINICAL_TRIALS" lang="en">Clinical trials</summary>
 
-    <div class="form-group">
-            <div class="margin-top-medium">
-                <asp:Label ID="lblClinicalTrials" AssociatedControlID="tbClinicalTrialsOverview" CssClass="control-label" runat="server"></asp:Label>
-            </div>
-             <div class="row margin-top-medium">   
-                 <div class="col-xs-10 text-left">                               
-                    <textarea id="tbClinicalTrialsOverview" name="tbClinicalTrialsOverview" runat="server"></textarea>
-                 </div>
-             </div>                            
+    <div style="width:84.5%; text-align:center; clear:both;; padding-left: 0px; text-align:left;">
+        <div style="padding: 4px 4px 4px 0px"><label id="lblClinical" lang="en">Clinical trials</label></div>                         
+        <textarea id="tbClinicalTrialsOverview" name="tbClinicalTrialsOverview" runat="server"></textarea>                            
     </div>
-    <div class="form-group">
-        <div class="row">
-            <div class="col-sm-4">
-                <label for="tbSelectedClinicalTrials" class="control-label hidden">Selected clinical trials</label>
-                <input type="text" id="tbSelectedClinicalTritextals" class="form-control" />
-            </div>
-            <div class="col-sm-1">
-                <img style="cursor: pointer !important;" src="images/btnAdd.png" onclick="AddClinicalTrialsOuterSection()" id="" width="58" height="40" />
-            </div>
-        </div>
-    </div>
-    <div id="dvExtraClinicalTrialsOuter"></div>  
 
-    <div class="form-group">
-        <div class="row margin-top-large">
-            <div class="col-xs-10 text-left">
-                <h4><asp:Label ID="lblBioStudy" runat="server"></asp:Label></h4>
+    <div style="width:46%; float:left; padding: 25px 0px 0px 0px;">
+        <input type="text" id="tbSelectedClinicalTrials" style="width: 500px; height:40px;"/>
+    </div>     
+    <div style="width:5%; float:left; padding: 25px 0px 0px 0px;">
+      <input type="button" value="Add" onclick="AddClinicalTrialsOuterSection()" id="btnAddClinicalTrialsOuterSection" class="btn btn-default btn-xs" />
+   
+        <!--<img style="cursor:pointer !important;" src="images/btnAdd.png" onclick="AddClinicalTrialsOuterSection()" id="" width="58" height="40" /> -->                                                         
+    </div> 
+
+    <div id="dvExtraClinicalTrialsOuter" style="clear:both; width:100%">
+    </div>  
+
+
+    <div style="padding-left: 0px; padding-top:20px; clear:both; width:90%; display:none">    
+        <div style="width:93%; float:left; clear:both;">
+               <h4 id="Comparative" lang="en">Comparative bioavailability studies</h4>
+        </div>  
+        <div style="width:5%; float:left; margin-left: -14px;">
+               <input type="button" value="Add" onclick="AddAnalyteNameTextBox()" id="btnAddAnalyteName" class="btn btn-default btn-xs" />
+       
+           <!-- <img style="cursor:pointer !important;" src="images/btnAdd.png"  onclick="AddAnalyteNameTextBox()" id="btnAddAnalyteName" width="58" height="40" />-->                                                          
+        </div>   
+    </div>
+
+    <div id="AnalyteName0" style="display:none">
+        <div style="padding-left: 0px; padding-top:0px; clear:both;">
+              <label id="lblAnalyteName" lang="en">Analyte name</label>
+        </div> 
+        <div style="width:90%; padding-left: 0px; clear:both;">
+            <div style="width:94.5%; float:left; clear:both;">
+                <div style="height:40px; float:left; font-size:xx-large">(</div>
+                <div style="height:40px; width:90px; float:left; padding-top:6px;">
+                    <input type="number" id="tbAnalyteMultiplicand0" name="tbAnalyteMultiplicand" style="width:100%; text-align:center;"/>
+                </div>
+                <div style="height:40px; float:left; font-size:xx-large">&nbsp;&nbsp;X</div>
+                <div style="height:40px; width:90px; float:left; padding-top:6px;">
+                    <input type="number" id="tbAnalyteMultiplier0" name="tbAnalyteMultiplier" style="width:100%; text-align:center;"/>
+                </div>
+                <div style="height:40px; float:left; font-size:xx-large">&nbsp;mg)</div>
             </div>
-            <div class="col-xs-2 mrgn-tp-md">
-                <img class="pull-right" style="cursor: pointer !important;" src="images/btnAdd.png" onclick="AddAnalyteNameTextBox()" id="btnAddAnalyteName" width="58" height="40" />
-            </div>
+            <div style="width:5%; float:left; margin-left: -14px;">
+                      <input type="button" value="Remove" onclick="RemoveAnalyteNameTextBox(0)" id="RemoveAnalyteNameTextBox" class="btn btn-default btn-xs" />
+         
+              <!--  <img style="cursor:pointer !important;" src="images/btnRemove.png"  onclick="RemoveAnalyteNameTextBox(0)" width="58" height="40" /> -->                                                         
+            </div>  
         </div>
-    
-        <section class="panel panel-default" id="AnalyteName0">
-            <header class="panel-heading">
-                <div class="row text-center">Analyte Name</div>
-                <div class="row text-center">                    
-                    (            
-                <input type="number" id="tbAnalyteMultiplicand0" name="tbAnalyteMultiplicand" />
-                    &nbsp;&nbsp;X             
-                <input type="number" id="tbAnalyteMultiplier0" name="tbAnalyteMultiplier" />
-                    &nbsp;mg)                                 
-                <img class="pull-right" style="cursor: pointer !important;" src="images/btnRemove.png" onclick="RemoveAnalyteNameTextBox(0)" width="58" height="40" />
-                </div>
-            </header>
-            <div class="panel-body">
-                <div class="row">
-                    <div class="col-xs-2 text-right">
-                        <asp:Label ID="lblParameter" runat="server"></asp:Label>
-                    </div>
-                    <div class="col-xs-2 brdr-lft">
-                        <asp:Label ID="l" runat="server"></asp:Label>
-                        Test*
-                    </div>
-                    <div class="col-xs-2 brdr-lft">
-                        Reference
-                    </div>
-                    <div class="col-xs-3 brdr-lft">
-                        % Ratio of Geometric Means
-                    </div>
-                    <div class="col-xs-3 brdr-lft">
-                        Confidence Interval #
-                    </div>
-                </div>
-                <div class="row">
-                    <div class="col-xs-2 brdr-tp text-right">
-                        AUCT +-(units) 
-                    </div>
-                    <div class="col-xs-2 brdr-tp brdr-lft">
-                        <textarea id="tbAUCTTest0" name="tbAUCTTest"></textarea>
-                    </div>
-                    <div class="col-xs-2 brdr-tp brdr-lft">
-                        <textarea id="tbAUCTReference0" name="tbAUCTReference"></textarea>
-                    </div>
-                    <div class="col-xs-3 brdr-tp brdr-lft">
-                        <textarea id="tbAUCTPercentRatio0" name="tbAUCTPercentRatio"></textarea>
-                    </div>
-                    <div class="col-xs-3 brdr-tp brdr-lft">
-                        <textarea id="tbAUCTConfidenceInterval0" name="tbAUCTConfidenceInterval"></textarea>
-                    </div>
-                </div>
-                <div class="row">
-                    <div class="col-xs-2 brdr-tp text-right">
-                        AUCI (units)
-                    </div>
-                    <div class="col-xs-2 brdr-tp brdr-lft">
-                        <textarea id="tbAUCITest0" name="tbAUCITest"></textarea>
-                    </div>
-                    <div class="col-xs-2 brdr-tp brdr-lft">
-                        <textarea id="tbAUCIReference0" name="tbAUCIReference"></textarea>
-                    </div>
-                    <div class="col-xs-3 brdr-tp brdr-lft">
-                        <textarea id="tbAUCIPercentRatio0" name="tbAUCIPercentRatio"></textarea>
-                    </div>
-                    <div class="col-xs-3 brdr-tp brdr-lft">
-                        <textarea id="tbAUCIConfidenceInterval0" name="tbAUCIConfidenceInterval"></textarea>
-                    </div>
-                </div>
-                <div class="row">
-                    <div class="col-xs-2 brdr-tp text-right">
-                        CMAX (units)
-                    </div>
-                    <div class="col-xs-2 brdr-tp brdr-lft">
-                        <textarea id="tbCMAXTest0" name="tbCMAXTest"></textarea>
-                    </div>
-                    <div class="col-xs-2 brdr-tp brdr-lft">
-                        <textarea id="tbCMAXReference0" name="tbCMAXReference"></textarea>
-                    </div>
-                    <div class="col-xs-3 brdr-tp brdr-lft">
-                        <textarea id="tbCMAXPercentRatio0" name="tbCMAXPercentRatio"></textarea>
-                    </div>
-                    <div class="col-xs-3 brdr-tp brdr-lft">
-                        <textarea id="tbCMAXConfidenceInterval0" name="tbCMAXConfidenceInterval"></textarea>
-                    </div>
-                </div>
-                <div class="row">
-                    <div class="col-xs-2 brdr-tp text-right">
-                        TMAX (h)
-                    </div>
-                    <div class="col-xs-2 brdr-tp brdr-lft">
-                        <textarea id="tbTMAXTest0" name="tbTMAXTest"></textarea>
-                    </div>
-                    <div class="col-xs-2 brdr-tp brdr-lft">
-                        <textarea id="tbTMAXReference0" name="tbTMAXReference"></textarea>
-                    </div>
-                    <div class="col-xs-3 brdr-tp brdr-lft">
-                        <textarea id="tbTMAXPercentRatio0" name="tbTMAXPercentRatio"></textarea>
-                    </div>
-                    <div class="col-xs-3 brdr-tp brdr-lft">
-                        <textarea id="tbTMAXConfidenceInterval0" name="tbTMAXConfidenceInterval"></textarea>
-                    </div>
-                </div>
-                <div class="row">
-                    <div class="col-xs-2 brdr-tp text-right">
-                        T1/2 (h)
-                    </div>
-                    <div class="col-xs-2 brdr-tp brdr-lft brdr-bttm">
-                        <textarea id="tbTHalfTest0" name="tbTHalfTest"></textarea>
-                    </div>
-                    <div class="col-xs-2 brdr-tp brdr-lft brdr-bttm">
-                        <textarea id="tbTHalfReference0" name="tbTHalfReference"></textarea>
-                    </div>
-                    <div class="col-xs-3 brdr-tp brdr-lft brdr-bttm">
-                        <textarea id="tbTHalfPercentRatio0" name="tbTHalfPercentRatio"></textarea>
-                    </div>
-                    <div class="col-xs-3 brdr-tp brdr-lft brdr-bttm">
-                        <textarea id="tbTHalfConfidenceInterval0" name="tbTHalfConfidenceInterval"></textarea>
-                    </div>
-                </div>
+        <section style="width:91%; padding-left: 0px; clear:both;">
+            <div style="width:13%; float:left; border: 1px solid #D9D9D9; height:50px;">
+                 <label id="lblParameter" lang="en">Parameter</label>
             </div>
+            <div style="width:17%; float:left; border: 1px solid #D9D9D9; height:50px">
+                 <label id="lblTest" lang="en">Test</label>*
+            </div>
+            <div style="width:17%; float:left; border: 1px solid #D9D9D9; height:50px">
+                 <label id="lblReference" lang="en">Reference</label>
+            </div>
+            <div style="width:29%; float:left; border: 1px solid #D9D9D9; height:50px">
+                <label id="lblRatio" lang="en">% Ratio of geometric means</label>
+            </div>
+            <div style="width:23%; float:left; border: 1px solid #D9D9D9; height:50px">
+               <label id="lblConfidence" lang="en">Confidence interval #</label>
+            </div>   
         </section>
+        <div style="width:91%; padding-left: 0px; clear:both;">
+            <div style="width:13%; float:left; border: 1px solid #D9D9D9; height:118px;">
+                AUCT +-(units) 
+            </div>  
+            <div style="width:17%; float:left;">
+                <textarea id="tbAUCTTest0" name="tbAUCTTest"></textarea>                
+            </div> 
+            <div style="width:17%; float:left;">
+                <textarea id="tbAUCTReference0" name="tbAUCTReference"></textarea>                
+            </div>
+            <div style="width:29%; float:left;">
+                <textarea id="tbAUCTPercentRatio0" name="tbAUCTPercentRatio"></textarea>                
+            </div> 
+            <div style="width:23%; float:left; padding-right:2px;">
+                <textarea id="tbAUCTConfidenceInterval0" name="tbAUCTConfidenceInterval"></textarea>                
+            </div>    
+        </div>
+        <div style="width:91%; padding-left: 0px; clear:both;">
+            <div style="width:13%; float:left; border: 1px solid #D9D9D9; height:118px;">
+                AUCI (units)
+            </div>  
+            <div style="width:17%; float:left;">
+                <textarea id="tbAUCITest0" name="tbAUCITest"></textarea>                
+            </div> 
+            <div style="width:17%; float:left;">
+                <textarea id="tbAUCIReference0" name="tbAUCIReference"></textarea>                
+            </div>
+            <div style="width:29%; float:left;">
+                <textarea id="tbAUCIPercentRatio0" name="tbAUCIPercentRatio"></textarea>                
+            </div> 
+            <div style="width:23%; float:left;">
+                <textarea id="tbAUCIConfidenceInterval0" name="tbAUCIConfidenceInterval"></textarea>                
+            </div>     
+        </div>
+        <div style="width:91%; padding-left: 0px; clear:both;">
+            <div style="width:13%; float:left; border: 1px solid #D9D9D9; height:118px;">
+                CMAX (units)
+            </div>  
+            <div style="width:17%; float:left;">
+                <textarea id="tbCMAXTest0" name="tbCMAXTest"></textarea>                
+            </div> 
+            <div style="width:17%; float:left;">
+                <textarea id="tbCMAXReference0" name="tbCMAXReference"></textarea>                
+            </div>
+            <div style="width:29%; float:left;">
+                <textarea id="tbCMAXPercentRatio0" name="tbCMAXPercentRatio"></textarea>                
+            </div> 
+            <div style="width:23%; float:left;">
+                <textarea id="tbCMAXConfidenceInterval0" name="tbCMAXConfidenceInterval"></textarea>                
+            </div>     
+        </div>
+        <div style="width:91%; padding-left: 0px; clear:both;">
+            <div style="width:13%; float:left; border: 1px solid #D9D9D9; height:118px;">
+                TMAX (h)
+            </div>  
+            <div style="width:17%; float:left;">
+                <textarea id="tbTMAXTest0" name="tbTMAXTest"></textarea>                
+            </div> 
+            <div style="width:17%; float:left;">
+                <textarea id="tbTMAXReference0" name="tbTMAXReference"></textarea>                
+            </div>
+            <div style="width:29%; float:left;">
+                <textarea id="tbTMAXPercentRatio0" name="tbTMAXPercentRatio"></textarea>                
+            </div> 
+            <div style="width:23%; float:left;">
+                <textarea id="tbTMAXConfidenceInterval0" name="tbTMAXConfidenceInterval"></textarea>                
+            </div>     
+        </div>
+        <div style="width:91%; padding-left: 0px; clear:both;">
+            <div style="width:13%; float:left; border: 1px solid #D9D9D9; height:118px;">
+                T1/2 (h)
+            </div>  
+            <div style="width:17%; float:left;">
+                <textarea id="tbTHalfTest0" name="tbTHalfTest"></textarea>                
+            </div> 
+            <div style="width:17%; float:left;">
+                <textarea id="tbTHalfReference0" name="tbTHalfReference"></textarea>                
+            </div>
+            <div style="width:29%; float:left;">
+                <textarea id="tbTHalfPercentRatio0" name="tbTHalfPercentRatio"></textarea>                
+            </div> 
+            <div style="width:23%; float:left;">
+                <textarea id="tbTHalfConfidenceInterval0" name="tbTHalfConfidenceInterval"></textarea>                
+            </div>   
+        </div>
+    </div>
     
-    <div id="dvExtraAnalyteName" class="hidden">
+    <div id="dvExtraAnalyteName" style="display:none">
     </div>
 
-    <div class="text-left">*	Identity of the test product.</div>
-    <div class="text-left">†	Identity of the reference product, including the manufacturer, and origin (country of purchase).</div>
-    <div class="text-left">‡	For drugs with a half-life greater than 24 hours AUCT should be replaced with AUC0-72.</div>
-    <div class="text-left">§	Expressed as either the arithmetic mean (CV%) or the median (range) only.</div>
-    <div class="text-left">[]	Expressed as the arithmetic mean (CV%) only.</div>
-    <div class="text-left">#	Indicate % Confidence Interval (i.e., 90% or 95%) in the column heading and list for the AUCT, AUCI and CMAX (if required).</div>
-</div>
+    <div style="clear:both; padding-left: 0px; display:none">*	Identity of the test product.</div>
+    <div style="clear:both; padding-left: 0px; display:none">†	Identity of the reference product, including the manufacturer, and origin (country of purchase).</div>
+    <div style="clear:both; padding-left: 0px; display:none">‡	For drugs with a half-life greater than 24 hours AUCT should be replaced with AUC0-72.</div>
+    <div style="clear:both; padding-left: 0px; display:none">§	Expressed as either the arithmetic mean (CV%) or the median (range) only.</div>
+    <div style="clear:both; padding-left: 0px; display:none">[]	Expressed as the arithmetic mean (CV%) only.</div>
+    <div style="clear:both; padding-left: 0px; display:none">#	Indicate % Confidence Interval (i.e., 90% or 95%) in the column heading and list for the AUCT, AUCI and CMAX (if required).</div>
 </details>
 
-<details class="margin-top-medium">
-<summary><asp:Label ID="lblSumPharmacology" runat="server"></asp:Label></summary>
-     <div class="form-group">
-            <div class="margin-top-medium">
-                <asp:Label ID="lblDetailedPharma" AssociatedControlID="tbDetailedPharma" CssClass="control-label" runat="server"></asp:Label>
-            </div>
-             <div class="row margin-top-medium">
-                <div class="col-xs-10 text-left">                                 
-                     <textarea id="tbDetailedPharma" name="tbDetailedPharma" runat="server"></textarea> 
-                </div>                           
-             </div>
+<details style="clear:both; padding-top: 20px;">
+<summary id="SUM_DETAILED" lang="en">Detailed pharmacology</summary>
+    <div style="width:90%; text-align:center; clear:both; padding-left: 0px;">
+        <div style="text-align:left;">  
+            <div style="padding: 20px 4px 4px 0px"><label id="lblDetailed" lang="en">Detailed pharmacolory</label></div>                         
+            <textarea id="tbDetailedPharma" name="tbClinicalTrials" runat="server"></textarea>                            
+        </div>
     </div>
 </details>
 
-<details class="margin-top-medium">
-    <summary><asp:Label ID="lblSumMicrobiology" runat="server"></asp:Label></summary>    
-     <div class="form-group">
-            <div class="margin-top-medium">
-                <asp:Label ID="lblMicrobiology" AssociatedControlID="tbMicrobiology" CssClass="control-label" runat="server"></asp:Label>
-            </div>
-             <div class="row margin-top-medium">
-                <div class="col-xs-10 text-left">                     
-                    <textarea id="tbMicrobiology" name="tbMicrobiology" runat="server"></textarea> 
-                 </div> 
-             </div>
+<details style="clear:both; padding-top: 20px;">
+    <summary id="SUM_MICROBIOLOGY" lang="en">Microbiology</summary>      
+    <div style="width:90%; text-align:center; clear:both; padding-left: 0px;">
+        <div style="text-align:left;">  
+            <div style="padding: 20px 4px 4px 0px"><label id="lblMicrobiology" lang="en">Microbiology</label></div>                         
+            <textarea id="tbMicrobiology" name="tbMicrobiology" runat="server"></textarea>                            
+        </div>
     </div>
 </details>
 
-<details class="margin-top-medium">
-    <summary><asp:Label ID="lblSumToxicology" runat="server"></asp:Label></summary>
-    <div class="form-group">
-            <div class="margin-top-medium">
-                <asp:Label ID="lblToxicology" AssociatedControlID="tbToxicology" CssClass="control-label" runat="server"></asp:Label>
-            </div>
-             <div class="row margin-top-medium">
-                <div class="col-xs-10 text-left">                              
-                    <textarea id="tbToxicology" name="tbToxicology" runat="server"></textarea> 
-                </div>
-             </div>                           
-     </div>
-</details>
-
-<details class="margin-top-medium">
-    <summary><asp:Label ID="lblSumRef" runat="server"></asp:Label></summary>
-    <div class="form-group">
-            <div class="margin-top-medium">
-                <asp:Label ID="lblRef" AssociatedControlID="tbReferences" CssClass="control-label" runat="server"></asp:Label>
-            </div>
-             <div class="row margin-top-medium">
-                <div class="col-xs-10 text-left">                         
-                    <textarea id="tbReferences" name="tbReferences" runat="server"></textarea>   
-                </div>                         
-             </div>
+<details style="clear:both; padding-top: 20px;">
+   <summary id="SUM_TOXICOLOGY" lang="en">Toxicology</summary>
+    <div style="width:90%; text-align:center; clear:both; padding-left: 0px;">
+        <div style="text-align:left;">  
+            <div style="padding: 20px 4px 4px 0px"><label id="lblToxicology" lang="en">Toxicology</label></div>                         
+            <textarea id="tbToxicology" name="tbToxicology" runat="server"></textarea>                            
+        </div>
     </div>
 </details>
 
+<details style="clear:both; padding-top: 20px;">
+    <summary id="SUM_REFERENCES" lang="en">References</summary>
+    <div style="width:90%; text-align:center; clear:both; padding-left: 0px;">
+        <div style="text-align:left;">  
+            <div style="padding: 20px 4px 4px 0px"><label id="lblReferences" lang="en">References</label></div>                         
+            <textarea id="tbReferences" name="tbReferences" runat="server"></textarea>                            
+        </div>
+    </div>
+</details>
 
-<div class="margin-top-large">
+<section>
     <asp:Menu ClientIDMode="Static" ID="submenutabsbottom" runat="server" Orientation="Horizontal" OnMenuItemClick="submenutabsbottom_MenuItemClick">
-        <StaticMenuStyle VerticalPadding="10px" />
-        <StaticMenuItemStyle HorizontalPadding="35px" />
+        <StaticMenuStyle VerticalPadding="5px" />
+        <StaticMenuItemStyle HorizontalPadding="25px" />
         <Items>
             <asp:MenuItem Text="Cover page" Value="Coverpage"></asp:MenuItem>
             <asp:MenuItem Text="Part I" Value="PartOne"></asp:MenuItem>
             <asp:MenuItem Text="Part II" Value="PartTwo"></asp:MenuItem>
             <asp:MenuItem Text="Part III" Value="PartThree"></asp:MenuItem>
+            <asp:MenuItem text="Form instruction" value="PMForm" toolTip="Back to the main page of DHPR form with form Instruction"></asp:MenuItem>
         </Items>
     </asp:Menu>
-</div>
+</section>
 <asp:HiddenField runat="server" ID="hdAnalyteName" ClientIDMode="Static" />
-
-
 </asp:Content>
+
