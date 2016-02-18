@@ -79,7 +79,16 @@ namespace Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Comparative Bioavailability Studies.
+        ///   Looks up a localized string similar to Analyte name.
+        /// </summary>
+        internal static string AnalyteName {
+            get {
+                return ResourceManager.GetString("AnalyteName", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Comparative bioavailability studies.
         /// </summary>
         internal static string BioStudy {
             get {
@@ -165,16 +174,16 @@ namespace Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Consumer information.
+        ///   Looks up a localized string similar to Confidence interval.
         /// </summary>
-        internal static string ConsumerInfo {
+        internal static string ConfInter {
             get {
-                return ResourceManager.GetString("ConsumerInfo", resourceCulture);
+                return ResourceManager.GetString("ConfInter", resourceCulture);
             }
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Detailed Pharmacology:.
+        ///   Looks up a localized string similar to Detailed pharmacology:.
         /// </summary>
         internal static string DetailedPharma {
             get {
@@ -197,6 +206,15 @@ namespace Resources {
         internal static string DosageForm {
             get {
                 return ResourceManager.GetString("DosageForm", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Drug substance.
+        /// </summary>
+        internal static string DrugSub {
+            get {
+                return ResourceManager.GetString("DrugSub", resourceCulture);
             }
         }
         
@@ -318,6 +336,60 @@ namespace Resources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Identity of the test product..
+        /// </summary>
+        internal static string Note1 {
+            get {
+                return ResourceManager.GetString("Note1", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Identity of the reference product, including the manufacturer, and origin (country of purchase)..
+        /// </summary>
+        internal static string Note2 {
+            get {
+                return ResourceManager.GetString("Note2", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to For drugs with a half-life greater than 24 hours AUCT should be replaced with AUC0-72..
+        /// </summary>
+        internal static string Note3 {
+            get {
+                return ResourceManager.GetString("Note3", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Expressed as either the arithmetic mean (CV%) or the median (range) only..
+        /// </summary>
+        internal static string Note4 {
+            get {
+                return ResourceManager.GetString("Note4", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Expressed as the arithmetic mean (CV%) only..
+        /// </summary>
+        internal static string Note5 {
+            get {
+                return ResourceManager.GetString("Note5", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Indicate % Confidence Interval (i.e., 90% or 95%) in the column heading and list for the AUCT, AUCI and CMAX (if required)..
+        /// </summary>
+        internal static string Note6 {
+            get {
+                return ResourceManager.GetString("Note6", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Over dose:.
         /// </summary>
         internal static string OverDose {
@@ -345,7 +417,7 @@ namespace Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Part III.
+        ///   Looks up a localized string similar to Part III: Consumer information.
         /// </summary>
         internal static string PartIII {
             get {
@@ -408,6 +480,15 @@ namespace Resources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Reference.
+        /// </summary>
+        internal static string Reference {
+            get {
+                return ResourceManager.GetString("Reference", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to References:.
         /// </summary>
         internal static string References {
@@ -426,6 +507,15 @@ namespace Resources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Ratio of geometric means.
+        /// </summary>
+        internal static string RGM {
+            get {
+                return ResourceManager.GetString("RGM", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Serious side effects, how often they happen and what to do about them.
         /// </summary>
         internal static string SeriousSideEffect {
@@ -435,7 +525,7 @@ namespace Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Serious Warnings and Precautions.
+        ///   Looks up a localized string similar to Serious warnings and precautions.
         /// </summary>
         internal static string SeriousWarning {
             get {
@@ -516,7 +606,7 @@ namespace Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Detailed Pharmacology.
+        ///   Looks up a localized string similar to Detailed pharmacology.
         /// </summary>
         internal static string SumPharmacology {
             get {
@@ -611,6 +701,15 @@ namespace Resources {
         internal static string TechnicalSpecs {
             get {
                 return ResourceManager.GetString("TechnicalSpecs", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Test.
+        /// </summary>
+        internal static string Test {
+            get {
+                return ResourceManager.GetString("Test", resourceCulture);
             }
         }
         

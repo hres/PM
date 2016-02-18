@@ -496,6 +496,7 @@
             <asp:MenuItem Text="Part I" Value="PartOne"></asp:MenuItem>
             <asp:MenuItem Text="Part II" Value="PartTwo"></asp:MenuItem>
             <asp:MenuItem Text="Part III" Value="PartThree"></asp:MenuItem>
+            <asp:MenuItem text="Form instruction" value="PMForm" toolTip="Back to the main page of DHPR form with form Instruction"></asp:MenuItem>
         </Items>
     </asp:Menu>
 </div>
@@ -511,13 +512,8 @@
 <div>
     <h4><asp:Label ID="lblBrandNameProprietary" runat="server"></asp:Label></h4>
 </div>
-
 <div>
     <h4><asp:Label ID="lblProperName" runat="server"></asp:Label></h4>
-</div>
-
-<div>
-    <h4><asp:Label ID="Label5" runat="server"></asp:Label></h4>
 </div>
 
 <details class="margin-top-medium">
@@ -526,12 +522,12 @@
     </summary> 
     <div class="form-group">
         <div class="margin-top-medium">
-               <asp:Label id="lblWHAT"  AssociatedControlID="tbMedicationForText" CssClass="control-label" runat="server"></asp:Label>
+             <asp:Label id="lblWHAT"  AssociatedControlID="tbMedicationForText" CssClass="control-label" runat="server"></asp:Label>
         </div>
        
         <div class="row">
             <div class="col-xs-10 text-left">                          
-                <textarea id="tbMedicationForText" name="tbMedicationForText" class="textarea form-control" runat="server"></textarea>
+                <textarea id="tbMedicationForText" name="tbMedicationForText" class="textarea" runat="server"></textarea>
             </div>
         </div>
     </div>
@@ -1095,6 +1091,7 @@
             <asp:MenuItem Text="Part I" Value="PartOne"></asp:MenuItem>
             <asp:MenuItem Text="Part II" Value="PartTwo"></asp:MenuItem>
             <asp:MenuItem Text="Part III" Value="PartThree"></asp:MenuItem>
+            <asp:MenuItem text="Form instruction" value="PMForm" toolTip="Back to the main page of DHPR form with form Instruction"></asp:MenuItem>
         </Items>
     </asp:Menu>
     
