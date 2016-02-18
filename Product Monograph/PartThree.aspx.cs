@@ -46,8 +46,6 @@ namespace Product_Monograph
                 }
             }
             
-                                  
-            Label5.Text = Resources.Resource.ConsumerInfo;
             lblPartIII.Text = Resources.Resource.PartIII;
             lblSumAbout.Text = Resources.Resource.Medication;
             lblWHAT.Text = Resources.Resource.MedicationUse;
