@@ -16,6 +16,8 @@ using System.Xml.Linq;
 using System.Configuration;
 using System.Collections;
 using System.IO.Compression;
+using System.Threading;
+using System.Globalization;
 
 namespace Product_Monograph
 {
@@ -23,6 +25,18 @@ namespace Product_Monograph
     {
         string strscript = "";
 
+        void Page_PreInit(Object sender, EventArgs e)
+        {
+            //retrieve culture information from session
+            string culture = Convert.ToString(Session["SelectedLanguage"]);
+            Thread.CurrentThread.CurrentUICulture = new CultureInfo(culture);
+
+            if (Session["masterpage"] != null)
+            {
+                this.MasterPageFile = (String)Session["masterpage"];
+
+            }
+        }
         protected void Page_Load(object sender, EventArgs e)
         {
             
@@ -41,6 +55,7 @@ namespace Product_Monograph
                 }
             }
         }
+
 
         private void LoadFromXML()
         {

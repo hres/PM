@@ -17,6 +17,8 @@ using System.Configuration;
 using System.Collections;
 using System.IO.Compression;
 using System.Text.RegularExpressions;
+using System.Threading;
+using System.Globalization;
 
 namespace Product_Monograph
 {
@@ -29,6 +31,20 @@ namespace Product_Monograph
             public string FieldLabel { get; set; }
 
             public string FieldID { get; set; }
+        }
+
+        void Page_PreInit(Object sender, EventArgs e)
+        {
+
+            //retrieve culture information from session
+            string culture = Convert.ToString(Session["SelectedLanguage"]);
+            Thread.CurrentThread.CurrentUICulture = new CultureInfo(culture);
+
+            if (Session["masterpage"] != null)
+            {
+                this.MasterPageFile = (String)Session["masterpage"];
+
+            }
         }
 
         List<Field> fields = new List<Field>();
