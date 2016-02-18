@@ -1,13 +1,16 @@
 ﻿using System;
-using System.Web.UI.HtmlControls;
-
+using System.Threading;
+using System.Globalization;
 namespace Product_Monograph
 {
     public partial class ProdMonoFr : System.Web.UI.MasterPage
     {
-
         protected void Page_Load(object sender, EventArgs e)
         {
+            //retrieve culture information from session
+            string culture = Convert.ToString(Session["SelectedLanguage"]);
+            Thread.CurrentThread.CurrentUICulture = new CultureInfo(culture);
+            
             lblError.InnerText = "";
             lblTitleForm.Text = Resources.Resource.TitleForm;
         }

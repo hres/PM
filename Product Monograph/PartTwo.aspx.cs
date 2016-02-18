@@ -16,6 +16,8 @@ using System.Xml.Linq;
 using System.Configuration;
 using System.Collections;
 using System.IO.Compression;
+using System.Threading;
+using System.Globalization;
 
 namespace Product_Monograph
 {
@@ -23,6 +25,18 @@ namespace Product_Monograph
     {
         string strscript = "";
 
+        void Page_PreInit(Object sender, EventArgs e)
+        {
+            //retrieve culture information from session
+            string culture = Convert.ToString(Session["SelectedLanguage"]);
+            Thread.CurrentThread.CurrentUICulture = new CultureInfo(culture);
+
+            if (Session["masterpage"] != null)
+            {
+                this.MasterPageFile = (String)Session["masterpage"];
+
+            }
+        }
         protected void Page_Load(object sender, EventArgs e)
         {
             
@@ -40,7 +54,40 @@ namespace Product_Monograph
                     lblError.Text = "Please load a new template or a previously saved draft.";
                 }
             }
+
+            lblPartII.Text = Resources.Resource.PartII;
+            lblSumPharmInfo.Text = Resources.Resource.SumPharmInfo;
+            lblSumCT.Text = Resources.Resource.SumCT;
+            lblSumPharmacology.Text = Resources.Resource.SumPharmacology;
+            lblSumMicrobiology.Text = Resources.Resource.SumMicrobiology;
+            lblSumToxicology.Text = Resources.Resource.SumToxicology;
+            lblSumRef.Text = Resources.Resource.SumRef;
+            lblRef.Text = Resources.Resource.References;
+            lblToxicology.Text = Resources.Resource.Toxicology;
+            lblMicrobiology.Text = Resources.Resource.Microbiology;
+            lblDetailedPharma.Text = Resources.Resource.DetailedPharma;
+            lblClinicalTrials.Text = Resources.Resource.ClinicalTrials;
+            lblChemicalname.Text = Resources.Resource.Chemicalname;
+            lblMolecularformula.Text = Resources.Resource.Molecularformula;
+            lblMolecularmass.Text = Resources.Resource.Molecularmass;
+            lblPhysicochemicalproperties.Text = Resources.Resource.Physicochemicalproperties;
+            lblStructuraform.Text = Resources.Resource.Structuralformula;
+            lblBioStudy.Text = Resources.Resource.BioStudy;
+            lblParameter.Text = Resources.Resource.Parameter;
+            lblDrugSub.Text = Resources.Resource.DrugSub;
+            lblAnalyteName.Text = Resources.Resource.AnalyteName;
+            lblTest.Text = Resources.Resource.Test;
+            lblReference.Text = Resources.Resource.Reference;
+            lblRGM.Text = Resources.Resource.RGM;
+            lblConfInter.Text = Resources.Resource.ConfInter;
+            lblNote1.Text = Resources.Resource.Note1;
+            lblNote2.Text = Resources.Resource.Note2;
+            lblNote3.Text = Resources.Resource.Note3;
+            lblNote4.Text = Resources.Resource.Note4;
+            lblNote5.Text = Resources.Resource.Note5;
+            lblNote6.Text = Resources.Resource.Note6;
         }
+
 
         private void LoadFromXML()
         {

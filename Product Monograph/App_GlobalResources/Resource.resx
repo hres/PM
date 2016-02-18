@@ -156,9 +156,6 @@
   <data name="Condition" xml:space="preserve">
     <value>Current conditions (Contraindications, Warnings and Precautions)</value>
   </data>
-  <data name="ConsumerInfo" xml:space="preserve">
-    <value>Consumer information</value>
-  </data>
   <data name="Diseases" xml:space="preserve">
     <value>Past diseases (Contraindications, Warnings and Precautions)</value>
   </data>
@@ -199,7 +196,7 @@
     <value>Over dose:</value>
   </data>
   <data name="PartIII" xml:space="preserve">
-    <value>Part III</value>
+    <value>Part III: Consumer information</value>
   </data>
   <data name="PointForm" xml:space="preserve">
     <value>Point form:</value>
@@ -223,7 +220,7 @@
     <value>Serious side effects, how often they happen and what to do about them</value>
   </data>
   <data name="SeriousWarning" xml:space="preserve">
-    <value>Serious Warnings and Precautions</value>
+    <value>Serious warnings and precautions</value>
   </data>
   <data name="SideEffect" xml:space="preserve">
     <value>Side effects and what to do about them:</value>
@@ -289,7 +286,7 @@
     <value>Clinica trials:</value>
   </data>
   <data name="DetailedPharma" xml:space="preserve">
-    <value>Detailed Pharmacology:</value>
+    <value>Detailed pharmacology:</value>
   </data>
   <data name="Microbiology" xml:space="preserve">
     <value>Microbiology:</value>
@@ -307,7 +304,7 @@
     <value>Microbiology</value>
   </data>
   <data name="SumPharmacology" xml:space="preserve">
-    <value>Detailed Pharmacology</value>
+    <value>Detailed pharmacology</value>
   </data>
   <data name="SumPharmInfo" xml:space="preserve">
     <value>Pharmaceutical information</value>
@@ -337,9 +334,45 @@
     <value>Structural formula</value>
   </data>
   <data name="BioStudy" xml:space="preserve">
-    <value>Comparative Bioavailability Studies</value>
+    <value>Comparative bioavailability studies</value>
   </data>
   <data name="Parameter" xml:space="preserve">
     <value>Parameter</value>
+  </data>
+  <data name="AnalyteName" xml:space="preserve">
+    <value>Analyte name</value>
+  </data>
+  <data name="ConfInter" xml:space="preserve">
+    <value>Confidence interval</value>
+  </data>
+  <data name="DrugSub" xml:space="preserve">
+    <value>Drug substance</value>
+  </data>
+  <data name="Note1" xml:space="preserve">
+    <value>Identity of the test product.</value>
+  </data>
+  <data name="Note2" xml:space="preserve">
+    <value>Identity of the reference product, including the manufacturer, and origin (country of purchase).</value>
+  </data>
+  <data name="Note3" xml:space="preserve">
+    <value>For drugs with a half-life greater than 24 hours AUCT should be replaced with AUC0-72.</value>
+  </data>
+  <data name="Note4" xml:space="preserve">
+    <value>Expressed as either the arithmetic mean (CV%) or the median (range) only.</value>
+  </data>
+  <data name="Note5" xml:space="preserve">
+    <value>Expressed as the arithmetic mean (CV%) only.</value>
+  </data>
+  <data name="Note6" xml:space="preserve">
+    <value>Indicate % Confidence Interval (i.e., 90% or 95%) in the column heading and list for the AUCT, AUCI and CMAX (if required).</value>
+  </data>
+  <data name="Reference" xml:space="preserve">
+    <value>Reference</value>
+  </data>
+  <data name="RGM" xml:space="preserve">
+    <value>Ratio of geometric means</value>
+  </data>
+  <data name="Test" xml:space="preserve">
+    <value>Test</value>
   </data>
 </root>

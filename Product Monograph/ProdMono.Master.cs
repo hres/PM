@@ -1,8 +1,6 @@
 ﻿using System;
 using System.Globalization;
 using System.Threading;
-using System.Web.UI.HtmlControls;
-using System.Web.UI.WebControls;
 
 namespace Product_Monograph
 {
@@ -10,7 +8,10 @@ namespace Product_Monograph
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-           lblError.InnerText = "";
+            //retrieve culture information from session
+            string culture = Convert.ToString(Session["SelectedLanguage"]);
+            Thread.CurrentThread.CurrentUICulture = new CultureInfo(culture);
+            lblError.InnerText = "";
            lblTitleForm.Text = Resources.Resource.TitleForm;
         }
 

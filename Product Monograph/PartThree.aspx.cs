@@ -18,6 +18,18 @@ namespace Product_Monograph
     {
         string strscript = "";
 
+        void Page_PreInit(Object sender, EventArgs e)
+        {
+            //retrieve culture information from session
+            string culture = Convert.ToString(Session["SelectedLanguage"]);
+            Thread.CurrentThread.CurrentUICulture = new CultureInfo(culture);
+
+            if (Session["masterpage"] != null)
+            {
+                this.MasterPageFile = (String)Session["masterpage"];
+
+            }
+        }
         protected void Page_Load(object sender, EventArgs e)
         {
             lblError.Text = "";
@@ -33,19 +45,7 @@ namespace Product_Monograph
                     lblError.Text = err.ToString();// "Please load a new template or a previously saved draft.";
                 }
             }
-            string lang = "";
-            if (Request.QueryString["lang"] == null)
-            { }
-            else
-            {
-                lang = Request.QueryString["lang"].ToString();
-            }
-
-            //set the new lang pass via parameter
-            Thread.CurrentThread.CurrentUICulture = new CultureInfo((lang == "") ? "en-CA" : lang);
-            Thread.CurrentThread.CurrentCulture = Thread.CurrentThread.CurrentUICulture;
-                                  
-            Label5.Text = Resources.Resource.ConsumerInfo;
+            
             lblPartIII.Text = Resources.Resource.PartIII;
             lblSumAbout.Text = Resources.Resource.Medication;
             lblWHAT.Text = Resources.Resource.MedicationUse;
