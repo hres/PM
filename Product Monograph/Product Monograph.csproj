@@ -396,6 +396,7 @@
     <Content Include="distro\4.0.19\js\ie8-wet-boew.min.js" />
     <Content Include="distro\4.0.19\js\ie8-wet-boew2.js" />
     <Content Include="distro\4.0.19\js\ie8-wet-boew2.min.js" />
+    <Content Include="distro\4.0.19\js\jquery-2.1.1.min.js" />
     <Content Include="distro\4.0.19\js\jquery\1.11.1\jquery.js" />
     <Content Include="distro\4.0.19\js\jquery\1.11.1\jquery.min.js" />
     <Content Include="distro\4.0.19\js\jquery\2.1.4\jquery.js" />
