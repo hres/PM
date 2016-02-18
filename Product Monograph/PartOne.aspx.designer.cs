@@ -22,13 +22,13 @@ namespace Product_Monograph {
         protected global::System.Web.UI.WebControls.Menu submenutabs;
         
         /// <summary>
-        /// btnSave control.
+        /// btnSaveDraft control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Button btnSave;
+        protected global::System.Web.UI.WebControls.Button btnSaveDraft;
         
         /// <summary>
         /// lblError control.
@@ -58,13 +58,13 @@ namespace Product_Monograph {
         protected global::System.Web.UI.WebControls.Label lblProperName;
         
         /// <summary>
-        /// Label2 control.
+        /// lblPart1Title control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label Label2;
+        protected global::System.Web.UI.WebControls.Label lblPart1Title;
         
         /// <summary>
         /// lblBrandName control.
@@ -211,13 +211,13 @@ namespace Product_Monograph {
         protected global::System.Web.UI.WebControls.Label lblParenteralProducts;
         
         /// <summary>
-        /// Label4 control.
+        /// lblAnySpecific control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label Label4;
+        protected global::System.Web.UI.WebControls.Label lblAnySpecific;
         
         /// <summary>
         /// tbOverdosage control.
