@@ -34,11 +34,11 @@ namespace Product_Monograph
                 }
             }
             string lang = "";
-            if (Request.QueryString["lang"] == null)
+            if (Session["SelectedLanguage"] == null)
             { }
             else
             {
-                lang = Request.QueryString["lang"].ToString();
+                lang = Convert.ToString(Session["SelectedLanguage"]); 
             }
 
             //set the new lang pass via parameter
