@@ -25,7 +25,7 @@ namespace Product_Monograph
     public partial class Coverpage : System.Web.UI.Page
     {
         string strscript = "";
-
+        int newColCount = 0;
         public class Field
         {
             public string FieldLabel { get; set; }
@@ -86,12 +86,18 @@ namespace Product_Monograph
 
               
                 int rowcounter = 1;
-
+                string[] colarray = null;
                 foreach (var row in rows)
                 {
-                    //strscript += "AddBrandProperDosageTextBoxLoadFromXML();";
+                    //strscript += "AddBrandProperDosageTextBoxLoadFromXML();";  //ching changes DIV into WET table
                     strscript += "AddRow('dataTable');";
-                    string[] colarray = "tbBrandName;tbProperName;tbDosage;tbStrengthValue;tbStrengthUnit;tbStrengthperDosageValue;tbStrengthperDosageUnit".Split(';');
+                //    if (newColCount > 0)
+                //    {
+               //         colarray = "tbBrandName;tbProperName;tbDosage;tbStrengthValue;tbStrengthUnit;tbStrengthperDosageValue;tbStrengthperDosageUnit,txtColumnName".Split(';');
+              //      }
+               //     else
+                        colarray = "tbBrandName;tbProperName;tbDosage;tbStrengthValue;tbStrengthUnit;tbStrengthperDosageValue;tbStrengthperDosageUnit".Split(';');
+
                     int colcounter = 0;
                     foreach (string column in row.columns)
                     {
@@ -150,6 +156,12 @@ namespace Product_Monograph
                               BrandName = (string)item.Element("BrandName"),
                               ProperName = (string)item.Element("ProperName"),
                               DosageFormStrength = (string)item.Element("DosageFormStrength"),
+                              //ching note: need to add all table column name
+                              //strength value
+                              //strength unit
+                              //strength per Dosage Value
+                              //strength per Dosage Unit
+                              //txtColumnName -- also new column name
                               PharmaceuticalStandard = (string)item.Element("PharmaceuticalStandard"),
                               TherapeuticClassification = (string)item.Element("TherapeuticClassification"),
                               Sponsorname = (string)item.Element("Sponsorname"),
@@ -173,7 +185,12 @@ namespace Product_Monograph
                                       
                 if (xmldataitem.SchedulingSymbol != null)
                     strscript += "$('#tbxmlimgnameSymbol').val('" + xmldataitem.SchedulingSymbol + "');";
-                
+                //Ching sets all table column names-- they are html control value, not server control
+             //   if (xmldataitem.BrandName != null)
+             //       strscript += "$('#tbBrandname').val('" + xmldataitem.BrandName + "');";
+            //    if (xmldataitem.ProperName != null)
+           //         strscript += "$('#tbPropername').val('" + xmldataitem.ProperName + "');";
+
                 tbPharmaceuticalStandard.Text = xmldataitem.PharmaceuticalStandard;
                 tbTherapeuticClassifications.Text = xmldataitem.TherapeuticClassification;
                 tbSponsorName.Text = xmldataitem.Sponsorname;
@@ -229,7 +246,8 @@ namespace Product_Monograph
         {
             XmlDocument doc = (XmlDocument)Session["draft"]; // helpers.Processes.XMLDraft;
             XmlNode rootnode = doc.SelectSingleNode("ProductMonographTemplate");
-   
+          //  int newColCount = 0;
+            ArrayList newColnamesarray = new ArrayList();
 
             #region symbol
             try
@@ -293,6 +311,8 @@ namespace Product_Monograph
                 ArrayList strengthunitarray = new ArrayList();
                 ArrayList strengthperdosagevaluearray = new ArrayList();
                 ArrayList strengthperdosageunitarray = new ArrayList();
+
+
                 if (HttpContext.Current.Request.Form.GetValues("tbBrandName") != null &&
                     HttpContext.Current.Request.Form.GetValues("tbProperName") != null &&
                     HttpContext.Current.Request.Form.GetValues("tbDosage") != null &&
@@ -331,6 +351,15 @@ namespace Product_Monograph
                     }
                 }
 
+             //   if (HttpContext.Current.Request.Form.GetValues("txtColumnName") != null)
+             //   {
+                   // ArrayList newColnamesarray = new ArrayList();
+             //       foreach (string newColnamesitem in HttpContext.Current.Request.Form.GetValues("txtColumnName"))
+             //       {
+            //            newColnamesarray.Add(newColnamesitem);
+            //        }
+           //         newColCount = newColnamesarray.Count;
+          //      }
 
                 if (roa.Count < 1)
                 {
@@ -376,6 +405,14 @@ namespace Product_Monograph
                         subsubnode = doc.CreateElement("column");
                         subsubnode.AppendChild(doc.CreateTextNode(col7));
                         subnode.AppendChild(subsubnode);
+                        //ching adds code for new column
+                    //    if (newColCount == 1)
+                    //    {
+                   //         string col8 = newColnamesarray[ar].ToString();
+                   //         subsubnode = doc.CreateElement("column");
+                  //          subsubnode.AppendChild(doc.CreateTextNode(col8));
+                  //          subnode.AppendChild(subsubnode);
+                   //     }
                     }
                 }
                 else
@@ -424,6 +461,14 @@ namespace Product_Monograph
                         subsubnode = doc.CreateElement("column");
                         subsubnode.AppendChild(doc.CreateTextNode(col7));
                         subnode.AppendChild(subsubnode);
+                        //ching adds code for new column
+                      //  if (newColCount > 1)
+                     //   {
+                    //        string col8 = newColnamesarray[ar].ToString();
+                    //        subsubnode = doc.CreateElement("column");
+                    //        subsubnode.AppendChild(doc.CreateTextNode(col8));
+                    //        subnode.AppendChild(subsubnode);
+                    //    }
                     }
                 }
             }

@@ -527,7 +527,9 @@
                         switch (newcell.childNodes[0].type) {
                             case "text":
                                 newcell.childNodes[0].value = "";
-                                newcell.childNodes[0].id = newcell.childNodes[0].id + newRowCount;  //BrandName and ProperName textbox              
+                                newcell.childNodes[0].id = newcell.childNodes[0].id + newRowCount;  //BrandName and ProperName textbox
+     
+                              //  alert("cell text: " + newcell.innerHTML);
                                 break;
                             case "checkbox":
                                 newcell.childNodes[0].checked = false;
@@ -652,26 +654,25 @@
             var IsBlock = false;
             if ($('#txtColumnName').val()) {
                 //check the new entry of column name, if it is same as the name in the last column, push the user to make a change...
-             //  newColNames[columnCount] = $('#txtColumnName').val();  //save it and pass to AddRow function
-                //var CheckColumn = $('#dataTable').column(':contains(' + newColNames[columnCount] + ')');
-               $('#dataTable thead th').each(function () {
-                   var Colname = $(this).text();
+              
 
-                   if ($.trim($('#txtColumnName').val()) == $.trim(Colname)) {
-                       alert("Please enter a new column name, not the same as existing column name");
-                       $('#txtColumnName').empty();
-                       IsBlock = true;
-                   }
-                   else
-                       IsBlock = false;
-               });
-                //check new entry of column name is duplicated in all entries
-               var colnameIn = $('#txtColumnName').val();
-               if (IsBlock == false)
-               {
-                   newClonames[columnCount] = colnameIn;
-                  
-                   columnCount = columnCount + 1;
+                //var CheckColumn = $('#dataTable').column(':contains(' + newColNames[columnCount] + ')');
+               //alert("Entered new column: " + newColNames[columnCount]);  works!
+                $('#dataTable thead th').each(function () {
+                    var Colname = $(this).text();
+
+                    if ($.trim($('#txtColumnName').val()) == $.trim(Colname)) {
+                        alert("Please enter a new column name, not the same as existing column name");
+                        $('#txtColumnName').empty();
+                        IsBlock = true;
+                    }
+                });
+
+                if (IsBlock == false) {
+
+            
+                    newColNames[columnCount] = $('#txtColumnName').val();  //save it and pass to AddRow function
+                    columnCount = columnCount + 1;
                     var noOfColumns = $('#dataTable thead tr th').length;
                     //if the table column length is over 25, it stops adding
                     if (columnCount < 25) {
@@ -682,7 +683,7 @@
                         columnCount = columnCount + 1; //add textbox count
                     } else
                         alert('Max Column number is 25');
-               }
+                }
              
              
             } else { alert('Enter Column name first'); }
