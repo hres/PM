@@ -156,9 +156,9 @@ namespace Product_Monograph
                     {
                         dosagearray.Add(dosageitem);
                     }
-                    foreach (string dosageitem in HttpContext.Current.Request.Form.GetValues("tbStrengthDynamic"))
+                    foreach (string strengthDynamicItem in HttpContext.Current.Request.Form.GetValues("tbStrengthDynamic"))
                     {
-                        strengtharray.Add(dosageitem);
+                        strengtharray.Add(strengthDynamicItem);
                     }
                     foreach (string ingredientitem in HttpContext.Current.Request.Form.GetValues("tbClinicallyRelevantNonmedicinalIngredientsDynamic"))
                     {

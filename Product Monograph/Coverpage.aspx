@@ -367,9 +367,10 @@
     <input class="btn btn-default btn-xs" type="button" value="Append Row" onclick="addRow('dataTable')" />
     <input class="btn btn-default btn-xs" type="button" value="Delete Row" onclick="deleteRow('dataTable')" />
     <span class="col-lg-3">&nbsp;</span>
-    <input type="text" id="txtColumnName" placeholder="Please enter Column name" maxlength="100" />
+    <input type="text" id="txtColumnName" name="txtColumnName" placeholder="Please enter Column name" maxlength="100" />
     <input class="btn btn-default btn-xs" type="button" value="Append Column" id="btnAddCol" />
     <input class="btn btn-default btn-xs" type="button" value="Delete Last Column" id="btnDelCol" onClick="delCol('dataTable')"/> 
+    <Label id="lblMsg" class="alert-warning" ></Label>
 </div>
 <div class="row table-responsive">
    <table id="dataTable" class="wb-tables table table-striped table-hover" data-wb-tables='{ "ordering": false; "bLengthChange": false;"bFilter": true;}'
@@ -389,19 +390,19 @@
            <tr>
                <td style="width: 26px"><input type="checkbox" id="tbChkRemove" /></td>
                <td style="width: 28px"><input type="button" id="tbBtnRemove" class="btn btn-default btn-xs" onclick="deleteRowBtnRow(this)" name="btnDelete" value="X" /></td>   
-               <th headers="thBrandName" style="width: 120px"><input type="text" id="tbBrandname" /></th>
-               <td headers="thProperName" style="width: 120px"><input type="text" id="tbPropername" /></td>
+               <th headers="thBrandName" data-required="true" style="width: 120px"><input type="text" id="tbBrandname" name="tbBrandname"/></th>
+               <td headers="thProperName" style="width: 120px"><input type="text" id="tbPropername" name="tbPropername"/></td>
                <td headers="thDosageForm" style="width: 121px">
-                    <select id="tbDosage" style="width: 120px">
+                    <select id="tbDosage" name="tbDosage" style="width: 120px">
                     </select></td>                
                <td headers="thStrength" style="width: 158px">
-                   <input type="number" id="tbStrengthValue" value="0" style="width: 52px"/>
-                   <select id="tbStrengthUnit" style="width: 90px">             
+                   <input type="number" id="tbStrengthValue" name="tbStrengthValue" value="0" style="width: 52px"/>
+                   <select id="tbStrengthUnit" name="tbStrengthUnit" style="width: 90px">             
                    </select>            
                </td>
                <td headers="thStrengthPerDosage" style="width: 158px">
-                   <input type="number" id="tbStrengthperDosageValue" value="0" style="width: 52px"/>                     
-                   <select id="tbStrengthperDosageUnit" style="width: 90px">
+                   <input type="number" id="tbStrengthperDosageValue" name="tbStrengthperDosageValue" value="0" style="width: 52px"/>                     
+                   <select id="tbStrengthperDosageUnit" name="tbStrengthperDosageUnit" style="width: 90px">
                    </select>                               
                </td>
           </tr>
@@ -504,10 +505,10 @@
         </Items>
     </asp:Menu>
 </section>
-
+   
     <SCRIPT>
-        var newRowCount = 0;
         //Following functions are created by Ching Chang on Feb 8, 2016
+        var newRowCount = 0;
         function addRow(tableID) {
             var table = document.getElementById(tableID);
             var rowCount = table.rows.length;
@@ -522,11 +523,11 @@
                         var newcell = row.insertCell(i);
                         newcell.innerHTML = table.rows[1].cells[i].innerHTML;  
                         newcell.type = table.rows[1].cells[i].nodeType;
-
+                       
                         switch (newcell.childNodes[0].type) {
                             case "text":
                                 newcell.childNodes[0].value = "";
-                                newcell.childNodes[0].id = newcell.childNodes[0].id + newRowCount;  //2 textbox
+                                newcell.childNodes[0].id = newcell.childNodes[0].id + newRowCount;  //BrandName and ProperName textbox              
                                 break;
                             case "checkbox":
                                 newcell.childNodes[0].checked = false;
@@ -539,7 +540,7 @@
                                 break;                 
                         }
                         if (i == 4) 
-                            newcell.childNodes[0].id = "tbDosage" + newRowCount;  //3 select
+                            newcell.childNodes[0].id = "tbDosage" + newRowCount;  //Dosage-Form  select
                         else if (i == 5)
                         {
                             newcell.childNodes[0].id = "tbStrengthValue" + newRowCount;   //first item in fifth column is spinner
@@ -562,7 +563,7 @@
                alert(e);
            }
         }
- 
+        //delete button on top -- dlete multiple selected rows
         function deleteRow(tableID) {
             var table = document.getElementById(tableID);
             var rowCount = table.rows.length;
@@ -585,6 +586,7 @@
                 alert(e);
             }
         }
+        //delete Row icon action -- only delete one row
         function deleteRowBtnRow(r) {
             var i = r.parentNode.parentNode.rowIndex;
             var row = document.getElementById("dataTable").rows[i];
@@ -600,6 +602,7 @@
 
             }
         }
+        //not use in the page
         function addCol(dTable) {
             var tbl = document.getElementById("dataTable"); // table reference
             var i;    // open loop for each row and append cell 
@@ -608,6 +611,7 @@
                 createCell(tbl.rows[i].insertCell(tbl.rows[i].cells.length), i, 'txtColumnName');  //column name work!
             }
         }
+        //not use in the page
         function delCol(dTable) {
            var tbl = document.getElementById("dataTable");
            var i, j;
@@ -623,9 +627,8 @@
                     row.deletecell(i);
               }   
            }
-         }
-            
-        //appendColumn() not put into use yet by Ching Chang   
+        }   
+        //appendColumn() not use  
         function appendColumn() {   
             var tbl = document.getElementById('datatable'); // table reference
             var colName = document.getElementById('txtColumnName');
@@ -633,7 +636,6 @@
             for (i = 0; i < tbl.rows.length; i++) {
                 if (i == 0)
                 {
-
                     createCell(tbl.rows[i].insertCell(tbl.rows[i].cells.length), i, colName.value());
                 }
                 else
@@ -645,25 +647,47 @@
         }
         //JQUERY Add Column
         var columnCount = 0;
+        var newColNames = {};
         $('#btnAddCol').click(function () {
-           
+            var IsBlock = false;
             if ($('#txtColumnName').val()) {
                 //check the new entry of column name, if it is same as the name in the last column, push the user to make a change...
-               // if ($('#dataTable thead tr>td:last').val() == $('#txtColumnName').val())
-                  //  alert("Please enter a new column name, not the same as existing column name");
-                var noOfColumns = $('#dataTable thead tr th').length;
-                //if the table column length is over 25, it stops adding
-                if (columnCount < 25) {
-                   $('#dataTable tr').append($("<td>"));
+             //  newColNames[columnCount] = $('#txtColumnName').val();  //save it and pass to AddRow function
+                //var CheckColumn = $('#dataTable').column(':contains(' + newColNames[columnCount] + ')');
+               $('#dataTable thead th').each(function () {
+                   var Colname = $(this).text();
 
-                   $('#dataTable thead tr>td:last').html($('#txtColumnName').val());  //this code is working
-                    //add textbox count, then save it into XML
+                   if ($.trim($('#txtColumnName').val()) == $.trim(Colname)) {
+                       alert("Please enter a new column name, not the same as existing column name");
+                       $('#txtColumnName').empty();
+                       IsBlock = true;
+                   }
+                   else
+                       IsBlock = false;
+               });
+                //check new entry of column name is duplicated in all entries
+               var colnameIn = $('#txtColumnName').val();
+               if (IsBlock == false)
+               {
+                   newClonames[columnCount] = colnameIn;
+                  
+                   columnCount = columnCount + 1;
+                    var noOfColumns = $('#dataTable thead tr th').length;
+                    //if the table column length is over 25, it stops adding
+                    if (columnCount < 25) {
+                        $('#dataTable tr').append($("<td>"));
+                  
+                        $('#dataTable thead tr>td:last').html($('#txtColumnName').val());  //this code is working
+                        $('#dataTable tbody tr').each(function () { $(this).children('td:last').append($('<input type="textbox"> id="' + newColNames[columnCount] + '" name="' + newColNames[columnCount] + '" ')) });
+                        columnCount = columnCount + 1; //add textbox count
+                    } else
+                        alert('Max Column number is 25');
+               }
+             
+             
+            } else { alert('Enter Column name first'); }
 
-                   $('#dataTable tbody tr').each(function () { $(this).children('td:last').append($('<input type="textbox">')) });
-                      columnCount = columnCount + 1;
-                 } else
-                    alert('Max Column number is 25');
-                } else { alert('Enter Column name first'); }
+
             });
         //JQUERY Remove Column
         $('#btnDelCol').click(function () {
@@ -671,6 +695,7 @@
 
             if (columnCount > 0) {
                 $("#dataTable th:last-child, #dataTable td:last-child").remove();
+                newColNames[columnCount] = ""; //clear the last column name
                 columnCount = columnCount - 1;
             }     
             else
