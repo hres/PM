@@ -35,7 +35,6 @@ namespace Product_Monograph
 
         void Page_PreInit(Object sender, EventArgs e)
         {
-
             //retrieve culture information from session
             string culture = Convert.ToString(Session["SelectedLanguage"]);
             Thread.CurrentThread.CurrentUICulture = new CultureInfo(culture);
@@ -43,7 +42,6 @@ namespace Product_Monograph
             if (Session["masterpage"] != null)
             {
                 this.MasterPageFile = (String)Session["masterpage"];
-
             }
         }
 
@@ -52,13 +50,16 @@ namespace Product_Monograph
         protected void Page_Load(object sender, EventArgs e)
         {
             lblError.Text = "";
-
+            if(!String.IsNullOrEmpty(ColNameList.Value))
+            {
+                newColCount = Convert.ToInt32(ColNameList.Value);
+            }
+          
             if (!IsPostBack)
             {
                 try
                 {
                     LoadFromXML();
-
                 }
                 catch 
                 {
@@ -89,13 +90,14 @@ namespace Product_Monograph
                 string[] colarray = null;
                 foreach (var row in rows)
                 {
-                    //strscript += "AddBrandProperDosageTextBoxLoadFromXML();";  //ching changes DIV into WET table
+                    //strscript += "AddBrandProperDosageTextBoxLoadFromXML();";  //Disabled and changed DIV into WET table
                     strscript += "AddRow('dataTable');";
-                //    if (newColCount > 0)
-                //    {
-               //         colarray = "tbBrandName;tbProperName;tbDosage;tbStrengthValue;tbStrengthUnit;tbStrengthperDosageValue;tbStrengthperDosageUnit,txtColumnName".Split(';');
-              //      }
-               //     else
+
+                    if (newColCount > 0)  //never get the value !!
+                    {
+                        colarray = "tbBrandName;tbProperName;tbDosage;tbStrengthValue;tbStrengthUnit;tbStrengthperDosageValue;tbStrengthperDosageUnit,txtColumnName".Split(';');
+                    }
+                    else
                         colarray = "tbBrandName;tbProperName;tbDosage;tbStrengthValue;tbStrengthUnit;tbStrengthperDosageValue;tbStrengthperDosageUnit".Split(';');
 
                     int colcounter = 0;
@@ -138,30 +140,29 @@ namespace Product_Monograph
                         {
                             strscript += "$('#" + colarray[colcounter] + rowcounter.ToString() + "').val(\"" + helpers.Processes.CleanString(column) + "\");";                            
                         }
-
+                        //ching note: need to add all table column name
+                        //tbStrengthValue -- strength value
+                        //tbStrengtUnit -- strength unit
+                        //tbStrengthperDosageValue -- strength per Dosage Value
+                        //tbStrengthperDosageUnit -- strength per Dosage Unit
+                        //txtColumnName -- also new column name -- where are those tags?
                         colcounter++;
                     }
-
                     rowcounter++;
                 }
                 #endregion
-            }
-            
+            }        
             var xmldata = from item in doc.Elements("ProductMonographTemplate")
                           select new
                           {
                               SchedulingSymbol = (string)item.Element("SchedulingSymbol"),
                               SchedulingSymbolImageName = (string)item.Element("SchedulingSymbolImageName"),
                               SchedulingSymbolImageData = (string)item.Element("SchedulingSymbolImageData"),
+                              //there are no those 3 elements in XML doc -- not by Ching
                               BrandName = (string)item.Element("BrandName"),
                               ProperName = (string)item.Element("ProperName"),
-                              DosageFormStrength = (string)item.Element("DosageFormStrength"),
-                              //ching note: need to add all table column name
-                              //strength value
-                              //strength unit
-                              //strength per Dosage Value
-                              //strength per Dosage Unit
-                              //txtColumnName -- also new column name
+                              DosageFormStrength = (string)item.Element("DosageFormStrength"), 
+                                 
                               PharmaceuticalStandard = (string)item.Element("PharmaceuticalStandard"),
                               TherapeuticClassification = (string)item.Element("TherapeuticClassification"),
                               Sponsorname = (string)item.Element("Sponsorname"),
@@ -185,11 +186,7 @@ namespace Product_Monograph
                                       
                 if (xmldataitem.SchedulingSymbol != null)
                     strscript += "$('#tbxmlimgnameSymbol').val('" + xmldataitem.SchedulingSymbol + "');";
-                //Ching sets all table column names-- they are html control value, not server control
-             //   if (xmldataitem.BrandName != null)
-             //       strscript += "$('#tbBrandname').val('" + xmldataitem.BrandName + "');";
-            //    if (xmldataitem.ProperName != null)
-           //         strscript += "$('#tbPropername').val('" + xmldataitem.ProperName + "');";
+              
 
                 tbPharmaceuticalStandard.Text = xmldataitem.PharmaceuticalStandard;
                 tbTherapeuticClassifications.Text = xmldataitem.TherapeuticClassification;
@@ -246,8 +243,8 @@ namespace Product_Monograph
         {
             XmlDocument doc = (XmlDocument)Session["draft"]; // helpers.Processes.XMLDraft;
             XmlNode rootnode = doc.SelectSingleNode("ProductMonographTemplate");
-          //  int newColCount = 0;
-            ArrayList newColnamesarray = new ArrayList();
+           // if( newColCount > 0)
+               ArrayList newColnamesarray = new ArrayList();
 
             #region symbol
             try
@@ -351,15 +348,15 @@ namespace Product_Monograph
                     }
                 }
 
-             //   if (HttpContext.Current.Request.Form.GetValues("txtColumnName") != null)
-             //   {
-                   // ArrayList newColnamesarray = new ArrayList();
-             //       foreach (string newColnamesitem in HttpContext.Current.Request.Form.GetValues("txtColumnName"))
-             //       {
-            //            newColnamesarray.Add(newColnamesitem);
-            //        }
-           //         newColCount = newColnamesarray.Count;
-          //      }
+                if (HttpContext.Current.Request.Form.GetValues("txtColumnName") != null)  //this value of txtColumnName is not a list -- note by ching
+                {
+                    //but it can get from other value ????
+                    foreach (string newColnamesitem in HttpContext.Current.Request.Form.GetValues("txtColumnName"))
+                    {
+                        newColnamesarray.Add(newColnamesitem);
+                    }
+                  //  newColCount = newColnamesarray.Count;---  pass into Server by hidden value 
+                }
 
                 if (roa.Count < 1)
                 {
