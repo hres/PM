@@ -124,7 +124,6 @@
         function RemoveBrandProperDosageTextBox(i) {
             var rowid = "#BrandProperDosage" + i;
             if (counter <= 1) {
-                //  lblError.Text = " ";
                alert("We could not delete all the rows");
             }
             else
@@ -223,12 +222,7 @@
         //Setup default values on first row of Dosage Form --- created by Ching Chang on Feb 8, 2016
         var countTBL = 0
         function AddBrandProperDosageDefaultRow() {
-           //BrandProperDosageCounter = BrandProperDosageCounter;
-           //counter = BrandProperDosageCounter;
-           //countTBL = countTBL + 1;
-           
            //first row of table - start
-           //ching test table default row--work!
            $.get('ControlledList.xml', function (xmlcontolledlist) {
               $(xmlcontolledlist).find('dosageform').each(function () {
                  var $option = $(this).text();
@@ -287,7 +281,7 @@
                 $('#tbSchedulingSymbol option').each(function () { if ($(this).html() == selectedschedulingsymbol) { $(this).attr('selected', 'selected'); return; } });
             });
 
-            //ching created table default row--work!
+            //ching created table default row
             AddBrandProperDosageDefaultRow();
 
         });
@@ -328,30 +322,30 @@
    </asp:Menu>
 </div>
 <div class="row mrgn-tp-md">
-    <asp:Button id="btnSaveDraft" runat="server" text="Save draft" onClick="btnSaveDraft_Click" cssClass="btn btn-default" ToolTip="Save draft file"/>
+    <asp:Button id="btnSaveDraft" runat="server" text="Save draft" onClick="btnSaveDraft_Click" cssClass="btn btn-default" toolTip="Save draft file"/>
 </div>
 <!-- Main Content For Submenu Item of "Cover Page" and Use WET Standard -->
 <div class="row">
-   <h2 id="CoverPage" class="siteSubHeader" lang="en">Cover Page</h2>
+   <h2 id="CoverPage" runat="server" class="siteSubHeader">Cover Page</h2>
 </div>
 <div class="row">
-   <asp:Label runat="server" id="lblError" clientIDMode="Static" foreColor="Red"></asp:Label>
+   <asp:Label runat="server" id="lblError" clientIDMode="Static" foreColor="Red" ></asp:Label>
 </div>
 <div class="row hidden">       
    <input id="Button3" type="button" value="Hide" />
    <input id="Button4" type="button" value="Show" />
 </div>       
 <div class="row">
-   <h3 class="h5" id="lblSchedulingSymbol" lang="en">Scheduling symbol</h3>
+   <h3 class="h5" id="lblSchedulingSymbol" runat="server">Scheduling symbol</h3>
    <div class="col-lg-12">
        <select id="tbSchedulingSymbol" style="width: 220px; height:40px;"/>
-       <input class="btn btn-default form-control mrgn-lft-sm" onclick="ApplySchedulingSymbol()" type="button" value="Apply symbol"/>
+       <input class="btn btn-default form-control mrgn-lft-sm" onclick="ApplySchedulingSymbol()" type="button" id="btnlblApplySymbol" runat="server" value="Apply symbol" />
    </div>
 </div>
 
 <div class="row">
    <div class="symbolbrand" style="width:500px;">
-       <h3 class="h5 text-hide" id="lblSchedulingSymbol2" lang="en">Scheduling symbol</h3>
+       <h3 class="h5 text-hide" id="lblSchedulingSymbol2" runat="server">Scheduling symbol</h3>
        <div class="hidden"><asp:FileUpload id="fuBrnandSymbol" runat="server" width="400px"/></div>
        <div class="hidden"><asp:Button id="btnApplySumbol" runat="server" text="Apply symbol" width="130px" onClick="btnApplySumbol_Click" /></div>
        <div style="clear:both; border:1px solid #D9D9D9; width:103px; height:103px; padding-top:4px;">
@@ -361,15 +355,16 @@
        <input type="text" id="tbxmlimgfilenameSymbol" name="tbxmlimgfilenameSymbol" class="hidden" />
     </div>
 </div>
-<!--Brand Table, Ching add test table -->
+<!--Brand  Dosage Form Table -->
 <section class="margin-top-medium"> 
 <div class="form-group">
-    <input class="btn btn-default btn-xs" type="button" value="Append Row" onclick="addRow('dataTable')" />
-    <input class="btn btn-default btn-xs" type="button" value="Delete Row" onclick="deleteRow('dataTable')" />
+    <input class="btn btn-default btn-xs" type="button" value="Append Row" runat="server" id="btnAppendRow" onclick="addRow('dataTable')" />
+    <input class="btn btn-default btn-xs" type="button" value="Delete Row" runat="server" id="btnDeleteRow" onclick="deleteRow('dataTable')" />
     <span class="col-lg-3">&nbsp;</span>
     <input type="text" id="txtColumnName" name="txtColumnName" placeholder="Please enter Column name" maxlength="100" />
-    <input class="btn btn-default btn-xs" type="button" value="Append Column" id="btnAddCol" />
-    <input class="btn btn-default btn-xs" type="button" value="Delete Last Column" id="btnDelCol" onClick="delCol('dataTable')"/> 
+    <input class="btn btn-default btn-xs" type="button" value="Append Column" runat="server" id="btnAddCol" />
+    <input class="btn btn-default btn-xs" type="button" value="Delete Last Column" runat="server" id="btnDelCol" onClick="delCol('dataTable')" /> 
+    <input class="btn btn-default btn-xs" type="button" value="Save Your Column" runat="server" id="btnSaveCol" hidden onClick="saveCol('dataTable')" /> 
     <asp:HiddenField ID="ColNameList" runat="server" />
 </div>
 <div class="row table-responsive">
@@ -379,11 +374,11 @@
             <tr>
                 <th style="width: 26px"></th>
                 <th style="width: 28px"></th>
-                <th id="thBrandName" title="BrandName" style="width: 120px"><label id="tbBName">Brand name</label><br />&nbsp;</th>
-                <th id="thProperName" title="ProperName" style="width: 120px"><label id="tbPName">Proper name</label><br />&nbsp;</th>
-                <th id="thDosageForm" title="DosageForm" style="width: 121px"><label id="tbDForm">Dosage form</label><br />&nbsp;</th>
-                <th id="thStrength" title="Strength" style="width: 158px"><label id="tbStrength"> Strength</label><br /><label id="tbSValue">Value</label> | <label id="tbSUnit">Unit</label></th>
-                <th id="thStrengthPerDosage" title="StrengthPerDosage" style="width: 158px"><label id="">Strength per dosage</label><br /><label id="tbDValue">Value</label> | <label id="tbDUnit">Unit</label></th>   
+                <th id="thBrandName" title="BrandName" style="width: 120px"><label id="tbBName" runat="server">Brand name</label><br />&nbsp;</th>
+                <th id="thProperName" title="ProperName" style="width: 120px"><label id="tbPName" runat="server">Proper name</label><br />&nbsp;</th>
+                <th id="thDosageForm" title="DosageForm" style="width: 121px"><label id="tbDForm" runat="server">Dosage form</label><br />&nbsp;</th>
+                <th id="thStrength" title="Strength" style="width: 158px"><label id="tbStrength" runat="server">Strength</label><br /><label id="tbSValue" runat="server">Value</label> | <label id="tbSUnit" runat="server">Unit</label></th>
+                <th id="thStrengthPerDosage" title="StrengthPerDosage" style="width: 158px"><label id="lblStrengthperDosage" runat="server">Strength per dosage</label><br /><label id="tbDValue" runat="server">Value</label> | <label id="tbDUnit" runat="server" >Unit</label></th>   
             </tr>
         </thead>
         <tbody>
@@ -442,52 +437,52 @@
 <!--End of Brand Table -->
 <section class="margin-top-medium">  
     <div>    
-        <div style="padding: 20px 4px 4px 0px"><h3 class="h5" id="PharmaceuticalStandard">Pharmaceutical standard (if applicable)</h3></div>                             
+        <div style="padding: 20px 4px 4px 0px"><h3 class="h5" id="PharmaceuticalStandard" runat="server">Pharmaceutical standard (if applicable)</h3></div>                             
         <asp:TextBox id="tbPharmaceuticalStandard" runat="server" Width="400" CausesValidation="True" MaxLength="200"></asp:TextBox>                                
     </div>
 </section>
 <section>
     <div>          
-        <div style="padding: 20px 4px 4px 0px"><h3 class="h5" id="TherapeuticClassification">Therapeutic classification</h3></div>                       
+        <div style="padding: 20px 4px 4px 0px"><h3 class="h5" id="TherapeuticClassification" runat="server">Therapeutic classification</h3></div>                       
         <asp:TextBox id="tbTherapeuticClassifications" runat="server" Width="400"></asp:TextBox>                                
     </div>
 </section>
 <section>
     <div>
         <div>    
-            <div style="padding: 20px 4px 4px 0px"><h3 class="h5" id="lblSponsorName" lang="en">Sponsor name</h3></div>                                    
+            <div style="padding: 20px 4px 4px 0px"><h3 class="h5" id="lblSponsorName" runat="server">Sponsor name</h3></div>                                    
             <asp:TextBox runat="server" id="tbSponsorName" width="400"></asp:TextBox>                                
         </div>
         <div>                                        
             <div style="padding: 20px 4px 4px 0px; display:inline-block; width:400px;">
-                <h3 class="h5" id="lblSponsorAddress" lang="en">Sponsor address</h3>&nbsp;&nbsp;&nbsp;
+                <h3 class="h5" id="lblSponsorAddress" runat="server">Sponsor address</h3>&nbsp;&nbsp;&nbsp;
                 <div style="float:left; color:red; font-weight:bold; width:400px;"></div>
            </div><div style="width:600px">
-                <textarea runat="server" id="tbSponsorAddress" class="textarea" lang="en" style="Width:400px"></textarea>
+                <textarea runat="server" id="tbSponsorAddress" class="textarea" style="Width:400px"></textarea>
             </div>
         </div>
     </div>
 </section>
 <section>
    <div style="float:left; width:340px; height:40px;">
-        <div style="padding: 20px 4px 4px 0px; clear:both;"><h3 class="h5" id="lblDateOfPreparation" lang="en">Date of preparation</h3></div>
+        <div style="padding: 20px 4px 4px 0px; clear:both;"><h3 class="h5" id="lblDateOfPreparation" runat="server">Date of preparation</h3></div>
         <asp:TextBox runat="server" id="tbDatePrep" width="250" readonly="true"></asp:TextBox>
         <cc1:CalendarExtender id="tbDatePrep_CalendarExtender" runat="server" targetControlID="tbDatePrep" format="yyyy-MM-dd"/>
-        &nbsp;&nbsp;<label lang="en" id="lblAndOr">and/or</label> 
+        &nbsp;&nbsp;<label id="lblAndOr" runat="server">and/or</label> 
    </div>
    <div style="float:left; width:270px; height:30px;">
-        <div style="padding: 20px 4px 4px 0px; clear:both;"><h3 class="h5" id="lblDateOfRevision" lang="en">Date of revision</h3></div>
+        <div style="padding: 20px 4px 4px 0px; clear:both;"><h3 class="h5" id="lblDateOfRevision" runat="server">Date of revision</h3></div>
         <asp:TextBox runat="server" id="tbDateRev" width="250" readonly="true"></asp:TextBox>
         <cc1:CalendarExtender id="CalendarExtender2" runat="server" targetControlID="tbDateRev" format="yyyy-MM-dd" />
    </div>
    <div style="float:left; width:600px; clear:both; display:block; padding-top:40px;">
-       <div style="padding: 20px 4px 4px 0px"><h3 class="h5" id="SubmissionControlNo">Submission Control No:</h3></div>              
+       <div style="padding: 20px 4px 4px 0px"><h3 class="h5" id="SubmissionControlNo" runat="server">Submission Control No:</h3></div>              
        <asp:TextBox id="tbControNum" runat="server" maxLength="6" width="250"></asp:TextBox>
        <cc1:FilteredTextBoxExtender id="tbControNum_FilteredTextBoxExtender" filterType="Numbers" runat="server" targetControlID="tbControNum" />
    </div>
    <div style="float:left; width:600px; clear:both; display:block;">                                                    
        <div style="padding: 20px 4px 4px 0px; display:inline-block; width:400px; margin-top: 0px;">
-           <h3 class="h5" id="footnote">Footnote</h3>&nbsp;&nbsp;&nbsp;</div>
+           <h3 class="h5" id="footnote" runat="server">Footnote</h3>&nbsp;&nbsp;&nbsp;</div>
            <div style="float:left; color:red; font-weight:bold; width:200px;"></div>           
            <textarea id="tbFootnote" name="tbFootnote" runat="server" class="textarea"></textarea>               
    </div>
@@ -497,11 +492,11 @@
         <StaticMenuStyle verticalPadding="5px" />
         <StaticMenuItemStyle horizontalPadding="25px" />
         <Items>
-            <asp:MenuItem text="Cover page" value="Coverpage" toolTip="Cover page"></asp:MenuItem>
-            <asp:MenuItem text="Part I" value="PartOne" toolTip="Part I"></asp:MenuItem>
-            <asp:MenuItem text="Part II" value="PartTwo" toolTip="Part II"></asp:MenuItem>
+            <asp:MenuItem text="Cover page" value="Coverpage" toolTip="Cover page" ></asp:MenuItem>
+            <asp:MenuItem text="Part I" value="PartOne" toolTip="Part I" ></asp:MenuItem>
+            <asp:MenuItem text="Part II" value="PartTwo" toolTip="Part II" ></asp:MenuItem>
             <asp:MenuItem text="Part III" value="PartThree" toolTip="Part III"></asp:MenuItem>
-            <asp:MenuItem text="Form instruction" value="PMForm" toolTip="Back to the main page of DHPR form with form Instruction"></asp:MenuItem>
+            <asp:MenuItem text="Form instruction" value="PMForm" toolTip="Back to the main page of DHPR form with form Instruction" ></asp:MenuItem>
         </Items>
     </asp:Menu>
 </section>
@@ -667,13 +662,15 @@
                         //add header text by input column name
                         $('#dataTable thead tr>td:last').html($('#txtColumnName').val()); 
                         $('#dataTable tbody tr').each(function () {
-                            newColID = newColNames[columnCount].concat(rowCountForCol);  //append new column name with row count
+                          
+                            newColID = newColNames[columnCount] + rowCountForCol;  //append new column name with row count
                             $(this).children('td:last').append($('<input type="textbox"> id="' + newColID + '" name="' + newColID + '" ')) 
                             rowCountForCol = rowCountForCol + 1;
                             newColID = "";
                         });
+                        //pass new colcount to C# function -- SaveIntoMemoory()
+                        document.getElementById('<%=ColNameList.ClientID%>').value = columnCount;    
                         columnCount = columnCount + 1; //add column count
-                        document.getElementById('<%=ColNameList.ClientID%>').value = columnCount;
                     } else
                         alert('Max Column number is 25');
                 }
@@ -689,8 +686,105 @@
             }     
             else
                alert('We should keep origial Columns.');
-            });
-       
+        });
+        //ching test save into XML file =-- in action
+        $('#btnSaveCol').click(function () {
+            var coldata = [];
+            var noOfRow = $('#dataTable tbody tr').length;
+            var j = 0;
+          
+            if (columnCount > 0) {
+                for (j = 0; j < columnCount; j++) {
+                    alert(newColNames[j]);
+                   // alert($('#" + newColNames[j] + noOfRow + "' ).val());
+                }
+
+
+            //    var colName = $('#txtColumnName').val();
+            //    $('#dataTable tr').each(function () {
+
+                   // $("TABLE").find("tr").each(function () {
+                   //     var tr = this;
+                      //  $([0, 8]).each(function () {
+                       //     alert($(tr[this]).html());
+                     //   });
+                   // });
+
+
+                   // $(this).find('td input:text').each(function (i, a) {
+                   //   //  alert("column value: ");
+                   //     var tr = this;
+                   //     $([8]).each(function () {
+                   //         alert("column value: ");
+                   //         alert($(this).text());
+                   //         coldata.push($(this).text());
+
+                   //        });
+                   //    // alert($(tr[this].val()));
+                   //    // alert($(td[this].val()));
+                       
+                   //     // get each of the textbox and add validation class to it
+                   //});
+            //    });
+              //  alert($("#dataTable th:last-child, #dataTable td:last-child").text);
+             //   alert(colName);
+            }
+            else
+                alert('click Save btn');
+
+        });
+        //for test-- not in action
+        function saveCol(tableID) {
+            //get all values in the new columns and save into the XML file
+            var tbl = document.getElementById(tableID); // table reference
+            var colName = document.getElementById('txtColumnName');
+            i;    // open loop for each row and append cell   
+            //for (i = 0; i < tbl.rows.length; i++) {
+            //    if (i == 0) {
+            //        createCell(tbl.rows[i].insertCell(tbl.rows[i].cells.length), i, colName.value());
+            //    }
+            //    else {
+            //        createCell(tbl.rows[i].insertCell(tbl.rows[i].cells.length), i, colName.value());
+            //    }
+            //}
+            alert(colName.value);
+            //var xmlDoc = new ActiveXObject("Microsoft.XMLDOM");
+            //var fso = new ActiveXObject("Scripting.FileSystemObject");
+            //var urlName = ".ching.xml";
+            //if (window.XMLHttpRequest)
+            //{ xhttp = new XMLHttpRequest(); }
+            //else // for older IE 5/6 
+            //{ xhttp = new ActiveXObject("Microsoft.XMLHTTP"); }
+            //xhttp.open("GET", urlName, false); // open sessionID.xml 
+            //xhttp.send("");
+            xmlDoc = xhttp.responseXML;  // sets global variable xmlDoc as xml object == sessionID.xml 
+         
+
+        //    xmlDoc.load((XmlDocument)Session["draft"]);
+            //var fileName = ".xml";
+
+            //if (fso.FileExists(fileName)) {
+            //    xmlObj = LoadXML(fileName);
+            //    noFile = false;
+            //} // if
+            //else {
+            //    xmlObj = LoadXML(fileName);
+            //    //alert("local" + xmlObj);
+            //} // end if
+
+
+            //xmlDoc.load(xmlFile);
+            //var xml = document.createElement("root");
+            //var node = document.createElement("rootchild");
+
+            //var colNode = document.createElement("Column");
+            //var inputText = "red";
+            //var colText = document.createTextNode(inputText);
+            //colNode.appendChild(colText);
+            //node.appendChild(colNode);
+            //xml.appendChild(node);
+
+        }
     </SCRIPT>
 <asp:HiddenField runat="server" id="hdBrandProperDosage" clientIDMode="Static" />
 <!-- End of Main Content For Submenu Item of "Cover Page" -->

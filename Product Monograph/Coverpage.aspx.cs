@@ -26,6 +26,7 @@ namespace Product_Monograph
     {
         string strscript = "";
         int newColCount = 0;
+        string[] strNewColNames = Array.Empty<string>();
         public class Field
         {
             public string FieldLabel { get; set; }
@@ -50,9 +51,12 @@ namespace Product_Monograph
         protected void Page_Load(object sender, EventArgs e)
         {
             lblError.Text = "";
+            //check the new column name passed in, if one or more
             if(!String.IsNullOrEmpty(ColNameList.Value))
             {
-                newColCount = Convert.ToInt32(ColNameList.Value);
+               //string newColumn = ColNameList.Value;   
+                strNewColNames = (ColNameList.Value).Split(';');
+                newColCount = strNewColNames.Length;
             }
           
             if (!IsPostBack)
@@ -66,6 +70,7 @@ namespace Product_Monograph
                     lblError.Text = "Please load a new template or a previously saved draft.";
                 }
             }
+            facilityResource();
         }
 
         private void LoadFromXML()
@@ -87,19 +92,26 @@ namespace Product_Monograph
 
               
                 int rowcounter = 1;
+                string strTemp = "tbBrandName;tbProperName;tbDosage;tbStrengthValue;tbStrengthUnit;tbStrengthperDosageValue;tbStrengthperDosageUnit";
                 string[] colarray = null;
                 foreach (var row in rows)
                 {
                     //strscript += "AddBrandProperDosageTextBoxLoadFromXML();";  //Disabled and changed DIV into WET table
                     strscript += "AddRow('dataTable');";
 
-                    if (newColCount > 0)  //never get the value !!
+                    if (newColCount > 0)
                     {
-                        colarray = "tbBrandName;tbProperName;tbDosage;tbStrengthValue;tbStrengthUnit;tbStrengthperDosageValue;tbStrengthperDosageUnit,txtColumnName".Split(';');
+                        //add a loop to catch all column names
+                        strTemp = strTemp + ";";
+                        strTemp = strTemp + strNewColNames[0];
+                        colarray = strTemp.Split(';'); 
+                        //colarray = "tbBrandName;tbProperName;tbDosage;tbStrengthValue;tbStrengthUnit;tbStrengthperDosageValue;tbStrengthperDosageUnit;txtColumnName".Split(';');
                     }
                     else
-                        colarray = "tbBrandName;tbProperName;tbDosage;tbStrengthValue;tbStrengthUnit;tbStrengthperDosageValue;tbStrengthperDosageUnit".Split(';');
-
+                    {
+                        colarray = strTemp.Split(';');
+                        //colarray = "tbBrandName;tbProperName;tbDosage;tbStrengthValue;tbStrengthUnit;tbStrengthperDosageValue;tbStrengthperDosageUnit".Split(';');
+                    }
                     int colcounter = 0;
                     foreach (string column in row.columns)
                     {
@@ -145,7 +157,7 @@ namespace Product_Monograph
                         //tbStrengtUnit -- strength unit
                         //tbStrengthperDosageValue -- strength per Dosage Value
                         //tbStrengthperDosageUnit -- strength per Dosage Unit
-                        //txtColumnName -- also new column name -- where are those tags?
+                        //also new column name -- strNewColNames[0] -- array;
                         colcounter++;
                     }
                     rowcounter++;
@@ -158,7 +170,7 @@ namespace Product_Monograph
                               SchedulingSymbol = (string)item.Element("SchedulingSymbol"),
                               SchedulingSymbolImageName = (string)item.Element("SchedulingSymbolImageName"),
                               SchedulingSymbolImageData = (string)item.Element("SchedulingSymbolImageData"),
-                              //there are no those 3 elements in XML doc -- not by Ching
+                              //there are no those 3 elements in XML doc -- note by Ching -- however they could get from the first 3 column
                               BrandName = (string)item.Element("BrandName"),
                               ProperName = (string)item.Element("ProperName"),
                               DosageFormStrength = (string)item.Element("DosageFormStrength"), 
@@ -243,9 +255,9 @@ namespace Product_Monograph
         {
             XmlDocument doc = (XmlDocument)Session["draft"]; // helpers.Processes.XMLDraft;
             XmlNode rootnode = doc.SelectSingleNode("ProductMonographTemplate");
-           // if( newColCount > 0)
-               ArrayList newColnamesarray = new ArrayList();
-
+            int mRowCount = 0;
+        //    string[][] newColValsarray = null;
+           // string[] oneColValsarray = new string[];
             #region symbol
             try
             {                
@@ -321,6 +333,7 @@ namespace Product_Monograph
                     foreach (string routeitem in HttpContext.Current.Request.Form.GetValues("tbBrandName"))
                     {
                         brandarray.Add(routeitem);
+                        mRowCount = mRowCount + 1;
                     }
                     foreach (string dosageitem in HttpContext.Current.Request.Form.GetValues("tbProperName"))
                     {
@@ -350,13 +363,29 @@ namespace Product_Monograph
 
                 if (HttpContext.Current.Request.Form.GetValues("txtColumnName") != null)  //this value of txtColumnName is not a list -- note by ching
                 {
-                    //but it can get from other value ????
-                    foreach (string newColnamesitem in HttpContext.Current.Request.Form.GetValues("txtColumnName"))
-                    {
-                        newColnamesarray.Add(newColnamesitem);
-                    }
-                  //  newColCount = newColnamesarray.Count;---  pass into Server by hidden value 
+                    //This is not column value, only column name
+                    int mColnameCount = strNewColNames.Length;
+                    //bulid column name list
+                    //for(int i = 0; i < mColnameCount; i++ )
+                    //{
+                    //    for(int j = 0; j < mRowCount; j ++ )
+                    //    {
+                    //        string dynamicalColName = strNewColNames[0] + mRowCount;
+                    //     //   oneColValsarray.add(HttpContext.Current.Request.Form.GetValues(dynamicalColName))
+                    //          //   newColnamesarray.Add(newColnamesitem);
+                    //    }
+                    //}
+                    //  
+                    //  newColValsarray.Add(strNewColNames[0]);
+                    //string dynamicalColName = strNewColNames[0] +  mRowCount;
+                    //foreach (string newColnamesitem in HttpContext.Current.Request.Form.GetValues("txtColumnName"))
+                    //    {
+                    //       string dynamicalColName = strNewColNames[0] +  mRowCount;
+                    //        newColnamesarray.Add(newColnamesitem);
+                    //    }
+
                 }
+
 
                 if (roa.Count < 1)
                 {
@@ -403,13 +432,13 @@ namespace Product_Monograph
                         subsubnode.AppendChild(doc.CreateTextNode(col7));
                         subnode.AppendChild(subsubnode);
                         //ching adds code for new column
-                    //    if (newColCount == 1)
-                    //    {
-                   //         string col8 = newColnamesarray[ar].ToString();
-                   //         subsubnode = doc.CreateElement("column");
-                  //          subsubnode.AppendChild(doc.CreateTextNode(col8));
-                  //          subnode.AppendChild(subsubnode);
-                   //     }
+                        //if (newColCount == 1)
+                        //{
+                        //    string col8 = newColnamesarray[ar].ToString();
+                        //    subsubnode = doc.CreateElement("column");
+                        //    subsubnode.AppendChild(doc.CreateTextNode(col8));
+                        //    subnode.AppendChild(subsubnode);
+                        //}
                     }
                 }
                 else
@@ -458,14 +487,16 @@ namespace Product_Monograph
                         subsubnode = doc.CreateElement("column");
                         subsubnode.AppendChild(doc.CreateTextNode(col7));
                         subnode.AppendChild(subsubnode);
-                        //ching adds code for new column
-                      //  if (newColCount > 1)
-                     //   {
-                    //        string col8 = newColnamesarray[ar].ToString();
-                    //        subsubnode = doc.CreateElement("column");
-                    //        subsubnode.AppendChild(doc.CreateTextNode(col8));
-                    //        subnode.AppendChild(subsubnode);
-                    //    }
+                        //ching adds code for new column, test one first
+                        //if (newColCount > 1)
+                        //{
+
+                        //    //add a loop to add all column names
+                        //    string col8 = newColnamesarray[ar].ToString();
+                        //    subsubnode = doc.CreateElement("column");
+                        //    subsubnode.AppendChild(doc.CreateTextNode(col8));
+                        //    subnode.AppendChild(subsubnode);
+                        //}
                     }
                 }
             }
@@ -607,7 +638,42 @@ namespace Product_Monograph
             SaveInMemory();
             Response.Redirect(submenutabsbottom.SelectedValue + ".aspx");
         }
+        protected void facilityResource()
+        {
+            
+            CoverPage.InnerText = Resources.Resource.CoverPage;
+            lblSchedulingSymbol.InnerText = Resources.Resource.lblSchedulingSymbol;
+            btnlblApplySymbol.Value = Resources.Resource.btnlblApplySymbol;
+            lblSchedulingSymbol2.InnerText = Resources.Resource.lblSchedulingSymbol;
 
+            tbBName.InnerText = Resources.Resource.tbBName;
+            tbPName.InnerText = Resources.Resource.tbPName;
+            tbDForm.InnerText = Resources.Resource.tbDForm;
+            tbStrength.InnerText = Resources.Resource.tbStrength;
+            lblStrengthperDosage.InnerText = Resources.Resource.lblStrengthperDosage;
+            PharmaceuticalStandard.InnerText = Resources.Resource.PharmaceuticalStandard;
+            TherapeuticClassification.InnerText = Resources.Resource.TherapeuticClassification;
+            lblSponsorName.InnerText = Resources.Resource.lblSponsorName;
+            lblSponsorAddress.InnerText = Resources.Resource.lblSponsorAddress;
+            lblDateOfPreparation.InnerText = Resources.Resource.lblDateOfPreparation;
+            lblAndOr.InnerText = Resources.Resource.lblAndOr;
+            lblDateOfRevision.InnerText = Resources.Resource.lblDateOfRevision;
+            SubmissionControlNo.InnerText = Resources.Resource.SubmissionControlNo;
+            footnote.InnerText = Resources.Resource.footnote;
+            btnApplySumbol.Text = Resources.Resource.btnApplySumbol;
+            btnSaveDraft.Text = Resources.Resource.btnSaveDraft;
+            btnAppendRow.Value = Resources.Resource.btnAppendRow;
+            btnDeleteRow.Value = Resources.Resource.btnDeleteRow;
+            btnAddCol.Value = Resources.Resource.btnAddCol;
+            btnDelCol.Value = Resources.Resource.btnDelCol;
+            tbSValue.InnerText = Resources.Resource.tbSValue;
+            tbSUnit.InnerText = Resources.Resource.tbSUnit;
+            tbDValue.InnerText = Resources.Resource.tbDValue;
+            tbDUnit.InnerText = Resources.Resource.tbDUnit;
+
+
+
+        }
     }
 }
 
