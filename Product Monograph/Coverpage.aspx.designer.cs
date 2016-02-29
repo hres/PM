@@ -316,7 +316,7 @@ namespace Product_Monograph {
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlGenericControl lblDateOfPreparation;
+        protected global::System.Web.UI.WebControls.Label lblDateOfPreparation;
         
         /// <summary>
         /// tbDatePrep control.
@@ -326,15 +326,6 @@ namespace Product_Monograph {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.TextBox tbDatePrep;
-        
-        /// <summary>
-        /// tbDatePrep_CalendarExtender control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::AjaxControlToolkit.CalendarExtender tbDatePrep_CalendarExtender;
         
         /// <summary>
         /// lblAndOr control.
@@ -352,7 +343,7 @@ namespace Product_Monograph {
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlGenericControl lblDateOfRevision;
+        protected global::System.Web.UI.WebControls.Label lblDateOfRevision;
         
         /// <summary>
         /// tbDateRev control.
@@ -362,15 +353,6 @@ namespace Product_Monograph {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.TextBox tbDateRev;
-        
-        /// <summary>
-        /// CalendarExtender2 control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::AjaxControlToolkit.CalendarExtender CalendarExtender2;
         
         /// <summary>
         /// SubmissionControlNo control.
