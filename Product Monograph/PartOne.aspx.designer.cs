@@ -337,6 +337,15 @@ namespace Product_Monograph {
         protected global::System.Web.UI.HtmlControls.HtmlGenericControl lblHeadings;
         
         /// <summary>
+        /// btnAddExtraAddHeadingSelection control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.HtmlControls.HtmlInputButton btnAddExtraAddHeadingSelection;
+        
+        /// <summary>
         /// SUM_ADVERSE control.
         /// </summary>
         /// <remarks>
@@ -362,6 +371,15 @@ namespace Product_Monograph {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.HtmlControls.HtmlTextArea tbAdverseDrugReactOverview;
+        
+        /// <summary>
+        /// btnAddAdverseReactionsOuterSection control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.HtmlControls.HtmlInputButton btnAddAdverseReactionsOuterSection;
         
         /// <summary>
         /// SUM_DRUG_INTERACTIONS control.
@@ -391,6 +409,24 @@ namespace Product_Monograph {
         protected global::System.Web.UI.HtmlControls.HtmlTextArea tbDrugInteractionsOverview;
         
         /// <summary>
+        /// btnAddDrugInteractionsOuterSection control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.HtmlControls.HtmlInputButton btnAddDrugInteractionsOuterSection;
+        
+        /// <summary>
+        /// SUM_DOSAGE control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.HtmlControls.HtmlGenericControl SUM_DOSAGE;
+        
+        /// <summary>
         /// lblDosing control.
         /// </summary>
         /// <remarks>
@@ -398,6 +434,24 @@ namespace Product_Monograph {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.HtmlControls.HtmlGenericControl lblDosing;
+        
+        /// <summary>
+        /// btnAddExtraDosingConsiderations control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.HtmlControls.HtmlInputButton btnAddExtraDosingConsiderations;
+        
+        /// <summary>
+        /// btnRemoveDosingConsiderations control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.HtmlControls.HtmlInputButton btnRemoveDosingConsiderations;
         
         /// <summary>
         /// lblRecommended control.

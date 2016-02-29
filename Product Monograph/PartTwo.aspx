@@ -579,12 +579,12 @@
         <StaticMenuStyle VerticalPadding="5px" />
         <StaticMenuItemStyle HorizontalPadding="25px" />
         <Items>
+            <asp:MenuItem text="Form instructions" value="PMForm" toolTip="Back to the main page of DHPR form with form Instruction"></asp:MenuItem>
             <asp:MenuItem Text="Cover page" Value="Coverpage" toolTip="Cover Page"></asp:MenuItem>
             <asp:MenuItem Text="Part I" Value="PartOne" toolTip="Part I"></asp:MenuItem>
             <asp:MenuItem Text="Part II" Value="PartTwo" toolTip="Part II"></asp:MenuItem>
             <asp:MenuItem Text="Part III" Value="PartThree" toolTip="Part III"></asp:MenuItem>
-            <asp:MenuItem text="Form instruction" value="PMForm" toolTip="Back to the main page of DHPR form with form Instruction"></asp:MenuItem>
-        </Items>
+            </Items>
     </asp:Menu>
 </div>
 
@@ -597,7 +597,7 @@
 </div>
 
 <section style="width:100%; padding-left: 0px; clear:both;">
-    <h4 style="border: 0px !important;"><asp:Label ID="Label2" runat="server">Part II:  Science Information</asp:Label></h4>
+    <h4 style="border: 0px !important;"><asp:Label ID="lblPartII" runat="server">Part II:  Science Information</asp:Label></h4>
 </section>
 
 <details style="clear:both;">
@@ -887,12 +887,12 @@
         <StaticMenuStyle VerticalPadding="5px" />
         <StaticMenuItemStyle HorizontalPadding="25px" />
         <Items>
+            <asp:MenuItem text="Form instructions" value="PMForm" toolTip="Back to the main page of DHPR form with form Instruction"></asp:MenuItem>
             <asp:MenuItem Text="Cover page" Value="Coverpage"></asp:MenuItem>
             <asp:MenuItem Text="Part I" Value="PartOne"></asp:MenuItem>
             <asp:MenuItem Text="Part II" Value="PartTwo"></asp:MenuItem>
             <asp:MenuItem Text="Part III" Value="PartThree"></asp:MenuItem>
-            <asp:MenuItem text="Form instruction" value="PMForm" toolTip="Back to the main page of DHPR form with form Instruction"></asp:MenuItem>
-        </Items>
+           </Items>
     </asp:Menu>
 </section>
 <asp:HiddenField runat="server" ID="hdAnalyteName" ClientIDMode="Static" />

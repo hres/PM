@@ -375,4 +375,316 @@
   <data name="Test" xml:space="preserve">
     <value>Test</value>
   </data>
+  <data name="btnAddCol" xml:space="preserve">
+    <value>Ajouter colonne</value>
+  </data>
+  <data name="btnAppendRow" xml:space="preserve">
+    <value>Ajouter ligne</value>
+  </data>
+  <data name="btnApplySumbol" xml:space="preserve">
+    <value>Appliquer le symbole</value>
+  </data>
+  <data name="btnDelCol" xml:space="preserve">
+    <value>Supprimer dernière colonne</value>
+  </data>
+  <data name="btnDeleteRow" xml:space="preserve">
+    <value>Supprimer une ligne</value>
+  </data>
+  <data name="btnlblApplySymbol" xml:space="preserve">
+    <value>Appliquer le symbole</value>
+  </data>
+  <data name="btnSaveDraft" xml:space="preserve">
+    <value>Enregistrer un brouillon</value>
+  </data>
+  <data name="CoverPage" xml:space="preserve">
+    <value>Page couverture</value>
+  </data>
+  <data name="footnote" xml:space="preserve">
+    <value>Référence</value>
+  </data>
+  <data name="lblAndOr" xml:space="preserve">
+    <value>et / ou</value>
+  </data>
+  <data name="lblDateOfPreparation" xml:space="preserve">
+    <value>Date de préparation</value>
+  </data>
+  <data name="lblDateOfRevision" xml:space="preserve">
+    <value>Date de révision</value>
+  </data>
+  <data name="lblSchedulingSymbol" xml:space="preserve">
+    <value>Symbole de planification</value>
+  </data>
+  <data name="lblSchedulingSymbol2" xml:space="preserve">
+    <value>Symbole de planification</value>
+  </data>
+  <data name="lblSponsorAddress" xml:space="preserve">
+    <value>Parrainer l'adresse</value>
+  </data>
+  <data name="lblSponsorName" xml:space="preserve">
+    <value>Nom du promoteur</value>
+  </data>
+  <data name="lblStrengthperDosage" xml:space="preserve">
+    <value>Force par dose</value>
+  </data>
+  <data name="PharmaceuticalStandard" xml:space="preserve">
+    <value>La norme pharmaceutique</value>
+  </data>
+  <data name="SubmissionControlNo" xml:space="preserve">
+    <value>De Contrôle de la présentation</value>
+  </data>
+  <data name="tbBName" xml:space="preserve">
+    <value>Nom de marque</value>
+  </data>
+  <data name="tbDForm" xml:space="preserve">
+    <value>Forme posologique</value>
+  </data>
+  <data name="tbDUnit" xml:space="preserve">
+    <value>Unité</value>
+  </data>
+  <data name="tbDValue" xml:space="preserve">
+    <value>Valeur</value>
+  </data>
+  <data name="tbPName" xml:space="preserve">
+    <value>Nom propre</value>
+  </data>
+  <data name="tbStrength" xml:space="preserve">
+    <value>Force</value>
+  </data>
+  <data name="tbSUnit" xml:space="preserve">
+    <value>Unité</value>
+  </data>
+  <data name="tbSValue" xml:space="preserve">
+    <value>Valeur</value>
+  </data>
+  <data name="TherapeuticClassification" xml:space="preserve">
+    <value>Classification thérapeutique</value>
+  </data>
+  <data name="lblBrandName3" xml:space="preserve">
+    <value>Nom de marque</value>
+    <comment>Part I</comment>
+  </data>
+  <data name="lblDosageForm2" xml:space="preserve">
+    <value>Forme posologique</value>
+    <comment>Part I</comment>
+  </data>
+  <data name="lblGeriatrics" xml:space="preserve">
+    <value>Gériatrie</value>
+    <comment>Part I</comment>
+  </data>
+  <data name="lblICProperName" xml:space="preserve">
+    <value>Nom propre est indiqué pour:</value>
+    <comment>Part I</comment>
+  </data>
+  <data name="lblIngredients" xml:space="preserve">
+    <value>Ingrédients non médicinaux cliniquement pertinents</value>
+    <comment>Part I</comment>
+  </data>
+  <data name="lblPartITitle" xml:space="preserve">
+    <value>Partie I: Information sur la santé professionnelle</value>
+    <comment>Part I</comment>
+  </data>
+  <data name="lblPediatrics" xml:space="preserve">
+    <value>Pédiatrie</value>
+    <comment>Part I</comment>
+  </data>
+  <data name="lblProperName" xml:space="preserve">
+    <value>Nom propre</value>
+    <comment>Part I</comment>
+  </data>
+  <data name="lblProprietaryBrandName" xml:space="preserve">
+    <value>Nom de marque</value>
+    <comment>Part I</comment>
+  </data>
+  <data name="lblRouteOfAdministration" xml:space="preserve">
+    <value>Voie d'administration</value>
+    <comment>Part I</comment>
+  </data>
+  <data name="lblStrength2" xml:space="preserve">
+    <value>Force</value>
+    <comment>Part I</comment>
+  </data>
+  <data name="lblYearsOfAge" xml:space="preserve">
+    <value>Années d'âge</value>
+    <comment>Part I</comment>
+  </data>
+  <data name="lblYearsOfAgeOr" xml:space="preserve">
+    <value>Années d'âge) ou</value>
+    <comment>Part I</comment>
+  </data>
+  <data name="SumSummaryProductInformation" xml:space="preserve">
+    <value>Informations Sommaire du produit</value>
+    <comment>Part I</comment>
+  </data>
+  <data name="SUM_INDICATIONS" xml:space="preserve">
+    <value>Indications et utilisation clinique</value>
+    <comment>Part I</comment>
+  </data>
+  <data name="btnAddAdverseReactionsOuterSection" xml:space="preserve">
+    <value>Ajouter</value>
+    <comment>Part 1</comment>
+  </data>
+  <data name="btnAddExtraContraindications" xml:space="preserve">
+    <value>Ajouter</value>
+    <comment>Part 1</comment>
+  </data>
+  <data name="btnRemoveContraindications" xml:space="preserve">
+    <value>Retirer</value>
+    <comment>Part 1</comment>
+  </data>
+  <data name="btnRemoveSeriousWarningsPrecautions" xml:space="preserve">
+    <value>Retirer</value>
+    <comment>Part 1</comment>
+  </data>
+  <data name="btnSaveDraftPart1" xml:space="preserve">
+    <value>Enregistrer le brouillon</value>
+    <comment>Part 1</comment>
+  </data>
+  <data name="lblAdministration" xml:space="preserve">
+    <value>Administration</value>
+    <comment>Part 1</comment>
+  </data>
+  <data name="lblAdverse" xml:space="preserve">
+    <value>Adverse aperçu de la réaction de la drogue</value>
+    <comment>Part 1</comment>
+  </data>
+  <data name="lblAnySpecific" xml:space="preserve">
+    <value>Toutes les précautions, les périodes et les incompatibilités de stockage spécifiques</value>
+    <comment>Part 1</comment>
+  </data>
+  <data name="lblApproximate" xml:space="preserve">
+    <value>Volume approximatif</value>
+    <comment>Part 1</comment>
+  </data>
+  <data name="lblBrandName" xml:space="preserve">
+    <value>Nom de marque</value>
+    <comment>Part 1</comment>
+  </data>
+  <data name="lblContraindications" xml:space="preserve">
+    <value>Contre-indications</value>
+    <comment>Part 1</comment>
+  </data>
+  <data name="lblDosageForms" xml:space="preserve">
+    <value>Les formes posologiques, la composition et l'emballage</value>
+    <comment>Part 1</comment>
+  </data>
+  <data name="lblHeadings" xml:space="preserve">
+    <value>Rubriques</value>
+    <comment>Part 1</comment>
+  </data>
+  <data name="lblMechanism" xml:space="preserve">
+    <value>Mécanisme d'action</value>
+    <comment>Part 1</comment>
+  </data>
+  <data name="lblMissed" xml:space="preserve">
+    <value>Dose oubliée</value>
+    <comment>Part 1</comment>
+  </data>
+  <data name="lblNominal" xml:space="preserve">
+    <value>Concentration nominale par mL</value>
+    <comment>Part 1</comment>
+  </data>
+  <data name="lblOral" xml:space="preserve">
+    <value>Des solutions orales</value>
+    <comment>Part 1</comment>
+  </data>
+  <data name="lblOverview" xml:space="preserve">
+    <value>Aperçu</value>
+    <comment>Part 1</comment>
+  </data>
+  <data name="lblParenteralProducts" xml:space="preserve">
+    <value>Produits parentéral:</value>
+    <comment>Part 1</comment>
+  </data>
+  <data name="lblPharmacodynamics" xml:space="preserve">
+    <value>Pharmacodynamique</value>
+    <comment>Part 1</comment>
+  </data>
+  <data name="lblProprietaryProperName" xml:space="preserve">
+    <value>Nom propre</value>
+    <comment>Part 1</comment>
+  </data>
+  <data name="lblRecommended" xml:space="preserve">
+    <value>Dose recommandée et ajustement posologique</value>
+    <comment>Part 1</comment>
+  </data>
+  <data name="lblReconstitution" xml:space="preserve">
+    <value>Reconstitution</value>
+    <comment>Part 1</comment>
+  </data>
+  <data name="lblSerious" xml:space="preserve">
+    <value>Mises en garde et précautions graves</value>
+    <comment>Part 1</comment>
+  </data>
+  <data name="lblSpecialHandling" xml:space="preserve">
+    <value>Instructions spéciales de manutention</value>
+    <comment>Part 1</comment>
+  </data>
+  <data name="lblStorage" xml:space="preserve">
+    <value>Conservation et stabilité</value>
+    <comment>Part 1</comment>
+  </data>
+  <data name="lblVialSize" xml:space="preserve">
+    <value>Taille du flacon</value>
+    <comment>Part 1</comment>
+  </data>
+  <data name="lblVolume" xml:space="preserve">
+    <value>Volume de diluant à ajouter au flacon</value>
+    <comment>Part 1</comment>
+  </data>
+  <data name="SUM_ACTION" xml:space="preserve">
+    <value>Action et pharmacologie clinique</value>
+    <comment>Part 1</comment>
+  </data>
+  <data name="SUM_ADVERSE" xml:space="preserve">
+    <value>Effets indésirables</value>
+    <comment>Part 1</comment>
+  </data>
+  <data name="SUM_CONTRAINDICATIONS" xml:space="preserve">
+    <value>Contre-indications</value>
+    <comment>Part 1</comment>
+  </data>
+  <data name="SUM_DOSAGEFORMS" xml:space="preserve">
+    <value>Les formes posologiques, la composition et l'emballage</value>
+    <comment>Part 1</comment>
+  </data>
+  <data name="SUM_DRUG_INTERACTIONS" xml:space="preserve">
+    <value>Interactions médicamenteuses</value>
+    <comment>Part 1</comment>
+  </data>
+  <data name="SUM_SPECIAL_HANDLING" xml:space="preserve">
+    <value>Instructions spéciales de manutention</value>
+    <comment>Part 1</comment>
+  </data>
+  <data name="SUM_STORAGE" xml:space="preserve">
+    <value>Conservation et stabilité</value>
+    <comment>Part 1</comment>
+  </data>
+  <data name="SUM_WARNINGS" xml:space="preserve">
+    <value>Mises en garde et précautions</value>
+    <comment>Part 1</comment>
+  </data>
+  <data name="btnRemoveDosingConsiderations" xml:space="preserve">
+    <value>Retirer</value>
+    <comment>Part 1</comment>
+  </data>
+  <data name="lblDosing" xml:space="preserve">
+    <value>Considérations posologiques</value>
+    <comment>Part 1</comment>
+  </data>
+  <data name="lblForManagement" xml:space="preserve">
+    <value>Pour la gestion d'un surdosage soupçonné, communiquez avec votre antipoison régional pour la gestion d'une surdose présumée, communiquez avec le centre antipoison de votre région</value>
+    <comment>Part 1</comment>
+  </data>
+  <data name="lblYearsOfAge2" xml:space="preserve">
+    <value>Années d'âge</value>
+    <comment>Part 1</comment>
+  </data>
+  <data name="SUM_DOSAGE" xml:space="preserve">
+    <value>Dosage et administration</value>
+    <comment>Part 1</comment>
+  </data>
+  <data name="SUM_OVERDOSAGE" xml:space="preserve">
+    <value>Surdosage</value>
+    <comment>Part 1</comment>
+  </data>
 </root>

@@ -76,13 +76,13 @@ namespace Product_Monograph {
         protected global::System.Web.UI.WebControls.FileUpload fuXmlDraft;
         
         /// <summary>
-        /// btnLoadXml control.
+        /// btnLoadXml_PMForm control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Button btnLoadXml;
+        protected global::System.Web.UI.WebControls.Button btnLoadXml_PMForm;
         
         /// <summary>
         /// imgSymbol control.

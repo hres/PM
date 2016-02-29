@@ -1308,12 +1308,12 @@
    <StaticMenuStyle VerticalPadding="5px" />
    <StaticMenuItemStyle HorizontalPadding="25px" />
       <Items>
+            <asp:MenuItem Text="Form instructions" Value="PMForm" ToolTip="Back to the main page of DHPR form with form Instruction"></asp:MenuItem>
             <asp:MenuItem Text="Cover page" Value="Coverpage" ToolTip="Cover page of the form"></asp:MenuItem>
             <asp:MenuItem Text="Part I" Value="PartOne" ToolTip="Part I of the form"></asp:MenuItem>
             <asp:MenuItem Text="Part II" Value="PartTwo" ToolTip="Part II of the form"></asp:MenuItem>
             <asp:MenuItem Text="Part III" Value="PartThree" ToolTip="Part III of the form"></asp:MenuItem>
-            <asp:MenuItem Text="Form instruction" Value="PMForm" ToolTip="Back to the main page of DHPR form with form Instruction"></asp:MenuItem>
-      </Items>
+          </Items>
 </asp:Menu>
 <asp:Button ID="btnSaveDraftPart1" runat="server" cssclass="btn btn-default form-control paddingTop floatLeft" Text="Save draft" OnClick="btnSave_Click" ToolTip="Please save your form data in a draft file." /> 
 </div>
@@ -1453,7 +1453,7 @@
                 <label id="lblHeadings" runat="server">Headings</label>&nbsp;<img id="tooltipSeriousWarningsHeadings" src="images/qmark.jpg" style="width:15px; height:15px; cursor:pointer !important;" alt="Help Message of Headings" />
             </div>     
             <div style="width:5%; float:left;">
-                <input class="btn btn-default btn-xs" type="button" value="Add" onclick="AddHeadingSelection()" id="btnAddExtraAddHeadingSelection" />
+                <input class="btn btn-default btn-xs" type="button" value="Add" onclick="AddHeadingSelection()" runat="server" id="btnAddExtraAddHeadingSelection" />
              </div>       
         </div>
         <div id="dvExtraHeadingSelection" style="width:90%; padding-left: 0px; clear:both;"></div>
@@ -1473,7 +1473,7 @@
             <datalist id="dladversereactions"></datalist>
         </div>       
         <div style="width:5%; float:left;">
-            <input class="btn btn-default btn-xs" type="button" value="Add" onclick="AddAdverseReactionsOuterSection()" id="btnAddAdverseReactionsOuterSection" />
+            <input class="btn btn-default btn-xs" type="button" value="Add" onclick="AddAdverseReactionsOuterSection()" runat="server" id="btnAddAdverseReactionsOuterSection" />
             </div> 
         <div style="float:left; display:none;">
             <img id="tooltipSelectedAdverseReaction" src="images/qmark.jpg" style="width:15px; height:15px; cursor:pointer !important;" alt="Help Message of Selected Adverse Reaction" />
@@ -1497,7 +1497,7 @@
             <datalist id="dldruginteractions"></datalist>
         </div>     
         <div style="width:5%; float:left;">
-            <input type="button" value="Add" onclick="AddDrugInteractionsOuterSection()" id="btnAddDrugInteractionsOuterSection" class="btn btn-default btn-xs" />
+            <input type="button" value="Add" onclick="AddDrugInteractionsOuterSection()" runat="server" id="btnAddDrugInteractionsOuterSection" class="btn btn-default btn-xs" />
         </div> 
         <div id="dvExtraDrugInteractionsOuter" style="clear:both; width:100%">
         </div>  
@@ -1506,13 +1506,13 @@
     </li>
 	<li>
     <details class="margin-top-medium">
-        <summary id="SUM_DOSAGE" >Dosage and administration</summary>
+        <summary id="SUM_DOSAGE" runat="server">Dosage and administration</summary>
 
         <div style="padding: 20px 0px 4px 0px; padding-left: 0px; width:90%;">
             <div style=" width:94%; float:left;"><label id="lblDosing" runat="server">Dosing considerations</label>&nbsp;<img id="tooltipDosingConsiderations" src="images/qmark.jpg" style="width:15px; height:15px; cursor:pointer !important;" alt="Help Message of Dosing Considerations"/>            
             </div>  
             <div style="width:5%; float:left;">
-                <input class="btn btn-default btn-xs" type="button" value="Add" onclick="AddDosingConsiderationsTextBox()" id="btnAddExtraDosingConsiderations" />
+                <input class="btn btn-default btn-xs" type="button" value="Add" runat="server" onclick="AddDosingConsiderationsTextBox()" id="btnAddExtraDosingConsiderations" />
             </div>        
         </div> 
 
@@ -1521,7 +1521,7 @@
                 <textarea id="tbDosingConsiderations0" name="tbDosingConsiderations" class="textarea form-control"></textarea>
             </div>  
             <div style="width:5%; float:left;">
-                <input class="btn btn-default btn-xs" type="button" value="Remove" onclick="RemoveDosingConsiderationsTextBox(0)" id="btnRemoveDosingConsiderations" />
+                <input class="btn btn-default btn-xs" type="button" value="Remove" onclick="RemoveDosingConsiderationsTextBox(0)" id="btnRemoveDosingConsiderations" runat="server" />
             </div> 
         </div>
 
@@ -1714,12 +1714,12 @@
    <StaticMenuStyle VerticalPadding="5px" />
    <StaticMenuItemStyle HorizontalPadding="25px" />
       <Items>
+            <asp:MenuItem Text="Form instructions" Value="PMForm" ToolTip="Back to the main page of DHPR form with form Instruction"></asp:MenuItem>
             <asp:MenuItem Text="Cover page" Value="Coverpage" ToolTip="Cover page of the form"></asp:MenuItem>
             <asp:MenuItem Text="Part I" Value="PartOne" ToolTip="Part I of the form"></asp:MenuItem>
             <asp:MenuItem Text="Part II" Value="PartTwo" ToolTip="Part II of the form"></asp:MenuItem>
             <asp:MenuItem Text="Part III" Value="PartThree" ToolTip="Part III of the form"></asp:MenuItem>
-            <asp:MenuItem Text="Form instruction" Value="PMForm" ToolTip="Back to the main page of DHPR form with form Instruction"></asp:MenuItem>
-      </Items>
+          </Items>
 </asp:Menu>
 </div>
 

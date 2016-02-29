@@ -1,13 +1,11 @@
 ﻿<%@ Page Title="" Language="C#" MasterPageFile="~/ProdMono.Master" AutoEventWireup="true" CodeBehind="PMForm.aspx.cs" Inherits="Product_Monograph.PMForm" ValidateRequest="false" %>
-<asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
-   
-     <section>  
-            <h2><asp:Label runat="server" id="lblTitleFormInstructions"></asp:Label></h2>
+<asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">  
+    <section>  
+       <h2><asp:Label runat="server" id="lblTitleFormInstructions"></asp:Label></h2>
     </section>
-     <asp:Label runat="server" id="lblError" clientIDMode="Static" foreColor="Red"></asp:Label>
+    <asp:Label runat="server" id="lblError" clientIDMode="Static" foreColor="Red"></asp:Label>
 
-
-       <div class="form-group mrgn-tp-lg">       
+    <div class="form-group mrgn-tp-lg">       
            <div class="col-sm-2">
                <asp:Label ID="lblSelectTemplate" runat="server" CssClass="control-label">Select a template:</asp:Label> 
            </div>
@@ -35,11 +33,10 @@
            </div>
     </div>
 
-
     <section class="margin-bottom-small">   
         <asp:FileUpload id="fuXmlDraft" runat="server"/>
         <div class="mrgn-bttm-lg"></div>
-        <asp:Button cssClass="btn btn-default" id="btnLoadXml" runat="server" text="Load XML file" onClick="btnLoadXml_Click" />   
+        <asp:Button cssClass="btn btn-default" id="btnLoadXml_PMForm" runat="server" text="Load XML file" onClick="btnLoadXml_Click" />   
     </section>
 
     <section>
@@ -48,11 +45,8 @@
         <p><asp:Label runat="server" id="lblBody"></asp:Label></p>
     </section>
 
-
     <section>
         <h3><asp:Label runat="server" ID="lblTechSpec" ></asp:Label></h3>
         <p><asp:Label runat="server" id="lblBottomBody"></asp:Label></p>
-
- 
     </section>
  </asp:Content>

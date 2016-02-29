@@ -492,12 +492,12 @@
         <StaticMenuStyle VerticalPadding="10px" />
         <StaticMenuItemStyle HorizontalPadding="35px" />
         <Items>
+            <asp:MenuItem text="Form instructions" value="PMForm" toolTip="Back to the main page of DHPR form with form Instruction"></asp:MenuItem>
             <asp:MenuItem Text="Cover page" Value="Coverpage"></asp:MenuItem>
             <asp:MenuItem Text="Part I" Value="PartOne"></asp:MenuItem>
             <asp:MenuItem Text="Part II" Value="PartTwo"></asp:MenuItem>
             <asp:MenuItem Text="Part III" Value="PartThree"></asp:MenuItem>
-            <asp:MenuItem text="Form instruction" value="PMForm" toolTip="Back to the main page of DHPR form with form Instruction"></asp:MenuItem>
-        </Items>
+         </Items>
     </asp:Menu>
 </div>
 
@@ -1087,12 +1087,12 @@
         <StaticMenuStyle VerticalPadding="10px" />
         <StaticMenuItemStyle HorizontalPadding="35px" />
         <Items>
+            <asp:MenuItem text="Form instructions" value="PMForm" toolTip="Back to the main page of DHPR form with form Instruction"></asp:MenuItem>
             <asp:MenuItem Text="Cover page" Value="Coverpage"></asp:MenuItem>
             <asp:MenuItem Text="Part I" Value="PartOne"></asp:MenuItem>
             <asp:MenuItem Text="Part II" Value="PartTwo"></asp:MenuItem>
             <asp:MenuItem Text="Part III" Value="PartThree"></asp:MenuItem>
-            <asp:MenuItem text="Form instruction" value="PMForm" toolTip="Back to the main page of DHPR form with form Instruction"></asp:MenuItem>
-        </Items>
+            </Items>
     </asp:Menu>
     
 </div>
