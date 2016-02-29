@@ -322,7 +322,7 @@
    </asp:Menu>
 </div>
 <div class="row mrgn-tp-md">
-    <asp:Button id="btnSaveDraft" runat="server" text="Save draft" onClick="btnSaveDraft_Click" cssClass="btn btn-default" toolTip="Save draft file"/>
+   <asp:Button id="btnSaveDraft" runat="server" text="Save draft" onClick="btnSaveDraft_Click" cssClass="btn btn-default" toolTip="Save draft file"/>
 </div>
 <!-- Main Content For Submenu Item of "Cover Page" and Use WET Standard -->
 <div class="row">
@@ -364,7 +364,7 @@
     <input type="text" id="txtColumnName" name="txtColumnName" placeholder="Please enter Column name" maxlength="100" />
     <input class="btn btn-default btn-xs" type="button" value="Append Column" runat="server" id="btnAddCol" />
     <input class="btn btn-default btn-xs" type="button" value="Delete Last Column" runat="server" id="btnDelCol" onClick="delCol('dataTable')" /> 
-    <input class="btn btn-default btn-xs" type="button" value="Save Your Column" runat="server" id="btnSaveCol" hidden onClick="saveCol('dataTable')" /> 
+   <!-- <input class="btn btn-default btn-xs" type="button" value="Save Your Column" runat="server" id="btnSaveCol" hidden onClick="saveCol('dataTable')" /> -->
     <asp:HiddenField ID="ColNameList" runat="server" />
 </div>
 <div class="row table-responsive">
