@@ -308,6 +308,8 @@
         {
             $('#tbSchedulingSymbol option').each(function () { if ($(this).html() == 'schedule 3') { $(this).attr('selected', 'selected'); return; }});
         }
+       
+   
 
 </script> 
 </asp:Content>
@@ -469,17 +471,22 @@
     </div>
 </section>
 <section>
-   <div style="float:left; width:340px; height:40px;">
-        <div style="padding: 20px 4px 4px 0px; clear:both;"><h3 class="h5" id="lblDateOfPreparation" lang="en">Date of preparation</h3></div>
-        <asp:TextBox runat="server" id="tbDatePrep" width="250" readonly="true"></asp:TextBox>
-        <cc1:CalendarExtender id="tbDatePrep_CalendarExtender" runat="server" targetControlID="tbDatePrep" format="yyyy-MM-dd"/>
-        &nbsp;&nbsp;<label lang="en" id="lblAndOr">and/or</label> 
+   
+    <div class="form-group col-sm-12">
+       <label for="tbDatePrep" class="control-label"><span class="field-name">Date of preparation</span><span class="datepicker-format"> (<abbr title="Four digits year, dash, two digits month, dash, two digits day">YYYY-MM-DD</abbr>)</span></label>
+       
+            <asp:TextBox runat="server" id="tbDatePrep" CssClass="form-control" type="date" name="tbDatePrep" data-rule-dateiso="true"></asp:TextBox>
+       
+            &nbsp;&nbsp;<label lang="en" id="lblAndOr">and/or</label> 
+        
    </div>
-   <div style="float:left; width:270px; height:30px;">
-        <div style="padding: 20px 4px 4px 0px; clear:both;"><h3 class="h5" id="lblDateOfRevision" lang="en">Date of revision</h3></div>
-        <asp:TextBox runat="server" id="tbDateRev" width="250" readonly="true"></asp:TextBox>
-        <cc1:CalendarExtender id="CalendarExtender2" runat="server" targetControlID="tbDateRev" format="yyyy-MM-dd" />
+     <div class="form-group col-sm-12">
+       <label for="tbDateRev" class="control-label"><span class="field-name">Date of revision</span><span class="datepicker-format"> (<abbr title="Four digits year, dash, two digits month, dash, two digits day">YYYY-MM-DD</abbr>)</span></label>
+        
+         <asp:TextBox runat="server" id="tbDateRev" CssClass="form-control" type="date" name="tbDateRev" data-rule-dateiso="true" ></asp:TextBox>
+ 
    </div>
+   
    <div style="float:left; width:600px; clear:both; display:block; padding-top:40px;">
        <div style="padding: 20px 4px 4px 0px"><h3 class="h5" id="SubmissionControlNo">Submission Control No:</h3></div>              
        <asp:TextBox id="tbControNum" runat="server" maxLength="6" width="250"></asp:TextBox>

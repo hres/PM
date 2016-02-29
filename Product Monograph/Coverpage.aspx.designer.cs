@@ -121,15 +121,6 @@ namespace Product_Monograph {
         protected global::System.Web.UI.WebControls.TextBox tbDatePrep;
         
         /// <summary>
-        /// tbDatePrep_CalendarExtender control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::AjaxControlToolkit.CalendarExtender tbDatePrep_CalendarExtender;
-        
-        /// <summary>
         /// tbDateRev control.
         /// </summary>
         /// <remarks>
@@ -137,15 +128,6 @@ namespace Product_Monograph {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.TextBox tbDateRev;
-        
-        /// <summary>
-        /// CalendarExtender2 control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::AjaxControlToolkit.CalendarExtender CalendarExtender2;
         
         /// <summary>
         /// tbControNum control.

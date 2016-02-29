@@ -1,11 +1,9 @@
 ﻿<%@ Page Title="" Language="C#" MasterPageFile="~/ProdMono.Master" AutoEventWireup="true" CodeBehind="PMForm.aspx.cs" Inherits="Product_Monograph.PMForm" ValidateRequest="false" %>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
-   
      <section>  
             <h2><asp:Label runat="server" id="lblTitleFormInstructions"></asp:Label></h2>
     </section>
-     <asp:Label runat="server" id="lblError" clientIDMode="Static" foreColor="Red"></asp:Label>
-
+    <asp:Label runat="server" id="lblError" clientIDMode="Static" foreColor="Red"></asp:Label>
 
        <div class="form-group mrgn-tp-lg">       
            <div class="col-sm-2">

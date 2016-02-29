@@ -60,6 +60,7 @@ namespace Product_Monograph
                 try
                 {
                     LoadFromXML();
+            
                 }
                 catch 
                 {
