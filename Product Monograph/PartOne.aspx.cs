@@ -54,6 +54,7 @@ namespace Product_Monograph
                     lblError.Text = "Please load a new template or a previously saved draft.";
                 }
             }
+            facilityResourcePart1();
         }
 
         private void SaveProcess()
@@ -2018,14 +2019,14 @@ namespace Product_Monograph
                     {
                         if (colarray[colcounter].Equals("tbBrandName"))
                         {
-                            lblProprietaryBrandName.Text = helpers.Processes.CleanString(column);
+                            lblBrandName.Text = helpers.Processes.CleanString(column);
                             lblBrandName.Text = helpers.Processes.CleanString(column);
                             strBrandName = helpers.Processes.CleanString(column);  //ching add code here
                         }
 
                         if (colarray[colcounter].Equals("tbProperName"))
                         {
-                            lblProperName.Text = helpers.Processes.CleanString(column);
+                            lblProprietaryProperName.Text = helpers.Processes.CleanString(column);
                             lblICProperName.Text = helpers.Processes.CleanString(column);
                         }
 
@@ -3052,6 +3053,55 @@ namespace Product_Monograph
         {
             SaveInMemory();
             Response.Redirect(submenutabsbottom.SelectedValue + ".aspx");
+        }
+        protected void facilityResourcePart1()
+        {
+           
+            lblPartITitle.InnerText = Resources.Resource.lblPartITitle;
+            lblBrandName.Text = Resources.Resource.lblBrandName;
+            lblBrandName3.Text = Resources.Resource.lblBrandName3;
+            lblProprietaryProperName.Text = Resources.Resource.lblProprietaryProperName;
+            SumSummaryProductInformation.InnerText = Resources.Resource.SumSummaryProductInformation;
+            btnSaveDraftPart1.Text = Resources.Resource.btnSaveDraftPart1;
+            lblDosageForm2.InnerText = Resources.Resource.lblDosageForm2;
+            lblStrength2.InnerText = Resources.Resource.lblStrength2;
+            lblIngredients.InnerText = Resources.Resource.lblIngredients;
+            btnAddExtraRouteOfAdmin.Value = Resources.Resource.btnAddExtraRouteOfAdmin;
+            lblGeriatrics.InnerText = Resources.Resource.lblGeriatrics;
+            lblYearsOfAge.InnerText = Resources.Resource.lblYearsOfAge;
+            lblPediatrics.InnerHtml = Resources.Resource.lblPediatrics;
+            lblYearsOfAgeOr.InnerHtml = Resources.Resource.lblYearsOfAgeOr;
+            lblYearsOfAge2.InnerHtml = Resources.Resource.lblYearsOfAge2;
+            SUM_CONTRAINDICATIONS.InnerHtml = Resources.Resource.SUM_CONTRAINDICATIONS;
+            lblContraindications.InnerHtml = Resources.Resource.lblContraindications;
+            lblRouteOfAdministration.InnerHtml = Resources.Resource.lblRouteOfAdministration;
+            btnAddExtraContraindications.Value = Resources.Resource.btnAddExtraContraindications;
+            btnRemoveContraindications.Value = Resources.Resource.btnRemoveContraindications;
+            SUM_WARNINGS.InnerHtml = Resources.Resource.SUM_WARNINGS;
+            btnAddExtraSeriousWarningsPrecautions.Value = Resources.Resource.btnAddExtraSeriousWarningsPrecautions;
+            btnRemoveSeriousWarningsPrecautions.Value = Resources.Resource.btnRemoveSeriousWarningsPrecautions;
+            lblHeadings.InnerHtml = Resources.Resource.lblHeadings;
+            btnAddPharmacokineticsOuterSection.Value = Resources.Resource.btnAddAdverseReactionsOuterSection;
+            lblStorage.InnerHtml = Resources.Resource.lblStorage;
+            lblSpecialHandling.InnerHtml = Resources.Resource.lblSpecialHandling;
+            SUM_DOSAGEFORMS.InnerHtml = Resources.Resource.SUM_DOSAGEFORMS;
+            lblDosageForms.InnerHtml = Resources.Resource.lblDosageForms;
+            SUM_INDICATIONS.InnerHtml = Resources.Resource.SUM_INDICATIONS;
+            lblRecommended.InnerHtml = Resources.Resource.lblRecommended;
+            btnAddParenteralProducts.Value = Resources.Resource.btnAddParenteralProducts;
+            lblAnySpecific.Text = Resources.Resource.lblAnySpecific;
+            SUM_DRUG_INTERACTIONS.InnerHtml = Resources.Resource.SUM_DRUG_INTERACTIONS;
+            lblOverview.InnerHtml = Resources.Resource.lblOverview;
+            lblMechanism.InnerHtml = Resources.Resource.lblMechanism;
+            lblPharmacodynamics.InnerHtml = Resources.Resource.lblPharmacodynamics;
+            btnAddPharmacokineticsOuterSection.Value = Resources.Resource.btnAddPharmacokineticsOuterSection;
+            SUM_SPECIAL_HANDLING.InnerHtml = Resources.Resource.SUM_SPECIAL_HANDLING;
+            lblICProperName.Text = Resources.Resource.lblICProperName;
+            lblForManagement.Text = Resources.Resource.lblForManagement;
+            SUM_ACTION.InnerText = Resources.Resource.SUM_ACTION;
+            SUM_STORAGE.InnerText = Resources.Resource.SUM_STORAGE;
+            SUM_OVERDOSAGE.InnerText = Resources.Resource.SUM_OVERDOSAGE;
+            SUM_ADVERSE.InnerText = Resources.Resource.SUM_ADVERSE;
         }
     }
 }
