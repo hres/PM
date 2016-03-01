@@ -1,7 +1,7 @@
 ﻿<%@ Page Title="" Language="C#" MasterPageFile="~/ProdMono.Master" AutoEventWireup="true" CodeBehind="PartOne.aspx.cs" Inherits="Product_Monograph.PartOne" ValidateRequest="false" %>
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
+    <br />
 <script type="text/javascript">   
-    
     $(document).ready(function () {
         $("#tooltipINDICATIONS").attr('title', 'Brief discussion of any relevant clinical information - if applicable\nDistribution restrictions - if applicable\nWhen the product is not recommended - if applicable');
         $("#tooltipCONTRAINDICATIONS").attr('title', 'Patients who are hypersensitive to this drug or to any ingredient in the formulation or component of the container. For a complete listing, see the Dosage Forms, Composition and Packaging section of the product monograph. [if applicable]');
@@ -204,7 +204,6 @@
                "<div style='width:23.5%; float:left;'><textarea id='" + crn + "' name='tbClinicallyRelevantNonmedicinalIngredientsDynamic'></textarea></div>" +
                "<div style='width:5%; float:left; padding-left:0px;'>" +
                   '<input class="btn btn-default btn-xs" type="button" value="Remove" onclick="RemoveRouteOfAdminTextBox(' + id + ')" id="btnRemoveRouteOfAdminTextBox(' + id + ')" />' +
-                  //  '<img style="cursor:pointer !important;" src="images/minus_icon.png" onclick="RemoveRouteOfAdminTextBox(' + id + ')" width="22" height="22" alt="Remove"/>' +
                "</div>";
     }
 
@@ -213,8 +212,7 @@
         return "<div style='width:94%; float:left;'><textarea id='" + con + "' name='tbContraindicationsDynamic'></textarea></div>" +
                "<div style='width:5%; float:left;'>" +
                   '<input class="btn btn-default btn-xs" type="button" value="Remove" onclick="RemoveContraindicationsTextBox(' + id + ')" id="btnRemoveContraindicationsTextBox(' + id + ')" />' +
-                   // '<img style="cursor:pointer !important;" src="images/minus_icon.png" onclick="RemoveContraindicationsTextBox(' + id + ')" width="22" height="22" alt="Remove"/>' +
-               "</div>";
+                  "</div>";
     }
 
     var RouteOfAdminCounter = 0;
@@ -353,14 +351,12 @@
                     '<div style="height:70px; width:70px;">' +
                         '<div style="float:left;">' +
                             '<input class="btn btn-default btn-xs" type="button" value="Remove" onclick="RemovePharmacokineticsInnerTextBox(' + innerid + ')" id="btnRemovePharmacokineticsInnerTextBox(' + innerid + ')" />' +
-                           // '<img style="cursor:pointer !important;" src="images/minus_icon.png" onclick="RemovePharmacokineticsInnerTextBox(' + innerid + ')" width="22" height="22" alt="Remove" />' +
-                        '</div>' +
+                            '</div>' +
                     '</div>' +
                     '<div style="height:70px; width:70px; display:none;">' +
                         '<div style="float:left;">' +
                              '<input class="btn btn-default btn-xs" type="button" value="Add" onclick="AddPharmacokineticsColumn()()" id="btnAddPharmacokineticsColumn" />' +
-        //  '<img style="cursor:pointer !important;" src="images/plus_icon.png" onclick="AddPharmacokineticsColumn()" width="22" height="22"  alt="Remove" />' +
-                        '</div>' +
+                          '</div>' +
                     '</div>' +
                 '</div>';
     }
@@ -1312,130 +1308,133 @@
    <StaticMenuStyle VerticalPadding="5px" />
    <StaticMenuItemStyle HorizontalPadding="25px" />
       <Items>
+            <asp:MenuItem Text="Form instructions" Value="PMForm" ToolTip="Back to the main page of DHPR form with form Instruction"></asp:MenuItem>
             <asp:MenuItem Text="Cover page" Value="Coverpage" ToolTip="Cover page of the form"></asp:MenuItem>
             <asp:MenuItem Text="Part I" Value="PartOne" ToolTip="Part I of the form"></asp:MenuItem>
             <asp:MenuItem Text="Part II" Value="PartTwo" ToolTip="Part II of the form"></asp:MenuItem>
             <asp:MenuItem Text="Part III" Value="PartThree" ToolTip="Part III of the form"></asp:MenuItem>
-            <asp:MenuItem Text="Form instruction" Value="PMForm" ToolTip="Back to the main page of DHPR form with form Instruction"></asp:MenuItem>
-      </Items>
+          </Items>
 </asp:Menu>
-<asp:Button ID="btnSaveDraft" runat="server" cssclass="btn btn-default form-control paddingTop floatLeft" Text="Save draft" OnClick="btnSave_Click" ToolTip="Please save your form data in a draft file." /> 
+<asp:Button ID="btnSaveDraftPart1" runat="server" cssclass="btn btn-default form-control paddingTop floatLeft" Text="Save draft" OnClick="btnSave_Click" ToolTip="Please save your form data in a draft file." /> 
 </div>
 <!-- Main Content For Submenu Item of "Part I" and Use WET Standard -->
-<div style="float:left; padding:10px 10px 10px 10px; clear:both;">
+<div class="row">
     <asp:Label runat="server" ID="lblError" ClientIDMode="Static" ForeColor="Red"></asp:Label>
 </div>
-<div style="float:left; clear:both;">
-    <h2 id="PartI" lang="en">Part I</h2>
+
+<div class="row">
+    <h2 ID="lblPartITitle" runat="server" class="siteSubHeader">Part I: Health Professional Information</h2>
 </div>
-<section style="width:100%; padding-left:0px; clear:both;">
-    <h4 style="border: 0px !important;"><asp:Label ID="lblProprietaryBrandName" runat="server">Brand name</asp:Label></h4>
-</section>
 
-<section style="width:100%; padding-left:0px; clear:both;">
-    <h4 style="border: 0px !important;"><asp:Label ID="lblProperName" runat="server">Proper name</asp:Label></h4>
-</section>
+<div class="row">
+   <h4><asp:Label ID="lblBrandName" runat="server">Brand name</asp:Label></h4>
+</div>
 
-<section style="width:100%; padding-left:0px; clear:both;">
-    <h4 style="border: 0px !important;"><asp:Label ID="lblPart1Title" runat="server">Part I: Health Professional Information</asp:Label></h4>
-</section>
-    <details style="clear:both; padding-top: 20px;">
-        <summary>Summary Product Information</summary>
+<div class="row">
+   <h4><asp:Label ID="lblProprietaryProperName" runat="server">Proper name</asp:Label></h4>
+</div>
+
+<ul class="list-unstyled">
+	<li>
+    <details class="margin-top-medium">
+        <summary id="SumSummaryProductInformation" runat="server">Summary Product Information</summary>
         <div style="width:90.20%; padding: 8px 4px 4px 0px; clear:both;">
             <div style="width:23.5%; float:left; border: 1px solid #D9D9D9; height:50px;">
-                <label id="lblRouteOfAdministration" lang="en">Route of administration</label>
+                <label id="lblRouteOfAdministration" runat="server">Route of administration</label>
             </div>
             <div style="width:23.5%; float:left; border: 1px solid #D9D9D9; height:50px">
-                <label id="lblDosageForm" lang="en">Dosage form</label>
+                <label id="lblDosageForm2" runat="server">Dosage form</label>
             </div>
             <div style="width:23.5%; float:left; border: 1px solid #D9D9D9; height:50px">
-               <label id="lblStrength" lang="en">Strength</label>
+               <label id="lblStrength2" runat="server">Strength</label>
             </div>
             <div style="width:23.5%; float:left; border: 1px solid #D9D9D9; height:50px">
-                <label id="lblClinicallyRelevantNonmedicinalIngredients" lang="en">Clinically relevant nonmedicinal ingredients</label>
+                <label id="lblIngredients" runat="server">Clinically relevant nonmedicinal ingredients</label>
             </div>
             <div style="width:5%; float:left;">
-                <input class="btn btn-default btn-xs" type="button" value="Add" onclick="AddRouteOfAdminTextBox()" id="btnAddExtraRouteOfAdmin" />
-            <!--  <img style="cursor:pointer !important;" src="images/plus_icon.png"  onclick="AddRouteOfAdminTextBox()" id="btnAddExtraRouteOfAdmin" width="23" height="23" alt="Add"/> -->                                                      
+                <input class="btn btn-default btn-xs" type="button" value="Add" onclick="AddRouteOfAdminTextBox()" id="btnAddExtraRouteOfAdmin" runat="server"/>
             </div>   
         </div>    
         <div id="dvExtraRouteOfAdmin" style="width:90%; padding-left:0px; clear:both;">
         </div>
     </details>
-    
-    <details style="clear:both; padding-top: 20px;">
-        <summary id="SUM_INDICATIONS" lang="en">Indications and clinical use</summary>
+    </li>
+	<li> 
+    <details class="margin-top-medium">
+        <summary id="SUM_INDICATIONS" runat="server" >Indications and clinical use</summary>
         <div style="width:89.75%; text-align:center; clear:both; padding: 8px 4px 4px 0px;">
             <div style="text-align:left;">  
                 <div style="padding: 4px 4px 4px 0px">
-                    <asp:Label ID="lblBrandName" runat="server" CssClass="text-info">Brand name</asp:Label>
-                    &nbsp;(<asp:Label ID="lblICProperName" runat="server">Proper name
-                    is indicated for:</asp:Label>) 
-                    <img id="tooltipINDICATIONS" src="images/qmark.jpg" style="width:24px; height:24px; cursor:pointer !important;" alt="Help Message" /></div> 
-              <div style="width:94.5%; float:left;"><textarea id="tbBrandNameIndicatedFor" name="tbBrandNameIndicatedFor" class="textarea form-control" runat="server" title="Brief discussion of any relevant clinical information - if applicable"></textarea> </div>                             
-       
-                 </div>
+                    <asp:Label ID="lblBrandName3" runat="server" CssClass="text-info">Brand name</asp:Label>
+                    &nbsp;(<asp:Label ID="lblICProperName" runat="server">Proper name is indicated for:</asp:Label>) 
+                    <img id="tooltipINDICATIONS" src="images/qmark.jpg" style="width: 15px; height: 15px;" alt="Help Message" /></div> 
+                <div style="width:94.5%; float:left;">
+                       <textarea id="tbBrandNameIndicatedFor" name="tbBrandNameIndicatedFor" class="textarea form-control" runat="server" title="Brief discussion of any relevant clinical information - if applicable"></textarea> 
+                   </div>                             
+            </div>
         </div>
+
         <div style="width:90%; text-align:center; clear:both; padding-left:0px; padding-top: 20px;">
             <div id="divTextBox16" style="text-align:left;">              
                 <div style="padding: 4px 4px 4px 0px">
-                    <div style="float:left;"><label id="lblGeriatrics" lang="en">Geriatrics</label> ( >&nbsp;</div>
+                    <div style="float:left;"><label id="lblGeriatrics" runat="server">Geriatrics</label> ( >&nbsp;</div>
                     <div title="X" style="float:left;"><input type="number" id="tbGeriatricXvalue" name="tbGeriatricXvalue" runat="server" style="width:55px; text-align:center;"/>&nbsp;</div>
-                    <div style="float:left;"><label id="lblYearsOfAge" lang="en">years of age</label>):</div>              
+                    <div style="float:left;"><label id="lblYearsOfAge" runat="server">years of age</label>):</div>              
                 </div>    
-                <div style="width:94%; float:left;"><textarea id="tbICUGeriatrics" name="tbICUGeriatrics" runat="server"></textarea></div>                         
+                <div style="width:94%; float:left;">
+                    <textarea id="tbICUGeriatrics" name="tbICUGeriatrics" runat="server" class="textarea form-control"></textarea>
+                </div>                         
             </div>
         </div>
 
         <div style="width:90%; text-align:center; clear:both; padding-left:0px; padding-top: 20px;">
             <div id="divTextBox86" style="text-align:left;">              
                 <div style="padding: 4px 4px 4px 0px">
-                    <div style="float:left;"><label id="lblPediatrics" lang="en">Pediatrics</label> (&nbsp;</div>
+                    <div style="float:left;"><label id="lblPediatrics" runat="server">Pediatrics</label> (&nbsp;</div>
                     <div style="float:left;" title="X"><input type="number" id="tbPediatricsXvalue" name="tbPediatricsXvalue" runat="server" style="width:55px; text-align:center;"/>&nbsp;</div>
                     <div style="float:left;">-&nbsp;</div>
                     <div style="float:left;" title="Y"><input type="number" id="tbPediatricsYvalue" name="tbPediatricsYvalue" runat="server" style="width:55px; text-align:center;"/>&nbsp;</div> 
-                    <div style="float:left;"><label id="lblYearsOfAge)Or" lang="en">years of age) or</label> (&nbsp;<&nbsp;</div>   
+                    <div style="float:left;"><label id="lblYearsOfAgeOr" runat="server">years of age) or</label> (&nbsp;<&nbsp;</div>   
                     <div style="float:left;"><input type="number" id="tbYrsofAgeValue" name="tbYrsofAgeValue" runat="server" style="width:55px; text-align:center;"/>&nbsp;</div> 
-                    <div style="float:left;"><label id="lblYearsOfAge2" lang="en">years of age</label>):</div> 
+                    <div style="float:left;"><label id="lblYearsOfAge2" runat="server">years of age</label>):</div> 
                 </div>
                 <div style="width:94%; float:left;">
-                    <textarea id="tbICUPediatrics" name="tbICUPediatrics" runat="server"></textarea>
+                    <textarea id="tbICUPediatrics" name="tbICUPediatrics" runat="server" class="textarea form-control"></textarea>
                 </div>                         
             </div>
         </div>
     
     </details>
-
-    <details style="clear:both; padding-top: 20px;">
-        <summary id="SUM_CONTRAINDICATIONS" lang="en">Contraindications</summary>
+    </li>
+	<li>
+    <details class="margin-top-medium">
+        <summary id="SUM_CONTRAINDICATIONS" runat="server">Contraindications</summary>
         <div style="padding: 8px 4px 4px 0px; padding-left:0px; width:90%;">
-            <div style="width:94%; float:left;"><label id="lblContraindications" lang="en">Contraindications</label><img id="tooltipCONTRAINDICATIONS" src="images/qmark.jpg" style="width:24px; height:24px; cursor:pointer !important;" alt="Help Message of CONTRAINDICATIONS" /></div>
+            <div style="width:94%; float:left;"><label id="lblContraindications" runat="server">Contraindications</label>&nbsp;<img id="tooltipCONTRAINDICATIONS" src="images/qmark.jpg" style="width:15px; height:15px; cursor:pointer !important;" alt="Help Message of CONTRAINDICATIONS" /></div>
             <div style="width:5%; float:left; padding-left:4px; display:none;">
-                <input class="btn btn-default btn-xs" type="button" value="Add" onclick="AddContraindicationsTextBox()" id="btnAddExtraContraindications" />
-               <!-- <img style="cursor:pointer !important;" src="images/plus_icon.png" onclick="AddContraindicationsTextBox()" id="btnAddExtraContraindications" width="23" height="23" alt="Add"/>    -->                                                      
-            </div> 
+                <input class="btn btn-default btn-xs" type="button" value="Add" runat="server" onclick="AddContraindicationsTextBox()" id="btnAddExtraContraindications" />
+               </div> 
         </div>  
         <div id="Cntrndctns0" style="width:90%; padding-left: 0px; clear:both;">
             <div style="width:94%; float:left;">
                 <textarea id="tbContraindicationsDynamic0" name="tbContraindicationsDynamic"></textarea>
             </div>   
             <div style="width:5%; float:left; display:none;">
-                <input class="btn btn-default btn-xs" type="button" value="Remove" onclick="RemoveContraindicationsTextBox(0)" id="btnRemoveContraindications" />
-               <!-- <img style="cursor:pointer !important;" src="images/minus_icon.png" onclick="RemoveContraindicationsTextBox(0)" id="btnRemoveContraindications" width="22" height="22" alt="Remove"/> -->                                                         
-            </div>     
+                <input class="btn btn-default btn-xs" type="button" value="Remove" runat="server" onclick="RemoveContraindicationsTextBox(0)" id="btnRemoveContraindications" />
+               </div>     
         </div>  
         <div id="dvExtraContraindications" style="width:90%; padding-left: 0px; clear:both;">
         </div>
     </details>
-
-    <details style="clear:both; padding-top: 20px;">
-        <summary id="SUM_WARNINGS" lang="en">Warnings and precaution</summary>
+    </li>
+	<li>
+    <details class="margin-top-medium">
+        <summary id="SUM_WARNINGS" runat="server">Warnings and precaution</summary>
         <div style="padding: 8px 4px 4px 0px; padding-left:0px; width:90%;">
-            <div style="width:94%; float:left; clear:both;"><label id="Serious" lang="en">Serious warnings and precautions</label> <img id="tooltipSeriousWarnings" src="images/qmark.jpg" style="width:24px; height:24px; cursor:pointer !important;" alt="Help Message of Serious warnings"/></div>          
+            <div style="width:94%; float:left; clear:both;"><label id="lblSerious" runat="server">Serious warnings and precautions</label> <img id="tooltipSeriousWarnings" src="images/qmark.jpg" style="width:15px; height:15px; cursor:pointer !important;" alt="Help Message of Serious warnings"/></div>          
             <div style="width:5%; float:left;padding-left:4px; display:none;">
-                <input class="btn btn-default btn-xs" type="button" value="Add" onclick="AddSeriousWarningsPrecautionsTextBox()" id="btnAddExtraSeriousWarningsPrecautions" />
-              <!--  <img style="cursor:pointer !important;" src="images/plus_icon.png" onclick="AddSeriousWarningsPrecautionsTextBox()" id="btnAddExtraSeriousWarningsPrecautions" width="23" height="23" alt="Add"/> -->                                                         
-            </div>      
+                <input class="btn btn-default btn-xs" type="button" value="Add" onclick="AddSeriousWarningsPrecautionsTextBox()" id="btnAddExtraSeriousWarningsPrecautions" runat="server" />
+                   </div>      
         </div> 
 
         <div id="SrsWrngPrctns0" style="width:90%; padding-left: 0px; clear:both;">
@@ -1443,31 +1442,28 @@
                 <textarea id="tbSeriousWarningsPrecautions0" name="tbSeriousWarningsPrecautions" class="textarea form-control"></textarea>
             </div>  
             <div style="width:5%; float:left; display:none;">
-                <input class="btn btn-default btn-xs" type="button" value="Remove" onclick="RemoveSeriousWarningsPrecautionsTextBox(0)" id="btnRemoveSeriousWarningsPrecautions" />
-               <!-- <img style="cursor:pointer !important;" src="images/minus_icon.png"  onclick="RemoveSeriousWarningsPrecautionsTextBox(0)" id="btnRemoveSeriousWarningsPrecautions" width="22" height="22" alt="Remove" />   -->                                                       
-            </div> 
+                <input class="btn btn-default btn-xs" type="button" value="Remove" onclick="RemoveSeriousWarningsPrecautionsTextBox(0)" id="btnRemoveSeriousWarningsPrecautions" runat="server" />
+                 </div> 
         </div> 
         <div id="dvExtraSeriousWarningsPrecautions" style="width:90%; padding-left:0px; clear:both;">
         </div>
 
         <div style="width:90%; padding-left: 0px; clear:both; padding-top: 40px; padding-bottom:4px;">
             <div style="width:94%; float:left; clear:both;">
-                <label id="lblHeadings" lang="en">Headings</label>&nbsp;<img id="tooltipSeriousWarningsHeadings" src="images/qmark.jpg" style="width:24px; height:24px; cursor:pointer !important;" alt="Help Message of Headings" />
+                <label id="lblHeadings" runat="server">Headings</label>&nbsp;<img id="tooltipSeriousWarningsHeadings" src="images/qmark.jpg" style="width:15px; height:15px; cursor:pointer !important;" alt="Help Message of Headings" />
             </div>     
             <div style="width:5%; float:left;">
-                <input class="btn btn-default btn-xs" type="button" value="Add" onclick="AddHeadingSelection()" id="btnAddExtraAddHeadingSelection" />
-                <!-- <img style="cursor:pointer !important;" src="images/plus_icon.png" onclick="AddHeadingSelection()" id="btnAddExtraAddHeadingSelection" width="23" height="23" alt="Add"/> -->                                                         
-            </div>       
+                <input class="btn btn-default btn-xs" type="button" value="Add" onclick="AddHeadingSelection()" runat="server" id="btnAddExtraAddHeadingSelection" />
+             </div>       
         </div>
-    
         <div id="dvExtraHeadingSelection" style="width:90%; padding-left: 0px; clear:both;"></div>
     </details>    
-
-    <details style="clear:both; padding-top: 20px;">
-        <summary id="SUM_ADVERSE" lang="en">Adverse reactions</summary>
-
+    </li>
+	<li>
+    <details class="margin-top-medium">
+        <summary id="SUM_ADVERSE" runat="server">Adverse reactions</summary>
         <div style="width:84.5%; text-align:center; clear:both; padding-left: 0px; text-align:left;">
-            <div style="padding: 4px 4px 4px 0px"><label id="lblAdverse" lang="en">Adverse drug reaction overview</label></div>                         
+            <div style="padding: 4px 4px 4px 0px"><label id="lblAdverse" runat="server">Adverse drug reaction overview</label></div>                         
             <textarea id="tbAdverseDrugReactOverview" name="tbAdverseDrugReactOverview" runat="server" class="textarea form-control"></textarea>                            
         </div>
 
@@ -1477,22 +1473,21 @@
             <datalist id="dladversereactions"></datalist>
         </div>       
         <div style="width:5%; float:left;">
-            <input class="btn btn-default btn-xs" type="button" value="Add" onclick="AddAdverseReactionsOuterSection()" id="btnAddAdverseReactionsOuterSection" />
-            <!--<img style="cursor:pointer !important;" src="images/plus_icon.png" onclick="AddAdverseReactionsOuterSection()" id="" width="23" height="23" alt="Add"/>  -->                                                        
-        </div> 
+            <input class="btn btn-default btn-xs" type="button" value="Add" onclick="AddAdverseReactionsOuterSection()" runat="server" id="btnAddAdverseReactionsOuterSection" />
+            </div> 
         <div style="float:left; display:none;">
-            <img id="tooltipSelectedAdverseReaction" src="images/qmark.jpg" style="width:24px; height:24px; cursor:pointer !important;" alt="Help Message of Selected Adverse Reaction" />
+            <img id="tooltipSelectedAdverseReaction" src="images/qmark.jpg" style="width:15px; height:15px; cursor:pointer !important;" alt="Help Message of Selected Adverse Reaction" />
         </div>  
         <div id="dvExtraAdverseReactionsOuter" style="clear:both; width:100%">
         </div>  
 
     </details>
-
-    <details style="clear:both; padding-top: 20px;">
-        <summary id="SUM_DRUG_INTERACTIONS" lang="en">Drug interations</summary>
-
+    </li>
+	<li>
+    <details class="margin-top-medium">
+        <summary id="SUM_DRUG_INTERACTIONS" runat="server">Drug interations</summary>
         <div style="width:84.5%; text-align:center; clear:both; padding-left: 0px; text-align:left; padding-top:20px;">
-            <div style="padding: 4px 4px 4px 0px"><label id="lblOverview" lang="en">Overview</label></div>                         
+            <div style="padding: 4px 4px 4px 0px"><label id="lblOverview" runat="server">Overview</label></div>                         
             <textarea id="tbDrugInteractionsOverview" name="tbDrugInteractionsOverview" runat="server" class="textarea form-control"></textarea>                            
         </div>
 
@@ -1502,24 +1497,22 @@
             <datalist id="dldruginteractions"></datalist>
         </div>     
         <div style="width:5%; float:left;">
-            <input type="button" value="Add" onclick="AddDrugInteractionsOuterSection()" id="btnAddDrugInteractionsOuterSection" class="btn btn-default btn-xs" />
-           <!-- <img style="cursor:pointer !important;" src="images/plus_icon.png" onclick="AddDrugInteractionsOuterSection()" id="" width="23" height="23" alt="Add"/>-->                                                          
+            <input type="button" value="Add" onclick="AddDrugInteractionsOuterSection()" runat="server" id="btnAddDrugInteractionsOuterSection" class="btn btn-default btn-xs" />
         </div> 
-
         <div id="dvExtraDrugInteractionsOuter" style="clear:both; width:100%">
         </div>  
 
     </details>
-
-    <details style="clear:both; padding-top: 20px;">
-        <summary id="SUM_DOSAGE" lang="en">Dosage and administration</summary>
+    </li>
+	<li>
+    <details class="margin-top-medium">
+        <summary id="SUM_DOSAGE" runat="server">Dosage and administration</summary>
 
         <div style="padding: 20px 0px 4px 0px; padding-left: 0px; width:90%;">
-            <div style=" width:94%; float:left;"><label id="lblDosing" lang="en">Dosing considerations</label>&nbsp;<img id="tooltipDosingConsiderations" src="images/qmark.jpg" style="width:24px; height:24px; cursor:pointer !important;" alt="Help Message of Dosing Considerations"/>            
+            <div style=" width:94%; float:left;"><label id="lblDosing" runat="server">Dosing considerations</label>&nbsp;<img id="tooltipDosingConsiderations" src="images/qmark.jpg" style="width:15px; height:15px; cursor:pointer !important;" alt="Help Message of Dosing Considerations"/>            
             </div>  
             <div style="width:5%; float:left;">
-                <input class="btn btn-default btn-xs" type="button" value="Add" onclick="AddDosingConsiderationsTextBox()" id="btnAddExtraDosingConsiderations" />
-                <!--<img style="cursor:pointer !important;" src="images/plus_icon.png" onclick="AddDosingConsiderationsTextBox()" id="btnAddExtraDosingConsiderations" width="23" height="23"alt="Add" /> -->                                                         
+                <input class="btn btn-default btn-xs" type="button" value="Add" runat="server" onclick="AddDosingConsiderationsTextBox()" id="btnAddExtraDosingConsiderations" />
             </div>        
         </div> 
 
@@ -1528,8 +1521,7 @@
                 <textarea id="tbDosingConsiderations0" name="tbDosingConsiderations" class="textarea form-control"></textarea>
             </div>  
             <div style="width:5%; float:left;">
-                <input class="btn btn-default btn-xs" type="button" value="Remove" onclick="RemoveDosingConsiderationsTextBox(0)" id="btnRemoveDosingConsiderations" />
-                <!--<img style="cursor:pointer !important;" src="images/minus_icon.png"  onclick="RemoveDosingConsiderationsTextBox(0)" id="btnRemoveDosingConsiderations" width="22" height="22" alt="Remove" /> -->                                                         
+                <input class="btn btn-default btn-xs" type="button" value="Remove" onclick="RemoveDosingConsiderationsTextBox(0)" id="btnRemoveDosingConsiderations" runat="server" />
             </div> 
         </div>
 
@@ -1537,7 +1529,7 @@
         </div>
 
         <div style="padding-left: 0px; padding-top: 20px; clear:both;">
-            <label id="lblRecommended" lang="en">Recommended dose and dosage adjustment</label>&nbsp;<img id="tooltipRecommendedDose" src="images/qmark.jpg" style="width:24px; height:24px; cursor:pointer !important;" />        
+            <label id="lblRecommended" runat="server">Recommended dose and dosage adjustment</label>&nbsp;<img id="tooltipRecommendedDose" src="images/qmark.jpg" style="width:15px; height:15px; cursor:pointer !important;" />        
         </div>
 
         <div style="width:84.5%; text-align:center; clear:both; padding-left: 0px; padding-top:4px;">
@@ -1548,25 +1540,25 @@
 
         <div style="width:84.5%; text-align:center; clear:both; padding-left: 0px;">
             <div id="divTextBox14" style="text-align:left;">  
-                <div style="padding: 4px 4px 4px 0px"><label id="lblMissed" lang="en">Missed dose</label></div>                         
+                <div style="padding: 4px 4px 4px 0px"><label id="lblMissed" runat="server">Missed dose</label></div>                         
                 <textarea id="tbMissedDose" name="tbMissedDose" runat="server" class="textarea form-control"></textarea>                            
             </div>
         </div>
 
         <div style="width:84.5%; text-align:center; clear:both; padding-left: 0px;">
             <div id="divTextBox17" style="text-align:left;">  
-                <div style="padding: 4px 4px 4px 0px"><label id="lblAdministration" lang="en">Administration</label></div>                         
+                <div style="padding: 4px 4px 4px 0px"><label id="lblAdministration" runat="server">Administration</label></div>                         
                 <textarea id="tbAdministration" name="tbAdministration" runat="server" class="textarea form-control"></textarea>                            
             </div>
         </div>
 
         <div style="padding-left: 0px;">
-            <label id="lblReconstitution" lang="en">Reconstitution</label>  
+            <label id="lblReconstitution" runat="server">Reconstitution</label>  
         </div>
 
         <div style="width:84.5%; text-align:center; clear:both; padding-left: 0px;">
             <div id="divTextBox15" style="text-align:left;">  
-                <div style="padding: 4px 4px 4px 0px"><label id="lblOral" lang="en">Oral solutions</label>:</div>                         
+                <div style="padding: 4px 4px 4px 0px"><label id="lblOral" runat="server">Oral solutions</label>:</div>                         
                 <textarea id="tbOralSolutions" name="tbOralSolutions" runat="server" class="textarea form-control"></textarea>                            
             </div>
         </div>      
@@ -1577,21 +1569,20 @@
 
         <section style="width:90%; padding-left: 0px; clear:both; padding-top:4px;">
             <div style="width:14%; float:left; border: 1px solid #D9D9D9; height:50px;">
-                <label id="lblVialSize" lang="en">Vial size</label>
+                <label id="lblVialSize" runat="server">Vial size</label>
             </div>
             <div style="width:32%; float:left; border: 1px solid #D9D9D9; height:50px">
-                <label id="lblVolume" lang="en">Volume of diluent to be added to vial</label>
+                <label id="lblVolume" runat="server">Volume of diluent to be added to vial</label>
             </div>
             <div style="width:24%; float:left; border: 1px solid #D9D9D9; height:50px">
-                 <label id="lblApproximate" lang="en">Approximate available volume</label>
+                 <label id="lblApproximate" runat="server">Approximate available volume</label>
             </div>
             <div style="width:24%; float:left; border: 1px solid #D9D9D9; height:50px">
-                <label id="lblNominal" lang="en">Nominal concentration per mL</label>
+                <label id="lblNominal" runat="server">Nominal concentration per mL</label>
             </div>
             <div style="width:5%; float:left;">
-                <input class="btn btn-default btn-xs" type="button" value="Add"  onclick="AddParenteralProductsTextBox()" id="btnAddParenteralProducts" />
-                <!--<img style="cursor:pointer !important;" src="images/plus_icon.png"  onclick="AddParenteralProductsTextBox()" id="btnAddParenteralProducts" width="23" height="23" alt="Add"/> -->                                                         
-            </div>   
+                <input class="btn btn-default btn-xs" type="button" value="Add"  onclick="AddParenteralProductsTextBox()" runat="server" id="btnAddParenteralProducts" />
+           </div>   
         </section>
 
         <div id="ParenteralProducts0" style="width:90%; padding-left: 0px; clear:both;">
@@ -1620,24 +1611,25 @@
             <asp:Label ID="lblAnySpecific" runat="server">Any specific precautions, storage periods and incompatibilities</asp:Label>
         </section>
     </details>
-
-    <details style="clear:both; padding-top: 20px;">
-        <summary id="SUM_OVERDOSAGE" lang="en">Overdosage</summary>
+    </li>
+	<li>
+    <details class="margin-top-medium">
+        <summary id="SUM_OVERDOSAGE" runat="server">Overdosage</summary>
         <div style="width:84.5%; text-align:center; clear:both; padding-left: 0px; padding-top:20px;">
             <div id="divTextBox9" style="text-align:left;">  
-                <div style="padding: 4px 4px 4px 0px"><label id="lblOverdosage" lang="en">Overdosage</label></div>                         
+                <div style="padding: 4px 4px 4px 0px"><label id="lblOverdosage" runat="server">Overdosage</label></div>                         
                 <textarea id="tbOverdosage" name="tbOverdosage" runat="server" class="textarea form-control"></textarea>                            
             </div>
         </div>
         <section style="width:100%; padding-left: 0px; clear:both; padding-top:2px; display:none;">
-            <asp:Label ID="Label5" runat="server">For management of a suspected drug overdose, contact your regional Poison Control Centre</asp:Label>
+            <asp:Label ID="lblForManagement" runat="server">For management of a suspected drug overdose, contact your regional Poison Control Centre</asp:Label>
         </section>
     
         
 
         <div style="width:84.5%; text-align:center; clear:both; padding-left: 0px; padding-top:20px; display:none;">
             <div id="divTextBox11" style="text-align:left;">  
-                <div style="padding: 4px 4px 4px 0px"><label id="lblForAnti" lang="en">
+                <div style="padding: 4px 4px 4px 0px"><label id="lblForAnti" runat="server">
                     For anti-infective products: a brief description of action against micro-organisms
                  </label>
                 </div>                         
@@ -1645,27 +1637,28 @@
             </div>
         </div>
     </details>
-
-    <details style="clear:both; padding-top: 20px;">
-        <summary id="SUM_ACTION" lang="en">Action and clinical pharmacology</summary>
+    </li>
+	<li>
+    <details class="margin-top-medium">
+        <summary id="SUM_ACTION" runat="server">Action and clinical pharmacology</summary>
 
         <div style="width:84.5%; text-align:center; clear:both; padding-left: 0px; padding-top:20px;">
             <div id="divTextBox10" style="text-align:left;">  
-                <div style="padding: 4px 4px 4px 0px"><label id="lblMechanism" lang="en">Mechanism of action</label></div>                         
+                <div style="padding: 4px 4px 4px 0px"><label id="lblMechanism" runat="server">Mechanism of action</label></div>                         
                 <textarea id="tbMechanismOfAction" name="tbMechanismOfAction" runat="server" class="textarea form-control"></textarea>                            
             </div>
         </div>
 
         <div style="width:84.5%; text-align:center; clear:both; padding-left: 0px; padding-top:20px;">
             <div id="divTextBox111" style="text-align:left;">  
-                <div style="padding: 4px 4px 4px 0px"><label id="lblPharmacodynamics" lang="en">Pharmacodynamics</label></div>                         
+                <div style="padding: 4px 4px 4px 0px"><label id="lblPharmacodynamics" runat="server">Pharmacodynamics</label></div>                         
                 <textarea id="tbPharmacodynamics" name="tbPharmacodynamics" runat="server" class="textarea form-control"></textarea>                            
             </div>
         </div>
 
         <div style="width:84.5%; text-align:center; clear:both; padding-left: 0px; padding-top:20px;">
             <div id="divTextBox109" style="text-align:left;">  
-                <div style="padding: 4px 4px 4px 0px"><label id="lblPHARMACOKINETICS" lang="en">Pharmacokinetics</label></div>                                              
+                <div style="padding: 4px 4px 4px 0px"><label id="lblPHARMACOKINETICS" runat="server">Pharmacokinetics</label></div>                                              
             </div>
         </div>
         
@@ -1674,56 +1667,59 @@
             <datalist id="dlpharmacokinetics" ></datalist> 
         </div>     
         <div style="width:5%; float:left;">
-            <input class="btn btn-default btn-xs" type="button" value="Add" onclick="AddPharmacokineticsOuterSection()" id="btnAddPharmacokineticsOuterSection" />
-           <!-- <img style="cursor:pointer !important;" src="images/plus_icon.png" onclick="AddPharmacokineticsOuterSection()" id="Addbtn1" width="22" height="22" alt="Add"/>  -->                                                        
-        </div> 
+            <input class="btn btn-default btn-xs" type="button" value="Add" runat="server" onclick="AddPharmacokineticsOuterSection()" id="btnAddPharmacokineticsOuterSection" />
+          </div> 
 
         <div id="dvExtraPharmacokineticsOuter" style="clear:both; width:100%">
         </div>  
 
     </details> 
-
-    <details style="clear:both; padding-top: 20px;">
-        <summary id="SUM_STORAGE" lang="en">Storage and stability</summary>
+    </li>
+	<li>
+    <details class="margin-top-medium">
+        <summary id="SUM_STORAGE" runat="server">Storage and stability</summary>
         <div style="width:84.5%; text-align:center; clear:both; padding-left: 0px; padding-top:20px;">
             <div style="text-align:left;">  
-                <div style="padding: 4px 4px 4px 0px"><label id="lblStorage" lang="en">Storage and stability</label></div>                         
+                <div style="padding: 4px 4px 4px 0px"><label id="lblStorage" runat="server">Storage and stability</label></div>                         
                 <textarea id="tbStorageStability" name="tbStorageStability" runat="server" class="textarea form-control"></textarea>                            
             </div>
         </div>
     </details>
-
-    <details style="clear:both; padding-top: 20px;">
-        <summary id="SUM_SPECIAL_HANDLING" lang="en">Special handling instruction</summary>
+    </li>
+	<li>
+    <details class="margin-top-medium">
+        <summary id="SUM_SPECIAL_HANDLING" runat="server">Special handling instruction</summary>
         <div style="width:84.5%; text-align:center; clear:both; padding-left: 0px; padding-top:20px;">
             <div style="text-align:left;">  
-                <div style="padding: 4px 4px 4px 0px"><label id="lblSpecialHandling" lang="en">Special handling instruction</label></div>                         
+                <div style="padding: 4px 4px 4px 0px"><label id="lblSpecialHandling" runat="server">Special handling instruction</label></div>                         
                 <textarea id="tbSpecialHandling" name="tbSpecialHandling" runat="server" class="textarea form-control"></textarea>                            
             </div>
         </div>
     </details>
-
-    <details style="clear:both; padding-top: 20px;">
-        <summary id="SUM_DOSAGEFORMS" lang="en">Dosage forms, composition and packaging</summary>
+    </li>
+    <li>
+    <details class="margin-top-medium margin-bottom-small">
+        <summary id="SUM_DOSAGEFORMS" runat="server">Dosage forms, composition and packaging</summary>
         <div style="width:84.5%; text-align:center; clear:both; padding-left: 0px; padding-top:20px;">
             <div style="text-align:left;">  
-                <div style="padding: 4px 4px 4px 0px"><label id="lblDosageForms" lang="en">Dosage forms, composition and packaging</label></div>                         
+                <div style="padding: 4px 4px 4px 0px"><label id="lblDosageForms" runat="server">Dosage forms, composition and packaging</label></div>                         
                 <textarea id="tbDosageFormsComposition" name="tbDosageFormsComposition" runat="server" class="textarea form-control"></textarea>                            
             </div>
         </div>
     </details>
-
+   </li>
+</ul>
 <div style="clear:both; padding-top:20px;">
 <asp:Menu ClientIDMode="Static" ID="submenutabsbottom" cssclass="wet-boew-menubar floatLeft" runat="server" Orientation="Horizontal" OnMenuItemClick="submenutabsbottom_MenuItemClick">
    <StaticMenuStyle VerticalPadding="5px" />
    <StaticMenuItemStyle HorizontalPadding="25px" />
       <Items>
+            <asp:MenuItem Text="Form instructions" Value="PMForm" ToolTip="Back to the main page of DHPR form with form Instruction"></asp:MenuItem>
             <asp:MenuItem Text="Cover page" Value="Coverpage" ToolTip="Cover page of the form"></asp:MenuItem>
             <asp:MenuItem Text="Part I" Value="PartOne" ToolTip="Part I of the form"></asp:MenuItem>
             <asp:MenuItem Text="Part II" Value="PartTwo" ToolTip="Part II of the form"></asp:MenuItem>
             <asp:MenuItem Text="Part III" Value="PartThree" ToolTip="Part III of the form"></asp:MenuItem>
-            <asp:MenuItem Text="Form instruction" Value="PMForm" ToolTip="Back to the main page of DHPR form with form Instruction"></asp:MenuItem>
-      </Items>
+          </Items>
 </asp:Menu>
 </div>
 

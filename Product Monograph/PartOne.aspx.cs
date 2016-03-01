@@ -54,6 +54,7 @@ namespace Product_Monograph
                     lblError.Text = "Please load a new template or a previously saved draft.";
                 }
             }
+            facilityResourcePart1();
         }
 
         private void SaveProcess()
@@ -156,9 +157,9 @@ namespace Product_Monograph
                     {
                         dosagearray.Add(dosageitem);
                     }
-                    foreach (string dosageitem in HttpContext.Current.Request.Form.GetValues("tbStrengthDynamic"))
+                    foreach (string strengthDynamicItem in HttpContext.Current.Request.Form.GetValues("tbStrengthDynamic"))
                     {
-                        strengtharray.Add(dosageitem);
+                        strengtharray.Add(strengthDynamicItem);
                     }
                     foreach (string ingredientitem in HttpContext.Current.Request.Form.GetValues("tbClinicallyRelevantNonmedicinalIngredientsDynamic"))
                     {
@@ -2018,14 +2019,14 @@ namespace Product_Monograph
                     {
                         if (colarray[colcounter].Equals("tbBrandName"))
                         {
-                            lblProprietaryBrandName.Text = helpers.Processes.CleanString(column);
+                            lblBrandName.Text = helpers.Processes.CleanString(column);
                             lblBrandName.Text = helpers.Processes.CleanString(column);
                             strBrandName = helpers.Processes.CleanString(column);  //ching add code here
                         }
 
                         if (colarray[colcounter].Equals("tbProperName"))
                         {
-                            lblProperName.Text = helpers.Processes.CleanString(column);
+                            lblProprietaryProperName.Text = helpers.Processes.CleanString(column);
                             lblICProperName.Text = helpers.Processes.CleanString(column);
                         }
 
@@ -3018,7 +3019,8 @@ namespace Product_Monograph
 
                 if (xmldataitem.Overdosage == null)
                 {
-                    tbOverdosage.Value = "For management of a suspected drug overdose, contact your regional Poison Control Centre.";
+                    //tbOverdosage.Value = "For management of a suspected drug overdose, contact your regional Poison Control Centre.";
+                    tbOverdosage.Value = Resources.Resource.SUM_OVERDOSAGE;
                 }
                 else
                 {
@@ -3052,6 +3054,79 @@ namespace Product_Monograph
         {
             SaveInMemory();
             Response.Redirect(submenutabsbottom.SelectedValue + ".aspx");
+        }
+        protected void facilityResourcePart1()
+        {
+            btnSaveDraftPart1.Text = Resources.Resource.btnSaveDraftPart1;
+            lblPartITitle.InnerText = Resources.Resource.lblPartITitle;
+            lblBrandName.Text = Resources.Resource.lblBrandName;
+            lblBrandName3.Text = Resources.Resource.lblBrandName3;
+            lblProprietaryProperName.Text = Resources.Resource.lblProprietaryProperName;
+            SumSummaryProductInformation.InnerText = Resources.Resource.SumSummaryProductInformation;
+        
+            lblDosageForm2.InnerText = Resources.Resource.lblDosageForm2;
+            lblStrength2.InnerText = Resources.Resource.lblStrength2;
+            lblIngredients.InnerText = Resources.Resource.lblIngredients; 
+            lblGeriatrics.InnerText = Resources.Resource.lblGeriatrics;
+            lblYearsOfAge.InnerText = Resources.Resource.lblYearsOfAge;
+            lblPediatrics.InnerHtml = Resources.Resource.lblPediatrics;
+            lblYearsOfAgeOr.InnerHtml = Resources.Resource.lblYearsOfAgeOr;
+            lblYearsOfAge2.InnerHtml = Resources.Resource.lblYearsOfAge2;
+            SUM_CONTRAINDICATIONS.InnerHtml = Resources.Resource.SUM_CONTRAINDICATIONS;
+            lblContraindications.InnerHtml = Resources.Resource.lblContraindications;
+            lblRouteOfAdministration.InnerHtml = Resources.Resource.lblRouteOfAdministration;
+
+            btnAddExtraContraindications.Value = Resources.Resource.btnAddExtraContraindications;
+         
+            btnAddExtraSeriousWarningsPrecautions.Value = Resources.Resource.btnAddExtraContraindications;
+            btnAddPharmacokineticsOuterSection.Value = Resources.Resource.btnAddExtraContraindications;
+            btnAddParenteralProducts.Value = Resources.Resource.btnAddExtraContraindications;
+            btnAddExtraDosingConsiderations.Value = Resources.Resource.btnAddExtraContraindications;
+            btnAddPharmacokineticsOuterSection.Value = Resources.Resource.btnAddExtraContraindications;
+            btnAddDrugInteractionsOuterSection.Value = Resources.Resource.btnAddExtraContraindications;
+            btnAddAdverseReactionsOuterSection.Value = Resources.Resource.btnAddExtraContraindications;
+            btnAddExtraAddHeadingSelection.Value = Resources.Resource.btnAddExtraContraindications;
+            btnAddExtraRouteOfAdmin.Value = Resources.Resource.btnAddExtraContraindications;
+            btnAddExtraAddHeadingSelection.Value = Resources.Resource.btnAddExtraContraindications;
+
+            btnRemoveContraindications.Value = Resources.Resource.btnRemoveContraindications;
+            btnRemoveSeriousWarningsPrecautions.Value = Resources.Resource.btnRemoveSeriousWarningsPrecautions;
+            btnRemoveDosingConsiderations.Value = Resources.Resource.btnRemoveDosingConsiderations;
+
+            SUM_WARNINGS.InnerHtml = Resources.Resource.SUM_WARNINGS;
+          
+         
+            lblHeadings.InnerHtml = Resources.Resource.lblHeadings;
+           
+            lblStorage.InnerHtml = Resources.Resource.lblStorage;
+            lblSpecialHandling.InnerHtml = Resources.Resource.lblSpecialHandling;
+            SUM_DOSAGEFORMS.InnerHtml = Resources.Resource.SUM_DOSAGEFORMS;
+            lblDosageForms.InnerHtml = Resources.Resource.lblDosageForms;
+            SUM_INDICATIONS.InnerHtml = Resources.Resource.SUM_INDICATIONS;
+            lblRecommended.InnerHtml = Resources.Resource.lblRecommended;
+           
+            lblAnySpecific.Text = Resources.Resource.lblAnySpecific;
+            SUM_DRUG_INTERACTIONS.InnerHtml = Resources.Resource.SUM_DRUG_INTERACTIONS;
+            lblOverview.InnerHtml = Resources.Resource.lblOverview;
+            lblMechanism.InnerHtml = Resources.Resource.lblMechanism;
+            lblPharmacodynamics.InnerHtml = Resources.Resource.lblPharmacodynamics;
+            lblDosing.InnerText = Resources.Resource.lblDosing;
+            lblMissed.InnerText = Resources.Resource.lblMissed;
+            lblOral.InnerText = Resources.Resource.lblOral;
+
+            SUM_SPECIAL_HANDLING.InnerHtml = Resources.Resource.SUM_SPECIAL_HANDLING;
+            lblICProperName.Text = Resources.Resource.lblICProperName;
+            lblForManagement.Text = Resources.Resource.lblForManagement;
+            SUM_ACTION.InnerText = Resources.Resource.SUM_ACTION;
+            SUM_STORAGE.InnerText = Resources.Resource.SUM_STORAGE;
+            SUM_OVERDOSAGE.InnerText = Resources.Resource.SUM_OVERDOSAGE;
+            SUM_ADVERSE.InnerText = Resources.Resource.SUM_ADVERSE;
+            SUM_DOSAGE.InnerText = Resources.Resource.SUM_DOSAGE;
+          
+          
+         
+            //   SUM_CONTRAINDICATIONS.InnerText = Resources.Resource.SUM_CONTRAINDICATIONS;
+          
         }
     }
 }
