@@ -1,7 +1,7 @@
 ﻿<%@ Page Title="" Language="C#" MasterPageFile="~/ProdMono.Master" AutoEventWireup="true" CodeBehind="Coverpage.aspx.cs" Inherits="Product_Monograph.Coverpage" ValidateRequest="false" %>
 <%@ Register Assembly="AjaxControlToolkit" Namespace="AjaxControlToolkit" TagPrefix="cc1" %>
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
-  <script type="text/javascript">    
+    <script type="text/javascript">    
      tinymce.init({
      //selector: "textarea",
             mode : "specific_textareas",
@@ -307,7 +307,7 @@
 </asp:Content>
 
 <asp:Content id="Content2" contentPlaceHolderID="ContentPlaceHolder1" runat="server">
-<asp:ScriptManager id="ScriptManager1" runat="server" EnablePageMethods="true"></asp:ScriptManager>
+    <asp:ScriptManager id="ScriptManager1" runat="server" EnablePageMethods="true"></asp:ScriptManager>
 <div class="row">
    <asp:Menu clientIDMode="Static" id="submenutabs" runat="server" Orientation="Horizontal" OnMenuItemClick="menutabs_MenuItemClick">
       <StaticMenuStyle VerticalPadding="5px" />
@@ -464,16 +464,14 @@
     </div>
 </section>
 <section>
-   <div style="float:left; width:340px; height:40px;">
-        <div style="padding: 20px 4px 4px 0px; clear:both;"><h3 class="h5" id="lblDateOfPreparation" runat="server">Date of preparation</h3></div>
-        <asp:TextBox runat="server" id="tbDatePrep" width="250" readonly="true"></asp:TextBox>
-        <cc1:CalendarExtender id="tbDatePrep_CalendarExtender" runat="server" targetControlID="tbDatePrep" format="yyyy-MM-dd"/>
+   <div class="col-sm-12">
+        <asp:Label ID="lblDateOfPreparation" AssociatedControlID="tbDatePrep" runat="server" CssClass="control-label"><span class="field-name">Date of preparation</span><span class="datepicker-format"> (<abbr title="Four digits year, dash, two digits month, dash, two digits day">YYYY-MM-DD</abbr>)</span></asp:Label>
+        <asp:TextBox runat="server" id="tbDatePrep" CssClass="form-control" type="date" name="tbDatePrep" data-rule-dateiso="true" readonly="true"></asp:TextBox>
         &nbsp;&nbsp;<label id="lblAndOr" runat="server">and/or</label> 
    </div>
-   <div style="float:left; width:270px; height:30px;">
-        <div style="padding: 20px 4px 4px 0px; clear:both;"><h3 class="h5" id="lblDateOfRevision" runat="server">Date of revision</h3></div>
-        <asp:TextBox runat="server" id="tbDateRev" width="250" readonly="true"></asp:TextBox>
-        <cc1:CalendarExtender id="CalendarExtender2" runat="server" targetControlID="tbDateRev" format="yyyy-MM-dd" />
+   <div class="col-sm-12"">
+       <asp:Label ID="lblDateOfRevision" AssociatedControlID="tbDateRev" runat="server" CssClass="control-label"><span class="field-name">Date of revision</span><span class="datepicker-format"> (<abbr title="Four digits year, dash, two digits month, dash, two digits day">YYYY-MM-DD</abbr>)</span></asp:Label>
+        <asp:TextBox runat="server" id="tbDateRev" CssClass="form-control" type="date" name="tbDateRev" data-rule-dateiso="true" readonly="true"></asp:TextBox>
    </div>
    <div style="float:left; width:600px; clear:both; display:block; padding-top:40px;">
        <div style="padding: 20px 4px 4px 0px"><h3 class="h5" id="SubmissionControlNo" runat="server">Submission Control No:</h3></div>              
