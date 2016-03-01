@@ -3111,6 +3111,8 @@ namespace Product_Monograph
             lblMechanism.InnerHtml = Resources.Resource.lblMechanism;
             lblPharmacodynamics.InnerHtml = Resources.Resource.lblPharmacodynamics;
             lblDosing.InnerText = Resources.Resource.lblDosing;
+            lblMissed.InnerText = Resources.Resource.lblMissed;
+            lblOral.InnerText = Resources.Resource.lblOral;
 
             SUM_SPECIAL_HANDLING.InnerHtml = Resources.Resource.SUM_SPECIAL_HANDLING;
             lblICProperName.Text = Resources.Resource.lblICProperName;
