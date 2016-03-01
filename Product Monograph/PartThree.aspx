@@ -449,8 +449,9 @@
            var swp = "tbSeriousWarningsPrecautions" + id.toString();
            return "<div class='row margin-top-medium'>" +
                   "<div class='col-xs-10 text-left'><textarea id='" + swp + "' name='tbSeriousWarningsPrecautions' class='textarea'></textarea></div>" +
-                  "<div class='col-xs-10'>" +
+                  "<div class='col-xs-2'>" +
                        '<img style="cursor:pointer !important;" src="images/minus_icon.png" onclick="RemoveSeriousWarningsPrecautionsTextBox(' + id + ')" width="22" height="22" alt="Remove"/>' +
+                  "</div>" +
                   "</div>";
        }
 
@@ -537,7 +538,8 @@
                 <asp:Label id="lblPointForm" AssociatedControlID="tbMedicationForItems0" CssClass="control-label" runat="server"></asp:Label>
             </div>
             <div class="col-xs-2 text-left">
-                <img style="cursor: pointer !important;" src="images/plus_icon.png" onclick="AddMedicationForItemsTextBox()" id="btnAddMedicationForItems" width="22" height="22" alt="Add" />
+                <asp:Button ID="btnAddMedicationForItems" OnClientClick="AddMedicationForItemsTextBox(); return false;" CssClass="btn btn-default btn-xs"  runat="server"/>
+                <!--<img style="cursor: pointer !important;" src="images/plus_icon.png" onclick="AddMedicationForItemsTextBox()" id="btnAddMedicationForItems" width="22" height="22" alt="Add" />-->
             </div>
         </div>
         <div id="MedicationForItems0" class="row margin-top-medium">
@@ -622,8 +624,9 @@
              <div class="margin-top-medium">
                   <asp:label ID="lblSeriousWarnings" AssociatedControlID="tbSeriousWarningsPrecautions0" CssClass="control-label" runat="server"></asp:label><img id="tooltipSeriousWarningsandPrecautions" src="images/qmark.jpg"  style="width:24px; height:24px; cursor:pointer !important;" alt="Serious warnings and precautions tooltip"/>                
              </div>     
-             <div class="hidden">
-                  <img style="cursor:pointer !important;" src="images/btnAdd.png" onclick="AddSeriousWarningsPrecautionsTextBox()" id="btnAddSeriousWarningsPrecautions" width="58" height="40" alt="Add a serious warnings and precautions"/>                                                          
+             <div>
+                  <asp:Button ID="btnAddSeriousWarningsPrecautions" OnClientClick="AddSeriousWarningsPrecautionsTextBox(); return false;" CssClass="btn btn-default btn-xs"  runat="server"/>
+                  <!--<img style="cursor:pointer !important;" src="images/btnAdd.png" onclick="AddSeriousWarningsPrecautionsTextBox()" id="btnAddSeriousWarningsPrecautions" width="58" height="40" alt="Add a serious warnings and precautions"/>-->                                                         
              </div>
        
             <div  class="row" id="SeriousWarningsPrecautions0" > 
@@ -631,8 +634,9 @@
                     <textarea id="tbSeriousWarningsPrecautions0"  class="textarea" runat="server"></textarea>  
                 </div>
                   
-                <div class="col-xs-2 hidden">
-                    <img style="cursor:pointer !important;" src="images/btnRemove.png"  onclick="RemoveSeriousWarningsPrecautionsTextBox(0)" id="btnSeriousWarningsPrecautions" width="58" height="40"  alt="Remove a serious warnings and precautions"/>                                                          
+                <div class="col-xs-2">
+                    <asp:Button ID="btnSeriousWarningsPrecautions" OnClientClick="RemoveSeriousWarningsPrecautionsTextBox(0); return false;" CssClass="btn btn-default btn-xs"  runat="server"/>
+                    <!--<img style="cursor:pointer !important;" src="images/btnRemove.png"  onclick="RemoveSeriousWarningsPrecautionsTextBox(0)" id="btnSeriousWarningsPrecautions" width="58" height="40"  alt="Remove a serious warnings and precautions"/>-->                                                          
                 </div>   
             </div>
           </div>

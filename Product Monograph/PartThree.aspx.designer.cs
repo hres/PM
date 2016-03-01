@@ -112,6 +112,15 @@ namespace Product_Monograph {
         protected global::System.Web.UI.WebControls.Label lblPointForm;
         
         /// <summary>
+        /// btnAddMedicationForItems control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Button btnAddMedicationForItems;
+        
+        /// <summary>
         /// tbMedicationForItems0 control.
         /// </summary>
         /// <remarks>
@@ -247,6 +256,15 @@ namespace Product_Monograph {
         protected global::System.Web.UI.WebControls.Label lblSeriousWarnings;
         
         /// <summary>
+        /// btnAddSeriousWarningsPrecautions control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Button btnAddSeriousWarningsPrecautions;
+        
+        /// <summary>
         /// tbSeriousWarningsPrecautions0 control.
         /// </summary>
         /// <remarks>
@@ -254,6 +272,15 @@ namespace Product_Monograph {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.HtmlControls.HtmlTextArea tbSeriousWarningsPrecautions0;
+        
+        /// <summary>
+        /// btnSeriousWarningsPrecautions control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Button btnSeriousWarningsPrecautions;
         
         /// <summary>
         /// lblActivity control.

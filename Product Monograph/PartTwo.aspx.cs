@@ -86,7 +86,13 @@ namespace Product_Monograph
             lblNote4.Text = Resources.Resource.Note4;
             lblNote5.Text = Resources.Resource.Note5;
             lblNote6.Text = Resources.Resource.Note6;
-        }
+            btnAddClinicalTrialsOuterTextBox.Text = Resources.Resource.BtnAdd;
+            btnAddAnalyteNameTextBox.Text = Resources.Resource.BtnAdd;
+            btnAddDrugSubstance.Text = Resources.Resource.BtnAdd;
+
+
+
+        }       
 
 
         private void LoadFromXML()

@@ -67,6 +67,15 @@ namespace Product_Monograph {
         protected global::System.Web.UI.WebControls.Label lblDrugSub;
         
         /// <summary>
+        /// btnAddDrugSubstance control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Button btnAddDrugSubstance;
+        
+        /// <summary>
         /// lblChemicalname control.
         /// </summary>
         /// <remarks>
@@ -184,6 +193,15 @@ namespace Product_Monograph {
         protected global::System.Web.UI.HtmlControls.HtmlTextArea tbClinicalTrialsOverview;
         
         /// <summary>
+        /// btnAddClinicalTrialsOuterTextBox control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Button btnAddClinicalTrialsOuterTextBox;
+        
+        /// <summary>
         /// lblBioStudy control.
         /// </summary>
         /// <remarks>
@@ -191,6 +209,15 @@ namespace Product_Monograph {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Label lblBioStudy;
+        
+        /// <summary>
+        /// btnAddAnalyteNameTextBox control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Button btnAddAnalyteNameTextBox;
         
         /// <summary>
         /// lblAnalyteName control.

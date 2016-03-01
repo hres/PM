@@ -205,7 +205,7 @@
     <value>Anticipated medical procedures (Warnings and Precautions)</value>
   </data>
   <data name="ProperNameMI" xml:space="preserve">
-    <value>Proper Name</value>
+    <value>Proper name</value>
   </data>
   <data name="ProperUse" xml:space="preserve">
     <value>Proper use of this medication</value>
@@ -298,7 +298,7 @@
     <value>References:</value>
   </data>
   <data name="SumCT" xml:space="preserve">
-    <value>Clinical Trials</value>
+    <value>Clinical trials</value>
   </data>
   <data name="SumMicrobiology" xml:space="preserve">
     <value>Microbiology</value>
@@ -374,5 +374,11 @@
   </data>
   <data name="Test" xml:space="preserve">
     <value>Test</value>
+  </data>
+  <data name="BtnAdd" xml:space="preserve">
+    <value>Add</value>
+  </data>
+  <data name="BtnRemove" xml:space="preserve">
+    <value>Remove</value>
   </data>
 </root>

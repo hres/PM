@@ -90,6 +90,9 @@ namespace Product_Monograph
             lblIssues.Text = Resources.Resource.Issues;
             lblProcedure.Text = Resources.Resource.Procedure;
             lblAllergy.Text = Resources.Resource.Allergy;
+            btnAddMedicationForItems.Text = Resources.Resource.BtnAdd;
+            btnAddSeriousWarningsPrecautions.Text = Resources.Resource.BtnAdd;
+            btnSeriousWarningsPrecautions.Text = Resources.Resource.BtnRemove;
         }
 
         private void SaveProcess()

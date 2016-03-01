@@ -120,6 +120,24 @@ namespace Resources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Add.
+        /// </summary>
+        internal static string BtnAdd {
+            get {
+                return ResourceManager.GetString("BtnAdd", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Remove.
+        /// </summary>
+        internal static string BtnRemove {
+            get {
+                return ResourceManager.GetString("BtnRemove", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Chemical name.
         /// </summary>
         internal static string Chemicalname {
@@ -453,7 +471,7 @@ namespace Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Proper Name.
+        ///   Looks up a localized string similar to Proper name.
         /// </summary>
         internal static string ProperNameMI {
             get {
@@ -570,7 +588,7 @@ namespace Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Clinical Trials.
+        ///   Looks up a localized string similar to Clinical trials.
         /// </summary>
         internal static string SumCT {
             get {
