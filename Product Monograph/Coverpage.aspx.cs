@@ -656,9 +656,9 @@ namespace Product_Monograph
             TherapeuticClassification.InnerText = Resources.Resource.TherapeuticClassification;
             lblSponsorName.InnerText = Resources.Resource.lblSponsorName;
             lblSponsorAddress.InnerText = Resources.Resource.lblSponsorAddress;
-            lblDateOfPreparation.InnerText = Resources.Resource.lblDateOfPreparation;
+            lblDateOfPreparation.Text = Resources.Resource.lblDateOfPreparation;
             lblAndOr.InnerText = Resources.Resource.lblAndOr;
-            lblDateOfRevision.InnerText = Resources.Resource.lblDateOfRevision;
+            lblDateOfRevision.Text = Resources.Resource.lblDateOfRevision;
             SubmissionControlNo.InnerText = Resources.Resource.SubmissionControlNo;
             footnote.InnerText = Resources.Resource.footnote;
             btnApplySumbol.Text = Resources.Resource.btnApplySumbol;
