@@ -55,44 +55,45 @@ namespace Product_Monograph
                 }
             }
 
-       /*     lblPartII.Text = Resources.Resource.PartII;
-            lblSumPharmInfo.Text = Resources.Resource.SumPharmInfo;
-            lblSumCT.Text = Resources.Resource.SumCT;
-            lblSumPharmacology.Text = Resources.Resource.SumPharmacology;
-            lblSumMicrobiology.Text = Resources.Resource.SumMicrobiology;
-            lblSumToxicology.Text = Resources.Resource.SumToxicology;
-            lblSumRef.Text = Resources.Resource.SumRef;
-            lblRef.Text = Resources.Resource.References;
-            lblToxicology.Text = Resources.Resource.Toxicology;
-            lblMicrobiology.Text = Resources.Resource.Microbiology;
-            lblDetailedPharma.Text = Resources.Resource.DetailedPharma;
-            lblClinicalTrials.Text = Resources.Resource.ClinicalTrials;
-            lblChemicalname.Text = Resources.Resource.Chemicalname;
-            lblMolecularformula.Text = Resources.Resource.Molecularformula;
-            lblMolecularmass.Text = Resources.Resource.Molecularmass;
-            lblPhysicochemicalproperties.Text = Resources.Resource.Physicochemicalproperties;
-            lblStructuraform.Text = Resources.Resource.Structuralformula;
-            lblBioStudy.Text = Resources.Resource.BioStudy;
-            lblParameter.Text = Resources.Resource.Parameter;
-            lblDrugSub.Text = Resources.Resource.DrugSub;
-            lblAnalyteName.Text = Resources.Resource.AnalyteName;
-            lblTest.Text = Resources.Resource.Test;
-            lblReference.Text = Resources.Resource.Reference;
-            lblRGM.Text = Resources.Resource.RGM;
-            lblConfInter.Text = Resources.Resource.ConfInter;
-            lblNote1.Text = Resources.Resource.Note1;
-            lblNote2.Text = Resources.Resource.Note2;
-            lblNote3.Text = Resources.Resource.Note3;
-            lblNote4.Text = Resources.Resource.Note4;
-            lblNote5.Text = Resources.Resource.Note5;
-            lblNote6.Text = Resources.Resource.Note6;
-            btnAddClinicalTrialsOuterTextBox.Text = Resources.Resource.BtnAdd;
-            btnAddAnalyteNameTextBox.Text = Resources.Resource.BtnAdd;
-            btnAddDrugSubstance.Text = Resources.Resource.BtnAdd;
+            /*     lblPartII.Text = Resources.Resource.PartII;
+                 lblSumPharmInfo.Text = Resources.Resource.SumPharmInfo;
+                 lblSumCT.Text = Resources.Resource.SumCT;
+                 lblSumPharmacology.Text = Resources.Resource.SumPharmacology;
+                 lblSumMicrobiology.Text = Resources.Resource.SumMicrobiology;
+                 lblSumToxicology.Text = Resources.Resource.SumToxicology;
+                 lblSumRef.Text = Resources.Resource.SumRef;
+                 lblRef.Text = Resources.Resource.References;
+                 lblToxicology.Text = Resources.Resource.Toxicology;
+                 lblMicrobiology.Text = Resources.Resource.Microbiology;
+                 lblDetailedPharma.Text = Resources.Resource.DetailedPharma;
+                 lblClinicalTrials.Text = Resources.Resource.ClinicalTrials;
+                 lblChemicalname.Text = Resources.Resource.Chemicalname;
+                 lblMolecularformula.Text = Resources.Resource.Molecularformula;
+                 lblMolecularmass.Text = Resources.Resource.Molecularmass;
+                 lblPhysicochemicalproperties.Text = Resources.Resource.Physicochemicalproperties;
+                 lblStructuraform.Text = Resources.Resource.Structuralformula;
+                 lblBioStudy.Text = Resources.Resource.BioStudy;
+                 lblParameter.Text = Resources.Resource.Parameter;
+                 lblDrugSub.Text = Resources.Resource.DrugSub;
+                 lblAnalyteName.Text = Resources.Resource.AnalyteName;
+                 lblTest.Text = Resources.Resource.Test;
+                 lblReference.Text = Resources.Resource.Reference;
+                 lblRGM.Text = Resources.Resource.RGM;
+                 lblConfInter.Text = Resources.Resource.ConfInter;
+                 lblNote1.Text = Resources.Resource.Note1;
+                 lblNote2.Text = Resources.Resource.Note2;
+                 lblNote3.Text = Resources.Resource.Note3;
+                 lblNote4.Text = Resources.Resource.Note4;
+                 lblNote5.Text = Resources.Resource.Note5;
+                 lblNote6.Text = Resources.Resource.Note6;
+                 */
+                 btnAddClinicalTrialsOuterTextBox.Text = Resources.Resource.btnAddExtraContraindications;
+                 btnAddAnalyteNameTextBox.Text = Resources.Resource.btnAddExtraContraindications;
+                 btnAddDrugSubstance.Text = Resources.Resource.btnAddExtraContraindications;
 
-    */
+         
 
-        }       
+        }
 
 
         private void LoadFromXML()
