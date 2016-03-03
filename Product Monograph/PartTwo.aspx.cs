@@ -56,7 +56,7 @@ namespace Product_Monograph
             }
 
             lblPartII.Text = Resources.Resource.PartII;
-      /*      lblSumPharmInfo.Text = Resources.Resource.SumPharmInfo;
+            lblSumPharmInfo.Text = Resources.Resource.SumPharmInfo;
             lblSumCT.Text = Resources.Resource.SumCT;
             lblSumPharmacology.Text = Resources.Resource.SumPharmacology;
             lblSumMicrobiology.Text = Resources.Resource.SumMicrobiology;
@@ -86,8 +86,13 @@ namespace Product_Monograph
             lblNote4.Text = Resources.Resource.Note4;
             lblNote5.Text = Resources.Resource.Note5;
             lblNote6.Text = Resources.Resource.Note6;
-            */
-        }
+            btnAddClinicalTrialsOuterTextBox.Text = Resources.Resource.BtnAdd;
+            btnAddAnalyteNameTextBox.Text = Resources.Resource.BtnAdd;
+            btnAddDrugSubstance.Text = Resources.Resource.BtnAdd;
+
+
+
+        }       
 
 
         private void LoadFromXML()

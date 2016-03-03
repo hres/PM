@@ -118,10 +118,12 @@
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <data name="Activity" xml:space="preserve">
-    <value>Activities (Warnings and Precautions, e,g, under Occupational Hazards)</value>
+    <value>Activités (mises en garde et précautions, p. ex.
+Amoindrissement des facultés)</value>
   </data>
   <data name="Allergy" xml:space="preserve">
-    <value>Any allergies to this drug or its ingredients or components of the container (Contraindications)</value>
+    <value>Allergies quelconques à ce médicament, aux
+ingrédients ou aux composants du récipient (contreindications)</value>
   </data>
   <data name="Body" xml:space="preserve">
     <value>•	To load a new blank PM template for the creation of XML file, select a template type from the drop menu, and press the "Load template" button.
@@ -151,13 +153,14 @@
     <value>,veuillez communiquer avec votre médecin ou votre pharmacien.</value>
   </data>
   <data name="Common" xml:space="preserve">
-    <value>Common_fr</value>
+    <value>Fréquent</value>
   </data>
   <data name="Condition" xml:space="preserve">
     <value>Current conditions (Contraindications, Warnings and Precautions)</value>
   </data>
   <data name="Diseases" xml:space="preserve">
-    <value>Past diseases (Contraindications, Warnings and Precautions)</value>
+    <value>Maladies précédentes (contre-indications, mises en
+garde et précautions)</value>
   </data>
   <data name="DosageForm" xml:space="preserve">
     <value>Les formes posologiques sont</value>
@@ -166,7 +169,8 @@
     <value>Interactions médicamenteuses</value>
   </data>
   <data name="Issues" xml:space="preserve">
-    <value>Reproductive issues (Contraindications, Warnings and Precautions)</value>
+    <value>Questions concernant la reproduction
+ (contre-indications, mises en garde et précautions)</value>
   </data>
   <data name="LastRevised" xml:space="preserve">
     <value>Dernière révision:</value>
@@ -187,7 +191,7 @@
     <value>Dose oubliée</value>
   </data>
   <data name="MoreInfo" xml:space="preserve">
-    <value>Pour de Plus Amples Renseignements</value>
+    <value>Pour de plus amples renseignements</value>
   </data>
   <data name="NonMedicinalIng" xml:space="preserve">
     <value>Les ingrédients non médicinaux importants sont</value>
@@ -202,16 +206,17 @@
     <value>Point form:_fr</value>
   </data>
   <data name="Procedure" xml:space="preserve">
-    <value>Anticipated medical procedures (Warnings and Precautions)</value>
+    <value>Procédures médicales prévues (mises en garde et
+précautions)</value>
   </data>
   <data name="ProperNameMI" xml:space="preserve">
     <value>Nom propre</value>
   </data>
   <data name="ProperUse" xml:space="preserve">
-    <value>Utilisation Appropriée de ce médicament</value>
+    <value>Utilisation appropriée de ce médicament</value>
   </data>
   <data name="Rare" xml:space="preserve">
-    <value>Rare_fr</value>
+    <value>Rare</value>
   </data>
   <data name="Reporting" xml:space="preserve">
     <value>Déclaration des effets indésirables soupçonnés</value>
@@ -235,7 +240,7 @@
     <value>Interactions médicamenteuses</value>
   </data>
   <data name="SumMoreInfo" xml:space="preserve">
-    <value>Pour de Plus Amples Renseignements</value>
+    <value>Pour de plus amples renseignements</value>
   </data>
   <data name="SumProperUse" xml:space="preserve">
     <value>Comment conserver le médicament</value>
@@ -265,10 +270,10 @@
     <value>Instructions pour le formulaire</value>
   </data>
   <data name="Uncommon" xml:space="preserve">
-    <value>Uncommon_fr</value>
+    <value>Peu fréquent</value>
   </data>
   <data name="Unkown" xml:space="preserve">
-    <value>Unkown_fr</value>
+    <value>Inconnu</value>
   </data>
   <data name="UsingXMLPM" xml:space="preserve">
     <value>Utiliser le formulaire web pour monographie de produit - xml -1</value>
@@ -277,7 +282,7 @@
     <value>Dose habituelle</value>
   </data>
   <data name="VeryRare" xml:space="preserve">
-    <value>Very rare_fr</value>
+    <value>Très rare</value>
   </data>
   <data name="WhatDoes" xml:space="preserve">
     <value>Les effets de ce médicament</value>
@@ -334,7 +339,7 @@
     <value>Formule développée</value>
   </data>
   <data name="BioStudy" xml:space="preserve">
-    <value>Comparative bioavailability studies_fr</value>
+    <value>Études comparatives de biodisponibilité</value>
   </data>
   <data name="Parameter" xml:space="preserve">
     <value>Paramètre</value>
@@ -374,6 +379,12 @@
   </data>
   <data name="Test" xml:space="preserve">
     <value>Test</value>
+  </data>
+  <data name="BtnAdd" xml:space="preserve">
+    <value>Ajouter</value>
+  </data>
+  <data name="BtnRemove" xml:space="preserve">
+    <value>Retirer</value>
   </data>
   <data name="btnAddCol" xml:space="preserve">
     <value>Ajouter colonne</value>

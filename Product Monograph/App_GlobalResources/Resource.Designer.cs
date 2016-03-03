@@ -939,7 +939,7 @@ namespace Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Proper Name.
+        ///   Looks up a localized string similar to Proper name.
         /// </summary>
         internal static string ProperNameMI {
             get {
