@@ -276,7 +276,7 @@ précautions)</value>
     <value>Inconnu</value>
   </data>
   <data name="UsingXMLPM" xml:space="preserve">
-    <value>Utiliser le formulaire web pour monographie de produit - xml -1</value>
+    <value>Utiliser le formulaire web pour monographie de produit - xml</value>
   </data>
   <data name="UsualDose" xml:space="preserve">
     <value>Dose habituelle</value>
@@ -697,5 +697,11 @@ précautions)</value>
   <data name="SUM_OVERDOSAGE" xml:space="preserve">
     <value>Surdosage</value>
     <comment>Part 1</comment>
+  </data>
+  <data name="lblLoadTemplateInst" xml:space="preserve">
+    <value>To load a new blank PM template for the creation of XML file, select a template type from the drop menu, and press the "Load template" button._FR</value>
+  </data>
+  <data name="lblLoadXmlInst" xml:space="preserve">
+    <value>To load an existing XML file, press the “Choose File” button ("Browse..." in Internet Explorer and Firefox), select the file and press the "Open" button in the file browser. Press the "Load XML" button._FR</value>
   </data>
 </root>

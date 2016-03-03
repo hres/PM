@@ -710,4 +710,16 @@
     <value>Overdosage</value>
     <comment>Part 1</comment>
   </data>
+  <data name="BtnAdd" xml:space="preserve">
+    <value>Add</value>
+  </data>
+  <data name="BtnRemove" xml:space="preserve">
+    <value>Remove</value>
+  </data>
+  <data name="lblLoadTemplateInst" xml:space="preserve">
+    <value>To load a new blank PM template for the creation of XML file, select a template type from the drop menu, and press the "Load template" button.</value>
+  </data>
+  <data name="lblLoadXmlInst" xml:space="preserve">
+    <value>To load an existing XML file, press the “Choose File” button ("Browse..." in Internet Explorer and Firefox), select the file and press the "Open" button in the file browser. Press the "Load XML" button.</value>
+  </data>
 </root>

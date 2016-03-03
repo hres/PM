@@ -120,6 +120,15 @@ namespace Resources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Add.
+        /// </summary>
+        internal static string BtnAdd {
+            get {
+                return ResourceManager.GetString("BtnAdd", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Append Column.
         /// </summary>
         internal static string btnAddCol {
@@ -179,6 +188,15 @@ namespace Resources {
         internal static string btnlblApplySymbol {
             get {
                 return ResourceManager.GetString("btnlblApplySymbol", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Remove.
+        /// </summary>
+        internal static string BtnRemove {
+            get {
+                return ResourceManager.GetString("BtnRemove", resourceCulture);
             }
         }
         
@@ -530,6 +548,24 @@ namespace Resources {
         internal static string lblIngredients {
             get {
                 return ResourceManager.GetString("lblIngredients", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to To load a new blank PM template for the creation of XML file, select a template type from the drop menu, and press the &quot;Load template&quot; button..
+        /// </summary>
+        internal static string lblLoadTemplateInst {
+            get {
+                return ResourceManager.GetString("lblLoadTemplateInst", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to To load an existing XML file, press the “Choose File” button (&quot;Browse...&quot; in Internet Explorer and Firefox), select the file and press the &quot;Open&quot; button in the file browser. Press the &quot;Load XML&quot; button..
+        /// </summary>
+        internal static string lblLoadXmlInst {
+            get {
+                return ResourceManager.GetString("lblLoadXmlInst", resourceCulture);
             }
         }
         
@@ -1011,7 +1047,7 @@ namespace Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Proper name.
+        ///   Looks up a localized string similar to Proper Name.
         /// </summary>
         internal static string ProperNameMI {
             get {

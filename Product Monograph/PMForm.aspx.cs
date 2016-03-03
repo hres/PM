@@ -33,6 +33,7 @@ namespace Product_Monograph
                     ddlTemplate.Value = Session["TemplateVersion"].ToString();
                     btnLoadTemplate.Visible = false;
 
+
                 }
 
                 //only for landing page
@@ -45,8 +46,8 @@ namespace Product_Monograph
             }
 
 
-            
-
+            lblLoadTemplateInst.Text = Resources.Resource.lblLoadTemplateInst;
+            lblLoadXmlInst.Text = Resources.Resource.lblLoadXmlInst;
             lblUsingxml.Text = Resources.Resource.UsingXMLPM;
 
             lblBody.Text = ResourceHelpers.WrapTextBlockIntoParagraphs(Resources.Resource.Body).ToString().Replace("qmark", "<img src='images/qmark.jpg' style='width: 15px; height: 15px;' />");
