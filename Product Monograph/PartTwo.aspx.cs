@@ -55,7 +55,7 @@ namespace Product_Monograph
                 }
             }
 
-            lblPartII.Text = Resources.Resource.PartII;
+       /*     lblPartII.Text = Resources.Resource.PartII;
             lblSumPharmInfo.Text = Resources.Resource.SumPharmInfo;
             lblSumCT.Text = Resources.Resource.SumCT;
             lblSumPharmacology.Text = Resources.Resource.SumPharmacology;
@@ -90,7 +90,7 @@ namespace Product_Monograph
             btnAddAnalyteNameTextBox.Text = Resources.Resource.BtnAdd;
             btnAddDrugSubstance.Text = Resources.Resource.BtnAdd;
 
-
+    */
 
         }       
 
