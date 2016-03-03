@@ -414,9 +414,6 @@
   <data name="lblSchedulingSymbol" xml:space="preserve">
     <value>Symbole de planification</value>
   </data>
-  <data name="lblSchedulingSymbol2" xml:space="preserve">
-    <value>Symbole de planification</value>
-  </data>
   <data name="lblSponsorAddress" xml:space="preserve">
     <value>Parrainer l'adresse</value>
   </data>
@@ -438,12 +435,6 @@
   <data name="tbDForm" xml:space="preserve">
     <value>Forme posologique</value>
   </data>
-  <data name="tbDUnit" xml:space="preserve">
-    <value>Unité</value>
-  </data>
-  <data name="tbDValue" xml:space="preserve">
-    <value>Valeur</value>
-  </data>
   <data name="tbPName" xml:space="preserve">
     <value>Nom propre</value>
   </data>
@@ -458,10 +449,6 @@
   </data>
   <data name="TherapeuticClassification" xml:space="preserve">
     <value>Classification thérapeutique</value>
-  </data>
-  <data name="lblBrandName3" xml:space="preserve">
-    <value>Nom de marque</value>
-    <comment>Part I</comment>
   </data>
   <data name="lblDosageForm2" xml:space="preserve">
     <value>Forme posologique</value>
@@ -491,16 +478,8 @@
     <value>Nom propre</value>
     <comment>Part I</comment>
   </data>
-  <data name="lblProprietaryBrandName" xml:space="preserve">
-    <value>Nom de marque</value>
-    <comment>Part I</comment>
-  </data>
   <data name="lblRouteOfAdministration" xml:space="preserve">
     <value>Voie d'administration</value>
-    <comment>Part I</comment>
-  </data>
-  <data name="lblStrength2" xml:space="preserve">
-    <value>Force</value>
     <comment>Part I</comment>
   </data>
   <data name="lblYearsOfAge" xml:space="preserve">
@@ -525,18 +504,6 @@
   </data>
   <data name="btnAddExtraContraindications" xml:space="preserve">
     <value>Ajouter</value>
-    <comment>Part 1</comment>
-  </data>
-  <data name="btnRemoveContraindications" xml:space="preserve">
-    <value>Retirer</value>
-    <comment>Part 1</comment>
-  </data>
-  <data name="btnRemoveSeriousWarningsPrecautions" xml:space="preserve">
-    <value>Retirer</value>
-    <comment>Part 1</comment>
-  </data>
-  <data name="btnSaveDraftPart1" xml:space="preserve">
-    <value>Enregistrer le brouillon</value>
     <comment>Part 1</comment>
   </data>
   <data name="lblAdministration" xml:space="preserve">
@@ -599,10 +566,6 @@
     <value>Pharmacodynamique</value>
     <comment>Part 1</comment>
   </data>
-  <data name="lblProprietaryProperName" xml:space="preserve">
-    <value>Nom propre</value>
-    <comment>Part 1</comment>
-  </data>
   <data name="lblRecommended" xml:space="preserve">
     <value>Dose recommandée et ajustement posologique</value>
     <comment>Part 1</comment>
@@ -663,10 +626,6 @@
     <value>Mises en garde et précautions</value>
     <comment>Part 1</comment>
   </data>
-  <data name="btnRemoveDosingConsiderations" xml:space="preserve">
-    <value>Retirer</value>
-    <comment>Part 1</comment>
-  </data>
   <data name="lblDosing" xml:space="preserve">
     <value>Considérations posologiques</value>
     <comment>Part 1</comment>
@@ -686,5 +645,26 @@
   <data name="SUM_OVERDOSAGE" xml:space="preserve">
     <value>Surdosage</value>
     <comment>Part 1</comment>
+  </data>
+  <data name="subMenuItem1" xml:space="preserve">
+    <value>Instructions de formulaire</value>
+  </data>
+  <data name="subMenuItem1_tooltip" xml:space="preserve">
+    <value>Retour à la page principale de la forme DHPR avec la forme d'instructions</value>
+  </data>
+  <data name="subMenuItem2" xml:space="preserve">
+    <value>Page de Couverture</value>
+  </data>
+  <data name="subMenuItem3" xml:space="preserve">
+    <value>Partie I</value>
+  </data>
+  <data name="subMenuItem4" xml:space="preserve">
+    <value>Partie II</value>
+  </data>
+  <data name="subMenuItem5" xml:space="preserve">
+    <value>Partie III</value>
+  </data>
+  <data name="btnRemoveVal" xml:space="preserve">
+    <value>Retirer</value>
   </data>
 </root>

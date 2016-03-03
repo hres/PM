@@ -18,6 +18,7 @@ using System.Collections;
 using System.IO.Compression;
 using System.Threading;
 using System.Globalization;
+using System.Threading.Tasks;
 
 namespace Product_Monograph
 {
@@ -25,6 +26,7 @@ namespace Product_Monograph
     {
         string strscript = string.Empty;
         string strBrandName = string.Empty;
+        protected TaskScheduler _uiTaskScheduler; //ching add for test..
 
         void Page_PreInit(Object sender, EventArgs e)
         {
@@ -55,6 +57,8 @@ namespace Product_Monograph
                 }
             }
             facilityResourcePart1();
+            _uiTaskScheduler = TaskScheduler.FromCurrentSynchronizationContext();  //ching adds for test
+
         }
 
         private void SaveProcess()
@@ -3043,7 +3047,156 @@ namespace Product_Monograph
         {
             SaveProcess();
         }
+        protected void btnCreateTable_Click(object sender, EventArgs e)
+        {
+            //  BeginInvoke((Action)delegate ()
+            //   {
+            //do your update
+            //   });
 
+        //    var task = new Task<string>(LengthyComputation);
+        //    task.ContinueWith(antecedent => createPharmTbl(antecedent.Result), _uiTaskScheduler);
+            //                     UpdateResultLabel(antecedent.Result), _uiTaskScheduler);
+        //    task.Start();
+
+            createPharmTbl();
+            this.BtnRemoveTable.Visible = true;
+            //create table
+            // Total number of rows.
+            //int rowCnt;
+            //// Current row count.
+            //int rowCtr;
+            //// Total number of cells per row (columns).
+            //int cellCtr;
+            //// Current cell counter.
+            //int cellCnt;
+
+
+            //rowCnt = int.Parse("12");
+            //cellCnt = int.Parse("6");
+
+            //for (rowCtr = 1; rowCtr <= rowCnt; rowCtr++)
+            //{
+            //    // Create a new row and add it to the table.
+            //    TableRow tRow = new TableRow();
+            //    pTable.Rows.Add(tRow);
+            //    for (cellCtr = 1; cellCtr <= cellCnt; cellCtr++)
+            //    {
+            //        // Create a new cell and add it to the row.
+            //        TableCell tCell = new TableCell();
+            //        tRow.Cells.Add(tCell);
+            //        // Mock up a product ID.
+            //        string prodID = rowCtr + "_" + cellCtr;
+            //        // Add a literal text as control.
+            //        tCell.Controls.Add(new LiteralControl("Microsoft: "));
+            //        // Create a Hyperlink Web server control and add it to the cell.
+            //        System.Web.UI.WebControls.HyperLink h = new HyperLink();
+            //        h.Text = rowCtr + ":" + cellCtr;
+            //        h.NavigateUrl = "http://www.microsoft.com/net";
+            //        tCell.Controls.Add(h);
+            //    }
+
+            //}
+
+
+        }
+        protected string LengthyComputation()
+        {
+            Thread.Sleep(0);
+           // Thread.Sleep(3000);
+            return "47";
+        }
+
+        protected void btnRemoveTable_Click(object sender, EventArgs e)
+        {
+            this.pTable.Controls.Clear();
+            this.BtnRemoveTable.Visible = false;
+        }
+        protected void createPharmTbl()
+        {
+
+            try
+            {
+
+           
+            // Add rows to the table.
+            for (int rowNum = 0; rowNum < 100; rowNum++)
+            {
+                TableRow tempRow = new TableRow();
+                for (int cellNum = 0; cellNum < 3; cellNum++)
+                {
+                    TableCell tempCell = new TableCell();
+                        // tempCell.Text = 
+                        // String.Format("({0},{1})", rowNum, cellNum);
+                        System.Web.UI.WebControls.TextBox mTextBox = new TextBox();
+                        mTextBox.ID = "myTextBox" + rowNum + cellNum;
+                        mTextBox.MaxLength = 1000;
+                       // mTextBox.TextChanged();
+                        tempCell.Controls.Add(mTextBox);
+                    tempRow.Cells.Add(tempCell);
+                }
+                pTable.Rows.Add(tempRow);
+            }
+
+            // Create a TableHeaderRow.
+            TableHeaderRow headerRow = new TableHeaderRow();
+            headerRow.BackColor = Color.LightBlue;
+
+            // Create TableCell objects to contain 
+            // the text for the header.
+            TableHeaderCell headerTableCell1 = new TableHeaderCell();
+            TableHeaderCell headerTableCell2 = new TableHeaderCell();
+            TableHeaderCell headerTableCell3 = new TableHeaderCell();
+            headerTableCell1.Text = "Column 1 Header";
+            headerTableCell1.Scope = TableHeaderScope.Column;
+            headerTableCell1.AbbreviatedText = "Col 1 Head";
+            headerTableCell2.Text = "Column 2 Header";
+            headerTableCell2.Scope = TableHeaderScope.Column;
+            headerTableCell2.AbbreviatedText = "Col 2 Head";
+            headerTableCell3.Text = "Column 3 Header";
+            headerTableCell3.Scope = TableHeaderScope.Column;
+            headerTableCell3.AbbreviatedText = "Col 3 Head";
+
+            // Add the TableHeaderCell objects to the Cells
+            // collection of the TableHeaderRow.
+            headerRow.Cells.Add(headerTableCell1);
+            headerRow.Cells.Add(headerTableCell2);
+            headerRow.Cells.Add(headerTableCell3);
+
+            // Add the TableHeaderRow as the first item 
+            // in the Rows collection of the table.
+            pTable.Rows.AddAt(0, headerRow);
+
+            // Create a TableFooterRow.
+            TableFooterRow footerRow = new TableFooterRow();
+            footerRow.BackColor = Color.LightBlue;
+            // Create TableCell objects to contain the 
+            // text for the footer.
+            TableCell footerTableCell1 = new TableCell();
+            TableCell footerTableCell2 = new TableCell();
+            TableCell footerTableCell3 = new TableCell();
+            footerTableCell1.Text = "Column 1 footer";
+            footerTableCell2.Text = "Column 2 footer";
+            footerTableCell3.Text = "Column 3 footer";
+
+            // Add the TableCell objects to the Cells
+            // collection of the TableFooterRow.
+            footerRow.Cells.Add(footerTableCell1);
+            footerRow.Cells.Add(footerTableCell2);
+            footerRow.Cells.Add(footerTableCell3);
+
+            // Add the TableFooterRow to the Rows
+            // collection of the table.
+            pTable.Rows.Add(footerRow);
+            }
+            catch (Exception ex)
+            {
+                lblErrMsgTbl.Text = ex.ToString();
+                //Debug.WriteLine("Results = " + ex.ToString());
+
+            }
+
+        }
         protected void menutabs_MenuItemClick(object sender, MenuEventArgs e)
         {
             SaveInMemory();
@@ -3057,15 +3210,42 @@ namespace Product_Monograph
         }
         protected void facilityResourcePart1()
         {
-            btnSaveDraftPart1.Text = Resources.Resource.btnSaveDraftPart1;
+            //top menu
+            submenutabs.Items[0].Text = Resources.Resource.subMenuItem1;
+            submenutabs.Items[1].Text = Resources.Resource.subMenuItem2;
+            submenutabs.Items[2].Text = Resources.Resource.subMenuItem3;
+            submenutabs.Items[3].Text = Resources.Resource.subMenuItem4;
+            submenutabs.Items[4].Text = Resources.Resource.subMenuItem5;
+
+            submenutabs.Items[0].ToolTip = Resources.Resource.subMenuItem1_tooltip;
+            submenutabs.Items[1].ToolTip = Resources.Resource.subMenuItem2;
+            submenutabs.Items[2].ToolTip = Resources.Resource.subMenuItem3;
+            submenutabs.Items[3].ToolTip = Resources.Resource.subMenuItem4;
+            submenutabs.Items[4].ToolTip = Resources.Resource.subMenuItem5;
+            //bottom menu
+            submenutabsbottom.Items[0].Text = Resources.Resource.subMenuItem1;
+            submenutabsbottom.Items[1].Text = Resources.Resource.subMenuItem2;
+            submenutabsbottom.Items[2].Text = Resources.Resource.subMenuItem3;
+            submenutabsbottom.Items[3].Text = Resources.Resource.subMenuItem4;
+            submenutabsbottom.Items[4].Text = Resources.Resource.subMenuItem5;
+
+            submenutabsbottom.Items[0].ToolTip = Resources.Resource.subMenuItem1_tooltip;
+            submenutabsbottom.Items[1].ToolTip = Resources.Resource.subMenuItem2;
+            submenutabsbottom.Items[2].ToolTip = Resources.Resource.subMenuItem3;
+            submenutabsbottom.Items[3].ToolTip = Resources.Resource.subMenuItem4;
+            submenutabsbottom.Items[4].ToolTip = Resources.Resource.subMenuItem5;
+
+            btnSaveDraftPart1.Text = Resources.Resource.btnSaveDraft;
             lblPartITitle.InnerText = Resources.Resource.lblPartITitle;
             lblBrandName.Text = Resources.Resource.lblBrandName;
-            lblBrandName3.Text = Resources.Resource.lblBrandName3;
-            lblProprietaryProperName.Text = Resources.Resource.lblProprietaryProperName;
+            lblBrandName3.Text = Resources.Resource.lblBrandName;
+         
+            lblProprietaryProperName.Text = Resources.Resource.lblProperName;
             SumSummaryProductInformation.InnerText = Resources.Resource.SumSummaryProductInformation;
-        
+
+            
             lblDosageForm2.InnerText = Resources.Resource.lblDosageForm2;
-            lblStrength2.InnerText = Resources.Resource.lblStrength2;
+            lblStrength2.InnerText = Resources.Resource.tbStrength;
             lblIngredients.InnerText = Resources.Resource.lblIngredients; 
             lblGeriatrics.InnerText = Resources.Resource.lblGeriatrics;
             lblYearsOfAge.InnerText = Resources.Resource.lblYearsOfAge;
@@ -3089,9 +3269,9 @@ namespace Product_Monograph
             btnAddExtraRouteOfAdmin.Value = Resources.Resource.btnAddExtraContraindications;
             btnAddExtraAddHeadingSelection.Value = Resources.Resource.btnAddExtraContraindications;
 
-            btnRemoveContraindications.Value = Resources.Resource.btnRemoveContraindications;
-            btnRemoveSeriousWarningsPrecautions.Value = Resources.Resource.btnRemoveSeriousWarningsPrecautions;
-            btnRemoveDosingConsiderations.Value = Resources.Resource.btnRemoveDosingConsiderations;
+            btnRemoveContraindications.Value = Resources.Resource.btnRemoveVal;
+            btnRemoveSeriousWarningsPrecautions.Value = Resources.Resource.btnRemoveVal;
+            btnRemoveDosingConsiderations.Value = Resources.Resource.btnRemoveVal;
 
             SUM_WARNINGS.InnerHtml = Resources.Resource.SUM_WARNINGS;
           
@@ -3125,7 +3305,6 @@ namespace Product_Monograph
           
           
          
-            //   SUM_CONTRAINDICATIONS.InnerText = Resources.Resource.SUM_CONTRAINDICATIONS;
           
         }
     }

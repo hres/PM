@@ -46,7 +46,7 @@ namespace Product_Monograph {
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlGenericControl CoverPage;
+        protected global::System.Web.UI.WebControls.Label CoverPage;
         
         /// <summary>
         /// lblError control.
@@ -64,7 +64,7 @@ namespace Product_Monograph {
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlGenericControl lblSchedulingSymbol;
+        protected global::System.Web.UI.WebControls.Label lblSchedulingSymbol;
         
         /// <summary>
         /// btnlblApplySymbol control.
@@ -74,15 +74,6 @@ namespace Product_Monograph {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.HtmlControls.HtmlInputButton btnlblApplySymbol;
-        
-        /// <summary>
-        /// lblSchedulingSymbol2 control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlGenericControl lblSchedulingSymbol2;
         
         /// <summary>
         /// fuBrnandSymbol control.
@@ -244,7 +235,7 @@ namespace Product_Monograph {
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlGenericControl PharmaceuticalStandard;
+        protected global::System.Web.UI.WebControls.Label PharmaceuticalStandard;
         
         /// <summary>
         /// tbPharmaceuticalStandard control.
@@ -262,7 +253,7 @@ namespace Product_Monograph {
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlGenericControl TherapeuticClassification;
+        protected global::System.Web.UI.WebControls.Label TherapeuticClassification;
         
         /// <summary>
         /// tbTherapeuticClassifications control.
@@ -280,7 +271,7 @@ namespace Product_Monograph {
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlGenericControl lblSponsorName;
+        protected global::System.Web.UI.WebControls.Label lblSponsorName;
         
         /// <summary>
         /// tbSponsorName control.
@@ -298,7 +289,7 @@ namespace Product_Monograph {
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlGenericControl lblSponsorAddress;
+        protected global::System.Web.UI.WebControls.Label lblSponsorAddress;
         
         /// <summary>
         /// tbSponsorAddress control.
@@ -334,7 +325,7 @@ namespace Product_Monograph {
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlGenericControl lblAndOr;
+        protected global::System.Web.UI.WebControls.Label lblAndOr;
         
         /// <summary>
         /// lblDateOfRevision control.
@@ -361,7 +352,7 @@ namespace Product_Monograph {
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlGenericControl SubmissionControlNo;
+        protected global::System.Web.UI.WebControls.Label SubmissionControlNo;
         
         /// <summary>
         /// tbControNum control.
@@ -388,7 +379,7 @@ namespace Product_Monograph {
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlGenericControl footnote;
+        protected global::System.Web.UI.WebControls.Label footnote;
         
         /// <summary>
         /// tbFootnote control.

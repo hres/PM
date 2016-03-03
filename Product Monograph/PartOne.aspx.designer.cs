@@ -715,6 +715,42 @@ namespace Product_Monograph {
         protected global::System.Web.UI.HtmlControls.HtmlInputButton btnAddPharmacokineticsOuterSection;
         
         /// <summary>
+        /// btnDynaTable control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Button btnDynaTable;
+        
+        /// <summary>
+        /// BtnRemoveTable control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Button BtnRemoveTable;
+        
+        /// <summary>
+        /// lblErrMsgTbl control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label lblErrMsgTbl;
+        
+        /// <summary>
+        /// pTable control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Table pTable;
+        
+        /// <summary>
         /// SUM_STORAGE control.
         /// </summary>
         /// <remarks>
