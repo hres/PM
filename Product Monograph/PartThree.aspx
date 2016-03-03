@@ -1,7 +1,7 @@
 ﻿<%@ Page Title="" Language="C#" MasterPageFile="~/ProdMono.Master" AutoEventWireup="true" CodeBehind="PartThree.aspx.cs" Inherits="Product_Monograph.PartThree" ValidateRequest="false" %>
 <%@ Register Assembly="AjaxControlToolkit" Namespace="AjaxControlToolkit" TagPrefix="cc1" %>
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
-   <script type="text/javascript">
+    <script type="text/javascript">
         
        var loadFile = function (fuid, imgid, txtname, txtdata) {
 
@@ -486,7 +486,7 @@
 </script>
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
-<asp:ScriptManager ID="ScriptManager1" runat="server"></asp:ScriptManager>
+    <asp:ScriptManager ID="ScriptManager1" runat="server"></asp:ScriptManager>
 
 <div>
     <asp:Menu ClientIDMode="Static" ID="submenutabs" runat="server" Orientation="Horizontal" OnMenuItemClick="menutabs_MenuItemClick">
@@ -519,7 +519,9 @@
 
 <details class="margin-top-medium">
     <summary id="SUM_ABOUT">
+        </summary>
         <asp:Label ID="lblSumAbout" runat="server"></asp:Label>
+    <summary>
     </summary> 
     <div class="form-group">
         <div class="margin-top-medium">
@@ -616,7 +618,9 @@
 <details class="margin-top-medium">
     
     <summary id="SUM_WARNINGS" lang="en">
+         </summary>
          <asp:Label ID="lblSumWarningsPrecautions" runat="server"></asp:Label>
+    <summary>
     </summary>
    
     
@@ -658,7 +662,9 @@
 
 <details class="margin-top-medium">
     <summary id="SUM_INTERACTIONS">
+        </summary>
         <asp:Label ID="lblSumInteractions" runat="server"></asp:Label>
+    <summary>
     </summary>  
     <div class="form-group">
           <div class="margin-top-medium">
@@ -675,7 +681,9 @@
 
 <details class="margin-top-medium">
         <summary id="SUM_PROPER_USE">
+            </summary>
             <asp:Label ID="lblSumProperUse" runat="server"></asp:Label>
+        <summary>
         </summary>
         <div class="form-group">
            <div class="margin-top-medium">
@@ -752,7 +760,9 @@
 
 <details class="margin-top-medium">
         <summary id="SUM_SIDE_EFFECTS">
+            </summary>
             <asp:Label ID="lblSumSideEffect" runat="server"></asp:Label>
+        <summary>
         </summary>
         <div class="form-group">
             <div class="margin-top-medium wb-inv">
@@ -1030,7 +1040,9 @@
 
 <details class="margin-top-medium">
         <summary id="SUM_HOW_TO_STORE-IT">
+            </summary>
             <asp:Label ID="lblSumStore" runat="server"></asp:Label>
+        <summary>
         </summary>
         <div class="form-group">
             <div class="margin-top-medium wb-inv">
@@ -1047,7 +1059,9 @@
 
 <details class="margin-top-medium">
         <summary id="SUM_REPORTING">
+            </summary>
             <asp:Label ID="lblSumReporting" runat="server"></asp:Label>  
+        <summary>
         </summary>
         <div class="form-group">
             <div class="margin-top-medium wb-inv">
@@ -1064,7 +1078,9 @@
 
 <details class="margin-top-medium margin-bottom-small">
     <summary id="SUM_MORE_INFORMATION">
+            </summary>
             <asp:Label ID="lblSumMoreInfo" runat="server"></asp:Label>    
+    <summary>
     </summary>
     <div class="form-group">
         <div class="margin-top-medium wb-inv">
@@ -1078,9 +1094,11 @@
     </div>
     <div class="form-group">
         <div class="mrgn-bttm-md mrgn-tp-md">
-            <asp:Label ID="lblLastRevised" AssociatedControlID="tbLastrRevised" CssClass="control-label" runat="server"></asp:Label>           
-            <asp:TextBox runat="server" ID="tbLastrRevised" Width="250" ReadOnly="true"></asp:TextBox>
-            <cc1:CalendarExtender ID="CalendarExtender2" runat="server" TargetControlID="tbLastrRevised" Format="yyyy-MM-dd" />
+            <asp:Label ID="lblLastRevised" AssociatedControlID="tbLastrRevised" CssClass="control-label" runat="server">
+                <span class="datepicker-format"> (<abbr title="Four digits year, dash, two digits month, dash, two digits day">YYYY-MM-DD</abbr>)</span>
+            </asp:Label>           
+            <asp:TextBox runat="server" ID="tbLastrRevised" Width="250" name="tbLastrRevised" CssClass="form-control" type="date" data-rule-dateiso="true"></asp:TextBox>
+          
         </div>
     </div>
 </details>

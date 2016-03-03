@@ -51,14 +51,14 @@ namespace Product_Monograph
         protected void Page_Load(object sender, EventArgs e)
         {
             lblError.Text = "";
-            //check the new column name passed in, if one or more
-            if(!String.IsNullOrEmpty(ColNameList.Value))
-            {
-               //string newColumn = ColNameList.Value;   
-                strNewColNames = (ColNameList.Value).Split(';');
-                newColCount = strNewColNames.Length;
-            }
-          
+            //check the new column name passed in, if one or more, only for test
+            //if(!String.IsNullOrEmpty(ColNameList.Value))
+            //{
+            //   //string newColumn = ColNameList.Value;   
+            //    strNewColNames = (ColNameList.Value).Split(';');
+            //    newColCount = strNewColNames.Length;
+            //}
+     
             if (!IsPostBack)
             {
                 try
@@ -641,36 +641,66 @@ namespace Product_Monograph
         }
         protected void facilityResource()
         {
-            
-            CoverPage.InnerText = Resources.Resource.CoverPage;
-            lblSchedulingSymbol.InnerText = Resources.Resource.lblSchedulingSymbol;
+            //top menu
+            submenutabs.Items[0].Text = Resources.Resource.subMenuItem1;
+            submenutabs.Items[1].Text = Resources.Resource.subMenuItem2;
+            submenutabs.Items[2].Text = Resources.Resource.subMenuItem3;
+            submenutabs.Items[3].Text = Resources.Resource.subMenuItem4;
+            submenutabs.Items[4].Text = Resources.Resource.subMenuItem5;
+
+            submenutabs.Items[0].ToolTip = Resources.Resource.subMenuItem1_tooltip;
+            submenutabs.Items[1].ToolTip = Resources.Resource.subMenuItem2;
+            submenutabs.Items[2].ToolTip = Resources.Resource.subMenuItem3;
+            submenutabs.Items[3].ToolTip = Resources.Resource.subMenuItem4;
+            submenutabs.Items[4].ToolTip = Resources.Resource.subMenuItem5;
+            //bottom menu
+            submenutabsbottom.Items[0].Text = Resources.Resource.subMenuItem1;
+            submenutabsbottom.Items[1].Text = Resources.Resource.subMenuItem2;
+            submenutabsbottom.Items[2].Text = Resources.Resource.subMenuItem3;
+            submenutabsbottom.Items[3].Text = Resources.Resource.subMenuItem4;
+            submenutabsbottom.Items[4].Text = Resources.Resource.subMenuItem5;
+
+            submenutabsbottom.Items[0].ToolTip = Resources.Resource.subMenuItem1_tooltip;
+            submenutabsbottom.Items[1].ToolTip = Resources.Resource.subMenuItem2;
+            submenutabsbottom.Items[2].ToolTip = Resources.Resource.subMenuItem3;
+            submenutabsbottom.Items[3].ToolTip = Resources.Resource.subMenuItem4;
+            submenutabsbottom.Items[4].ToolTip = Resources.Resource.subMenuItem5;
+
+
+            CoverPage.Text = Resources.Resource.CoverPage;
+            lblSchedulingSymbol.Text = Resources.Resource.lblSchedulingSymbol;
             btnlblApplySymbol.Value = Resources.Resource.btnlblApplySymbol;
-            lblSchedulingSymbol2.InnerText = Resources.Resource.lblSchedulingSymbol;
+        
 
             tbBName.InnerText = Resources.Resource.tbBName;
             tbPName.InnerText = Resources.Resource.tbPName;
             tbDForm.InnerText = Resources.Resource.tbDForm;
             tbStrength.InnerText = Resources.Resource.tbStrength;
             lblStrengthperDosage.InnerText = Resources.Resource.lblStrengthperDosage;
-            PharmaceuticalStandard.InnerText = Resources.Resource.PharmaceuticalStandard;
-            TherapeuticClassification.InnerText = Resources.Resource.TherapeuticClassification;
-            lblSponsorName.InnerText = Resources.Resource.lblSponsorName;
-            lblSponsorAddress.InnerText = Resources.Resource.lblSponsorAddress;
+            tbSValue.InnerText = Resources.Resource.tbSValue;
+            tbSUnit.InnerText = Resources.Resource.tbSUnit;
+            tbDValue.InnerText = Resources.Resource.tbSValue;
+            tbDUnit.InnerText = Resources.Resource.tbSUnit;
+
+            PharmaceuticalStandard.Text = Resources.Resource.PharmaceuticalStandard;
+            TherapeuticClassification.Text = Resources.Resource.TherapeuticClassification;
+            lblSponsorName.Text = Resources.Resource.lblSponsorName;
+            lblSponsorAddress.Text = Resources.Resource.lblSponsorAddress;
             lblDateOfPreparation.Text = Resources.Resource.lblDateOfPreparation;
-            lblAndOr.InnerText = Resources.Resource.lblAndOr;
+            lblAndOr.Text = Resources.Resource.lblAndOr;
             lblDateOfRevision.Text = Resources.Resource.lblDateOfRevision;
-            SubmissionControlNo.InnerText = Resources.Resource.SubmissionControlNo;
-            footnote.InnerText = Resources.Resource.footnote;
+            SubmissionControlNo.Text = Resources.Resource.SubmissionControlNo;
+            footnote.Text = Resources.Resource.footnote;
+
             btnApplySumbol.Text = Resources.Resource.btnApplySumbol;
             btnSaveDraft.Text = Resources.Resource.btnSaveDraft;
+            btnSaveDraft.ToolTip = Resources.Resource.btnSaveDraft;
+
             btnAppendRow.Value = Resources.Resource.btnAppendRow;
             btnDeleteRow.Value = Resources.Resource.btnDeleteRow;
             btnAddCol.Value = Resources.Resource.btnAddCol;
             btnDelCol.Value = Resources.Resource.btnDelCol;
-            tbSValue.InnerText = Resources.Resource.tbSValue;
-            tbSUnit.InnerText = Resources.Resource.tbSUnit;
-            tbDValue.InnerText = Resources.Resource.tbDValue;
-            tbDUnit.InnerText = Resources.Resource.tbDUnit;
+         
 
 
 

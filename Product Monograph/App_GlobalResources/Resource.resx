@@ -427,10 +427,6 @@
     <value>Scheduling Symbol</value>
     <comment>Cover Page</comment>
   </data>
-  <data name="lblSchedulingSymbol2" xml:space="preserve">
-    <value>Scheduling Symbol</value>
-    <comment>Cover Page</comment>
-  </data>
   <data name="lblSponsorAddress" xml:space="preserve">
     <value>Sponsor address</value>
     <comment>Cover Page</comment>
@@ -458,14 +454,6 @@
     <value>Dosage form</value>
     <comment>Cover Page</comment>
   </data>
-  <data name="tbDUnit" xml:space="preserve">
-    <value>Unit</value>
-    <comment>Cover Page</comment>
-  </data>
-  <data name="tbDValue" xml:space="preserve">
-    <value>Vakue</value>
-    <comment>Cover Page</comment>
-  </data>
   <data name="tbPName" xml:space="preserve">
     <value>Proper name</value>
     <comment>Cover Page</comment>
@@ -485,10 +473,6 @@
   <data name="TherapeuticClassification" xml:space="preserve">
     <value>Therapeutic classification</value>
     <comment>Cover Page</comment>
-  </data>
-  <data name="lblBrandName3" xml:space="preserve">
-    <value>Brand name</value>
-    <comment>Part I</comment>
   </data>
   <data name="lblDosageForm2" xml:space="preserve">
     <value>Dosage Form</value>
@@ -518,16 +502,8 @@
     <value>Proper name</value>
     <comment>Part I</comment>
   </data>
-  <data name="lblProprietaryBrandName" xml:space="preserve">
-    <value>Brand name</value>
-    <comment>Part I</comment>
-  </data>
   <data name="lblRouteOfAdministration" xml:space="preserve">
     <value>Route of administration</value>
-    <comment>Part I</comment>
-  </data>
-  <data name="lblStrength2" xml:space="preserve">
-    <value>Strength</value>
     <comment>Part I</comment>
   </data>
   <data name="lblYearsOfAge" xml:space="preserve">
@@ -552,18 +528,6 @@
   </data>
   <data name="btnAddExtraContraindications" xml:space="preserve">
     <value>Add</value>
-    <comment>Part 1</comment>
-  </data>
-  <data name="btnRemoveContraindications" xml:space="preserve">
-    <value>Remove</value>
-    <comment>Part 1</comment>
-  </data>
-  <data name="btnRemoveSeriousWarningsPrecautions" xml:space="preserve">
-    <value>Remove</value>
-    <comment>Part 1</comment>
-  </data>
-  <data name="btnSaveDraftPart1" xml:space="preserve">
-    <value>Save draft</value>
     <comment>Part 1</comment>
   </data>
   <data name="lblAdministration" xml:space="preserve">
@@ -626,10 +590,6 @@
     <value>Pharmacodynamics</value>
     <comment>Part 1</comment>
   </data>
-  <data name="lblProprietaryProperName" xml:space="preserve">
-    <value>Proper name</value>
-    <comment>Part 1</comment>
-  </data>
   <data name="lblRecommended" xml:space="preserve">
     <value>Recommended dose and dosage adjustment</value>
     <comment>Part 1</comment>
@@ -690,10 +650,6 @@
     <value>Warnings and precaution</value>
     <comment>Part 1</comment>
   </data>
-  <data name="btnRemoveDosingConsiderations" xml:space="preserve">
-    <value>Remove</value>
-    <comment>Part 1</comment>
-  </data>
   <data name="lblDosing" xml:space="preserve">
     <value>Dosing considerations</value>
     <comment>Part 1</comment>
@@ -710,16 +666,31 @@
     <value>Overdosage</value>
     <comment>Part 1</comment>
   </data>
+  <data name="btnRemoveVal" xml:space="preserve">
+    <value>Remove</value>
+  </data>
+  <data name="subMenuItem1" xml:space="preserve">
+    <value>Form instructions</value>
+  </data>
+  <data name="subMenuItem1_tooltip" xml:space="preserve">
+    <value>Back to the main page of DHPR form with form Instruction</value>
+  </data>
+  <data name="subMenuItem2" xml:space="preserve">
+    <value>Cover page</value>
+  </data>
+  <data name="subMenuItem3" xml:space="preserve">
+    <value>Part I</value>
+  </data>
+  <data name="subMenuItem4" xml:space="preserve">
+    <value>Part II</value>
+  </data>
+  <data name="subMenuItem5" xml:space="preserve">
+    <value>Part III</value>
+  </data>
   <data name="BtnAdd" xml:space="preserve">
     <value>Add</value>
   </data>
   <data name="BtnRemove" xml:space="preserve">
     <value>Remove</value>
-  </data>
-  <data name="lblLoadTemplateInst" xml:space="preserve">
-    <value>To load a new blank PM template for the creation of XML file, select a template type from the drop menu, and press the "Load template" button.</value>
-  </data>
-  <data name="lblLoadXmlInst" xml:space="preserve">
-    <value>To load an existing XML file, press the “Choose File” button ("Browse..." in Internet Explorer and Firefox), select the file and press the "Open" button in the file browser. Press the "Load XML" button.</value>
   </data>
 </root>

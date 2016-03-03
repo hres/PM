@@ -120,15 +120,6 @@ namespace Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Add.
-        /// </summary>
-        internal static string BtnAdd {
-            get {
-                return ResourceManager.GetString("BtnAdd", resourceCulture);
-            }
-        }
-        
-        /// <summary>
         ///   Looks up a localized string similar to Append Column.
         /// </summary>
         internal static string btnAddCol {
@@ -194,36 +185,9 @@ namespace Resources {
         /// <summary>
         ///   Looks up a localized string similar to Remove.
         /// </summary>
-        internal static string BtnRemove {
+        internal static string btnRemoveVal {
             get {
-                return ResourceManager.GetString("BtnRemove", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to Remove.
-        /// </summary>
-        internal static string btnRemoveContraindications {
-            get {
-                return ResourceManager.GetString("btnRemoveContraindications", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to Remove.
-        /// </summary>
-        internal static string btnRemoveDosingConsiderations {
-            get {
-                return ResourceManager.GetString("btnRemoveDosingConsiderations", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to Remove.
-        /// </summary>
-        internal static string btnRemoveSeriousWarningsPrecautions {
-            get {
-                return ResourceManager.GetString("btnRemoveSeriousWarningsPrecautions", resourceCulture);
+                return ResourceManager.GetString("btnRemoveVal", resourceCulture);
             }
         }
         
@@ -233,15 +197,6 @@ namespace Resources {
         internal static string btnSaveDraft {
             get {
                 return ResourceManager.GetString("btnSaveDraft", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to Save draft.
-        /// </summary>
-        internal static string btnSaveDraftPart1 {
-            get {
-                return ResourceManager.GetString("btnSaveDraftPart1", resourceCulture);
             }
         }
         
@@ -444,15 +399,6 @@ namespace Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Brand name.
-        /// </summary>
-        internal static string lblBrandName3 {
-            get {
-                return ResourceManager.GetString("lblBrandName3", resourceCulture);
-            }
-        }
-        
-        /// <summary>
         ///   Looks up a localized string similar to Contraindications.
         /// </summary>
         internal static string lblContraindications {
@@ -552,24 +498,6 @@ namespace Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to To load a new blank PM template for the creation of XML file, select a template type from the drop menu, and press the &quot;Load template&quot; button..
-        /// </summary>
-        internal static string lblLoadTemplateInst {
-            get {
-                return ResourceManager.GetString("lblLoadTemplateInst", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to To load an existing XML file, press the “Choose File” button (&quot;Browse...&quot; in Internet Explorer and Firefox), select the file and press the &quot;Open&quot; button in the file browser. Press the &quot;Load XML&quot; button..
-        /// </summary>
-        internal static string lblLoadXmlInst {
-            get {
-                return ResourceManager.GetString("lblLoadXmlInst", resourceCulture);
-            }
-        }
-        
-        /// <summary>
         ///   Looks up a localized string similar to Mechanism of action.
         /// </summary>
         internal static string lblMechanism {
@@ -660,24 +588,6 @@ namespace Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Brand name.
-        /// </summary>
-        internal static string lblProprietaryBrandName {
-            get {
-                return ResourceManager.GetString("lblProprietaryBrandName", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to Proper name.
-        /// </summary>
-        internal static string lblProprietaryProperName {
-            get {
-                return ResourceManager.GetString("lblProprietaryProperName", resourceCulture);
-            }
-        }
-        
-        /// <summary>
         ///   Looks up a localized string similar to Recommended dose and dosage adjustment.
         /// </summary>
         internal static string lblRecommended {
@@ -710,15 +620,6 @@ namespace Resources {
         internal static string lblSchedulingSymbol {
             get {
                 return ResourceManager.GetString("lblSchedulingSymbol", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to Scheduling Symbol.
-        /// </summary>
-        internal static string lblSchedulingSymbol2 {
-            get {
-                return ResourceManager.GetString("lblSchedulingSymbol2", resourceCulture);
             }
         }
         
@@ -764,15 +665,6 @@ namespace Resources {
         internal static string lblStorage {
             get {
                 return ResourceManager.GetString("lblStorage", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to Strength.
-        /// </summary>
-        internal static string lblStrength2 {
-            get {
-                return ResourceManager.GetString("lblStrength2", resourceCulture);
             }
         }
         
@@ -1047,7 +939,7 @@ namespace Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Proper Name.
+        ///   Looks up a localized string similar to Proper name.
         /// </summary>
         internal static string ProperNameMI {
             get {
@@ -1160,6 +1052,60 @@ namespace Resources {
         internal static string Structuralformula {
             get {
                 return ResourceManager.GetString("Structuralformula", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Form instructions.
+        /// </summary>
+        internal static string subMenuItem1 {
+            get {
+                return ResourceManager.GetString("subMenuItem1", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Back to the main page of DHPR form with form Instruction.
+        /// </summary>
+        internal static string subMenuItem1_tooltip {
+            get {
+                return ResourceManager.GetString("subMenuItem1_tooltip", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Cover page.
+        /// </summary>
+        internal static string subMenuItem2 {
+            get {
+                return ResourceManager.GetString("subMenuItem2", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Part I.
+        /// </summary>
+        internal static string subMenuItem3 {
+            get {
+                return ResourceManager.GetString("subMenuItem3", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Part II.
+        /// </summary>
+        internal static string subMenuItem4 {
+            get {
+                return ResourceManager.GetString("subMenuItem4", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Part III.
+        /// </summary>
+        internal static string subMenuItem5 {
+            get {
+                return ResourceManager.GetString("subMenuItem5", resourceCulture);
             }
         }
         
@@ -1421,24 +1367,6 @@ namespace Resources {
         internal static string tbDForm {
             get {
                 return ResourceManager.GetString("tbDForm", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to Unit.
-        /// </summary>
-        internal static string tbDUnit {
-            get {
-                return ResourceManager.GetString("tbDUnit", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to Vakue.
-        /// </summary>
-        internal static string tbDValue {
-            get {
-                return ResourceManager.GetString("tbDValue", resourceCulture);
             }
         }
         

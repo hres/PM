@@ -1308,11 +1308,11 @@
    <StaticMenuStyle VerticalPadding="5px" />
    <StaticMenuItemStyle HorizontalPadding="25px" />
       <Items>
-            <asp:MenuItem Text="Form instructions" Value="PMForm" ToolTip="Back to the main page of DHPR form with form Instruction"></asp:MenuItem>
-            <asp:MenuItem Text="Cover page" Value="Coverpage" ToolTip="Cover page of the form"></asp:MenuItem>
-            <asp:MenuItem Text="Part I" Value="PartOne" ToolTip="Part I of the form"></asp:MenuItem>
-            <asp:MenuItem Text="Part II" Value="PartTwo" ToolTip="Part II of the form"></asp:MenuItem>
-            <asp:MenuItem Text="Part III" Value="PartThree" ToolTip="Part III of the form"></asp:MenuItem>
+            <asp:MenuItem Value="PMForm" ></asp:MenuItem>
+            <asp:MenuItem Value="Coverpage" ></asp:MenuItem>
+            <asp:MenuItem Value="PartOne" ></asp:MenuItem>
+            <asp:MenuItem Value="PartTwo" ></asp:MenuItem>
+            <asp:MenuItem Value="PartThree" ></asp:MenuItem>
           </Items>
 </asp:Menu>
 <asp:Button ID="btnSaveDraftPart1" runat="server" cssclass="btn btn-default form-control paddingTop floatLeft" Text="Save draft" OnClick="btnSave_Click" ToolTip="Please save your form data in a draft file." /> 
@@ -1658,18 +1658,39 @@
 
         <div style="width:84.5%; text-align:center; clear:both; padding-left: 0px; padding-top:20px;">
             <div id="divTextBox109" style="text-align:left;">  
-                <div style="padding: 4px 4px 4px 0px"><label id="lblPHARMACOKINETICS" runat="server">Pharmacokinetics</label></div>                                              
+                <div style="padding: 4px 4px 4px 0px"><label id="lblPHARMACOKINETICS" runat="server">Pharmacokinetics</label></div> 
+                                                        
             </div>
+
         </div>
         
+       
         <div style="width:46%; float:left;">
             <input type="text" list="dlpharmacokinetics" id="tbSelectedPharmacokinetics" style="width: 500px; height:40px;"/>
             <datalist id="dlpharmacokinetics" ></datalist> 
         </div>     
         <div style="width:5%; float:left;">
             <input class="btn btn-default btn-xs" type="button" value="Add" runat="server" onclick="AddPharmacokineticsOuterSection()" id="btnAddPharmacokineticsOuterSection" />
-          </div> 
-
+          </div>
+         <div style="width:5%; float:left;">
+           <!--  <asp:Button ID="btnDynaTable" Text="Add Table" runat="server" cssclass="btn btn-default btn-xs" OnClick="btnCreateTable_Click" /> -->   
+        </div>
+          <div style="width:5%; float:left;">
+           <!--  <asp:Button ID="BtnRemoveTable" Text="Remove Table" runat="server" cssclass="btn btn-default btn-xs" OnClick="btnRemoveTable_Click" />    -->
+        </div>
+        <div id="pharmDynaTbl" style="clear:both; width:100%">
+            <asp:Label ID="lblErrMsgTbl" runat="server" CssClass="alert-info"></asp:Label>
+            <asp:Table ID="pTable" runat="server"
+               CellPadding="3" 
+               CellSpacing="0"
+               GridLines="both"
+               Caption="Pharmacokinetics Table"
+               class="wb-tables table table-striped table-hover" data-wb-tables='{ "ordering": false; "bLengthChange": true;"bFilter": true;}'
+               summary ="The Table of The Pharmacokinetics" title="Pharmacokinetics">
+        
+            </asp:Table>
+        </div>
+     
         <div id="dvExtraPharmacokineticsOuter" style="clear:both; width:100%">
         </div>  
 
@@ -1714,12 +1735,12 @@
    <StaticMenuStyle VerticalPadding="5px" />
    <StaticMenuItemStyle HorizontalPadding="25px" />
       <Items>
-            <asp:MenuItem Text="Form instructions" Value="PMForm" ToolTip="Back to the main page of DHPR form with form Instruction"></asp:MenuItem>
-            <asp:MenuItem Text="Cover page" Value="Coverpage" ToolTip="Cover page of the form"></asp:MenuItem>
-            <asp:MenuItem Text="Part I" Value="PartOne" ToolTip="Part I of the form"></asp:MenuItem>
-            <asp:MenuItem Text="Part II" Value="PartTwo" ToolTip="Part II of the form"></asp:MenuItem>
-            <asp:MenuItem Text="Part III" Value="PartThree" ToolTip="Part III of the form"></asp:MenuItem>
-          </Items>
+            <asp:MenuItem Value="PMForm"></asp:MenuItem>
+            <asp:MenuItem Value="Coverpage"></asp:MenuItem>
+            <asp:MenuItem Value="PartOne"></asp:MenuItem>
+            <asp:MenuItem Value="PartTwo"></asp:MenuItem>
+            <asp:MenuItem Value="PartThree"></asp:MenuItem>
+      </Items>
 </asp:Menu>
 </div>
 
