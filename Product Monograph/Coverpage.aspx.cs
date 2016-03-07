@@ -681,8 +681,8 @@ namespace Product_Monograph
             tbSUnit.InnerText = Resources.Resource.tbSUnit;
             tbDValue.InnerText = Resources.Resource.tbSValue;
             tbDUnit.InnerText = Resources.Resource.tbSUnit;
-
-            PharmaceuticalStandard.Text = Resources.Resource.PharmaceuticalStandard;
+            PharmaceuticalStandard.Text = Resources.Resource.tbPharmaceuticalStandard;
+          
             TherapeuticClassification.Text = Resources.Resource.TherapeuticClassification;
             lblSponsorName.Text = Resources.Resource.lblSponsorName;
             lblSponsorAddress.Text = Resources.Resource.lblSponsorAddress;
@@ -694,7 +694,7 @@ namespace Product_Monograph
 
             btnApplySumbol.Text = Resources.Resource.btnApplySumbol;
             btnSaveDraft.Text = Resources.Resource.btnSaveDraft;
-            btnSaveDraft.ToolTip = Resources.Resource.btnSaveDraft;
+            btnSaveDraft.ToolTip = Resources.Resource.btnSaveDraft_tooltip;
 
             btnAppendRow.Value = Resources.Resource.btnAppendRow;
             btnDeleteRow.Value = Resources.Resource.btnDeleteRow;

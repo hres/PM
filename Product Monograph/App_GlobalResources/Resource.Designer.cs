@@ -138,7 +138,7 @@ namespace Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Append Row.
+        ///   Looks up a localized string similar to Append row.
         /// </summary>
         internal static string btnAppendRow {
             get {
@@ -147,7 +147,7 @@ namespace Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Apply Symbol.
+        ///   Looks up a localized string similar to Apply symbol.
         /// </summary>
         internal static string btnApplySumbol {
             get {
@@ -165,7 +165,7 @@ namespace Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Delete Row.
+        ///   Looks up a localized string similar to Delete row.
         /// </summary>
         internal static string btnDeleteRow {
             get {
@@ -192,11 +192,20 @@ namespace Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Save Draft.
+        ///   Looks up a localized string similar to Save draft.
         /// </summary>
         internal static string btnSaveDraft {
             get {
                 return ResourceManager.GetString("btnSaveDraft", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Please save your form data in a draft file..
+        /// </summary>
+        internal static string btnSaveDraft_tooltip {
+            get {
+                return ResourceManager.GetString("btnSaveDraft_tooltip", resourceCulture);
             }
         }
         
@@ -264,7 +273,7 @@ namespace Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Cover Page.
+        ///   Looks up a localized string similar to Cover page.
         /// </summary>
         internal static string CoverPage {
             get {
@@ -390,7 +399,7 @@ namespace Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Brand Name.
+        ///   Looks up a localized string similar to Brand name.
         /// </summary>
         internal static string lblBrandName {
             get {
@@ -426,7 +435,7 @@ namespace Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Dosage Form.
+        ///   Looks up a localized string similar to Dosage form.
         /// </summary>
         internal static string lblDosageForm2 {
             get {
@@ -552,7 +561,7 @@ namespace Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Part I: Health Professional Information.
+        ///   Looks up a localized string similar to Part I: Health professional information.
         /// </summary>
         internal static string lblPartITitle {
             get {
@@ -615,7 +624,7 @@ namespace Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Scheduling Symbol.
+        ///   Looks up a localized string similar to Scheduling symbol.
         /// </summary>
         internal static string lblSchedulingSymbol {
             get {
@@ -930,7 +939,7 @@ namespace Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Anticipated medical procedures (Warnings and Precautions).
+        ///   Looks up a localized string similar to Anticipated medical procedures (Warnings and precautions).
         /// </summary>
         internal static string Procedure {
             get {
@@ -939,7 +948,7 @@ namespace Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Proper name.
+        ///   Looks up a localized string similar to Proper Name.
         /// </summary>
         internal static string ProperNameMI {
             get {
@@ -1110,7 +1119,7 @@ namespace Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Submission Control No.
+        ///   Looks up a localized string similar to Submission control No.
         /// </summary>
         internal static string SubmissionControlNo {
             get {
@@ -1218,7 +1227,7 @@ namespace Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Summary Product Information.
+        ///   Looks up a localized string similar to Summary product information.
         /// </summary>
         internal static string SumSummaryProductInformation {
             get {
@@ -1371,6 +1380,15 @@ namespace Resources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Pharmaceutical standard (if applicable).
+        /// </summary>
+        internal static string tbPharmaceuticalStandard {
+            get {
+                return ResourceManager.GetString("tbPharmaceuticalStandard", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Proper name.
         /// </summary>
         internal static string tbPName {
@@ -1403,6 +1421,15 @@ namespace Resources {
         internal static string tbSValue {
             get {
                 return ResourceManager.GetString("tbSValue", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Therapeutic classification.
+        /// </summary>
+        internal static string tbTherapeuticClassifications {
+            get {
+                return ResourceManager.GetString("tbTherapeuticClassifications", resourceCulture);
             }
         }
         

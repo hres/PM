@@ -502,7 +502,7 @@ précautions)</value>
     <comment>Part I</comment>
   </data>
   <data name="SumSummaryProductInformation" xml:space="preserve">
-    <value>Informations Sommaire du produit</value>
+    <value>Informations sommaire du produit</value>
     <comment>Part I</comment>
   </data>
   <data name="SUM_INDICATIONS" xml:space="preserve">
@@ -664,7 +664,7 @@ précautions)</value>
     <value>Retour à la page principale de la forme DHPR avec la forme d'instructions</value>
   </data>
   <data name="subMenuItem2" xml:space="preserve">
-    <value>Page de Couverture</value>
+    <value>Page de couverture</value>
   </data>
   <data name="subMenuItem3" xml:space="preserve">
     <value>Partie I</value>
@@ -677,5 +677,17 @@ précautions)</value>
   </data>
   <data name="btnRemoveVal" xml:space="preserve">
     <value>Retirer</value>
+  </data>
+  <data name="tbPharmaceuticalStandard" xml:space="preserve">
+    <value>Norme pharmaceutique (le cas échéant)</value>
+    <comment>Cover page</comment>
+  </data>
+  <data name="tbTherapeuticClassifications" xml:space="preserve">
+    <value>Classification thérapeutique</value>
+    <comment>Cover page</comment>
+  </data>
+  <data name="btnSaveDraft_tooltip" xml:space="preserve">
+    <value>S'il vous plaît enregistrer vos données de formulaire dans un projet de fichier.</value>
+    <comment>Cover page</comment>
   </data>
 </root>

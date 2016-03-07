@@ -1,0 +1,41 @@
+﻿@charset "utf-8";/*!
+/*!
+ * This .css file contains the customized format on PMForm for Cover page, Part I, Part II, Part III
+ * Created by Ching Chang
+ * v1.0. - 2016-Feb-29
+ *
+ */
+.width_22px{
+    width: 22px;
+}
+.width_52px
+{
+    width: 52px;
+}
+.width_120px{
+    width: 120px;
+}
+.width_158px{
+    width: 158px;
+}
+.width_400px{
+    width: 400px;
+}
+.height_24px{
+    height:24px;
+}
+.height_64px{
+    height:64px;
+}
+.height_18px{
+    height: 18px;
+}
+.height_inherit{
+    height: inherit;
+}
+.btnApplySymbol_style{
+    width: 220px; height:33px;
+}
+.imgQMark_style{
+    width: 15px; height: 15px;
+}

@@ -42,7 +42,7 @@
     <warning>Monitoring and Laboratory Tests</warning>
   </warningsprecautions>
   <schedulingsymbol>
-    <schedule value="select">Select</schedule>
+    <schedule value="select"></schedule>
     <schedule value="schedule1">Pr</schedule>
     <schedule value="schedule2">N</schedule>
     <schedule value="schedule3">CT</schedule>
@@ -63,7 +63,7 @@
     <dosage>dosage 5</dosage>
   </dosages>
   <unitofmeasure>
-    <unit>Select</unit>
+    <unit value="select"></unit>
     <unit>AMP</unit>
     <unit>B</unit>
     <unit>BOTTLE</unit>
@@ -167,7 +167,7 @@
     <unit>Log10 PFU</unit>  
   </unitofmeasure>
   <routeofadmin>
-    <route>Select</route>
+    <route value="select"></route>
     <route value="0-Unassigned">0-Unassigned</route>
     <route value="Block/Infiltration">Block/Infiltration</route>
     <route value="Buccal">Buccal</route>
@@ -252,7 +252,7 @@
     <route value="Vaginal">Vaginal</route>
   </routeofadmin>
   <dosageforms>
-      <dosageform>Select</dosageform>
+      <dosageform value="select"></dosageform>
       <dosageform value="0-Unassigned">0-Unassigned</dosageform>
       <dosageform value="Aerosol">Aerosol</dosageform>
       <dosageform value="Aerosol, Foam">Aerosol, Foam</dosageform>

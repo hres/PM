@@ -29,6 +29,7 @@
 	<!--<![endif]-->
 	<link rel="stylesheet" href="./distro/4.0.19/css/theme.min.css" />
     <link rel="stylesheet" href="//netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.css" />
+    <link rel="stylesheet" href="./distro/4.0.19/css/pmp.css" />
     <!--<![endif]-->
     <!--[if lt IE 9]>
 		<link href="./distro/4.0.19/assets/favicon.ico" rel="shortcut icon" />

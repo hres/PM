@@ -29,6 +29,7 @@
 	<!--<![endif]-->
 	<link rel="stylesheet" href="./distro/4.0.19/css/theme.min.css" />
     <link rel="stylesheet" href="//netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.css" />
+    <link rel="stylesheet" href="./distro/4.0.19/css/pmp.css" />
     <!--<![endif]-->
     <!--[if lt IE 9]>
 		<link href="./distro/4.0.19/assets/favicon.ico" rel="shortcut icon" />
@@ -90,17 +91,11 @@
     <div class="col-lg-12">
         <label id="lblError" runat="server" style="color:red;"></label>
     </div>
-      
-      
-    
     <form id="form1"  runat="server">
-	        
-           <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server">
-           </asp:ContentPlaceHolder>
+        <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server">
+        </asp:ContentPlaceHolder>
     </form>
-    
-</main>   
-         
+</main>            
 <!-- FOOTER STARTS | DEBUT DU PIED DE LA PAGE --> 
     <asp:ContentPlaceHolder ID="foot" runat="server">
         <!--#include file="/distro/4.0.19/footer-en.aspx"-->
