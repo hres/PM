@@ -183,6 +183,15 @@ namespace Resources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Load template.
+        /// </summary>
+        internal static string btnLoadTemplate {
+            get {
+                return ResourceManager.GetString("btnLoadTemplate", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Remove.
         /// </summary>
         internal static string btnRemoveVal {
@@ -462,6 +471,15 @@ namespace Resources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Please choose an xml file..
+        /// </summary>
+        internal static string lblErr_PlsChooseXML {
+            get {
+                return ResourceManager.GetString("lblErr_PlsChooseXML", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to For management of a suspected drug overdose, contact your regional Poison Control For management of a suspected drug overdose, contact your regional Poison Control Centre.
         /// </summary>
         internal static string lblForManagement {
@@ -503,6 +521,15 @@ namespace Resources {
         internal static string lblIngredients {
             get {
                 return ResourceManager.GetString("lblIngredients", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Load XML file.
+        /// </summary>
+        internal static string lblLoadXML {
+            get {
+                return ResourceManager.GetString("lblLoadXML", resourceCulture);
             }
         }
         
@@ -629,6 +656,15 @@ namespace Resources {
         internal static string lblSchedulingSymbol {
             get {
                 return ResourceManager.GetString("lblSchedulingSymbol", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Select a template:.
+        /// </summary>
+        internal static string lblSelectTemplate {
+            get {
+                return ResourceManager.GetString("lblSelectTemplate", resourceCulture);
             }
         }
         

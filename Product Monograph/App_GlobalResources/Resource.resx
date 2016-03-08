@@ -699,4 +699,20 @@
     <value>Please save your form data in a draft file.</value>
     <comment>Cover page</comment>
   </data>
+  <data name="btnLoadTemplate" xml:space="preserve">
+    <value>Load template</value>
+    <comment>PMForm</comment>
+  </data>
+  <data name="lblErr_PlsChooseXML" xml:space="preserve">
+    <value>Please choose an xml file.</value>
+    <comment>PMForm</comment>
+  </data>
+  <data name="lblLoadXML" xml:space="preserve">
+    <value>Load XML file</value>
+    <comment>PMForm</comment>
+  </data>
+  <data name="lblSelectTemplate" xml:space="preserve">
+    <value>Select a template:</value>
+    <comment>PMForm</comment>
+  </data>
 </root>

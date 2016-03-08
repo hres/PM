@@ -16,7 +16,7 @@ namespace Product_Monograph
             if (Session["masterpage"] != null)
             {
                 this.MasterPageFile = (String)Session["masterpage"];
-                
+
             }
         }
 
@@ -45,15 +45,9 @@ namespace Product_Monograph
             }
 
 
-            
+            facilityResourcePMForm();
 
-            lblUsingxml.Text = Resources.Resource.UsingXMLPM;
-
-            lblBody.Text = ResourceHelpers.WrapTextBlockIntoParagraphs(Resources.Resource.Body).ToString().Replace("qmark", "<img src='images/qmark.jpg' style='width: 15px; height: 15px;' />");
-
-            lblTechSpec.Text = Resources.Resource.TechnicalSpecs;
-            lblTitleFormInstructions.Text = Resources.Resource.TitleFormInstructions;
-            lblBottomBody.Text = ResourceHelpers.WrapTextBlockIntoParagraphs(Resources.Resource.BottomBody).ToString();
+           
 
             lblError.Text = "";
         }
@@ -83,8 +77,8 @@ namespace Product_Monograph
 
             Response.Redirect("Coverpage.aspx");
         }
- 
-    protected void btnLoadXml_Click(object sender, EventArgs e)
+
+        protected void btnLoadXml_Click(object sender, EventArgs e)
         {
             try
             {
@@ -95,14 +89,14 @@ namespace Product_Monograph
                     FileInfo fi = new FileInfo(fuXmlDraft.FileName);
                     if (!fi.Extension.ToString().ToLower().Contains("xml"))
                     {
-                        lblError.Text = "Please choose an xml file.";
+                        lblError.Text = Resources.Resource.lblErr_PlsChooseXML;  //  "Please choose an xml file.";
                         return;
                     }
 
                 }
                 else
                 {
-                    lblError.Text = "Please choose an xml file.";
+                    lblError.Text = Resources.Resource.lblErr_PlsChooseXML; //"Please choose an xml file.";
                     return;
                 }
 
@@ -116,7 +110,25 @@ namespace Product_Monograph
             {
                 lblError.Text = err.ToString();
             }
-        }  
+        }
+        protected void facilityResourcePMForm()
+        {
+            lblUsingxml.Text = Resources.Resource.UsingXMLPM;
+            lblBody.Text = ResourceHelpers.WrapTextBlockIntoParagraphs(Resources.Resource.Body).ToString().Replace("qmark", "<img src='images/qmark.jpg' style='width: 15px; height: 15px;' alt='help of message' />");
+
+            lblTechSpec.Text = Resources.Resource.TechnicalSpecs;
+            lblTitleFormInstructions.Text = Resources.Resource.TitleFormInstructions;
+            lblBottomBody.Text = ResourceHelpers.WrapTextBlockIntoParagraphs(Resources.Resource.BottomBody).ToString();
+            lblSelectTemplate.Text = Resources.Resource.lblSelectTemplate;
+            btnLoadTemplate.Text = Resources.Resource.btnLoadTemplate;
+            btnLoadTemplate.ToolTip = Resources.Resource.btnLoadTemplate;
+            btnLoadXml_PMForm.Text = Resources.Resource.lblLoadXML;
+
+
+
+
+        }
+
     }
 
     public static class ResourceHelpers

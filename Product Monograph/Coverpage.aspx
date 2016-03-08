@@ -264,6 +264,7 @@
         var selectedschedulingsymbol;
 
         $(document).ready(function () {
+          
             //reset image on change of dropdown list
             $("#tbSchedulingSymbol").change(function () {
                 $('#imgSymbol').attr("src", "images/x.png");
@@ -283,7 +284,8 @@
 
             //ching created table default row
             AddBrandProperDosageDefaultRow();
-
+         
+            $.webshims.polyfill('forms forms-ext');
         });
 
         function ApplySchedulingSymbol()
@@ -335,26 +337,25 @@
    <input id="Button3" type="button" value="Hide" />
    <input id="Button4" type="button" value="Show" />
 </div>
-<div class="form-group">
-   <div class="margin-top-medium">          
-      <strong><asp:Label id="lblSchedulingSymbol" For="tbSchedulingSymbol" runat="server" CssClass="control-label"></asp:Label>
-      </strong>
-   </div>
-   <div class="row">
-        <div class="col-xs-10 text-left">       
-           <select id="tbSchedulingSymbol" class="list-group btnApplySymbol_style"/> 
-           <input class="btn btn-default btn-sm form-control mrgn-lft-sm" onclick="ApplySchedulingSymbol()" type="button" id="btnlblApplySymbol" runat="server" />
-       </div>
-   </div>
-</div>
-
-  <div class="row left">
-       <div class="hidden"><asp:FileUpload id="fuBrnandSymbol" runat="server" class="width_400px"/></div>
-       <div class="hidden"><asp:Button id="btnApplySumbol" runat="server" onClick="btnApplySumbol_Click" class="btn btn-default btn-sm" /></div>
-          <img id="imgSymbol" src="images/x.png" width="100" height="100" class="cell-border mrgn-lft-lg"/>                     
-       <input type="text" id="tbxmlimgnameSymbol" name="tbxmlimgnameSymbol" class="hidden" />
-       <input type="text" id="tbxmlimgfilenameSymbol" name="tbxmlimgfilenameSymbol" class="hidden" /> 
+<div class="form-group margin-top-medium">
+  <div class="row">
+  <div class="col-sm-2">
+     <Label id="lblSchedulingSymbol" for="tbSchedulingSymbol" runat="server" >:</Label>
   </div>
+  <div class="col-sm-2">
+     <select ID="tbSchedulingSymbol" onchange="ApplySchedulingSymbol()" class="form-control width_120px"></select> 
+  </div>
+  <div class="col-sm-4">
+     <div class="hidden">
+        <asp:FileUpload id="fuBrnandSymbol" runat="server" />
+        <asp:Button id="btnApplySumbol" runat="server" onClick="btnApplySumbol_Click" class="btn btn-default btn-sm" />
+     </div>
+       <img id="imgSymbol" src="images/x.png" width="100" height="100" alt="Apply symbol"/>                     
+     <input type="text" id="tbxmlimgnameSymbol" name="tbxmlimgnameSymbol" class="hidden" />
+     <input type="text" id="tbxmlimgfilenameSymbol" name="tbxmlimgfilenameSymbol" class="hidden" /> 
+  </div>
+</div>
+</div>
 
 <!--Brand  Dosage Form Table -->
 <div class="margin-top-medium"> 
@@ -370,44 +371,46 @@
     -->
 </div>
 </div>
+<div class="form-group left">
 <div class="row table-responsive">
    <table id="dataTable" class="wb-tables table table-striped table-hover" data-wb-tables='{ "ordering": false; "bLengthChange": false;"bFilter": true;}'
-       summary="The Table of The Brand Dosage Form" title="The Brand Dosage Form">
+        title="The Brand Dosage Form">
+       <caption></caption>
         <thead>
-            <tr class="height_64px">
-                <th class="width_22px height_inherit"></th>
-                <th class="width_22px height_inherit"></th>
-                <th id="thBrandName" title="BrandName" class="width_120px height_inherit"><label id="tbBName" runat="server"></label><br />&nbsp;</th>
-                <th id="thProperName" title="ProperName" class="width_120px height_inherit"><label id="tbPName" runat="server"></label><br />&nbsp;</th>
-                <th id="thDosageForm" title="DosageForm" class="width_120px height_inherit"><label id="tbDForm" runat="server"></label><br />&nbsp;</th>
-                <th id="thStrength" title="Strength" class="width_158px height_inherit"><label id="tbStrength" runat="server"></label><br /><label id="tbSValue" runat="server"></label> | <label id="tbSUnit" runat="server"></label></th>
-                <th id="thStrengthPerDosage" title="StrengthPerDosage" class="width_158px height_inherit"><label id="lblStrengthperDosage" runat="server"></label><br /><label id="tbDValue" runat="server"></label> | <label id="tbDUnit" runat="server" ></label></th>   
+            <tr>
+                <th></th>
+                <th></th>
+                <th scope="col" id="thBrandName" title="BrandName"><Label id="tbBName" runat="server"></Label><br />&#32;</th>
+                <th scope="col" id="thProperName" title="ProperName"><Label id="tbPName" runat="server"></Label><br />&#32;</th>
+                <th scope="col" id="thDosageForm" title="DosageForm"><Label id="tbDForm" runat="server"></Label><br />&#32;</th>
+                <th scope="col" id="thStrength" title="Strength"><Label id="tbStrength" runat="server"></Label><br /><label id="tbSValue" runat="server"></label> | <label id="tbSUnit" runat="server"></label></th>
+                <th scope="col" id="thStrengthPerDosage" title="StrengthPerDosage" ><asp:Label id="lblStrengthperDosage" runat="server"></asp:Label><br /><label id="tbDValue" runat="server"></label> | <label id="tbDUnit" runat="server" ></label></th>   
             </tr>
         </thead>
         <tbody>
            <tr>
-               <td style="width: inherit"><input type="checkbox" id="tbChkRemove" class="width_22px height_18px" /></td>
-               <td style="width: inherit"><input id="tbBtnRemove" type="button" onclick="deleteRowBtnRow(this)" name="btnDelete" value="X" class="btn btn-default btn-xs" /></td>   
-               <th headers="thBrandName" data-required="true"><input type="text" id="tbBrandname" name="tbBrandname" class="col-sm-12" /></th>
-               <td headers="thProperName"><input type="text" id="tbPropername" name="tbPropername" class="col-sm-12"/></td>
+               <td><input type="checkbox" id="tbChkRemove" /></td>
+               <td><input id="tbBtnRemove" type="button" onclick="deleteRowBtnRow(this)" name="btnDelete" value="X" class="btn btn-default btn-xs" /></td>   
+               <th headers="thBrandName" data-required="true"><input type="text" id="tbBrandname" name="tbBrandname" class="form-control" /></th>
+               <td headers="thProperName"><input type="text" id="tbPropername" name="tbPropername" class="form-control" /></td>
                <td headers="thDosageForm">
-                   <select id="tbDosage" name="tbDosage" class="col-sm-12 height_24px">
+                   <select id="tbDosage" name="tbDosage" class="form-control" style="font-size: medium" >
                    </select></td>                
                <td headers="thStrength">
-                   <input type="number" id="tbStrengthValue" name="tbStrengthValue" value="0" class="width_52px"/>
-                   <select id="tbStrengthUnit" name="tbStrengthUnit" class="height_inherit">             
+                   <input type="number" id="tbStrengthValue" name="tbStrengthValue" value="0" class="form-control" />
+                   <select id="tbStrengthUnit" name="tbStrengthUnit" class="form-control" style="font-size: medium" >             
                    </select>            
                </td>
                <td headers="thStrengthPerDosage">
-                   <input type="number" id="tbStrengthperDosageValue" name="tbStrengthperDosageValue" value="0" class="width_52px"/>                     
-                   <select id="tbStrengthperDosageUnit" name="tbStrengthperDosageUnit" class="height_inherit">
+                   <input type="number" id="tbStrengthperDosageValue" name="tbStrengthperDosageValue" value="0" class="form-control" />                     
+                   <select id="tbStrengthperDosageUnit" name="tbStrengthperDosageUnit" class="form-control" style="position: inherit; font-size: medium;" >
                    </select>                               
                </td>
           </tr>
        </tbody>
    </table> 
 </div>
-
+</div>
 <!--<section class="margin-top-medium table-response hidden">
     <div style="width:18.88%; float:left; border: 1px solid #D9D9D9; height:54px; padding:2px;">
         <label id="lblBrandname" lang="en" class="text-info">Brand name</label>
@@ -440,11 +443,11 @@
 <!--End of Brand Table -->
 <div class="form-group">
     <div class="margin-top-medium">  
-         <asp:Label id="PharmaceuticalStandard" AssociatedControlID="tbPharmaceuticalStandard" runat="server" CssClass="control-label"></asp:Label>                             
+         <asp:Label id="PharmaceuticalStandard"  AssociatedControlID="tbPharmaceuticalStandard" runat="server" CssClass="control-label"></asp:Label>                             
     </div>
     <div class="row"> 
          <div class="col-xs-10 text-left"> 
-           <asp:TextBox id="tbPharmaceuticalStandard" runat="server" CausesValidation="True" MaxLength="200" class="form-control"></asp:TextBox>                                
+           <asp:TextBox id="tbPharmaceuticalStandard" runat="server" CausesValidation="True" MaxLength="200" CssClass="form-control"></asp:TextBox>                                
          </div>
     </div>
 </div>
@@ -454,7 +457,7 @@
     </div>
     <div class="row"> 
         <div class="col-xs-10 text-left"> 
-          <asp:TextBox id="tbTherapeuticClassifications" runat="server" CausesValidation="True" MaxLength="200" class="form-control"></asp:TextBox>    
+          <asp:TextBox id="tbTherapeuticClassifications" runat="server" CausesValidation="True" MaxLength="200" CssClass="form-control"></asp:TextBox>    
         </div>                            
     </div>
 </div>
@@ -464,7 +467,7 @@
     </div>
     <div class="row"> 
         <div class="col-xs-10 text-left">                                      
-           <asp:TextBox id="tbSponsorName" runat="server" CausesValidation="True" MaxLength="200" class="form-control"></asp:TextBox>                                
+           <asp:TextBox id="tbSponsorName" runat="server" CausesValidation="True" MaxLength="200" CssClass="form-control"></asp:TextBox>                                
         </div>  
     </div>
     <div class="margin-top-medium">                                                 
@@ -480,14 +483,14 @@
     <div class="row margin-top-medium">
        <div class="col-sm-3 left">
            <asp:Label ID="lblDateOfPreparation" AssociatedControlID="tbDatePrep" runat="server" CssClass="control-label"><span class="field-name"></span><span class="datepicker-format"> (<abbr title="Four digits year, dash, two digits month, dash, two digits day">YYYY-MM-DD</abbr>)</span></asp:Label>
-           <asp:TextBox runat="server" id="tbDatePrep" CssClass="form-control" type="date" name="tbDatePrep" data-rule-dateiso="true"></asp:TextBox>   
+           <asp:TextBox runat="server" id="tbDatePrep" CssClass="form-control" type="date" data-rule-dateiso="true"></asp:TextBox>   
        </div>
        <div class="col-sm-1 text-left">
            <strong><asp:label id="lblAndOr" runat="server" CssClass="control-label"></asp:label></strong> 
        </div>
        <div class="col-sm-5 text-left">
            <asp:Label ID="lblDateOfRevision" AssociatedControlID="tbDateRev" runat="server" CssClass="control-label"><span class="field-name"></span><span class="datepicker-format"> (<abbr title="Four digits year, dash, two digits month, dash, two digits day">YYYY-MM-DD</abbr>)</span></asp:Label>
-           <asp:TextBox runat="server" id="tbDateRev" CssClass="form-control" type="date" name="tbDateRev" data-rule-dateiso="true" ></asp:TextBox>
+           <asp:TextBox runat="server" id="tbDateRev" CssClass="form-control" type="date" data-rule-dateiso="true" ></asp:TextBox>
        </div>
    </div>
 </div>
@@ -497,7 +500,7 @@
    </div>   
    <div class="row"> 
        <div class="col-xs-10 text-left">            
-          <asp:TextBox id="tbControNum" runat="server" maxLength="6" class="form-control"></asp:TextBox>
+          <asp:TextBox id="tbControNum" runat="server" maxLength="6" CssClass="form-control"></asp:TextBox>
           <cc1:FilteredTextBoxExtender id="tbControNum_FilteredTextBoxExtender" filterType="Numbers" runat="server" targetControlID="tbControNum" />
        </div>
    </div>
@@ -685,8 +688,7 @@
                         $('#dataTable tr').append($("<td>"));
                         //add header text by input column name
                         $('#dataTable thead tr>td:last').html($('#txtColumnName').val()); 
-                        $('#dataTable tbody tr').each(function () {
-                          
+                        $('#dataTable tbody tr').each(function () {                       
                             newColID = newColNames[columnCount] + rowCountForCol;  //append new column name with row count
                             $(this).children('td:last').append($('<input type="textbox"> id="' + newColID + '" name="' + newColID + '" ')) 
                             rowCountForCol = rowCountForCol + 1;
@@ -703,7 +705,7 @@
         //JQUERY Remove Column
         $('#btnDelCol').click(function () {
             //if table column length is over 7, it stops deleting
-            if (columnCount > 0) {
+            if (columnCount > 1) {
                 $("#dataTable th:last-child, #dataTable td:last-child").remove();
                 newColNames[columnCount] = ""; //clear the last column name
                 columnCount = columnCount - 1;

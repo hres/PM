@@ -668,15 +668,15 @@ namespace Product_Monograph
 
 
             CoverPage.Text = Resources.Resource.CoverPage;
-            lblSchedulingSymbol.Text = Resources.Resource.lblSchedulingSymbol;
-            btnlblApplySymbol.Value = Resources.Resource.btnlblApplySymbol;
-        
+            lblSchedulingSymbol.InnerText = Resources.Resource.lblSchedulingSymbol;
+            //btnlblApplySymbol.Value = Resources.Resource.btnlblApplySymbol;
+            
 
             tbBName.InnerText = Resources.Resource.tbBName;
             tbPName.InnerText = Resources.Resource.tbPName;
             tbDForm.InnerText = Resources.Resource.tbDForm;
             tbStrength.InnerText = Resources.Resource.tbStrength;
-            lblStrengthperDosage.InnerText = Resources.Resource.lblStrengthperDosage;
+            lblStrengthperDosage.Text = Resources.Resource.lblStrengthperDosage;
             tbSValue.InnerText = Resources.Resource.tbSValue;
             tbSUnit.InnerText = Resources.Resource.tbSUnit;
             tbDValue.InnerText = Resources.Resource.tbSValue;

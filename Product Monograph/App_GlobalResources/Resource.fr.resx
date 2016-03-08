@@ -690,4 +690,20 @@ précautions)</value>
     <value>S'il vous plaît enregistrer vos données de formulaire dans un projet de fichier.</value>
     <comment>Cover page</comment>
   </data>
+  <data name="btnLoadTemplate" xml:space="preserve">
+    <value>Modèle de charge</value>
+    <comment>PMForm</comment>
+  </data>
+  <data name="lblErr_PlsChooseXML" xml:space="preserve">
+    <value>S'il vous plaît choisir un fichier xml.</value>
+    <comment>PMForm</comment>
+  </data>
+  <data name="lblLoadXML" xml:space="preserve">
+    <value>Fichier XML de charge</value>
+    <comment>PMForm</comment>
+  </data>
+  <data name="lblSelectTemplate" xml:space="preserve">
+    <value>Sélectionnez un modèle:</value>
+    <comment>PMForm</comment>
+  </data>
 </root>

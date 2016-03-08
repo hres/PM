@@ -1,32 +1,32 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <controlledlist>
   <adversereactions>
-    <reaction>Select</reaction>
-    <reaction>Clinical Trial Adverse Drug Reactions</reaction>
+    <reaction value="Select"></reaction>
+    <reaction>Clinical trial adverse drug reactions</reaction>
     <reaction>Description of data sources</reaction>
-    <reaction>Relative Frequency of Adverse Drug Reactions</reaction>
-    <reaction>Less Common Clinical Trial Adverse Drug</reaction>
-    <reaction>Abnormal Hematologic and Clinical Chemistry Findings</reaction>
-    <reaction>Post-Market Adverse Drug Reactions</reaction>
+    <reaction>Relative frequency of adverse drug reactions</reaction>
+    <reaction>Less common clinical trial adverse drug</reaction>
+    <reaction>Abnormal hematologic and clinical chemistry findings</reaction>
+    <reaction>Post-Market adverse drug reactions</reaction>
   </adversereactions>
   <druginteractions>
-    <interaction>Select</interaction>
-    <interaction>Drug-Drug Interactions</interaction>
-    <interaction>Drug-Food Interactions</interaction>
-    <interaction>Drug-Herb Interactions</interaction>
-    <interaction>Drug-Laboratory Interactions</interaction>
-    <interaction>Drug-Lifestyle Interactions</interaction>    
+    <interaction value="Select"></interaction>
+    <interaction>Drug-Drug interactions</interaction>
+    <interaction>Drug-Food interactions</interaction>
+    <interaction>Drug-Herb interactions</interaction>
+    <interaction>Drug-Laboratory interactions</interaction>
+    <interaction>Drug-Lifestyle interactions</interaction>    
   </druginteractions>
   <pharmacokinetics>
-    <kinetics>Select</kinetics>
+    <kinetics value="Select"></kinetics>
     <kinetics>Absorption</kinetics>
     <kinetics>Distribution</kinetics>
     <kinetics>Metabolism</kinetics>
     <kinetics>Excretion</kinetics>    
   </pharmacokinetics>
   <warningsprecautions>
-    <warning>Select</warning>
-    <warning>Carcinogenesis and Mutagenesis</warning>
+    <warning value="Select"></warning>
+    <warning>Carcinogenesis and mutagenesis</warning>
     <warning>Cardiovascular</warning>
     <warning>Dependence/Tolerance</warning>
     <warning>Ear/Nose/Throat</warning>
@@ -34,12 +34,12 @@
     <warning>Gastrointestinal</warning>
     <warning>Genitourinary</warning>
     <warning>Hematologic</warning>
-    <warning>Special Populations</warning>
-    <warning>Pregnant Women</warning>
-    <warning>Nursing Women</warning>
+    <warning>Special populations</warning>
+    <warning>Pregnant women</warning>
+    <warning>Nursing women</warning>
     <warning>Pediatrics (x - y years of age)</warning>
     <warning>Geriatrics (> x years of age)</warning>
-    <warning>Monitoring and Laboratory Tests</warning>
+    <warning>Monitoring and laboratory tests</warning>
   </warningsprecautions>
   <schedulingsymbol>
     <schedule value="select"></schedule>
@@ -55,7 +55,7 @@
     <schedule4>c.png</schedule4>
   </symbolpath>
   <dosages>
-    <dosage>Select</dosage>
+    <dosage value="Select"></dosage>
     <dosage>dosage 1</dosage>
     <dosage>dosage 2</dosage>
     <dosage>dosage 3</dosage>
@@ -66,8 +66,8 @@
     <unit value="select"></unit>
     <unit>AMP</unit>
     <unit>B</unit>
-    <unit>BOTTLE</unit>
-    <unit>BOX</unit>
+    <unit>Bottle</unit>
+    <unit>Box</unit>
     <unit>C</unit>
     <unit>CAN</unit>
     <unit>CAP</unit>
@@ -75,7 +75,7 @@
     <unit>CH</unit>
     <unit>CM</unit>
     <unit>DH</unit>
-    <unit>DISK</unit>
+    <unit>Disk</unit>
     <unit>FL DR</unit>
     <unit>FL OZ</unit>
     <unit>GAL</unit>
@@ -100,58 +100,58 @@
     <unit>OZ</unit>
     <unit>PCK</unit>
     <unit>%</unit>
-    <unit>PIECE</unit>
+    <unit>Piece</unit>
     <unit>SQ CM</unit>
     <unit>SQ IN</unit>
     <unit>SYR</unit>
     <unit>TAB</unit>
     <unit>TBS</unit>
     <unit>TM</unit>
-    <unit>TRACE</unit>
+    <unit>Trace</unit>
     <unit>TRU</unit>
     <unit>TSP</unit>
     <unit>TUB</unit>
-    <unit>TUBE</unit>
+    <unit>Tube</unit>
     <unit>UNIT</unit>
     <unit>VIAL</unit>
     <unit>X</unit>
     <unit>K</unit>
-    <unit>DOSE</unit>
+    <unit>Dose</unit>
     <unit>D</unit>
     <unit>SUP</unit>
     <unit>ACT</unit>
-    <unit>BAR</unit>
-    <unit>BLISTER</unit>
+    <unit>Bar</unit>
+    <unit>Blister</unit>
     <unit>CUB</unit>
     <unit>DRE</unit>
-    <unit>GUM</unit>
+    <unit>Gum</unit>
     <unit>IMP</unit>
-    <unit>PAD</unit>
-    <unit>PEN</unit>
+    <unit>Pad</unit>
+    <unit>Pen</unit>
     <unit>PLS</unit>
     <unit>CFU</unit>
-    <unit>INSERT</unit>
+    <unit>Insert</unit>
     <unit>CMK</unit>
     <unit>LMK</unit>
     <unit>XMK</unit>
     <unit>DROP</unit>
-    <unit>SPRAY</unit>
+    <unit>Spray</unit>
     <unit>GALU</unit>
-    <unit>CELL</unit>
+    <unit>Cell</unit>
     <unit>MCL</unit>
-    <unit>CARTRIDGE</unit>
-    <unit>JAR</unit>
+    <unit>Cartridge</unit>
+    <unit>Jar</unit>
     <unit>MIU</unit>
-    <unit>MOLAR</unit>
+    <unit>Molar</unit>
     <unit>PPM</unit>
     <unit>NG</unit>
     <unit>MCMOL</unit>
     <unit>CYLR</unit>
-    <unit>PATCH</unit>
+    <unit>Patch</unit>
     <unit>PFU</unit>
     <unit>KIU</unit>
     <unit>VTAB</unit>
-    <unit>HOUR</unit>
+    <unit>hour</unit>
     <unit>CCID50</unit>
     <unit>GBQ</unit>
     <unit>KBq</unit>
@@ -225,7 +225,7 @@
     <route value="Irrigation">Irrigation</route>
     <route value="Nasal">Nasal</route>
     <route value="Nasogastric">Nasogastric</route>
-    <route value="Nerve Block">Nerve Block</route>
+    <route value="Nerve Block">Nerve block</route>
     <route value="Ophthalmic">Ophthalmic</route>
     <route value="Oral">Oral</route>
     <route value="Otic">Otic</route>
@@ -234,7 +234,7 @@
     <route value="Periosteal">Periosteal</route>
     <route value="Rectal">Rectal</route>
     <route value="Retrobulbar">Retrobulbar</route>
-    <route value="Soft Tissue Injection">Soft Tissue Injection</route>
+    <route value="Soft Tissue Injection">Soft tissue injection</route>
     <route value="Subarachnoidal">Subarachnoidal</route>
     <route value="Subcutaneous">Subcutaneous</route>
     <route value="Subgingival">Subgingival</route>
@@ -243,7 +243,7 @@
     <route value="Surgical">Surgical</route>
     <route value="Topical">Topical</route>
     <route value="Topical (Commercial)">Topical (Commercial)</route>
-    <route value="Topical (Food Premises)">Topical (Food Premises)</route>
+    <route value="Topical (Food Premises)">Topical (Food premises)</route>
     <route value="Topical (Hospital/Hc Facilities)">Topical (Hospital/Hc Facilities)</route>
     <route value="Topical (Household)">Topical (Household)</route>
     <route value="Transdermal">Transdermal</route>
@@ -255,18 +255,18 @@
       <dosageform value="select"></dosageform>
       <dosageform value="0-Unassigned">0-Unassigned</dosageform>
       <dosageform value="Aerosol">Aerosol</dosageform>
-      <dosageform value="Aerosol, Foam">Aerosol, Foam</dosageform>
-      <dosageform value="Aerosol, Metered Dose">Aerosol, Metered Dose</dosageform>
+      <dosageform value="Aerosol, Foam">Aerosol, foam</dosageform>
+      <dosageform value="Aerosol, Metered Dose">Aerosol, metered dose</dosageform>
       <dosageform value="Bar (Chewable)">Bar (Chewable)</dosageform>
       <dosageform value="Bolus">Bolus</dosageform>
       <dosageform value="Capsule">Capsule</dosageform>
       <dosageform value="Capsule (Controlled-Delivery)">Capsule (Controlled-Delivery)</dosageform>
-      <dosageform value="Capsule (Delayed Release)">Capsule (Delayed Release)</dosageform>
+      <dosageform value="Capsule (Delayed Release)">Capsule (Delayed release)</dosageform>
       <dosageform value="Capsule (Enteric-Coated)">Capsule (Enteric-Coated)</dosageform>
-      <dosageform value="Capsule (Extended Release)">Capsule (Extended Release)</dosageform>
-      <dosageform value="Capsule (Immediate And Delayed Release)">Capsule (Immediate And Delayed Release)</dosageform>
-      <dosageform value="Capsule (Immediate And Extended Release)">Capsule (Immediate And Extended Release)</dosageform>
-      <dosageform value="Capsule (Immediate Release)">Capsule (Immediate Release)</dosageform>
+      <dosageform value="Capsule (Extended Release)">Capsule (Extended release)</dosageform>
+      <dosageform value="Capsule (Immediate And Delayed Release)">Capsule (Immediate and delayed release)</dosageform>
+      <dosageform value="Capsule (Immediate And Extended Release)">Capsule (Immediate and extended release)</dosageform>
+      <dosageform value="Capsule (Immediate Release)">Capsule (Immediate release)</dosageform>
       <dosageform value="Capsule (Sustained-Release)">Capsule (Sustained-Release)</dosageform>
       <dosageform value="Cord">Cord</dosageform>
       <dosageform value="Cream">Cream</dosageform>
@@ -275,11 +275,11 @@
       <dosageform value="Douche">Douche</dosageform>
       <dosageform value="Dressing">Dressing</dosageform>
       <dosageform value="Drops">Drops</dosageform>
-      <dosageform value="Drug Premix">Drug Premix</dosageform>
+      <dosageform value="Drug Premix">Drug premix</dosageform>
       <dosageform value="Elixir">Elixir</dosageform>
       <dosageform value="Emulsion">Emulsion</dosageform>
       <dosageform value="Enema">Enema</dosageform>
-      <dosageform value="Film, Soluble">Film, Soluble</dosageform>
+      <dosageform value="Film, Soluble">Film, soluble</dosageform>
       <dosageform value="Floss">Floss</dosageform>
       <dosageform value="Gas">Gas</dosageform>
       <dosageform value="Gel">Gel</dosageform>
@@ -287,10 +287,10 @@
       <dosageform value="Globules">Globules</dosageform>
       <dosageform value="Granules">Granules</dosageform>
       <dosageform value="Granules (Effervescents)">Granules (Effervescents)</dosageform>
-      <dosageform value="Granules For Solution">Granules For Solution</dosageform>
-      <dosageform value="Granules For Suspension">Granules For Suspension</dosageform>
-      <dosageform value="Granules For Suspension, Delayed Release">Granules For Suspension, Delayed Release</dosageform>
-      <dosageform value="Granules For Suspension,Extended Release">Granules For Suspension,Extended Release</dosageform>
+      <dosageform value="Granules For Solution">Granules for solution</dosageform>
+      <dosageform value="Granules For Suspension">Granules for suspension</dosageform>
+      <dosageform value="Granules For Suspension, Delayed Release">Granules for suspension, delayed release</dosageform>
+      <dosageform value="Granules For Suspension,Extended Release">Granules for suspension, extended release</dosageform>
       <dosageform value="Gum">Gum</dosageform>
       <dosageform value="Implant">Implant</dosageform>
       <dosageform value="Insert">Insert</dosageform>
@@ -300,8 +300,8 @@
       <dosageform value="Liquid">Liquid</dosageform>
       <dosageform value="Lotion">Lotion</dosageform>
       <dosageform value="Lozenge">Lozenge</dosageform>
-      <dosageform value="Metered-Dose Aerosol">Metered-Dose Aerosol</dosageform>
-      <dosageform value="Metered-Dose Pump">Metered-Dose Pump</dosageform>
+      <dosageform value="Metered-Dose Aerosol">Metered-Dose aerosol</dosageform>
+      <dosageform value="Metered-Dose Pump">Metered-Dose pump</dosageform>
       <dosageform value="Mouthwash/Gargle">Mouthwash/Gargle</dosageform>
       <dosageform value="Oil">Oil</dosageform>
       <dosageform value="Ointment">Ointment</dosageform>
@@ -310,28 +310,28 @@
       <dosageform value="Paint">Paint</dosageform>
       <dosageform value="Paste">Paste</dosageform>
       <dosageform value="Patch">Patch</dosageform>
-      <dosageform value="Patch (Extended Release)">Patch (Extended Release)</dosageform>
+      <dosageform value="Patch (Extended Release)">Patch (Extended release)</dosageform>
       <dosageform value="Pellet">Pellet</dosageform>
       <dosageform value="Pencil">Pencil</dosageform>
       <dosageform value="Piece (Chewable)">Piece (Chewable)</dosageform>
       <dosageform value="Plaster">Plaster</dosageform>
       <dosageform value="Powder">Powder</dosageform>
       <dosageform value="Powder (Effervescent)">Powder (Effervescent)</dosageform>
-      <dosageform value="Powder (Extended Release)">Powder (Extended Release)</dosageform>
-      <dosageform value="Powder (Metered Dose)">Powder (Metered Dose)</dosageform>
-      <dosageform value="Powder For Solution">Powder For Solution</dosageform>
-      <dosageform value="Powder For Suspension">Powder For Suspension</dosageform>
-      <dosageform value="Powder For Suspension, Sustained-Release">Powder For Suspension, Sustained-Release</dosageform>
+      <dosageform value="Powder (Extended Release)">Powder (Extended release)</dosageform>
+      <dosageform value="Powder (Metered Dose)">Powder (Metered dose)</dosageform>
+      <dosageform value="Powder For Solution">Powder for solution</dosageform>
+      <dosageform value="Powder For Suspension">Powder for suspension</dosageform>
+      <dosageform value="Powder For Suspension, Sustained-Release">Powder for suspension, sustained-release</dosageform>
       <dosageform value="Ring (Slow-Release)">Ring (Slow-Release)</dosageform>
       <dosageform value="Shampoo">Shampoo</dosageform>
-      <dosageform value="Shampoo, Suspension">Shampoo, Suspension</dosageform>
+      <dosageform value="Shampoo, Suspension">Shampoo, suspension</dosageform>
       <dosageform value="Soap Bar">Soap Bar</dosageform>
       <dosageform value="Solution">Solution</dosageform>
-      <dosageform value="Solution (Extended Release)">Solution (Extended Release)</dosageform>
+      <dosageform value="Solution (Extended Release)">Solution (Extended release)</dosageform>
       <dosageform value="Sponge">Sponge</dosageform>
       <dosageform value="Spray">Spray</dosageform>
       <dosageform value="Spray, Bag-On-Valve">Spray, Bag-On-Valve</dosageform>
-      <dosageform value="Spray, Metered Dose">Spray, Metered Dose</dosageform>
+      <dosageform value="Spray, Metered Dose">Spray, metered dose</dosageform>
       <dosageform value="Stick">Stick</dosageform>
       <dosageform value="Strip">Strip</dosageform>
       <dosageform value="Suppository">Suppository</dosageform>
@@ -343,22 +343,22 @@
       <dosageform value="Syrup (Extended-Release)">Syrup (Extended-Release)</dosageform>
       <dosageform value="Tablet">Tablet</dosageform>
       <dosageform value="Tablet (Chewable)">Tablet (Chewable)</dosageform>
-      <dosageform value="Tablet (Delayed And Extended Release)">Tablet (Delayed And Extended Release)</dosageform>
+      <dosageform value="Tablet (Delayed And Extended Release)">Tablet (Delayed and extended release)</dosageform>
       <dosageform value="Tablet (Delayed-Release)">Tablet (Delayed-Release)</dosageform>
       <dosageform value="Tablet (Effervescent)">Tablet (Effervescent)</dosageform>
       <dosageform value="Tablet (Enteric-Coated)">Tablet (Enteric-Coated)</dosageform>
       <dosageform value="Tablet (Extended-Release)">Tablet (Extended-Release)</dosageform>
-      <dosageform value="Tablet (Immediate And Delayed-Release)">Tablet (Immediate And Delayed-Release)</dosageform>
-      <dosageform value="Tablet (Immediate And Extended Release)">Tablet (Immediate And Extended Release)</dosageform>
-      <dosageform value="Tablet (Immediate Release)">Tablet (Immediate Release)</dosageform>
-      <dosageform value="Tablet (Orally Disintegrating)">Tablet (Orally Disintegrating)</dosageform>
-      <dosageform value="Tablet For Suspension">Tablet For Suspension</dosageform>
+      <dosageform value="Tablet (Immediate And Delayed-Release)">Tablet (Immediate and delayed-release)</dosageform>
+      <dosageform value="Tablet (Immediate And Extended Release)">Tablet (Immediate and extended release)</dosageform>
+      <dosageform value="Tablet (Immediate Release)">Tablet (Immediate release)</dosageform>
+      <dosageform value="Tablet (Orally Disintegrating)">Tablet (Orally disintegrating)</dosageform>
+      <dosageform value="Tablet For Suspension">Tablet for suspension</dosageform>
       <dosageform value="Tape">Tape</dosageform>
       <dosageform value="Tea (Herbal)">Tea (Herbal)</dosageform>
       <dosageform value="Tincture">Tincture</dosageform>
       <dosageform value="Toothpaste">Toothpaste</dosageform>
-      <dosageform value="Vaginal Tablet">Vaginal Tablet</dosageform>
-      <dosageform value="Vaginal Tablet, Effervescent">Vaginal Tablet, Effervescent</dosageform>
+      <dosageform value="Vaginal Tablet">Vaginal tablet</dosageform>
+      <dosageform value="Vaginal Tablet, Effervescent">Vaginal tablet, effervescent</dosageform>
       <dosageform value="Wafer">Wafer</dosageform>
       <dosageform value="Wipe">Wipe</dosageform>
   </dosageforms>

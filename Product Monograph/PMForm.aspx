@@ -7,7 +7,7 @@
 
     <div class="form-group mrgn-tp-lg">       
            <div class="col-sm-2">
-               <asp:Label ID="lblSelectTemplate" runat="server" CssClass="control-label">Select a template:</asp:Label> 
+               <asp:Label ID="lblSelectTemplate" runat="server" CssClass="control-label"></asp:Label> 
            </div>
            <div class="col-sm-3">
                <select id="ddlTemplate" runat="server" class="form-control">
@@ -25,7 +25,7 @@
                </select>
            </div>  
            <div class="col-sm-7">
-              <asp:Button ID="btnLoadTemplate" runat="server" CssClass="btn btn-default" Text="Load template" OnClick="btnLoadTemplate_Click"/> 
+              <asp:Button ID="btnLoadTemplate" runat="server" CssClass="btn btn-default" OnClick="btnLoadTemplate_Click"/> 
            </div>   
                                                                                                                  
            <div class="col-lg-12">
@@ -40,7 +40,7 @@
     </section>
 
     <section>
-        <img id="imgSymbol" runat="server" src="~/images/landingnotes.png" style="display: none;" />
+        <img id="imgSymbol" runat="server" src="~/images/landingnotes.png" style="display: none;" alt="Notes"/>
         <h3><asp:Label runat="server" id="lblUsingxml"></asp:Label></h3>                   
         <p><asp:Label runat="server" id="lblBody"></asp:Label></p>
     </section>
