@@ -1304,7 +1304,7 @@
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
 <!-- Sub Menu Item of "Part I" for DHPR Form -->
 <div class="row">
-<asp:Menu ClientIDMode="Static" ID="submenutabs" runat="server" Orientation="Horizontal" OnMenuItemClick="menutabs_MenuItemClick"> 
+<asp:Menu ClientIDMode="Static" ID="submenutabs" runat="server" Orientation="Horizontal" OnMenuItemClick="menutabs_MenuItemClick" cssclass="wet-boew-menubar floatLeft"> 
    <StaticMenuStyle VerticalPadding="5px" />
    <StaticMenuItemStyle HorizontalPadding="25px" />
       <Items>
@@ -1359,10 +1359,10 @@
     </li>
 	<li> 
     <details class="margin-top-medium">
-       <summary id="SUM_INDICATIONS" runat="server" >Indications and clinical use</summary>
+       <summary id="SUM_INDICATIONS" runat="server"></summary>
          <div class="row mrgn-lft-sm">
               <asp:Label ID="lblBrandName3" runat="server" CssClass="control-label"></asp:Label>&nbsp;&#40;<asp:Label ID="lblICProperName" runat="server" CssClass="Control-label"></asp:Label>&#41; 
-                    <img id="tooltipINDICATIONS" src="images/qmark.jpg" class="imgQMark_style" alt="Help Message" />
+                    <img id="tooltipINDICATIONS" src="images/qmark.jpg" class="imgQMark_style" alt="Help Message of Indications and clinical use" />
          </div>        
          <div class="col-xs-12">
              <textarea id="tbBrandNameIndicatedFor" name="tbBrandNameIndicatedFor" class="textarea form-control" runat="server" title="Brief discussion of any relevant clinical information - if applicable"></textarea> 
@@ -1399,19 +1399,20 @@
         <summary id="SUM_CONTRAINDICATIONS" runat="server">Contraindications</summary>
         <div style="padding: 8px 4px 4px 0px; padding-left:0px; width:90%;">
             <div style="width:94%; float:left;">
-                <asp:Label id="lblContraindications" runat="server" CssClass="control-label">Contraindications</asp:Label>&nbsp;<img id="tooltipCONTRAINDICATIONS" src="images/qmark.jpg" class="imgQMark_Style;" alt="Help Message of CONTRAINDICATIONS" />
+                <asp:Label id="lblContraindications" runat="server" CssClass="control-label">Contraindications</asp:Label>&nbsp;<img id="tooltipCONTRAINDICATIONS" src="images/qmark.jpg" class="imgQMark_Style" alt="Help Message of CONTRAINDICATIONS" />
             </div>
             <div style="width:5%; float:left; padding-left:4px; display:none;">
                 <input class="btn btn-default btn-xs" type="button" value="Add" runat="server" onclick="AddContraindicationsTextBox()" id="btnAddExtraContraindications" />
             </div> 
         </div>  
+
         <div id="Cntrndctns0" style="width:90%; padding-left: 0px; clear:both;">
             <div style="width:94%; float:left;">
-                <textarea id="tbContraindicationsDynamic0" name="tbContraindicationsDynamic" ></textarea>
+                <textarea id="tbContraindicationsDynamic0" name="tbContraindicationsDynamic" class="textarea form-control"></textarea>
             </div>   
             <div style="width:5%; float:left; display:none;">
                 <input class="btn btn-default btn-xs" type="button" value="Remove" runat="server" onclick="RemoveContraindicationsTextBox(0)" id="btnRemoveContraindications" />
-               </div>     
+            </div>     
         </div>  
         <div id="dvExtraContraindications" style="width:90%; padding-left: 0px; clear:both;">
         </div>
@@ -1421,10 +1422,10 @@
     <details class="margin-top-medium">
         <summary id="SUM_WARNINGS" runat="server">Warnings and precaution</summary>
         <div style="padding: 8px 4px 4px 0px; padding-left:0px; width:90%;">
-            <div style="width:94%; float:left; clear:both;"><asp:Label id="lblSerious" runat="server" CssClass="control-label">Serious warnings and precautions</asp:Label> <img id="tooltipSeriousWarnings" src="images/qmark.jpg" style="width:15px; height:15px; cursor:pointer !important;" alt="Help Message of Serious warnings"/></div>          
+            <div style="width:94%; float:left; clear:both;"><asp:Label id="lblSerious" runat="server" CssClass="control-label">Serious warnings and precautions</asp:Label> <img id="tooltipSeriousWarnings" src="images/qmark.jpg" class="imgQMark_style" alt="Help Message of Serious warnings"/></div>          
             <div style="width:5%; float:left;padding-left:4px; display:none;">
                 <input class="btn btn-default btn-xs" type="button" value="Add" onclick="AddSeriousWarningsPrecautionsTextBox()" id="btnAddExtraSeriousWarningsPrecautions" runat="server" />
-                   </div>      
+            </div>      
         </div> 
 
         <div id="SrsWrngPrctns0" style="width:90%; padding-left: 0px; clear:both;">
@@ -1440,7 +1441,7 @@
 
         <div style="width:90%; padding-left: 0px; clear:both; padding-top: 40px; padding-bottom:4px;">
             <div style="width:94%; float:left; clear:both;">
-                <asp:Label id="lblHeadings" runat="server" CssClass="control-label">Headings</asp:Label>&nbsp;<img id="tooltipSeriousWarningsHeadings" src="images/qmark.jpg" style="width:15px; height:15px; cursor:pointer !important;" alt="Help Message of Headings" />
+                <asp:Label id="lblHeadings" runat="server" CssClass="control-label">Headings</asp:Label>&nbsp;<img id="tooltipSeriousWarningsHeadings" src="images/qmark.jpg" class="imgQMark_style" alt="Help Message of Headings" />
             </div>     
             <div style="width:5%; float:left;">
                 <input class="btn btn-default btn-xs" type="button" value="Add" onclick="AddHeadingSelection()" runat="server" id="btnAddExtraAddHeadingSelection" />
@@ -1466,7 +1467,7 @@
             <input class="btn btn-default btn-xs" type="button" value="Add" onclick="AddAdverseReactionsOuterSection()" runat="server" id="btnAddAdverseReactionsOuterSection" />
             </div> 
         <div style="float:left; display:none;">
-            <img id="tooltipSelectedAdverseReaction" src="images/qmark.jpg" style="width:15px; height:15px; cursor:pointer !important;" alt="Help Message of Selected Adverse Reaction" />
+            <img id="tooltipSelectedAdverseReaction" src="images/qmark.jpg" class="imgQMark_style" alt="Help Message of Selected Adverse Reaction" />
         </div>  
         <div id="dvExtraAdverseReactionsOuter" style="clear:both; width:100%">
         </div>  
@@ -1475,11 +1476,17 @@
     </li>
 	<li>
     <details class="margin-top-medium">
-        <summary id="SUM_DRUG_INTERACTIONS" runat="server">Drug interations</summary>
-        <div style="width:84.5%; text-align:center; clear:both; padding-left: 0px; text-align:left; padding-top:20px;">
-            <div style="padding: 4px 4px 4px 0px"><label id="lblOverview" runat="server">Overview</label></div>                         
-            <textarea id="tbDrugInteractionsOverview" name="tbDrugInteractionsOverview" runat="server" class="textarea form-control"></textarea>                            
-        </div>
+       <summary id="SUM_DRUG_INTERACTIONS" runat="server"></summary>        
+       <div class="form-group">
+          <div class="margin-top-large">
+             <label id="lblOverview" runat="server" CssClass="control-label"></label>
+          </div>
+          <div class="row"> 
+            <div class="col-xs-10 text-left">                           
+               <textarea id="tbDrugInteractionsOverview" name="tbDrugInteractionsOverview" runat="server" class="textarea form-control"></textarea>                            
+            </div>
+          </div>
+      </div>
 
         <div style="clear:both; width:100%; padding: 25px 0px 0px 0px;"></div>
         <div style="width:46%; float:left;">        
@@ -1496,10 +1503,10 @@
     </li>
 	<li>
     <details class="margin-top-medium">
-        <summary id="SUM_DOSAGE" runat="server">Dosage and administration</summary>
+        <summary id="SUM_DOSAGE" runat="server"></summary>
 
         <div style="padding: 20px 0px 4px 0px; padding-left: 0px; width:90%;">
-            <div style=" width:94%; float:left;"><asp:Label id="lblDosing" runat="server" CssClass="control-label">Dosing considerations</asp:Label>&nbsp;<img id="tooltipDosingConsiderations" src="images/qmark.jpg" style="width:15px; height:15px; cursor:pointer !important;" alt="Help Message of Dosing Considerations"/>            
+            <div style=" width:94%; float:left;"><asp:Label id="lblDosing" runat="server" CssClass="control-label">Dosing considerations</asp:Label>&nbsp;<img id="tooltipDosingConsiderations" src="images/qmark.jpg" class="imgQMark_style" alt="Help Message of Dosing Considerations"/>            
             </div>  
             <div style="width:5%; float:left;">
                 <input class="btn btn-default btn-xs" type="button" value="Add" runat="server" onclick="AddDosingConsiderationsTextBox()" id="btnAddExtraDosingConsiderations" />
@@ -1519,7 +1526,7 @@
         </div>
 
         <div style="padding-left: 0px; padding-top: 20px; clear:both;">
-            <asp:Label id="lblRecommended" runat="server" CssClass="control-label">Recommended dose and dosage adjustment</asp:Label>&nbsp;<img id="tooltipRecommendedDose" src="images/qmark.jpg" style="width:15px; height:15px; cursor:pointer !important;" />        
+            <asp:Label id="lblRecommended" runat="server" CssClass="control-label">Recommended dose and dosage adjustment</asp:Label>&nbsp;<img id="tooltipRecommendedDose" src="images/qmark.jpg" class="imgQMark_style" />        
         </div>
 
         <div style="width:84.5%; text-align:center; clear:both; padding-left: 0px; padding-top:4px;">
@@ -1604,54 +1611,62 @@
     </li>
 	<li>
     <details class="margin-top-medium">
-        <summary id="SUM_OVERDOSAGE" runat="server">Overdosage</summary>
-        <div style="width:84.5%; text-align:center; clear:both; padding-left: 0px; padding-top:20px;">
-            <div id="divTextBox9" style="text-align:left;">  
-                <div style="padding: 4px 4px 4px 0px"><label id="lblOverdosage" runat="server">Overdosage</label></div>                         
-                <textarea id="tbOverdosage" name="tbOverdosage" runat="server" class="textarea form-control"></textarea>                            
+        <summary id="SUM_OVERDOSAGE" runat="server"></summary>
+         <div class="form-group">
+            <div id="divTextBox19" class="margin-top-large">
+               <asp:Label id="lblOverdosage" runat="server" CssClass="control-label"></asp:Label>
+            </div> 
+            <div class="row"> 
+               <div class="col-xs-10 text-left">                         
+                  <textarea id="tbOverdosage" name="tbOverdosage" runat="server" class="textarea form-control"></textarea>                            
+               </div>
             </div>
-        </div>
-        <section style="width:100%; padding-left: 0px; clear:both; padding-top:2px; display:none;">
-            <asp:Label ID="lblForManagement" runat="server" CssClass="control-label">For management of a suspected drug overdose, contact your regional Poison Control Centre</asp:Label>
-        </section>
-    
-        
-
-        <div style="width:84.5%; text-align:center; clear:both; padding-left: 0px; padding-top:20px; display:none;">
-            <div id="divTextBox11" style="text-align:left;">  
-                <div style="padding: 4px 4px 4px 0px"><asp:Label id="lblForAnti" runat="server" CssClass="control-label">
-                    For anti-infective products: a brief description of action against micro-organisms
-                 </asp:Label>
-                </div>                         
+           <div class="row"> 
+              <div class="col-xs-10 text-left"> 
+                <asp:Label ID="lblForManagement" runat="server" CssClass="control-label"></asp:Label>
+              </div>
+           </div>
+      </div>
+       <div class="form-group">
+          <div id="divTextBox11" class="margin-top-large">  
+              <asp:Label id="lblForAnti" runat="server" CssClass="control-label"></asp:Label>
+          </div> 
+          <div class="row"> 
+             <div class="col-xs-10 text-left">                           
                 <textarea id="tbAntiInfectiveDescription" name="tbAntiInfectiveDescription" runat="server" class="textarea form-control"></textarea>                            
-            </div>
-        </div>
+             </div>
+         </div>
+      </div>
     </details>
     </li>
 	<li>
     <details class="margin-top-medium">
-        <summary id="SUM_ACTION" runat="server">Action and clinical pharmacology</summary>
-
-        <div style="width:84.5%; text-align:center; clear:both; padding-left: 0px; padding-top:20px;">
-            <div id="divTextBox10" style="text-align:left;">  
-                <div style="padding: 4px 4px 4px 0px"><asp:Label id="lblMechanism" runat="server" CssClass="control-label">Mechanism of action</asp:Label></div>                         
+        <summary id="SUM_ACTION" runat="server"></summary>
+        <div class="form-group">
+            <div id="divTextBox10" class="margin-top-large">  
+                <asp:Label id="lblMechanism" runat="server" CssClass="control-label"></asp:Label>
+            </div> 
+            <div class="row"> 
+              <div class="col-xs-10 text-left">                         
                 <textarea id="tbMechanismOfAction" name="tbMechanismOfAction" runat="server" class="textarea form-control"></textarea>                            
-            </div>
-        </div>
-
-        <div style="width:84.5%; text-align:center; clear:both; padding-left: 0px; padding-top:20px;">
-            <div id="divTextBox111" style="text-align:left;">  
-                <div style="padding: 4px 4px 4px 0px"><label id="lblPharmacodynamics" runat="server">Pharmacodynamics</label></div>                         
+             </div>
+          </div>
+      </div>
+      <div class="form-group">
+          <div id="divTextBox111" class="margin-top-large">  
+             <label id="lblPharmacodynamics" runat="server" CssClass="control-label"></label>
+          </div> 
+          <div class="row"> 
+             <div class="col-xs-10 text-left">                          
                 <textarea id="tbPharmacodynamics" name="tbPharmacodynamics" runat="server" class="textarea form-control"></textarea>                            
-            </div>
-        </div>
+             </div>
+          </div>
+     </div>
 
         <div style="width:84.5%; text-align:center; clear:both; padding-left: 0px; padding-top:20px;">
             <div id="divTextBox109" style="text-align:left;">  
-                <div style="padding: 4px 4px 4px 0px"><asp:Label id="lblPHARMACOKINETICS" runat="server" CssClass="control-label">Pharmacokinetics</asp:Label></div> 
-                                                        
+                <div style="padding: 4px 4px 4px 0px"><asp:Label id="lblPHARMACOKINETICS" runat="server" CssClass="control-label">Pharmacokinetics</asp:Label></div>                                              
             </div>
-
         </div>
         
        
@@ -1680,42 +1695,52 @@
         
             </asp:Table>
         </div>
-     
         <div id="dvExtraPharmacokineticsOuter" style="clear:both; width:100%">
         </div>  
-
     </details> 
     </li>
 	<li>
     <details class="margin-top-medium">
-        <summary id="SUM_STORAGE" runat="server">Storage and stability</summary>
-        <div style="width:84.5%; text-align:center; clear:both; padding-left: 0px; padding-top:20px;">
-            <div style="text-align:left;">  
-                <div style="padding: 4px 4px 4px 0px"><asp:Label id="lblStorage" runat="server" CssClass="control-label">Storage and stability</asp:Label></div>                         
+        <summary id="SUM_STORAGE" runat="server"></summary>
+        <div class="form-group">
+           <div class="margin-top-large">
+             <asp:Label id="lblStorage" runat="server" CssClass="control-label"></asp:Label>
+           </div> 
+           <div class="row"> 
+             <div class="col-xs-10 text-left">                          
                 <textarea id="tbStorageStability" name="tbStorageStability" runat="server" class="textarea form-control"></textarea>                            
-            </div>
+             </div>
+           </div>
         </div>
     </details>
     </li>
 	<li>
     <details class="margin-top-medium">
-        <summary id="SUM_SPECIAL_HANDLING" runat="server">Special handling instruction</summary>
-        <div style="width:84.5%; text-align:center; clear:both; padding-left: 0px; padding-top:20px;">
-            <div style="text-align:left;">  
-                <div style="padding: 4px 4px 4px 0px"><asp:Label id="lblSpecialHandling" runat="server" CssClass="control-label">Special handling instruction</asp:Label></div>                         
-                <textarea id="tbSpecialHandling" name="tbSpecialHandling" runat="server" class="textarea form-control"></textarea>                            
-            </div>
-        </div>
+        <summary id="SUM_SPECIAL_HANDLING" runat="server"></summary>
+        <div class="form-group">
+           <div class="margin-top-large">
+              <asp:Label id="lblSpecialHandling" runat="server" CssClass="control-label"></asp:Label>
+           </div>                         
+           <div class="row"> 
+             <div class="col-xs-10 text-left">   
+               <textarea id="tbSpecialHandling" name="tbSpecialHandling" runat="server" class="textarea form-control"></textarea>                            
+             </div>
+          </div>
+       </div>
     </details>
     </li>
     <li>
     <details class="margin-top-medium margin-bottom-small">
-        <summary id="SUM_DOSAGEFORMS" runat="server">Dosage forms, composition and packaging</summary>
-        <div style="width:84.5%; text-align:center; clear:both; padding-left: 0px; padding-top:20px;">
-            <div style="text-align:left;">  
-                <div style="padding: 4px 4px 4px 0px"><asp:Label id="lblDosageForms" runat="server" CssClass="control-label">Dosage forms, composition and packaging</asp:Label></div>                         
-                <textarea id="tbDosageFormsComposition" name="tbDosageFormsComposition" runat="server" class="textarea form-control"></textarea>                            
+        <summary id="SUM_DOSAGEFORMS" runat="server"></summary>
+          <div class="form-group">
+            <div class="margin-top-large">
+              <asp:Label id="lblDosageForms" runat="server" CssClass="control-label"></asp:Label>
             </div>
+            <div class="row"> 
+             <div class="col-xs-10 text-left">                        
+                <textarea id="tbDosageFormsComposition" name="tbDosageFormsComposition" runat="server" class="textarea form-control"></textarea>                            
+             </div>
+           </div>
         </div>
     </details>
    </li>
