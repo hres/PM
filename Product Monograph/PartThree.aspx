@@ -518,10 +518,7 @@
 </div>
 
 <details class="margin-top-medium">
-    <summary id="SUM_ABOUT">
-        </summary>
-        <asp:Label ID="lblSumAbout" runat="server"></asp:Label>
-    <summary>
+    <summary id="SUM_ABOUT"><asp:Label ID="lblSumAbout" runat="server"></asp:Label>
     </summary> 
     <div class="form-group">
         <div class="margin-top-medium">
@@ -618,9 +615,7 @@
 <details class="margin-top-medium">
     
     <summary id="SUM_WARNINGS" lang="en">
-         </summary>
          <asp:Label ID="lblSumWarningsPrecautions" runat="server"></asp:Label>
-    <summary>
     </summary>
    
     
@@ -662,9 +657,7 @@
 
 <details class="margin-top-medium">
     <summary id="SUM_INTERACTIONS">
-        </summary>
         <asp:Label ID="lblSumInteractions" runat="server"></asp:Label>
-    <summary>
     </summary>  
     <div class="form-group">
           <div class="margin-top-medium">
@@ -681,9 +674,7 @@
 
 <details class="margin-top-medium">
         <summary id="SUM_PROPER_USE">
-            </summary>
             <asp:Label ID="lblSumProperUse" runat="server"></asp:Label>
-        <summary>
         </summary>
         <div class="form-group">
            <div class="margin-top-medium">
@@ -760,9 +751,7 @@
 
 <details class="margin-top-medium">
         <summary id="SUM_SIDE_EFFECTS">
-            </summary>
-            <asp:Label ID="lblSumSideEffect" runat="server"></asp:Label>
-        <summary>
+             <asp:Label ID="lblSumSideEffect" runat="server"></asp:Label>
         </summary>
         <div class="form-group">
             <div class="margin-top-medium wb-inv">
@@ -1040,9 +1029,7 @@
 
 <details class="margin-top-medium">
         <summary id="SUM_HOW_TO_STORE-IT">
-            </summary>
-            <asp:Label ID="lblSumStore" runat="server"></asp:Label>
-        <summary>
+           <asp:Label ID="lblSumStore" runat="server"></asp:Label>
         </summary>
         <div class="form-group">
             <div class="margin-top-medium wb-inv">
@@ -1059,9 +1046,7 @@
 
 <details class="margin-top-medium">
         <summary id="SUM_REPORTING">
-            </summary>
             <asp:Label ID="lblSumReporting" runat="server"></asp:Label>  
-        <summary>
         </summary>
         <div class="form-group">
             <div class="margin-top-medium wb-inv">
@@ -1078,9 +1063,7 @@
 
 <details class="margin-top-medium margin-bottom-small">
     <summary id="SUM_MORE_INFORMATION">
-            </summary>
             <asp:Label ID="lblSumMoreInfo" runat="server"></asp:Label>    
-    <summary>
     </summary>
     <div class="form-group">
         <div class="margin-top-medium wb-inv">
