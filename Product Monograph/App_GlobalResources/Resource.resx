@@ -124,9 +124,7 @@
     <value>Any allergies to this drug or its ingredients or components of the container (Contraindications)</value>
   </data>
   <data name="Body" xml:space="preserve">
-    <value>•	To load a new blank PM template for the creation of XML file, select a template type from the drop menu, and press the "Load template" button.
-            •	To load an existing XML file, press the “Choose File” button ("Browse..." in Internet Explorer and Firefox), select the file and press the "Open" button in the file browser. Press the "Load XML" button.
-            •	To save a file, press the "Save draft" button. The file name of the new file will always be "productmonograph" with the '.zip' extension.
+    <value>            •	To save a file, press the "Save draft" button. The file name of the new file will always be "productmonograph" with the '.zip' extension.
             •	To collapse and expand web form groups using the arrows shown on the top-left margin of collapsible groups. An arrow to the right (►) means a group is currently collapsed, click on it to expand the group. An arrow downward (▼) means the group is currently expanded and can be collapsed by clicking on this arrow.
             •	Key information is displayed by hovering your cursor over the red qmark circle
 •	Navigate through the XML PM Web Form by clicking on the links located below the banner.  Major sections will be indicated depending on the template type selected.

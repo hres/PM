@@ -124,6 +124,8 @@ namespace Product_Monograph
             btnLoadTemplate.Text = Resources.Resource.btnLoadTemplate;
             btnLoadTemplate.ToolTip = Resources.Resource.btnLoadTemplate;
             btnLoadXml_PMForm.Text = Resources.Resource.lblLoadXML;
+            lblLoadTemplateInst.Text = Resources.Resource.lblLoadTemplateInst;
+            lblLoadXmlInst.Text = Resources.Resource.lblLoadXmlInst;
 
 
 
