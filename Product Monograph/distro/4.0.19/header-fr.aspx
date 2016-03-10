@@ -10,19 +10,17 @@
 	          </ul>
 	        </div>
 	      </div>
-	</section>
-
-    
+	</section>  
     <div class="row">
       <div class="brand col-xs-8 col-sm-9 col-md-6">
-<a href="http://www.canada.ca/fr/index.html"><object type="image/svg+xml" tabindex="-1" data="./distro/4.0.19/assets/sig-blk-fr.svg"></object><span class="wb-inv"> Gouvernement du Canada</span></a>
-</div>
+         <a href="http://www.canada.ca/fr/index.html"><object type="image/svg+xml" tabindex="-1" data="./distro/4.0.19/assets/sig-blk-fr.svg"></object><span class="wb-inv"> Gouvernement du Canada</span></a>
+      </div>
       <section class="wb-mb-links col-xs-3 visible-sm visible-xs" id="wb-glb-mn">
-        <h2>Recherche et menus</h2>
-        <ul class="list-inline text-right chvrn">
-          <li><a href="#mb-pnl" title="Recherche et menus" aria-controls="mb-pnl" class="overlay-lnk" role="button"><span class="glyphicon glyphicon-th-list"><span class="wb-inv">Recherche et menus</span></span></a></li>
-        </ul>
-        <div id="mb-pnl"></div>
+         <h2>Recherche et menus</h2>
+         <ul class="list-inline text-right chvrn">
+           <li><a href="#mb-pnl" title="Recherche et menus" aria-controls="mb-pnl" class="overlay-lnk" role="button"><span class="glyphicon glyphicon-th-list"><span class="wb-inv">Recherche et menus</span></span></a></li>
+         </ul>
+         <div id="mb-pnl"></div>
       </section>
       <section id="wb-srch" class="col-xs-6 text-right visible-md visible-lg">
         <h2 class="wb-inv">Recherche</h2>
@@ -50,7 +48,7 @@
       </section>
     </div>
 </div>
-  <nav role="navigation" id="wb-sm" class="wb-menu visible-md visible-lg" data-trgt="mb-pnl" data-ajax-fetch="./distro/4.0.19/ajax/sitemenu-fr.html" typeof="SiteNavigationElement">
+  <nav id="wb-sm" class="wb-menu visible-md visible-lg" data-trgt="mb-pnl" data-ajax-fetch="./distro/4.0.19/ajax/sitemenu-fr.html" typeof="SiteNavigationElement">
     <h2 class="wb-inv">Menu du site</h2>
     <div class="container visible-md visible-lg nvbar">
       <div class="row">

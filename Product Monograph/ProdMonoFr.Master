@@ -5,8 +5,13 @@
 <html class="no-js" lang="" dir="ltr" >
 <!--<![endif]-->
 <head runat="server">
-<meta charset="utf-8">
-
+<meta http-equiv="content-type" content="text/html; charset=UTF-8">
+<meta name="dc.title" content="Drug Health Product Registry Form – Release 2 Interface; Applications and Submissions - Drug Products in Canada" />
+<meta name="dc.description" content="Links to Health Canada forms related to drug product applications and submissions" />
+<meta name="dc.subject" content="Drugs; Over the counter drugs; Pharmaceuticals; Disinfectants; Sanitizers; Submissions; Registration processes" />
+<meta name="dc.creator" content="Government of Canada, Health Canada, Health Products and Food Branch, Therapeutic Products Directorate" />
+<meta name="dc.type" content="cover page" />
+<meta name="dcterms.issued" content="2016-03-03" />
 <script src="http://xelerance.github.io/tinymce/js/tinymce/tinymce.min.js"></script>
 <script src="./tinymce/js/tinymce/themes/modern/theme.min.js"></script> 
 <script>
@@ -29,6 +34,7 @@
 	<!--<![endif]-->
 	<link rel="stylesheet" href="./distro/4.0.19/css/theme.min.css" />
     <link rel="stylesheet" href="//netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.css" />
+    <link rel="stylesheet" href="./distro/4.0.19/css/pmp.css" />
     <!--<![endif]-->
     <!--[if lt IE 9]>
 		<link href="./distro/4.0.19/assets/favicon.ico" rel="shortcut icon" />
@@ -79,22 +85,20 @@
     <asp:ContentPlaceHolder ID="ContentPlaceHolder2" runat="server">
     </asp:ContentPlaceHolder>
     <asp:ContentPlaceHolder ID="head" runat="server">
-
     </asp:ContentPlaceHolder>
     <asp:ContentPlaceHolder ID="header" runat="server">
         <!--#include file="/distro/4.0.19/header-fr.aspx"-->
     </asp:ContentPlaceHolder>
 
 <!-- Main Content Page -->    
-<main role="main" property="mainContentOfPage" class="container">
+<main property="mainContentOfPage" class="container">
     <h1 property="name" id="wb-cont"><asp:Label runat="server" ID="lblTitleForm" ></asp:Label></h1>
     <div class="col-lg-12">
         <label id="lblError" runat="server" style="color:red;"></label>
     </div>
-     <form id="form1"  runat="server">
-	        
-           <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server">
-           </asp:ContentPlaceHolder>
+    <form id="form1" runat="server">	        
+        <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server">
+        </asp:ContentPlaceHolder>
     </form>
 </main>   
 <!-- FOOTER STARTS | DEBUT DU PIED DE LA PAGE --> 

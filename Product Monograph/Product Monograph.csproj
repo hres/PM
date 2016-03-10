@@ -140,6 +140,7 @@
     <Content Include="bin\System.Web.WebPages.dll" />
     <Content Include="bin\System.Web.WebPages.Razor.dll" />
     <Content Include="bin\WebGrease.dll" />
+    <Content Include="ControlledList.fr.xml" />
     <Content Include="ControlledList.xml">
       <SubType>Designer</SubType>
     </Content>
@@ -197,6 +198,7 @@
     <Content Include="distro\4.0.19\css\mobile-centre.min.css" />
     <Content Include="distro\4.0.19\css\noscript.css" />
     <Content Include="distro\4.0.19\css\noscript.min.css" />
+    <Content Include="distro\4.0.19\css\pmp.css" />
     <Content Include="distro\4.0.19\css\polyfills\datalist.css" />
     <Content Include="distro\4.0.19\css\polyfills\datalist.min.css" />
     <Content Include="distro\4.0.19\css\polyfills\datepicker.css" />

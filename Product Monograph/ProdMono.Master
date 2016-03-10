@@ -5,8 +5,7 @@
 <html class="no-js" lang="" dir="ltr" >
 <!--<![endif]-->
 <head runat="server">
-<meta charset="utf-8">
-
+<meta http-equiv="content-type" content="text/html; charset=UTF-8">
 <script src="http://xelerance.github.io/tinymce/js/tinymce/tinymce.min.js"></script>
 <script src="./tinymce/js/tinymce/themes/modern/theme.min.js"></script> 
 <script>
@@ -29,6 +28,7 @@
 	<!--<![endif]-->
 	<link rel="stylesheet" href="./distro/4.0.19/css/theme.min.css" />
     <link rel="stylesheet" href="//netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.css" />
+    <link rel="stylesheet" href="./distro/4.0.19/css/pmp.css" />
     <!--<![endif]-->
     <!--[if lt IE 9]>
 		<link href="./distro/4.0.19/assets/favicon.ico" rel="shortcut icon" />
@@ -85,22 +85,16 @@
     </asp:ContentPlaceHolder>
 
 <!-- Main Content Page -->    
-<main role="main" property="mainContentOfPage" class="container">
+<main property="mainContentOfPage" class="container">
     <h1 property="name" id="wb-cont"><asp:Label runat="server" ID="lblTitleForm" ></asp:Label></h1>
     <div class="col-lg-12">
         <label id="lblError" runat="server" style="color:red;"></label>
     </div>
-      
-      
-    
     <form id="form1"  runat="server">
-	        
-           <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server">
-           </asp:ContentPlaceHolder>
+        <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server">
+        </asp:ContentPlaceHolder>
     </form>
-    
-</main>   
-         
+</main>            
 <!-- FOOTER STARTS | DEBUT DU PIED DE LA PAGE --> 
     <asp:ContentPlaceHolder ID="foot" runat="server">
         <!--#include file="/distro/4.0.19/footer-en.aspx"-->

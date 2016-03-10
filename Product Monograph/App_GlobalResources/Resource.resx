@@ -124,7 +124,8 @@
     <value>Any allergies to this drug or its ingredients or components of the container (Contraindications)</value>
   </data>
   <data name="Body" xml:space="preserve">
-    <value>
+    <value>•	To load a new blank PM template for the creation of XML file, select a template type from the drop menu, and press the "Load template" button.
+            •	To load an existing XML file, press the “Choose File” button ("Browse..." in Internet Explorer and Firefox), select the file and press the "Open" button in the file browser. Press the "Load XML" button.
             •	To save a file, press the "Save draft" button. The file name of the new file will always be "productmonograph" with the '.zip' extension.
             •	To collapse and expand web form groups using the arrows shown on the top-left margin of collapsible groups. An arrow to the right (►) means a group is currently collapsed, click on it to expand the group. An arrow downward (▼) means the group is currently expanded and can be collapsed by clicking on this arrow.
             •	Key information is displayed by hovering your cursor over the red qmark circle
@@ -201,7 +202,7 @@
     <value>Point form:</value>
   </data>
   <data name="Procedure" xml:space="preserve">
-    <value>Anticipated medical procedures (Warnings and Precautions)</value>
+    <value>Anticipated medical procedures (Warnings and precautions)</value>
   </data>
   <data name="ProperNameMI" xml:space="preserve">
     <value>Proper Name</value>
@@ -379,11 +380,11 @@
     <comment>Cover Page</comment>
   </data>
   <data name="btnAppendRow" xml:space="preserve">
-    <value>Append Row</value>
+    <value>Append row</value>
     <comment>Cover Page</comment>
   </data>
   <data name="btnApplySumbol" xml:space="preserve">
-    <value>Apply Symbol</value>
+    <value>Apply symbol</value>
     <comment>Cover Page</comment>
   </data>
   <data name="btnDelCol" xml:space="preserve">
@@ -391,7 +392,7 @@
     <comment>Cover Page</comment>
   </data>
   <data name="btnDeleteRow" xml:space="preserve">
-    <value>Delete Row</value>
+    <value>Delete row</value>
     <comment>Cover Page</comment>
   </data>
   <data name="btnlblApplySymbol" xml:space="preserve">
@@ -399,11 +400,11 @@
     <comment>Cover Page</comment>
   </data>
   <data name="btnSaveDraft" xml:space="preserve">
-    <value>Save Draft</value>
+    <value>Save draft</value>
     <comment>Cover Page</comment>
   </data>
   <data name="CoverPage" xml:space="preserve">
-    <value>Cover Page</value>
+    <value>Cover page</value>
     <comment>Cover Page</comment>
   </data>
   <data name="footnote" xml:space="preserve">
@@ -423,7 +424,7 @@
     <comment>Cover Page</comment>
   </data>
   <data name="lblSchedulingSymbol" xml:space="preserve">
-    <value>Scheduling Symbol</value>
+    <value>Scheduling symbol</value>
     <comment>Cover Page</comment>
   </data>
   <data name="lblSponsorAddress" xml:space="preserve">
@@ -443,7 +444,7 @@
     <comment>Cover Page</comment>
   </data>
   <data name="SubmissionControlNo" xml:space="preserve">
-    <value>Submission Control No</value>
+    <value>Submission control No</value>
   </data>
   <data name="tbBName" xml:space="preserve">
     <value>Brand name</value>
@@ -474,7 +475,7 @@
     <comment>Cover Page</comment>
   </data>
   <data name="lblDosageForm2" xml:space="preserve">
-    <value>Dosage Form</value>
+    <value>Dosage form</value>
     <comment>Part I</comment>
   </data>
   <data name="lblGeriatrics" xml:space="preserve">
@@ -490,7 +491,7 @@
     <comment>Part I</comment>
   </data>
   <data name="lblPartITitle" xml:space="preserve">
-    <value>Part I: Health Professional Information</value>
+    <value>Part I: Health professional information</value>
     <comment>Part I</comment>
   </data>
   <data name="lblPediatrics" xml:space="preserve">
@@ -518,7 +519,7 @@
     <comment>Part I</comment>
   </data>
   <data name="SumSummaryProductInformation" xml:space="preserve">
-    <value>Summary Product Information</value>
+    <value>Summary product information</value>
     <comment>Part I</comment>
   </data>
   <data name="SUM_INDICATIONS" xml:space="preserve">
@@ -546,7 +547,7 @@
     <comment>Part 1</comment>
   </data>
   <data name="lblBrandName" xml:space="preserve">
-    <value>Brand Name</value>
+    <value>Brand name</value>
     <comment>Part 1</comment>
   </data>
   <data name="lblContraindications" xml:space="preserve">
@@ -686,16 +687,32 @@
   <data name="subMenuItem5" xml:space="preserve">
     <value>Part III</value>
   </data>
-  <data name="BtnAdd" xml:space="preserve">
-    <value>Add</value>
+  <data name="tbPharmaceuticalStandard" xml:space="preserve">
+    <value>Pharmaceutical standard (if applicable)</value>
+    <comment>Cover page</comment>
   </data>
-  <data name="BtnRemove" xml:space="preserve">
-    <value>Remove</value>
+  <data name="tbTherapeuticClassifications" xml:space="preserve">
+    <value>Therapeutic classification</value>
+    <comment>Cover page</comment>
   </data>
-  <data name="lblLoadTemplateInst" xml:space="preserve">
-    <value>To load a new blank PM template for the creation of XML file, select a template type from the drop menu, and press the "Load template" button.</value>
+  <data name="btnSaveDraft_tooltip" xml:space="preserve">
+    <value>Please save your form data in a draft file.</value>
+    <comment>Cover page</comment>
   </data>
-  <data name="lblLoadXmlInst" xml:space="preserve">
-    <value>To load an existing XML file, press the “Choose File” button ("Browse..." in Internet Explorer and Firefox), select the file and press the "Open" button in the file browser. Press the "Load XML" button.</value>
+  <data name="btnLoadTemplate" xml:space="preserve">
+    <value>Load template</value>
+    <comment>PMForm</comment>
+  </data>
+  <data name="lblErr_PlsChooseXML" xml:space="preserve">
+    <value>Please choose an xml file.</value>
+    <comment>PMForm</comment>
+  </data>
+  <data name="lblLoadXML" xml:space="preserve">
+    <value>Load XML file</value>
+    <comment>PMForm</comment>
+  </data>
+  <data name="lblSelectTemplate" xml:space="preserve">
+    <value>Select a template:</value>
+    <comment>PMForm</comment>
   </data>
 </root>

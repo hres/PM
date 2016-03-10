@@ -1,5 +1,5 @@
-<footer role="contentinfo" id="wb-info">
-<nav role="navigation" class="container visible-sm visible-md visible-lg wb-navcurr">
+<footer id="wb-info">
+<nav class="container visible-sm visible-md visible-lg wb-navcurr">
 <h2 class="wb-inv">A propos de ce site</h2>
 <div class="row">
 <div class="col-sm-3 col-lg-3">

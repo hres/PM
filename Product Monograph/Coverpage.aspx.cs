@@ -668,21 +668,21 @@ namespace Product_Monograph
 
 
             CoverPage.Text = Resources.Resource.CoverPage;
-            lblSchedulingSymbol.Text = Resources.Resource.lblSchedulingSymbol;
-            btnlblApplySymbol.Value = Resources.Resource.btnlblApplySymbol;
-        
+            lblSchedulingSymbol.InnerText = Resources.Resource.lblSchedulingSymbol;
+            //btnlblApplySymbol.Value = Resources.Resource.btnlblApplySymbol;
+            
 
             tbBName.InnerText = Resources.Resource.tbBName;
             tbPName.InnerText = Resources.Resource.tbPName;
             tbDForm.InnerText = Resources.Resource.tbDForm;
             tbStrength.InnerText = Resources.Resource.tbStrength;
-            lblStrengthperDosage.InnerText = Resources.Resource.lblStrengthperDosage;
+            lblStrengthperDosage.Text = Resources.Resource.lblStrengthperDosage;
             tbSValue.InnerText = Resources.Resource.tbSValue;
             tbSUnit.InnerText = Resources.Resource.tbSUnit;
             tbDValue.InnerText = Resources.Resource.tbSValue;
             tbDUnit.InnerText = Resources.Resource.tbSUnit;
-
-            PharmaceuticalStandard.Text = Resources.Resource.PharmaceuticalStandard;
+            PharmaceuticalStandard.Text = Resources.Resource.tbPharmaceuticalStandard;
+          
             TherapeuticClassification.Text = Resources.Resource.TherapeuticClassification;
             lblSponsorName.Text = Resources.Resource.lblSponsorName;
             lblSponsorAddress.Text = Resources.Resource.lblSponsorAddress;
@@ -694,7 +694,7 @@ namespace Product_Monograph
 
             btnApplySumbol.Text = Resources.Resource.btnApplySumbol;
             btnSaveDraft.Text = Resources.Resource.btnSaveDraft;
-            btnSaveDraft.ToolTip = Resources.Resource.btnSaveDraft;
+            btnSaveDraft.ToolTip = Resources.Resource.btnSaveDraft_tooltip;
 
             btnAppendRow.Value = Resources.Resource.btnAppendRow;
             btnDeleteRow.Value = Resources.Resource.btnDeleteRow;
