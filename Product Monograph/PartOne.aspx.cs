@@ -3244,8 +3244,17 @@ namespace Product_Monograph
          
             lblProprietaryProperName.Text = Resources.Resource.lblProperName;
             SumSummaryProductInformation.InnerText = Resources.Resource.SumSummaryProductInformation;
+            SUM_INDICATIONS.InnerText = Resources.Resource.SUM_INDICATIONS;
+            SUM_DRUG_INTERACTIONS.InnerText = Resources.Resource.SUM_DRUG_INTERACTIONS;
+            SUM_DOSAGE.InnerText = Resources.Resource.SUM_DOSAGE;
+            SUM_OVERDOSAGE.InnerText = Resources.Resource.SUM_OVERDOSAGE;
+            SUM_SPECIAL_HANDLING.InnerText = Resources.Resource.SUM_SPECIAL_HANDLING;
+            SUM_STORAGE.InnerText = Resources.Resource.SUM_STORAGE;
+            SUM_ACTION.InnerText = Resources.Resource.SUM_ACTION;
+       
 
-           
+
+            SUM_DOSAGEFORMS.InnerText = Resources.Resource.SUM_DOSAGEFORMS;
             lblDosageForm2.Text = Resources.Resource.lblDosageForm2;
             lblStrength2.Text = Resources.Resource.tbStrength;
             lblIngredients.Text = Resources.Resource.lblIngredients; 
