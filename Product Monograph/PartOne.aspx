@@ -1,4 +1,5 @@
-﻿<%@ Page Title="" Language="C#" MasterPageFile="~/ProdMono.Master" AutoEventWireup="true" CodeBehind="PartOne.aspx.cs" Inherits="Product_Monograph.PartOne" ValidateRequest="false" %>
+﻿
+<%@ Page Title="" Language="C#" MasterPageFile="~/ProdMono.Master" AutoEventWireup="true" CodeBehind="PartOne.aspx.cs" Inherits="Product_Monograph.PartOne" ValidateRequest="false" %>
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
     <br />
 <script type="text/javascript">   
@@ -188,11 +189,11 @@
         var sd = "tbStrengthDynamic" + id.toString();
         var crn = "tbClinicallyRelevantNonmedicinalIngredientsDynamic" + id.toString();
         
-        return "<div style='width:23.5%; float:left;'><select id='" + roa + "' name='tbRouteOfAdminDynamic' style='width:100%; height:38px;'></select></div>" +
-               "<div style='width:23.5%; float:left;'><select id='" + dfd + "' name='tbDosageFormDynamic' style='width:100%; height:38px;'></select></div>" +
-               "<div style='width:23.5%; float:left;'><textarea id='" + sd + "' name='tbStrengthDynamic'></textarea></div>" +
-               "<div style='width:23.5%; float:left;'><textarea id='" + crn + "' name='tbClinicallyRelevantNonmedicinalIngredientsDynamic'></textarea></div>" +
-               "<div style='width:5%; float:left; padding-left:0px;'>" +
+        return "<div class='col-xs-2'><select id='" + roa + "' name='tbRouteOfAdminDynamic' class='form-control input-sm'></select></div>" +
+               "<div class='col-xs-2'><select id='" + dfd + "' name='tbDosageFormDynamic' style='width:100%; height:38px;'></select></div>" +
+               "<div class='col-xs-3'><textarea id='" + sd + "' name='tbStrengthDynamic' class='textarea form-control'></textarea></div>" +
+               "<div class='col-xs-3'><textarea id='" + crn + "' name='tbClinicallyRelevantNonmedicinalIngredientsDynamic' class='textarea form-control'></textarea></div>" +
+               "<div class='col-xs-1'>" +
                   '<input class="btn btn-default btn-xs" type="button" value="Remove" onclick="RemoveRouteOfAdminTextBox(' + id + ')" id="btnRemoveRouteOfAdminTextBox(' + id + ')" />' +
                "</div>";
     }
@@ -767,7 +768,7 @@
         var div = document.createElement('DIV');
         var att = document.createAttribute("class");
         var identity = document.createAttribute("id");
-        att.value = "roadynarow";
+        att.value = "row roadynarow";
         identity.value = "RouteOfAdmin" + counter;
         div.setAttributeNode(att);
         div.setAttributeNode(identity);
@@ -777,16 +778,28 @@
         $.get('ControlledList.xml', function (xmlcontolledlist) {
             $(xmlcontolledlist).find('route').each(function () {
                 var $option = $(this).text();
-                $('<option style="width: 500px; height:40px;">' + $option + '</option>').appendTo('#tbRouteOfAdminDynamic' + counter)
+                $('<option>' + $option + '</option>').appendTo('#tbRouteOfAdminDynamic' + counter)
             });
         });
         $.get('ControlledList.xml', function (xmlcontolledlist) {
             $(xmlcontolledlist).find('dosageform').each(function () {
                 var $option = $(this).text();
-                $('<option style="width: 500px; height:40px;">' + $option + '</option>').appendTo('#tbDosageFormDynamic' + counter)
+                $('<option>' + $option + '</option>').appendTo('#tbDosageFormDynamic' + counter)
             });
         });
 
+        //$.get('ControlledList.xml', function (xmlcontolledlist) {
+        //    $(xmlcontolledlist).find('route').each(function () {
+        //        var $option = $(this).text();
+        //        $('<option style="width: 500px; height:40px;">' + $option + '</option>').appendTo('#tbRouteOfAdminDynamic' + counter)
+        //    });
+        //});
+        //$.get('ControlledList.xml', function (xmlcontolledlist) {
+        //    $(xmlcontolledlist).find('dosageform').each(function () {
+        //        var $option = $(this).text();
+        //        $('<option style="width: 500px; height:40px;">' + $option + '</option>').appendTo('#tbDosageFormDynamic' + counter)
+        //    });
+        //});
         setup();
     }
 
@@ -1291,91 +1304,78 @@
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
 <!-- Sub Menu Item of "Part I" for DHPR Form -->
 <div class="row">
-<asp:Menu ClientIDMode="Static" ID="submenutabs" cssclass="floatLeft" runat="server" Orientation="Horizontal" OnMenuItemClick="menutabs_MenuItemClick"> 
+<asp:Menu ClientIDMode="Static" ID="submenutabs" runat="server" Orientation="Horizontal" OnMenuItemClick="menutabs_MenuItemClick"> 
    <StaticMenuStyle VerticalPadding="5px" />
    <StaticMenuItemStyle HorizontalPadding="25px" />
       <Items>
-            <asp:MenuItem Value="PMForm"></asp:MenuItem>
-            <asp:MenuItem Value="Coverpage"></asp:MenuItem>
-            <asp:MenuItem Value="PartOne"></asp:MenuItem>
-            <asp:MenuItem Value="PartTwo"></asp:MenuItem>
-            <asp:MenuItem Value="PartThree"></asp:MenuItem>
-          </Items>
+         <asp:MenuItem Value="PMForm"></asp:MenuItem>
+         <asp:MenuItem Value="Coverpage"></asp:MenuItem>
+         <asp:MenuItem Value="PartOne"></asp:MenuItem>
+         <asp:MenuItem Value="PartTwo"></asp:MenuItem>
+         <asp:MenuItem Value="PartThree"></asp:MenuItem>
+     </Items>
 </asp:Menu>
-<asp:Button ID="btnSaveDraftPart1" runat="server" cssclass="btn btn-default form-control paddingTop floatLeft" OnClick="btnSave_Click" /> 
+</div>   
+<div class="row mrgn-tp-md">
+   <asp:Button ID="btnSaveDraftPart1" runat="server" cssclass="btn btn-default" OnClick="btnSave_Click" /> 
 </div>
 <!-- Main Content For Submenu Item of "Part I" and Use WET Standard -->
 <div class="row">
     <asp:Label runat="server" ID="lblError" ClientIDMode="Static" ForeColor="Red"></asp:Label>
 </div>
-
 <div class="row margin-top-medium">
     <asp:Label ID="lblPartITitle" runat="server" CssClass="h2"></asp:Label>
 </div>
-
 <div class="row margin-top-medium">
    <asp:Label ID="lblBrandName" runat="server" CssClass="h4"></asp:Label>
 </div>
-
 <div class="row">
    <asp:Label ID="lblProprietaryProperName" runat="server" CssClass="h4"></asp:Label>
 </div>
-
 <ul class="list-unstyled">
 	<li>
     <details class="margin-top-medium">
-        <summary id="SumSummaryProductInformation" runat="server">Summary Product Information</summary>
-        <div style="width:90.20%; padding: 8px 4px 4px 0px; clear:both;">
-            <div style="width:23.5%; float:left; border: 1px solid #D9D9D9; height:50px;">
-                <asp:Label id="lblRouteOfAdministration" runat="server" CssClass="h6" >Route of administration</asp:Label>
+        <summary id="SumSummaryProductInformation" runat="server"></summary>
+        <div class="row wb-eqht mrgn-lft-sm">
+            <div class="col-xs-2 brdr-tp brdr-lft brdr-bttm">
+                <asp:Label id="lblRouteOfAdministration" runat="server" CssClass="Control-Label" ></asp:Label>
             </div>
-            <div style="width:23.5%; float:left; border: 1px solid #D9D9D9; height:50px">
-                <asp:Label id="lblDosageForm2" runat="server" CssClass="h6">Dosage form</asp:Label>
+            <div class="col-xs-2 brdr-tp brdr-lft brdr-bttm">
+                <asp:Label id="lblDosageForm2" runat="server" CssClass="Control-Label"></asp:Label>
             </div>
-            <div style="width:23.5%; float:left; border: 1px solid #D9D9D9; height:50px">
-               <asp:Label id="lblStrength2" runat="server" CssClass="h6">Strength</asp:Label>
+            <div class="col-xs-3 brdr-tp brdr-lft brdr-bttm">
+               <asp:Label id="lblStrength2" runat="server" CssClass="Control-Label"></asp:Label>
             </div>
-            <div style="width:23.5%; float:left; border: 1px solid #D9D9D9; height:50px">
-                <asp:Label id="lblIngredients" runat="server" CssClass="h6">Clinically relevant nonmedicinal ingredients</asp:Label>
+            <div class="col-xs-3 brdr-tp brdr-lft brdr-bttm">
+                <asp:Label id="lblIngredients" runat="server" CssClass="Control-Label"></asp:Label>
             </div>
-            <div style="width:5%; float:left;">
+            <div class="col-xs-1 brdr-tp brdr-lft brdr-rght brdr-bttm">
                 <input class="btn btn-default btn-xs" type="button" onclick="AddRouteOfAdminTextBox()" id="btnAddExtraRouteOfAdmin" runat="server"/>
             </div>   
         </div>    
-        <div id="dvExtraRouteOfAdmin" style="width:90%; padding-left:0px; clear:both;">
+        <div id="dvExtraRouteOfAdmin">
         </div>
     </details>
     </li>
 	<li> 
     <details class="margin-top-medium">
-        <summary id="SUM_INDICATIONS" runat="server" >Indications and clinical use</summary>
-        <div style="width:89.75%; text-align:center; clear:both; padding: 8px 4px 4px 0px;">
-            <div style="text-align:left;">  
-                <div style="padding: 4px 4px 4px 0px">
-                    <asp:Label ID="lblBrandName3" runat="server" CssClass="control-label">Brand name</asp:Label>
-                    &nbsp;(<asp:Label ID="lblICProperName" runat="server">Proper name is indicated for:</asp:Label>) 
-                    <img id="tooltipINDICATIONS" src="images/qmark.jpg" class="imgQMark_style" alt="Help Message" /></div> 
-                  <div style="width:94.5%; float:left;">
-                       <textarea id="tbBrandNameIndicatedFor" name="tbBrandNameIndicatedFor" class="textarea form-control" runat="server" title="Brief discussion of any relevant clinical information - if applicable"></textarea> 
-                   </div>                             
-            </div>
-        </div>
+       <summary id="SUM_INDICATIONS" runat="server" >Indications and clinical use</summary>
+         <div class="row mrgn-lft-sm">
+              <asp:Label ID="lblBrandName3" runat="server" CssClass="control-label"></asp:Label>&nbsp;&#40;<asp:Label ID="lblICProperName" runat="server" CssClass="Control-label"></asp:Label>&#41; 
+                    <img id="tooltipINDICATIONS" src="images/qmark.jpg" class="imgQMark_style" alt="Help Message" />
+         </div>        
+         <div class="col-xs-12">
+             <textarea id="tbBrandNameIndicatedFor" name="tbBrandNameIndicatedFor" class="textarea form-control" runat="server" title="Brief discussion of any relevant clinical information - if applicable"></textarea> 
+         </div>    
 
-        <div style="width:90%; text-align:center; clear:both; padding-left:0px; padding-top: 20px;">
-            <div id="divTextBox16" style="text-align:left;">              
-                <div style="padding: 4px 4px 4px 0px">
-                    <div style="float:left;"><asp:Label id="lblGeriatrics" runat="server" CssClass="control-label">Geriatrics</asp:Label> ( >&nbsp;</div>
-                    <div title="X" style="float:left;"><input type="number" id="tbGeriatricXvalue" name="tbGeriatricXvalue" runat="server" style="width:55px; text-align:center;"/>&nbsp;</div>
-                    <div style="float:left;"><asp:Label id="lblYearsOfAge" runat="server" CssClass="control-label">years of age</asp:Label>):</div>              
-                   
-                </div>    
-                <div style="width:94%; float:left;">
-                    <textarea id="tbICUGeriatrics" name="tbICUGeriatrics" runat="server" class="textarea form-control"></textarea>
-                </div>                         
-            </div>
-        </div>
+         <div id="divTextBox16" class="row margin-top-medium">           
+             <div class="col-xs-2"><asp:Label id="lblGeriatrics" runat="server" CssClass="control-label"></asp:Label>&#40;&#62;</div><div title="X" class="col-xs-1"><input type="number" id="tbGeriatricXvalue" name="tbGeriatricXvalue" runat="server" class="width_52px"/></div>&nbsp;<div class="col-xs-2"><asp:Label id="lblYearsOfAge" runat="server" CssClass="Control-label"></asp:Label>&#41;&#58;</div> 
+         </div>    
+         <div class="col-xs-12">
+             <textarea id="tbICUGeriatrics" name="tbICUGeriatrics" class="textarea form-control" runat="server"></textarea>
+         </div>                         
 
-        <div style="width:90%; text-align:center; clear:both; padding-left:0px; padding-top: 20px;">
+          <div class="row wb-eqht mrgn-lft-sm margin-top-medium">
             <div id="divTextBox86" style="text-align:left;">              
                 <div style="padding: 4px 4px 4px 0px">
                     <div style="float:left;"><asp:Label id="lblPediatrics" runat="server" CssClass="control-label">Pediatrics</asp:Label> (&nbsp;</div>
@@ -1398,10 +1398,12 @@
     <details class="margin-top-medium">
         <summary id="SUM_CONTRAINDICATIONS" runat="server">Contraindications</summary>
         <div style="padding: 8px 4px 4px 0px; padding-left:0px; width:90%;">
-            <div style="width:94%; float:left;"><asp:Label id="lblContraindications" runat="server" CssClass="control-label">Contraindications</asp:Label>&nbsp;<img id="tooltipCONTRAINDICATIONS" src="images/qmark.jpg" class="imgQMark_Style;" alt="Help Message of CONTRAINDICATIONS" /></div>
+            <div style="width:94%; float:left;">
+                <asp:Label id="lblContraindications" runat="server" CssClass="control-label">Contraindications</asp:Label>&nbsp;<img id="tooltipCONTRAINDICATIONS" src="images/qmark.jpg" class="imgQMark_Style;" alt="Help Message of CONTRAINDICATIONS" />
+            </div>
             <div style="width:5%; float:left; padding-left:4px; display:none;">
                 <input class="btn btn-default btn-xs" type="button" value="Add" runat="server" onclick="AddContraindicationsTextBox()" id="btnAddExtraContraindications" />
-               </div> 
+            </div> 
         </div>  
         <div id="Cntrndctns0" style="width:90%; padding-left: 0px; clear:both;">
             <div style="width:94%; float:left;">

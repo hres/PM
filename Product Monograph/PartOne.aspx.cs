@@ -3243,9 +3243,9 @@ namespace Product_Monograph
             lblBrandName3.Text = Resources.Resource.lblBrandName;
          
             lblProprietaryProperName.Text = Resources.Resource.lblProperName;
-            //SumSummaryProductInformation.Text = Resources.Resource.SumSummaryProductInformation;
+            SumSummaryProductInformation.InnerText = Resources.Resource.SumSummaryProductInformation;
 
-            
+           
             lblDosageForm2.Text = Resources.Resource.lblDosageForm2;
             lblStrength2.Text = Resources.Resource.tbStrength;
             lblIngredients.Text = Resources.Resource.lblIngredients; 

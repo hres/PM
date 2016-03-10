@@ -140,6 +140,7 @@
     <Content Include="bin\System.Web.WebPages.dll" />
     <Content Include="bin\System.Web.WebPages.Razor.dll" />
     <Content Include="bin\WebGrease.dll" />
+    <Content Include="ControlledList.fr.xml" />
     <Content Include="ControlledList.xml">
       <SubType>Designer</SubType>
     </Content>

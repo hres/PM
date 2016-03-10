@@ -391,20 +391,28 @@
            <tr>
                <td><input type="checkbox" id="tbChkRemove" /></td>
                <td><input id="tbBtnRemove" type="button" onclick="deleteRowBtnRow(this)" name="btnDelete" value="X" class="btn btn-default btn-xs" /></td>   
-               <th headers="thBrandName" data-required="true"><input type="text" id="tbBrandname" name="tbBrandname" class="form-control" /></th>
-               <td headers="thProperName"><input type="text" id="tbPropername" name="tbPropername" class="form-control" /></td>
+               <th headers="thBrandName" data-required="true"><input type="text" id="tbBrandname" name="tbBrandname" class="form-control input-sm" /></th>
+               <td headers="thProperName"><input type="text" id="tbPropername" name="tbPropername" class="form-control input-sm" /></td>
                <td headers="thDosageForm">
-                   <select id="tbDosage" name="tbDosage" class="form-control" style="font-size: medium" >
+                   <select id="tbDosage" name="tbDosage" class="form-control input-sm" style="font-size: medium" >
                    </select></td>                
                <td headers="thStrength">
-                   <input type="number" id="tbStrengthValue" name="tbStrengthValue" value="0" class="form-control" />
-                   <select id="tbStrengthUnit" name="tbStrengthUnit" class="form-control" style="font-size: medium" >             
-                   </select>            
+                   <div class="width_52px">
+                   <input type="number" id="tbStrengthValue" name="tbStrengthValue" value="0" class="form-control input-sm" />
+                   </div>
+                   <div class="width_52px">
+                   <select id="tbStrengthUnit" name="tbStrengthUnit" class="form-control input-sm" style="font-size: medium" >             
+                   </select> 
+                   </div>           
                </td>
                <td headers="thStrengthPerDosage">
-                   <input type="number" id="tbStrengthperDosageValue" name="tbStrengthperDosageValue" value="0" class="form-control" />                     
-                   <select id="tbStrengthperDosageUnit" name="tbStrengthperDosageUnit" class="form-control" style="position: inherit; font-size: medium;" >
-                   </select>                               
+                   <div class="width_52px">
+                     <input type="number" id="tbStrengthperDosageValue" name="tbStrengthperDosageValue" value="0" class="form-control input-sm" /> 
+                   </div>
+                   <div class="width_52px">                        
+                    <select id="tbStrengthperDosageUnit" name="tbStrengthperDosageUnit" class="form-control input-sm" style="position: inherit; font-size: medium;" >
+                    </select>  
+                   </div>                             
                </td>
           </tr>
        </tbody>

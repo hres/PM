@@ -6,6 +6,12 @@
     <asp:Label runat="server" id="lblError" clientIDMode="Static" foreColor="Red"></asp:Label>
 
     <div class="form-group mrgn-tp-lg">       
+         <div class="alert alert-info">
+              <div class="mrgn-lft-lg">
+                    <asp:Label ID="lblLoadTemplateInst" runat="server"></asp:Label>
+                  </div>
+        </div>
+           <div class="row mrgn-tp-lg">
            <div class="col-sm-2">
                <asp:Label ID="lblSelectTemplate" runat="server" CssClass="control-label"></asp:Label> 
            </div>
@@ -27,17 +33,24 @@
            <div class="col-sm-7">
               <asp:Button ID="btnLoadTemplate" runat="server" CssClass="btn btn-default" OnClick="btnLoadTemplate_Click"/> 
            </div>   
-                                                                                                                 
+           </div>                                                                                                      
            <div class="col-lg-12">
                <label id="Label1" runat="server" style="color:red;"></label>
            </div>
     </div>
-
-    <section class="margin-bottom-small">   
+   <div class="alert alert-info">
+              <div class="mrgn-lft-lg">
+                    <asp:Label ID="lblLoadXmlInst" runat="server" ></asp:Label>
+                </div>
+        </div>
+     <div class="row mrgn-tp-lg">
+        <div class="col-sm-5">
         <asp:FileUpload id="fuXmlDraft" runat="server"/>
-        <div class="mrgn-bttm-lg"></div>
+        </div>
+        <div class="col-sm-7 text-left">
         <asp:Button cssClass="btn btn-default" id="btnLoadXml_PMForm" runat="server" text="Load XML file" onClick="btnLoadXml_Click" />   
-    </section>
+        </div>
+    </div>
 
     <section>
         <img id="imgSymbol" runat="server" src="~/images/landingnotes.png" style="display: none;" alt="Notes"/>

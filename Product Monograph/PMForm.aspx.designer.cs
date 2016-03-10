@@ -31,6 +31,15 @@ namespace Product_Monograph {
         protected global::System.Web.UI.WebControls.Label lblError;
         
         /// <summary>
+        /// lblLoadTemplateInst control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label lblLoadTemplateInst;
+        
+        /// <summary>
         /// lblSelectTemplate control.
         /// </summary>
         /// <remarks>
@@ -65,6 +74,15 @@ namespace Product_Monograph {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.HtmlControls.HtmlGenericControl Label1;
+        
+        /// <summary>
+        /// lblLoadXmlInst control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label lblLoadXmlInst;
         
         /// <summary>
         /// fuXmlDraft control.
