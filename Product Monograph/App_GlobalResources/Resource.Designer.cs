@@ -97,10 +97,9 @@ namespace Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to 
-        ///            •	To save a file, press the &quot;Save draft&quot; button. The file name of the new file will always be &quot;productmonograph&quot; with the &apos;.zip&apos; extension.
+        ///   Looks up a localized string similar to             •	To save a file, press the &quot;Save draft&quot; button. The file name of the new file will always be &quot;productmonograph&quot; with the &apos;.zip&apos; extension.
         ///            •	To collapse and expand web form groups using the arrows shown on the top-left margin of collapsible groups. An arrow to the right (►) means a group is currently collapsed, click on it to expand the group. An arrow downward (▼) means the group is currently expanded and can be collapsed by clicking on this arrow.
-        ///            •	Key information [rest of string was truncated]&quot;;.
+        ///            •	Key information i [rest of string was truncated]&quot;;.
         /// </summary>
         internal static string Body {
             get {
@@ -117,15 +116,6 @@ namespace Resources {
         internal static string BottomBody {
             get {
                 return ResourceManager.GetString("BottomBody", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to Add.
-        /// </summary>
-        internal static string BtnAdd {
-            get {
-                return ResourceManager.GetString("BtnAdd", resourceCulture);
             }
         }
         
@@ -198,15 +188,6 @@ namespace Resources {
         internal static string btnLoadTemplate {
             get {
                 return ResourceManager.GetString("btnLoadTemplate", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to Remove.
-        /// </summary>
-        internal static string BtnRemove {
-            get {
-                return ResourceManager.GetString("BtnRemove", resourceCulture);
             }
         }
         
@@ -549,6 +530,15 @@ namespace Resources {
         internal static string lblLoadTemplateInst {
             get {
                 return ResourceManager.GetString("lblLoadTemplateInst", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Load XML file.
+        /// </summary>
+        internal static string lblLoadXML {
+            get {
+                return ResourceManager.GetString("lblLoadXML", resourceCulture);
             }
         }
         
