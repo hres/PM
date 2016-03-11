@@ -3245,16 +3245,18 @@ namespace Product_Monograph
             lblProprietaryProperName.Text = Resources.Resource.lblProperName;
             SumSummaryProductInformation.InnerText = Resources.Resource.SumSummaryProductInformation;
             SUM_INDICATIONS.InnerText = Resources.Resource.SUM_INDICATIONS;
+            SUM_CONTRAINDICATIONS.InnerText = Resources.Resource.SUM_CONTRAINDICATIONS;
+
+            SUM_WARNINGS.InnerText = Resources.Resource.SUM_WARNINGS;
+            SUM_ADVERSE.InnerText = Resources.Resource.SUM_ADVERSE;
             SUM_DRUG_INTERACTIONS.InnerText = Resources.Resource.SUM_DRUG_INTERACTIONS;
             SUM_DOSAGE.InnerText = Resources.Resource.SUM_DOSAGE;
             SUM_OVERDOSAGE.InnerText = Resources.Resource.SUM_OVERDOSAGE;
             SUM_SPECIAL_HANDLING.InnerText = Resources.Resource.SUM_SPECIAL_HANDLING;
             SUM_STORAGE.InnerText = Resources.Resource.SUM_STORAGE;
             SUM_ACTION.InnerText = Resources.Resource.SUM_ACTION;
-       
-
-
             SUM_DOSAGEFORMS.InnerText = Resources.Resource.SUM_DOSAGEFORMS;
+
             lblDosageForm2.Text = Resources.Resource.lblDosageForm2;
             lblStrength2.Text = Resources.Resource.tbStrength;
             lblIngredients.Text = Resources.Resource.lblIngredients; 
@@ -3262,13 +3264,12 @@ namespace Product_Monograph
             lblYearsOfAge.Text = Resources.Resource.lblYearsOfAge;
             lblPediatrics.Text = Resources.Resource.lblPediatrics;
             lblYearsOfAgeOr.Text = Resources.Resource.lblYearsOfAgeOr;
-            lblYearsOfAge2.Text = Resources.Resource.lblYearsOfAge2;
-         //   SUM_CONTRAINDICATIONS.Text = Resources.Resource.SUM_CONTRAINDICATIONS;
+            lblYearsOfAge2.Text = Resources.Resource.lblYearsOfAge2;   
             lblContraindications.Text = Resources.Resource.lblContraindications;
             lblRouteOfAdministration.Text = Resources.Resource.lblRouteOfAdministration;
+            lblSerious.Text = Resources.Resource.lblSerious;
 
             btnAddExtraContraindications.Value = Resources.Resource.btnAddExtraContraindications;
-         
             btnAddExtraSeriousWarningsPrecautions.Value = Resources.Resource.btnAddExtraContraindications;
             btnAddPharmacokineticsOuterSection.Value = Resources.Resource.btnAddExtraContraindications;
             btnAddParenteralProducts.Value = Resources.Resource.btnAddExtraContraindications;
@@ -3279,39 +3280,25 @@ namespace Product_Monograph
             btnAddExtraAddHeadingSelection.Value = Resources.Resource.btnAddExtraContraindications;
             btnAddExtraRouteOfAdmin.Value = Resources.Resource.btnAddExtraContraindications;
             btnAddExtraAddHeadingSelection.Value = Resources.Resource.btnAddExtraContraindications;
-
             btnRemoveContraindications.Value = Resources.Resource.btnRemoveVal;
             btnRemoveSeriousWarningsPrecautions.Value = Resources.Resource.btnRemoveVal;
             btnRemoveDosingConsiderations.Value = Resources.Resource.btnRemoveVal;
 
-          //  SUM_WARNINGS.Text = Resources.Resource.SUM_WARNINGS;
             lblHeadings.Text = Resources.Resource.lblHeadings;
-           
             lblStorage.Text = Resources.Resource.lblStorage;
             lblSpecialHandling.Text = Resources.Resource.lblSpecialHandling;
-          //  SUM_DOSAGEFORMS.Text = Resources.Resource.SUM_DOSAGEFORMS;
-            lblDosageForms.Text = Resources.Resource.lblDosageForms;
-         //   SUM_INDICATIONS.Text = Resources.Resource.SUM_INDICATIONS;
-            lblRecommended.Text = Resources.Resource.lblRecommended;
-           
+            lblDosageForms.Text = Resources.Resource.lblDosageForms;   
+            lblRecommended.Text = Resources.Resource.lblRecommended;   
             lblAnySpecific.Text = Resources.Resource.lblAnySpecific;
-         //   SUM_DRUG_INTERACTIONS.Text = Resources.Resource.SUM_DRUG_INTERACTIONS;
-        //    lblOverview.Text = Resources.Resource.lblOverview;
+            lblOverdosage.Text = Resources.Resource.SUM_OVERDOSAGE;
+            lblForAnti.Text = Resources.Resource.lblForAnti;
             lblMechanism.Text = Resources.Resource.lblMechanism;
-        //    lblPharmacodynamics.Text = Resources.Resource.lblPharmacodynamics;
+            lblPharmacodynamics.Text = Resources.Resource.lblPharmacodynamics;
             lblDosing.Text = Resources.Resource.lblDosing;
-       //     lblMissed.Text = Resources.Resource.lblMissed;
-       //     lblOral.Text = Resources.Resource.lblOral;
-
-         //   SUM_SPECIAL_HANDLING.Text = Resources.Resource.SUM_SPECIAL_HANDLING;
+            lblMissed.Text = Resources.Resource.lblMissed;
+            lblOral.Text = Resources.Resource.lblOral;
             lblICProperName.Text = Resources.Resource.lblICProperName;
             lblForManagement.Text = Resources.Resource.lblForManagement;
-         //   SUM_ACTION.Text = Resources.Resource.SUM_ACTION;
-        //    SUM_STORAGE.Text = Resources.Resource.SUM_STORAGE;
-          //  SUM_OVERDOSAGE.Text = Resources.Resource.SUM_OVERDOSAGE;
-        //    SUM_ADVERSE.Text = Resources.Resource.SUM_ADVERSE;
-       //     SUM_DOSAGE.Text = Resources.Resource.SUM_DOSAGE;
-
         }
     }
 }

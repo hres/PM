@@ -398,8 +398,8 @@
     <comment>Cover Page</comment>
   </data>
   <data name="btnSaveDraft" xml:space="preserve">
-    <value>Save draft</value>
-    <comment>Cover Page</comment>
+    <value>Save a draft</value>
+    <comment>Cover Page,Part 1,2,3</comment>
   </data>
   <data name="CoverPage" xml:space="preserve">
     <value>Cover page</value>
@@ -718,5 +718,9 @@
   </data>
   <data name="lblLoadXmlInst" xml:space="preserve">
     <value>To load an existing XML file, press the “Choose File” button ("Browse..." in Internet Explorer and Firefox), select the file and press the "Open" button in the file browser. Press the "Load XML" button.</value>
+  </data>
+  <data name="lblForAnti" xml:space="preserve">
+    <value />
+    <comment>Part 1</comment>
   </data>
 </root>
