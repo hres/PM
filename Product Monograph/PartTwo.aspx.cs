@@ -55,7 +55,7 @@ namespace Product_Monograph
                 }
             }
 
-            /*     lblPartII.Text = Resources.Resource.PartII;
+                 lblPartII.Text = Resources.Resource.PartII;
                  lblSumPharmInfo.Text = Resources.Resource.SumPharmInfo;
                  lblSumCT.Text = Resources.Resource.SumCT;
                  lblSumPharmacology.Text = Resources.Resource.SumPharmacology;
@@ -86,7 +86,7 @@ namespace Product_Monograph
                  lblNote4.Text = Resources.Resource.Note4;
                  lblNote5.Text = Resources.Resource.Note5;
                  lblNote6.Text = Resources.Resource.Note6;
-                 */
+                
                  btnAddClinicalTrialsOuterTextBox.Text = Resources.Resource.btnAddExtraContraindications;
                  btnAddAnalyteNameTextBox.Text = Resources.Resource.btnAddExtraContraindications;
                  btnAddDrugSubstance.Text = Resources.Resource.btnAddExtraContraindications;

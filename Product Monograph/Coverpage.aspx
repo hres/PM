@@ -311,7 +311,7 @@
 <asp:Content id="Content2" contentPlaceHolderID="ContentPlaceHolder1" runat="server">
    <asp:ScriptManager id="ScriptManager1" runat="server" EnablePageMethods="true"></asp:ScriptManager>
 <div class="row">
-   <asp:Menu clientIDMode="Static" id="submenutabs" runat="server" Orientation="Horizontal" OnMenuItemClick="menutabs_MenuItemClick" cssclass="wet-boew-menubar floatLeft">
+   <asp:Menu clientIDMode="Static" id="submenutabs" runat="server" Orientation="Horizontal" OnMenuItemClick="menutabs_MenuItemClick">
       <StaticMenuStyle VerticalPadding="5px" />
       <StaticMenuItemStyle HorizontalPadding="25px" />
       <Items>
@@ -384,7 +384,7 @@
                 <th scope="col" id="thProperName" title="ProperName"><Label id="tbPName" runat="server"></Label><br />&#32;</th>
                 <th scope="col" id="thDosageForm" title="DosageForm"><Label id="tbDForm" runat="server"></Label><br />&#32;</th>
                 <th scope="col" id="thStrength" title="Strength"><Label id="tbStrength" runat="server"></Label><br /><label id="tbSValue" runat="server"></label> | <label id="tbSUnit" runat="server"></label></th>
-                <th scope="col" id="thStrengthPerDosage" title="StrengthPerDosage"><asp:Label id="lblStrengthperDosage" runat="server"></asp:Label><br /><label id="tbDValue" runat="server"></label> | <label id="tbDUnit" runat="server"></label></th>   
+                <th scope="col" id="thStrengthPerDosage" title="StrengthPerDosage" ><asp:Label id="lblStrengthperDosage" runat="server"></asp:Label><br /><label id="tbDValue" runat="server"></label> | <label id="tbDUnit" runat="server" ></label></th>   
             </tr>
         </thead>
         <tbody>
@@ -525,7 +525,7 @@
 </div>
 <div class="form-group">
   <div class="row margin-top-medium">
-    <asp:Menu clientIDMode="Static" id="submenutabsbottom" runat="server" orientation="Horizontal" onMenuItemClick="submenutabsbottom_MenuItemClick" cssclass="wet-boew-menubar floatLeft">
+    <asp:Menu clientIDMode="Static" id="submenutabsbottom" runat="server" orientation="Horizontal" onMenuItemClick="submenutabsbottom_MenuItemClick">
         <StaticMenuStyle verticalPadding="5px" />
         <StaticMenuItemStyle horizontalPadding="25px" />
         <Items>
