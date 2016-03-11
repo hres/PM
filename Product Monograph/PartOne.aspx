@@ -1354,15 +1354,15 @@
                 <input class="btn btn-default btn-xs" type="button" onclick="AddRouteOfAdminTextBox()" id="btnAddExtraRouteOfAdmin" runat="server"/>
             </div>   
         </div>    
-        <div id="dvExtraRouteOfAdmin">
+        <div id="dvExtraRouteOfAdmin" class="row mrgn-lft-sm">
         </div>
     </details>
     </li>
 	<li> 
-    <details class="margin-top-large">
+    <details class="margin-top-medium">
       <summary id="SUM_INDICATIONS" runat="server"></summary>
         <div class="form-group">
-           <div class="mrgn-lft-sm">
+           <div class="mrgn-lft-sm mrgn-tp-md">
               <asp:Label ID="lblBrandName3" AssociatedControlID="tbBrandNameIndicatedFor" runat="server" CssClass="control-label"></asp:Label>&nbsp;&#40;<asp:Label ID="lblICProperName" runat="server" CssClass="Control-label"></asp:Label>&#41; 
                     <img id="tooltipINDICATIONS" src="images/qmark.jpg" class="imgQMark_style" alt="Help Message of Indications and clinical use" />
            </div> 
@@ -1372,23 +1372,23 @@
               </div>
            </div>    
        </div>
-        <div class="form-group margin-top-large"> 
-           <div id="divTextBox16" class="mrgn-lft-sm ">           
+        <div class="form-group"> 
+           <div id="divTextBox16" class="mrgn-lft-sm mrgn-tp-md">           
              <div class="pull-left"><asp:Label id="lblGeriatrics" AssociatedControlID="tbICUGeriatrics" runat="server" CssClass="control-label"></asp:Label>&#40;&#62;
              </div>
              <div title="X" class="pull-left"><input type="number" id="tbGeriatricXvalue" name="tbGeriatricXvalue" runat="server" class="width_52px" />&nbsp;&nbsp;
-             </div>
+             </div>   
              <div class="pull-left"><asp:Label id="lblYearsOfAge" runat="server" CssClass="Control-label"></asp:Label>&#41;&#58;
-             </div>
+              </div>
            </div>         
-           <div class="row">   
-             <div class="col-xs-10">
+            <div class="row">
+              <div class="col-xs-10">
                 <textarea id="tbICUGeriatrics" name="tbICUGeriatrics" class="textarea form-control" runat="server"></textarea>
-             </div> 
-          </div>                        
+              </div>
+         </div>                  
         </div>
-        <div class="form-group margin-top-large"> 
-         <div id="divTextBox86" class="mrgn-lft-sm margin-top-medium">               
+        <div class="form-group"> 
+         <div id="divTextBox86" class="mrgn-tp-md">               
              <div class="pull-left"><asp:Label id="lblPediatrics" AssociatedControlID="tbICUPediatrics" runat="server" CssClass="control-label"></asp:Label>&nbsp;&#40;&nbsp;</div>
              <div class="pull-left" title="X"><input type="number" id="tbPediatricsXvalue" name="tbPediatricsXvalue" runat="server" class="width_52px" style="text-align:center;"/>&nbsp;</div>
              <div class="pull-left">-&nbsp;</div>
@@ -1409,11 +1409,11 @@
     <details class="margin-top-medium">
        <summary id="SUM_CONTRAINDICATIONS" runat="server"></summary>
         <div class="form-group">
-           <div class="margin-top-medium">
+           <div class="margin-top-medium mrgn-bttm-sm">
               <asp:Label id="lblContraindications" runat="server" CssClass="control-label"></asp:Label>&nbsp;<img id="tooltipCONTRAINDICATIONS" src="images/qmark.jpg" class="imgQMark_style" alt="Help Message of Contraindications" />
               <input class="btn btn-default btn-xs" type="button" value="Add" runat="server" onclick="AddContraindicationsTextBox()" id="btnAddExtraContraindications" />
-          </div>
-          <div id="Cntrndctns0" class="row">
+           </div>
+           <div id="Cntrndctns0" class="row">
               <div class="col-xs-10">
                  <textarea id="tbContraindicationsDynamic0" name="tbContraindicationsDynamic" class="textarea form-control"></textarea>
               </div>   
@@ -1430,7 +1430,7 @@
     <details class="margin-top-medium">
         <summary id="SUM_WARNINGS" runat="server"></summary>
         <div class="form-group">
-           <div class="margin-top-medium">
+           <div class="margin-top-medium mrgn-bttm-sm">
               <asp:Label id="lblSerious" runat="server" CssClass="control-label"></asp:Label>&nbsp;<img id="tooltipSeriousWarnings" src="images/qmark.jpg" class="imgQMark_style" alt="Help Message of Serious warnings"/>         
               <input class="btn btn-default btn-xs" type="button" value="Add" onclick="AddSeriousWarningsPrecautionsTextBox()" id="btnAddExtraSeriousWarningsPrecautions" runat="server" />
            </div>
@@ -1447,12 +1447,12 @@
            </div>
        </div>
         <div class="form-group">
-          <div class="margin-top-medium">
-                <asp:Label id="lblHeadings" runat="server" CssClass="control-label"></asp:Label>&nbsp;<img id="tooltipSeriousWarningsHeadings" src="images/qmark.jpg" class="imgQMark_style" alt="Help Message of Headings" />
-                <input class="btn btn-default btn-xs" type="button" value="Add" onclick="AddHeadingSelection()" runat="server" id="btnAddExtraAddHeadingSelection" />       
+          <div class="margin-top-medium mrgn-bttm-sm">
+             <asp:Label id="lblHeadings" runat="server" CssClass="control-label"></asp:Label>&nbsp;<img id="tooltipSeriousWarningsHeadings" src="images/qmark.jpg" class="imgQMark_style" alt="Help Message of Headings" />
+             <input class="btn btn-default btn-xs" type="button" value="Add" onclick="AddHeadingSelection()" runat="server" id="btnAddExtraAddHeadingSelection" />       
           </div>
-           <div id="dvExtraHeadingSelection" class="row">
-           </div>
+          <div id="dvExtraHeadingSelection" class="row">
+          </div>
        </div>
     </details>    
     </li>
@@ -1460,8 +1460,8 @@
     <details class="margin-top-medium">
         <summary id="SUM_ADVERSE" runat="server"></summary>
         <div class="form-group">
-            <div class="margin-top-large">
-                <asp:Label id="lblAdverse" AssociatedControlID="tbAdverseDrugReactOverview" runat="server" CssClass="control-label"></asp:Label>
+            <div class="mrgn-lft-sm">
+                <asp:Label id="lblAdverse" AssociatedControlID="tbAdverseDrugReactOverview" runat="server" CssClass="control-label wb-inv"></asp:Label>
             </div> 
             <div class="row"> 
                <div class="col-xs-10">                           
@@ -1469,22 +1469,16 @@
                </div>
             </div>
         </div>
-
         <div class="form-group">
-            <div class="margin-top-large">
-            </div> 
-            <div class="row"> 
-               <div class="col-xs-6"> 
-                  <input type="text" list="dladversereactions" id="tbSelectedAdverseReaction" class="list-group" />
-                  <datalist id="dladversereactions"></datalist>
-               </div>    
-               <div class="col-xs-1"> 
-                  <input class="btn btn-default btn-xs" type="button" value="Add" onclick="AddAdverseReactionsOuterSection()" runat="server" id="btnAddAdverseReactionsOuterSection" />&nbsp;<img id="tooltipSelectedAdverseReaction" src="images/qmark.jpg" class="imgQMark_style" alt="Help Message of Selected Adverse Reaction" />
-               </div> 
+            <div class="margin-top-large mrgn-bttm-sm">
+               <input type="text" list="dladversereactions" id="tbSelectedAdverseReaction" class="list-group" />
+               <datalist id="dladversereactions"></datalist>
+               <input class="btn btn-default btn-xs" type="button" value="Add" onclick="AddAdverseReactionsOuterSection()" runat="server" id="btnAddAdverseReactionsOuterSection" />&nbsp;<img id="tooltipSelectedAdverseReaction" src="images/qmark.jpg" class="imgQMark_style" alt="Help Message of Selected Adverse Reaction" />
+           </div>
+             
+            <div id="dvExtraAdverseReactionsOuter" class="row mrgn-lft-sm">
            </div> 
-           <div id="dvExtraAdverseReactionsOuter" class="row mrgn-lft-sm">
-           </div> 
-        </div>
+       </div>
     </details>
     </li>
 	<li>
@@ -1500,18 +1494,13 @@
             </div>
           </div>
       </div>
-
        <div class="form-group">
-           <div class="mrgnin-top-medium"></div>
-           <div class="row">
-              <div class="col-xs-6">        
-                  <input type="text" list="dldruginteractions" id="tbSelectedDrugInteraction" class="list-group" />
-                  <datalist id="dldruginteractions"></datalist>
-              </div>     
-              <div class="col-xs-1">
-                  <input type="button" value="Add" onclick="AddDrugInteractionsOuterSection()" runat="server" id="btnAddDrugInteractionsOuterSection" class="btn btn-default btn-xs" />
-              </div> 
+           <div class="mrgnin-top-medium mrgn-bttm-sm"> 
+               <input type="text" list="dldruginteractions" id="tbSelectedDrugInteraction" class="list-group" />
+               <datalist id="dldruginteractions"></datalist>            
+               <input type="button" value="Add" onclick="AddDrugInteractionsOuterSection()" runat="server" id="btnAddDrugInteractionsOuterSection" class="btn btn-default btn-xs" />
            </div>
+           
            <div id="dvExtraDrugInteractionsOuter" class="row mrgn-lft-sm">
            </div>  
        </div>
@@ -1641,8 +1630,8 @@
     <details class="margin-top-medium">
         <summary id="SUM_OVERDOSAGE" runat="server"></summary>
          <div class="form-group">
-            <div id="divTextBox19" class="mrgn-lft-sm margin-top-large">
-               <asp:Label id="lblOverdosage" AssociatedControlID="tbOverdosage" runat="server" CssClass="control-label"></asp:Label>
+            <div id="divTextBox19" class="mrgn-lft-sm">
+               <asp:Label id="lblOverdosage" AssociatedControlID="tbOverdosage" runat="server" CssClass="control-label wb-inv"></asp:Label>
             </div> 
             <div class="row"> 
                <div class="col-xs-10">                         
@@ -1656,7 +1645,7 @@
            </div>
       </div>
        <div class="form-group">
-          <div id="divTextBox11" class="mrgn-lft-sm margin-top-medium" >  
+          <div id="divTextBox11" class="mrgn-lft-sm margin-top-large" >  
               <asp:Label id="lblForAnti" AssociatedControlID="tbAntiInfectiveDescription" runat="server" CssClass="alert-info"></asp:Label>
           </div> 
           <div class="row"> 
@@ -1732,8 +1721,8 @@
     <details class="margin-top-medium">
         <summary id="SUM_STORAGE" runat="server"></summary>
         <div class="form-group">
-           <div class="mrgn-lft-sm margin-top-large">
-             <asp:Label id="lblStorage" runat="server" AssociatedControlID="tbStorageStability" CssClass="control-label"></asp:Label>
+           <div class="mrgn-lft-sm mrgn-tp-md">
+             <asp:Label id="lblStorage" runat="server" AssociatedControlID="tbStorageStability" CssClass="control-label wb-inv"></asp:Label>
            </div> 
            <div class="row"> 
              <div class="col-xs-10">                          
@@ -1747,8 +1736,8 @@
     <details class="margin-top-medium">
         <summary id="SUM_SPECIAL_HANDLING" runat="server"></summary>
         <div class="form-group">
-           <div class="mrgn-lft-sm margin-top-large">
-              <asp:Label id="lblSpecialHandling" AssociatedControlID="tbSpecialHandling" runat="server" CssClass="control-label"></asp:Label>
+           <div class="mrgn-lft-sm mrgn-tp-md">
+              <asp:Label id="lblSpecialHandling" AssociatedControlID="tbSpecialHandling" runat="server" CssClass="control-label wb-inv"></asp:Label>
            </div>                         
            <div class="row"> 
              <div class="col-xs-10">   
@@ -1762,8 +1751,8 @@
     <details class="margin-top-medium margin-bottom-small">
         <summary id="SUM_DOSAGEFORMS" runat="server"></summary>
           <div class="form-group">
-            <div class="mrgn-lft-sm margin-top-large">
-              <asp:Label id="lblDosageForms" AssociatedControlID="tbDosageFormsComposition" runat="server" CssClass="control-label"></asp:Label>
+            <div class="mrgn-lft-sm mrgn-tp-md">
+              <asp:Label id="lblDosageForms" AssociatedControlID="tbDosageFormsComposition" runat="server" CssClass="control-label wb-inv"></asp:Label>
             </div>
             <div class="row"> 
              <div class="col-xs-10">                        
