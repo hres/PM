@@ -201,7 +201,7 @@ namespace Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Save draft.
+        ///   Looks up a localized string similar to Save a draft.
         /// </summary>
         internal static string btnSaveDraft {
             get {
@@ -485,6 +485,15 @@ namespace Resources {
         internal static string lblErr_PlsChooseXML {
             get {
                 return ResourceManager.GetString("lblErr_PlsChooseXML", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to .
+        /// </summary>
+        internal static string lblForAnti {
+            get {
+                return ResourceManager.GetString("lblForAnti", resourceCulture);
             }
         }
         

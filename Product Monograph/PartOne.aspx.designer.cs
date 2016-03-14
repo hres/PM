@@ -361,7 +361,7 @@ namespace Product_Monograph {
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlGenericControl lblAdverse;
+        protected global::System.Web.UI.WebControls.Label lblAdverse;
         
         /// <summary>
         /// tbAdverseDrugReactOverview control.
@@ -397,7 +397,7 @@ namespace Product_Monograph {
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlGenericControl lblOverview;
+        protected global::System.Web.UI.WebControls.Label lblOverview;
         
         /// <summary>
         /// tbDrugInteractionsOverview control.
@@ -478,7 +478,7 @@ namespace Product_Monograph {
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlGenericControl lblMissed;
+        protected global::System.Web.UI.WebControls.Label lblMissed;
         
         /// <summary>
         /// tbMissedDose control.
@@ -496,7 +496,7 @@ namespace Product_Monograph {
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlGenericControl lblAdministration;
+        protected global::System.Web.UI.WebControls.Label lblAdministration;
         
         /// <summary>
         /// tbAdministration control.
@@ -523,7 +523,7 @@ namespace Product_Monograph {
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlGenericControl lblOral;
+        protected global::System.Web.UI.WebControls.Label lblOral;
         
         /// <summary>
         /// tbOralSolutions control.
@@ -685,7 +685,7 @@ namespace Product_Monograph {
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlGenericControl lblPharmacodynamics;
+        protected global::System.Web.UI.WebControls.Label lblPharmacodynamics;
         
         /// <summary>
         /// tbPharmacodynamics control.

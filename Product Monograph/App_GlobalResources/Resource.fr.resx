@@ -400,7 +400,8 @@ précautions)</value>
     <value>Appliquer le symbole</value>
   </data>
   <data name="btnSaveDraft" xml:space="preserve">
-    <value>Enregistrer un brouillon</value>
+    <value>Sauvegarder un brouillon</value>
+    <comment>Cover page, Part 1, 2, 3</comment>
   </data>
   <data name="CoverPage" xml:space="preserve">
     <value>Page couverture</value>

@@ -324,7 +324,7 @@
    </asp:Menu>
 </div>
 <div class="row mrgn-tp-md">
-   <asp:Button id="btnSaveDraft" runat="server" onClick="btnSaveDraft_Click" cssClass="btn btn-default" />
+   <asp:Button id="btnSaveDraft" runat="server" onClick="btnSaveDraft_Click" cssClass="btn btn-primary" />
 </div>
 <!-- Main Content For Submenu Item of "Cover Page" and Use WET Standard -->
 <div class="margin-top-medium">

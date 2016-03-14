@@ -395,8 +395,8 @@
     <comment>Cover Page</comment>
   </data>
   <data name="btnSaveDraft" xml:space="preserve">
-    <value>Save draft</value>
-    <comment>Cover Page</comment>
+    <value>Save a draft</value>
+    <comment>Cover Page,Part 1,2,3</comment>
   </data>
   <data name="CoverPage" xml:space="preserve">
     <value>Cover page</value>
