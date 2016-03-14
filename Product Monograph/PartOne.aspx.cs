@@ -2024,7 +2024,7 @@ namespace Product_Monograph
                         if (colarray[colcounter].Equals("tbBrandName"))
                         {
                             lblBrandName.Text = helpers.Processes.CleanString(column);
-                            lblBrandName.Text = helpers.Processes.CleanString(column);
+                            lblBrandName3.Text = helpers.Processes.CleanString(column);
                             strBrandName = helpers.Processes.CleanString(column);  //ching add code here
                         }
 
@@ -3299,6 +3299,7 @@ namespace Product_Monograph
             lblOral.Text = Resources.Resource.lblOral;
             lblICProperName.Text = Resources.Resource.lblICProperName;
             lblForManagement.Text = Resources.Resource.lblForManagement;
+            lblParenteralProducts.Text = Resources.Resource.lblParenteralProducts;
         }
     }
 }

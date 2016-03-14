@@ -14,7 +14,7 @@
         $.get('ControlledList.xml', function (xmlcontolledlist) {
             $(xmlcontolledlist).find('reaction').each(function () {
                 var $option = $(this).text();
-                $('<option style="width: 500px; height:40px;">' + $option + '</option>').appendTo('#dladversereactions')
+                $('<option">' + $option + '</option>').appendTo('#dladversereactions')
             });
         }).done(function () {
             $('#dladversereactions option').each(function () {
@@ -31,7 +31,7 @@
         $.get('ControlledList.xml', function (xmlcontolledlist) {
             $(xmlcontolledlist).find('interaction').each(function () {
                 var $option = $(this).text();
-                $('<option style="width: 500px; height:40px;">' + $option + '</option>').appendTo('#dldruginteractions')
+                $('<option">' + $option + '</option>').appendTo('#dldruginteractions')
             });
         }).done(function () {
             $('#dldruginteractions option').each(function () {
@@ -48,7 +48,7 @@
         $.get('ControlledList.xml', function (xmlcontolledlist) {
             $(xmlcontolledlist).find('kinetics').each(function () {
                 var $option = $(this).text();
-                $('<option style="width: 500px; height:40px;">' + $option + '</option>').appendTo('#dlpharmacokinetics')
+                $('<option">' + $option + '</option>').appendTo('#dlpharmacokinetics')
             });
         }).done(function () {
             $('#dlpharmacokinetics option').each(function () {
@@ -65,13 +65,13 @@
         $.get('ControlledList.xml', function (xmlcontolledlist) {
             $(xmlcontolledlist).find('route').each(function () {
                 var $option = $(this).text();
-                $('<option style="width: 500px; height:40px;">' + $option + '</option>').appendTo('#tbRouteOfAdminDynamic0');
+                $('<option">' + $option + '</option>').appendTo('#tbRouteOfAdminDynamic0');
             });
         });
         $.get('ControlledList.xml', function (xmlcontolledlist) {
             $(xmlcontolledlist).find('dosageform').each(function () {
                 var $option = $(this).text();
-                $('<option style="width: 500px; height:40px;">' + $option + '</option>').appendTo('#tbDosageFormDynamic0');
+                $('<option">' + $option + '</option>').appendTo('#tbDosageFormDynamic0');
             });
         });
     });
@@ -253,12 +253,12 @@
     function GetAddPharmacokineticsOuterSection(id) {
         return '<div style="width:90%; padding-left: 0px; border:1px solid #D9D9D9; height:auto; margin-top:10px; float:left;">' +
                     '<div style="width:40%; float:left; clear:both; margin:4px;">' +
-                        '<input type="text" id="lblSelectedHeaderPharmacokinetics' + id + '" name="lblSelectedHeaderPharmacokinetics" style="width:95%; border:0px; height:27px;" readonly="true"/>' +
+                        '<input type="text" id="lblSelectedHeaderPharmacokinetics' + id + '" name="lblSelectedHeaderPharmacokinetics" class="list-group input-sm" readonly="true"/>' +
                         '<input type="text" id="lblSelectedHeaderCountPharmacokinetics' + id + '" name="lblSelectedHeaderCountPharmacokinetics" value="' + id + '" style="display:none;"/>' +
                     '</div>' +
 
                     '<div style="width:100%; text-align:center; clear:both; text-align:left; border: 1px solid #D9D9D9;">' +
-                        "<textarea id='tbSelectedHeaderPharmacokinetics" + id + "' name='tbSelectedHeaderPharmacokinetics'></textarea>" +
+                        "<textarea id='tbSelectedHeaderPharmacokinetics" + id + "' name='tbSelectedHeaderPharmacokinetics' class='textarea form-control'></textarea>" +
                     '</div>' +
                     '<div style="width:100%; text-align:center; float:left; height:auto; padding-top:6px;">' +
                        
@@ -277,7 +277,7 @@
                     '<div id="dvExtraPharmacokineticsInner' + id + '" style="width:100%; padding-left: 0px; clear:both;">' +
                     '</div>' +
                     '<div style="width:100%; text-align:center; clear:both; text-align:center;">' +
-                        '<textarea id="tbSelectedHeaderDescPharmacokinetics' + id + '" name="tbSelectedHeaderDescPharmacokinetics"></textarea>' +
+                        '<textarea id="tbSelectedHeaderDescPharmacokinetics' + id + '" name="tbSelectedHeaderDescPharmacokinetics" class="textarea form-control"></textarea>' +
                     '</div>' +
                 '</div>' +
                 '<div style="width:5%; float:left; margin-top:10px;">' +
@@ -446,7 +446,7 @@
     }
 
     function AddDynamicBodyColumn(id) {
-        return '<textarea id="tbBodyTwoPharmacokinetics' + id + '" name="tbBodyTwoPharmacokinetics"></textarea>';
+        return '<textarea class="textarea form-control" id="tbBodyTwoPharmacokinetics' + id + '" name="tbBodyTwoPharmacokinetics"></textarea>';
     }
 
     var DrugInteractionsOuterSection = 0;
@@ -558,14 +558,14 @@
                     "</div>" +
                     '<div style="width:100%; text-align:center; clear:both; text-align:center;">' +
                         '<div style="width:50%; float:left; border: 1px solid #D9D9D9;">' +
-                            '<textarea id="tbBodyOneDrugInt' + outerid + "_" + innerid + '" name="tbBodyOneDrugInt' + outerid + '"></textarea>' +
+                            '<textarea class="textarea form-control" id="tbBodyOneDrugInt' + outerid + "_" + innerid + '" name="tbBodyOneDrugInt' + outerid + '"></textarea>' +
                         "</div>" +
                         '<div style="width:50%; float:left; border: 1px solid #D9D9D9;">' +
-                            '<textarea id="tbBodyTwoDrugInt' + outerid + "_" + innerid + '" name="tbBodyTwoDrugInt' + outerid + '"></textarea>' +
+                            '<textarea  class="textarea form-control" id="tbBodyTwoDrugInt' + outerid + "_" + innerid + '" name="tbBodyTwoDrugInt' + outerid + '"></textarea>' +
                         "</div>" +
                     "</div>" +
                     '<div style="width:100%; text-align:center; clear:both; text-align:center;">' +
-                        '<textarea id="tbNarrativeDrugInt' + outerid + "_" + innerid + '" name="tbNarrativeDrugInt' + outerid + '"></textarea>' +
+                        '<textarea  class="textarea form-control" id="tbNarrativeDrugInt' + outerid + "_" + innerid + '" name="tbNarrativeDrugInt' + outerid + '"></textarea>' +
                     "</div>" +
                 '</div>' +
                 '<div style="width:initial; float:left; padding-top:6px;">' +
@@ -1373,19 +1373,18 @@
            </div>    
        </div>
         <div class="form-group"> 
-           <div id="divTextBox16" class="mrgn-lft-sm mrgn-tp-md">           
-             <div class="pull-left"><asp:Label id="lblGeriatrics" AssociatedControlID="tbICUGeriatrics" runat="server" CssClass="control-label"></asp:Label>&#40;&#62;
+          <div id="divTextBox16" class="row mrgn-lft-sm mrgn-tp-md">           
+                <div class="pull-left">
+                 <asp:Label id="lblGeriatrics" AssociatedControlID="tbICUGeriatrics" runat="server" CssClass="control-label"></asp:Label>&#40;&#62;
              </div>
-             <div title="X" class="pull-left"><input type="number" id="tbGeriatricXvalue" name="tbGeriatricXvalue" runat="server" class="width_52px" />&nbsp;&nbsp;
-             </div>   
-             <div class="pull-left"><asp:Label id="lblYearsOfAge" runat="server" CssClass="Control-label"></asp:Label>&#41;&#58;
-              </div>
-           </div>         
-            <div class="row">
+                <div title="X" class="pull-left"><input type="number" id="tbGeriatricXvalue" name="tbGeriatricXvalue" runat="server" class="width_52px" />&nbsp;&nbsp;</div>   
+                <div class="pull-left"><asp:Label id="lblYearsOfAge" runat="server" CssClass="Control-label"></asp:Label>&#41;&#58;</div>
+           </div>           
+           <div class="row">
               <div class="col-xs-10">
                 <textarea id="tbICUGeriatrics" name="tbICUGeriatrics" class="textarea form-control" runat="server"></textarea>
               </div>
-         </div>                  
+           </div>                            
         </div>
         <div class="form-group"> 
          <div id="divTextBox86" class="mrgn-tp-md">               
@@ -1460,7 +1459,7 @@
     <details class="margin-top-medium">
         <summary id="SUM_ADVERSE" runat="server"></summary>
         <div class="form-group">
-            <div class="mrgn-lft-sm">
+            <div class="margin-top-medium mrgn-lft-sm">
                 <asp:Label id="lblAdverse" AssociatedControlID="tbAdverseDrugReactOverview" runat="server" CssClass="control-label wb-inv"></asp:Label>
             </div> 
             <div class="row"> 
@@ -1485,7 +1484,7 @@
     <details class="margin-top-medium">
        <summary id="SUM_DRUG_INTERACTIONS" runat="server"></summary>        
        <div class="form-group">
-          <div class="mrgn-lft-sm margin-top-large">
+          <div class="mrgn-lft-sm margin-top-sm">
              <asp:Label id="lblOverview" AssociatedControlID="tbDrugInteractionsOverview" runat="server" CssClass="control-label"></asp:Label>
           </div>
           <div class="row"> 
@@ -1510,7 +1509,7 @@
     <details class="margin-top-medium">
         <summary id="SUM_DOSAGE" runat="server"></summary>
         <div class="form-group">
-           <div class="margin-top-large">
+           <div class="margin-top-large mrgn-bttm-sm">
               <asp:Label id="lblDosing" runat="server" CssClass="control-label"></asp:Label>&nbsp;<img id="tooltipDosingConsiderations" src="images/qmark.jpg" class="imgQMark_style" alt="Help Message of Dosing Considerations"/>            
                 <input class="btn btn-default btn-xs" type="button" value="Add" runat="server" onclick="AddDosingConsiderationsTextBox()" id="btnAddExtraDosingConsiderations" /> 
            </div>
@@ -1572,11 +1571,11 @@
         </div>    
 
         <div class="form-group">
-           <div class="margin-top-medium"> 
-            <asp:Label ID="lblParenteralProducts" runat="server" CssClass="control-label">:</asp:Label>
+           <div class="margin-top-medium mrgn-bttm-sm"> 
+            <asp:Label ID="lblParenteralProducts" runat="server" CssClass="control-label text-primary"></asp:Label>
            </div>
 
-          <div class="row mrgn-lft-sm"> 
+          <div class="row"> 
             <div class="col-xs-11">  
             <div style="width:14%; float:left; border: 1px solid #D9D9D9; height:50px;">
                 <asp:Label id="lblVialSize" runat="server" CssClass="control-label">Vial size</asp:Label>
@@ -1590,13 +1589,14 @@
             <div style="width:24%; float:left; border: 1px solid #D9D9D9; height:50px">
                 <asp:Label id="lblNominal" runat="server" CssClass="control-label">Nominal concentration per mL</asp:Label>
             </div>
-            <div style="width:5%; float:left;">
+           </div>
+            <div class="col-xs-1">
                 <input class="btn btn-default btn-xs" type="button" value="Add" onclick="AddParenteralProductsTextBox()" runat="server" id="btnAddParenteralProducts" />
            </div> 
-            </div>          
+                   
           </div>
 
-          <div class="row mrgn-lft-sm"> 
+          <div class="row"> 
             <div class="col-xs-11"> 
             <div style="width:14%; float:left;">
                 <textarea id="tbVialSize0" name="tbVialSize" class="textarea form-control"></textarea>                
@@ -1607,20 +1607,20 @@
             <div style="width:24%; float:left;">
                 <textarea id="tbApproxAvailable0" name="tbApproxAvailable" class="textarea form-control"></textarea>                
             </div>
-            <div style="width:24%; float:left; padding-right:2px;">
+            <div style="width:24%; float:left;">
                 <textarea id="tbNominalConcentration0" name="tbNominalConcentration" class="textarea form-control"></textarea>                
-            </div>   
-            <div style="width:5%; float:left;">
-                <input class="btn btn-default btn-xs" type="button" value="Remove" onclick="RemoveParenteralProductsTextBox(0)" id="btnRemoveParenteralProducts" />
-                <!--<img style="cursor:pointer !important;" src="images/minus_icon.png"  onclick="RemoveParenteralProductsTextBox(0)" id="btnRemoveParenteralProducts" width="22" height="22" alt="Remove"/>-->                                                          
             </div> 
-            </div>       
+            </div>  
+            <div class="col-xs-1">
+                <input class="btn btn-default btn-xs" type="button" value="Remove" onclick="RemoveParenteralProductsTextBox(0)" id="btnRemoveParenteralProducts" />
+            </div> 
+             
           </div>
 
-          <div id="dvExtraParenteralProducts" class="row mrgn-lft-sm">
+          <div id="dvExtraParenteralProducts" class="row">
           </div>
 
-          <div class="row mrgn-lft-sm">
+          <div class="row mrgn-lft-sm mrgn-tp-md">
             <asp:Label ID="lblAnySpecific" runat="server" CssClass="control-label"></asp:Label>
           </div>
        </div>
@@ -1630,7 +1630,7 @@
     <details class="margin-top-medium">
         <summary id="SUM_OVERDOSAGE" runat="server"></summary>
          <div class="form-group">
-            <div id="divTextBox19" class="mrgn-lft-sm">
+            <div id="divTextBox19" class="mrgn-lft-sm margin-top-medium">
                <asp:Label id="lblOverdosage" AssociatedControlID="tbOverdosage" runat="server" CssClass="control-label wb-inv"></asp:Label>
             </div> 
             <div class="row"> 
@@ -1688,8 +1688,6 @@
         <div class="col-xs-6">
             <input type="text" list="dlpharmacokinetics" id="tbSelectedPharmacokinetics" class="list-group"/>
             <datalist id="dlpharmacokinetics"></datalist> 
-        </div>     
-        <div class="col-xs-1">
             <input class="btn btn-default btn-xs" type="button" value="Add" runat="server" onclick="AddPharmacokineticsOuterSection()" id="btnAddPharmacokineticsOuterSection" />
         </div>
     </div>
