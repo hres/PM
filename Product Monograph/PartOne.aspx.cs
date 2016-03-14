@@ -3256,6 +3256,7 @@ namespace Product_Monograph
             SUM_STORAGE.InnerText = Resources.Resource.SUM_STORAGE;
             SUM_ACTION.InnerText = Resources.Resource.SUM_ACTION;
             SUM_DOSAGEFORMS.InnerText = Resources.Resource.SUM_DOSAGEFORMS;
+            SUM_Special_Popu_Condition.InnerText = Resources.Resource.SUM_Special_Popu_Condition;
 
             lblDosageForm2.Text = Resources.Resource.lblDosageForm2;
             lblStrength2.Text = Resources.Resource.tbStrength;
@@ -3300,6 +3301,7 @@ namespace Product_Monograph
             lblICProperName.Text = Resources.Resource.lblICProperName;
             lblForManagement.Text = Resources.Resource.lblForManagement;
             lblParenteralProducts.Text = Resources.Resource.lblParenteralProducts;
+            lblAdditional.Text = "Additional Information";
         }
     }
 }

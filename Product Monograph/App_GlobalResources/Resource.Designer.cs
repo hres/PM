@@ -1398,6 +1398,15 @@ namespace Resources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Special Populations and Conditions.
+        /// </summary>
+        internal static string SUM_Special_Popu_Condition {
+            get {
+                return ResourceManager.GetString("SUM_Special_Popu_Condition", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Storage and stability.
         /// </summary>
         internal static string SUM_STORAGE {
@@ -1407,7 +1416,7 @@ namespace Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Warnings and precaution.
+        ///   Looks up a localized string similar to Warnings and precautions.
         /// </summary>
         internal static string SUM_WARNINGS {
             get {

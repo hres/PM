@@ -645,7 +645,7 @@
     <comment>Part 1</comment>
   </data>
   <data name="SUM_WARNINGS" xml:space="preserve">
-    <value>Warnings and precaution</value>
+    <value>Warnings and precautions</value>
     <comment>Part 1</comment>
   </data>
   <data name="lblDosing" xml:space="preserve">
@@ -721,6 +721,10 @@
   </data>
   <data name="lblForAnti" xml:space="preserve">
     <value />
+    <comment>Part 1</comment>
+  </data>
+  <data name="SUM_Special_Popu_Condition" xml:space="preserve">
+    <value>Special Populations and Conditions</value>
     <comment>Part 1</comment>
   </data>
 </root>

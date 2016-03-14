@@ -346,6 +346,24 @@ namespace Product_Monograph {
         protected global::System.Web.UI.HtmlControls.HtmlInputButton btnAddExtraAddHeadingSelection;
         
         /// <summary>
+        /// lblAdditional control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label lblAdditional;
+        
+        /// <summary>
+        /// txtAdditional control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.HtmlControls.HtmlTextArea txtAdditional;
+        
+        /// <summary>
         /// SUM_ADVERSE control.
         /// </summary>
         /// <remarks>
@@ -749,6 +767,33 @@ namespace Product_Monograph {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Table pTable;
+        
+        /// <summary>
+        /// SUM_Special_Popu_Condition control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.HtmlControls.HtmlGenericControl SUM_Special_Popu_Condition;
+        
+        /// <summary>
+        /// lblSpecialPopuCondition control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label lblSpecialPopuCondition;
+        
+        /// <summary>
+        /// tbSpecialPopuCondition control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.HtmlControls.HtmlTextArea tbSpecialPopuCondition;
         
         /// <summary>
         /// SUM_STORAGE control.

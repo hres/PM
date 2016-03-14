@@ -604,13 +604,16 @@
                  var chkbox = row.cells[0].childNodes[0];
                
                   if(null != chkbox && true == chkbox.checked) {
-                    if(rowCount <= 1) {
+                    if(rowCount < 2) {
                         alert("Cannot delete all the rows.");
                         break;
                     }
-                    table.deleteRow(i);
-                    rowCount--;
-                    i--;
+                    else
+                    {
+                       table.deleteRow(i);
+                       rowCount--;
+                       i--;
+                    }
                  }
                }
             } catch(e) {
@@ -624,7 +627,7 @@
 
             var chkbox = row.cells[0].childNodes[0];
             if (null != chkbox && true == chkbox.checked) {
-                if (i < 1) {
+                if (i <= 1) {
                     alert("Cannot delete all the rows.");
                 }
                 else

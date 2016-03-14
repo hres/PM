@@ -24,9 +24,30 @@
                 $('#tbSelectedAdverseReaction').val("Select");
             });
         });
+
+
         $("#tbSelectedAdverseReaction").click(function () {
             $('#tbSelectedAdverseReaction').val("");
         });
+        //ching adds headings list for Warnings and Precautions
+        $.get('ControlledList.xml', function (xmlcontolledlist) {
+            $(xmlcontolledlist).find('warning').each(function () {
+                var $option = $(this).text();
+                $('<option>' + $option + '</option>').appendTo('#dtListHeadings')
+            });
+        });
+    }).done(function () {
+        $('#dtListHeadingss option').each(function () {
+            //this does not work
+            if ($(this).html() == 'Select') { $(this).attr('selected', 'selected'); return; }
+            //hardcode
+            $('#dtListHeadings').val("Select");
+        });
+    });
+
+
+
+
 
         $.get('ControlledList.xml', function (xmlcontolledlist) {
             $(xmlcontolledlist).find('interaction').each(function () {
@@ -679,12 +700,11 @@
                     '<div id="dvExtraAdverseReactionsInner' + id + '" style="width:100%; padding-left: 0px; clear:both;">' +
                     '</div>' +    
                     '<div style="width:100%; text-align:center; clear:both; text-align:center;">' +
-                        '<textarea id="tbSelectedHeaderDesc' + id + '" name="tbSelectedHeaderDesc"></textarea>' +
+                        '<textarea id="tbSelectedHeaderDesc' + id + '" name="tbSelectedHeaderDesc" ></textarea>' +
                     '</div>' +
                 '</div>' +
                 '<div style="width:5%; float:left; margin-top:10px;">' +
                        '<input class="btn btn-default btn-xs" type="button" value="Remove" onclick="RemoveAdverseReactionsOuterSection(' + id + ')" id="btnRemoveAdverseReactionsOuterSection(' + id + ')" />' +
-                    //'<img style="cursor:pointer !important;" src="images/minus_icon.png"  onclick="RemoveAdverseReactionsOuterSection(' + id + ')" width="22" height="22" alt="Remove this row"/>' +
                 '</div>';
             
     }
@@ -1447,12 +1467,25 @@
        </div>
         <div class="form-group">
           <div class="margin-top-medium mrgn-bttm-sm">
-             <asp:Label id="lblHeadings" runat="server" CssClass="control-label"></asp:Label>&nbsp;<img id="tooltipSeriousWarningsHeadings" src="images/qmark.jpg" class="imgQMark_style" alt="Help Message of Headings" />
+             <asp:Label id="lblHeadings" runat="server" CssClass="control-label"></asp:Label>&nbsp;
+              <input type="text" list="dtListHeadings" id="Headinglist" />
+              <datalist id="dtListHeadings" ></datalist>
+              <img id="tooltipSeriousWarningsHeadings" src="images/qmark.jpg" class="imgQMark_style" alt="Help Message of Headings" />
              <input class="btn btn-default btn-xs" type="button" value="Add" onclick="AddHeadingSelection()" runat="server" id="btnAddExtraAddHeadingSelection" />       
           </div>
           <div id="dvExtraHeadingSelection" class="row">
-          </div>
+          </div> 
        </div>
+         <div class="form-group">
+            <div class="margin-top-medium mrgn-lft-sm">
+                <asp:Label id="lblAdditional" AssociatedControlID="txtAdditional" runat="server" CssClass="control-label"></asp:Label>
+            </div> 
+            <div class="row"> 
+               <div class="col-xs-10">                           
+                  <textarea id="txtAdditional" name="txtAdditional" runat="server" class="textarea form-control"></textarea>                            
+               </div>
+            </div>
+        </div>
     </details>    
     </li>
 	<li>
@@ -1691,7 +1724,7 @@
             <input class="btn btn-default btn-xs" type="button" value="Add" runat="server" onclick="AddPharmacokineticsOuterSection()" id="btnAddPharmacokineticsOuterSection" />
         </div>
     </div>
- </div>
+
   <!--        <div style="width:5%; float:left;">
            <asp:Button ID="btnDynaTable" Text="Add Table" runat="server" cssclass="btn btn-default btn-xs" OnClick="btnCreateTable_Click" />    
         </div>
@@ -1712,8 +1745,26 @@
         </div>
 -->
         <div id="dvExtraPharmacokineticsOuter" class="row mrgn-lft-sm">
-        </div>  
+        </div>
+  </div>
+               
+          
     </details> 
+    </li>
+    <li>
+    <details class="margin-top-medium">
+        <summary id="SUM_Special_Popu_Condition" runat="server"></summary>
+        <div class="form-group">
+           <div class="mrgn-lft-sm mrgn-tp-md">
+              <asp:Label id="lblSpecialPopuCondition" AssociatedControlID="tbSpecialHandling" runat="server" CssClass="control-label wb-inv"></asp:Label>
+           </div>                         
+           <div class="row"> 
+             <div class="col-xs-10">   
+               <textarea id="tbSpecialPopuCondition" name="tbSpecialPopuCondition" runat="server" class="textarea form-control"></textarea>          
+             </div>
+          </div>
+       </div>
+    </details>
     </li>
 	<li>
     <details class="margin-top-medium">
@@ -1730,6 +1781,7 @@
         </div>
     </details>
     </li>
+    
 	<li>
     <details class="margin-top-medium">
         <summary id="SUM_SPECIAL_HANDLING" runat="server"></summary>
