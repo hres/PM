@@ -228,7 +228,7 @@ namespace Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Clinica trials:.
+        ///   Looks up a localized string similar to Clinical trials:.
         /// </summary>
         internal static string ClinicalTrials {
             get {
@@ -341,6 +341,15 @@ namespace Resources {
         internal static string Interactions {
             get {
                 return ResourceManager.GetString("Interactions", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to .
+        /// </summary>
+        internal static string interactiontooltip {
+            get {
+                return ResourceManager.GetString("interactiontooltip", resourceCulture);
             }
         }
         
@@ -1002,15 +1011,6 @@ namespace Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Proper Name.
-        /// </summary>
-        internal static string ProperNameMI {
-            get {
-                return ResourceManager.GetString("ProperNameMI", resourceCulture);
-            }
-        }
-        
-        /// <summary>
         ///   Looks up a localized string similar to Proper use of this medication.
         /// </summary>
         internal static string ProperUse {
@@ -1182,7 +1182,7 @@ namespace Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Clinical Trials.
+        ///   Looks up a localized string similar to Clinical trials.
         /// </summary>
         internal static string SumCT {
             get {
@@ -1533,6 +1533,15 @@ namespace Resources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to narrative outlining the design of the bioequivalence study. The values in the table should be based on the measured data from the study; no potency correction should be applied..
+        /// </summary>
+        internal static string tooltipBioStudy {
+            get {
+                return ResourceManager.GetString("tooltipBioStudy", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Toxicology:.
         /// </summary>
         internal static string Toxicology {
@@ -1583,6 +1592,15 @@ namespace Resources {
         internal static string VeryRare {
             get {
                 return ResourceManager.GetString("VeryRare", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to warnings and precautions tooltip.
+        /// </summary>
+        internal static string warningstooltip {
+            get {
+                return ResourceManager.GetString("warningstooltip", resourceCulture);
             }
         }
         

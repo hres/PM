@@ -488,22 +488,22 @@
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
     <asp:ScriptManager ID="ScriptManager1" runat="server"></asp:ScriptManager>
 
-<div>
-    <asp:Menu ClientIDMode="Static" ID="submenutabs" runat="server" Orientation="Horizontal" OnMenuItemClick="menutabs_MenuItemClick">
-        <StaticMenuStyle VerticalPadding="10px" />
-        <StaticMenuItemStyle HorizontalPadding="35px" />
+<div class="row">
+    <asp:Menu ClientIDMode="Static" ID="submenutabs" runat="server" Orientation="Horizontal" OnMenuItemClick="menutabs_MenuItemClick" cssclass="wet-boew-menubar floatLeft">
+        <StaticMenuStyle VerticalPadding="5px" />
+        <StaticMenuItemStyle HorizontalPadding="25px" />
         <Items>
-            <asp:MenuItem text="Form instructions" value="PMForm" toolTip="Back to the main page of DHPR form with form Instruction"></asp:MenuItem>
-            <asp:MenuItem Text="Cover page" Value="Coverpage"></asp:MenuItem>
-            <asp:MenuItem Text="Part I" Value="PartOne"></asp:MenuItem>
-            <asp:MenuItem Text="Part II" Value="PartTwo"></asp:MenuItem>
-            <asp:MenuItem Text="Part III" Value="PartThree"></asp:MenuItem>
+            <asp:MenuItem value="PMForm" toolTip="Back to the main page of DHPR form with form Instruction"></asp:MenuItem>
+            <asp:MenuItem Value="Coverpage"></asp:MenuItem>
+            <asp:MenuItem Value="PartOne"></asp:MenuItem>
+            <asp:MenuItem Value="PartTwo"></asp:MenuItem>
+            <asp:MenuItem Value="PartThree"></asp:MenuItem>
          </Items>
     </asp:Menu>
 </div>
 
 <div class="mrgn-tp-md">
-    <asp:Button ID="btnSave" class=" btn btn-primary" runat="server" Text="Save draft" OnClick="btnSave_Click" />
+    <asp:Button ID="btnSaveDraftPart3" cssClass="btn btn-primary" runat="server" OnClick="btnSave_Click" />
 </div>
 
 <div>
@@ -588,7 +588,7 @@
     </div>
     <div class="form-group">
         <div class="margin-top-medium">
-            <asp:Label id="lblWHAT_THE_NONMEDICINAL" AssociatedControlID="tbMedicationNonmed" CssClass="control-label" runat="server"></asp:Label><img id="tooltipNONMEDICINAL" src="images/qmark.jpg" style="width:24px; height:24px; cursor:pointer !important;" alt="Non Medicinal Tooltip" />
+            <asp:Label id="lblWHAT_THE_NONMEDICINAL" AssociatedControlID="tbMedicationNonmed" CssClass="control-label" runat="server"></asp:Label><img id="tooltipNONMEDICINAL" src="images/qmark.jpg" style="width:24px; height:24px; cursor:pointer !important;" alt="" />
         </div>
 
         <div class="row"> 
@@ -621,7 +621,7 @@
     
         <div class="form-group">
              <div class="margin-top-medium">
-                  <asp:label ID="lblSeriousWarnings" AssociatedControlID="tbSeriousWarningsPrecautions0" CssClass="control-label" runat="server"></asp:label><img id="tooltipSeriousWarningsandPrecautions" src="images/qmark.jpg"  style="width:24px; height:24px; cursor:pointer !important;" alt="Serious warnings and precautions tooltip"/>                
+                  <asp:label ID="lblSeriousWarnings" AssociatedControlID="tbSeriousWarningsPrecautions0" CssClass="control-label" runat="server"></asp:label><img id="tooltipSeriousWarningsandPrecautions" src="images/qmark.jpg"  style="width:24px; height:24px; cursor:pointer !important;"/>                
              </div>     
              <div>
                   <asp:Button ID="btnAddSeriousWarningsPrecautions" OnClientClick="AddSeriousWarningsPrecautionsTextBox(); return false;" CssClass="btn btn-default btn-xs"  runat="server"/>
@@ -661,7 +661,7 @@
     </summary>  
     <div class="form-group">
           <div class="margin-top-medium">
-            <asp:Label ID="lblInteractions" AssociatedControlID="tbInteractionWithMed" CssClass="control-label" runat="server"></asp:label><img id="tooltipINTERACTIONSMEDICATION" src="images/qmark.jpg" style="width:24px; height:24px; cursor:pointer !important;" alt="help Message of INTERACTIONS"/>        
+            <asp:Label ID="lblInteractions" AssociatedControlID="tbInteractionWithMed" CssClass="control-label" runat="server"></asp:label><img id="tooltipINTERACTIONSMEDICATION" src="images/qmark.jpg" style="width:24px; height:24px; cursor:pointer !important;" alt=""/>        
           </div>
 
         <div class="row"> 
@@ -1015,9 +1015,9 @@
             </div>            
         </section>
         <div class="form-group">
-            <div class="margin-top-large">
+            <!--<div class="margin-top-large">
                 <asp:Label ID="lblSideEffectsWhatToDo" AssociatedControlID="tbSideEffectsWhatToDo" CssClass="control-label" runat="server"></asp:Label>
-            </div>
+            </div>-->
             <div class="row">
                 <div class="col-xs-10 text-left">                    
                     <textarea id="tbSideEffectsWhatToDo" name="tbSideEffectsWhatToDo" runat="server" class="textarea"></textarea>
@@ -1087,16 +1087,16 @@
 </details>
 
 
-<div class="margin-top-large">
-    <asp:Menu ClientIDMode="Static" ID="submenutabsbottom" runat="server" Orientation="Horizontal" OnMenuItemClick="submenutabsbottom_MenuItemClick">
-        <StaticMenuStyle VerticalPadding="10px" />
-        <StaticMenuItemStyle HorizontalPadding="35px" />
+<div class="row margin-top-medium">
+    <asp:Menu ClientIDMode="Static" ID="submenutabsbottom" runat="server" Orientation="Horizontal" OnMenuItemClick="submenutabsbottom_MenuItemClick" cssclass="wet-boew-menubar floatLeft">
+        <StaticMenuStyle VerticalPadding="5px" />
+        <StaticMenuItemStyle HorizontalPadding="25px" />
         <Items>
-            <asp:MenuItem text="Form instructions" value="PMForm" toolTip="Back to the main page of DHPR form with form Instruction"></asp:MenuItem>
-            <asp:MenuItem Text="Cover page" Value="Coverpage"></asp:MenuItem>
-            <asp:MenuItem Text="Part I" Value="PartOne"></asp:MenuItem>
-            <asp:MenuItem Text="Part II" Value="PartTwo"></asp:MenuItem>
-            <asp:MenuItem Text="Part III" Value="PartThree"></asp:MenuItem>
+            <asp:MenuItem value="PMForm" toolTip="Back to the main page of DHPR form with form Instruction"></asp:MenuItem>
+            <asp:MenuItem Value="Coverpage"></asp:MenuItem>
+            <asp:MenuItem Value="PartOne"></asp:MenuItem>
+            <asp:MenuItem Value="PartTwo"></asp:MenuItem>
+            <asp:MenuItem Value="PartThree"></asp:MenuItem>
             </Items>
     </asp:Menu>
     

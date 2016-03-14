@@ -86,12 +86,37 @@ namespace Product_Monograph
                  lblNote4.Text = Resources.Resource.Note4;
                  lblNote5.Text = Resources.Resource.Note5;
                  lblNote6.Text = Resources.Resource.Note6;
-                
+                 btnSaveDraftPart2.Text = Resources.Resource.btnSaveDraft;
+                 btnSaveDraftPart2.ToolTip = Resources.Resource.btnSaveDraft_tooltip;
                  btnAddClinicalTrialsOuterTextBox.Text = Resources.Resource.btnAddExtraContraindications;
                  btnAddAnalyteNameTextBox.Text = Resources.Resource.btnAddExtraContraindications;
                  btnAddDrugSubstance.Text = Resources.Resource.btnAddExtraContraindications;
+                 tooltipBioStudy.ToolTip = Resources.Resource.tooltipBioStudy;
+                //top menu
+                submenutabs.Items[0].Text = Resources.Resource.subMenuItem1;
+                submenutabs.Items[1].Text = Resources.Resource.subMenuItem2;
+                submenutabs.Items[2].Text = Resources.Resource.subMenuItem3;
+                submenutabs.Items[3].Text = Resources.Resource.subMenuItem4;
+                submenutabs.Items[4].Text = Resources.Resource.subMenuItem5;
 
-         
+                submenutabs.Items[0].ToolTip = Resources.Resource.subMenuItem1_tooltip;
+                submenutabs.Items[1].ToolTip = Resources.Resource.subMenuItem2;
+                submenutabs.Items[2].ToolTip = Resources.Resource.subMenuItem3;
+                submenutabs.Items[3].ToolTip = Resources.Resource.subMenuItem4;
+                submenutabs.Items[4].ToolTip = Resources.Resource.subMenuItem5;
+                //bottom menu
+                submenutabsbottom.Items[0].Text = Resources.Resource.subMenuItem1;
+                submenutabsbottom.Items[1].Text = Resources.Resource.subMenuItem2;
+                submenutabsbottom.Items[2].Text = Resources.Resource.subMenuItem3;
+                submenutabsbottom.Items[3].Text = Resources.Resource.subMenuItem4;
+                submenutabsbottom.Items[4].Text = Resources.Resource.subMenuItem5;
+
+                submenutabsbottom.Items[0].ToolTip = Resources.Resource.subMenuItem1_tooltip;
+                submenutabsbottom.Items[1].ToolTip = Resources.Resource.subMenuItem2;
+                submenutabsbottom.Items[2].ToolTip = Resources.Resource.subMenuItem3;
+                submenutabsbottom.Items[3].ToolTip = Resources.Resource.subMenuItem4;
+                submenutabsbottom.Items[4].ToolTip = Resources.Resource.subMenuItem5;
+
 
         }
 

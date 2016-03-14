@@ -22,13 +22,13 @@ namespace Product_Monograph {
         protected global::System.Web.UI.WebControls.Menu submenutabs;
         
         /// <summary>
-        /// btnSave control.
+        /// btnSaveDraftPart2 control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Button btnSave;
+        protected global::System.Web.UI.WebControls.Button btnSaveDraftPart2;
         
         /// <summary>
         /// lblError control.
@@ -209,6 +209,15 @@ namespace Product_Monograph {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Label lblBioStudy;
+        
+        /// <summary>
+        /// tooltipBioStudy control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Image tooltipBioStudy;
         
         /// <summary>
         /// btnAddAnalyteNameTextBox control.

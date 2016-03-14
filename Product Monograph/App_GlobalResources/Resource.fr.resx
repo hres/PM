@@ -207,9 +207,6 @@ garde et précautions)</value>
     <value>Procédures médicales prévues (mises en garde et
 précautions)</value>
   </data>
-  <data name="ProperNameMI" xml:space="preserve">
-    <value>Nom propre</value>
-  </data>
   <data name="ProperUse" xml:space="preserve">
     <value>Utilisation appropriée de ce médicament</value>
   </data>
@@ -415,40 +412,40 @@ précautions)</value>
     <value>et / ou</value>
   </data>
   <data name="lblDateOfPreparation" xml:space="preserve">
-    <value>Date de préparation</value>
+    <value>Date de rédaction</value>
   </data>
   <data name="lblDateOfRevision" xml:space="preserve">
     <value>Date de révision</value>
   </data>
   <data name="lblSchedulingSymbol" xml:space="preserve">
-    <value>Symbole de planification</value>
+    <value>Symbole de classification</value>
   </data>
   <data name="lblSponsorAddress" xml:space="preserve">
-    <value>Parrainer l'adresse</value>
+    <value>Adresse du promoteur</value>
   </data>
   <data name="lblSponsorName" xml:space="preserve">
     <value>Nom du promoteur</value>
   </data>
   <data name="lblStrengthperDosage" xml:space="preserve">
-    <value>Force par dose</value>
+    <value>Concentrations par dose</value>
   </data>
   <data name="PharmaceuticalStandard" xml:space="preserve">
     <value>La norme pharmaceutique</value>
   </data>
   <data name="SubmissionControlNo" xml:space="preserve">
-    <value>De Contrôle de la présentation</value>
+    <value>Numéro de contrôle de la présentation</value>
   </data>
   <data name="tbBName" xml:space="preserve">
-    <value>Nom de marque</value>
+    <value>Marque nominative</value>
   </data>
   <data name="tbDForm" xml:space="preserve">
-    <value>Forme posologique</value>
+    <value>Formes posologiques</value>
   </data>
   <data name="tbPName" xml:space="preserve">
     <value>Nom propre</value>
   </data>
   <data name="tbStrength" xml:space="preserve">
-    <value>Force</value>
+    <value>Concentrations</value>
   </data>
   <data name="tbSUnit" xml:space="preserve">
     <value>Unité</value>
@@ -460,7 +457,7 @@ précautions)</value>
     <value>Classification thérapeutique</value>
   </data>
   <data name="lblDosageForm2" xml:space="preserve">
-    <value>Forme posologique</value>
+    <value>Formes posologiques</value>
     <comment>Part I</comment>
   </data>
   <data name="lblGeriatrics" xml:space="preserve">
@@ -532,7 +529,7 @@ précautions)</value>
     <comment>Part 1</comment>
   </data>
   <data name="lblBrandName" xml:space="preserve">
-    <value>Nom de marque</value>
+    <value>Marque nominative</value>
     <comment>Part 1</comment>
   </data>
   <data name="lblContraindications" xml:space="preserve">
@@ -677,7 +674,7 @@ précautions)</value>
     <value>Retirer</value>
   </data>
   <data name="tbPharmaceuticalStandard" xml:space="preserve">
-    <value>Norme pharmaceutique (le cas échéant)</value>
+    <value>Norme pharmaceutique (s’il y a lieu)</value>
     <comment>Cover page</comment>
   </data>
   <data name="tbTherapeuticClassifications" xml:space="preserve">
@@ -709,5 +706,8 @@ précautions)</value>
   </data>
   <data name="lblLoadXmlInst" xml:space="preserve">
     <value>To load an existing XML file, press the “Choose File” button ("Browse..." in Internet Explorer and Firefox), select the file and press the "Open" button in the file browser. Press the "Load XML" button._FR</value>
+  </data>
+  <data name="tooltipBioStudy" xml:space="preserve">
+    <value>narrative outlining the design of the bioequivalence study. The values in the table should be based on the measured data from the study; no potency correction should be applied._fr</value>
   </data>
 </root>

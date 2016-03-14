@@ -467,8 +467,7 @@
                              "(" +                            
                               "<input type='number' id='" + AnalyteMultiplicand + "' name='tbAnalyteMultiplicand'/>" +
                               "&nbsp;&nbsp;X" +
-                              "<input type='number' id='" + AnalyteMultiplier + "' name='tbAnalyteMultiplier'/>" +
-                              "</div>" +
+                              "<input type='number' id='" + AnalyteMultiplier + "' name='tbAnalyteMultiplier'/>" +                              
                             " &nbsp;mg)" +
                             '<input class="btn btn-default btn-xs pull-right" id="btnRemoveAnalyteNameTextBox(' + id + ')" onclick="RemoveAnalyteNameTextBox(' + id + ')" type="button" value="Remove" />' +
                          "</div>" +
@@ -580,29 +579,30 @@
                                      "<textarea id='" + THalfConf + "' name='tbTHalfConfidenceInterval'></textarea>" +
                                 "</div>" +
                       "</div>" +
-                   "</div>";
+                   "</div>"+
+            "</section>";
 
     }
 </script>
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
 
-<div style="clear:both; padding-top: 10px;">
-    <asp:Menu ClientIDMode="Static" ID="submenutabs" runat="server" Orientation="Horizontal" OnMenuItemClick="menutabs_MenuItemClick">
+<div class="row">
+    <asp:Menu ClientIDMode="Static" ID="submenutabs" runat="server" Orientation="Horizontal" OnMenuItemClick="menutabs_MenuItemClick" cssclass="wet-boew-menubar floatLeft">
         <StaticMenuStyle VerticalPadding="5px" />
         <StaticMenuItemStyle HorizontalPadding="25px" />
         <Items>
-             <asp:MenuItem text="Form instructions" value="PMForm" toolTip="Back to the main page of DHPR form with form Instruction"></asp:MenuItem>
-            <asp:MenuItem Text="Cover page" Value="Coverpage"></asp:MenuItem>
-            <asp:MenuItem Text="Part I" Value="PartOne"></asp:MenuItem>
-            <asp:MenuItem Text="Part II" Value="PartTwo"></asp:MenuItem>
-            <asp:MenuItem Text="Part III" Value="PartThree"></asp:MenuItem>
+            <asp:MenuItem value="PMForm" toolTip="Back to the main page of DHPR form with form Instruction"></asp:MenuItem>
+            <asp:MenuItem Value="Coverpage"></asp:MenuItem>
+            <asp:MenuItem Value="PartOne"></asp:MenuItem>
+            <asp:MenuItem Value="PartTwo"></asp:MenuItem>
+            <asp:MenuItem Value="PartThree"></asp:MenuItem>
         </Items>
     </asp:Menu>
 </div>
 
 <div class="mrgn-tp-md">
-    <asp:Button ID="btnSave" class=" btn btn-primary" runat="server" Text="Save draft" OnClick="btnSave_Click" />
+    <asp:Button ID="btnSaveDraftPart2" cssClass="btn btn-primary" runat="server" OnClick="btnSave_Click" />
 </div>
 
 <div>
@@ -729,8 +729,9 @@
    <div class="form-group">
         <div class="row margin-top-large">
             <div class="col-xs-10 text-left">
-                <h4><asp:Label ID="lblBioStudy" runat="server"></asp:Label></h4>
+                <h4><asp:Label ID="lblBioStudy" runat="server"></asp:Label> <asp:image id="tooltipBioStudy" src="images/qmark.jpg"  style="width:24px; height:24px; cursor:pointer !important;" runat="server"/></h4>              
             </div>
+            
             <div class="col-xs-2 mrgn-tp-md">
                 <asp:Button ID="btnAddAnalyteNameTextBox" OnClientClick="AddAnalyteNameTextBox(); return false;" CssClass="btn btn-default btn-xs"  runat="server"/>
                 <!--<input type="button" value="Add" onclick="AddAnalyteNameTextBox()" id="btnAddAnalyteNameTextBox" class="btn btn-default btn-xs" />--> 
@@ -856,7 +857,7 @@
             </div>
         </section>
     
-    <div id="dvExtraAnalyteName" class="hidden">
+    <div id="dvExtraAnalyteName">
     </div>
 
     <div class="text-left">*	<asp:Label ID="lblNote1" runat="server"></asp:Label></div>
@@ -924,19 +925,19 @@
     </div>
 </details>
 
-<section  class="margin-top-large">
-    <asp:Menu ClientIDMode="Static" ID="submenutabsbottom" runat="server" Orientation="Horizontal" OnMenuItemClick="submenutabsbottom_MenuItemClick">
+<div class="row margin-top-medium">
+    <asp:Menu ClientIDMode="Static" ID="submenutabsbottom" runat="server" Orientation="Horizontal" OnMenuItemClick="submenutabsbottom_MenuItemClick" cssclass="wet-boew-menubar floatLeft">
         <StaticMenuStyle VerticalPadding="5px" />
         <StaticMenuItemStyle HorizontalPadding="25px" />
         <Items>
-             <asp:MenuItem text="Form instructions" value="PMForm" toolTip="Back to the main page of DHPR form with form Instruction"></asp:MenuItem>
-            <asp:MenuItem Text="Cover page" Value="Coverpage"></asp:MenuItem>
-            <asp:MenuItem Text="Part I" Value="PartOne"></asp:MenuItem>
-            <asp:MenuItem Text="Part II" Value="PartTwo"></asp:MenuItem>
-            <asp:MenuItem Text="Part III" Value="PartThree"></asp:MenuItem>
+            <asp:MenuItem value="PMForm" toolTip="Back to the main page of DHPR form with form Instruction"></asp:MenuItem>
+            <asp:MenuItem Value="Coverpage"></asp:MenuItem>
+            <asp:MenuItem Value="PartOne"></asp:MenuItem>
+            <asp:MenuItem Value="PartTwo"></asp:MenuItem>
+            <asp:MenuItem Value="PartThree"></asp:MenuItem>
         </Items>
     </asp:Menu>
-</section>
+</div>
 <asp:HiddenField runat="server" ID="hdAnalyteName" ClientIDMode="Static" />
 </asp:Content>
 
