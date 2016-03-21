@@ -26,7 +26,7 @@ namespace Product_Monograph
     {
         string strscript = string.Empty;
         string strBrandName = string.Empty;
-
+        string strProperName = string.Empty;
         void Page_PreInit(Object sender, EventArgs e)
         {
             //retrieve culture information from session
@@ -38,11 +38,14 @@ namespace Product_Monograph
                 this.MasterPageFile = (String)Session["masterpage"];
 
             }
-            //if (Session["savedFilename"] != null)
-            //{
-            //    strBrandName = (String)Session["savedFilename"];
-
-            //}
+            if (Session["savedFilename"] != null)
+            {
+                strBrandName = (String)Session["savedFilename"];
+            }
+            if (Session["properName"] != null)
+            {
+                strProperName = (String)Session["properName"];
+            }
         }
 
         protected void Page_Load(object sender, EventArgs e)
@@ -2112,7 +2115,7 @@ namespace Product_Monograph
             helpers.Processes.ValidateAndSave(doc, rootnode, "SpecialHandling", "", tbSpecialHandling.Value, false);
             helpers.Processes.ValidateAndSave(doc, rootnode, "DosageFormsComposition", "", tbDosageFormsComposition.Value, false);
                         
-            //helpers.Processes.XMLDraft = doc;
+         
             Session["draft"] = doc;
 
             return doc;
@@ -2120,10 +2123,9 @@ namespace Product_Monograph
 
         private void LoadFromXML()
         {
-            XmlDocument xmldoc = (XmlDocument)Session["draft"]; // helpers.Processes.XMLDraft;
+            XmlDocument xmldoc = (XmlDocument)Session["draft"]; 
             XDocument doc = XDocument.Parse(xmldoc.OuterXml);
 
-            //populate labels
             XmlNodeList bpd = xmldoc.GetElementsByTagName("BrandProperDosage");
             if (bpd.Count > 0)
             {
@@ -2137,8 +2139,7 @@ namespace Product_Monograph
                 
                 foreach (var row in rows)
                 {
-                    //string[] colarray = "tbBrandName;tbProperName;tbDosageAndStrength".Split(';');
-                    //string[] colarray = "tbBrandName;tbProperName;tbDosage;tbStrength;tbUnitofMeasure".Split(';');
+                  
                     string[] colarray = "tbBrandName;tbProperName;tbDosage;tbStrengthValue;tbStrengthUnit;tbStrengthperDosageValue;tbStrengthperDosageUnit".Split(';');
                     int colcounter = 0;
                     foreach (string column in row.columns)
@@ -2154,9 +2155,13 @@ namespace Product_Monograph
                             }
                             else
                             {
-                                lblProprietaryBrandName.Text = Resources.Resource.lblBrandName;  
-                                lblBrandName.Text = Resources.Resource.lblBrandName;
-                                strBrandName = "DraftPMForm";  
+                                if(strBrandName != null)
+                                {
+                                    lblProprietaryBrandName.Text = strBrandName;
+                                    lblBrandName.Text = strBrandName;
+                                }
+                               else
+                                   strBrandName = "DraftPMForm";  
                             }
                           
                         }
@@ -2171,8 +2176,17 @@ namespace Product_Monograph
                             }
                             else
                             {
-                                lblProperName.Text = Resources.Resource.lblProperName;
-                                lblICProperName.Text = Resources.Resource.lblProperName;
+                                if(strProperName != null)
+                                {
+                                    lblProperName.Text = strProperName;
+                                    lblICProperName.Text = strProperName;
+                                }
+                                else
+                                {
+                                    lblProperName.Text = Resources.Resource.lblProperName;
+                                    lblICProperName.Text = Resources.Resource.lblProperName;
+                                }
+                               
                                 
                             }
                            

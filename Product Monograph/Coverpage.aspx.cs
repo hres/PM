@@ -131,18 +131,19 @@ namespace Product_Monograph
                         }
                         else
                         {
+                          
                             strscript += "$('#" + colarray[colcounter] + rowcounter.ToString() + "').val(\"" + helpers.Processes.CleanString(column) + "\");";
-                            //if(colarray[colcounter].Equals("tbBrandName"))
-                            //{
-                            //    Session["savedFilename"] = helpers.Processes.CleanString(column);
-                            //}
+
+                            if (colcounter == 0)
+                            {
+                                Session["savedFilename"] = helpers.Processes.CleanString(column);
+                            }
+                            else if (colcounter == 1)
+                            {
+                                Session["properName"] = helpers.Processes.CleanString(column);
+                            }
                         }
-                        //ching note: need to add all table column name
-                        //tbStrengthValue -- strength value
-                        //tbStrengtUnit -- strength unit
-                        //tbStrengthperDosageValue -- strength per Dosage Value
-                        //tbStrengthperDosageUnit -- strength per Dosage Unit
-                        //also new column name -- strNewColNames[0] -- array;
+                       
                         colcounter++;
                     }
                     rowcounter++;
@@ -156,8 +157,8 @@ namespace Product_Monograph
                               SchedulingSymbolImageName = (string)item.Element("SchedulingSymbolImageName"),
                               SchedulingSymbolImageData = (string)item.Element("SchedulingSymbolImageData"),
                               //there are no those 3 elements in XML doc, they have a group-- note by Ching -- however they could get from the first 3 column
-                            // BrandName = (string)item.Element("BrandProperDosage").Element("row").Element("column").FirstNode.ToString(),
-                          //    ProperName = (string)item.Element("BrandProperDosage").Element("row").Elements("column").ElementAt(2).ToString(),
+                        //     BrandName = (string)item.Element("BrandProperDosage").Descendants("row").Descendants("column").ElementAt(1).ToString(),
+                        //     ProperName = (string)item.Element("BrandProperDosage").Descendants("row").Descendants("column").ElementAt(1).ToString(),
                           //    DosageFormStrength = (string)item.Element("BrandProperDosage").Element("row").Elements("column").ElementAt(3).ToString(),
 
                               PharmaceuticalStandard = (string)item.Element("PharmaceuticalStandard"),
@@ -172,8 +173,8 @@ namespace Product_Monograph
 
             foreach (var xmldataitem in xmldata)
             {
-               // if (xmldataitem.SchedulingSymbolImageData != null)
-              //      strscript += "$('#imgSymbol').attr('src', " + "'" + xmldataitem.SchedulingSymbolImageData + "');";
+                if (xmldataitem.SchedulingSymbolImageData != null)
+                    strscript += "$('#imgSymbol').attr('src', " + "'" + xmldataitem.SchedulingSymbolImageData + "');";
 
                 if (xmldataitem.SchedulingSymbol != null)
                     strscript += "selectedschedulingsymbol = '" + xmldataitem.SchedulingSymbol + "';";
@@ -184,25 +185,7 @@ namespace Product_Monograph
                 if (xmldataitem.SchedulingSymbol != null)
                     strscript += "$('#tbxmlimgnameSymbol').val('" + xmldataitem.SchedulingSymbol + "');";
 
-                //  if (xmldataitem.SchedulingSymbol != null && xmldataitem.SchedulingSymbolImageName != null)
-                //      strscript += "setSchedulingSymbol(" + xmldataitem.SchedulingSymbol + "," + xmldataitem.SchedulingSymbolImageName + ");";
-
-                //if (xmldataitem.SchedulingSymbol != null)
-                //{ 
-                //    strscript += "selectedschedulingsymbol = '" + xmldataitem.SchedulingSymbol + "';";
-               
-                //   // strscript += "$('#tbSchedulingSymbol').val('" + xmldataitem.SchedulingSymbol + "');";
-                //    strscript += "$('#tbSchedulingSymbol').attr( 'selected', " + "'" + xmldataitem.SchedulingSymbol + "');";
-                //}
-                if (xmldataitem.SchedulingSymbolImageName != null)
-                   strscript += "$('#imgSymbol').attr('src', " + "'scheduling symbol\\" + xmldataitem.SchedulingSymbolImageName + "');";
-
-
-                ////   if (xmldataitem.SchedulingSymbolImageData != null)
-                ////       strscript += "$('#imgSymbol').attr('src', " + "'" + xmldataitem.SchedulingSymbolImageData + "');";
-
-                //if (xmldataitem.SchedulingSymbolImageName != null)
-                //    strscript += "$('#tbxmlimgfilenameSymbol').val('" + xmldataitem.SchedulingSymbolImageName + "');";
+            
 
                 if (xmldataitem.SchedulingSymbol != null)
                    strscript += "$('#tbxmlimgnameSymbol').val('" + xmldataitem.SchedulingSymbol + "');";
@@ -247,7 +230,7 @@ namespace Product_Monograph
 
                 System.Drawing.Bitmap bmp = new System.Drawing.Bitmap(fuBrnandSymbol.PostedFile.InputStream);
                 TypeConverter converter = TypeDescriptor.GetConverter(typeof(Bitmap));
-                //imgSymbol.Src = "data:image/jpeg;base64," + Convert.ToBase64String((byte[])converter.ConvertTo(bmp, typeof(byte[])));
+             
                 Session["SymbolToBase64String"] = Convert.ToBase64String((byte[])converter.ConvertTo(bmp, typeof(byte[])));
                 Session["SymbolToByte"] = (byte[])converter.ConvertTo(bmp, typeof(byte[]));
                 Session["SymbolFileName"] = fuBrnandSymbol.FileName;               
@@ -264,8 +247,7 @@ namespace Product_Monograph
             XmlDocument doc = (XmlDocument)Session["draft"]; // helpers.Processes.XMLDraft;
             XmlNode rootnode = doc.SelectSingleNode("ProductMonographTemplate");
             int mRowCount = 0;
-        //    string[][] newColValsarray = null;
-           // string[] oneColValsarray = new string[];
+    
             #region symbol
             try
             {                
@@ -369,30 +351,7 @@ namespace Product_Monograph
                     }
                 }
 
-                //if (HttpContext.Current.Request.Form.GetValues("txtColumnName") != null)  //this value of txtColumnName is not a list -- note by ching
-                //{
-                //    //This is not column value, only column name
-                ////    int mColnameCount = strNewColNames.Length;
-                //    //bulid column name list
-                //    //for(int i = 0; i < mColnameCount; i++ )
-                //    //{
-                //    //    for(int j = 0; j < mRowCount; j ++ )
-                //    //    {
-                //    //        string dynamicalColName = strNewColNames[0] + mRowCount;
-                //    //     //   oneColValsarray.add(HttpContext.Current.Request.Form.GetValues(dynamicalColName))
-                //    //          //   newColnamesarray.Add(newColnamesitem);
-                //    //    }
-                //    //}
-                //    //  
-                //    //  newColValsarray.Add(strNewColNames[0]);
-                //    //string dynamicalColName = strNewColNames[0] +  mRowCount;
-                //    //foreach (string newColnamesitem in HttpContext.Current.Request.Form.GetValues("txtColumnName"))
-                //    //    {
-                //    //       string dynamicalColName = strNewColNames[0] +  mRowCount;
-                //    //        newColnamesarray.Add(newColnamesitem);
-                //    //    }
-
-                //}
+             
 
 
                 if (roa.Count < 1)
@@ -439,14 +398,7 @@ namespace Product_Monograph
                         subsubnode = doc.CreateElement("column");
                         subsubnode.AppendChild(doc.CreateTextNode(col7));
                         subnode.AppendChild(subsubnode);
-                        //ching adds code for new column
-                        //if (newColCount == 1)
-                        //{
-                        //    string col8 = newColnamesarray[ar].ToString();
-                        //    subsubnode = doc.CreateElement("column");
-                        //    subsubnode.AppendChild(doc.CreateTextNode(col8));
-                        //    subnode.AppendChild(subsubnode);
-                        //}
+                       
                     }
                 }
                 else
@@ -495,16 +447,7 @@ namespace Product_Monograph
                         subsubnode = doc.CreateElement("column");
                         subsubnode.AppendChild(doc.CreateTextNode(col7));
                         subnode.AppendChild(subsubnode);
-                        //ching adds code for new column, test one first
-                        //if (newColCount > 1)
-                        //{
-
-                        //    //add a loop to add all column names
-                        //    string col8 = newColnamesarray[ar].ToString();
-                        //    subsubnode = doc.CreateElement("column");
-                        //    subsubnode.AppendChild(doc.CreateTextNode(col8));
-                        //    subnode.AppendChild(subsubnode);
-                        //}
+                     
                     }
                 }
             }
@@ -518,21 +461,8 @@ namespace Product_Monograph
             helpers.Processes.ValidateAndSave(doc, rootnode, "PharmaceuticalStandard", "", tbPharmaceuticalStandard.Text, false);
             helpers.Processes.ValidateAndSave(doc, rootnode, "TherapeuticClassification", "Therapeutic Classification", tbTherapeuticClassifications.Text, true);
             helpers.Processes.ValidateAndSave(doc, rootnode, "Sponsorname", "Sponsor name", tbSponsorName.Text, true);
-
-            //String sponsoradressval = Regex.Replace(tbSponsorAddress.Value, @"<([^>]+)>", String.Empty);
-            //if (sponsoradressval.Length > maxchar)
-            //{
-            //    lblError.Text = "Sponsor name cannot be more than 1500 characters";
-            //    return null;
-            //}
             helpers.Processes.ValidateAndSave(doc, rootnode, "Sponsoraddress", "Sponsor address", tbSponsorAddress.Value, true);
 
-            //String footnoteval = Regex.Replace(tbFootnote.Value, @"<([^>]+)>", String.Empty);
-            //if (footnoteval.Length > maxchar)
-            //{
-            //    lblError.Text = "Footnote cannot be more than 1500 characters";
-            //    return null;
-            //}
             XmlNodeList footnotename = doc.GetElementsByTagName("Sponsorfootnote");
             if (footnotename.Count < 1)
             {
@@ -548,24 +478,12 @@ namespace Product_Monograph
            
             string tbDatePrepVal = Request.Form[tbDatePrep.UniqueID];
             string tbDateRevVal = Request.Form[tbDateRev.UniqueID];
-           helpers.Processes.ValidateAndSave(doc, rootnode, "DateofPreparation", "", tbDatePrepVal, false);
-           helpers.Processes.ValidateAndSave(doc, rootnode, "DateofRevision", "", tbDateRevVal, false);
-            //if (tbDatePrep.Text.Trim() == string.Empty)
-            //{
-            //    helpers.Processes.ValidateAndSave(doc, rootnode, "DateofRevision", "Date of Revision", tbDateRev.Text, true);
-            //    helpers.Processes.ValidateAndSave(doc, rootnode, "DateofPreparation", "", tbDatePrep.Text, false);
-            //}
-            //else
-            //{
-            //    helpers.Processes.ValidateAndSave(doc, rootnode, "DateofPreparation", "", tbDatePrep.Text, false);
-            //    helpers.Processes.ValidateAndSave(doc, rootnode, "DateofRevision", "", tbDateRev.Text, false);
-            //}
+            helpers.Processes.ValidateAndSave(doc, rootnode, "DateofPreparation", "", tbDatePrepVal, false);
+            helpers.Processes.ValidateAndSave(doc, rootnode, "DateofRevision", "", tbDateRevVal, false);
+          
             #endregion
 
             helpers.Processes.ValidateAndSave(doc, rootnode, "SubmissionControlNumber", "Submission Control Number", tbControNum.Text, true);
-       //     string tbFootnotes = Request.Form[tbFootnote.ToString()];
-      //      helpers.Processes.ValidateAndSave(doc, rootnode, "footnote", "footnote", tbFootnotes, true);  //ching adds footnote
-            //helpers.Processes.XMLDraft = doc;
             Session["draft"] = doc;
 
             return doc;
@@ -583,7 +501,7 @@ namespace Product_Monograph
 
                 LoadFromXML();
 
-                //get BrandName AS file name which saved as zip file -- Add code by Ching Chang
+                //get BrandName AS file name which saved as zip file 
                 if (HttpContext.Current.Request.Form.GetValues("tbBrandName") != null)
                 {
                     foreach (string item in HttpContext.Current.Request.Form.GetValues("tbBrandName"))
@@ -646,7 +564,7 @@ namespace Product_Monograph
 
         protected void menutabs_MenuItemClick(object sender, MenuEventArgs e)
         {
-            //if(SaveInMemory() != null)  //ching disable it, because it was not the same code as the project on Feb 3, 2016
+           
             SaveInMemory();
             Response.Redirect(submenutabs.SelectedValue + ".aspx");
         }
@@ -686,9 +604,7 @@ namespace Product_Monograph
 
             CoverPage.Text = Resources.Resource.CoverPage;
             lblSchedulingSymbol.InnerText = Resources.Resource.lblSchedulingSymbol;
-            //btnlblApplySymbol.Value = Resources.Resource.btnlblApplySymbol;
-            
-
+        
             tbBName.Text = Resources.Resource.tbBName;
             tbPName.Text = Resources.Resource.tbPName;
             tbDForm.Text = Resources.Resource.tbDForm;
@@ -717,32 +633,10 @@ namespace Product_Monograph
             btnDeleteRow.Value = Resources.Resource.btnDeleteRow;
             btnAddCol.Value = Resources.Resource.btnAddCol;
             btnDelCol.Value = Resources.Resource.btnDelCol;
-         
-
-
 
         }
     }
 }
 
-
-//<div style="width:18.8%; float:left; border-top: 1px solid black; border-left: 1px solid black; border-bottom: 1px solid black;">
-//        <input type="text" id="tbBrandName0" name="tbBrandName" style="width:100%; border:0px; height:38px;" />
-//    </div>  
-//    <div style="width:18.8%; float:left; border-top: 1px solid black; border-left: 1px solid black; border-bottom: 1px solid black;">
-//        <input type="text" id="tbProperName0" name="tbProperName" style="width:100%; border:0px; height:38px;" />
-//    </div> 
-//    <div style="width:18.8%; float:left; border-top: 1px solid black; border-left: 1px solid black; border-bottom: 1px solid black;">        
-//        <select id="tbDosage0" name="tbDosage" style="width:100%; height:38px; border:0px;" ></select>
-//    </div>  
-//    <div style="width:18.8%; float:left; border-top: 1px solid black; border-left: 1px solid black; border-bottom: 1px solid black;">
-//        <input type="number" id="tbStrength0" name="tbStrength" style="width:100%; border:0px; height:38px;" />   
-//    </div> 
-//    <div style="width:18.8%; float:left; border-top: 1px solid black; border-left: 1px solid black; border-bottom: 1px solid black;">
-//        <select id="tbUnitofMeasure0" name="tbUnitofMeasure" style="width:100%; height:38px; border:0px;" ></select>              
-//    </div>  
-//    <div style="width:5%; float:left; padding-left: 0px;">
-//        <input style="cursor:pointer !important; width:58px; height:40px; font-size:12px; padding-left:2px;" onclick="RemoveBrandProperDosageTextBox(0)" type="button" value="REMOVE" />                                                          
-//    </div>  
 
 //MMM d, yyyy

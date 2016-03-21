@@ -171,17 +171,17 @@
 
         return '<div style="width:90%; padding-left: 0px; border:1px solid #D9D9D9; height:auto; margin-top:10px; float:left;">' +
                     '<div style="width:40%; float:left; clear:both; margin:4px;">' +
-                        '<input type="text" id="lblSelectedHeaderClinicalTrials' + id + '" name="lblSelectedHeaderClinicalTrials" style="width:95%; border:0px; height:27px;" readonly="true"/>' +
-                        '<input type="text" id="lblSelectedHeaderCountClinicalTrials' + id + '" name="lblSelectedHeaderCountClinicalTrials" value="' + id + '" style="display:none;"/>' +
+                        '<input type="text" id="lblSelectedHeaderClinicalTrials' + id + '" name="lblSelectedHeaderClinicalTrials' + id + '" style="width:95%; border:0px; height:27px;" readonly="true"/>' +
+                        '<input type="text" id="lblSelectedHeaderCountClinicalTrials' + id + '" name="lblSelectedHeaderCountClinicalTrials' + id + '" value="' + id + '" style="display:none;"/>' +
                     '</div>' +
 
                     '<div style="width:100%; text-align:center; clear:both; text-align:left; border: 1px solid #D9D9D9;">' +
-                        "<textarea id='tbSelectedHeaderClinicalTrials" + id + "' name='tbSelectedHeaderClinicalTrials'></textarea>" +
+                        "<textarea id='tbSelectedHeaderClinicalTrials" + id + "' name='tbSelectedHeaderClinicalTrials" + id + "'></textarea>" +
                     '</div>' +
                     '<div style="width:100%; text-align:center; float:left; height:auto; padding-top:6px;">' +
            
                         "<div style='width:90%; text-align:center; float:left; border: 1px solid #D9D9D9;'>" +
-                            "Table&nbsp;<&nbsp;<input type='number' id='nmTableNumberClinicalTrials" + id + "' name='nmTableNumberClinicalTrials' style='width:55px; text-align:center;'/>&nbsp;>&nbsp;:&nbsp;<&nbsp;<input type='text' id='tbTableTextClinicalTrials" + id + "' name='tbTableTextClinicalTrials' style='width:55px; text-align:center;'/>&nbsp;>" +
+                            "Table&nbsp;<&nbsp;<input type='number' id='nmTableNumberClinicalTrials" + id + "' name='nmTableNumberClinicalTrials" + id + "' style='width:55px; text-align:center;'/>&nbsp;>&nbsp;:&nbsp;<&nbsp;<input type='text' id='tbTableTextClinicalTrials" + id + "' name='tbTableTextClinicalTrials' style='width:55px; text-align:center;'/>&nbsp;>" +
                         "</div>" +
 
                         '<div style="width:5%; float:left;">' +
@@ -196,11 +196,11 @@
                     '</div>' +
 
                     '<div style="width:100%; text-align:center; clear:both; text-align:center;">' +
-                        '<textarea id="tbSelectedHeaderDescClinicalTrials' + id + '" name="tbSelectedHeaderDescClinicalTrials"></textarea>' +
+                        '<textarea id="tbSelectedHeaderDescClinicalTrials' + id + '" name="tbSelectedHeaderDescClinicalTrials' + id + '"></textarea>' +
                     '</div>' +
 
                     '<div style="width:100%; text-align:center; clear:both; text-align:center;">' +
-                        '<input type="text" id="tbSelectedImageCaptionClinicalTrials' + id + '" name="tbSelectedImageCaptionClinicalTrials" style="width:95%; height:27px;" />' +
+                        '<input type="text" id="tbSelectedImageCaptionClinicalTrials' + id + '" name="tbSelectedImageCaptionClinicalTrials' + id + '" style="width:95%; height:27px;" />' +
                     '</div>' +
 
                     "<div style='width:100%; clear:both; padding-left: 0px;'>" +
@@ -208,14 +208,14 @@
                             '<div style="clear:both; width:100%; padding: 4px 4px 4px 0px;"><input type="file"  id=' + fuClinicalTrials + ' style="width:400px;" onchange="loadFile(\'' + fuClinicalTrials + '\',\'' + fuimageClinicalTrials + '\',\'' + tbfuimagenameClinicalTrials + '\',\'' + tbfuimagebasesixtyfourClinicalTrials + '\')"/></div>' +
                             "<div style='clear:both; border:1px solid #D9D9D9; width:103px; height:103px; padding-top:4px;'>" +
                                 "<img  id='" + fuimageClinicalTrials + "' src='images/x.png'/>" +
-                                "<input type='text' id='" + tbfuimagenameClinicalTrials + "' name='tbfuimagenameClinicalTrials' style='display:none;' />" +
-                                "<input type='text' id='" + tbfuimagebasesixtyfourClinicalTrials + "' name='tbfuimagebasesixtyfourClinicalTrials' style='display:none;' />" +
+                                "<input type='text' id='" + tbfuimagenameClinicalTrials + "' name='" + tbfuimagenameClinicalTrials + "' style='display:none;' />" +
+                                "<input type='text' id='" + tbfuimagebasesixtyfourClinicalTrials + "' name='" + tbfuimagebasesixtyfourClinicalTrials + "' style='display:none;' />" +
                             "</div>" +
                         "</div>" +
                     "</div>" +
 
                     '<div style="width:100%; text-align:center; clear:both; text-align:center;">' +
-                        '<textarea id="tbSelectedFooterDescClinicalTrials' + id + '" name="tbSelectedFooterDescClinicalTrials"></textarea>' +
+                        '<textarea id="tbSelectedFooterDescClinicalTrials' + id + '" name="tbSelectedFooterDescClinicalTrials' + id + '"></textarea>' +
                     '</div>' +
 
                 '</div>' +
@@ -260,22 +260,22 @@
                    
                     "<div style='width:100%; text-align:center; clear:both; text-align:center;'>" +
                         "<div style='width:50%; float:left; border: 1px solid #D9D9D9;'>" +
-                           '<input type="text" id="tbHeadOneClinicalTrials' + outerid + "_" + innerid + '" name="tbHeadOneClinicalTrials' + outerid + '" style="width:95%; text-align:center; font-weight:bold;"/>' +
+                           '<input type="text" id="tbHeadOneClinicalTrials' + outerid + "_" + innerid + '" name="tbHeadOneClinicalTrials' + outerid + "_" + innerid + '" style="width:95%; text-align:center; font-weight:bold;"/>' +
                         "</div>" +
                         '<div style="width:50%; float:left; border: 1px solid #D9D9D9;">' +
-                            '<input type="text" id="tbHeadTwoClinicalTrials' + outerid + "_" + innerid + '" name="tbHeadTwoClinicalTrials' + outerid + '" style="width:95%; text-align:center; font-weight:bold;"/>' +
+                            '<input type="text" id="tbHeadTwoClinicalTrials' + outerid + "_" + innerid + '" name="tbHeadTwoClinicalTrials' + outerid + "_" + innerid + '" style="width:95%; text-align:center; font-weight:bold;"/>' +
                         "</div>" +
                     "</div>" +
                     '<div style="width:100%; text-align:center; clear:both; text-align:center;">' +
                         '<div style="width:50%; float:left; border: 1px solid #D9D9D9;">' +
-                            '<textarea id="tbBodyOneClinicalTrials' + outerid + "_" + innerid + '" name="tbBodyOneClinicalTrials' + outerid + '"></textarea>' +
+                            '<textarea id="tbBodyOneClinicalTrials' + outerid + "_" + innerid + '" name="tbBodyOneClinicalTrials' + outerid + "_" + innerid + '"></textarea>' +
                         "</div>" +
                         '<div style="width:50%; float:left; border: 1px solid #D9D9D9;">' +
-                            '<textarea id="tbBodyTwoClinicalTrials' + outerid + "_" + innerid + '" name="tbBodyTwoClinicalTrials' + outerid + '"></textarea>' +
+                            '<textarea id="tbBodyTwoClinicalTrials' + outerid + "_" + innerid + '" name="tbBodyTwoClinicalTrials' + outerid + "_" + innerid + '"></textarea>' +
                         "</div>" +
                     "</div>" +
                     '<div style="width:100%; text-align:center; clear:both; text-align:center;">' +
-                        '<textarea id="tbNarrativeClinicalTrials' + outerid + "_" + innerid + '" name="tbNarrativeClinicalTrials' + outerid + '"></textarea>' +
+                        '<textarea id="tbNarrativeClinicalTrials' + outerid + "_" + innerid + '" name="tbNarrativeClinicalTrials' + outerid + "_" + innerid + '"></textarea>' +
                     "</div>" +
                 '</div>' +
                 '<div style="width:5%; float:left; padding-top:6px;">' +
@@ -339,7 +339,7 @@
                     "<div class='row'>" +
                        "<div class='col-xs-10 text-left'>" +
                            //"<textarea id='" + tbSciInfoProperName + "' name='tbSciInfoProperName'></textarea>" +
-                             '<input type="text" id="' + tbSciInfoProperName + '" name="tbSciInfoProperName" readonly="readonly"/>' +
+                             '<input type="text" id="' + tbSciInfoProperName + '" name="' + tbSciInfoProperName + '" readonly="readonly"/>' +
                        "</div>" +
                        "<div class='col-xs-2'>" +
                             '<input class="tbn btn-default btn-xs pull-right" onclick="RemoveDrugSubstanceTextBox(' + id + ')" id="btnRemoveDrugSubstanceTextBox(' + id + ')" type="button" value="Remove"/>' +
@@ -351,7 +351,7 @@
                              "</div>" +
                              "<div class='row'>" +
                                  "<div class='col-xs-10 text-left'>" +
-                                    "<textarea id='" + tbSciInfoChemicalname + "' title='Chemical name' name='tbSciInfoChemicalname'></textarea>" +
+                                    "<textarea id='" + tbSciInfoChemicalname + "' title='Chemical name' name='" + tbSciInfoChemicalname + "' ></textarea>" +
                                  "</div>" +
                              "</div>" +
                        "</div>" +
@@ -361,7 +361,7 @@
                               "</div>" +
                               "<div class='row'>" +
                                   "<div class='col-xs-10 text-left'>" +
-                                      "<textarea id='" + tbSciInfoMolecularformula + "' title='Molecular formula' name='tbSciInfoMolecularformula'></textarea>" +
+                                      "<textarea id='" + tbSciInfoMolecularformula + "' title='Molecular formula' name='" + tbSciInfoMolecularformula + "'></textarea>" +
                                   "</div>" +
                              "</div>" +
                       "</div>" +
@@ -371,7 +371,7 @@
                              "</div>" +
                              "<div class='row'>" +
                                  "<div class='col-xs-10 text-left'>" +
-                                     "<textarea id='" + tbSciInfoMolecularmass + "' title='Molecular mass' name='tbSciInfoMolecularmass'></textarea>" +
+                                     "<textarea id='" + tbSciInfoMolecularmass + "' title='Molecular mass' name='" + tbSciInfoMolecularmass + "'></textarea>" +
                                 "</div>" +
                             "</div>" +
                       "</div>" +
@@ -382,8 +382,8 @@
                                "</div>" +
                                "<div style='clear:both; border:1px solid #D9D9D9; width:103px; height:103px; padding-top:4px;'>" +
                                     "<img  id='" + fuimage + "' src='images/x.png'/>" +
-                                    "<input type='text' id='" + tbfuimagename + "' name='tbfuimagename' style='display:none;' />" +
-                                    "<input type='text' id='" + tbfuimagebasesixtyfour + "' name='tbfuimagebasesixtyfour' style='display:none;' />" +
+                                    "<input type='text' id='" + tbfuimagename + "' name='" + tbfuimagename + "' style='display:none;' />" +
+                                    "<input type='text' id='" + tbfuimagebasesixtyfour + "' name='" + tbfuimagebasesixtyfour + "' style='display:none;' />" +
                                "</div>" +
                              "</div>" +
                       "</div>" +               
@@ -393,7 +393,7 @@
                          "</div>" +
                         "<div class='row'>"+
                               "<div class='col-xs-10 text-left'>"+
-                                    "<textarea id='" + tbPhysicochemicalproperties + "' title='Physico chemical properties' name='tbPhysicochemicalproperties'></textarea>" +
+                                    "<textarea id='" + tbPhysicochemicalproperties + "' title='Physico chemical properties' name='" + tbPhysicochemicalproperties + "'></textarea>" +
                               "</div>" +
                         "</div>" +
                     "</div>"+
@@ -465,9 +465,9 @@
                         "</div>" +
                         "<div class='row text-center'>" +
                              "(" +                            
-                              "<input type='number' id='" + AnalyteMultiplicand + "' name='tbAnalyteMultiplicand'/>" +
+                              "<input type='number' id='" + AnalyteMultiplicand + "' name='" + AnalyteMultiplicand + "'/>" +
                               "&nbsp;&nbsp;X" +
-                              "<input type='number' id='" + AnalyteMultiplier + "' name='tbAnalyteMultiplier'/>" +
+                              "<input type='number' id='" + AnalyteMultiplier + "' name='" + AnalyteMultiplier + "'/>" +
                               "</div>" +
                             " &nbsp;mg)" +
                             '<input class="btn btn-default btn-xs pull-right" id="btnRemoveAnalyteNameTextBox(' + id + ')" onclick="RemoveAnalyteNameTextBox(' + id + ')" type="button" value="Remove" />' +
@@ -497,16 +497,16 @@
                                         "AUCT +-(units)" +
                                 "</div>" +
                                 "<div class='col-xs-2 brdr-tp brdr-lft'>" +
-                                     "<textarea id='" + AUCTTest + "' name='tbAUCTTest'></textarea>" +
+                                     "<textarea id='" + AUCTTest + "' name='" + AUCTTest + "'></textarea>" +
                                 "</div>" +
                                "<div class='col-xs-2 brdr-tp brdr-lft'>" +
-                                    "<textarea id='" + AUCTRefe + "' name='tbAUCTReference'></textarea>" +
+                                    "<textarea id='" + AUCTRefe + "' name='" + AUCTRefe + "'></textarea>" +
                                "</div>" +
                                "<div class='col-xs-3 brdr-tp brdr-lft'>" +
-                                    "<textarea id='" + AUCTPerc + "' name='tbAUCTPercentRatio'></textarea>" +
+                                    "<textarea id='" + AUCTPerc + "' name='" + AUCTPerc + "'></textarea>" +
                                "</div>" +
                                "<div class='col-xs-3 brdr-tp brdr-lft'>" +
-                                    "<textarea id='" + AUCTConf + "' name='tbAUCTConfidenceInterval'></textarea>" +
+                                    "<textarea id='" + AUCTConf + "' name='" + AUCTConf + "'></textarea>" +
                                "</div>" +
                         "</div>" +                                          
                         "<div class='row'>" +
@@ -514,16 +514,16 @@
                                     "AUCI (units)" +
                                 "</div>" +
                                 "<div class='col-xs-2 brdr-tp brdr-lft'>" +
-                                    "<textarea id='" + AUCITest + "' name='tbAUCITest'></textarea>" +
+                                    "<textarea id='" + AUCITest + "' name='" + AUCITest + "'></textarea>" +
                                 "</div>" +
                                 "<div class='col-xs-2 brdr-tp brdr-lft'>" +
-                                    "<textarea id='" + AUCIRefe + "' name='tbAUCIReference'></textarea>" +
+                                    "<textarea id='" + AUCIRefe + "' name='" + AUCIRefe + "'></textarea>" +
                                 "</div>" +
                                 "<div class='col-xs-3 brdr-tp brdr-lft'>" +
-                                    "<textarea id='" + AUCIPerc + "' name='tbAUCIPercentRatio'></textarea>" +
+                                    "<textarea id='" + AUCIPerc + "' name='" + AUCIPerc + "'></textarea>" +
                                 "</div>" +
                                 "<div class='col-xs-3 brdr-tp brdr-lft'>" +
-                                    "<textarea id='" + AUCIConf + "' name='tbAUCIConfidenceInterval'></textarea>" +
+                                    "<textarea id='" + AUCIConf + "' name='" + AUCIConf + "'></textarea>" +
                                 "</div>" +
                        "</div>" + 
                     
@@ -532,16 +532,16 @@
                                      "CMAX (units)" +
                                "</div>" +
                                "<div class='col-xs-2 brdr-tp brdr-lft'>" +
-                                     "<textarea id='" + CMAXTest + "' name='tbCMAXTest'></textarea>" +
+                                     "<textarea id='" + CMAXTest + "' name='" + CMAXTest + "'></textarea>" +
                                "</div>" +
                                "<div class='col-xs-2 brdr-tp brdr-lft'>" +
-                                    "<textarea id='" + CMAXRefe + "' name='tbCMAXReference'></textarea>" +
+                                    "<textarea id='" + CMAXRefe + "' name='" + CMAXRefe + "'></textarea>" +
                                "</div>" +
                                "<div class='col-xs-3 brdr-tp brdr-lft'>" +
-                                    "<textarea id='" + CMAXPerc + "' name='tbCMAXPercentRatio'></textarea>" +
+                                    "<textarea id='" + CMAXPerc + "' name='" + CMAXPerc + "'></textarea>" +
                                "</div>" +
                                "<div class='col-xs-3 brdr-tp brdr-lft'>" +
-                                    "<textarea id='" + CMAXConf + "' name='tbCMAXConfidenceInterval'></textarea>" +
+                                    "<textarea id='" + CMAXConf + "' name='" + CMAXConf + "'></textarea>" +
                                "</div>" +
                         "</div>" +
 
@@ -550,16 +550,16 @@
                                     "TMAX (h)" +
                                "</div>" +
                                "<div class='col-xs-2 brdr-tp brdr-lft'>" +
-                                    "<textarea id='" + TMAXTest + "' name='tbTMAXTest'></textarea>" +
+                                    "<textarea id='" + TMAXTest + "' name='" + TMAXTest + "'></textarea>" +
                                "</div>" +
                                "<div class='col-xs-2 brdr-tp brdr-lft'>" +
-                                    "<textarea id='" + TMAXRefe + "' name='tbTMAXReference'></textarea>" +
+                                    "<textarea id='" + TMAXRefe + "' name='" + TMAXRefe + "'></textarea>" +
                                "</div>" +
                                "<div class='col-xs-3 brdr-tp brdr-lft'>" +
-                                    "<textarea id='" + TMAXPerc + "' name='tbTMAXPercentRatio'></textarea>" +
+                                    "<textarea id='" + TMAXPerc + "' name='" + TMAXPerc + "'></textarea>" +
                                "</div>" +
                                "<div class='col-xs-3 brdr-tp brdr-lft'>" +
-                                   "<textarea id='" + TMAXConf + "' name='tbTMAXConfidenceInterval'></textarea>" +
+                                    "<textarea id='" + TMAXConf + "' name='" + TMAXConf + "'></textarea>" +
                                 "</div>" +
                         "</div>" +
 
@@ -568,16 +568,16 @@
                                     "T1/2 (h)" +
                                "</div>" +
                                 "<div class='col-xs-2 brdr-tp brdr-lft brdr-bttm'>" +
-                                     "<textarea id='" + THalfTest + "' name='tbTHalfTest'></textarea>" +
+                                     "<textarea id='" + THalfTest + "' name='" + THalfTest + "'></textarea>" +
                                 "</div>" +
                                "<div class='col-xs-2 brdr-tp brdr-lft brdr-bttm'>" +
-                                     "<textarea id='" + THalfRefe + "' name='tbTHalfReference'></textarea>" +
+                                     "<textarea id='" + THalfRefe + "' name='" + THalfRefe + "'></textarea>" +
                                 "</div>" +
                                "<div class='col-xs-3 brdr-tp brdr-lft brdr-bttm'>" +
-                                     "<textarea id='" + THalfPerc + "' name='tbTHalfPercentRatio'></textarea>" +
+                                     "<textarea id='" + THalfPerc + "' name='" + THalfPerc + "'></textarea>" +
                                 "</div>" +
                                 "<div class='col-xs-3 brdr-tp brdr-lft brdr-bttm'>" +
-                                     "<textarea id='" + THalfConf + "' name='tbTHalfConfidenceInterval'></textarea>" +
+                                     "<textarea id='" + THalfConf + "' name='" + THalfConf + "'></textarea>" +
                                 "</div>" +
                       "</div>" +
                    "</div>";
@@ -602,7 +602,7 @@
 </div>
 
 <div class="mrgn-tp-md">
-    <asp:Button ID="btnSave" class=" btn btn-primary" runat="server" Text="Save draft" OnClick="btnSave_Click" />
+    <asp:Button ID="btnSave" class=" btn btn-primary" runat="server" OnClick="btnSave_Click" />
 </div>
 
 <div>
@@ -628,7 +628,7 @@
     <div id="DrugSubstance0" class="brdr-bttm brdr-tp brdr-lft brdr-rght">
             <div class="row">
                 <div class="col-xs-10 text-left">
-                    <input type="text" id="tbSciInfoProperName0" name="tbSciInfoProperName" readonly="readonly" />
+                    <input type="text" id="tbSciInfoProperName0" name="tbSciInfoProperName0" readonly="readonly" />
                 </div>                
              </div>
 
@@ -638,7 +638,7 @@
                 </div>
                 <div class="row">
                     <div class="col-xs-10 text-left">
-                        <textarea id="tbSciInfoChemicalname0" name="tbSciInfoChemicalname" class="textarea form-control" runat="server"></textarea>
+                        <textarea id="tbSciInfoChemicalname0" name="tbSciInfoChemicalname0" class="textarea form-control" runat="server"></textarea>
                     </div>
                 </div>
             </div>
@@ -649,7 +649,7 @@
                 </div>
                 <div class="row">
                     <div class="col-xs-10 text-left">
-                        <textarea id="tbSciInfoMolecularformula0" name="tbSciInfoMolecularformula" class="textarea form-control" runat="server"></textarea>
+                        <textarea id="tbSciInfoMolecularformula0" name="tbSciInfoMolecularformula0" class="textarea form-control" runat="server"></textarea>
                     </div>
                 </div>
             </div>
@@ -660,7 +660,7 @@
                 </div>
                 <div class="row">
                     <div class="col-xs-10 text-left">
-                        <textarea id="tbSciInfoMolecularmass0" name="tbSciInfoMolecularmass" class="textarea form-control" runat="server"></textarea>
+                        <textarea id="tbSciInfoMolecularmass0" name="tbSciInfoMolecularmass0" class="textarea form-control" runat="server"></textarea>
                     </div>
                 </div>
             </div>
@@ -676,8 +676,8 @@
                         </div>
                         <div class="margin-top-medium" style="border: 1px solid #D9D9D9; width: 103px; height: 103px;">
                             <img id="fuimage0" src="images/x.png" />
-                            <input type="text" id="tbfuimagename0" name="tbfuimagename" class="hidden" />
-                            <input type="text" id="tbfuimagebasesixtyfour0" name="tbfuimagebasesixtyfour" class="hidden" />
+                            <input type="text" id="tbfuimagename0" name="tbfuimagename0" class="hidden" />
+                            <input type="text" id="tbfuimagebasesixtyfour0" name="tbfuimagebasesixtyfour0" class="hidden" />
                         </div>
                     </div>
                </div>
@@ -688,7 +688,7 @@
                     </div>
                     <div class="row">
                         <div class="col-xs-10 text-left">
-                            <textarea id="tbPhysicochemicalproperties0" name="tbPhysicochemicalproperties" class="textarea form-control" runat="server"></textarea>
+                            <textarea id="tbPhysicochemicalproperties0" name="tbPhysicochemicalproperties0" class="textarea form-control" runat="server"></textarea>
                         </div>
                     </div>
                 </div>         
@@ -715,7 +715,7 @@
         <div class="row">
             <div class="col-sm-4">
                 <label for="tbSelectedClinicalTrials" class="control-label hidden">Selected clinical trials</label>
-                <input type="text" id="tbSelectedClinicalTrials" class="form-control" />
+                <input type="text" id="tbSelectedClinicalTrials" name="tbSelectedClinicalTrials" class="form-control" />
             </div>
             <div class="col-sm-1">
                 <!--<input type="button" onclick="AddClinicalTrialsOuterSection()" id="btnAddClinicalTrialsOuterTextBox" class="btn btn-default btn-xs" value="Add"/>-->

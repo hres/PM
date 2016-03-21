@@ -973,7 +973,6 @@
     <Content Include="tinymce\readme.md" />
     <Content Include="tinymce\tests\.jshintrc" />
     <Content Include="tinymce\tests\js\qunit\QUnit.LICENSE" />
-    <Content Include="WebFormChing.aspx" />
   </ItemGroup>
   <ItemGroup>
     <Compile Include="App_GlobalResources\Resource.Designer.cs">
@@ -1047,13 +1046,6 @@
       <DependentUpon>ProdMonoFr.Master</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="WebFormChing.aspx.cs">
-      <DependentUpon>WebFormChing.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="WebFormChing.aspx.designer.cs">
-      <DependentUpon>WebFormChing.aspx</DependentUpon>
-    </Compile>
   </ItemGroup>
   <ItemGroup>
     <Content Include="ProdMonoFr.Master" />
