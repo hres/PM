@@ -49,22 +49,22 @@ namespace Product_Monograph {
         protected global::System.Web.UI.WebControls.Label lblPartITitle;
         
         /// <summary>
-        /// lblBrandName control.
+        /// lblProprietaryBrandName control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label lblBrandName;
+        protected global::System.Web.UI.WebControls.Label lblProprietaryBrandName;
         
         /// <summary>
-        /// lblProprietaryProperName control.
+        /// lblProperName control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label lblProprietaryProperName;
+        protected global::System.Web.UI.WebControls.Label lblProperName;
         
         /// <summary>
         /// SumSummaryProductInformation control.
@@ -85,40 +85,31 @@ namespace Product_Monograph {
         protected global::System.Web.UI.WebControls.Label lblRouteOfAdministration;
         
         /// <summary>
-        /// lblDosageForm2 control.
+        /// lblDosageForm control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label lblDosageForm2;
+        protected global::System.Web.UI.WebControls.Label lblDosageForm;
         
         /// <summary>
-        /// lblStrength2 control.
+        /// lblStrength control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label lblStrength2;
+        protected global::System.Web.UI.WebControls.Label lblStrength;
         
         /// <summary>
-        /// lblIngredients control.
+        /// lblClinicallyRelevantNonmedicinalIngredients control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label lblIngredients;
-        
-        /// <summary>
-        /// btnAddExtraRouteOfAdmin control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlInputButton btnAddExtraRouteOfAdmin;
+        protected global::System.Web.UI.WebControls.Label lblClinicallyRelevantNonmedicinalIngredients;
         
         /// <summary>
         /// SUM_INDICATIONS control.
@@ -130,13 +121,13 @@ namespace Product_Monograph {
         protected global::System.Web.UI.HtmlControls.HtmlGenericControl SUM_INDICATIONS;
         
         /// <summary>
-        /// lblBrandName3 control.
+        /// lblBrandName control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label lblBrandName3;
+        protected global::System.Web.UI.WebControls.Label lblBrandName;
         
         /// <summary>
         /// lblICProperName control.
@@ -146,6 +137,15 @@ namespace Product_Monograph {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Label lblICProperName;
+        
+        /// <summary>
+        /// lblIsIndicatedFor control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label lblIsIndicatedFor;
         
         /// <summary>
         /// tbBrandNameIndicatedFor control.
@@ -274,24 +274,6 @@ namespace Product_Monograph {
         protected global::System.Web.UI.WebControls.Label lblContraindications;
         
         /// <summary>
-        /// btnAddExtraContraindications control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlInputButton btnAddExtraContraindications;
-        
-        /// <summary>
-        /// btnRemoveContraindications control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlInputButton btnRemoveContraindications;
-        
-        /// <summary>
         /// SUM_WARNINGS control.
         /// </summary>
         /// <remarks>
@@ -310,24 +292,6 @@ namespace Product_Monograph {
         protected global::System.Web.UI.WebControls.Label lblSerious;
         
         /// <summary>
-        /// btnAddExtraSeriousWarningsPrecautions control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlInputButton btnAddExtraSeriousWarningsPrecautions;
-        
-        /// <summary>
-        /// btnRemoveSeriousWarningsPrecautions control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlInputButton btnRemoveSeriousWarningsPrecautions;
-        
-        /// <summary>
         /// lblHeadings control.
         /// </summary>
         /// <remarks>
@@ -335,15 +299,6 @@ namespace Product_Monograph {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Label lblHeadings;
-        
-        /// <summary>
-        /// btnAddExtraAddHeadingSelection control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlInputButton btnAddExtraAddHeadingSelection;
         
         /// <summary>
         /// lblAdditional control.
@@ -355,13 +310,13 @@ namespace Product_Monograph {
         protected global::System.Web.UI.WebControls.Label lblAdditional;
         
         /// <summary>
-        /// txtAdditional control.
+        /// tbAdditionalWarning control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlTextArea txtAdditional;
+        protected global::System.Web.UI.HtmlControls.HtmlTextArea tbAdditionalWarning;
         
         /// <summary>
         /// SUM_ADVERSE control.
@@ -391,15 +346,6 @@ namespace Product_Monograph {
         protected global::System.Web.UI.HtmlControls.HtmlTextArea tbAdverseDrugReactOverview;
         
         /// <summary>
-        /// btnAddAdverseReactionsOuterSection control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlInputButton btnAddAdverseReactionsOuterSection;
-        
-        /// <summary>
         /// SUM_DRUG_INTERACTIONS control.
         /// </summary>
         /// <remarks>
@@ -427,15 +373,6 @@ namespace Product_Monograph {
         protected global::System.Web.UI.HtmlControls.HtmlTextArea tbDrugInteractionsOverview;
         
         /// <summary>
-        /// btnAddDrugInteractionsOuterSection control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlInputButton btnAddDrugInteractionsOuterSection;
-        
-        /// <summary>
         /// SUM_DOSAGE control.
         /// </summary>
         /// <remarks>
@@ -452,24 +389,6 @@ namespace Product_Monograph {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Label lblDosing;
-        
-        /// <summary>
-        /// btnAddExtraDosingConsiderations control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlInputButton btnAddExtraDosingConsiderations;
-        
-        /// <summary>
-        /// btnRemoveDosingConsiderations control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlInputButton btnRemoveDosingConsiderations;
         
         /// <summary>
         /// lblRecommended control.
@@ -560,51 +479,6 @@ namespace Product_Monograph {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Label lblParenteralProducts;
-        
-        /// <summary>
-        /// lblVialSize control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Label lblVialSize;
-        
-        /// <summary>
-        /// lblVolume control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Label lblVolume;
-        
-        /// <summary>
-        /// lblApproximate control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Label lblApproximate;
-        
-        /// <summary>
-        /// lblNominal control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Label lblNominal;
-        
-        /// <summary>
-        /// btnAddParenteralProducts control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlInputButton btnAddParenteralProducts;
         
         /// <summary>
         /// lblAnySpecific control.
@@ -722,51 +596,6 @@ namespace Product_Monograph {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Label lblPHARMACOKINETICS;
-        
-        /// <summary>
-        /// btnAddPharmacokineticsOuterSection control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlInputButton btnAddPharmacokineticsOuterSection;
-        
-        /// <summary>
-        /// btnDynaTable control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Button btnDynaTable;
-        
-        /// <summary>
-        /// BtnRemoveTable control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Button BtnRemoveTable;
-        
-        /// <summary>
-        /// lblErrMsgTbl control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Label lblErrMsgTbl;
-        
-        /// <summary>
-        /// pTable control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Table pTable;
         
         /// <summary>
         /// SUM_Special_Popu_Condition control.

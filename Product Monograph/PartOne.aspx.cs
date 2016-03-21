@@ -18,7 +18,7 @@ using System.Collections;
 using System.IO.Compression;
 using System.Threading;
 using System.Globalization;
-using System.Threading.Tasks;
+
 
 namespace Product_Monograph
 {
@@ -26,7 +26,6 @@ namespace Product_Monograph
     {
         string strscript = string.Empty;
         string strBrandName = string.Empty;
-        protected TaskScheduler _uiTaskScheduler; //ching add for test..
 
         void Page_PreInit(Object sender, EventArgs e)
         {
@@ -39,6 +38,11 @@ namespace Product_Monograph
                 this.MasterPageFile = (String)Session["masterpage"];
 
             }
+            //if (Session["savedFilename"] != null)
+            //{
+            //    strBrandName = (String)Session["savedFilename"];
+
+            //}
         }
 
         protected void Page_Load(object sender, EventArgs e)
@@ -57,8 +61,6 @@ namespace Product_Monograph
                 }
             }
             facilityResourcePart1();
-            _uiTaskScheduler = TaskScheduler.FromCurrentSynchronizationContext();  //ching adds for test
-
         }
 
         private void SaveProcess()
@@ -436,7 +438,66 @@ namespace Product_Monograph
                 return null;
             }
             #endregion
+            //ching adds new value of Additional Warning
+            #region Additional Warnings in section of Warnings and Precautions
+            try
+            {
+                XmlNodeList listAdditionalWarn = doc.GetElementsByTagName("AdditionalWarning");
 
+                ArrayList arrayAdditionalWarn = new ArrayList();
+                if (HttpContext.Current.Request.Form.GetValues("tbAdditionalWarning") != null)
+                {
+                    foreach (string swpitem in HttpContext.Current.Request.Form.GetValues("tbAdditionalWarning"))
+                    {
+                        arrayAdditionalWarn.Add(swpitem);
+                    }
+                }
+
+                if (listAdditionalWarn.Count < 1)
+                {
+                    if (arrayAdditionalWarn.Count > 0)
+                    {
+                        XmlNode xnodeW = doc.CreateElement("AdditionalWarning");
+                        rootnode.AppendChild(xnodeW);
+
+                        for (int ar = 0; ar < arrayAdditionalWarn.Count; ar++)
+                        {
+                            XmlNode subnodeW = doc.CreateElement("row");
+                            xnodeW.AppendChild(subnodeW);
+
+                            string colW1 = arrayAdditionalWarn[ar].ToString();
+                            XmlNode subsubnodeW = doc.CreateElement("column");
+                            subsubnodeW.AppendChild(doc.CreateTextNode(colW1));
+                            subnodeW.AppendChild(subsubnodeW);
+                        }
+                    }
+                }
+                else
+                {
+                    listAdditionalWarn[0].RemoveAll();
+
+                    XmlNodeList xnodeW2 = doc.GetElementsByTagName("AdditionalWarning");
+                    rootnode.AppendChild(xnodeW2[0]);
+
+                    for (int ar2 = 0; ar2 < arrayAdditionalWarn.Count; ar2++)
+                    {
+                        XmlNode subnodeW2 = doc.CreateElement("row");
+                        xnodeW2[0].AppendChild(subnodeW2);
+
+                        string col1W2 = arrayAdditionalWarn[ar2].ToString();
+                        XmlNode subsubnodeW2 = doc.CreateElement("column");
+                        subsubnodeW2.AppendChild(doc.CreateTextNode(col1W2));
+                        subnodeW2.AppendChild(subsubnodeW2);
+                    }
+                }
+            }
+            catch (Exception error)
+            {
+                lblError.Text = error.ToString();
+                return null;
+            }
+            #endregion
+            helpers.Processes.ValidateAndSave(doc, rootnode, "AdditionalWarning", "", tbAdditionalWarning.Value, false);
             helpers.Processes.ValidateAndSave(doc, rootnode, "AdverseDrugReactOverview", "", tbAdverseDrugReactOverview.Value, false);
 
             #region Adverse Reactions
@@ -1986,6 +2047,67 @@ namespace Product_Monograph
             //}
             #endregion
 
+            #region special Population and Condition in section of Action and clinical pharmacology
+            try
+            {
+                XmlNodeList listSpecialPopu = doc.GetElementsByTagName("SpecialPopulationAndCondition");
+
+                ArrayList arraySpecialPopu = new ArrayList();
+                if (HttpContext.Current.Request.Form.GetValues("tbSpecialPopuCondition") != null)
+                {
+                    foreach (string spcitem in HttpContext.Current.Request.Form.GetValues("tbSpecialPopuCondition"))
+                    {
+                        arraySpecialPopu.Add(spcitem);
+                    }
+                }
+
+                if (listSpecialPopu.Count < 1)
+                {
+                    if (arraySpecialPopu.Count > 0)
+                    {
+                        XmlNode xnodeP = doc.CreateElement("SpecialPopulationAndCondition");
+                        rootnode.AppendChild(xnodeP);
+
+                        for (int ar = 0; ar < arraySpecialPopu.Count; ar++)
+                        {
+                            XmlNode subnodeP = doc.CreateElement("row");
+                            xnodeP.AppendChild(subnodeP);
+
+                            string colP1 = arraySpecialPopu[ar].ToString();
+                            XmlNode subsubnodeP = doc.CreateElement("column");
+                            subsubnodeP.AppendChild(doc.CreateTextNode(colP1));
+                            subnodeP.AppendChild(subsubnodeP);
+                        }
+                    }
+                }
+                else
+                {
+
+                    listSpecialPopu[0].RemoveAll();
+
+                    XmlNodeList xnodeP2 = doc.GetElementsByTagName("SpecialPopulationAndCondition");
+                    rootnode.AppendChild(xnodeP2[0]);
+
+                    for (int ar2 = 0; ar2 < arraySpecialPopu.Count; ar2++)
+                    {
+                        XmlNode subnodeP2 = doc.CreateElement("row");
+                        xnodeP2[0].AppendChild(subnodeP2);
+
+                        string col1P2 = arraySpecialPopu[ar2].ToString();
+                        XmlNode subsubnodeP2 = doc.CreateElement("column");
+                        subsubnodeP2.AppendChild(doc.CreateTextNode(col1P2));
+                        subnodeP2.AppendChild(subsubnodeP2);
+                    }
+                }
+            }
+            catch (Exception error)
+            {
+                lblError.Text = error.ToString();
+                return null;
+            }
+            #endregion
+            //ching add new value of Special Population And Condition
+            helpers.Processes.ValidateAndSave(doc, rootnode, "SpecialPopulationAndCondition", "", tbSpecialPopuCondition.Value, false);
             helpers.Processes.ValidateAndSave(doc, rootnode, "StorageAndStability", "", tbStorageStability.Value, false);
             helpers.Processes.ValidateAndSave(doc, rootnode, "SpecialHandling", "", tbSpecialHandling.Value, false);
             helpers.Processes.ValidateAndSave(doc, rootnode, "DosageFormsComposition", "", tbDosageFormsComposition.Value, false);
@@ -2023,15 +2145,37 @@ namespace Product_Monograph
                     {
                         if (colarray[colcounter].Equals("tbBrandName"))
                         {
-                            lblBrandName.Text = helpers.Processes.CleanString(column);
-                            lblBrandName3.Text = helpers.Processes.CleanString(column);
-                            strBrandName = helpers.Processes.CleanString(column);  //ching add code here
+                            //ching add code here
+                            if (column != null)
+                            {
+                                lblProprietaryBrandName.Text = helpers.Processes.CleanString(column);
+                                lblBrandName.Text = helpers.Processes.CleanString(column);
+                                strBrandName = helpers.Processes.CleanString(column);  
+                            }
+                            else
+                            {
+                                lblProprietaryBrandName.Text = Resources.Resource.lblBrandName;  
+                                lblBrandName.Text = Resources.Resource.lblBrandName;
+                                strBrandName = "DraftPMForm";  
+                            }
+                          
                         }
 
                         if (colarray[colcounter].Equals("tbProperName"))
                         {
-                            lblProprietaryProperName.Text = helpers.Processes.CleanString(column);
-                            lblICProperName.Text = helpers.Processes.CleanString(column);
+                            //ching add code here
+                            if (column != null)
+                            {
+                                lblProperName.Text = helpers.Processes.CleanString(column);
+                                lblICProperName.Text = helpers.Processes.CleanString(column);
+                            }
+                            else
+                            {
+                                lblProperName.Text = Resources.Resource.lblProperName;
+                                lblICProperName.Text = Resources.Resource.lblProperName;
+                                
+                            }
+                           
                         }
 
                         colcounter++;
@@ -2993,7 +3137,9 @@ namespace Product_Monograph
 
                               StorageAndStability = (string)item.Element("StorageAndStability"),
                               SpecialHandling = (string)item.Element("SpecialHandling"),
-                              DosageFormsComposition = (string)item.Element("DosageFormsComposition")
+                              DosageFormsComposition = (string)item.Element("DosageFormsComposition"),
+                              AdditionalWarning = (string)item.Element("AdditionalWarning"),
+                              SpecialPopuCondition = (string)item.Element("SpecialPopulationAndCondition")
                           };
 
             foreach (var xmldataitem in xmldata)
@@ -3015,7 +3161,7 @@ namespace Product_Monograph
                 //tbAbnormalHematologic.Value = xmldataitem.ClinicalTrialAdverseDrugReactAbnormalHematologic;
                 //tbPMAdverseDrug.Value = xmldataitem.ClinicalTrialAdverseDrugReactPMAdverseDrug;
 
-                //tbDrugOverview.Value = xmldataitem.DrugOverview;
+               // tbDrugInteractionsOverview.Value = xmldataitem.DrugOverview;
                 tbRecommendedDose.Value = xmldataitem.DrugRecommendedDose;
                 tbMissedDose.Value = xmldataitem.DrugMissedDose;
                 tbAdministration.Value = xmldataitem.DrugAdministration;
@@ -3023,8 +3169,7 @@ namespace Product_Monograph
 
                 if (xmldataitem.Overdosage == null)
                 {
-                    //tbOverdosage.Value = "For management of a suspected drug overdose, contact your regional Poison Control Centre.";
-                    tbOverdosage.Value = Resources.Resource.SUM_OVERDOSAGE;
+                    tbOverdosage.Value = "For management of a suspected drug overdose, contact your regional Poison Control Centre.";
                 }
                 else
                 {
@@ -3039,6 +3184,8 @@ namespace Product_Monograph
                 tbStorageStability.Value = xmldataitem.StorageAndStability;
                 tbSpecialHandling.Value = xmldataitem.SpecialHandling;
                 tbDosageFormsComposition.Value = xmldataitem.DosageFormsComposition;
+                tbAdditionalWarning.Value = xmldataitem.AdditionalWarning;
+                tbSpecialPopuCondition.Value = xmldataitem.SpecialPopuCondition;
             }
 
         }
@@ -3047,156 +3194,7 @@ namespace Product_Monograph
         {
             SaveProcess();
         }
-        protected void btnCreateTable_Click(object sender, EventArgs e)
-        {
-            //  BeginInvoke((Action)delegate ()
-            //   {
-            //do your update
-            //   });
 
-        //    var task = new Task<string>(LengthyComputation);
-        //    task.ContinueWith(antecedent => createPharmTbl(antecedent.Result), _uiTaskScheduler);
-            //                     UpdateResultLabel(antecedent.Result), _uiTaskScheduler);
-        //    task.Start();
-
-            createPharmTbl();
-            this.BtnRemoveTable.Visible = true;
-            //create table
-            // Total number of rows.
-            //int rowCnt;
-            //// Current row count.
-            //int rowCtr;
-            //// Total number of cells per row (columns).
-            //int cellCtr;
-            //// Current cell counter.
-            //int cellCnt;
-
-
-            //rowCnt = int.Parse("12");
-            //cellCnt = int.Parse("6");
-
-            //for (rowCtr = 1; rowCtr <= rowCnt; rowCtr++)
-            //{
-            //    // Create a new row and add it to the table.
-            //    TableRow tRow = new TableRow();
-            //    pTable.Rows.Add(tRow);
-            //    for (cellCtr = 1; cellCtr <= cellCnt; cellCtr++)
-            //    {
-            //        // Create a new cell and add it to the row.
-            //        TableCell tCell = new TableCell();
-            //        tRow.Cells.Add(tCell);
-            //        // Mock up a product ID.
-            //        string prodID = rowCtr + "_" + cellCtr;
-            //        // Add a literal text as control.
-            //        tCell.Controls.Add(new LiteralControl("Microsoft: "));
-            //        // Create a Hyperlink Web server control and add it to the cell.
-            //        System.Web.UI.WebControls.HyperLink h = new HyperLink();
-            //        h.Text = rowCtr + ":" + cellCtr;
-            //        h.NavigateUrl = "http://www.microsoft.com/net";
-            //        tCell.Controls.Add(h);
-            //    }
-
-            //}
-
-
-        }
-        protected string LengthyComputation()
-        {
-            Thread.Sleep(0);
-           // Thread.Sleep(3000);
-            return "47";
-        }
-
-        protected void btnRemoveTable_Click(object sender, EventArgs e)
-        {
-            this.pTable.Controls.Clear();
-            this.BtnRemoveTable.Visible = false;
-        }
-        protected void createPharmTbl()
-        {
-
-            try
-            {
-
-           
-            // Add rows to the table.
-            for (int rowNum = 0; rowNum < 100; rowNum++)
-            {
-                TableRow tempRow = new TableRow();
-                for (int cellNum = 0; cellNum < 3; cellNum++)
-                {
-                    TableCell tempCell = new TableCell();
-                        // tempCell.Text = 
-                        // String.Format("({0},{1})", rowNum, cellNum);
-                        System.Web.UI.WebControls.TextBox mTextBox = new TextBox();
-                        mTextBox.ID = "myTextBox" + rowNum + cellNum;
-                        mTextBox.MaxLength = 1000;
-                       // mTextBox.TextChanged();
-                        tempCell.Controls.Add(mTextBox);
-                    tempRow.Cells.Add(tempCell);
-                }
-                pTable.Rows.Add(tempRow);
-            }
-
-            // Create a TableHeaderRow.
-            TableHeaderRow headerRow = new TableHeaderRow();
-            headerRow.BackColor = Color.LightBlue;
-
-            // Create TableCell objects to contain 
-            // the text for the header.
-            TableHeaderCell headerTableCell1 = new TableHeaderCell();
-            TableHeaderCell headerTableCell2 = new TableHeaderCell();
-            TableHeaderCell headerTableCell3 = new TableHeaderCell();
-            headerTableCell1.Text = "Column 1 Header";
-            headerTableCell1.Scope = TableHeaderScope.Column;
-            headerTableCell1.AbbreviatedText = "Col 1 Head";
-            headerTableCell2.Text = "Column 2 Header";
-            headerTableCell2.Scope = TableHeaderScope.Column;
-            headerTableCell2.AbbreviatedText = "Col 2 Head";
-            headerTableCell3.Text = "Column 3 Header";
-            headerTableCell3.Scope = TableHeaderScope.Column;
-            headerTableCell3.AbbreviatedText = "Col 3 Head";
-
-            // Add the TableHeaderCell objects to the Cells
-            // collection of the TableHeaderRow.
-            headerRow.Cells.Add(headerTableCell1);
-            headerRow.Cells.Add(headerTableCell2);
-            headerRow.Cells.Add(headerTableCell3);
-
-            // Add the TableHeaderRow as the first item 
-            // in the Rows collection of the table.
-            pTable.Rows.AddAt(0, headerRow);
-
-            // Create a TableFooterRow.
-            TableFooterRow footerRow = new TableFooterRow();
-            footerRow.BackColor = Color.LightBlue;
-            // Create TableCell objects to contain the 
-            // text for the footer.
-            TableCell footerTableCell1 = new TableCell();
-            TableCell footerTableCell2 = new TableCell();
-            TableCell footerTableCell3 = new TableCell();
-            footerTableCell1.Text = "Column 1 footer";
-            footerTableCell2.Text = "Column 2 footer";
-            footerTableCell3.Text = "Column 3 footer";
-
-            // Add the TableCell objects to the Cells
-            // collection of the TableFooterRow.
-            footerRow.Cells.Add(footerTableCell1);
-            footerRow.Cells.Add(footerTableCell2);
-            footerRow.Cells.Add(footerTableCell3);
-
-            // Add the TableFooterRow to the Rows
-            // collection of the table.
-            pTable.Rows.Add(footerRow);
-            }
-            catch (Exception ex)
-            {
-                lblErrMsgTbl.Text = ex.ToString();
-                //Debug.WriteLine("Results = " + ex.ToString());
-
-            }
-
-        }
         protected void menutabs_MenuItemClick(object sender, MenuEventArgs e)
         {
             SaveInMemory();
@@ -3239,10 +3237,10 @@ namespace Product_Monograph
             btnSaveDraftPart1.ToolTip = Resources.Resource.btnSaveDraft_tooltip;
 
             lblPartITitle.Text = Resources.Resource.lblPartITitle;
-            lblBrandName.Text = Resources.Resource.lblBrandName;
-            lblBrandName3.Text = Resources.Resource.lblBrandName;
-         
-            lblProprietaryProperName.Text = Resources.Resource.lblProperName;
+           // lblBrandName.Text = Resources.Resource.lblBrandName;
+            //  lblBrandName3.Text = Resources.Resource.lblBrandName;
+
+           // lblProprietaryProperName.Text = Resources.Resource.lblProperName;
             SumSummaryProductInformation.InnerText = Resources.Resource.SumSummaryProductInformation;
             SUM_INDICATIONS.InnerText = Resources.Resource.SUM_INDICATIONS;
             SUM_CONTRAINDICATIONS.InnerText = Resources.Resource.SUM_CONTRAINDICATIONS;
@@ -3258,38 +3256,42 @@ namespace Product_Monograph
             SUM_DOSAGEFORMS.InnerText = Resources.Resource.SUM_DOSAGEFORMS;
             SUM_Special_Popu_Condition.InnerText = Resources.Resource.SUM_Special_Popu_Condition;
 
-            lblDosageForm2.Text = Resources.Resource.lblDosageForm2;
-            lblStrength2.Text = Resources.Resource.tbStrength;
-            lblIngredients.Text = Resources.Resource.lblIngredients; 
+            //lblDosageForm2.Text = Resources.Resource.lblDosageForm2;
+            //lblStrength2.Text = Resources.Resource.tbStrength;
+            //lblIngredients.Text = Resources.Resource.lblIngredients;
             lblGeriatrics.Text = Resources.Resource.lblGeriatrics;
             lblYearsOfAge.Text = Resources.Resource.lblYearsOfAge;
             lblPediatrics.Text = Resources.Resource.lblPediatrics;
             lblYearsOfAgeOr.Text = Resources.Resource.lblYearsOfAgeOr;
-            lblYearsOfAge2.Text = Resources.Resource.lblYearsOfAge2;   
+            lblYearsOfAge2.Text = Resources.Resource.lblYearsOfAge2;
             lblContraindications.Text = Resources.Resource.lblContraindications;
             lblRouteOfAdministration.Text = Resources.Resource.lblRouteOfAdministration;
             lblSerious.Text = Resources.Resource.lblSerious;
+            lblAdministration.Text = Resources.Resource.lblAdministration;
+            lblReconstitution.Text = Resources.Resource.lblReconstitution;
+            lblAdverse.Text = Resources.Resource.lblAdverse;
+            lblOverview.Text = Resources.Resource.lblOverview;
 
-            btnAddExtraContraindications.Value = Resources.Resource.btnAddExtraContraindications;
-            btnAddExtraSeriousWarningsPrecautions.Value = Resources.Resource.btnAddExtraContraindications;
-            btnAddPharmacokineticsOuterSection.Value = Resources.Resource.btnAddExtraContraindications;
-            btnAddParenteralProducts.Value = Resources.Resource.btnAddExtraContraindications;
-            btnAddExtraDosingConsiderations.Value = Resources.Resource.btnAddExtraContraindications;
-            btnAddPharmacokineticsOuterSection.Value = Resources.Resource.btnAddExtraContraindications;
-            btnAddDrugInteractionsOuterSection.Value = Resources.Resource.btnAddExtraContraindications;
-            btnAddAdverseReactionsOuterSection.Value = Resources.Resource.btnAddExtraContraindications;
-            btnAddExtraAddHeadingSelection.Value = Resources.Resource.btnAddExtraContraindications;
-            btnAddExtraRouteOfAdmin.Value = Resources.Resource.btnAddExtraContraindications;
-            btnAddExtraAddHeadingSelection.Value = Resources.Resource.btnAddExtraContraindications;
-            btnRemoveContraindications.Value = Resources.Resource.btnRemoveVal;
-            btnRemoveSeriousWarningsPrecautions.Value = Resources.Resource.btnRemoveVal;
-            btnRemoveDosingConsiderations.Value = Resources.Resource.btnRemoveVal;
+            //btnAddExtraContraindications.Value = Resources.Resource.btnAddExtraContraindications;
+            //btnAddExtraSeriousWarningsPrecautions.Value = Resources.Resource.btnAddExtraContraindications;
+            //btnAddPharmacokineticsOuterSection.Value = Resources.Resource.btnAddExtraContraindications;
+            //btnAddParenteralProducts.Value = Resources.Resource.btnAddExtraContraindications;
+            //btnAddExtraDosingConsiderations.Value = Resources.Resource.btnAddExtraContraindications;
+            //btnAddPharmacokineticsOuterSection.Value = Resources.Resource.btnAddExtraContraindications;
+            //btnAddDrugInteractionsOuterSection.Value = Resources.Resource.btnAddExtraContraindications;
+            //btnAddAdverseReactionsOuterSection.Value = Resources.Resource.btnAddExtraContraindications;
+            //btnAddExtraAddHeadingSelection.Value = Resources.Resource.btnAddExtraContraindications;
+            //btnAddExtraRouteOfAdmin.Value = Resources.Resource.btnAddExtraContraindications;
+            //btnAddExtraAddHeadingSelection.Value = Resources.Resource.btnAddExtraContraindications;
+            //btnRemoveContraindications.Value = Resources.Resource.btnRemoveVal;
+            //btnRemoveSeriousWarningsPrecautions.Value = Resources.Resource.btnRemoveVal;
+            //btnRemoveDosingConsiderations.Value = Resources.Resource.btnRemoveVal;
 
             lblHeadings.Text = Resources.Resource.lblHeadings;
             lblStorage.Text = Resources.Resource.lblStorage;
             lblSpecialHandling.Text = Resources.Resource.lblSpecialHandling;
-            lblDosageForms.Text = Resources.Resource.lblDosageForms;   
-            lblRecommended.Text = Resources.Resource.lblRecommended;   
+            lblDosageForms.Text = Resources.Resource.lblDosageForms;
+            lblRecommended.Text = Resources.Resource.lblRecommended;
             lblAnySpecific.Text = Resources.Resource.lblAnySpecific;
             lblOverdosage.Text = Resources.Resource.SUM_OVERDOSAGE;
             lblForAnti.Text = Resources.Resource.lblForAnti;
@@ -3298,13 +3300,18 @@ namespace Product_Monograph
             lblDosing.Text = Resources.Resource.lblDosing;
             lblMissed.Text = Resources.Resource.lblMissed;
             lblOral.Text = Resources.Resource.lblOral;
-            lblICProperName.Text = Resources.Resource.lblICProperName;
+            lblIsIndicatedFor.Text = Resources.Resource.lblIsIndicatedFor;
             lblForManagement.Text = Resources.Resource.lblForManagement;
             lblParenteralProducts.Text = Resources.Resource.lblParenteralProducts;
-            lblAdditional.Text = "Additional Information";
+            lblAdditional.Text = Resources.Resource.lblAdditional;
+            //lblVialSize.Text = Resources.Resource.lblVialSize;
+            //lblVolume.Text = Resources.Resource.lblVolume;
+            //lblApproximate.Text = Resources.Resource.lblApproximate;
+            //lblNominal.Text = Resources.Resource.lblNominal;
         }
     }
 }
+
 
 
 //<div id="AdverseReactionsOuter0" style="width:90%; padding-left: 0px; clear:both; border:1px solid #D9D9D9; height:auto; display:none;">
