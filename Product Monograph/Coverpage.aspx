@@ -191,28 +191,28 @@
             var stpdv = "tbStrengthperDosageValue" + id.toString();
             var stpdu = "tbStrengthperDosageUnit" + id.toString();
             return '<div style="width:18.88%; float:left; border-top: 1px solid black; border-left: 1px solid black; border-bottom: 1px solid black;">' +
-                        '<input type="text" id="' + bn + '" name="tbBrandName" style="width:100%; border:0px; height:40px;" />' +
+                        '<input type="text" id="' + bn + '" name="' + bn + '" style="width:100%; border:0px; height:40px;" />' +
                     '</div>' +  
                     '<div style="width:18.88%; float:left; border-top: 1px solid black; border-left: 1px solid black; border-bottom: 1px solid black;">' +
-                        '<input type="text" id="' + pn + '" name="tbProperName" style="width:100%; border:0px; height:40px;" />' +
+                        '<input type="text" id="' + pn + '" name="' + pn + '" style="width:100%; border:0px; height:40px;" />' +
                     '</div>' + 
                     '<div style="width:18.88%; float:left; border-top: 1px solid black; border-left: 1px solid black; border-bottom: 1px solid black;">' +
-                        '<select id="' + dos + '" name="tbDosage" style="width:100%; height:40px; border:0px;" ></select>' +
+                        '<select id="' + dos + '" name="' + dos + '" style="width:100%; height:40px; border:0px;" ></select>' +
                     '</div>' +  
                     '<div style="width:18.88%; float:left; border-top: 1px solid black; border-left: 1px solid black; border-bottom: 1px solid black;">' +
                         '<div style="width:49%; float:left; border:1px solid #D9D9D9;">' +
-                            '<input type="number" id="' + stv + '" name="tbStrengthValue" style="width:100%; border:0px; height:38px;" />' +
+                            '<input type="number" id="' + stv + '" name="' + stv + '" style="width:100%; border:0px; height:38px;" />' +
                         '</div>' +
                         '<div style="width:49%; float:left; border:1px solid #D9D9D9;">' +
-                            '<select id="' + stu + '" name="tbStrengthUnit" style="width:100%; height:38px; border:0px;" ></select>' +
+                            '<select id="' + stu + '" name="' + stu + '" style="width:100%; height:38px; border:0px;" ></select>' +
                         '</div>' +
                     '</div>' + 
                     '<div style="width:18.88%; float:left; border-top: 1px solid black; border-left: 1px solid black; border-bottom: 1px solid black;">' +
                         '<div style="width:49%; float:left; border:1px solid #D9D9D9;">' +
-                            '<input type="number" id="' + stpdv + '" name="tbStrengthperDosageValue" style="width:100%; border:0px; height:38px;" />' +
+                            '<input type="number" id="' + stpdv + '" name="' + stpdv + '" style="width:100%; border:0px; height:38px;" />' +
                         '</div>' +
                         '<div style="width:49%; float:left; border:1px solid #D9D9D9;">' +
-                            '<select id="' + stpdu + '" name="tbStrengthperDosageUnit" style="width:100%; height:38px; border:0px;" ></select>' +
+                            '<select id="' + stpdu + '" name="' + stpdu + '" style="width:100%; height:38px; border:0px;" ></select>' +
                         '</div>' +
                     '</div>' +  
                     '<div style="width:5%; float:left; padding-left: 0px;">' +
@@ -300,6 +300,19 @@
             });
         }
 
+        function setSchedulingSymbol(inputSchedulSymbol, imgfilenameSymbol) {
+            var selectedsymbolval = inputSchedulSymbol;
+            var inputSchedulSymbolImg = imgfilenameSymbol;
+            $("#tbSchedulingSymbol").val(selectedsymbolval);
+           // var selectedsymbol = $('#tbSchedulingSymbol').val();
+          //  $.get('ControlledList.xml', function (xmlcontolledlist) {
+          //      $(xmlcontolledlist).find(selectedsymbolval).each(function () {
+                    $('#imgSymbol').attr("src", "scheduling symbol\\" + inputSchedulSymbolImg);
+                    $("#tbxmlimgnameSymbol").val(selectedsymbolval);
+                    $("#tbxmlimgfilenameSymbol").val(inputSchedulSymbolImg);
+         //       });
+        //    });
+        }
         function testfucntion()
         {
             $('#tbSchedulingSymbol option').each(function () { if ($(this).html() == 'schedule 3') { $(this).attr('selected', 'selected'); return; }});
@@ -340,7 +353,7 @@
 <div class="form-group margin-top-medium">
   <div class="row">
   <div class="col-sm-2">
-     <Label id="lblSchedulingSymbol" for="tbSchedulingSymbol" runat="server" >:</Label>
+     <Label id="lblSchedulingSymbol" name="lblSchedulingSymbol" for="tbSchedulingSymbol" runat="server" >:</Label>
   </div>
   <div class="col-sm-2">
      <select ID="tbSchedulingSymbol" onchange="ApplySchedulingSymbol()" class="form-control width_120px"></select> 
@@ -380,11 +393,11 @@
             <tr>
                 <th></th>
                 <th></th>
-                <th scope="col" id="thBrandName" title="BrandName"><Label id="tbBName" runat="server"></Label><br />&#32;</th>
-                <th scope="col" id="thProperName" title="ProperName"><Label id="tbPName" runat="server"></Label><br />&#32;</th>
-                <th scope="col" id="thDosageForm" title="DosageForm"><Label id="tbDForm" runat="server"></Label><br />&#32;</th>
-                <th scope="col" id="thStrength" title="Strength"><Label id="tbStrength" runat="server"></Label><br /><label id="tbSValue" runat="server"></label> | <label id="tbSUnit" runat="server"></label></th>
-                <th scope="col" id="thStrengthPerDosage" title="StrengthPerDosage" ><asp:Label id="lblStrengthperDosage" runat="server"></asp:Label><br /><label id="tbDValue" runat="server"></label> | <label id="tbDUnit" runat="server" ></label></th>   
+                <th scope="col" id="thBrandName" title="BrandName"><asp:label id="tbBName" runat="server"></asp:label><br />&#32;</th>
+                <th scope="col" id="thProperName" title="ProperName"><asp:Label id="tbPName" runat="server"></asp:Label><br />&#32;</th>
+                <th scope="col" id="thDosageForm" title="DosageForm"><asp:Label id="tbDForm" runat="server"></asp:Label><br />&#32;</th>
+                <th scope="col" id="thStrength" title="Strength"><asp:Label id="tbStrength" runat="server"></asp:Label><br /><asp:label id="tbSValue" runat="server"></asp:label> | <asp:label id="tbSUnit" runat="server"></asp:label></th>
+                <th scope="col" id="thStrengthPerDosage" title="StrengthPerDosage"><asp:Label id="lblStrengthperDosage" runat="server"></asp:Label><br /><asp:label id="tbDValue" runat="server"></asp:label> | <asp:label id="tbDUnit" runat="server"></asp:label></th>   
             </tr>
         </thead>
         <tbody>
@@ -398,7 +411,7 @@
                    </select></td>                
                <td headers="thStrength">
                    <div class="width_52px">
-                   <input type="number" id="tbStrengthValue" name="tbStrengthValue" value="0" class="form-control input-sm" />
+                   <input type="number" id="tbStrengthValue" name="tbStrengthValue" value="0" min="0" max="1000" class="form-control input-sm" />
                    </div>
                    <div class="width_52px">
                    <select id="tbStrengthUnit" name="tbStrengthUnit" class="form-control input-sm" style="font-size: medium" >             
@@ -407,10 +420,10 @@
                </td>
                <td headers="thStrengthPerDosage">
                    <div class="width_52px">
-                     <input type="number" id="tbStrengthperDosageValue" name="tbStrengthperDosageValue" value="0" class="form-control input-sm" /> 
+                     <input type="number" id="tbStrengthperDosageValue" name="tbStrengthperDosageValue" value="0" min="0" max="1000" class="form-control input-sm" /> 
                    </div>
                    <div class="width_52px">                        
-                    <select id="tbStrengthperDosageUnit" name="tbStrengthperDosageUnit" class="form-control input-sm" style="position: inherit; font-size: medium;" >
+                    <select id="tbStrengthperDosageUnit" name="tbStrengthperDosageUnit" class="form-control input-sm" style="font-size: medium;" >
                     </select>  
                    </div>                             
                </td>
@@ -451,7 +464,7 @@
 <!--End of Brand Table -->
 <div class="form-group">
     <div class="margin-top-medium">  
-         <asp:Label id="PharmaceuticalStandard"  AssociatedControlID="tbPharmaceuticalStandard" runat="server" CssClass="control-label"></asp:Label>                             
+         <asp:Label id="PharmaceuticalStandard" AssociatedControlID="tbPharmaceuticalStandard" runat="server" CssClass="control-label"></asp:Label>                             
     </div>
     <div class="row"> 
          <div class="col-xs-10 text-left"> 
@@ -604,7 +617,7 @@
                  var chkbox = row.cells[0].childNodes[0];
                
                   if(null != chkbox && true == chkbox.checked) {
-                    if(rowCount < 2) {
+                    if(rowCount <= 2) {
                         alert("Cannot delete all the rows.");
                         break;
                     }

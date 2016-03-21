@@ -117,10 +117,6 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
-  <data name="Activity" xml:space="preserve">
-    <value>Activités (mises en garde et précautions, p. ex.
-Amoindrissement des facultés)</value>
-  </data>
   <data name="Allergy" xml:space="preserve">
     <value>Allergies quelconques à ce médicament, aux
 ingrédients ou aux composants du récipient (contreindications)</value>
@@ -713,6 +709,14 @@ précautions)</value>
   </data>
   <data name="SUM_Special_Popu_Condition" xml:space="preserve">
     <value>Populations particulières et Conditions</value>
+    <comment>Part 1</comment>
+  </data>
+  <data name="lblAdditional" xml:space="preserve">
+    <value>Des avertissements supplémentaires</value>
+    <comment>Part 1</comment>
+  </data>
+  <data name="lblIsIndicatedFor" xml:space="preserve">
+    <value>est indiqué pour</value>
     <comment>Part 1</comment>
   </data>
 </root>

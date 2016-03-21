@@ -363,6 +363,15 @@ namespace Resources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Additional warnings.
+        /// </summary>
+        internal static string lblAdditional {
+            get {
+                return ResourceManager.GetString("lblAdditional", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Administration.
         /// </summary>
         internal static string lblAdministration {
@@ -530,6 +539,15 @@ namespace Resources {
         internal static string lblIngredients {
             get {
                 return ResourceManager.GetString("lblIngredients", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to is indicated for.
+        /// </summary>
+        internal static string lblIsIndicatedFor {
+            get {
+                return ResourceManager.GetString("lblIsIndicatedFor", resourceCulture);
             }
         }
         
@@ -1362,7 +1380,7 @@ namespace Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Drug interations.
+        ///   Looks up a localized string similar to Drug interactions.
         /// </summary>
         internal static string SUM_DRUG_INTERACTIONS {
             get {

@@ -633,7 +633,7 @@
     <comment>Part 1</comment>
   </data>
   <data name="SUM_DRUG_INTERACTIONS" xml:space="preserve">
-    <value>Drug interations</value>
+    <value>Drug interactions</value>
     <comment>Part 1</comment>
   </data>
   <data name="SUM_SPECIAL_HANDLING" xml:space="preserve">
@@ -725,6 +725,14 @@
   </data>
   <data name="SUM_Special_Popu_Condition" xml:space="preserve">
     <value>Special Populations and Conditions</value>
+    <comment>Part 1</comment>
+  </data>
+  <data name="lblAdditional" xml:space="preserve">
+    <value>Additional warnings</value>
+    <comment>Part 1</comment>
+  </data>
+  <data name="lblIsIndicatedFor" xml:space="preserve">
+    <value>is indicated for</value>
     <comment>Part 1</comment>
   </data>
 </root>

@@ -26,7 +26,7 @@ namespace Product_Monograph
     {
         string strscript = "";
         int newColCount = 0;
-        string[] strNewColNames = Array.Empty<string>();
+     
         public class Field
         {
             public string FieldLabel { get; set; }
@@ -51,14 +51,7 @@ namespace Product_Monograph
         protected void Page_Load(object sender, EventArgs e)
         {
             lblError.Text = "";
-            //check the new column name passed in, if one or more, only for test
-            //if(!String.IsNullOrEmpty(ColNameList.Value))
-            //{
-            //   //string newColumn = ColNameList.Value;   
-            //    strNewColNames = (ColNameList.Value).Split(';');
-            //    newColCount = strNewColNames.Length;
-            //}
-     
+
             if (!IsPostBack)
             {
                 try
@@ -76,8 +69,8 @@ namespace Product_Monograph
 
         private void LoadFromXML()
         {
-            XmlDocument xmldoc = (XmlDocument)Session["draft"];
-            //XmlDocument xmldoc = (XmlDocument)helpers.Processes.XMLDraft;            
+            XmlDocument xmldoc = (XmlDocument)Session["draft"]; 
+                     
             XDocument doc = XDocument.Parse(xmldoc.OuterXml);
 
             XmlNodeList roa = xmldoc.GetElementsByTagName("BrandProperDosage");
@@ -97,22 +90,9 @@ namespace Product_Monograph
                 string[] colarray = null;
                 foreach (var row in rows)
                 {
-                    //strscript += "AddBrandProperDosageTextBoxLoadFromXML();";  //Disabled and changed DIV into WET table
+                    
                     strscript += "AddRow('dataTable');";
-
-                    if (newColCount > 0)
-                    {
-                        //add a loop to catch all column names
-                        strTemp = strTemp + ";";
-                        strTemp = strTemp + strNewColNames[0];
-                        colarray = strTemp.Split(';'); 
-                        //colarray = "tbBrandName;tbProperName;tbDosage;tbStrengthValue;tbStrengthUnit;tbStrengthperDosageValue;tbStrengthperDosageUnit;txtColumnName".Split(';');
-                    }
-                    else
-                    {
-                        colarray = strTemp.Split(';');
-                        //colarray = "tbBrandName;tbProperName;tbDosage;tbStrengthValue;tbStrengthUnit;tbStrengthperDosageValue;tbStrengthperDosageUnit".Split(';');
-                    }
+                    colarray = strTemp.Split(';');
                     int colcounter = 0;
                     foreach (string column in row.columns)
                     {
@@ -151,7 +131,11 @@ namespace Product_Monograph
                         }
                         else
                         {
-                            strscript += "$('#" + colarray[colcounter] + rowcounter.ToString() + "').val(\"" + helpers.Processes.CleanString(column) + "\");";                            
+                            strscript += "$('#" + colarray[colcounter] + rowcounter.ToString() + "').val(\"" + helpers.Processes.CleanString(column) + "\");";
+                            //if(colarray[colcounter].Equals("tbBrandName"))
+                            //{
+                            //    Session["savedFilename"] = helpers.Processes.CleanString(column);
+                            //}
                         }
                         //ching note: need to add all table column name
                         //tbStrengthValue -- strength value
@@ -164,18 +148,18 @@ namespace Product_Monograph
                     rowcounter++;
                 }
                 #endregion
-            }        
+            }
             var xmldata = from item in doc.Elements("ProductMonographTemplate")
                           select new
                           {
                               SchedulingSymbol = (string)item.Element("SchedulingSymbol"),
                               SchedulingSymbolImageName = (string)item.Element("SchedulingSymbolImageName"),
                               SchedulingSymbolImageData = (string)item.Element("SchedulingSymbolImageData"),
-                              //there are no those 3 elements in XML doc -- note by Ching -- however they could get from the first 3 column
-                              BrandName = (string)item.Element("BrandName"),
-                              ProperName = (string)item.Element("ProperName"),
-                              DosageFormStrength = (string)item.Element("DosageFormStrength"), 
-                                 
+                              //there are no those 3 elements in XML doc, they have a group-- note by Ching -- however they could get from the first 3 column
+                            // BrandName = (string)item.Element("BrandProperDosage").Element("row").Element("column").FirstNode.ToString(),
+                          //    ProperName = (string)item.Element("BrandProperDosage").Element("row").Elements("column").ElementAt(2).ToString(),
+                          //    DosageFormStrength = (string)item.Element("BrandProperDosage").Element("row").Elements("column").ElementAt(3).ToString(),
+
                               PharmaceuticalStandard = (string)item.Element("PharmaceuticalStandard"),
                               TherapeuticClassification = (string)item.Element("TherapeuticClassification"),
                               Sponsorname = (string)item.Element("Sponsorname"),
@@ -188,18 +172,41 @@ namespace Product_Monograph
 
             foreach (var xmldataitem in xmldata)
             {
-                if (xmldataitem.SchedulingSymbolImageData != null)
-                    strscript += "$('#imgSymbol').attr('src', " + "'" + xmldataitem.SchedulingSymbolImageData + "');";
+               // if (xmldataitem.SchedulingSymbolImageData != null)
+              //      strscript += "$('#imgSymbol').attr('src', " + "'" + xmldataitem.SchedulingSymbolImageData + "');";
 
                 if (xmldataitem.SchedulingSymbol != null)
                     strscript += "selectedschedulingsymbol = '" + xmldataitem.SchedulingSymbol + "';";
 
                 if (xmldataitem.SchedulingSymbolImageName != null)
                     strscript += "$('#tbxmlimgfilenameSymbol').val('" + xmldataitem.SchedulingSymbolImageName + "');";
-                                      
+
                 if (xmldataitem.SchedulingSymbol != null)
                     strscript += "$('#tbxmlimgnameSymbol').val('" + xmldataitem.SchedulingSymbol + "');";
-              
+
+                //  if (xmldataitem.SchedulingSymbol != null && xmldataitem.SchedulingSymbolImageName != null)
+                //      strscript += "setSchedulingSymbol(" + xmldataitem.SchedulingSymbol + "," + xmldataitem.SchedulingSymbolImageName + ");";
+
+                //if (xmldataitem.SchedulingSymbol != null)
+                //{ 
+                //    strscript += "selectedschedulingsymbol = '" + xmldataitem.SchedulingSymbol + "';";
+               
+                //   // strscript += "$('#tbSchedulingSymbol').val('" + xmldataitem.SchedulingSymbol + "');";
+                //    strscript += "$('#tbSchedulingSymbol').attr( 'selected', " + "'" + xmldataitem.SchedulingSymbol + "');";
+                //}
+                if (xmldataitem.SchedulingSymbolImageName != null)
+                   strscript += "$('#imgSymbol').attr('src', " + "'scheduling symbol\\" + xmldataitem.SchedulingSymbolImageName + "');";
+
+
+                ////   if (xmldataitem.SchedulingSymbolImageData != null)
+                ////       strscript += "$('#imgSymbol').attr('src', " + "'" + xmldataitem.SchedulingSymbolImageData + "');";
+
+                //if (xmldataitem.SchedulingSymbolImageName != null)
+                //    strscript += "$('#tbxmlimgfilenameSymbol').val('" + xmldataitem.SchedulingSymbolImageName + "');";
+
+                if (xmldataitem.SchedulingSymbol != null)
+                   strscript += "$('#tbxmlimgnameSymbol').val('" + xmldataitem.SchedulingSymbol + "');";
+
 
                 tbPharmaceuticalStandard.Text = xmldataitem.PharmaceuticalStandard;
                 tbTherapeuticClassifications.Text = xmldataitem.TherapeuticClassification;
@@ -362,30 +369,30 @@ namespace Product_Monograph
                     }
                 }
 
-                if (HttpContext.Current.Request.Form.GetValues("txtColumnName") != null)  //this value of txtColumnName is not a list -- note by ching
-                {
-                    //This is not column value, only column name
-                    int mColnameCount = strNewColNames.Length;
-                    //bulid column name list
-                    //for(int i = 0; i < mColnameCount; i++ )
-                    //{
-                    //    for(int j = 0; j < mRowCount; j ++ )
-                    //    {
-                    //        string dynamicalColName = strNewColNames[0] + mRowCount;
-                    //     //   oneColValsarray.add(HttpContext.Current.Request.Form.GetValues(dynamicalColName))
-                    //          //   newColnamesarray.Add(newColnamesitem);
-                    //    }
-                    //}
-                    //  
-                    //  newColValsarray.Add(strNewColNames[0]);
-                    //string dynamicalColName = strNewColNames[0] +  mRowCount;
-                    //foreach (string newColnamesitem in HttpContext.Current.Request.Form.GetValues("txtColumnName"))
-                    //    {
-                    //       string dynamicalColName = strNewColNames[0] +  mRowCount;
-                    //        newColnamesarray.Add(newColnamesitem);
-                    //    }
+                //if (HttpContext.Current.Request.Form.GetValues("txtColumnName") != null)  //this value of txtColumnName is not a list -- note by ching
+                //{
+                //    //This is not column value, only column name
+                ////    int mColnameCount = strNewColNames.Length;
+                //    //bulid column name list
+                //    //for(int i = 0; i < mColnameCount; i++ )
+                //    //{
+                //    //    for(int j = 0; j < mRowCount; j ++ )
+                //    //    {
+                //    //        string dynamicalColName = strNewColNames[0] + mRowCount;
+                //    //     //   oneColValsarray.add(HttpContext.Current.Request.Form.GetValues(dynamicalColName))
+                //    //          //   newColnamesarray.Add(newColnamesitem);
+                //    //    }
+                //    //}
+                //    //  
+                //    //  newColValsarray.Add(strNewColNames[0]);
+                //    //string dynamicalColName = strNewColNames[0] +  mRowCount;
+                //    //foreach (string newColnamesitem in HttpContext.Current.Request.Form.GetValues("txtColumnName"))
+                //    //    {
+                //    //       string dynamicalColName = strNewColNames[0] +  mRowCount;
+                //    //        newColnamesarray.Add(newColnamesitem);
+                //    //    }
 
-                }
+                //}
 
 
                 if (roa.Count < 1)
@@ -526,6 +533,15 @@ namespace Product_Monograph
             //    lblError.Text = "Footnote cannot be more than 1500 characters";
             //    return null;
             //}
+            XmlNodeList footnotename = doc.GetElementsByTagName("Sponsorfootnote");
+            if (footnotename.Count < 1)
+            {
+                helpers.Processes.CreateXMLElement(doc, rootnode, "Sponsorfootnote", "", tbFootnote.Value, false);
+            }
+            else
+            {
+                footnotename[0].InnerText = tbFootnote.Value;
+            }
             helpers.Processes.ValidateAndSave(doc, rootnode, "Sponsorfootnote", "Sponsor Footnote", tbFootnote.Value, true);
 
             #region Revision and Preparation dates
@@ -547,7 +563,8 @@ namespace Product_Monograph
             #endregion
 
             helpers.Processes.ValidateAndSave(doc, rootnode, "SubmissionControlNumber", "Submission Control Number", tbControNum.Text, true);
-
+       //     string tbFootnotes = Request.Form[tbFootnote.ToString()];
+      //      helpers.Processes.ValidateAndSave(doc, rootnode, "footnote", "footnote", tbFootnotes, true);  //ching adds footnote
             //helpers.Processes.XMLDraft = doc;
             Session["draft"] = doc;
 
@@ -672,15 +689,15 @@ namespace Product_Monograph
             //btnlblApplySymbol.Value = Resources.Resource.btnlblApplySymbol;
             
 
-            tbBName.InnerText = Resources.Resource.tbBName;
-            tbPName.InnerText = Resources.Resource.tbPName;
-            tbDForm.InnerText = Resources.Resource.tbDForm;
-            tbStrength.InnerText = Resources.Resource.tbStrength;
+            tbBName.Text = Resources.Resource.tbBName;
+            tbPName.Text = Resources.Resource.tbPName;
+            tbDForm.Text = Resources.Resource.tbDForm;
+            tbStrength.Text = Resources.Resource.tbStrength;
             lblStrengthperDosage.Text = Resources.Resource.lblStrengthperDosage;
-            tbSValue.InnerText = Resources.Resource.tbSValue;
-            tbSUnit.InnerText = Resources.Resource.tbSUnit;
-            tbDValue.InnerText = Resources.Resource.tbSValue;
-            tbDUnit.InnerText = Resources.Resource.tbSUnit;
+            tbSValue.Text = Resources.Resource.tbSValue;
+            tbSUnit.Text = Resources.Resource.tbSUnit;
+            tbDValue.Text = Resources.Resource.tbSValue;
+            tbDUnit.Text = Resources.Resource.tbSUnit;
             PharmaceuticalStandard.Text = Resources.Resource.tbPharmaceuticalStandard;
           
             TherapeuticClassification.Text = Resources.Resource.TherapeuticClassification;

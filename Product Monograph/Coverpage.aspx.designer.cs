@@ -145,7 +145,7 @@ namespace Product_Monograph {
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlGenericControl tbBName;
+        protected global::System.Web.UI.WebControls.Label tbBName;
         
         /// <summary>
         /// tbPName control.
@@ -154,7 +154,7 @@ namespace Product_Monograph {
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlGenericControl tbPName;
+        protected global::System.Web.UI.WebControls.Label tbPName;
         
         /// <summary>
         /// tbDForm control.
@@ -163,7 +163,7 @@ namespace Product_Monograph {
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlGenericControl tbDForm;
+        protected global::System.Web.UI.WebControls.Label tbDForm;
         
         /// <summary>
         /// tbStrength control.
@@ -172,7 +172,7 @@ namespace Product_Monograph {
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlGenericControl tbStrength;
+        protected global::System.Web.UI.WebControls.Label tbStrength;
         
         /// <summary>
         /// tbSValue control.
@@ -181,7 +181,7 @@ namespace Product_Monograph {
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlGenericControl tbSValue;
+        protected global::System.Web.UI.WebControls.Label tbSValue;
         
         /// <summary>
         /// tbSUnit control.
@@ -190,7 +190,7 @@ namespace Product_Monograph {
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlGenericControl tbSUnit;
+        protected global::System.Web.UI.WebControls.Label tbSUnit;
         
         /// <summary>
         /// lblStrengthperDosage control.
@@ -208,7 +208,7 @@ namespace Product_Monograph {
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlGenericControl tbDValue;
+        protected global::System.Web.UI.WebControls.Label tbDValue;
         
         /// <summary>
         /// tbDUnit control.
@@ -217,7 +217,7 @@ namespace Product_Monograph {
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlGenericControl tbDUnit;
+        protected global::System.Web.UI.WebControls.Label tbDUnit;
         
         /// <summary>
         /// PharmaceuticalStandard control.
