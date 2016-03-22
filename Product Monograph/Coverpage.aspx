@@ -191,28 +191,28 @@
             var stpdv = "tbStrengthperDosageValue" + id.toString();
             var stpdu = "tbStrengthperDosageUnit" + id.toString();
             return '<div style="width:18.88%; float:left; border-top: 1px solid black; border-left: 1px solid black; border-bottom: 1px solid black;">' +
-                        '<input type="text" id="' + bn + '" name="' + bn + '" style="width:100%; border:0px; height:40px;" />' +
+                        '<input type="text" id="' + bn + '" name="tbBrandName" style="width:100%; border:0px; height:40px;" />' +
                     '</div>' +  
                     '<div style="width:18.88%; float:left; border-top: 1px solid black; border-left: 1px solid black; border-bottom: 1px solid black;">' +
-                        '<input type="text" id="' + pn + '" name="' + pn + '" style="width:100%; border:0px; height:40px;" />' +
+                        '<input type="text" id="' + pn + '" name="tbProperName" style="width:100%; border:0px; height:40px;" />' +
                     '</div>' + 
                     '<div style="width:18.88%; float:left; border-top: 1px solid black; border-left: 1px solid black; border-bottom: 1px solid black;">' +
-                        '<select id="' + dos + '" name="' + dos + '" style="width:100%; height:40px; border:0px;" ></select>' +
+                        '<select id="' + dos + '" name="tbDosage" style="width:100%; height:40px; border:0px;" ></select>' +
                     '</div>' +  
                     '<div style="width:18.88%; float:left; border-top: 1px solid black; border-left: 1px solid black; border-bottom: 1px solid black;">' +
                         '<div style="width:49%; float:left; border:1px solid #D9D9D9;">' +
-                            '<input type="number" id="' + stv + '" name="' + stv + '" style="width:100%; border:0px; height:38px;" />' +
+                            '<input type="number" id="' + stv + '" name="tbStrengthValue" style="width:100%; border:0px; height:38px;" />' +
                         '</div>' +
                         '<div style="width:49%; float:left; border:1px solid #D9D9D9;">' +
-                            '<select id="' + stu + '" name="' + stu + '" style="width:100%; height:38px; border:0px;" ></select>' +
+                            '<select id="' + stu + '" name="tbStrengthUnit" style="width:100%; height:38px; border:0px;" ></select>' +
                         '</div>' +
                     '</div>' + 
                     '<div style="width:18.88%; float:left; border-top: 1px solid black; border-left: 1px solid black; border-bottom: 1px solid black;">' +
                         '<div style="width:49%; float:left; border:1px solid #D9D9D9;">' +
-                            '<input type="number" id="' + stpdv + '" name="' + stpdv + '" style="width:100%; border:0px; height:38px;" />' +
+                            '<input type="number" id="' + stpdv + '" name="tbStrengthperDosageValue" style="width:100%; border:0px; height:38px;" />' +
                         '</div>' +
                         '<div style="width:49%; float:left; border:1px solid #D9D9D9;">' +
-                            '<select id="' + stpdu + '" name="' + stpdu + '" style="width:100%; height:38px; border:0px;" ></select>' +
+                            '<select id="' + stpdu + '" name="tbStrengthperDosageUnit" style="width:100%; height:38px; border:0px;" ></select>' +
                         '</div>' +
                     '</div>' +  
                     '<div style="width:5%; float:left; padding-left: 0px;">' +
@@ -300,19 +300,19 @@
             });
         }
 
-        function setSchedulingSymbol(inputSchedulSymbol, imgfilenameSymbol) {
-            var selectedsymbolval = inputSchedulSymbol;
-            var inputSchedulSymbolImg = imgfilenameSymbol;
-            $("#tbSchedulingSymbol").val(selectedsymbolval);
-           // var selectedsymbol = $('#tbSchedulingSymbol').val();
-          //  $.get('ControlledList.xml', function (xmlcontolledlist) {
-          //      $(xmlcontolledlist).find(selectedsymbolval).each(function () {
-                    $('#imgSymbol').attr("src", "scheduling symbol\\" + inputSchedulSymbolImg);
-                    $("#tbxmlimgnameSymbol").val(selectedsymbolval);
-                    $("#tbxmlimgfilenameSymbol").val(inputSchedulSymbolImg);
-         //       });
-        //    });
-        }
+        //function setSchedulingSymbol(inputSchedulSymbol, imgfilenameSymbol) {
+        //    var selectedsymbolval = inputSchedulSymbol;
+        //    var inputSchedulSymbolImg = imgfilenameSymbol;
+        //    $("#tbSchedulingSymbol").val(selectedsymbolval);
+        //   // var selectedsymbol = $('#tbSchedulingSymbol').val();
+        //  //  $.get('ControlledList.xml', function (xmlcontolledlist) {
+        //  //      $(xmlcontolledlist).find(selectedsymbolval).each(function () {
+        //            $('#imgSymbol').attr("src", "scheduling symbol\\" + inputSchedulSymbolImg);
+        //            $("#tbxmlimgnameSymbol").val(selectedsymbolval);
+        //            $("#tbxmlimgfilenameSymbol").val(inputSchedulSymbolImg);
+        // //       });
+        ////    });
+        //}
         function testfucntion()
         {
             $('#tbSchedulingSymbol option').each(function () { if ($(this).html() == 'schedule 3') { $(this).attr('selected', 'selected'); return; }});
@@ -344,7 +344,7 @@
    <asp:Label id="CoverPage" runat="server" CssClass="h2"></asp:Label>
 </div>
 <div class="row">
-   <asp:Label runat="server" id="lblError" clientIDMode="Static" foreColor="Red" Visible="false" ></asp:Label>
+   <asp:Label runat="server" id="lblError" clientIDMode="Static" foreColor="Red"></asp:Label>
 </div>
 <div class="row hidden">       
    <input id="Button3" type="button" value="Hide" />

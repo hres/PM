@@ -25,7 +25,7 @@ namespace Product_Monograph
     public partial class Coverpage : System.Web.UI.Page
     {
         string strscript = "";
-        int newColCount = 0;
+       
      
         public class Field
         {
@@ -56,7 +56,8 @@ namespace Product_Monograph
             {
                 try
                 {
-                    LoadFromXML();
+                    if(ValidateXmlDoc())  //if xml file contains data, load the file. otherwise ignores loading -- ching adds code
+                       LoadFromXML();
             
                 }
                 catch 
@@ -66,11 +67,39 @@ namespace Product_Monograph
             }
             facilityResource();
         }
+        private bool ValidateXmlDoc()
+        {
+            XmlDocument xmldoc;
+            try
+            {
+                xmldoc = (XmlDocument)Session["draft"];
+                if (xmldoc == null)  //maybe dameged, or not exist, or empty --- waiting for client requirements
+                {
+                    return false;
+                  //  throw new ArgumentNullException("xmldoc");
+                }
+                else
+                {
+                    if (xmldoc.ChildNodes.Count == 3)  //having three elements, but it still contains empty data, it is new XML file
+                        return false;
+                    else
+                        return true;    
+                }
 
+            }
+            catch (XmlException e)
+            {
+                lblError.Text = "No XMLDocument file to load: " + e.Message;  //project stops -- note by ching
+                return false;
+            }
+           
+
+        }
         private void LoadFromXML()
         {
-            XmlDocument xmldoc = (XmlDocument)Session["draft"]; 
-                     
+
+            XmlDocument xmldoc = (XmlDocument)Session["draft"];
+
             XDocument doc = XDocument.Parse(xmldoc.OuterXml);
 
             XmlNodeList roa = xmldoc.GetElementsByTagName("BrandProperDosage");
@@ -83,84 +112,139 @@ namespace Product_Monograph
                                columns = from column in row.Elements("column")
                                          select (string)column
                            };
-
-              
-                int rowcounter = 1;
+  
+                int rowcounter = 0;
                 string strTemp = "tbBrandName;tbProperName;tbDosage;tbStrengthValue;tbStrengthUnit;tbStrengthperDosageValue;tbStrengthperDosageUnit";
                 string[] colarray = null;
                 foreach (var row in rows)
                 {
-                    
-                    strscript += "AddRow('dataTable');";
-                    colarray = strTemp.Split(';');
-                    int colcounter = 0;
-                    foreach (string column in row.columns)
+                   int colcounter = 0;
+                   colarray = strTemp.Split(';');
+                    if (rowcounter == 0)
                     {
-                        if (colarray[colcounter].Equals("tbDosage"))
-                        {
-                            strscript += "$.get('ControlledList.xml', function (xmlcontolledlist) {" +
-                                            "$(xmlcontolledlist).find('dosageform').each(function () {" +
-                                                "var $option = $(this).text();" +
-                                                "$('<option>' + $option + '</option>').appendTo('#tbDosage" + rowcounter + "');" +
-                                            "});" +
-                                            "}).done(function () {" +
-                                                "$('#tbDosage" + rowcounter + " option').each(function () { if ($(this).html() == '" + column + "') { $(this).attr('selected', 'selected'); return; } });" +
-                                            "});";
-                        }
-                        else if (colarray[colcounter].Equals("tbStrengthUnit"))
-                        {
-                            strscript += "$.get('ControlledList.xml', function (xmlcontolledlist) {" +
-                                                "$(xmlcontolledlist).find('unit').each(function () {" +
-                                                    "var $option = $(this).text();" +
-                                                    "$('<option>' + $option + '</option>').appendTo('#tbStrengthUnit" + rowcounter + "');" +
-                                                "});" +
-                                                "}).done(function () {" +
-                                                    "$('#tbStrengthUnit" + rowcounter + " option').each(function () { if ($(this).html() == '" + column + "') { $(this).attr('selected', 'selected'); return; } });" +
-                                                "});";
-                        }
-                        else if (colarray[colcounter].Equals("tbStrengthperDosageUnit"))
-                        {
-                            strscript += "$.get('ControlledList.xml', function (xmlcontolledlist) {" +
-                                                "$(xmlcontolledlist).find('unit').each(function () {" +
-                                                    "var $option = $(this).text();" +
-                                                    "$('<option>' + $option + '</option>').appendTo('#tbStrengthperDosageUnit" + rowcounter + "');" +
-                                                "});" +
-                                                "}).done(function () {" +
-                                                    "$('#tbStrengthperDosageUnit" + rowcounter + " option').each(function () { if ($(this).html() == '" + column + "') { $(this).attr('selected', 'selected'); return; } });" +
-                                                "});";
-                        }
-                        else
-                        {
-                          
-                            strscript += "$('#" + colarray[colcounter] + rowcounter.ToString() + "').val(\"" + helpers.Processes.CleanString(column) + "\");";
 
-                            if (colcounter == 0)
+                        foreach (string column in row.columns)
+                        {
+                            if (colarray[colcounter].Equals("tbDosage"))
                             {
-                                Session["savedFilename"] = helpers.Processes.CleanString(column);
+                                strscript += "$.get('ControlledList.xml', function (xmlcontolledlist) {" +
+                                                "$(xmlcontolledlist).find('dosageform').each(function () {" +
+                                                    "var $option = $(this).text();" +
+                                                    "$('<option>' + $option + '</option>').appendTo('#tbDosage');" +
+                                                "});" +
+                                                "}).done(function () {" +
+                                                    "$('#tbDosage option').each(function () { if ($(this).html() == '" + column + "') { $(this).attr('selected', 'selected'); return; } });" +
+                                                "});";
                             }
-                            else if (colcounter == 1)
+                            else if (colarray[colcounter].Equals("tbStrengthUnit"))
                             {
-                                Session["properName"] = helpers.Processes.CleanString(column);
+                                strscript += "$.get('ControlledList.xml', function (xmlcontolledlist) {" +
+                                                    "$(xmlcontolledlist).find('unit').each(function () {" +
+                                                        "var $option = $(this).text();" +
+                                                        "$('<option>' + $option + '</option>').appendTo('#tbStrengthUnit');" +
+                                                    "});" +
+                                                    "}).done(function () {" +
+                                                        "$('#tbStrengthUnit option').each(function () { if ($(this).html() == '" + column + "') { $(this).attr('selected', 'selected'); return; } });" +
+                                                    "});";
                             }
+                            else if (colarray[colcounter].Equals("tbStrengthperDosageUnit"))
+                            {
+                                strscript += "$.get('ControlledList.xml', function (xmlcontolledlist) {" +
+                                                    "$(xmlcontolledlist).find('unit').each(function () {" +
+                                                        "var $option = $(this).text();" +
+                                                        "$('<option>' + $option + '</option>').appendTo('#tbStrengthperDosageUnit');" +
+                                                    "});" +
+                                                    "}).done(function () {" +
+                                                        "$('#tbStrengthperDosageUnit option').each(function () { if ($(this).html() == '" + column + "') { $(this).attr('selected', 'selected'); return; } });" +
+                                                    "});";
+                            }
+                            else
+                            {
+
+                                strscript += "$('#" + colarray[colcounter] + "').val(\"" + helpers.Processes.CleanString(column) + "\");";
+
+                                if (colcounter == 0)
+                                {
+                                    Session["savedFilename"] = helpers.Processes.CleanString(column);
+                                }
+                                else if (colcounter == 1)
+                                {
+                                    Session["properName"] = helpers.Processes.CleanString(column);
+                                }
+                            }
+
                         }
-                       
-                        colcounter++;
+                    }
+                    else
+                    {
+                        strscript += "addRow('dataTable');";
+
+
+                        foreach (string column in row.columns)
+                        {
+                            if (colarray[colcounter].Equals("tbDosage"))
+                            {
+                                strscript += "$.get('ControlledList.xml', function (xmlcontolledlist) {" +
+                                                "$(xmlcontolledlist).find('dosageform').each(function () {" +
+                                                    "var $option = $(this).text();" +
+                                                    "$('<option>' + $option + '</option>').appendTo('#tbDosage" + rowcounter + "');" +
+                                                "});" +
+                                                "}).done(function () {" +
+                                                    "$('#tbDosage" + rowcounter + " option').each(function () { if ($(this).html() == '" + column + "') { $(this).attr('selected', 'selected'); return; } });" +
+                                                "});";
+                            }
+                            else if (colarray[colcounter].Equals("tbStrengthUnit"))
+                            {
+                                strscript += "$.get('ControlledList.xml', function (xmlcontolledlist) {" +
+                                                    "$(xmlcontolledlist).find('unit').each(function () {" +
+                                                        "var $option = $(this).text();" +
+                                                        "$('<option>' + $option + '</option>').appendTo('#tbStrengthUnit" + rowcounter + "');" +
+                                                    "});" +
+                                                    "}).done(function () {" +
+                                                        "$('#tbStrengthUnit" + rowcounter + " option').each(function () { if ($(this).html() == '" + column + "') { $(this).attr('selected', 'selected'); return; } });" +
+                                                    "});";
+                            }
+                            else if (colarray[colcounter].Equals("tbStrengthperDosageUnit"))
+                            {
+                                strscript += "$.get('ControlledList.xml', function (xmlcontolledlist) {" +
+                                                    "$(xmlcontolledlist).find('unit').each(function () {" +
+                                                        "var $option = $(this).text();" +
+                                                        "$('<option>' + $option + '</option>').appendTo('#tbStrengthperDosageUnit" + rowcounter + "');" +
+                                                    "});" +
+                                                    "}).done(function () {" +
+                                                        "$('#tbStrengthperDosageUnit" + rowcounter + " option').each(function () { if ($(this).html() == '" + column + "') { $(this).attr('selected', 'selected'); return; } });" +
+                                                    "});";
+                            }
+                            else
+                            {
+
+                                strscript += "$('#" + colarray[colcounter] + rowcounter.ToString() + "').val(\"" + helpers.Processes.CleanString(column) + "\");";
+
+                                //if (colcounter == 0)
+                                //{
+                                //    Session["savedFilename"] = helpers.Processes.CleanString(column);
+                                //}
+                                //else if (colcounter == 1)
+                                //{
+                                //    Session["properName"] = helpers.Processes.CleanString(column);
+                                //}
+                            }
+
+                            colcounter++;
+                        }
                     }
                     rowcounter++;
                 }
                 #endregion
             }
+
+            //followings are elements under root node
             var xmldata = from item in doc.Elements("ProductMonographTemplate")
                           select new
                           {
                               SchedulingSymbol = (string)item.Element("SchedulingSymbol"),
                               SchedulingSymbolImageName = (string)item.Element("SchedulingSymbolImageName"),
                               SchedulingSymbolImageData = (string)item.Element("SchedulingSymbolImageData"),
-                              //there are no those 3 elements in XML doc, they have a group-- note by Ching -- however they could get from the first 3 column
-                        //     BrandName = (string)item.Element("BrandProperDosage").Descendants("row").Descendants("column").ElementAt(1).ToString(),
-                        //     ProperName = (string)item.Element("BrandProperDosage").Descendants("row").Descendants("column").ElementAt(1).ToString(),
-                          //    DosageFormStrength = (string)item.Element("BrandProperDosage").Element("row").Elements("column").ElementAt(3).ToString(),
-
                               PharmaceuticalStandard = (string)item.Element("PharmaceuticalStandard"),
                               TherapeuticClassification = (string)item.Element("TherapeuticClassification"),
                               Sponsorname = (string)item.Element("Sponsorname"),
@@ -185,21 +269,22 @@ namespace Product_Monograph
                 if (xmldataitem.SchedulingSymbol != null)
                     strscript += "$('#tbxmlimgnameSymbol').val('" + xmldataitem.SchedulingSymbol + "');";
 
-            
-
-                if (xmldataitem.SchedulingSymbol != null)
-                   strscript += "$('#tbxmlimgnameSymbol').val('" + xmldataitem.SchedulingSymbol + "');";
-
-
-                tbPharmaceuticalStandard.Text = xmldataitem.PharmaceuticalStandard;
-                tbTherapeuticClassifications.Text = xmldataitem.TherapeuticClassification;
-                tbSponsorName.Text = xmldataitem.Sponsorname;
-                tbSponsorAddress.Value = xmldataitem.Sponsoraddress;
-                tbFootnote.Value = xmldataitem.Sponsorfootnote;
-               
-                tbDateRev.Text = xmldataitem.DateofRevision;
-                tbDatePrep.Text = xmldataitem.DateofPreparation;
-                tbControNum.Text = xmldataitem.SubmissionControlNumber;
+                if (tbPharmaceuticalStandard.Text != xmldataitem.PharmaceuticalStandard)
+                   tbPharmaceuticalStandard.Text = xmldataitem.PharmaceuticalStandard;
+                if (tbTherapeuticClassifications.Text != xmldataitem.TherapeuticClassification)
+                   tbTherapeuticClassifications.Text = xmldataitem.TherapeuticClassification;
+                if(tbSponsorName.Text != xmldataitem.Sponsorname)
+                   tbSponsorName.Text = xmldataitem.Sponsorname;
+                if (tbSponsorAddress.Value != xmldataitem.Sponsoraddress)
+                   tbSponsorAddress.Value = xmldataitem.Sponsoraddress;
+                if(tbFootnote.Value != xmldataitem.Sponsorfootnote)
+                   tbFootnote.Value = xmldataitem.Sponsorfootnote;
+                if (tbDateRev.Text != xmldataitem.DateofRevision)
+                   tbDateRev.Text = xmldataitem.DateofRevision;
+                if(tbDatePrep.Text != xmldataitem.DateofPreparation)
+                   tbDatePrep.Text = xmldataitem.DateofPreparation;
+                if(tbControNum.Text != xmldataitem.SubmissionControlNumber)
+                   tbControNum.Text = xmldataitem.SubmissionControlNumber;
             }
 
             ScriptManager.RegisterStartupScript(this.Page, this.GetType(), "LoadEventsScript", strscript.ToString(), true);
@@ -247,10 +332,10 @@ namespace Product_Monograph
             XmlDocument doc = (XmlDocument)Session["draft"]; // helpers.Processes.XMLDraft;
             XmlNode rootnode = doc.SelectSingleNode("ProductMonographTemplate");
             int mRowCount = 0;
-    
+
             #region symbol
             try
-            {                
+            {
                 string symbolname = Request.Form["tbxmlimgnameSymbol"].ToString();
                 string symbolfilename = Request.Form["tbxmlimgfilenameSymbol"].ToString();
 
