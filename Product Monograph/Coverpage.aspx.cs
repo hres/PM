@@ -114,7 +114,7 @@ namespace Product_Monograph
                            };
   
                 int rowcounter = 0;
-                string strTemp = "tbBrandName;tbProperName;tbDosage;tbStrengthValue;tbStrengthUnit;tbStrengthperDosageValue;tbStrengthperDosageUnit";
+                string strTemp = "tbBrandname;tbPropername;tbDosage;tbStrengthValue;tbStrengthUnit;tbStrengthperDosageValue;tbStrengthperDosageUnit";
                 string[] colarray = null;
                 foreach (var row in rows)
                 {
@@ -172,6 +172,7 @@ namespace Product_Monograph
                                     Session["properName"] = helpers.Processes.CleanString(column);
                                 }
                             }
+                            colcounter++;
 
                         }
                     }
@@ -187,10 +188,10 @@ namespace Product_Monograph
                                 strscript += "$.get('ControlledList.xml', function (xmlcontolledlist) {" +
                                                 "$(xmlcontolledlist).find('dosageform').each(function () {" +
                                                     "var $option = $(this).text();" +
-                                                    "$('<option>' + $option + '</option>').appendTo('#tbDosage" + rowcounter + "');" +
+                                                    "$('<option>' + $option + '</option>').appendTo('#tbDosage" + rowcounter.ToString() + "');" +
                                                 "});" +
                                                 "}).done(function () {" +
-                                                    "$('#tbDosage" + rowcounter + " option').each(function () { if ($(this).html() == '" + column + "') { $(this).attr('selected', 'selected'); return; } });" +
+                                                    "$('#tbDosage" + rowcounter.ToString() + " option').each(function () { if ($(this).html() == '" + column + "') { $(this).attr('selected', 'selected'); return; } });" +
                                                 "});";
                             }
                             else if (colarray[colcounter].Equals("tbStrengthUnit"))
@@ -198,10 +199,10 @@ namespace Product_Monograph
                                 strscript += "$.get('ControlledList.xml', function (xmlcontolledlist) {" +
                                                     "$(xmlcontolledlist).find('unit').each(function () {" +
                                                         "var $option = $(this).text();" +
-                                                        "$('<option>' + $option + '</option>').appendTo('#tbStrengthUnit" + rowcounter + "');" +
+                                                        "$('<option>' + $option + '</option>').appendTo('#tbStrengthUnit" + rowcounter.ToString() + "');" +
                                                     "});" +
                                                     "}).done(function () {" +
-                                                        "$('#tbStrengthUnit" + rowcounter + " option').each(function () { if ($(this).html() == '" + column + "') { $(this).attr('selected', 'selected'); return; } });" +
+                                                        "$('#tbStrengthUnit" + rowcounter.ToString() + " option').each(function () { if ($(this).html() == '" + column + "') { $(this).attr('selected', 'selected'); return; } });" +
                                                     "});";
                             }
                             else if (colarray[colcounter].Equals("tbStrengthperDosageUnit"))
@@ -209,25 +210,15 @@ namespace Product_Monograph
                                 strscript += "$.get('ControlledList.xml', function (xmlcontolledlist) {" +
                                                     "$(xmlcontolledlist).find('unit').each(function () {" +
                                                         "var $option = $(this).text();" +
-                                                        "$('<option>' + $option + '</option>').appendTo('#tbStrengthperDosageUnit" + rowcounter + "');" +
+                                                        "$('<option>' + $option + '</option>').appendTo('#tbStrengthperDosageUnit" + rowcounter.ToString() + "');" +
                                                     "});" +
                                                     "}).done(function () {" +
-                                                        "$('#tbStrengthperDosageUnit" + rowcounter + " option').each(function () { if ($(this).html() == '" + column + "') { $(this).attr('selected', 'selected'); return; } });" +
+                                                        "$('#tbStrengthperDosageUnit" + rowcounter.ToString() + " option').each(function () { if ($(this).html() == '" + column + "') { $(this).attr('selected', 'selected'); return; } });" +
                                                     "});";
                             }
                             else
                             {
-
                                 strscript += "$('#" + colarray[colcounter] + rowcounter.ToString() + "').val(\"" + helpers.Processes.CleanString(column) + "\");";
-
-                                //if (colcounter == 0)
-                                //{
-                                //    Session["savedFilename"] = helpers.Processes.CleanString(column);
-                                //}
-                                //else if (colcounter == 1)
-                                //{
-                                //    Session["properName"] = helpers.Processes.CleanString(column);
-                                //}
                             }
 
                             colcounter++;
@@ -716,9 +707,7 @@ namespace Product_Monograph
 
             btnAppendRow.Value = Resources.Resource.btnAppendRow;
             btnDeleteRow.Value = Resources.Resource.btnDeleteRow;
-            btnAddCol.Value = Resources.Resource.btnAddCol;
-            btnDelCol.Value = Resources.Resource.btnDelCol;
-
+         
         }
     }
 }

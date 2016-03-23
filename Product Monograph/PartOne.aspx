@@ -1326,7 +1326,7 @@
                 <asp:Label id="lblDosageForm" runat="server" CssClass="Control-Label text-primary">Dosage form</asp:Label>
             </div>
             <div class="col-xs-2 brdr-tp brdr-lft brdr-bttm">
-               <asp:Label id="lblStrength" runat="server" CssClass="Control-Label text-primary">Strength</asp:Label>
+                <asp:Label id="lblStrength" runat="server" CssClass="Control-Label text-primary">Strength</asp:Label>
             </div>
            <div class="col-xs-2 brdr-tp brdr-lft brdr-bttm">
                 <asp:Label id="lblClinicallyRelevantNonmedicinalIngredients" runat="server" CssClass="Control-Label text-primary">Clinically relevant nonmedicinal ingredients</asp:Label>

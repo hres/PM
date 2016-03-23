@@ -24,7 +24,8 @@ namespace Product_Monograph
     public partial class PartTwo : System.Web.UI.Page
     {
         string strscript = "";
-
+        string strBrandName = string.Empty;
+        string strProperName = string.Empty;
         void Page_PreInit(Object sender, EventArgs e)
         {
             //retrieve culture information from session
@@ -35,6 +36,17 @@ namespace Product_Monograph
             {
                 this.MasterPageFile = (String)Session["masterpage"];
 
+            }
+            if (Session["savedFilename"] != null)
+            {
+                strBrandName = (String)Session["savedFilename"];
+            }
+            else
+                strBrandName = "DraftPMForm";
+
+            if (Session["properName"] != null)
+            {
+                strProperName = (String)Session["properName"];
             }
         }
         protected void Page_Load(object sender, EventArgs e)
@@ -472,7 +484,9 @@ namespace Product_Monograph
                 {
                     if (doc != null)
                     {
-                        var zipEntry = zipArchive.CreateEntry("ProductMonograph.xml");
+
+                        string xmlfilename = strBrandName + "xml";
+                        var zipEntry = zipArchive.CreateEntry(xmlfilename);
                         using (var originalFileStream = new MemoryStream(bytes))
                         {
                             using (var zipEntryStream = zipEntry.Open())
@@ -572,7 +586,9 @@ namespace Product_Monograph
                 {
                     Response.ContentType = "application/zip";
                     Response.BinaryWrite(buffer);
-                    var fileName = "ProductMonograph.zip";
+
+
+                    var fileName = strBrandName + ".zip";
                     Response.AddHeader("content-disposition", string.Format(@"attachment;filename=""{0}""", fileName));
                     Response.Flush();
                     Response.End();

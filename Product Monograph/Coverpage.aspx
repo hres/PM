@@ -566,8 +566,31 @@
                 if(newRowCount < 50) {
                     for (var i = 0; i < colCount; i++) {
                         var newcell = row.insertCell(i);
-                        newcell.innerHTML = table.rows[1].cells[i].innerHTML;  
+                        if (i == 4) {
+
+                            var newDosageHtml = table.rows[1].cells[i].innerHTML;  //Dosage-Form  select
+                            newDosageHtml.replace("tbDosage", "tbDosage" + newRowCount.toString() + "'");  //Dosage-Form  select
+                            newcell.innerHTML = newDosageHtml;
+                            alert("Dosage id changed: " + newcell.innerHTML);
+
+                        }
+                        else if (i == 5)
+                        {
+                            newcell.childNodes[0].id = "tbStrengthValue" + newRowCount;   //first item in fifth column is spinner
+                            newcell.childNodes[1].id = "tbStrengthUnit" + newRowCount;   //second item in fifth column is select
+                        }
+                        else if (i == 6)
+                        {
+                            newcell.childNodes[0].id = "tbStrengthperDosageValue" + newRowCount;   //first item in sixth column is spinner
+                            newcell.childNodes[1].id = "tbStrengthperDosageUnit" + newRowCount;   //second item in sixth column is select
+                        }
+                        else
+                            newcell.innerHTML = table.rows[1].cells[i].innerHTML;
+
+                     
                         newcell.type = table.rows[1].cells[i].nodeType;
+                   
+
                         switch (newcell.childNodes[0].type) {
                             case "text":
                                 newcell.childNodes[0].value = "";
@@ -577,24 +600,14 @@
                                 newcell.childNodes[0].checked = false;
                                 break;
                             case "select-one":
-                                newcell.childNodes[0].selectedIndex = 0;
+                                newcell.childNodes[0].selectedIndex = 0;       
                                 break;
                             case "button":
                                 newcell.childNodes[0].clicked = false;
-                                break;                 
+                                break;
+                           
                         }
-                        if (i == 4) 
-                            newcell.childNodes[0].id = "tbDosage" + newRowCount;  //Dosage-Form  select
-                        else if (i == 5)
-                        {
-                            newcell.childNodes[0].id = "tbStrengthValue" + newRowCount;   //first item in fifth column is spinner
-                            newcell.childNodes[1].id = "tbStrengthUnit" + newRowCount;   //second item in fifth column is select    
-                        }   
-                        else if (i == 6)
-                        {   
-                            newcell.childNodes[0].id = "tbStrengthperDosageValue" + newRowCount;   //first item in sixth column is spinner
-                            newcell.childNodes[1].id = "tbStrengthperDosageUnit" + newRowCount;   //second item in sixth column is select
-                        }
+                      
                     }
                 }              
                 else

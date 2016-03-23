@@ -444,7 +444,7 @@ namespace Product_Monograph
             //ching adds new value of Additional Warning
             #region Additional Warnings in section of Warnings and Precautions
             try
-            {
+            {             
                 XmlNodeList listAdditionalWarn = doc.GetElementsByTagName("AdditionalWarning");
 
                 ArrayList arrayAdditionalWarn = new ArrayList();
@@ -461,37 +461,21 @@ namespace Product_Monograph
                     if (arrayAdditionalWarn.Count > 0)
                     {
                         XmlNode xnodeW = doc.CreateElement("AdditionalWarning");
+                        string colW1 = arrayAdditionalWarn[0].ToString();
+                        xnodeW.AppendChild(doc.CreateTextNode(colW1));
+
+                      //xnodeW.InnerText = arrayAdditionalWarn[0].ToString();
                         rootnode.AppendChild(xnodeW);
-
-                        for (int ar = 0; ar < arrayAdditionalWarn.Count; ar++)
-                        {
-                            XmlNode subnodeW = doc.CreateElement("row");
-                            xnodeW.AppendChild(subnodeW);
-
-                            string colW1 = arrayAdditionalWarn[ar].ToString();
-                            XmlNode subsubnodeW = doc.CreateElement("column");
-                            subsubnodeW.AppendChild(doc.CreateTextNode(colW1));
-                            subnodeW.AppendChild(subsubnodeW);
-                        }
                     }
                 }
                 else
                 {
                     listAdditionalWarn[0].RemoveAll();
-
                     XmlNodeList xnodeW2 = doc.GetElementsByTagName("AdditionalWarning");
+
+                    string colWarn = arrayAdditionalWarn[0].ToString();
+                    xnodeW2[0].AppendChild(doc.CreateTextNode(colWarn));
                     rootnode.AppendChild(xnodeW2[0]);
-
-                    for (int ar2 = 0; ar2 < arrayAdditionalWarn.Count; ar2++)
-                    {
-                        XmlNode subnodeW2 = doc.CreateElement("row");
-                        xnodeW2[0].AppendChild(subnodeW2);
-
-                        string col1W2 = arrayAdditionalWarn[ar2].ToString();
-                        XmlNode subsubnodeW2 = doc.CreateElement("column");
-                        subsubnodeW2.AppendChild(doc.CreateTextNode(col1W2));
-                        subnodeW2.AppendChild(subsubnodeW2);
-                    }
                 }
             }
             catch (Exception error)
@@ -2069,18 +2053,10 @@ namespace Product_Monograph
                     if (arraySpecialPopu.Count > 0)
                     {
                         XmlNode xnodeP = doc.CreateElement("SpecialPopulationAndCondition");
+                        string colP1 = arraySpecialPopu[0].ToString();
+                        xnodeP.AppendChild(doc.CreateTextNode(colP1));
                         rootnode.AppendChild(xnodeP);
 
-                        for (int ar = 0; ar < arraySpecialPopu.Count; ar++)
-                        {
-                            XmlNode subnodeP = doc.CreateElement("row");
-                            xnodeP.AppendChild(subnodeP);
-
-                            string colP1 = arraySpecialPopu[ar].ToString();
-                            XmlNode subsubnodeP = doc.CreateElement("column");
-                            subsubnodeP.AppendChild(doc.CreateTextNode(colP1));
-                            subnodeP.AppendChild(subsubnodeP);
-                        }
                     }
                 }
                 else
@@ -2089,18 +2065,10 @@ namespace Product_Monograph
                     listSpecialPopu[0].RemoveAll();
 
                     XmlNodeList xnodeP2 = doc.GetElementsByTagName("SpecialPopulationAndCondition");
+                    string col1P2 = arraySpecialPopu[0].ToString();
+                    xnodeP2[0].AppendChild(doc.CreateTextNode(col1P2));
                     rootnode.AppendChild(xnodeP2[0]);
 
-                    for (int ar2 = 0; ar2 < arraySpecialPopu.Count; ar2++)
-                    {
-                        XmlNode subnodeP2 = doc.CreateElement("row");
-                        xnodeP2[0].AppendChild(subnodeP2);
-
-                        string col1P2 = arraySpecialPopu[ar2].ToString();
-                        XmlNode subsubnodeP2 = doc.CreateElement("column");
-                        subsubnodeP2.AppendChild(doc.CreateTextNode(col1P2));
-                        subnodeP2.AppendChild(subsubnodeP2);
-                    }
                 }
             }
             catch (Exception error)
@@ -3112,6 +3080,7 @@ namespace Product_Monograph
                 //}
                 #endregion
             }
+
 
             ScriptManager.RegisterStartupScript(this.Page, this.GetType(), "LoadEventsScript", strscript.ToString(), true);
 

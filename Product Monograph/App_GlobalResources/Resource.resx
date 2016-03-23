@@ -442,7 +442,7 @@
     <comment>Cover Page</comment>
   </data>
   <data name="SubmissionControlNo" xml:space="preserve">
-    <value>Submission control No</value>
+    <value>Submission control number</value>
   </data>
   <data name="tbBName" xml:space="preserve">
     <value>Brand name</value>

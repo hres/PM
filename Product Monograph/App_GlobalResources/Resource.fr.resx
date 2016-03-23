@@ -433,7 +433,8 @@ précautions)</value>
     <value>La norme pharmaceutique</value>
   </data>
   <data name="SubmissionControlNo" xml:space="preserve">
-    <value>De Contrôle de la présentation</value>
+    <value>Numéro de commande de soumission</value>
+    <comment>cover page</comment>
   </data>
   <data name="tbBName" xml:space="preserve">
     <value>Nom de marque</value>

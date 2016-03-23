@@ -1200,7 +1200,7 @@ namespace Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Submission control No.
+        ///   Looks up a localized string similar to Submission control number.
         /// </summary>
         internal static string SubmissionControlNo {
             get {
