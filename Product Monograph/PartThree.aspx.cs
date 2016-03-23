@@ -33,7 +33,7 @@ namespace Product_Monograph
             if (Session["savedFilename"] != null)
             {
                 strBrandName = (String)Session["savedFilename"];
-            }
+        }
             else
                 strBrandName = "DraftPMForm";
 
@@ -102,9 +102,36 @@ namespace Product_Monograph
             lblIssues.Text = Resources.Resource.Issues;
             lblProcedure.Text = Resources.Resource.Procedure;
             lblAllergy.Text = Resources.Resource.Allergy;
+            btnSaveDraftPart3.Text = Resources.Resource.btnSaveDraft;
+            btnSaveDraftPart3.ToolTip = Resources.Resource.btnSaveDraft_tooltip;
             btnAddMedicationForItems.Text = Resources.Resource.btnAddExtraContraindications;
             btnAddSeriousWarningsPrecautions.Text = Resources.Resource.btnAddExtraContraindications;
             btnSeriousWarningsPrecautions.Text = Resources.Resource.btnRemoveVal;
+                       
+            //top menu
+            submenutabs.Items[0].Text = Resources.Resource.subMenuItem1;
+            submenutabs.Items[1].Text = Resources.Resource.subMenuItem2;
+            submenutabs.Items[2].Text = Resources.Resource.subMenuItem3;
+            submenutabs.Items[3].Text = Resources.Resource.subMenuItem4;
+            submenutabs.Items[4].Text = Resources.Resource.subMenuItem5;
+
+            submenutabs.Items[0].ToolTip = Resources.Resource.subMenuItem1_tooltip;
+            submenutabs.Items[1].ToolTip = Resources.Resource.subMenuItem2;
+            submenutabs.Items[2].ToolTip = Resources.Resource.subMenuItem3;
+            submenutabs.Items[3].ToolTip = Resources.Resource.subMenuItem4;
+            submenutabs.Items[4].ToolTip = Resources.Resource.subMenuItem5;
+            //bottom menu
+            submenutabsbottom.Items[0].Text = Resources.Resource.subMenuItem1;
+            submenutabsbottom.Items[1].Text = Resources.Resource.subMenuItem2;
+            submenutabsbottom.Items[2].Text = Resources.Resource.subMenuItem3;
+            submenutabsbottom.Items[3].Text = Resources.Resource.subMenuItem4;
+            submenutabsbottom.Items[4].Text = Resources.Resource.subMenuItem5;
+
+            submenutabsbottom.Items[0].ToolTip = Resources.Resource.subMenuItem1_tooltip;
+            submenutabsbottom.Items[1].ToolTip = Resources.Resource.subMenuItem2;
+            submenutabsbottom.Items[2].ToolTip = Resources.Resource.subMenuItem3;
+            submenutabsbottom.Items[3].ToolTip = Resources.Resource.subMenuItem4;
+            submenutabsbottom.Items[4].ToolTip = Resources.Resource.subMenuItem5;
         }
 
         private void SaveProcess()

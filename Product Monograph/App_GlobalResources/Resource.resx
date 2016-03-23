@@ -202,9 +202,6 @@
   <data name="Procedure" xml:space="preserve">
     <value>Anticipated medical procedures (Warnings and precautions)</value>
   </data>
-  <data name="ProperNameMI" xml:space="preserve">
-    <value>Proper Name</value>
-  </data>
   <data name="ProperUse" xml:space="preserve">
     <value>Proper use of this medication</value>
   </data>
@@ -281,7 +278,7 @@
     <value>What it does:</value>
   </data>
   <data name="ClinicalTrials" xml:space="preserve">
-    <value>Clinica trials:</value>
+    <value>Clinical trials:</value>
   </data>
   <data name="DetailedPharma" xml:space="preserve">
     <value>Detailed pharmacology:</value>
@@ -296,7 +293,7 @@
     <value>References:</value>
   </data>
   <data name="SumCT" xml:space="preserve">
-    <value>Clinical Trials</value>
+    <value>Clinical trials</value>
   </data>
   <data name="SumMicrobiology" xml:space="preserve">
     <value>Microbiology</value>
@@ -719,9 +716,14 @@
   <data name="lblLoadXmlInst" xml:space="preserve">
     <value>To load an existing XML file, press the “Choose File” button ("Browse..." in Internet Explorer and Firefox), select the file and press the "Open" button in the file browser. Press the "Load XML" button.</value>
   </data>
-  <data name="lblForAnti" xml:space="preserve">
+  <data name="interactiontooltip" xml:space="preserve">
     <value />
-    <comment>Part 1</comment>
+  </data>
+  <data name="warningstooltip" xml:space="preserve">
+    <value>warnings and precautions tooltip</value>
+  </data>
+  <data name="tooltipBioStudy" xml:space="preserve">
+    <value>narrative outlining the design of the bioequivalence study. The values in the table should be based on the measured data from the study; no potency correction should be applied.</value>
   </data>
   <data name="SUM_Special_Popu_Condition" xml:space="preserve">
     <value>Special Populations and Conditions</value>
