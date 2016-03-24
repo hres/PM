@@ -22,13 +22,13 @@ namespace Product_Monograph {
         protected global::System.Web.UI.WebControls.Menu submenutabs;
         
         /// <summary>
-        /// btnSaveDraftPart2 control.
+        /// btnSave control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Button btnSaveDraftPart2;
+        protected global::System.Web.UI.WebControls.Button btnSave;
         
         /// <summary>
         /// lblError control.

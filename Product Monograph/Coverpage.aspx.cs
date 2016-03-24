@@ -24,9 +24,11 @@ namespace Product_Monograph
 {
     public partial class Coverpage : System.Web.UI.Page
     {
-        string strscript = "";
-       
-     
+        string strscript = string.Empty;
+        bool isClientXmlFile = false;
+        string strSaveFileName = string.Empty;
+        string strXmlExtension = ".xml";
+        string strZipExtension = ".zip";
         public class Field
         {
             public string FieldLabel { get; set; }
@@ -58,7 +60,6 @@ namespace Product_Monograph
                 {
                     if(ValidateXmlDoc())  //if xml file contains data, load the file. otherwise ignores loading -- ching adds code
                        LoadFromXML();
-            
                 }
                 catch 
                 {
@@ -69,10 +70,10 @@ namespace Product_Monograph
         }
         private bool ValidateXmlDoc()
         {
-            XmlDocument xmldoc;
+       
             try
             {
-                xmldoc = (XmlDocument)Session["draft"];
+                XmlDocument xmldoc = (XmlDocument)Session["draft"];
                 if (xmldoc == null)  //maybe dameged, or not exist, or empty --- waiting for client requirements
                 {
                     return false;
@@ -80,10 +81,17 @@ namespace Product_Monograph
                 }
                 else
                 {
-                    if (xmldoc.ChildNodes.Count == 3)  //having three elements, but it still contains empty data, it is new XML file
+                    if (xmldoc.ChildNodes[1].HasChildNodes == false)  //having two elements, but it still contains empty data, it is new XML file
+                    {
+                        isClientXmlFile = false;
                         return false;
+                    }
                     else
-                        return true;    
+                    {
+                        isClientXmlFile = true;
+                        return true;     //it is a xml file which was loaded by client 
+                    }
+                        
                 }
 
             }
@@ -91,13 +99,10 @@ namespace Product_Monograph
             {
                 lblError.Text = "No XMLDocument file to load: " + e.Message;  //project stops -- note by ching
                 return false;
-            }
-           
-
+            }          
         }
         private void LoadFromXML()
         {
-
             XmlDocument xmldoc = (XmlDocument)Session["draft"];
 
             XDocument doc = XDocument.Parse(xmldoc.OuterXml);
@@ -179,7 +184,6 @@ namespace Product_Monograph
                     else
                     {
                         strscript += "addRow('dataTable');";
-
 
                         foreach (string column in row.columns)
                         {
@@ -278,8 +282,7 @@ namespace Product_Monograph
                    tbControNum.Text = xmldataitem.SubmissionControlNumber;
             }
 
-            ScriptManager.RegisterStartupScript(this.Page, this.GetType(), "LoadEventsScript", strscript.ToString(), true);
-        
+            ScriptManager.RegisterStartupScript(this.Page, this.GetType(), "LoadEventsScript", strscript.ToString(), true);  
         }
 
         protected void btnApplySumbol_Click(object sender, EventArgs e)
@@ -320,292 +323,339 @@ namespace Product_Monograph
 
         private XmlDocument SaveInMemory()
         {
-            XmlDocument doc = (XmlDocument)Session["draft"]; // helpers.Processes.XMLDraft;
-            XmlNode rootnode = doc.SelectSingleNode("ProductMonographTemplate");
-            int mRowCount = 0;
+            //if (Session["draft"] == null)  -- need to check Xml file in session -- note by Ching 
+            //{
+            //    lblError.Text = "no xml file in session";
+            //    return null;
+            //}
+            //else
+            //{
 
-            #region symbol
-            try
-            {
-                string symbolname = Request.Form["tbxmlimgnameSymbol"].ToString();
-                string symbolfilename = Request.Form["tbxmlimgfilenameSymbol"].ToString();
+                XmlDocument doc = (XmlDocument)Session["draft"]; // helpers.Processes.XMLDraft;
+                XmlNode rootnode = doc.DocumentElement;
+                //int NodeCount = doc.ChildNodes.Count;
 
-                if (symbolfilename != string.Empty)
+                //XmlNode rootnode = doc.SelectSingleNode("ProductMonographTemplate");
+
+                int mRowCount = 0;
+
+                #region symbol
+                try
                 {
-                    System.Drawing.Image imageBmp = System.Drawing.Image.FromFile(Server.MapPath("~/scheduling symbol/" + symbolfilename));
-                    Bitmap bmp = new Bitmap(imageBmp);
-                    TypeConverter converter = TypeDescriptor.GetConverter(typeof(Bitmap));
-                    string base64 = "data:image/jpeg;base64," + Convert.ToBase64String((byte[])converter.ConvertTo(bmp, typeof(byte[])));
+                    string symbolname = Request.Form["tbxmlimgnameSymbol"].ToString();
+                    string symbolfilename = Request.Form["tbxmlimgfilenameSymbol"].ToString();
 
-
-                    XmlNodeList schedsymbol = doc.GetElementsByTagName("SchedulingSymbol");
-                    if (schedsymbol.Count < 1)
+                    if (symbolfilename != string.Empty)
                     {
-                        helpers.Processes.CreateXMLElement(doc, rootnode, "SchedulingSymbol", "", symbolname, false);
-                    }
-                    else
-                    {
-                        schedsymbol[0].InnerText = symbolname;
-                    }
-                    XmlNodeList schedsymbolname = doc.GetElementsByTagName("SchedulingSymbolImageName");
-                    if (schedsymbolname.Count < 1)
-                    {
-                        helpers.Processes.CreateXMLElement(doc, rootnode, "SchedulingSymbolImageName", "", symbolfilename, false);
-                    }
-                    else
-                    {
-                        schedsymbolname[0].InnerText = symbolfilename;
-                    }
-                    XmlNodeList schedsymboldata = doc.GetElementsByTagName("SchedulingSymbolImageData");
-                    if (schedsymboldata.Count < 1)
-                    {
-                        helpers.Processes.CreateXMLElement(doc, rootnode, "SchedulingSymbolImageData", "", base64, false);
-                    }
-                    else
-                    {
-                        schedsymboldata[0].InnerText = base64;
-                    }
-                }
-            }
-            catch (Exception error)
-            {
-                lblError.Text = error.ToString();
-                return null;
-            }
-            #endregion
-
-            #region BrandProperDosage
-            try
-            {
-                XmlNodeList roa = doc.GetElementsByTagName("BrandProperDosage");
-
-                ArrayList brandarray = new ArrayList();
-                ArrayList properarray = new ArrayList();
-                ArrayList dosagearray = new ArrayList();
-                ArrayList strengthvaluearray = new ArrayList();
-                ArrayList strengthunitarray = new ArrayList();
-                ArrayList strengthperdosagevaluearray = new ArrayList();
-                ArrayList strengthperdosageunitarray = new ArrayList();
+                        System.Drawing.Image imageBmp = System.Drawing.Image.FromFile(Server.MapPath("~/scheduling symbol/" + symbolfilename));
+                        Bitmap bmp = new Bitmap(imageBmp);
+                        TypeConverter converter = TypeDescriptor.GetConverter(typeof(Bitmap));
+                        string base64 = "data:image/jpeg;base64," + Convert.ToBase64String((byte[])converter.ConvertTo(bmp, typeof(byte[])));
 
 
-                if (HttpContext.Current.Request.Form.GetValues("tbBrandName") != null &&
-                    HttpContext.Current.Request.Form.GetValues("tbProperName") != null &&
-                    HttpContext.Current.Request.Form.GetValues("tbDosage") != null &&
-                    HttpContext.Current.Request.Form.GetValues("tbStrengthValue") != null &&
-                    HttpContext.Current.Request.Form.GetValues("tbStrengthUnit") != null &&
-                    HttpContext.Current.Request.Form.GetValues("tbStrengthperDosageValue") != null &&
-                    HttpContext.Current.Request.Form.GetValues("tbStrengthperDosageUnit") != null)
-                {
-                    foreach (string routeitem in HttpContext.Current.Request.Form.GetValues("tbBrandName"))
-                    {
-                        brandarray.Add(routeitem);
-                        mRowCount = mRowCount + 1;
-                    }
-                    foreach (string dosageitem in HttpContext.Current.Request.Form.GetValues("tbProperName"))
-                    {
-                        properarray.Add(dosageitem);
-                    }
-                    foreach (string ingredientitem in HttpContext.Current.Request.Form.GetValues("tbDosage"))
-                    {
-                        dosagearray.Add(ingredientitem);
-                    }
-                    foreach (string ingredientitem in HttpContext.Current.Request.Form.GetValues("tbStrengthValue"))
-                    {
-                        strengthvaluearray.Add(ingredientitem);
-                    }
-                    foreach (string ingredientitem in HttpContext.Current.Request.Form.GetValues("tbStrengthUnit"))
-                    {
-                        strengthunitarray.Add(ingredientitem);
-                    }
-                    foreach (string ingredientitem in HttpContext.Current.Request.Form.GetValues("tbStrengthperDosageValue"))
-                    {
-                        strengthperdosagevaluearray.Add(ingredientitem);
-                    }
-                    foreach (string ingredientitem in HttpContext.Current.Request.Form.GetValues("tbStrengthperDosageUnit"))
-                    {
-                        strengthperdosageunitarray.Add(ingredientitem);
-                    }
-                }
-
-             
-
-
-                if (roa.Count < 1)
-                {
-                    XmlNode xnode = doc.CreateElement("BrandProperDosage");
-                    rootnode.AppendChild(xnode);
-
-                    for (int ar = 0; ar < brandarray.Count; ar++)
-                    {
-                        XmlNode subnode = doc.CreateElement("row");
-                        xnode.AppendChild(subnode);
-
-                        string col1 = brandarray[ar].ToString();
-                        XmlNode subsubnode = doc.CreateElement("column");
-                        subsubnode.AppendChild(doc.CreateTextNode(col1));
-                        subnode.AppendChild(subsubnode);
-
-                        string col2 = properarray[ar].ToString();
-                        subsubnode = doc.CreateElement("column");
-                        subsubnode.AppendChild(doc.CreateTextNode(col2));
-                        subnode.AppendChild(subsubnode);
-
-                        string col3 = dosagearray[ar].ToString();
-                        subsubnode = doc.CreateElement("column");
-                        subsubnode.AppendChild(doc.CreateTextNode(col3));
-                        subnode.AppendChild(subsubnode);
-
-                        string col4 = strengthvaluearray[ar].ToString();
-                        subsubnode = doc.CreateElement("column");
-                        subsubnode.AppendChild(doc.CreateTextNode(col4));
-                        subnode.AppendChild(subsubnode);
-
-                        string col5 = strengthunitarray[ar].ToString();
-                        subsubnode = doc.CreateElement("column");
-                        subsubnode.AppendChild(doc.CreateTextNode(col5));
-                        subnode.AppendChild(subsubnode);
-
-                        string col6 = strengthperdosagevaluearray[ar].ToString();
-                        subsubnode = doc.CreateElement("column");
-                        subsubnode.AppendChild(doc.CreateTextNode(col6));
-                        subnode.AppendChild(subsubnode);
-
-                        string col7 = strengthperdosageunitarray[ar].ToString();
-                        subsubnode = doc.CreateElement("column");
-                        subsubnode.AppendChild(doc.CreateTextNode(col7));
-                        subnode.AppendChild(subsubnode);
-                       
-                    }
-                }
-                else
-                {
-                    roa[0].RemoveAll();
-
-                    XmlNodeList xnode = doc.GetElementsByTagName("BrandProperDosage");
-                    rootnode.AppendChild(xnode[0]);
-
-                    for (int ar = 0; ar < brandarray.Count; ar++)
-                    {
-                        XmlNode subnode = doc.CreateElement("row");
-                        xnode[0].AppendChild(subnode);
-
-                        string col1 = brandarray[ar].ToString();
-                        XmlNode subsubnode = doc.CreateElement("column");
-                        subsubnode.AppendChild(doc.CreateTextNode(col1));
-                        subnode.AppendChild(subsubnode);
-
-                        string col2 = properarray[ar].ToString();
-                        subsubnode = doc.CreateElement("column");
-                        subsubnode.AppendChild(doc.CreateTextNode(col2));
-                        subnode.AppendChild(subsubnode);
-
-                        string col3 = dosagearray[ar].ToString();
-                        subsubnode = doc.CreateElement("column");
-                        subsubnode.AppendChild(doc.CreateTextNode(col3));
-                        subnode.AppendChild(subsubnode);
-
-                        string col4 = strengthvaluearray[ar].ToString();
-                        subsubnode = doc.CreateElement("column");
-                        subsubnode.AppendChild(doc.CreateTextNode(col4));
-                        subnode.AppendChild(subsubnode);
-
-                        string col5 = strengthunitarray[ar].ToString();
-                        subsubnode = doc.CreateElement("column");
-                        subsubnode.AppendChild(doc.CreateTextNode(col5));
-                        subnode.AppendChild(subsubnode);
-
-                        string col6 = strengthperdosagevaluearray[ar].ToString();
-                        subsubnode = doc.CreateElement("column");
-                        subsubnode.AppendChild(doc.CreateTextNode(col6));
-                        subnode.AppendChild(subsubnode);
-
-                        string col7 = strengthperdosageunitarray[ar].ToString();
-                        subsubnode = doc.CreateElement("column");
-                        subsubnode.AppendChild(doc.CreateTextNode(col7));
-                        subnode.AppendChild(subsubnode);
-                     
-                    }
-                }
-            }
-            catch (Exception error)
-            {
-                lblError.Text = error.ToString();
-                return null;
-            }
-            #endregion
-
-            helpers.Processes.ValidateAndSave(doc, rootnode, "PharmaceuticalStandard", "", tbPharmaceuticalStandard.Text, false);
-            helpers.Processes.ValidateAndSave(doc, rootnode, "TherapeuticClassification", "Therapeutic Classification", tbTherapeuticClassifications.Text, true);
-            helpers.Processes.ValidateAndSave(doc, rootnode, "Sponsorname", "Sponsor name", tbSponsorName.Text, true);
-            helpers.Processes.ValidateAndSave(doc, rootnode, "Sponsoraddress", "Sponsor address", tbSponsorAddress.Value, true);
-
-            XmlNodeList footnotename = doc.GetElementsByTagName("Sponsorfootnote");
-            if (footnotename.Count < 1)
-            {
-                helpers.Processes.CreateXMLElement(doc, rootnode, "Sponsorfootnote", "", tbFootnote.Value, false);
-            }
-            else
-            {
-                footnotename[0].InnerText = tbFootnote.Value;
-            }
-            helpers.Processes.ValidateAndSave(doc, rootnode, "Sponsorfootnote", "Sponsor Footnote", tbFootnote.Value, true);
-
-            #region Revision and Preparation dates
-           
-            string tbDatePrepVal = Request.Form[tbDatePrep.UniqueID];
-            string tbDateRevVal = Request.Form[tbDateRev.UniqueID];
-            helpers.Processes.ValidateAndSave(doc, rootnode, "DateofPreparation", "", tbDatePrepVal, false);
-            helpers.Processes.ValidateAndSave(doc, rootnode, "DateofRevision", "", tbDateRevVal, false);
-          
-            #endregion
-
-            helpers.Processes.ValidateAndSave(doc, rootnode, "SubmissionControlNumber", "Submission Control Number", tbControNum.Text, true);
-            Session["draft"] = doc;
-
-            return doc;
-        }
-        
-        protected void btnSaveDraft_Click(object sender, EventArgs e)
-        {
-            string strSaveFileName = string.Empty;
-            string strXmlExtension = ".xml";
-            string strZipExtension = ".zip";
-            try
-            {
-
-                XmlDocument doc = SaveInMemory();
-
-                LoadFromXML();
-
-                //get BrandName AS file name which saved as zip file 
-                if (HttpContext.Current.Request.Form.GetValues("tbBrandName") != null)
-                {
-                    foreach (string item in HttpContext.Current.Request.Form.GetValues("tbBrandName"))
-                    {
-                        item.TrimEnd();
-                        if (item.Length > 0)
+                        XmlNodeList schedsymbol = doc.GetElementsByTagName("SchedulingSymbol");
+                        if (schedsymbol.Count < 1)
                         {
-                            strSaveFileName = item;
-                            if (strSaveFileName.Length > 0)
-                            {
-                                break;
-                            }
+                            helpers.Processes.CreateXMLElement(doc, rootnode, "SchedulingSymbol", "", symbolname, false);
+                        }
+                        else
+                        {
+                            schedsymbol[0].InnerText = symbolname;
+                        }
+                        XmlNodeList schedsymbolname = doc.GetElementsByTagName("SchedulingSymbolImageName");
+                        if (schedsymbolname.Count < 1)
+                        {
+                            helpers.Processes.CreateXMLElement(doc, rootnode, "SchedulingSymbolImageName", "", symbolfilename, false);
+                        }
+                        else
+                        {
+                            schedsymbolname[0].InnerText = symbolfilename;
+                        }
+                        XmlNodeList schedsymboldata = doc.GetElementsByTagName("SchedulingSymbolImageData");
+                        if (schedsymboldata.Count < 1)
+                        {
+                            helpers.Processes.CreateXMLElement(doc, rootnode, "SchedulingSymbolImageData", "", base64, false);
+                        }
+                        else
+                        {
+                            schedsymboldata[0].InnerText = base64;
                         }
                     }
                 }
-                else  //if not find the Brand name in the session, then use default TempfileName "ProductMonograph"
-                    strSaveFileName = "DraftPMForm";
+                catch (Exception error)
+                {
+                    lblError.Text = error.ToString();
+                    return null;
+                }
+                #endregion
+
+                #region BrandProperDosage
+                try
+                {
+                    XmlNodeList roa = doc.GetElementsByTagName("BrandProperDosage");
+                    string strtemp = "0";
+                    ArrayList brandarray = new ArrayList();
+                    ArrayList properarray = new ArrayList();
+                    ArrayList dosagearray = new ArrayList();
+                    ArrayList strengthvaluearray = new ArrayList();
+                    ArrayList strengthunitarray = new ArrayList();
+                    ArrayList strengthperdosagevaluearray = new ArrayList();
+                    ArrayList strengthperdosageunitarray = new ArrayList();
+
+
+                    if (HttpContext.Current.Request.Form.GetValues("tbBrandName") != null &&
+                        HttpContext.Current.Request.Form.GetValues("tbProperName") != null &&
+                        HttpContext.Current.Request.Form.GetValues("tbDosage") != null &&
+                        HttpContext.Current.Request.Form.GetValues("tbStrengthValue") != null &&
+                        HttpContext.Current.Request.Form.GetValues("tbStrengthUnit") != null &&
+                        HttpContext.Current.Request.Form.GetValues("tbStrengthperDosageValue") != null &&
+                        HttpContext.Current.Request.Form.GetValues("tbStrengthperDosageUnit") != null)
+                    {
+                        foreach (string routeitem in HttpContext.Current.Request.Form.GetValues("tbBrandName"))
+                        {
+                            brandarray.Add(routeitem);
+                            mRowCount = mRowCount + 1;
+                        }
+                        foreach (string dosageitem in HttpContext.Current.Request.Form.GetValues("tbProperName"))
+                        {
+                            properarray.Add(dosageitem);
+                        }
+                        foreach (string ingredientitem in HttpContext.Current.Request.Form.GetValues("tbDosage"))
+                        {
+                            dosagearray.Add(ingredientitem);
+                        }
+
+                        string[] strStrengthVal = HttpContext.Current.Request.Form.GetValues("tbStrengthValue");
+                        int tempLength = HttpContext.Current.Request.Form.GetValues("tbBrandName").Length;
+                        if (strStrengthVal.Length == tempLength)
+                        {
+                           foreach (string strengthValueitem in HttpContext.Current.Request.Form.GetValues("tbStrengthValue"))
+                           {
+                              strengthvaluearray.Add(strengthValueitem);
+                           }
+                        }
+                        else
+                        {
+                         
+                           
+                           for(int i = 0; i < tempLength; i++)
+                           {
+
+                              if(( i+1 ) <= strStrengthVal.Length )
+                                  strengthvaluearray.Add(strStrengthVal[i]);
+                              else
+                                  strengthvaluearray.Add(strtemp);
+                           }
+                        }
+
+                        foreach (string strengthUnititem in HttpContext.Current.Request.Form.GetValues("tbStrengthUnit"))
+                        {
+                           strengthunitarray.Add(strengthUnititem);
+                        }
+
+                    ////
+                    string[] strStrengthperDosageVal = HttpContext.Current.Request.Form.GetValues("tbStrengthperDosageValue");
+                    int tempBrandLength = HttpContext.Current.Request.Form.GetValues("tbBrandName").Length;
+                    if (strStrengthperDosageVal.Length == tempBrandLength)
+                    {
+                        foreach (string strengthperDosagehValitem in HttpContext.Current.Request.Form.GetValues("tbStrengthperDosageValue"))
+                        {
+                            strengthperdosagevaluearray.Add(strengthperDosagehValitem);
+                        }
+                    }
+                    else
+                    {
+                       
+
+                        for (int j = 0; j < tempBrandLength; j++)
+                        {
+
+                            if ((j + 1) <= strStrengthperDosageVal.Length)
+                                strengthperdosagevaluearray.Add(strStrengthperDosageVal[j]);
+                            else
+                                strengthperdosagevaluearray.Add(strtemp);
+                        }
+                    }
+
+
+                        //foreach (string StrengthperDosageValueitem in HttpContext.Current.Request.Form.GetValues("tbStrengthperDosageValue"))
+                        //{
+                         
+                        //     //strengthperdosagevaluearray.Add(strtemp);   //test by Ching
+                         
+                        //     strengthperdosagevaluearray.Add(StrengthperDosageValueitem);
+                        //}
+
+                        foreach (string StrengthperDosageUnititem in HttpContext.Current.Request.Form.GetValues("tbStrengthperDosageUnit"))
+                        {
+                            strengthperdosageunitarray.Add(StrengthperDosageUnititem);
+                        }
+                    }
+
+
+
+
+                    if (roa.Count < 1)
+                    {
+                        XmlNode xnode = doc.CreateElement("BrandProperDosage");
+                        rootnode.AppendChild(xnode);
+
+                        for (int ar = 0; ar < brandarray.Count; ar++)
+                        {
+                            XmlNode subnode = doc.CreateElement("row");
+                            xnode.AppendChild(subnode);
+
+                            string col1 = brandarray[ar].ToString();
+                            XmlNode subsubnode1 = doc.CreateElement("column");
+                            subsubnode1.AppendChild(doc.CreateTextNode(col1));
+                            subnode.AppendChild(subsubnode1);
+
+                            string col2 = properarray[ar].ToString();
+                            XmlNode subsubnode2 = doc.CreateElement("column");
+                            subsubnode2.AppendChild(doc.CreateTextNode(col2));
+                            subnode.AppendChild(subsubnode2);
+
+                            string col3 = dosagearray[ar].ToString();
+                            XmlNode subsubnode3 = doc.CreateElement("column");
+                            subsubnode3.AppendChild(doc.CreateTextNode(col3));
+                            subnode.AppendChild(subsubnode3);
+
+                            string col4 = strengthvaluearray[ar].ToString();
+                            XmlNode subsubnode4 = doc.CreateElement("column");
+                            subsubnode4.AppendChild(doc.CreateTextNode(col4));
+                            subnode.AppendChild(subsubnode4);
+
+                            string col5 = strengthunitarray[ar].ToString();
+                            XmlNode subsubnode5 = doc.CreateElement("column");
+                            subsubnode5.AppendChild(doc.CreateTextNode(col5));
+                            subnode.AppendChild(subsubnode5);
+
+                            string col6 = strengthperdosagevaluearray[ar].ToString();
+                            XmlNode subsubnode6 = doc.CreateElement("column");
+                            subsubnode6.AppendChild(doc.CreateTextNode(col6));
+                            subnode.AppendChild(subsubnode6);
+
+                            string col7 = strengthperdosageunitarray[ar].ToString();
+                            XmlNode subsubnode7 = doc.CreateElement("column");
+                            subsubnode7.AppendChild(doc.CreateTextNode(col7));
+                            subnode.AppendChild(subsubnode7);
+
+                        }
+                    }
+                    else
+                    {
+                        roa[0].RemoveAll();
+
+                        XmlNodeList xnode = doc.GetElementsByTagName("BrandProperDosage");
+                        rootnode.AppendChild(xnode[0]);
+
+                        for (int ar = 0; ar < brandarray.Count; ar++)
+                        {
+                            XmlNode subnode = doc.CreateElement("row");
+                            xnode[0].AppendChild(subnode);
+
+                            string col1 = brandarray[ar].ToString();
+                            XmlNode subsubnode1 = doc.CreateElement("column");
+                            subsubnode1.AppendChild(doc.CreateTextNode(col1));
+                            subnode.AppendChild(subsubnode1);
+
+                            string col2 = properarray[ar].ToString();
+                            XmlNode subsubnode2 = doc.CreateElement("column");
+                            subsubnode2.AppendChild(doc.CreateTextNode(col2));
+                            subnode.AppendChild(subsubnode2);
+
+                            string col3 = dosagearray[ar].ToString();
+                            XmlNode subsubnode3 = doc.CreateElement("column");
+                            subsubnode3.AppendChild(doc.CreateTextNode(col3));
+                            subnode.AppendChild(subsubnode3);
+
+                            string col4 = strengthvaluearray[ar].ToString();
+                            XmlNode subsubnode4 = doc.CreateElement("column");
+                            subsubnode4.AppendChild(doc.CreateTextNode(col4));
+                            subnode.AppendChild(subsubnode4);
+
+                            string col5 = strengthunitarray[ar].ToString();
+                            XmlNode subsubnode5 = doc.CreateElement("column");
+                            subsubnode5.AppendChild(doc.CreateTextNode(col5));
+                            subnode.AppendChild(subsubnode5);
+
+                            string col6 = strengthperdosagevaluearray[ar].ToString();
+                            XmlNode subsubnode6 = doc.CreateElement("column");
+                            subsubnode6.AppendChild(doc.CreateTextNode(col6));
+                            subnode.AppendChild(subsubnode6);
+
+                            string col7 = strengthperdosageunitarray[ar].ToString();
+                            XmlNode subsubnode7 = doc.CreateElement("column");
+                            subsubnode7.AppendChild(doc.CreateTextNode(col7));
+                            subnode.AppendChild(subsubnode7);
+
+                        }
+                    }
+                }
+                catch (Exception error)
+                {
+                    lblError.Text = error.ToString();
+                    return null;
+                }
+                #endregion
+
+                helpers.Processes.ValidateAndSave(doc, rootnode, "PharmaceuticalStandard", "", tbPharmaceuticalStandard.Text, false);
+                helpers.Processes.ValidateAndSave(doc, rootnode, "TherapeuticClassification", "Therapeutic Classification", tbTherapeuticClassifications.Text, true);
+                helpers.Processes.ValidateAndSave(doc, rootnode, "Sponsorname", "Sponsor name", tbSponsorName.Text, true);
+                helpers.Processes.ValidateAndSave(doc, rootnode, "Sponsoraddress", "Sponsor address", tbSponsorAddress.Value, true);
+                helpers.Processes.ValidateAndSave(doc, rootnode, "Sponsorfootnote", "Sponsor Footnote", tbFootnote.Value, true);
+
+                #region Revision and Preparation dates
+
+                string tbDatePrepVal = Request.Form[tbDatePrep.UniqueID];
+                string tbDateRevVal = Request.Form[tbDateRev.UniqueID];
+                helpers.Processes.ValidateAndSave(doc, rootnode, "DateofPreparation", "", tbDatePrepVal, false);
+                helpers.Processes.ValidateAndSave(doc, rootnode, "DateofRevision", "", tbDateRevVal, false);
+
+                #endregion
+
+                helpers.Processes.ValidateAndSave(doc, rootnode, "SubmissionControlNumber", "Submission Control Number", tbControNum.Text, true);
+                Session["draft"] = doc;
+
+                return doc;
+          //  }
+        }
+        
+        protected void btnSaveDraft_Click(object sender, EventArgs e)
+        {      
+            try
+            {
+                XmlDocument doc = SaveInMemory();
+                LoadFromXML();   //why load again?? - note by Ching
 
                 #region zip
-                byte[] bytes = Encoding.Default.GetBytes(doc.OuterXml);
-
+                byte[] bytes = Encoding.Default.GetBytes(doc.OuterXml);  
+               
                 using (var compressedFileStream = new MemoryStream())
                 {
-                    using (var zipArchive = new ZipArchive(compressedFileStream, ZipArchiveMode.Update, true))
+                    if (Session["savedFilename"] != null)
+                    {
+                        strSaveFileName = (String)Session["savedFilename"];
+                    }
+                    else
+                        strSaveFileName = "DraftPMForm";
+                    //System.IO.Compression.ZipArchiveMode zipMode = ZipArchiveMode.Create;  -- note by Ching
+                    //if (isClientXmlFile == false)
+                    //    zipMode = ZipArchiveMode.Create;
+                    //else
+                    //    zipMode = ZipArchiveMode.Update;
+                    using (var zipArchive = new ZipArchive(compressedFileStream, ZipArchiveMode.Update, true))  //if loading file, use update
+                    //using (var zipArchive = new ZipArchive(compressedFileStream, ZipArchiveMode.Create, true))   //if not load, first time to create --- test by ching
                     {
                         if (doc != null)
                         {
-                            var zipEntry = zipArchive.CreateEntry(strSaveFileName + strXmlExtension);
+                           var zipEntry = zipArchive.CreateEntry(strSaveFileName + strXmlExtension);
+                            //using (Stream stream = zipEntry.Open())   //test by ching
+                            //{
+                            //    // Save the xml file into the zip
+                            //    doc.Save(stream);
+                            //}
+
                             using (var originalFileStream = new MemoryStream(bytes))
                             {
                                 using (var zipEntryStream = zipEntry.Open())
@@ -616,7 +666,7 @@ namespace Product_Monograph
                         }
                     }
 
-                    var buffer = compressedFileStream.ToArray();
+                    var buffer = compressedFileStream.ToArray();   //bug here -- note by Ching
                     Response.Clear();
                     Response.ClearContent();
                     Response.ClearHeaders();
@@ -640,7 +690,6 @@ namespace Product_Monograph
 
         protected void menutabs_MenuItemClick(object sender, MenuEventArgs e)
         {
-           
             SaveInMemory();
             Response.Redirect(submenutabs.SelectedValue + ".aspx");
         }
@@ -676,7 +725,6 @@ namespace Product_Monograph
             submenutabsbottom.Items[2].ToolTip = Resources.Resource.subMenuItem3;
             submenutabsbottom.Items[3].ToolTip = Resources.Resource.subMenuItem4;
             submenutabsbottom.Items[4].ToolTip = Resources.Resource.subMenuItem5;
-
 
             CoverPage.Text = Resources.Resource.CoverPage;
             lblSchedulingSymbol.InnerText = Resources.Resource.lblSchedulingSymbol;

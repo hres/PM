@@ -65,7 +65,7 @@ namespace Product_Monograph
             lblWHAT_IT_DOES.Text = Resources.Resource.WhatDoes;
             lblWHEN_IT_SHOULD.Text = Resources.Resource.MedicationNotUsed;
             lblWHAT_THE_MEDICINAL.Text = Resources.Resource.MedIngredient;
-            lblProperNameMI.Text = Resources.Resource.ProperNameMI;
+            //lblProperNameMI.Text = Resources.Resource.ProperNameMI;
             lblWHAT_THE_NONMEDICINAL.Text = Resources.Resource.NonMedicinalIng;
             lblWHAT_DOSAGE.Text = Resources.Resource.DosageForm;
             lblSumWarningsPrecautions.Text = Resources.Resource.SumWarningsPrecautions;

@@ -716,4 +716,8 @@ précautions)</value>
     <value>est indiqué pour</value>
     <comment>Part 1</comment>
   </data>
+  <data name="tooltipBioStudy" xml:space="preserve">
+    <value>narrative outlining the design of the bioequivalence study. The values in the table should be based on the measured data from the study; no potency correction should be applied._fr</value>
+    <comment>Part 2</comment>
+  </data>
 </root>

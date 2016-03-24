@@ -473,7 +473,7 @@ namespace Product_Monograph
                     listAdditionalWarn[0].RemoveAll();
                     XmlNodeList xnodeW2 = doc.GetElementsByTagName("AdditionalWarning");
 
-                    string colWarn = arrayAdditionalWarn[0].ToString();
+                    string colWarn = arrayAdditionalWarn[0].ToString();  //bug here--note by Ching
                     xnodeW2[0].AppendChild(doc.CreateTextNode(colWarn));
                     rootnode.AppendChild(xnodeW2[0]);
                 }

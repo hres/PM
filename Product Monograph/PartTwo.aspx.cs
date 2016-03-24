@@ -98,8 +98,8 @@ namespace Product_Monograph
                  lblNote4.Text = Resources.Resource.Note4;
                  lblNote5.Text = Resources.Resource.Note5;
                  lblNote6.Text = Resources.Resource.Note6;
-                 btnSaveDraftPart2.Text = Resources.Resource.btnSaveDraft;
-                 btnSaveDraftPart2.ToolTip = Resources.Resource.btnSaveDraft_tooltip;
+                 btnSave.Text = Resources.Resource.btnSaveDraft;
+                 btnSave.ToolTip = Resources.Resource.btnSaveDraft_tooltip;
                  btnAddClinicalTrialsOuterTextBox.Text = Resources.Resource.btnAddExtraContraindications;
                  btnAddAnalyteNameTextBox.Text = Resources.Resource.btnAddExtraContraindications;
                  btnAddDrugSubstance.Text = Resources.Resource.btnAddExtraContraindications;

@@ -602,7 +602,7 @@
 </div>
 
 <div class="mrgn-tp-md">
-    <asp:Button ID="btnSave" class=" btn btn-primary" runat="server" OnClick="btnSave_Click" />
+    <asp:Button ID="btnSave" class=" btn btn-primary" runat="server" OnClick="btnSave_Click"></asp:button>
 </div>
 
 <div>

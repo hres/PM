@@ -353,7 +353,7 @@
 <div class="form-group margin-top-medium">
   <div class="row">
   <div class="col-sm-2">
-     <Label id="lblSchedulingSymbol" name="lblSchedulingSymbol" for="tbSchedulingSymbol" runat="server" >:</Label>
+     <Label id="lblSchedulingSymbol" for="tbSchedulingSymbol" runat="server" >:</Label>
   </div>
   <div class="col-sm-2">
      <select ID="tbSchedulingSymbol" onchange="ApplySchedulingSymbol()" class="form-control width_120px"></select> 
@@ -361,7 +361,7 @@
   <div class="col-sm-4">
      <div class="hidden">
         <asp:FileUpload id="fuBrnandSymbol" runat="server" />
-        <asp:Button id="btnApplySumbol" runat="server" onClick="btnApplySumbol_Click" class="btn btn-default btn-sm" />
+        <asp:Button id="btnApplySumbol" runat="server" onClick="btnApplySumbol_Click" CssClass="btn btn-default btn-sm" />
      </div>
        <img id="imgSymbol" src="images/x.png" width="100" height="100" alt="Apply symbol"/>                     
      <input type="text" id="tbxmlimgnameSymbol" name="tbxmlimgnameSymbol" class="hidden" />
@@ -504,7 +504,7 @@
     <div class="row margin-top-medium">
        <div class="col-sm-3 left">
            <asp:Label ID="lblDateOfPreparation" AssociatedControlID="tbDatePrep" runat="server" CssClass="control-label"><span class="field-name"></span><span class="datepicker-format"> (<abbr title="Four digits year, dash, two digits month, dash, two digits day">YYYY-MM-DD</abbr>)</span></asp:Label>
-           <asp:TextBox runat="server" id="tbDatePrep" CssClass="form-control" type="date" data-rule-dateiso="true"></asp:TextBox>   
+           <asp:TextBox runat="server" id="tbDatePrep" CssClass="form-control"  type="date" data-rule-dateiso="true"></asp:TextBox>   
        </div>
        <div class="col-sm-1 text-left">
            <strong><asp:label id="lblAndOr" runat="server" CssClass="control-label"></asp:label></strong> 
@@ -567,30 +567,70 @@
                     for (var i = 0; i < colCount; i++) {
                         var newcell = row.insertCell(i);
                         if (i == 4) {
-
-                            var newDosageHtml = table.rows[1].cells[i].innerHTML;  //Dosage-Form  select
-                            newDosageHtml.replace("tbDosage", "tbDosage" + newRowCount.toString() + "'");  //Dosage-Form  select
-                            newcell.innerHTML = newDosageHtml;
-                            alert("Dosage id changed: " + newcell.innerHTML);
-
+                            var newDosageID = "tbDosage" + newRowCount;
+                            var newDosageID_query = "#tbDosage" + newRowCount;
+                    
+                            newcell.innerHTML = "<select id='" + newDosageID + "' name='tbDosage' class='form-control input-sm' style='font-size:medium'></select>";
+                           
+                            $.get('ControlledList.xml', function (xmlcontolledlist) {
+                                $(xmlcontolledlist).find('dosageform').each(function () {
+                                    var $option = $(this).text();
+                                    $('<option>' + $option + '</option>').appendTo(newDosageID_query);
+                                }).done(function () {
+                                    $(newDosageID_query).val("Select");
+                                });
+                            });
+                        
                         }
                         else if (i == 5)
                         {
-                            newcell.childNodes[0].id = "tbStrengthValue" + newRowCount;   //first item in fifth column is spinner
-                            newcell.childNodes[1].id = "tbStrengthUnit" + newRowCount;   //second item in fifth column is select
+                           // alert("Strength contains: " + table.rows[1].cells[i].innerHTML);
+                            var newStrengthValueID = "tbStrengthValue" + newRowCount;
+                            var newStrengthValueID_query = "#tbStrengthValue" + newRowCount;
+                            var newStrengthUnitID = "tbStrengthUnit" + newRowCount;
+                            var newStrengthUnitID_query = "#tbStrengthUnit" + newRowCount;
+                        
+
+                            var numStrengthValueHTML = "<div class='width_52px'><input type='number' id='" + newStrengthValueID + "' name='strengthValue' value='0' min='0' max='1000' class='form-control input-sm'/></div>";
+                            var listStrengthUnitHTML = "<div class='width_52px'><select id='" + newStrengthUnitID + "' name='tbStrengthUnit' class='form-control input-sm' style='font-size:medium'></select></div>";
+                            newcell.innerHTML = numStrengthValueHTML + listStrengthUnitHTML;
+                            $.get('ControlledList.xml', function (xmlcontolledlist) {
+                                $(xmlcontolledlist).find('unit').each(function () {
+                                    var $option = $(this).text();
+                                    $('<option>' + $option + '</option>').appendTo(newStrengthUnitID_query);
+                                }).done(function () {
+                                    $(newStrengthUnitID_query).val("Select");
+                                });
+                            });
+                            //newcell.innerHTML = table.rows[1].cells[i].innerHTML;
+                            //newcell.childNodes[0].id = "tbStrengthValue" + newRowCount;   //first item in fifth column is spinner
+                            //newcell.childNodes[1].id = "tbStrengthUnit" + newRowCount;   //second item in fifth column is select
                         }
                         else if (i == 6)
                         {
-                            newcell.childNodes[0].id = "tbStrengthperDosageValue" + newRowCount;   //first item in sixth column is spinner
-                            newcell.childNodes[1].id = "tbStrengthperDosageUnit" + newRowCount;   //second item in sixth column is select
+                            var newStrengthperDosageValueID = "tbStrengthperDosageValue" + newRowCount;
+                            var newStrengthperDosageValueID_query = "#tbStrengthperDosageValue" + newRowCount;
+                            var newStrengthperDosageUnitID = "tbStrengthperDosageUnit" + newRowCount;
+                            var newStrengthperDosageUnitID_query = "#tbStrengthperDosageUnit" + newRowCount;
+
+                            var numStrengthperDosageValueHTML = "<div class='width_52px'><input type='number' id='" + newStrengthperDosageValueID + "' name='strengthperDosageValue' value='0' min='0' max='1000' class='form-control input-sm'/></div>";
+                            var listStrengthperDosageUnitHTML = "<div class='width_52px'><select id='" + newStrengthperDosageUnitID + "' name='tbStrengthperDosageUnit' class='form-control input-sm' style='font-size:medium'></select></div>";
+                            newcell.innerHTML = numStrengthperDosageValueHTML + listStrengthperDosageUnitHTML;
+
+                            $.get('ControlledList.xml', function (xmlcontolledlist) {
+                                $(xmlcontolledlist).find('unit').each(function () {
+                                    var $option = $(this).text();
+                                    $('<option>' + $option + '</option>').appendTo(newStrengthperDosageUnitID_query);
+                                }).done(function () {
+                                    $(newStrengthperDosageUnitID_query).val("Select");
+                                });
+                            });
+
                         }
                         else
                             newcell.innerHTML = table.rows[1].cells[i].innerHTML;
 
-                     
                         newcell.type = table.rows[1].cells[i].nodeType;
-                   
-
                         switch (newcell.childNodes[0].type) {
                             case "text":
                                 newcell.childNodes[0].value = "";
@@ -605,10 +645,10 @@
                             case "button":
                                 newcell.childNodes[0].clicked = false;
                                 break;
-                           
                         }
                       
                     }
+                 
                 }              
                 else
                 {
