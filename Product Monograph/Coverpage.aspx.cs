@@ -67,10 +67,11 @@ namespace Product_Monograph
                 }
             }
             facilityResource();
+            Session["isClientLoadXmlFile"] = isClientXmlFile;
         }
         private bool ValidateXmlDoc()
         {
-       
+            //Session["isClientLoadXmlFile"] = null;
             try
             {
                 XmlDocument xmldoc = (XmlDocument)Session["draft"];
@@ -91,15 +92,17 @@ namespace Product_Monograph
                         isClientXmlFile = true;
                         return true;     //it is a xml file which was loaded by client 
                     }
-                        
+                   
                 }
+              
 
             }
             catch (XmlException e)
             {
                 lblError.Text = "No XMLDocument file to load: " + e.Message;  //project stops -- note by ching
                 return false;
-            }          
+            }
+        
         }
         private void LoadFromXML()
         {

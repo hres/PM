@@ -147,7 +147,7 @@ namespace Product_Monograph
                 {
                     if (doc != null)
                     {
-                        string xmlfilename = strBrandName + "xml";
+                        string xmlfilename = strBrandName + ".xml";
                         var zipEntry = zipArchive.CreateEntry(xmlfilename);
                         using (var originalFileStream = new MemoryStream(bytes))
                         {

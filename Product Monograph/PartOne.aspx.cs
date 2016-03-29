@@ -27,6 +27,7 @@ namespace Product_Monograph
         string strscript = string.Empty;
         string strBrandName = string.Empty;
         string strProperName = string.Empty;
+        bool isClientLoadXML = false;
         void Page_PreInit(Object sender, EventArgs e)
         {
             //retrieve culture information from session
@@ -46,6 +47,10 @@ namespace Product_Monograph
             {
                 strProperName = (String)Session["properName"];
             }
+            if (Session["isClientLoadXmlFile"] != null)
+            {
+                isClientLoadXML = (Boolean)Session["isClientLoadXmlFile"]; //get save state from Cover page
+            }
         }
 
         protected void Page_Load(object sender, EventArgs e)
@@ -56,12 +61,18 @@ namespace Product_Monograph
             {
                 try
                 {
-                    LoadFromXML();
+                
+                       LoadFromXML();
                 }
                 catch
                 {
                     lblError.Text = "Please load a new template or a previously saved draft.";
                 }
+            }
+            else
+            {
+                if(isClientLoadXML)
+                    LoadFromXML();
             }
             facilityResourcePart1();
         }
@@ -3176,6 +3187,8 @@ namespace Product_Monograph
         protected void btnSave_Click(object sender, EventArgs e)
         {
             SaveProcess();
+            isClientLoadXML = true;
+            Session["isClientLoadXmlFile"] = isClientLoadXML;
         }
 
         protected void menutabs_MenuItemClick(object sender, MenuEventArgs e)
