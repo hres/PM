@@ -40,13 +40,18 @@
     <warning>Monitoring and laboratory tests</warning>
     <warning>Neurologic</warning>  
     <warning>Nursing women</warning>
-    <warning>Ophthalmoli</warning>
+    <warning>Ophthalmologic</warning>
     <warning>Peri-Operative considerations</warning>
     <warning>Pregnant women</warning>
     <warning>Psychiatric</warning>
-    <warning>Pediatrics (x - y years of age)</warning>
+    <warning>Pediatrics (x-y years of age)</warning>
     <warning>Geriatrics (> x years of age)</warning> 
-    <warning>Special populations</warning>
+    <warning>Sensitivity/Resistance</warning>
+    <warning>Sexual Function/Reproduction</warning>
+    <warning>Skin</warning>
+    <warning>Special populations</warning>    
+    <warning>Renal</warning>
+    <warning>Respiratory</warning>
   </warningsprecautions>
   <schedulingsymbol>
     <schedule value="select"></schedule>

@@ -1,0 +1,60 @@
+﻿/* CSS Document */
+
+main div.wb-eqht section.media
+{
+	margin-top:0.5em;
+	margin-bottom:0.5em;
+}
+
+/* Start Removes the top margin for the highlight boxes for videos*/
+main section.sect-lnks div.wb-mltmd
+{
+	margin-top:0px;
+}
+/* End Removes the top margin for the highlight boxes for videos*/
+
+/* Start Link Glyphs */ /*main a[rel="external"]:before was removed */
+main a[href^="mailto:"]:before, main a[href$=".doc"]:before, main a[href$=".psd"]:before, main a[href$=".zip"]:before, main a[href$=".pdf"]:before, main a[href$=".xls"]:before, main a[href$=".xlt"]:before, main a[href$=".rtf"]:before, main a[href$=".txt"]:before
+{
+	font-family: 'Glyphicons Halflings';
+	color:#333;
+	text-decoration:none;
+	display: inline-block;
+	padding-right:0.3em;
+	-webkit-font-smoothing: antialiased;
+	-moz-osx-font-smoothing: grayscale;
+	line-height: 1;
+}
+
+main a[href^="mailto:"]:before { content: "\2709"; }
+/*main a[rel="external"]:before { content: "\e135"; }*/
+main a[href$=".doc"]:before { content: "\e142"; }
+main a[href$=".psd"]:before { content: "\e142"; }
+main a[href$=".zip"]:before { content: "\e142"; }
+main a[href$=".pdf"]:before { content: "\e142"; }
+main a[href$=".xls"]:before { content: "\e142"; }
+main a[href$=".xlt"]:before { content: "\e142"; }
+main a[href$=".rtf"]:before { content: "\e142"; }
+main a[href$=".txt"]:before { content: "\e142"; }
+
+
+/*main a.no-glyphicon:before{content: ""; padding-right:0px;}*/ /* class to remove glyph from links */ 
+div.container .bg-validator:before
+{
+	color:#FFF;
+	content: "Error";
+	text-decoration:none;
+	display: block;
+	position:relative;
+	padding:3px 5px 21px 5px;
+	bottom:0px;
+	-webkit-font-smoothing: antialiased;
+	-moz-osx-font-smoothing: grayscale;	
+	z-index:1;
+	background:url(/alt/images/common/validator.gif) left bottom no-repeat;
+}
+div.container .valContent:before { content: "Error: Needs proper text content!"; }
+div.container .valLinks1:before { content: "Error: Link doesn't go anywhere!"; }
+div.container .valImages1:before { content: "Error: Image stored in wrong location: /old/*"; }
+div.container .valImages2:before { content: "Error: Image is missing alt tag!"; }
+/* End Link Glyphs */

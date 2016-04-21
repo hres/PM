@@ -1,10 +1,14 @@
 ﻿using System;
+using System.Text;
+using System.Web;
 using System.Xml;
 
 namespace Product_Monograph.helpers
 {
     public class Processes
     {
+        public const string strXmlExtension = ".xml";
+        public const string strZipExtension = ".zip";
         public static void ValidateAndSave(XmlDocument doc, XmlNode rootnode, string element, string label, string textboxvalue, bool mandatory)
         {
             XmlNodeList xmlnode = doc.GetElementsByTagName(element);
@@ -46,6 +50,25 @@ namespace Product_Monograph.helpers
             }
         }
 
+        public static class ResourceHelpers
+        {
+            public static IHtmlString WrapTextBlockIntoParagraphs(string s)
+            {
+                if (s == null) return new HtmlString(string.Empty);
+
+                var blocks = s.Split(new string[] { "\r\n", "\n" },
+                                      StringSplitOptions.RemoveEmptyEntries);
+
+                StringBuilder htmlParagraphs = new StringBuilder();
+                foreach (string block in blocks)
+                {
+                    htmlParagraphs.Append("<p>" + block + "</p>");
+                }
+
+                return new HtmlString(htmlParagraphs.ToString());
+            }
+        }
+
         public static Object XMLDraft
         {
             get
@@ -68,5 +91,6 @@ namespace Product_Monograph.helpers
         }
 
         static string _xmppath;
+
     }
 }

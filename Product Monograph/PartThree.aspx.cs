@@ -11,321 +11,97 @@ using System.Threading;
 using System.Globalization;
 using System.Xml.Linq;
 using System.Web.UI;
+using Product_Monograph.helpers;
 
 namespace Product_Monograph
 {
-    public partial class PartThree : System.Web.UI.Page
+    public partial class PartThree : BasePage
     {
         string strscript = "";
-        string strBrandName = string.Empty;
-        string strProperName = string.Empty;
+
         void Page_PreInit(Object sender, EventArgs e)
         {
-            //retrieve culture information from session
-            string culture = Convert.ToString(Session["SelectedLanguage"]);
-            Thread.CurrentThread.CurrentUICulture = new CultureInfo(culture);
-
-            if (Session["masterpage"] != null)
+            if (!string.IsNullOrWhiteSpace(SessionHelper.Current.masterPage))
             {
-                this.MasterPageFile = (String)Session["masterpage"];
-
+                this.MasterPageFile = SessionHelper.Current.masterPage;
             }
-            if (Session["savedFilename"] != null)
+
+            if (this.lang.Equals("fr"))
             {
-                strBrandName = (String)Session["savedFilename"];
-        }
+                ((ProdMonoFr)Page.Master).pageTitleValue = Resources.Resource.partThree;
+            }
             else
-                strBrandName = "DraftPMForm";
-
-            if (Session["properName"] != null)
             {
-                strProperName = (String)Session["properName"];
+                ((ProdMono)Page.Master).pageTitleValue = Resources.Resource.partThree;
             }
         }
+
         protected void Page_Load(object sender, EventArgs e)
         {
-            lblError.Text = "";
 
             if (!IsPostBack)
             {
                 try
                 {
                     LoadFromXML();
-                }
-                catch (Exception err)
-                {
-                    lblError.Text = err.ToString();// "Please load a new template or a previously saved draft.";
-                }
-            }
-            
-            lblPartIII.Text = Resources.Resource.PartIII;
-            lblSumAbout.Text = Resources.Resource.Medication;
-            lblWHAT.Text = Resources.Resource.MedicationUse;
-            lblPointForm.Text = Resources.Resource.PointForm;
-            lblWHAT_IT_DOES.Text = Resources.Resource.WhatDoes;
-            lblWHEN_IT_SHOULD.Text = Resources.Resource.MedicationNotUsed;
-            lblWHAT_THE_MEDICINAL.Text = Resources.Resource.MedIngredient;
-            //lblProperNameMI.Text = Resources.Resource.ProperNameMI;
-            lblWHAT_THE_NONMEDICINAL.Text = Resources.Resource.NonMedicinalIng;
-            lblWHAT_DOSAGE.Text = Resources.Resource.DosageForm;
-            lblSumWarningsPrecautions.Text = Resources.Resource.SumWarningsPrecautions;
-            lblSeriousWarnings.Text = Resources.Resource.SeriousWarning;
-            lblSumInteractions.Text = Resources.Resource.SumInteractions;
-            lblInteractions.Text = Resources.Resource.Interactions;
-            lblSumProperUse.Text = Resources.Resource.SumProperUse;
-            lblUsualDose.Text = Resources.Resource.UsualDose;
-            lblOverdose.Text = Resources.Resource.OverDose;
-            lblMissedDose.Text= Resources.Resource.MissedDose;
-            lblSumSideEffect.Text= Resources.Resource.SumSideEffect;
-            lblSideEffect.Text = Resources.Resource.SideEffect;
-            lblSERIOUS.Text = Resources.Resource.SeriousSideEffect;
-            LblSymptom.Text = Resources.Resource.Symptom;
-            lblCommon.Text = Resources.Resource.Common;
-            lblUncommon.Text = Resources.Resource.Uncommon;
-            lblRare.Text = Resources.Resource.Rare;
-            lblVeryRare.Text = Resources.Resource.VeryRare;
-            lblUnkown.Text = Resources.Resource.Unkown;
-            lblSumStore.Text = Resources.Resource.SumStore;
-            lblHowToStore.Text = Resources.Resource.Store;
-            lblSumReporting.Text = Resources.Resource.SumReporting;
-            lblSumMoreInfo.Text = Resources.Resource.SumMoreInfo;
-            lblMoreInfo.Text = Resources.Resource.MoreInfo;
-            lblLastRevised.Text = Resources.Resource.LastRevised;
-            lblProperUse.Text = Resources.Resource.ProperUse;
-            lblReporting.Text = Resources.Resource.Reporting;
-            lblSideEffectsWhatToDo.Text = Resources.Resource.SideEffectsWhatToDo;
-            lblComment1.Text = Resources.Resource.Comment1;
-            lblComment2.Text = Resources.Resource.Comment2;
-            lblActivity.Text = Resources.Resource.Activity;
-            lblCondition.Text = Resources.Resource.Condition;
-            lblDiseases.Text = Resources.Resource.Diseases;
-            lblIssues.Text = Resources.Resource.Issues;
-            lblProcedure.Text = Resources.Resource.Procedure;
-            lblAllergy.Text = Resources.Resource.Allergy;
-            btnSaveDraftPart3.Text = Resources.Resource.btnSaveDraft;
-            btnSaveDraftPart3.ToolTip = Resources.Resource.btnSaveDraft_tooltip;
-            btnAddMedicationForItems.Text = Resources.Resource.btnAddExtraContraindications;
-            btnAddSeriousWarningsPrecautions.Text = Resources.Resource.btnAddExtraContraindications;
-            btnSeriousWarningsPrecautions.Text = Resources.Resource.btnRemoveVal;
-                       
-            //top menu
-            submenutabs.Items[0].Text = Resources.Resource.subMenuItem1;
-            submenutabs.Items[1].Text = Resources.Resource.subMenuItem2;
-            submenutabs.Items[2].Text = Resources.Resource.subMenuItem3;
-            submenutabs.Items[3].Text = Resources.Resource.subMenuItem4;
-            submenutabs.Items[4].Text = Resources.Resource.subMenuItem5;
-
-            submenutabs.Items[0].ToolTip = Resources.Resource.subMenuItem1_tooltip;
-            submenutabs.Items[1].ToolTip = Resources.Resource.subMenuItem2;
-            submenutabs.Items[2].ToolTip = Resources.Resource.subMenuItem3;
-            submenutabs.Items[3].ToolTip = Resources.Resource.subMenuItem4;
-            submenutabs.Items[4].ToolTip = Resources.Resource.subMenuItem5;
-            //bottom menu
-            submenutabsbottom.Items[0].Text = Resources.Resource.subMenuItem1;
-            submenutabsbottom.Items[1].Text = Resources.Resource.subMenuItem2;
-            submenutabsbottom.Items[2].Text = Resources.Resource.subMenuItem3;
-            submenutabsbottom.Items[3].Text = Resources.Resource.subMenuItem4;
-            submenutabsbottom.Items[4].Text = Resources.Resource.subMenuItem5;
-
-            submenutabsbottom.Items[0].ToolTip = Resources.Resource.subMenuItem1_tooltip;
-            submenutabsbottom.Items[1].ToolTip = Resources.Resource.subMenuItem2;
-            submenutabsbottom.Items[2].ToolTip = Resources.Resource.subMenuItem3;
-            submenutabsbottom.Items[3].ToolTip = Resources.Resource.subMenuItem4;
-            submenutabsbottom.Items[4].ToolTip = Resources.Resource.subMenuItem5;
-        }
-
-        private void SaveProcess()
-        {
-            XmlDocument doc = SaveInMemory();
-
-            #region zip
-            byte[] bytes = Encoding.Default.GetBytes(doc.OuterXml);
-
-            using (var compressedFileStream = new MemoryStream())
-            {
-                using (var zipArchive = new ZipArchive(compressedFileStream, ZipArchiveMode.Update, true))
-                {
-                    if (doc != null)
+                    if (!string.IsNullOrEmpty(SessionHelper.Current.brandName))
                     {
-                        string xmlfilename = strBrandName + ".xml";
-                        var zipEntry = zipArchive.CreateEntry(xmlfilename);
-                        using (var originalFileStream = new MemoryStream(bytes))
-                        {
-                            using (var zipEntryStream = zipEntry.Open())
-                            {
-                                originalFileStream.CopyTo(zipEntryStream);
-                            }
-                        }
+                        this.brandName.Text = SessionHelper.Current.brandName;
+                    }
+                    if (!string.IsNullOrEmpty(SessionHelper.Current.properName))
+                    {
+                        this.properName.Text = SessionHelper.Current.properName;
                     }
                 }
-
-                var buffer = compressedFileStream.ToArray();
-                Response.Clear();
-                Response.ClearContent();
-                Response.ClearHeaders();
-                if (buffer.Length > 0)
+                catch
                 {
-                    Response.ContentType = "application/zip";
-                    Response.BinaryWrite(buffer);
-                    var fileName = strBrandName + ".zip";
-                    Response.AddHeader("content-disposition", string.Format(@"attachment;filename=""{0}""", fileName));
-                    Response.Flush();
-                    Response.End();
+                  
                 }
             }
-            #endregion
-            
-            //StringWriter sw = new StringWriter();
-            //XmlTextWriter tx = new XmlTextWriter(sw);
-            //doc.WriteTo(tx);
-
-            //String FileName = "productionmonograph.xml";
-            //Response.ClearHeaders();
-            //Response.ClearContent();
-            //Response.Buffer = true;
-            //Response.AddHeader("content-disposition", "attachment; filename=" + FileName);
-            //Response.Write(sw.ToString());
-            //Response.End();
         }
+
 
         private void LoadFromXML()
         {
-            XmlDocument xmldoc = (XmlDocument)Session["draft"]; // helpers.Processes.XMLDraft;
+            XmlDocument xmldoc = SessionHelper.Current.draftForm;
             XDocument doc = XDocument.Parse(xmldoc.OuterXml);
 
-            //populate labels
-            XmlNodeList bpd = xmldoc.GetElementsByTagName("BrandProperDosage");
-            if (bpd.Count > 0)
-            {
-                #region BrandProperDosage
-                var rows = from row in doc.Root.Elements("BrandProperDosage").Descendants("row")
-                           select new
-                           {
-                               columns = from column in row.Elements("column")
-                                         select (string)column
-                           };
+            XmlNodeList WarningPrecausion = xmldoc.GetElementsByTagName("WarningPrecausion");
 
-                foreach (var row in rows)
+            #region WarningPrecausion
+            var rows = from row in doc.Root.Elements("WarningPrecausion").Descendants("row")
+                       select new
+                       {
+                           columns = from column in row.Elements("column")
+                                     select (string)column
+                       };
+
+            int rowcounter = 0;
+            foreach (var row in rows)
+            {
+                string[] colarray = "tbSeriousWarningsPrecautions".Split(';');
+                int colcounter = 0;
+                if (rowcounter == 0)
                 {
-                    //string[] colarray = "tbBrandName;tbProperName;tbDosageAndStrength".Split(';');
-                    //string[] colarray = "tbBrandName;tbProperName;tbDosage;tbStrength;tbUnitofMeasure".Split(';');
-                    string[] colarray = "tbBrandName;tbProperName;tbDosage;tbStrengthValue;tbStrengthUnit;tbStrengthperDosageValue;tbStrengthperDosageUnit".Split(';');
-                    int colcounter = 0;
                     foreach (string column in row.columns)
                     {
-                        if (colarray[colcounter].Equals("tbBrandName"))
-                        {
-                            lblBrandNameProprietary.Text = helpers.Processes.CleanString(column);
-                            lblBrandNameTbl.Text = helpers.Processes.CleanString(column);
-                            //lblBrandNameWP.Text = helpers.Processes.CleanString(column);
-                        }
-
-                        if (colarray[colcounter].Equals("tbProperName"))
-                        {
-                            lblProperName.Text = helpers.Processes.CleanString(column);
-                            lblProperNameMI.Text = helpers.Processes.CleanString(column);
-                        }
-
+                        strscript += "$('#" + colarray[colcounter] + "').val(\"" + helpers.Processes.CleanString(column) + "\");";
                         colcounter++;
                     }
-
-                    break;
                 }
-                #endregion
-            } 
-
-            XmlNodeList swp = xmldoc.GetElementsByTagName("MedicationIsUsedForItems");
-            if (swp.Count > 0)
-            {
-                #region Medication Is Used For Items
-                var rowsC = from rowcont in doc.Root.Elements("MedicationIsUsedForItems").Descendants("row")
-                            select new
-                            {
-                                columns = from column in rowcont.Elements("column")
-                                          select (string)column
-                            };
-
-                bool ranC = false;
-                int rowcounterC = 0;
-
-                foreach (var rowC in rowsC)
+                else
                 {
-                    if (!ranC)
+                    strscript += "AddSeriousWarningsPrecautions();";
+                    foreach (string column in row.columns)
                     {
-                        string[] colarray = "tbMedicationForItems".Split(';');
-                        int colcounter = 0;
-                        foreach (string columnC in rowC.columns)
-                        {
-                            strscript += "$('#" + colarray[colcounter] + rowcounterC.ToString() + "').val(\"" + helpers.Processes.CleanString(columnC) + "\");";
-                            colcounter++;
-                        }
-
-                        ranC = true;
+                        strscript += "$('#" + colarray[colcounter] + rowcounter.ToString() + "').val(\"" + helpers.Processes.CleanString(column) + "\");";
+                        colcounter++;
                     }
-                    else
-                    {
-                        strscript += "AddMedicationForItemsTextBox();";
-
-                        string[] colarray = "tbMedicationForItems".Split(';');
-                        int colcounter = 0;
-                        foreach (string columnC in rowC.columns)
-                        {
-                            strscript += "$('#" + colarray[colcounter] + rowcounterC.ToString() + "').val(\"" + helpers.Processes.CleanString(columnC) + "\");";
-                            colcounter++;
-                        }
-                    }
-
-                    rowcounterC++;
                 }
-                #endregion
+
+                rowcounter++;
             }
-
-            XmlNodeList mswp = xmldoc.GetElementsByTagName("MedicationSeriousWarningsPrecautions");
-            if (mswp.Count > 0)
-            {
-                #region Medication Serious Warnings Precautions
-                var rowsC = from rowcont in doc.Root.Elements("MedicationSeriousWarningsPrecautions").Descendants("row")
-                            select new
-                            {
-                                columns = from column in rowcont.Elements("column")
-                                          select (string)column
-                            };
-
-                bool ranC = false;
-                int rowcounterC = 0;
-
-                foreach (var rowC in rowsC)
-                {
-                    if (!ranC)
-                    {
-                        string[] colarray = "tbSeriousWarningsPrecautions".Split(';');
-                        int colcounter = 0;
-                        foreach (string columnC in rowC.columns)
-                        {
-                            strscript += "$('#" + colarray[colcounter] + rowcounterC.ToString() + "').val(\"" + helpers.Processes.CleanString(columnC) + "\");";
-                            colcounter++;
-                        }
-
-                        ranC = true;
-                    }
-                    else
-                    {
-                        strscript += "AddSeriousWarningsPrecautionsTextBox();";
-
-                        string[] colarray = "tbSeriousWarningsPrecautions".Split(';');
-                        int colcounter = 0;
-                        foreach (string columnC in rowC.columns)
-                        {
-                            strscript += "$('#" + colarray[colcounter] + rowcounterC.ToString() + "').val(\"" + helpers.Processes.CleanString(columnC) + "\");";
-                            colcounter++;
-                        }
-                    }
-
-                    rowcounterC++;
-                }
-                #endregion
-            }
-
+            #endregion
             XmlNodeList cse = xmldoc.GetElementsByTagName("CommonSideEffects");
             if (cse.Count > 0)
             {
@@ -355,9 +131,9 @@ namespace Product_Monograph
                             else
                             {
                                 if (columnC == "on")
-                                    strscript += "$('#" + colarray[colcounter] + rowcounterC.ToString() + "').attr(\"checked\",\"true\");";                               
-                            }                            
-                            
+                                    strscript += "$('#" + colarray[colcounter] + rowcounterC.ToString() + "').attr(\"checked\",\"true\");";
+                            }
+
                             colcounter++;
                         }
 
@@ -379,7 +155,7 @@ namespace Product_Monograph
                             {
                                 if (columnC == "on")
                                     strscript += "$('#" + colarray[colcounter] + rowcounterC.ToString() + "').attr(\"checked\",\"true\");";
-                            }  
+                            }
 
                             colcounter++;
                         }
@@ -420,18 +196,7 @@ namespace Product_Monograph
                             {
                                 if (columnC == "on")
                                     strscript += "$('#" + colarray[colcounter] + rowcounterC.ToString() + "').attr(\"checked\",\"true\");";
-                            } 
-
-                            //if (colarray[colcounter].Equals("tbUncommonSymptom"))
-                            //{
-                            //    strscript += "$('#" + colarray[colcounter] + rowcounterC.ToString() + "').val(\"" + helpers.Processes.CleanString(columnC) + "\");";
-                            //}
-                            //else
-                            //{
-                            //    if (columnC == "on")
-                            //        strscript += "$('#" + colarray[colcounter] + rowcounterC.ToString() + "').attr(\"checked\",\"true\");";
-                            //}
-
+                            }
                             colcounter++;
                         }
 
@@ -453,18 +218,7 @@ namespace Product_Monograph
                             {
                                 if (columnC == "on")
                                     strscript += "$('#" + colarray[colcounter] + rowcounterC.ToString() + "').attr(\"checked\",\"true\");";
-                            } 
-
-                            //if (colarray[colcounter].Equals("tbUncommonSymptom"))
-                            //{
-                            //    strscript += "$('#" + colarray[colcounter] + rowcounterC.ToString() + "').val(\"" + helpers.Processes.CleanString(columnC) + "\");";
-                            //}
-                            //else
-                            //{
-                            //    if (columnC == "on")
-                            //        strscript += "$('#" + colarray[colcounter] + rowcounterC.ToString() + "').attr(\"checked\",\"true\");";
-                            //}
-
+                            }
                             colcounter++;
                         }
                     }
@@ -504,18 +258,7 @@ namespace Product_Monograph
                             {
                                 if (columnC == "on")
                                     strscript += "$('#" + colarray[colcounter] + rowcounterC.ToString() + "').attr(\"checked\",\"true\");";
-                            } 
-
-                            //if (colarray[colcounter].Equals("tbRareSymptom"))
-                            //{
-                            //    strscript += "$('#" + colarray[colcounter] + rowcounterC.ToString() + "').val(\"" + helpers.Processes.CleanString(columnC) + "\");";
-                            //}
-                            //else
-                            //{
-                            //    if (columnC == "on")
-                            //        strscript += "$('#" + colarray[colcounter] + rowcounterC.ToString() + "').attr(\"checked\",\"true\");";
-                            //}
-
+                            }
                             colcounter++;
                         }
 
@@ -537,18 +280,7 @@ namespace Product_Monograph
                             {
                                 if (columnC == "on")
                                     strscript += "$('#" + colarray[colcounter] + rowcounterC.ToString() + "').attr(\"checked\",\"true\");";
-                            } 
-
-                            //if (colarray[colcounter].Equals("tbRareSymptom"))
-                            //{
-                            //    strscript += "$('#" + colarray[colcounter] + rowcounterC.ToString() + "').val(\"" + helpers.Processes.CleanString(columnC) + "\");";
-                            //}
-                            //else
-                            //{
-                            //    if (columnC == "on")
-                            //        strscript += "$('#" + colarray[colcounter] + rowcounterC.ToString() + "').attr(\"checked\",\"true\");";
-                            //}
-
+                            }
                             colcounter++;
                         }
                     }
@@ -589,17 +321,6 @@ namespace Product_Monograph
                                 if (columnC == "on")
                                     strscript += "$('#" + colarray[colcounter] + rowcounterC.ToString() + "').attr(\"checked\",\"true\");";
                             }
-
-                            //if (colarray[colcounter].Equals("tbVeryRareSymptom"))
-                            //{
-                            //    strscript += "$('#" + colarray[colcounter] + rowcounterC.ToString() + "').val(\"" + helpers.Processes.CleanString(columnC) + "\");";
-                            //}
-                            //else
-                            //{
-                            //    if (columnC == "on")
-                            //        strscript += "$('#" + colarray[colcounter] + rowcounterC.ToString() + "').attr(\"checked\",\"true\");";
-                            //}
-
                             colcounter++;
                         }
 
@@ -622,17 +343,6 @@ namespace Product_Monograph
                                 if (columnC == "on")
                                     strscript += "$('#" + colarray[colcounter] + rowcounterC.ToString() + "').attr(\"checked\",\"true\");";
                             }
-
-                            //if (colarray[colcounter].Equals("tbVeryRareSymptom"))
-                            //{
-                            //    strscript += "$('#" + colarray[colcounter] + rowcounterC.ToString() + "').val(\"" + helpers.Processes.CleanString(columnC) + "\");";
-                            //}
-                            //else
-                            //{
-                            //    if (columnC == "on")
-                            //        strscript += "$('#" + colarray[colcounter] + rowcounterC.ToString() + "').attr(\"checked\",\"true\");";
-                            //}
-
                             colcounter++;
                         }
                     }
@@ -674,16 +384,6 @@ namespace Product_Monograph
                                     strscript += "$('#" + colarray[colcounter] + rowcounterC.ToString() + "').attr(\"checked\",\"true\");";
                             }
 
-                            //if (colarray[colcounter].Equals("tbUnknownSymptom"))
-                            //{
-                            //    strscript += "$('#" + colarray[colcounter] + rowcounterC.ToString() + "').val(\"" + helpers.Processes.CleanString(columnC) + "\");";
-                            //}
-                            //else
-                            //{
-                            //    if (columnC == "on")
-                            //        strscript += "$('#" + colarray[colcounter] + rowcounterC.ToString() + "').attr(\"checked\",\"true\");";
-                            //}
-
                             colcounter++;
                         }
 
@@ -707,16 +407,6 @@ namespace Product_Monograph
                                     strscript += "$('#" + colarray[colcounter] + rowcounterC.ToString() + "').attr(\"checked\",\"true\");";
 
                             }
-                            //if (colarray[colcounter].Equals("tbUnknownSymptom"))
-                            //{
-                            //    strscript += "$('#" + colarray[colcounter] + rowcounterC.ToString() + "').val(\"" + helpers.Processes.CleanString(columnC) + "\");";
-                            //}
-                            //else
-                            //{
-                            //    if (columnC == "on")
-                            //        strscript += "$('#" + colarray[colcounter] + rowcounterC.ToString() + "').attr(\"checked\",\"true\");";
-                            //}
-
                             colcounter++;
                         }
                     }
@@ -725,115 +415,94 @@ namespace Product_Monograph
                 }
                 #endregion
             }
-            
+
+
+            //followings are elements under root node
             var xmldata = from item in doc.Elements("ProductMonographTemplate")
                           select new
                           {
-                              MedicationIsUsedFor = (string)item.Element("MedicationIsUsedFor"),
+                              MedicationFor = (string)item.Element("MedicationFor"),
                               MedicationDoes = (string)item.Element("MedicationDoes"),
                               MedicationNotUsed = (string)item.Element("MedicationNotUsed"),
                               MedicationIngredient = (string)item.Element("MedicationIngredient"),
                               MedicationNonmed = (string)item.Element("MedicationNonmed"),
                               MedicationDosageForm = (string)item.Element("MedicationDosageForm"),
-                              MedicationInteractionWithMed = (string)item.Element("MedicationInteractionWithMed"),
+
+                              InteractionWithMed = (string)item.Element("InteractionWithMed"),
 
                               ProperUseMed = (string)item.Element("ProperUseMed"),
-
+                              UsualDose = (string)item.Element("UsualDose"),
+                              Overdose = (string)item.Element("Overdose"),
+                              MissedDose = (string)item.Element("MissedDose"),
+                              SideEffects = (string)item.Element("SideEffects"),
+                              SideEffectsWhatToDo = (string)item.Element("SideEffectsWhatToDo"),
+                              HowToStore = (string)item.Element("HowToStore"),
+                              ReportingSuspectedSE = (string)item.Element("ReportingSuspectedSE"),
+                              MoreInformation = (string)item.Element("MoreInformation"),
+                              LastrRevised = (string)item.Element("LastrRevised"),
+                              Sponsorname = (string)item.Element("Sponsorname"),
+                              UsualDoseImageName = (string)item.Element("UsualDoseImageName"),
+                              UsualDoseImageData = (string)item.Element("UsualDoseImageData"),
+                              UsualDoseSymbol = (string)item.Element("UsualDoseSymbol"),
                               MedicationUsualDose = (string)item.Element("MedicationUsualDose"),
                               MedicationUsualDoseImagename = (string)item.Element("MedicationUsualDoseImagename"),
                               MedicationUsualDoseImagedata = (string)item.Element("MedicationUsualDoseImagedata"),
-
                               MedicationOverdose = (string)item.Element("MedicationOverdose"),
                               MedicationOverdoseImagename = (string)item.Element("MedicationOverdoseImagename"),
                               MedicationOverdoseImagedata = (string)item.Element("MedicationOverdoseImagedata"),
-
                               MedicationMissedDose = (string)item.Element("MedicationMissedDose"),
                               MedicationMissedDoseImagename = (string)item.Element("MedicationMissedDoseImagename"),
-                              MedicationMissedDoseImagedata = (string)item.Element("MedicationMissedDoseImagedata"),
-
-                              MedicationSideEffects = (string)item.Element("MedicationSideEffects"),
-
-                              TalkwithDocIfSever = (string)item.Element("TalkwithDocIfSever"),
-                              TalkwithDocAllCases = (string)item.Element("TalkwithDocAllCases"),
-                              Stoptakingdrug = (string)item.Element("Stoptakingdrug"),
-
-                              SideEffectsWhatToDo = (string)item.Element("SideEffectsWhatToDo"),
-
-                              MedicationHowToStore = (string)item.Element("MedicationHowToStore"),
-
-                              ReportingSuspectedSE = (string)item.Element("ReportingSuspectedSE"),
-
-                              MoreInformation = (string)item.Element("MoreInformation"),                              
-
-                              MedicationLastrRevised = (string)item.Element("MedicationLastrRevised"),           
-                   
-                              Sponsorname = (string)item.Element("Sponsorname")
+                              MedicationMissedDoseImagedata = (string)item.Element("MedicationMissedDoseImagedata")
                           };
 
             foreach (var xmldataitem in xmldata)
             {
-                tbMedicationForText.Value = xmldataitem.MedicationIsUsedFor;
-                tbMedicationDoes.Value = xmldataitem.MedicationDoes;
-                tbMedicationNotUsed.Value = xmldataitem.MedicationNotUsed;
-                tbMedicationIngredient.Value = xmldataitem.MedicationIngredient;
-                tbMedicationNonmed.Value = xmldataitem.MedicationNonmed;
-                tbMedicationDosageForm.Value = xmldataitem.MedicationDosageForm;
-                tbInteractionWithMed.Value = xmldataitem.MedicationInteractionWithMed;
+                if (tbMedicationForText.Value != xmldataitem.MedicationFor)
+                    tbMedicationForText.Value = xmldataitem.MedicationFor;
+                if (tbMedicationDoes.Value != xmldataitem.MedicationDoes)
+                    tbMedicationDoes.Value = xmldataitem.MedicationDoes;
+                if (tbMedicationNotUsed.Value != xmldataitem.MedicationNotUsed)
+                    tbMedicationNotUsed.Value = xmldataitem.MedicationNotUsed;
+                if (tbMedicationIngredient.Value != xmldataitem.MedicationIngredient)
+                    tbMedicationIngredient.Value = xmldataitem.MedicationIngredient;
+                if (tbMedicationNonmed.Value != xmldataitem.MedicationNonmed)
+                    tbMedicationNonmed.Value = xmldataitem.MedicationNonmed;
+                if (tbMedicationDosageForm.Value != xmldataitem.MedicationDosageForm)
+                    tbMedicationDosageForm.Value = xmldataitem.MedicationDosageForm;
+                if (tbInteractionWithMed.Value != xmldataitem.InteractionWithMed)
+                    tbInteractionWithMed.Value = xmldataitem.InteractionWithMed;
 
-                tbProperUseMed.Value = xmldataitem.ProperUseMed;
+                if (tbProperUseMed.Value != xmldataitem.ProperUseMed)
+                    tbProperUseMed.Value = xmldataitem.ProperUseMed;
+                if (tbUsualDose.Value != xmldataitem.UsualDose)
+                    tbUsualDose.Value = xmldataitem.UsualDose;
+                if (tbOverdose.Value != xmldataitem.Overdose)
+                    tbOverdose.Value = xmldataitem.Overdose;
+                if (tbMissedDose.Value != xmldataitem.MissedDose)
+                    tbMissedDose.Value = xmldataitem.MissedDose;
 
-                tbUsualDose.Value = xmldataitem.MedicationUsualDose;
-                strscript += "$('#fuimage0').attr('src', " + "'" + xmldataitem.MedicationUsualDoseImagedata + "');";
-                strscript += "$('#tbfuimagename0').val(\"" + xmldataitem.MedicationUsualDoseImagename + "\");";
-                strscript += "$('#tbfuimagebasesixtyfour0').val(\"" + xmldataitem.MedicationMissedDoseImagedata + "\");";  
+                if(tbSideEffects.Value != xmldataitem.SideEffects)
+                    tbSideEffects.Value = xmldataitem.SideEffects;
+                if (tbSideEffectsWhatToDo.Value != xmldataitem.SideEffectsWhatToDo)
+                    tbSideEffectsWhatToDo.Value = xmldataitem.SideEffectsWhatToDo;
 
-                if (xmldataitem.MedicationOverdose == null)
+                if (tbHowToStore.Value != xmldataitem.HowToStore)
+                    tbHowToStore.Value = xmldataitem.HowToStore;
+                if (tbReportingSuspectedSE.Value != xmldataitem.ReportingSuspectedSE)
+                    tbReportingSuspectedSE.Value = xmldataitem.ReportingSuspectedSE;
+                if (tbMoreInformation.Value != xmldataitem.MoreInformation)
+                    tbMoreInformation.Value = xmldataitem.MoreInformation;
+                if (tbLastrRevised.Text != xmldataitem.LastrRevised)
+                    tbLastrRevised.Text = xmldataitem.LastrRevised;
+                if (xmldataitem.Overdose == null)
                 {
                     tbOverdose.Value = "In case of drug overdose, contact a health care practitioner, hospital emergency department or regional Poison Control Centre immediately, even if there are no symptoms.";
                 }
                 else
                 {
-                    tbOverdose.Value = xmldataitem.MedicationOverdose;
+                    tbOverdose.Value = xmldataitem.Overdose;
                 }
-                strscript += "$('#fuimage1').attr('src', " + "'" + xmldataitem.MedicationOverdoseImagedata + "');";
-                strscript += "$('#tbfuimagename1').val(\"" + xmldataitem.MedicationOverdoseImagename + "\");";
-                strscript += "$('#tbfuimagebasesixtyfour1').val(\"" + xmldataitem.MedicationOverdoseImagedata + "\");";                
-
-                tbMissedDose.Value = xmldataitem.MedicationMissedDose;
-                strscript += "$('#fuimage2').attr('src', " + "'" + xmldataitem.MedicationMissedDoseImagedata + "');";
-                strscript += "$('#tbfuimagename2').val(\"" + xmldataitem.MedicationMissedDoseImagename + "\");";
-                strscript += "$('#tbfuimagebasesixtyfour2').val(\"" + xmldataitem.MedicationMissedDoseImagedata + "\");";    
-
-                tbSideEffects.Value = xmldataitem.MedicationSideEffects;
-
-                if (xmldataitem.TalkwithDocIfSever == null)
-                {
-                    tbTalkwithDocIfSever.Text = "Talk with your doctor only if sever";
-                }
-                else
-                {
-                    tbTalkwithDocIfSever.Text = xmldataitem.TalkwithDocIfSever;
-                }
-                if (xmldataitem.TalkwithDocAllCases == null)
-                {
-                    tbTalkwithDocAllCases.Text = "Talk with your doctor in all cases";
-                }
-                else
-                {
-                    tbTalkwithDocAllCases.Text = xmldataitem.TalkwithDocAllCases;
-                }
-                if (xmldataitem.Stoptakingdrug == null)
-                {
-                    tbStoptakingdrug.Text = "Stop taking drug";
-                }
-                else
-                {
-                    tbStoptakingdrug.Text = xmldataitem.Stoptakingdrug;
-                }
-
-                tbSideEffectsWhatToDo.Value = xmldataitem.SideEffectsWhatToDo;
-                tbHowToStore.Value = xmldataitem.MedicationHowToStore;
-                tbLastrRevised.Text = xmldataitem.MedicationLastrRevised;
+                
 
                 if (xmldataitem.ReportingSuspectedSE == null)
                 {
@@ -863,149 +532,143 @@ namespace Product_Monograph
                 {
                     tbMoreInformation.Value = xmldataitem.MoreInformation;
                 }
-                
+                strscript += "$('#fuimage0').attr('src', " + "'" + xmldataitem.MedicationUsualDoseImagedata + "');";
+                strscript += "$('#tbfuimagename0').val(\"" + xmldataitem.MedicationUsualDoseImagename + "\");";
+                strscript += "$('#tbfuimagebasesixtyfour0').val(\"" + xmldataitem.MedicationMissedDoseImagedata + "\");";
+                strscript += "$('#fuimage1').attr('src', " + "'" + xmldataitem.MedicationOverdoseImagedata + "');";
+                strscript += "$('#tbfuimagename1').val(\"" + xmldataitem.MedicationOverdoseImagename + "\");";
+                strscript += "$('#tbfuimagebasesixtyfour1').val(\"" + xmldataitem.MedicationOverdoseImagedata + "\");";
+                strscript += "$('#fuimage2').attr('src', " + "'" + xmldataitem.MedicationMissedDoseImagedata + "');";
+                strscript += "$('#tbfuimagename2').val(\"" + xmldataitem.MedicationMissedDoseImagename + "\");";
+                strscript += "$('#tbfuimagebasesixtyfour2').val(\"" + xmldataitem.MedicationMissedDoseImagedata + "\");";
             }
-
             ScriptManager.RegisterStartupScript(this.Page, this.GetType(), "LoadEventsScript", strscript.ToString(), true);
         }
 
         protected void btnSave_Click(object sender, EventArgs e)
         {
-            SaveProcess();
+            try
+            {
+                XmlDocument doc = SaveInMemory();
+                if (doc == null)
+                {
+                    return;
+                }
+                else
+                {
+                    if (!string.IsNullOrWhiteSpace(SessionHelper.Current.brandName))
+                    {
+                        var common = new helpers.Common(SessionHelper.Current.brandName);
+                        common.SaveXmlFile(doc);
+                        SessionHelper.Current.draftForm = doc;
+                    }
+                }
+            }
+            catch (Exception error)
+            {
+            }
         }
 
         private XmlDocument SaveInMemory()
         {
-            XmlDocument doc = (XmlDocument)Session["draft"]; // helpers.Processes.XMLDraft;
+            XmlDocument doc = SessionHelper.Current.draftForm;
             XmlNode rootnode = doc.SelectSingleNode("ProductMonographTemplate");
 
-            helpers.Processes.ValidateAndSave(doc, rootnode, "MedicationIsUsedFor", "", tbMedicationForText.Value, false);
+            #region AboutMedication
+            helpers.Processes.ValidateAndSave(doc, rootnode, "MedicationFor", "MedicationFor", tbMedicationForText.Value, true);
+            helpers.Processes.ValidateAndSave(doc, rootnode, "MedicationDoes", "MedicationDoes", tbMedicationDoes.Value, true);
+            helpers.Processes.ValidateAndSave(doc, rootnode, "MedicationNotUsed", " MedicationNotUsed", tbMedicationNotUsed.Value, true);
+            helpers.Processes.ValidateAndSave(doc, rootnode, "MedicationIngredient", "MedicationIngredient", tbMedicationIngredient.Value, true);
+            helpers.Processes.ValidateAndSave(doc, rootnode, "MedicationNonmed", "MedicationNonmed", tbMedicationNonmed.Value, true);
+            helpers.Processes.ValidateAndSave(doc, rootnode, "MedicationDosageForm", "MedicationDosageForm", tbMedicationDosageForm.Value, true);
+            #endregion
 
-            #region MEDICATION IS USED FOR
+            #region WarningPrecausion
             try
             {
-                XmlNodeList swp = doc.GetElementsByTagName("MedicationIsUsedForItems");
-
-                ArrayList swparray = new ArrayList();
-                if (HttpContext.Current.Request.Form.GetValues("tbMedicationForItems") != null)
+                XmlNodeList Warnings = doc.GetElementsByTagName("WarningPrecausion");
+                var tbSeriousWarningsPrecautions = new ArrayList();
+                
+                if (HttpContext.Current.Request.Form.GetValues("tbSeriousWarningsPrecautions") != null )
                 {
-                    foreach (string swpitem in HttpContext.Current.Request.Form.GetValues("tbMedicationForItems"))
+                    foreach (string item in HttpContext.Current.Request.Form.GetValues("tbSeriousWarningsPrecautions"))
                     {
-                        swparray.Add(swpitem);
-                    }
+                        tbSeriousWarningsPrecautions.Add(item);                    }
+                    
                 }
 
-                if (swp.Count < 1)
+                if (Warnings.Count < 1)
                 {
-                    XmlNode xnode = doc.CreateElement("MedicationIsUsedForItems");
+                    XmlNode xnode = doc.CreateElement("WarningPrecausion");
                     rootnode.AppendChild(xnode);
-
-                    for (int ar = 0; ar < swparray.Count; ar++)
+                    for (int ar = 0; ar < tbSeriousWarningsPrecautions.Count; ar++)
                     {
                         XmlNode subnode = doc.CreateElement("row");
                         xnode.AppendChild(subnode);
 
-                        string col1 = swparray[ar].ToString();
+                        string col1 = tbSeriousWarningsPrecautions[ar].ToString();
                         XmlNode subsubnode = doc.CreateElement("column");
                         subsubnode.AppendChild(doc.CreateTextNode(col1));
                         subnode.AppendChild(subsubnode);
+                        
                     }
                 }
                 else
                 {
-                    swp[0].RemoveAll();
-
-                    XmlNodeList xnode = doc.GetElementsByTagName("MedicationIsUsedForItems");
+                    Warnings[0].RemoveAll();
+                    XmlNodeList xnode = doc.GetElementsByTagName("WarningPrecausion");
                     rootnode.AppendChild(xnode[0]);
 
-                    for (int ar = 0; ar < swparray.Count; ar++)
+                    for (int ar = 0; ar < tbSeriousWarningsPrecautions.Count; ar++)
                     {
                         XmlNode subnode = doc.CreateElement("row");
                         xnode[0].AppendChild(subnode);
 
-                        string col1 = swparray[ar].ToString();
+                        string col1 = tbSeriousWarningsPrecautions[ar].ToString();
                         XmlNode subsubnode = doc.CreateElement("column");
                         subsubnode.AppendChild(doc.CreateTextNode(col1));
                         subnode.AppendChild(subsubnode);
+                       
                     }
                 }
             }
             catch (Exception error)
             {
-                lblError.Text = error.ToString();
                 return null;
             }
+            #endregion 
+
+            #region MedicationInteractions
+            helpers.Processes.ValidateAndSave(doc, rootnode, "InteractionWithMed", "InteractionWithMed", tbInteractionWithMed.Value, true);
             #endregion
 
-            helpers.Processes.ValidateAndSave(doc, rootnode, "MedicationDoes", "", tbMedicationDoes.Value, false);
-            helpers.Processes.ValidateAndSave(doc, rootnode, "MedicationNotUsed", "", tbMedicationNotUsed.Value, false);
-            helpers.Processes.ValidateAndSave(doc, rootnode, "MedicationIngredient", "", tbMedicationIngredient.Value, false);
-            helpers.Processes.ValidateAndSave(doc, rootnode, "MedicationNonmed", "", tbMedicationNonmed.Value, false);
-            helpers.Processes.ValidateAndSave(doc, rootnode, "MedicationDosageForm", "", tbMedicationDosageForm.Value, false);
-
-            #region MEDICATION Serious Warnings Precautions
-            try
-            {
-                XmlNodeList swp = doc.GetElementsByTagName("MedicationSeriousWarningsPrecautions");
-
-                ArrayList swparray = new ArrayList();
-                if (HttpContext.Current.Request.Form.GetValues("tbSeriousWarningsPrecautions") != null)
-                {
-                    foreach (string swpitem in HttpContext.Current.Request.Form.GetValues("tbSeriousWarningsPrecautions"))
-                    {
-                        swparray.Add(swpitem);
-                    }
-                }
-
-                if (swp.Count < 1)
-                {
-                    XmlNode xnode = doc.CreateElement("MedicationSeriousWarningsPrecautions");
-                    rootnode.AppendChild(xnode);
-
-                    for (int ar = 0; ar < swparray.Count; ar++)
-                    {
-                        XmlNode subnode = doc.CreateElement("row");
-                        xnode.AppendChild(subnode);
-
-                        string col1 = swparray[ar].ToString();
-                        XmlNode subsubnode = doc.CreateElement("column");
-                        subsubnode.AppendChild(doc.CreateTextNode(col1));
-                        subnode.AppendChild(subsubnode);
-                    }
-                }
-                else
-                {
-                    swp[0].RemoveAll();
-
-                    XmlNodeList xnode = doc.GetElementsByTagName("MedicationSeriousWarningsPrecautions");
-                    rootnode.AppendChild(xnode[0]);
-
-                    for (int ar = 0; ar < swparray.Count; ar++)
-                    {
-                        XmlNode subnode = doc.CreateElement("row");
-                        xnode[0].AppendChild(subnode);
-
-                        string col1 = swparray[ar].ToString();
-                        XmlNode subsubnode = doc.CreateElement("column");
-                        subsubnode.AppendChild(doc.CreateTextNode(col1));
-                        subnode.AppendChild(subsubnode);
-                    }
-                }
-            }
-            catch (Exception error)
-            {
-                lblError.Text = error.ToString();
-                return null;
-            }
+            #region ProperUseMedication
+            helpers.Processes.ValidateAndSave(doc, rootnode, "ProperUseMed", "ProperUseMed", tbProperUseMed.Value, true);
+            helpers.Processes.ValidateAndSave(doc, rootnode, "UsualDose", "UsualDose", tbUsualDose.Value, true);
+           
+            helpers.Processes.ValidateAndSave(doc, rootnode, "Overdose", "Overdose", tbOverdose.Value, true);
+            helpers.Processes.ValidateAndSave(doc, rootnode, "MissedDose", "MissedDose", tbMissedDose.Value, true);
             #endregion
 
-            helpers.Processes.ValidateAndSave(doc, rootnode, "MedicationInteractionWithMed", "", tbInteractionWithMed.Value, false);
+            #region  SideEffects
+            helpers.Processes.ValidateAndSave(doc, rootnode, "SideEffects", "SideEffects", tbSideEffects.Value, true);
+            helpers.Processes.ValidateAndSave(doc, rootnode, "SideEffectsWhatToDo", "SideEffectsWhatToDo", tbSideEffectsWhatToDo.Value, true);
 
+            #endregion
 
-            helpers.Processes.ValidateAndSave(doc, rootnode, "ProperUseMed", "", tbProperUseMed.Value, false);
+            #region  HowToStore
+            helpers.Processes.ValidateAndSave(doc, rootnode, "HowToStore", "HowToStore", tbHowToStore.Value, true);
+            #endregion
+            
+            #region  Reporting
+            helpers.Processes.ValidateAndSave(doc, rootnode, "ReportingSuspectedSE", "ReportingSuspectedSE", tbReportingSuspectedSE.Value, true);
+            #endregion
 
-            #region UsualDose
-            helpers.Processes.ValidateAndSave(doc, rootnode, "MedicationUsualDose", "", tbUsualDose.Value, false);
+            #region MoreInfo
+            helpers.Processes.ValidateAndSave(doc, rootnode, "MoreInformation", "MoreInformation", tbMoreInformation.Value, true);
+            helpers.Processes.ValidateAndSave(doc, rootnode, "LastrRevised", "LastrRevised", tbLastrRevised.Text, true);
+            #endregion
+
             ArrayList namearrayUsualDose = new ArrayList();
             ArrayList imagearrayUsualDose = new ArrayList();
             if (HttpContext.Current.Request.Form.GetValues("tbfuimagename0") != null &&
@@ -1020,12 +683,6 @@ namespace Product_Monograph
                     imagearrayUsualDose.Add(dosageitem);
                 }
             }
-            helpers.Processes.ValidateAndSave(doc, rootnode, "MedicationUsualDoseImagename", "", namearrayUsualDose[0].ToString(), false);
-            helpers.Processes.ValidateAndSave(doc, rootnode, "MedicationUsualDoseImagedata", "", imagearrayUsualDose[0].ToString(), false);
-            #endregion
-
-            #region MissedDose
-            helpers.Processes.ValidateAndSave(doc, rootnode, "MedicationOverdose", "", tbOverdose.Value, false);
             ArrayList namearrayOverdose = new ArrayList();
             ArrayList imagearrayOverdose = new ArrayList();
             if (HttpContext.Current.Request.Form.GetValues("tbfuimagename1") != null &&
@@ -1040,12 +697,6 @@ namespace Product_Monograph
                     imagearrayOverdose.Add(dosageitem);
                 }
             }
-            helpers.Processes.ValidateAndSave(doc, rootnode, "MedicationOverdoseImagename", "", namearrayOverdose[0].ToString(), false);
-            helpers.Processes.ValidateAndSave(doc, rootnode, "MedicationOverdoseImagedata", "", imagearrayOverdose[0].ToString(), false);
-            #endregion
-
-            #region MissedDose
-            helpers.Processes.ValidateAndSave(doc, rootnode, "MedicationMissedDose", "", tbMissedDose.Value, false);
             ArrayList namearrayMissedDose = new ArrayList();
             ArrayList imagearrayMissedDose = new ArrayList();
             if (HttpContext.Current.Request.Form.GetValues("tbfuimagename2") != null &&
@@ -1060,15 +711,13 @@ namespace Product_Monograph
                     imagearrayMissedDose.Add(dosageitem);
                 }
             }
+            helpers.Processes.ValidateAndSave(doc, rootnode, "MedicationUsualDoseImagename", "", namearrayUsualDose[0].ToString(), false);
+            helpers.Processes.ValidateAndSave(doc, rootnode, "MedicationUsualDoseImagedata", "", imagearrayUsualDose[0].ToString(), false);
+            helpers.Processes.ValidateAndSave(doc, rootnode, "MedicationOverdoseImagename", "", namearrayOverdose[0].ToString(), false);
+            helpers.Processes.ValidateAndSave(doc, rootnode, "MedicationOverdoseImagedata", "", imagearrayOverdose[0].ToString(), false);
             helpers.Processes.ValidateAndSave(doc, rootnode, "MedicationMissedDoseImagename", "", namearrayMissedDose[0].ToString(), false);
             helpers.Processes.ValidateAndSave(doc, rootnode, "MedicationMissedDoseImagedata", "", imagearrayMissedDose[0].ToString(), false);
-            #endregion
 
-            helpers.Processes.ValidateAndSave(doc, rootnode, "MedicationSideEffects", "", tbSideEffects.Value, false);
-
-            helpers.Processes.ValidateAndSave(doc, rootnode, "TalkwithDocIfSever", "", tbTalkwithDocIfSever.Text, false);
-            helpers.Processes.ValidateAndSave(doc, rootnode, "TalkwithDocAllCases", "", tbTalkwithDocAllCases.Text, false);
-            helpers.Processes.ValidateAndSave(doc, rootnode, "Stoptakingdrug", "", tbStoptakingdrug.Text, false);
 
             #region Common SideEffects
             try
@@ -1174,17 +823,6 @@ namespace Product_Monograph
                             subsubnode.AppendChild(doc.CreateTextNode(col1));
                             subnode.AppendChild(subsubnode);
 
-
-                            ////if this bombs, this row does not exist. therefore, don't need to check cb's
-                            //string col1 = Request.Form["tbCommonSymptom" + r.ToString()].ToString();
-
-                            //XmlNode subnode = doc.CreateElement("row");
-                            //xnode[0].AppendChild(subnode);
-
-                            //XmlNode subsubnode = doc.CreateElement("column");
-                            //subsubnode.AppendChild(doc.CreateTextNode(col1));
-                            //subnode.AppendChild(subsubnode);
-
                             try
                             {
                                 //if this bombs (after passing tb above, it means the cb is not checked, Request.Form is empty null.
@@ -1236,7 +874,6 @@ namespace Product_Monograph
             }
             catch (Exception error)
             {
-                lblError.Text = error.ToString();
                 return null;
             }
             #endregion
@@ -1270,16 +907,6 @@ namespace Product_Monograph
                             subsubnode.AppendChild(doc.CreateTextNode(col1));
                             subnode.AppendChild(subsubnode);
 
-
-                            ////if this bombs, this row does not exist. therefore, don't need to check cb's
-                            //string col1 = Request.Form["tbUncommonSymptom" + r.ToString()].ToString();
-
-                            //XmlNode subnode = doc.CreateElement("row");
-                            //xnode.AppendChild(subnode);
-
-                            //XmlNode subsubnode = doc.CreateElement("column");
-                            //subsubnode.AppendChild(doc.CreateTextNode(col1));
-                            //subnode.AppendChild(subsubnode);
                             try
                             {
                                 //if this bombs (after passing tb above, it means the cb is not checked, Request.Form is empty null.
@@ -1354,17 +981,6 @@ namespace Product_Monograph
                             subsubnode.AppendChild(doc.CreateTextNode(col1));
                             subnode.AppendChild(subsubnode);
 
-
-                            ////if this bombs, this row does not exist. therefore, don't need to check cb's
-                            //string col1 = Request.Form["tbUncommonSymptom" + r.ToString()].ToString();
-
-                            //XmlNode subnode = doc.CreateElement("row");
-                            //xnode[0].AppendChild(subnode);
-
-                            //XmlNode subsubnode = doc.CreateElement("column");
-                            //subsubnode.AppendChild(doc.CreateTextNode(col1));
-                            //subnode.AppendChild(subsubnode);
-
                             try
                             {
                                 //if this bombs (after passing tb above, it means the cb is not checked, Request.Form is empty null.
@@ -1416,7 +1032,6 @@ namespace Product_Monograph
             }
             catch (Exception error)
             {
-                lblError.Text = error.ToString();
                 return null;
             }
             #endregion
@@ -1449,16 +1064,6 @@ namespace Product_Monograph
                             subsubnode = doc.CreateElement("column");
                             subsubnode.AppendChild(doc.CreateTextNode(col1));
                             subnode.AppendChild(subsubnode);
-
-                            ////if this bombs, this row does not exist. therefore, don't need to check cb's
-                            //string col1 = Request.Form["tbRareSymptom" + r.ToString()].ToString();
-
-                            //XmlNode subnode = doc.CreateElement("row");
-                            //xnode.AppendChild(subnode);
-
-                            //XmlNode subsubnode = doc.CreateElement("column");
-                            //subsubnode.AppendChild(doc.CreateTextNode(col1));
-                            //subnode.AppendChild(subsubnode);
                             try
                             {
                                 //if this bombs (after passing tb above, it means the cb is not checked, Request.Form is empty null.
@@ -1593,7 +1198,6 @@ namespace Product_Monograph
             }
             catch (Exception error)
             {
-                lblError.Text = error.ToString();
                 return null;
             }
             #endregion
@@ -1626,17 +1230,6 @@ namespace Product_Monograph
                             subsubnode = doc.CreateElement("column");
                             subsubnode.AppendChild(doc.CreateTextNode(col1));
                             subnode.AppendChild(subsubnode);
-
-
-                            ////if this bombs, this row does not exist. therefore, don't need to check cb's
-                            //string col1 = Request.Form["tbVeryRareSymptom" + r.ToString()].ToString();
-
-                            //XmlNode subnode = doc.CreateElement("row");
-                            //xnode.AppendChild(subnode);
-
-                            //XmlNode subsubnode = doc.CreateElement("column");
-                            //subsubnode.AppendChild(doc.CreateTextNode(col1));
-                            //subnode.AppendChild(subsubnode);
 
                             try
                             {
@@ -1772,7 +1365,6 @@ namespace Product_Monograph
             }
             catch (Exception error)
             {
-                lblError.Text = error.ToString();
                 return null;
             }
             #endregion
@@ -1805,16 +1397,6 @@ namespace Product_Monograph
                             subsubnode = doc.CreateElement("column");
                             subsubnode.AppendChild(doc.CreateTextNode(col1));
                             subnode.AppendChild(subsubnode);
-
-                            ////if this bombs, this row does not exist. therefore, don't need to check cb's
-                            //string col1 = Request.Form["tbUnknownSymptom" + r.ToString()].ToString();
-
-                            //XmlNode subnode = doc.CreateElement("row");
-                            //xnode.AppendChild(subnode);
-
-                            //XmlNode subsubnode = doc.CreateElement("column");
-                            //subsubnode.AppendChild(doc.CreateTextNode(col1));
-                            //subnode.AppendChild(subsubnode);
 
                             try
                             {
@@ -1888,17 +1470,6 @@ namespace Product_Monograph
                             subsubnode = doc.CreateElement("column");
                             subsubnode.AppendChild(doc.CreateTextNode(col1));
                             subnode.AppendChild(subsubnode);
-
-
-                            ////if this bombs, this row does not exist. therefore, don't need to check cb's
-                            //string col1 = Request.Form["tbUnknownSymptom" + r.ToString()].ToString();
-
-                            //XmlNode subnode = doc.CreateElement("row");
-                            //xnode[0].AppendChild(subnode);
-
-                            //XmlNode subsubnode = doc.CreateElement("column");
-                            //subsubnode.AppendChild(doc.CreateTextNode(col1));
-                            //subnode.AppendChild(subsubnode);
                             try
                             {
                                 //if this bombs (after passing tb above, it means the cb is not checked, Request.Form is empty null.
@@ -1950,45 +1521,14 @@ namespace Product_Monograph
             }
             catch (Exception error)
             {
-                lblError.Text = error.ToString();
                 return null;
             }
             #endregion
 
-            helpers.Processes.ValidateAndSave(doc, rootnode, "SideEffectsWhatToDo", "", tbSideEffectsWhatToDo.Value, false);
-
-            helpers.Processes.ValidateAndSave(doc, rootnode, "MedicationHowToStore", "", tbHowToStore.Value, false);
-
-            helpers.Processes.ValidateAndSave(doc, rootnode, "ReportingSuspectedSE", "", tbReportingSuspectedSE.Value, false);
-
-            helpers.Processes.ValidateAndSave(doc, rootnode, "MoreInformation", "", tbMoreInformation.Value, false);
-
-            string tbLastrRevisedVal = Request.Form[tbLastrRevised.UniqueID];
-            helpers.Processes.ValidateAndSave(doc, rootnode, "MedicationLastrRevised", "", tbLastrRevisedVal, false);
-
-            //helpers.Processes.XMLDraft = doc;
-            Session["draft"] = doc;
-
+            SessionHelper.Current.draftForm = doc;
             return doc;
-        }
-
-        protected void menutabs_MenuItemClick(object sender, MenuEventArgs e)
-        {
-            SaveInMemory();
-            Response.Redirect(submenutabs.SelectedValue + ".aspx");
-        }
-
-        protected void submenutabsbottom_MenuItemClick(object sender, MenuEventArgs e)
-        {
-            SaveInMemory();
-            Response.Redirect(submenutabsbottom.SelectedValue + ".aspx");
         }
     }
 }
 
-    //<section style="width:100%; padding-left: 0px; padding-bottom: 10px; clear:both;">        
-    //    <asp:Label ID="Label3" runat="server">
-    //        BEFORE you use &nbsp;
-    //        <asp:Label ID="lblBrandNameWP" runat="server">BRAND NAME</asp:Label>
-    //        &nbsp; talk to your doctor or pharmacist if:</asp:Label>
-    //</section> 
+   

@@ -13,499 +13,184 @@ namespace Product_Monograph {
     public partial class PartOne {
         
         /// <summary>
-        /// submenutabs control.
+        /// ScriptManager1 control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Menu submenutabs;
+        protected global::System.Web.UI.ScriptManager ScriptManager1;
         
         /// <summary>
-        /// btnSaveDraftPart1 control.
+        /// brandName control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Button btnSaveDraftPart1;
+        protected global::System.Web.UI.WebControls.Literal brandName;
         
         /// <summary>
-        /// lblError control.
+        /// properName control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label lblError;
+        protected global::System.Web.UI.WebControls.Literal properName;
         
         /// <summary>
-        /// lblPartITitle control.
+        /// btnSaveDraft control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label lblPartITitle;
+        protected global::System.Web.UI.WebControls.Button btnSaveDraft;
         
         /// <summary>
-        /// lblProprietaryBrandName control.
+        /// tbbrandName control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label lblProprietaryBrandName;
+        protected global::System.Web.UI.HtmlControls.HtmlTextArea tbbrandName;
         
         /// <summary>
-        /// lblProperName control.
+        /// tbGeriatricsAge control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label lblProperName;
+        protected global::System.Web.UI.HtmlControls.HtmlInputGenericControl tbGeriatricsAge;
         
         /// <summary>
-        /// SumSummaryProductInformation control.
+        /// tbGeriatrics control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlGenericControl SumSummaryProductInformation;
+        protected global::System.Web.UI.HtmlControls.HtmlTextArea tbGeriatrics;
         
         /// <summary>
-        /// lblRouteOfAdministration control.
+        /// tbPediatricsAgeX control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label lblRouteOfAdministration;
+        protected global::System.Web.UI.HtmlControls.HtmlInputGenericControl tbPediatricsAgeX;
         
         /// <summary>
-        /// lblDosageForm control.
+        /// tbPediatricsAgeY control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label lblDosageForm;
+        protected global::System.Web.UI.HtmlControls.HtmlInputGenericControl tbPediatricsAgeY;
         
         /// <summary>
-        /// lblStrength control.
+        /// tbPediatricsAgeZ control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label lblStrength;
+        protected global::System.Web.UI.HtmlControls.HtmlInputGenericControl tbPediatricsAgeZ;
         
         /// <summary>
-        /// lblClinicallyRelevantNonmedicinalIngredients control.
+        /// tbPediatrics control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label lblClinicallyRelevantNonmedicinalIngredients;
+        protected global::System.Web.UI.HtmlControls.HtmlTextArea tbPediatrics;
         
         /// <summary>
-        /// SUM_INDICATIONS control.
+        /// tbAdditionalwarnings control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlGenericControl SUM_INDICATIONS;
+        protected global::System.Web.UI.HtmlControls.HtmlTextArea tbAdditionalwarnings;
         
         /// <summary>
-        /// lblBrandName control.
+        /// tbAdverseReactions control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label lblBrandName;
+        protected global::System.Web.UI.HtmlControls.HtmlTextArea tbAdverseReactions;
         
         /// <summary>
-        /// lblICProperName control.
+        /// tbSeriousDrugInteractions control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label lblICProperName;
+        protected global::System.Web.UI.HtmlControls.HtmlTextArea tbSeriousDrugInteractions;
         
         /// <summary>
-        /// lblIsIndicatedFor control.
+        /// tbDrugInteractions control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label lblIsIndicatedFor;
+        protected global::System.Web.UI.HtmlControls.HtmlTextArea tbDrugInteractions;
         
         /// <summary>
-        /// tbBrandNameIndicatedFor control.
+        /// tbDosageAdjustment control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlTextArea tbBrandNameIndicatedFor;
+        protected global::System.Web.UI.HtmlControls.HtmlTextArea tbDosageAdjustment;
         
         /// <summary>
-        /// lblGeriatrics control.
+        /// tbDosageMissed control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label lblGeriatrics;
+        protected global::System.Web.UI.HtmlControls.HtmlTextArea tbDosageMissed;
         
         /// <summary>
-        /// tbGeriatricXvalue control.
+        /// tbDosageAdministration control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlInputGenericControl tbGeriatricXvalue;
+        protected global::System.Web.UI.HtmlControls.HtmlTextArea tbDosageAdministration;
         
         /// <summary>
-        /// lblYearsOfAge control.
+        /// tbDosageReconstitution control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label lblYearsOfAge;
+        protected global::System.Web.UI.HtmlControls.HtmlTextArea tbDosageReconstitution;
         
         /// <summary>
-        /// tbICUGeriatrics control.
+        /// tbDosageOral control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlTextArea tbICUGeriatrics;
-        
-        /// <summary>
-        /// lblPediatrics control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Label lblPediatrics;
-        
-        /// <summary>
-        /// tbPediatricsXvalue control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlInputGenericControl tbPediatricsXvalue;
-        
-        /// <summary>
-        /// tbPediatricsYvalue control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlInputGenericControl tbPediatricsYvalue;
-        
-        /// <summary>
-        /// lblYearsOfAgeOr control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Label lblYearsOfAgeOr;
-        
-        /// <summary>
-        /// tbYrsofAgeValue control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlInputGenericControl tbYrsofAgeValue;
-        
-        /// <summary>
-        /// lblYearsOfAge2 control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Label lblYearsOfAge2;
-        
-        /// <summary>
-        /// tbICUPediatrics control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlTextArea tbICUPediatrics;
-        
-        /// <summary>
-        /// SUM_CONTRAINDICATIONS control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlGenericControl SUM_CONTRAINDICATIONS;
-        
-        /// <summary>
-        /// lblContraindications control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Label lblContraindications;
-        
-        /// <summary>
-        /// SUM_WARNINGS control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlGenericControl SUM_WARNINGS;
-        
-        /// <summary>
-        /// lblSerious control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Label lblSerious;
-        
-        /// <summary>
-        /// lblHeadings control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Label lblHeadings;
-        
-        /// <summary>
-        /// lblAdditional control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Label lblAdditional;
-        
-        /// <summary>
-        /// tbAdditionalWarning control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlTextArea tbAdditionalWarning;
-        
-        /// <summary>
-        /// SUM_ADVERSE control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlGenericControl SUM_ADVERSE;
-        
-        /// <summary>
-        /// lblAdverse control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Label lblAdverse;
-        
-        /// <summary>
-        /// tbAdverseDrugReactOverview control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlTextArea tbAdverseDrugReactOverview;
-        
-        /// <summary>
-        /// SUM_DRUG_INTERACTIONS control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlGenericControl SUM_DRUG_INTERACTIONS;
-        
-        /// <summary>
-        /// lblOverview control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Label lblOverview;
-        
-        /// <summary>
-        /// tbDrugInteractionsOverview control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlTextArea tbDrugInteractionsOverview;
-        
-        /// <summary>
-        /// SUM_DOSAGE control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlGenericControl SUM_DOSAGE;
-        
-        /// <summary>
-        /// lblDosing control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Label lblDosing;
-        
-        /// <summary>
-        /// lblRecommended control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Label lblRecommended;
-        
-        /// <summary>
-        /// tbRecommendedDose control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlTextArea tbRecommendedDose;
-        
-        /// <summary>
-        /// lblMissed control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Label lblMissed;
-        
-        /// <summary>
-        /// tbMissedDose control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlTextArea tbMissedDose;
-        
-        /// <summary>
-        /// lblAdministration control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Label lblAdministration;
-        
-        /// <summary>
-        /// tbAdministration control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlTextArea tbAdministration;
-        
-        /// <summary>
-        /// lblReconstitution control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Label lblReconstitution;
-        
-        /// <summary>
-        /// lblOral control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Label lblOral;
-        
-        /// <summary>
-        /// tbOralSolutions control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlTextArea tbOralSolutions;
-        
-        /// <summary>
-        /// lblParenteralProducts control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Label lblParenteralProducts;
-        
-        /// <summary>
-        /// lblAnySpecific control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Label lblAnySpecific;
-        
-        /// <summary>
-        /// SUM_OVERDOSAGE control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlGenericControl SUM_OVERDOSAGE;
-        
-        /// <summary>
-        /// lblOverdosage control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Label lblOverdosage;
+        protected global::System.Web.UI.HtmlControls.HtmlTextArea tbDosageOral;
         
         /// <summary>
         /// tbOverdosage control.
@@ -517,67 +202,13 @@ namespace Product_Monograph {
         protected global::System.Web.UI.HtmlControls.HtmlTextArea tbOverdosage;
         
         /// <summary>
-        /// lblForManagement control.
+        /// tbMechanismAction control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label lblForManagement;
-        
-        /// <summary>
-        /// lblForAnti control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Label lblForAnti;
-        
-        /// <summary>
-        /// tbAntiInfectiveDescription control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlTextArea tbAntiInfectiveDescription;
-        
-        /// <summary>
-        /// SUM_ACTION control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlGenericControl SUM_ACTION;
-        
-        /// <summary>
-        /// lblMechanism control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Label lblMechanism;
-        
-        /// <summary>
-        /// tbMechanismOfAction control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlTextArea tbMechanismOfAction;
-        
-        /// <summary>
-        /// lblPharmacodynamics control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Label lblPharmacodynamics;
+        protected global::System.Web.UI.HtmlControls.HtmlTextArea tbMechanismAction;
         
         /// <summary>
         /// tbPharmacodynamics control.
@@ -589,58 +220,13 @@ namespace Product_Monograph {
         protected global::System.Web.UI.HtmlControls.HtmlTextArea tbPharmacodynamics;
         
         /// <summary>
-        /// lblPHARMACOKINETICS control.
+        /// tbSpecialPopulationsConditions control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label lblPHARMACOKINETICS;
-        
-        /// <summary>
-        /// SUM_Special_Popu_Condition control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlGenericControl SUM_Special_Popu_Condition;
-        
-        /// <summary>
-        /// lblSpecialPopuCondition control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Label lblSpecialPopuCondition;
-        
-        /// <summary>
-        /// tbSpecialPopuCondition control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlTextArea tbSpecialPopuCondition;
-        
-        /// <summary>
-        /// SUM_STORAGE control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlGenericControl SUM_STORAGE;
-        
-        /// <summary>
-        /// lblStorage control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Label lblStorage;
+        protected global::System.Web.UI.HtmlControls.HtmlTextArea tbSpecialPopulationsConditions;
         
         /// <summary>
         /// tbStorageStability control.
@@ -652,24 +238,6 @@ namespace Product_Monograph {
         protected global::System.Web.UI.HtmlControls.HtmlTextArea tbStorageStability;
         
         /// <summary>
-        /// SUM_SPECIAL_HANDLING control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlGenericControl SUM_SPECIAL_HANDLING;
-        
-        /// <summary>
-        /// lblSpecialHandling control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Label lblSpecialHandling;
-        
-        /// <summary>
         /// tbSpecialHandling control.
         /// </summary>
         /// <remarks>
@@ -679,129 +247,12 @@ namespace Product_Monograph {
         protected global::System.Web.UI.HtmlControls.HtmlTextArea tbSpecialHandling;
         
         /// <summary>
-        /// SUM_DOSAGEFORMS control.
+        /// tbDosageCompositionPackaging control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlGenericControl SUM_DOSAGEFORMS;
-        
-        /// <summary>
-        /// lblDosageForms control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Label lblDosageForms;
-        
-        /// <summary>
-        /// tbDosageFormsComposition control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlTextArea tbDosageFormsComposition;
-        
-        /// <summary>
-        /// submenutabsbottom control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Menu submenutabsbottom;
-        
-        /// <summary>
-        /// hdParenteralProducts control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.HiddenField hdParenteralProducts;
-        
-        /// <summary>
-        /// hdPharmacokineticParameters control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.HiddenField hdPharmacokineticParameters;
-        
-        /// <summary>
-        /// hdDrugDrugInteractCount control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.HiddenField hdDrugDrugInteractCount;
-        
-        /// <summary>
-        /// hdDosingConsiderations control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.HiddenField hdDosingConsiderations;
-        
-        /// <summary>
-        /// hdCTADrugReactions control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.HiddenField hdCTADrugReactions;
-        
-        /// <summary>
-        /// hdSeriousDrugInt control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.HiddenField hdSeriousDrugInt;
-        
-        /// <summary>
-        /// hdSeriousWarnPrecau control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.HiddenField hdSeriousWarnPrecau;
-        
-        /// <summary>
-        /// hdHeadingSelections control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.HiddenField hdHeadingSelections;
-        
-        /// <summary>
-        /// hdRouteCount control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.HiddenField hdRouteCount;
-        
-        /// <summary>
-        /// hdContraCount control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.HiddenField hdContraCount;
+        protected global::System.Web.UI.HtmlControls.HtmlTextArea tbDosageCompositionPackaging;
     }
 }

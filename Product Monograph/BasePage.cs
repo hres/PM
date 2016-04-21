@@ -1,14 +1,8 @@
 ﻿using System;
-using System.Data;
-using System.Configuration;
 using System.Globalization;
 using System.Threading;
-using System.Web;
-using System.Web.Security;
 using System.Web.UI;
-using System.Web.UI.WebControls;
-using System.Web.UI.WebControls.WebParts;
-using System.Web.UI.HtmlControls;
+using Product_Monograph.helpers;
 
 
 
@@ -20,22 +14,26 @@ namespace Product_Monograph
     public class BasePage : Page
     {
         private const string m_DefaultCulture = "en-CA";
+        public string lang { get; set; }
 
         protected override void InitializeCulture()
         {
-            //retrieve culture information from session
-            string culture = Convert.ToString(Session["SelectedLanguage"]);
-
             //check whether a culture is stored in the session
-            if (!string.IsNullOrEmpty(culture)) Culture = culture;
-            else Culture = m_DefaultCulture;
-
-            //set culture to current thread
-            Thread.CurrentThread.CurrentCulture = CultureInfo.CreateSpecificCulture(culture);
-            Thread.CurrentThread.CurrentUICulture = new CultureInfo(culture);
-
+            if (!string.IsNullOrEmpty(SessionHelper.Current.selectedLanguage))
+            {
+                Thread.CurrentThread.CurrentCulture = CultureInfo.CreateSpecificCulture(SessionHelper.Current.selectedLanguage);
+                Thread.CurrentThread.CurrentUICulture = new CultureInfo(SessionHelper.Current.selectedLanguage);
+            }
+            else
+            {
+                Thread.CurrentThread.CurrentCulture = CultureInfo.CreateSpecificCulture(m_DefaultCulture);
+                Thread.CurrentThread.CurrentUICulture = new CultureInfo(m_DefaultCulture);
+            }
+            lang = Thread.CurrentThread.CurrentUICulture.TwoLetterISOLanguageName;
+            
             //call base class
             base.InitializeCulture();
-        }
+           }
+
     }
 }

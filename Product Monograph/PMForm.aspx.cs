@@ -3,9 +3,7 @@ using System.Web;
 using System.IO;
 using System.Xml;
 using System.Text;
-using System.Threading;
-using System.Globalization;
-
+using Product_Monograph.helpers;
 
 namespace Product_Monograph
 {
@@ -13,54 +11,39 @@ namespace Product_Monograph
     {
         void Page_PreInit(Object sender, EventArgs e)
         {
-            if (Session["masterpage"] != null)
+            if (!string.IsNullOrWhiteSpace(SessionHelper.Current.masterPage))
             {
-                this.MasterPageFile = (String)Session["masterpage"];
-
+                this.MasterPageFile = SessionHelper.Current.masterPage;
+            }
+            if (this.lang.Equals("fr"))
+            {
+                ((ProdMonoFr)Page.Master).pageTitleValue = Resources.Resource.formInstruction;
+            }
+            else
+            {
+                ((ProdMono)Page.Master).pageTitleValue = Resources.Resource.formInstruction;
             }
         }
 
         protected void Page_Load(object sender, EventArgs e)
         {
-
             if (!Page.IsPostBack)
             {
-                //all pages
-                if (Session["TemplateVersion"] != null)
+                if( lang.Equals("fr"))
                 {
-                    lblSelectTemplate.Visible = false;
-                    ddlTemplate.Disabled = true;
-                    ddlTemplate.Value = Session["TemplateVersion"].ToString();
-                    btnLoadTemplate.Visible = false;
-
+                    sectionEng.Visible = false;
+                    sectionFra.Visible = true;
                 }
-
-                //only for landing page
-                if (Request.Url.ToString().ToLower().Contains("pmform"))
+                else
                 {
-
-                    ddlTemplate.Disabled = false;
-                    btnLoadTemplate.Visible = true;
+                    sectionEng.Visible = true;
+                    sectionFra.Visible = false;
                 }
             }
-
-
-            facilityResourcePMForm();
-
-           
-
-            lblError.Text = "";
         }
+
         protected void btnLoadTemplate_Click(object sender, EventArgs e)
         {
-            if (ddlTemplate.Value == "Select")
-            {
-                lblError.Text = "Please select a template";
-                return;
-            }
-
-            Session["TemplateVersion"] = ddlTemplate.Value;
-
             XmlDocument doc = new XmlDocument();
             XmlNode docNode = doc.CreateXmlDeclaration("1.0", "UTF-8", null);
             doc.AppendChild(docNode);
@@ -69,87 +52,47 @@ namespace Product_Monograph
             doc.AppendChild(rootnode);
 
             XmlNode xnode = doc.CreateElement("TemplateVersion");
-            xnode.AppendChild(doc.CreateTextNode(Session["TemplateVersion"].ToString()));
+            xnode.AppendChild(doc.CreateTextNode(ddlTemplate.Value));
             rootnode.AppendChild(xnode);
 
-            //helpers.Processes.XMLDraft = doc;
-            Session["draft"] = doc;
-
+            SessionHelper.Current.draftForm = doc;
+            SessionHelper.Current.brandName = string.Empty;
+            SessionHelper.Current.properName = string.Empty;
             Response.Redirect("Coverpage.aspx");
         }
 
         protected void btnLoadXml_Click(object sender, EventArgs e)
         {
-           
+
             try
             {
                 if (fuXmlDraft.HasFile)
                 {
-                    int idirectory = fuXmlDraft.PostedFile.FileName.LastIndexOf("\\"); ;
-                    //helpers.Processes.XMLPath = fuXmlDraft.PostedFile.FileName.Substring(0, idirectory);
+                    int idirectory = fuXmlDraft.PostedFile.FileName.LastIndexOf("\\");
                     FileInfo fi = new FileInfo(fuXmlDraft.FileName);
                     if (!fi.Extension.ToString().ToLower().Contains("xml"))
                     {
-                        lblError.Text = Resources.Resource.lblErr_PlsChooseXML;  //  "Please choose an xml file.";
                         return;
                     }
 
                 }
                 else
                 {
-                    lblError.Text = Resources.Resource.lblErr_PlsChooseXML; //"Please choose an xml file.";
                     return;
                 }
 
                 XmlDocument doc = new XmlDocument();
                 doc.Load(fuXmlDraft.PostedFile.InputStream);
-                //helpers.Processes.XMLDraft = doc;
-                Session["draft"] = doc;
+                SessionHelper.Current.draftForm = doc;
                 Response.Redirect("Coverpage.aspx");
             }
             catch (Exception err)
             {
-                lblError.Text = err.ToString();
+
             }
-        }
-        protected void facilityResourcePMForm()
-        {
-            lblUsingxml.Text = Resources.Resource.UsingXMLPM;
-            lblBody.Text = ResourceHelpers.WrapTextBlockIntoParagraphs(Resources.Resource.Body).ToString().Replace("qmark", "<img src='images/qmark.jpg' style='width: 15px; height: 15px;' alt='help of message' />");
-
-            lblTechSpec.Text = Resources.Resource.TechnicalSpecs;
-            lblTitleFormInstructions.Text = Resources.Resource.TitleFormInstructions;
-            lblBottomBody.Text = ResourceHelpers.WrapTextBlockIntoParagraphs(Resources.Resource.BottomBody).ToString();
-            lblSelectTemplate.Text = Resources.Resource.lblSelectTemplate;
-            btnLoadTemplate.Text = Resources.Resource.btnLoadTemplate;
-            btnLoadTemplate.ToolTip = Resources.Resource.btnLoadTemplate;
-            btnLoadXml_PMForm.Text = Resources.Resource.lblLoadXML;
-            lblLoadTemplateInst.Text = Resources.Resource.lblLoadTemplateInst;
-            lblLoadXmlInst.Text = Resources.Resource.lblLoadXmlInst;
-
-
-
-
         }
 
     }
 
-    public static class ResourceHelpers
-    {
-        public static IHtmlString WrapTextBlockIntoParagraphs(string s)
-        {
-            if (s == null) return new HtmlString(string.Empty);
-
-            var blocks = s.Split(new string[] { "\r\n", "\n" },
-                                  StringSplitOptions.RemoveEmptyEntries);
-
-            StringBuilder htmlParagraphs = new StringBuilder();
-            foreach (string block in blocks)
-            {
-                htmlParagraphs.Append("<p>" + block + "</p>");
-            }
-
-            return new HtmlString(htmlParagraphs.ToString());
-        }
-    }
+    
 }

@@ -13,40 +13,13 @@ namespace Product_Monograph {
     public partial class PMForm {
         
         /// <summary>
-        /// lblTitleFormInstructions control.
+        /// sectionEng control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label lblTitleFormInstructions;
-        
-        /// <summary>
-        /// lblError control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Label lblError;
-        
-        /// <summary>
-        /// lblLoadTemplateInst control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Label lblLoadTemplateInst;
-        
-        /// <summary>
-        /// lblSelectTemplate control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Label lblSelectTemplate;
+        protected global::System.Web.UI.HtmlControls.HtmlGenericControl sectionEng;
         
         /// <summary>
         /// ddlTemplate control.
@@ -67,24 +40,6 @@ namespace Product_Monograph {
         protected global::System.Web.UI.WebControls.Button btnLoadTemplate;
         
         /// <summary>
-        /// Label1 control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlGenericControl Label1;
-        
-        /// <summary>
-        /// lblLoadXmlInst control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Label lblLoadXmlInst;
-        
-        /// <summary>
         /// fuXmlDraft control.
         /// </summary>
         /// <remarks>
@@ -94,57 +49,57 @@ namespace Product_Monograph {
         protected global::System.Web.UI.WebControls.FileUpload fuXmlDraft;
         
         /// <summary>
-        /// btnLoadXml_PMForm control.
+        /// btnLoadXml control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Button btnLoadXml_PMForm;
+        protected global::System.Web.UI.WebControls.Button btnLoadXml;
         
         /// <summary>
-        /// imgSymbol control.
+        /// sectionFra control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlImage imgSymbol;
+        protected global::System.Web.UI.HtmlControls.HtmlGenericControl sectionFra;
         
         /// <summary>
-        /// lblUsingxml control.
+        /// ddlTemplateFra control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label lblUsingxml;
+        protected global::System.Web.UI.HtmlControls.HtmlSelect ddlTemplateFra;
         
         /// <summary>
-        /// lblBody control.
+        /// btnLoadTemplateFra control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label lblBody;
+        protected global::System.Web.UI.WebControls.Button btnLoadTemplateFra;
         
         /// <summary>
-        /// lblTechSpec control.
+        /// FileUpload1 control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label lblTechSpec;
+        protected global::System.Web.UI.WebControls.FileUpload FileUpload1;
         
         /// <summary>
-        /// lblBottomBody control.
+        /// btnLoadXmlFra control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label lblBottomBody;
+        protected global::System.Web.UI.WebControls.Button btnLoadXmlFra;
     }
 }
