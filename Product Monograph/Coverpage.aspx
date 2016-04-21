@@ -20,7 +20,7 @@
          </div> 
     </div>
      <div class="form-group row margin-top-medium">
-                <label for="tbSchedulingSymbol" class="required control-label col-sm-3" ><span class="field-name"><%=schedulingSymbol%></span> </label>     
+                <label for="tbSchedulingSymbol" class="control-label col-sm-3" ><span class="field-name"><%=schedulingSymbol%></span> </label>     
                 <select id="tbSchedulingSymbol" onchange="ApplySchedulingSymbol(this)" class="form-control col-sm-2"></select>                       
                      <div class="text-left">
                         <img id="imgSymbol" src="images/x.png" width="100" height="100" alt="Apply symbol"/>                     
@@ -66,7 +66,7 @@
                 </table> 
                 <!--End of Brand Table -->
         </div>
-            <div class="form-group row">
+            <div class="form-group row margin-top-large">
                 <asp:Label id="PharmaceuticalStandard" AssociatedControlID="tbPharmaceuticalStandard" runat="server" CssClass="col-sm-3 control-label">Pharmaceutical standard (if applicable)</asp:Label>                             
                 <div class="col-sm-9"> 
                     <asp:TextBox id="tbPharmaceuticalStandard" runat="server"  MaxLength="200" CssClass="form-control" ></asp:TextBox>                                
@@ -75,24 +75,24 @@
             <div class="form-group  row">         
                 <label for="tbTherapeuticClassifications" class="required control-label col-sm-3" ><span class="field-name"><%=therapeuticClassification%></span></label> 
                 <div class="col-sm-9"> 
-                        <asp:TextBox id="tbTherapeuticClassifications" runat="server" MaxLength="200" CssClass="form-control" required="required"></asp:TextBox>    
+                        <asp:TextBox id="tbTherapeuticClassifications" runat="server" MaxLength="200" CssClass="form-control" required="required" ClientIDMode="Static"></asp:TextBox>    
                 </div>
             </div>
             <div class="form-group  row">
                 <label for="tbSponsorName" class="required control-label col-sm-3" ><span class="field-name"><%=sponsorName%></span></label> 
                 <div class="col-sm-9">                                  
-                    <asp:TextBox id="tbSponsorName" runat="server" MaxLength="200" CssClass="form-control" required="required"></asp:TextBox>                                
+                    <asp:TextBox id="tbSponsorName" runat="server" MaxLength="200" CssClass="form-control" required="required" ClientIDMode="Static"></asp:TextBox>                                
                 </div>
             </div>
         <div class="form-group  row">                               
-           <label for="tbSponsorAddress" class="required control-label col-sm-3" ><span class="field-name"><%=sponsorAddress%></span></label> 
+           <label for="tbSponsorAddress" class="control-label col-sm-3" ><span class="field-name"><%=sponsorAddress%></span></label> 
             <div class="col-sm-9">       
-                <textarea id="tbSponsorAddress" name="tbSponsorAddress" runat="server" class="textarea form-control" required="required" ClientIDMode="Static"></textarea>
+                <textarea id="tbSponsorAddress" name="tbSponsorAddress" runat="server" class="textarea form-control"  ClientIDMode="Static"></textarea>
             </div>
         </div>
         <div class="form-group  row">
              <label for="tbDatePrep" class="control-label col-sm-3" >
-                <span class="field-name">Date of preparation</span>
+                <span class="field-name">Date of preparation</span><br />
                 <span class="datepicker-format"> (<abbr title="Four digits year, dash, two digits month, dash, two digits day">YYYY-MM-DD</abbr>)</span>
             </label>
             <div class="col-sm-9">
@@ -109,15 +109,15 @@
             </div>
         </div>
         <div class="form-group  row">
-             <label for="tbControNum" class="required control-label col-sm-3" ><span class="field-name"><%=submissionControlNumber%></span></label> 
+             <label for="tbControNum" class="control-label col-sm-3" ><span class="field-name"><%=submissionControlNumber%></span></label> 
             <div class="col-sm-9">           
                     <asp:TextBox id="tbControNum" type="number" data-rule-digits="true" runat="server" min="0" max="999999" CssClass="form-control"></asp:TextBox>                         
                 </div>
         </div>
         <div class="form-group  row"> 
-            <label for="tbFootnote" class="required control-label col-sm-3" ><span class="field-name"><%=footnote%></span></label> 
+            <label for="tbFootnote" class="control-label col-sm-3" ><span class="field-name"><%=footnote%></span></label> 
             <div class="col-sm-9">        
-                    <textarea id="tbFootnote" name="tbFootnote" runat="server" class="textarea form-control" required="required" ClientIDMode="Static"></textarea>               
+                    <textarea id="tbFootnote" name="tbFootnote" runat="server" class="textarea form-control"  ClientIDMode="Static"></textarea>               
             </div> 
         </div>
   

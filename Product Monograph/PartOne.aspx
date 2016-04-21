@@ -57,20 +57,20 @@
                 </div>
                 <div class="form-group"> 
                      <div class="row"> 
-                        <label for="tbGeriatrics" class="pull-lef col-sm-1 control-label">Geriatrics(</label>
-                        <input type="number" id="tbGeriatricsAge" name="tbGeriatricsAge" class="pull-left form-control col-sm-1" min="1" max="150" size="4"  runat="server"/>  
-                        <label for="tbGeriatricsAge" class="pull-left col-sm-3 control-label">Years of age):</label>
+                        <label for="tbGeriatrics" class="col-sm-1 control-label">Geriatrics</label>
+                        <input type="number" id="tbGeriatricsAge" name="tbGeriatricsAge" class="form-control col-sm-1" min="1" max="150" size="3"  runat="server"/>  
+                        <label for="tbGeriatricsAge" class="col-sm-2 control-label pull-left">years of age:</label>
                      </div>
                      <textarea id="tbGeriatrics" name="tbGeriatrics" runat="server" class="textarea form-control"></textarea>
                 </div>
                 <div class="form-group"> 
                     <div class="row"> 
-                        <label for="tbPediatrics" class="pull-lef col-sm-1 control-label">Pediatrics(</label>
-                        <input type="number" id="tbPediatricsAgeX" name="tbPediatricsAge1" class="pull-left form-control col-sm-1" min="1" max="150" size="4" runat="server"/>
-                        <input type="number" id="tbPediatricsAgeY" name="tbPediatricsAge2" class="pull-left form-control col-sm-1" min="1" max="150" size="4" runat="server"/>
-                        <label for="tbPediatricsAgeX" class="pull-left">Years of age or ( <</label>
-                        <input type="number" id="tbPediatricsAgeZ" name="tbPediatricsAgeZ" class="pull-left form-control col-sm-1" min="1" max="150" size="4" runat="server"/> 
-                        <label for="tbGeriatricsAgeZ" class="pull-left col-sm-3">Years of age):</label> 
+                        <label for="tbPediatrics" class="col-sm-1  control-label">Pediatrics</label>
+                        <input type="number" id="tbPediatricsAgeX" name="tbPediatricsAge1" class="form-control col-sm-1" min="1" max="150" size="3" runat="server"/>
+                        <input type="number" id="tbPediatricsAgeY" name="tbPediatricsAge2" class="form-control col-sm-1" min="1" max="150" size="3" runat="server"/>
+                        <label for="tbPediatricsAgeX" class="pull-left">years of age or </label>
+                        <input type="number" id="tbPediatricsAgeZ" name="tbPediatricsAgeZ" class="form-control col-sm-1" min="1" max="150" size="3" runat="server"/> 
+                        <label for="tbGeriatricsAgeZ" class="pull-left col-sm-3">years of age:</label> 
                     </div> 
                     <textarea id="tbPediatrics" name="tbPediatrics" runat="server" class="textarea form-control"></textarea>
                 </div>

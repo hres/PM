@@ -115,7 +115,7 @@ Any allergies to this drug or its ingredients or components of the container (Co
         </div>
         <div class="form-group">
             <div class="row">  
-                      <label for="fustrucform1" class="col-sm-3 control-label">Usual does file</label>  
+                      <label for="fustrucform1" class="col-sm-3 control-label">Usual dose file</label>  
                     <div class="col-sm-9">               
                         <input type="file" id="fustrucform0" onchange="loadFile('fustrucform0', 'fuimage0','tbfuimagename0','tbfuimagebasesixtyfour0')"/>     
                     </div>           
@@ -133,7 +133,7 @@ Any allergies to this drug or its ingredients or components of the container (Co
         
         <div class="form-group row">              
                     <label for="tbOverdose" class="col-sm-3 control-label">
-                         <span class="field-name">Over dose</span>
+                         <span class="field-name">Overdose</span>
                          <span class="label label-info" title="The boxed message may be modified to provide the most appropriate advice according to current standards of care for this drug product">Info</span>
                     </label>  
                     <div class="col-sm-9">                               
@@ -142,7 +142,7 @@ Any allergies to this drug or its ingredients or components of the container (Co
          </div> 
          <div class="form-group">
             <div class="row">  
-                     <label for="fustrucform1" class="col-sm-3 control-label">Over does file</label>  
+                     <label for="fustrucform1" class="col-sm-3 control-label">Overdose file</label>  
                      <div class="col-sm-9">  
                         <input type="file" id="fustrucform1" onchange="loadFile('fustrucform1','fuimage1','tbfuimagename1','tbfuimagebasesixtyfour1')" />
                      </div>
@@ -164,7 +164,7 @@ Any allergies to this drug or its ingredients or components of the container (Co
         </div> 
         <div class="form-group">
             <div class="row">  
-                    <label for="fustrucform1" class="col-sm-3 control-label">Missed does file</label>  
+                    <label for="fustrucform1" class="col-sm-3 control-label">Missed dose file</label>  
                     <div class="col-sm-9">  
                         <input type="file" id="fustrucform2" onchange="loadFile('fustrucform2','fuimage2','tbfuimagename2','tbfuimagebasesixtyfour2')" />
                     </div>

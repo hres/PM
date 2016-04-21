@@ -24,7 +24,7 @@
     <section class="mrgn-tp-lg" runat="server" id="sectionEng">
                 <div class="panel panel-default">
                     <div class="panel-heading">
-                        <h2 class="panel-title">Create a new templete</h2>
+                        <h2 class="panel-title">Create a new template</h2>
                     </div>
                     <div class="panel-body">
                             <p>To load a new blank PM template for the creation of XML file, select a template type from the drop menu, and press the "Load template" button.</p><div class="form-group row">
@@ -54,13 +54,13 @@
                         </div>   
                     </div>
                     <div class="panel-heading">
-                        <h2 class="panel-title">Load an existing templete</h2>
+                        <h2 class="panel-title">Load an existing template</h2>
                     </div>
                     <div class="panel-body">
                         <p>To load an existing XML file, press the “Choose File” button ("Browse..." in Internet Explorer and Firefox), select the file and press the "Open" button in the file browser. Press the "Load XML" button.</p>
                            <div class="col-sm-4 text-right">
                                 <label for="ddlTemplate" class="required">
-                                     <span class="field-name">Xml file:</span>
+                                     <span class="field-name">XML file:</span>
                                 </label>
                             </div>
                             <div class="col-sm-4">
