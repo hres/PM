@@ -123,7 +123,7 @@ function AddContraindications() {
     var identity = document.createAttribute("id");
     identity.value = "Contraindications" + contraindicationsCounter;
     div.setAttributeNode(identity);
-    console.log(contraindicationsCounter);
+
     var tbContraindications = "tbContraindications" + contraindicationsCounter.toString();
     var returnString = "";
     returnString = "<div class='form-group row'>" +
