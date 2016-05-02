@@ -28,10 +28,19 @@ namespace Product_Monograph
         string strscript = string.Empty;
         protected static string sponsorName;
         protected static string schedulingSymbol;
+        protected static string pharmaceuticalStandard;
         protected static string submissionControlNumber;
         protected static string therapeuticClassification;
         protected static string sponsorAddress;
         protected static string footnote;
+        protected static string dateRevision;
+        protected static string datePreparation;
+        protected static string brandNameTitle;
+        protected static string properNameTitle;
+        protected static string dosageForm;
+        protected static string strengthValue;
+        protected static string strengthDosageValue;
+        protected static string brandDosageForm;
 
         void Page_PreInit(Object sender, EventArgs e)
         {
@@ -57,11 +66,19 @@ namespace Product_Monograph
             {
                 sponsorName = Resources.Resource.sponsorName;
                 schedulingSymbol = Resources.Resource.schedulingSymbol;
+                pharmaceuticalStandard = Resources.Resource.pharmaceuticalStandard;
                 submissionControlNumber = Resources.Resource.submissionControlNumber;
                 therapeuticClassification = Resources.Resource.therapeuticClassification;
                 sponsorAddress = Resources.Resource.sponsorAddress;
                 footnote = Resources.Resource.footnote;
-
+                dateRevision = Resources.Resource.dateRevision;
+                datePreparation = Resources.Resource.datePreparation;
+                brandNameTitle = Resources.Resource.brandNameTitle;
+                properNameTitle = Resources.Resource.properNameTitle;
+                dosageForm = Resources.Resource.dosageForm;
+                strengthValue = Resources.Resource.strengthValue;
+                strengthDosageValue = Resources.Resource.strengthDosageValue;
+                brandDosageForm = Resources.Resource.brandDosageForm;
                 try
                 {
                     if (ValidateXmlDoc())

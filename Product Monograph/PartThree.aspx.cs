@@ -18,7 +18,48 @@ namespace Product_Monograph
     public partial class PartThree : BasePage
     {
         string strscript = "";
-
+        protected static string sumMedication;
+        protected static string sumWarnings;
+        protected static string sumInteractions;
+        protected static string sumProperUse;
+        protected static string sumSideEffects;
+        protected static string sumReporting;
+        protected static string sumMoreInfo;
+        protected static string sumHowStore;
+        protected static string seriousWarnings;
+        protected static string interactions;
+        protected static string information;
+        protected static string brandNameTitle;
+        protected static string properNameTitle;
+        protected static string medicationUse;
+        protected static string medicationDoes;
+        protected static string whenNotUse;
+        protected static string medIngredient;
+        protected static string nonMedIngredient;
+        protected static string whatDosageForm;
+        protected static string properUse;
+        protected static string usualDose;
+        protected static string sideEffects;
+        protected static string frequency;
+        protected static string symptom;
+        protected static string common;
+        protected static string uncommon;
+        protected static string rare;
+        protected static string veryRare;
+        protected static string unknown;
+        protected static string sideEffectContact;
+        protected static string whatToDo;
+        protected static string lastModified;
+        protected static string usualDoseFile;
+        protected static string overdose;
+        protected static string overdoseFile;
+        protected static string missedDose;
+        protected static string missedDoseFile;
+        protected static string nonMedIngredientInfo;
+        protected static string warningsInfo;
+        protected static string overdoseInfo;
+        protected static string addButton;
+        protected static string removeButton;
         void Page_PreInit(Object sender, EventArgs e)
         {
             if (!string.IsNullOrWhiteSpace(SessionHelper.Current.masterPage))
@@ -41,6 +82,49 @@ namespace Product_Monograph
 
             if (!IsPostBack)
             {
+                sumMedication = Resources.Resource.sumMedication;
+                sumWarnings = Resources.Resource.sumWarnings;
+                sumInteractions = Resources.Resource.sumInteractions;
+                sumProperUse = Resources.Resource.sumProperUse;
+                sumSideEffects = Resources.Resource.sumSideEffects;
+                sumReporting = Resources.Resource.sumReporting;
+                sumMoreInfo = Resources.Resource.sumMoreInfo;
+                sumHowStore = Resources.Resource.sumHowStore;
+                brandNameTitle = Resources.Resource.brandNameTitle;
+                properNameTitle = Resources.Resource.properNameTitle;
+                seriousWarnings = Resources.Resource.seriousWarnings;
+                interactions = Resources.Resource.interactions;
+                information = Resources.Resource.information;
+                medicationUse = Resources.Resource.medicationUse;
+                medicationDoes = Resources.Resource.medicationDoes;
+                whenNotUse = Resources.Resource.whenNotUse;
+                medIngredient = Resources.Resource.medIngredient;
+                nonMedIngredient = Resources.Resource.nonMedIngredient;
+                whatDosageForm = Resources.Resource.whatDosageForm;
+                properUse = Resources.Resource.properUse;
+                usualDose = Resources.Resource.usualDose;
+                sideEffects = Resources.Resource.sideEffects;
+                frequency = Resources.Resource.frequency;
+                symptom = Resources.Resource.symptom;
+                common = Resources.Resource.common;
+                uncommon = Resources.Resource.uncommon;
+                rare = Resources.Resource.rare;
+                veryRare = Resources.Resource.veryRare;
+                unknown = Resources.Resource.unknown;
+                sideEffectContact = Resources.Resource.sideEffectContact;
+                whatToDo = Resources.Resource.whatToDo;
+                lastModified = Resources.Resource.lastModified;
+                usualDoseFile = Resources.Resource.usualDoseFile;
+                overdose = Resources.Resource.overdose;
+                overdoseFile = Resources.Resource.overdoseFile;
+                missedDose = Resources.Resource.missedDose;
+                missedDoseFile = Resources.Resource.missedDoseFile;
+                nonMedIngredientInfo = Resources.Resource.nonMedIngredientInfo;
+                warningsInfo = Resources.Resource.warningsInfo;
+                overdoseInfo = Resources.Resource.overdoseInfo;
+                addButton = Resources.Resource.addButton;
+                removeButton = Resources.Resource.removeButton;
+
                 try
                 {
                     LoadFromXML();

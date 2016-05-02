@@ -1161,15 +1161,15 @@
     <Content Include="tinymce\tests\js\qunit\QUnit.LICENSE" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="App_GlobalResources\Resource.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>Resource.resx</DependentUpon>
-    </Compile>
     <Compile Include="App_GlobalResources\Resource.fr.designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>Resource.fr.resx</DependentUpon>
+    </Compile>
+    <Compile Include="App_GlobalResources\Resource1.designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resource.resx</DependentUpon>
     </Compile>
     <Compile Include="BasePage.cs">
       <SubType>ASPXCodeBehind</SubType>
@@ -1275,7 +1275,7 @@
   <ItemGroup>
     <Content Include="App_GlobalResources\Resource.resx">
       <Generator>GlobalResourceProxyGenerator</Generator>
-      <LastGenOutput>Resource.Designer.cs</LastGenOutput>
+      <LastGenOutput>Resource1.designer.cs</LastGenOutput>
     </Content>
   </ItemGroup>
   <ItemGroup>

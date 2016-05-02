@@ -12,8 +12,8 @@
     </div>
     <div class="row brdr-bttm">
         <div class="col-sm-9">
-             <p class="margin-bottom-none"><strong>Brand name : </strong><asp:Literal ID="brandName" runat="server"></asp:Literal></p>
-             <p><strong>Proper name : </strong><asp:Literal ID="properName" runat="server"></asp:Literal><p>
+             <p class="margin-bottom-none"><strong><span class="field-name"><%=brandNameTitle%>:</span></strong><asp:Literal ID="brandName" runat="server"></asp:Literal></p>
+             <p><strong><span class="field-name"><%=properNameTitle%>:</span></strong><asp:Literal ID="properName" runat="server"></asp:Literal><p>
          </div>
          <div class="col-sm-3 text-right">
             <asp:Button ID="btnSaveDraft" runat="server" cssclass="btn btn-primary" Text="Save a draft"  ToolTip="Please save your form data in a draft file." OnClick="btnSaveDraft_Click" /> 
@@ -31,15 +31,15 @@
             <!--Brand  Dosage Form Table --> 
         <div class="table-responsive">             
         <table id="dataTable" class="table table-bordered table-striped table-hover" title="The brand dosage form">
-                    <caption class="text-left">Brand  dosage form</caption>
+                    <caption class="text-left"><span class="field-name"><%=brandDosageForm%></span></caption>
                     <thead>
                         <tr>           
                             <th><input class="btn btn-default btn-xs" type="button" runat="server" id="btnAppendRow" onclick="addRow('dataTable')" value="Add" /></th>
-                            <th>Brand name</th>
-                            <th>Proper name</th>
-                            <th>Dosage form</th>
-                            <th>Strength <br />Value | Unit</th>
-                            <th>Strength per dosage<br /> Value | Unit</th>
+                            <th><span class="field-name"><%=brandNameTitle%></span></th>
+                            <th><span class="field-name"><%=properNameTitle%></span></th>
+                            <th><span class="field-name"><%=dosageForm%></span></th>
+                            <th><span class="field-name"><%=strengthValue%></span></th>
+                            <th><span class="field-name"><%=strengthDosageValue%></span></th>
                         </tr>
                     </thead>
                     <tbody>
@@ -67,7 +67,7 @@
                 <!--End of Brand Table -->
         </div>
             <div class="form-group row margin-top-large">
-                <asp:Label id="PharmaceuticalStandard" AssociatedControlID="tbPharmaceuticalStandard" runat="server" CssClass="col-sm-3 control-label">Pharmaceutical standard (if applicable)</asp:Label>                             
+                <label for="tbPharmaceuticalStandard" class="control-label col-sm-3"><span class="field-name"><%=pharmaceuticalStandard%></span></label> 
                 <div class="col-sm-9"> 
                     <asp:TextBox id="tbPharmaceuticalStandard" runat="server"  MaxLength="200" CssClass="form-control" ></asp:TextBox>                                
                 </div>
@@ -92,7 +92,7 @@
         </div>
         <div class="form-group  row">
              <label for="tbDatePrep" class="control-label col-sm-3" >
-                <span class="field-name">Date of preparation</span><br />
+                <span class="field-name"><%=datePreparation%></span><br />
                 <span class="datepicker-format"> (<abbr title="Four digits year, dash, two digits month, dash, two digits day">YYYY-MM-DD</abbr>)</span>
             </label>
             <div class="col-sm-9">
@@ -101,7 +101,7 @@
         </div>  
         <div class="form-group  row"> 
              <label for="tbDateRev" class="control-label col-sm-3" >
-                <span class="field-name">Date of revision</span>
+                <span class="field-name"><%=dateRevision%></span>
                 <span class="datepicker-format"> (<abbr title="Four digits year, dash, two digits month, dash, two digits day">YYYY-MM-DD</abbr>)</span>
             </label>
             <div class="col-sm-9">  

@@ -22,6 +22,45 @@ namespace Product_Monograph
     {
         string strscript = "";
         protected static string schedulingSymbol;
+        protected static string brandNameTitle;
+        protected static string properNameTitle;
+        protected static string sumPharmInfo;
+        protected static string sumClinicalTrials;
+        protected static string sumPharmacology;
+        protected static string sumMicrobiology;
+        protected static string sumToxicology;
+        protected static string sumReferences;
+        protected static string drugSubstance;
+        protected static string chemicalName;
+        protected static string molecularFormula;
+        protected static string molecularMass;
+        protected static string physicochemicalProp;
+        protected static string clinicalTrials;
+        protected static string compBioStudies;
+        protected static string analyteName;
+        protected static string parameter;
+        protected static string test;
+        protected static string reference;
+        protected static string ratioGeoMeans;
+        protected static string confInterval;
+        protected static string auctUnit;
+        protected static string auciUnit;
+        protected static string cmaxUnit;
+        protected static string tmax;
+        protected static string halfLife;
+        protected static string idTestProduct;
+        protected static string idRefProduct;
+        protected static string auct24;
+        protected static string arithmeticMedian;
+        protected static string arithmeticOnly;
+        protected static string confidenceInterval;
+        protected static string pharmacology;
+        protected static string microbiology;
+        protected static string toxicology;
+        protected static string references;
+        protected static string compBioStudiesInfo;
+        protected static string addButton;
+        protected static string removeButton;
 
         void Page_PreInit(Object sender, EventArgs e)
         {
@@ -45,6 +84,47 @@ namespace Product_Monograph
             if (!IsPostBack)
             {
                 schedulingSymbol = Resources.Resource.schedulingSymbol;
+                brandNameTitle = Resources.Resource.brandNameTitle;
+                properNameTitle = Resources.Resource.properNameTitle;
+                sumPharmInfo = Resources.Resource.sumPharmInfo;
+                sumClinicalTrials = Resources.Resource.sumClinicalTrials;
+                sumPharmacology = Resources.Resource.sumPharmacology;
+                sumMicrobiology = Resources.Resource.sumMicrobiology;
+                sumToxicology = Resources.Resource.sumToxicology;
+                sumReferences = Resources.Resource.sumReferences;
+                drugSubstance = Resources.Resource.drugSubstance;
+                chemicalName = Resources.Resource.chemicalName;
+                molecularFormula = Resources.Resource.molecularFormula;
+                molecularMass = Resources.Resource.molecularMass;
+                physicochemicalProp= Resources.Resource.physicochemicalProp;
+                clinicalTrials = Resources.Resource.clinicalTrials;
+                compBioStudies = Resources.Resource.compBioStudies;
+                analyteName = Resources.Resource.analyteName;
+                parameter = Resources.Resource.parameter;
+                test = Resources.Resource.test;
+                reference = Resources.Resource.reference;
+                ratioGeoMeans = Resources.Resource.ratioGeoMeans;
+                confInterval = Resources.Resource.confInterval;
+                auctUnit = Resources.Resource.auctUnit;
+                auciUnit = Resources.Resource.auciUnit;
+                cmaxUnit = Resources.Resource.cmaxUnit;
+                tmax = Resources.Resource.tmax;
+                halfLife = Resources.Resource.halfLife;
+                idTestProduct = Resources.Resource.idTestProduct;
+                idRefProduct = Resources.Resource.idRefProduct;
+                auct24 = Resources.Resource.auct24;
+                arithmeticMedian = Resources.Resource.arithmeticMedian;
+                arithmeticOnly = Resources.Resource.arithmeticOnly;
+                confidenceInterval = Resources.Resource.confidenceInterval;
+                pharmacology = Resources.Resource.pharmacology;
+                microbiology = Resources.Resource.microbiology;
+                toxicology = Resources.Resource.toxicology;
+                references = Resources.Resource.references;
+                compBioStudiesInfo = Resources.Resource.compBioStudiesInfo;
+                addButton = Resources.Resource.addButton;
+                removeButton = Resources.Resource.removeButton;
+
+
                 try
                 {
                     LoadFromXML();

@@ -49,15 +49,6 @@ namespace Product_Monograph {
         protected global::System.Web.UI.WebControls.Button btnSaveDraft;
         
         /// <summary>
-        /// lblWHAT control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Label lblWHAT;
-        
-        /// <summary>
         /// tbMedicationForText control.
         /// </summary>
         /// <remarks>
@@ -65,15 +56,6 @@ namespace Product_Monograph {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.HtmlControls.HtmlTextArea tbMedicationForText;
-        
-        /// <summary>
-        /// lblWHAT_IT_DOES control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Label lblWHAT_IT_DOES;
         
         /// <summary>
         /// tbMedicationDoes control.
@@ -85,15 +67,6 @@ namespace Product_Monograph {
         protected global::System.Web.UI.HtmlControls.HtmlTextArea tbMedicationDoes;
         
         /// <summary>
-        /// lblWHEN_IT_SHOULD control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Label lblWHEN_IT_SHOULD;
-        
-        /// <summary>
         /// tbMedicationNotUsed control.
         /// </summary>
         /// <remarks>
@@ -101,15 +74,6 @@ namespace Product_Monograph {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.HtmlControls.HtmlTextArea tbMedicationNotUsed;
-        
-        /// <summary>
-        /// lblWHAT_THE_MEDICINAL control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Label lblWHAT_THE_MEDICINAL;
         
         /// <summary>
         /// tbMedicationIngredient control.
@@ -130,15 +94,6 @@ namespace Product_Monograph {
         protected global::System.Web.UI.HtmlControls.HtmlTextArea tbMedicationNonmed;
         
         /// <summary>
-        /// lblWHAT_DOSAGE control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Label lblWHAT_DOSAGE;
-        
-        /// <summary>
         /// tbMedicationDosageForm control.
         /// </summary>
         /// <remarks>
@@ -157,15 +112,6 @@ namespace Product_Monograph {
         protected global::System.Web.UI.HtmlControls.HtmlTextArea tbInteractionWithMed;
         
         /// <summary>
-        /// lblProperUse control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Label lblProperUse;
-        
-        /// <summary>
         /// tbProperUseMed control.
         /// </summary>
         /// <remarks>
@@ -173,15 +119,6 @@ namespace Product_Monograph {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.HtmlControls.HtmlTextArea tbProperUseMed;
-        
-        /// <summary>
-        /// lblUsualDose control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Label lblUsualDose;
         
         /// <summary>
         /// tbUsualDose control.
@@ -200,15 +137,6 @@ namespace Product_Monograph {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.HtmlControls.HtmlTextArea tbOverdose;
-        
-        /// <summary>
-        /// lblMissedDose control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Label lblMissedDose;
         
         /// <summary>
         /// tbMissedDose control.
@@ -283,15 +211,6 @@ namespace Product_Monograph {
         protected global::System.Web.UI.HtmlControls.HtmlTextArea tbReportingSuspectedSE;
         
         /// <summary>
-        /// lblMoreInfo control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Label lblMoreInfo;
-        
-        /// <summary>
         /// tbMoreInformation control.
         /// </summary>
         /// <remarks>
@@ -299,15 +218,6 @@ namespace Product_Monograph {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.HtmlControls.HtmlTextArea tbMoreInformation;
-        
-        /// <summary>
-        /// lblLastRevised control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Label lblLastRevised;
         
         /// <summary>
         /// tbLastrRevised control.

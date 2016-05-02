@@ -58,15 +58,6 @@ namespace Product_Monograph {
         protected global::System.Web.UI.HtmlControls.HtmlInputButton btnAppendRow;
         
         /// <summary>
-        /// PharmaceuticalStandard control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Label PharmaceuticalStandard;
-        
-        /// <summary>
         /// tbPharmaceuticalStandard control.
         /// </summary>
         /// <remarks>

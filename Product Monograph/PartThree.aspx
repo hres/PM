@@ -9,52 +9,61 @@
    <asp:ScriptManager id="ScriptManager1" runat="server" EnablePageMethods="true"></asp:ScriptManager>
     <div class="row">
         <div class="col-sm-9">
-             <p class="margin-bottom-none"><strong>Brand name : </strong><asp:Literal ID="brandName" runat="server"></asp:Literal></p>
-             <p><strong>Proper name : </strong><asp:Literal ID="properName" runat="server"></asp:Literal><p>
+             <p class="margin-bottom-none"><strong><span class="field-name"><%=brandNameTitle%>:</span></strong><asp:Literal ID="brandName" runat="server"></asp:Literal></p>
+             <p><strong><span class="field-name"><%=properNameTitle%>:</span></strong><asp:Literal ID="properName" runat="server"></asp:Literal><p>
          </div>
          <div class="col-sm-3 text-right">
             <asp:Button ID="btnSaveDraft" runat="server" cssclass="btn btn-primary " Text="Save a draft"  ToolTip="Please save your form data in a draft file." OnClick="btnSave_Click" ClientIDMode="Static"/> 
          </div> 
     </div> 
 <details class="margin-top-medium">
-        <summary id="SUM_ABOUT">About this medication</summary>
+        <summary id="SUM_ABOUT" class="well well-sm"><%=sumMedication%></summary>
         <div class="form-group row">
-            <asp:label id="lblWHAT" associatedcontrolid="tbMedicationForText" runat="server" cssclass="col-sm-3 control-label">What the medication is used for</asp:label>
+            <Label id="lblWHAT" for="tbMedicationForText" Class="col-sm-3 control-label">
+                <span class="field-name"><%=medicationUse%></span>
+            </Label>
             <div class="col-sm-9">
                 <textarea id="tbMedicationForText" name="tbMedicationForText" runat="server" class="textarea form-control"></textarea>
             </div>
         </div>
         <div class="form-group row">
-            <asp:label associatedcontrolid="tbMedicationDoes" id="lblWHAT_IT_DOES" cssclass="col-sm-3 control-label" runat="server">What it does</asp:label>
+            <Label for="tbMedicationDoes" id="lblWHAT_IT_DOES" Class="col-sm-3 control-label">
+                <span class="field-name"><%=medicationDoes%></span>
+            </Label>
             <div class="col-sm-9">
                 <textarea id="tbMedicationDoes" name="tbMedicationDoes" runat="server" class="textarea form-control"></textarea>
             </div>
         </div>
 
         <div class="form-group row">
-            <asp:label id="lblWHEN_IT_SHOULD" associatedcontrolid="tbMedicationNotUsed" cssclass="col-sm-3 control-label" runat="server">When it should not be used</asp:label>
+            <Label id="lblWHEN_IT_SHOULD" for="tbMedicationNotUsed" Class="col-sm-3 control-label">
+                <span class="field-name"><%=whenNotUse%></span></Label>
             <div class="col-sm-9">
                 <textarea id="tbMedicationNotUsed" name="tbMedicationNotUsed" runat="server" class="textarea form-control"></textarea>
             </div>
         </div>
 
         <div class="form-group row">
-            <asp:label id="lblWHAT_THE_MEDICINAL" associatedcontrolid="tbMedicationIngredient" cssclass="col-sm-3 control-label" runat="server">What the medicinal ingredient is</asp:label>  
+            <Label id="lblWHAT_THE_MEDICINAL" for="tbMedicationIngredient" Class="col-sm-3 control-label">
+                <span class="field-name"><%=medIngredient%></span>
+            </Label>  
             <div class="col-sm-9">
                 <textarea id="tbMedicationIngredient" name="tbMedicationIngredient" runat="server" class="textarea form-control"></textarea>
             </div>
         </div>
         <div class="form-group row">  
              <label for="tbMedicationNonmed" class="col-sm-3 control-label">
-                 <span class="field-name">What the nonmedicinal ingredients are</span>
-                 <span class="label label-info" title="For a full listing of nonmedicinal ingredients see Part 1 of the product monograph.">Info</span>
+                 <span class="field-name"><%=nonMedIngredient%></span>
+                 <span class="label label-info" title="<%=nonMedIngredientInfo%>"><%=information%></span>
              </label> 
             <div class="col-sm-9">
                 <textarea id="tbMedicationNonmed" name="tbMedicationNonmed" runat="server" class="textarea form-control"></textarea>
             </div>
         </div>
         <div class="form-group row">
-            <asp:label id="lblWHAT_DOSAGE" associatedcontrolid="tbMedicationDosageForm" cssclass="col-sm-3 control-label" runat="server">What dosage forms it comes in</asp:label>
+            <Label id="lblWHAT_DOSAGE" for="tbMedicationDosageForm" Class="col-sm-3 control-label">
+                <span class="field-name"><%=whatDosageForm%></span>
+            </Label>
             <div class="col-sm-9">
                 <textarea id="tbMedicationDosageForm" name="tbMedicationDosageForm" runat="server" class="textarea form-control"></textarea>
             </div>
@@ -62,23 +71,18 @@
     </details>
 
 <details class="margin-top-medium">
-        <summary id="SUM_WARNINGS"> Warnings and precautions</summary>
+        <summary id="SUM_WARNINGS" class="well well-sm"><%=sumWarnings%></summary>
         <div class="form-group row"> 
                   <label for="tbSeriousWarningsPrecautions" class="col-sm-3 control-label">
-                     <span class="field-name">Serious warnings and precaution</span>
-                     <span class="label label-info" title="Activities (Warnings and Precautions, e,g, under Occupational Hazards)
-Current conditions (Contraindications, Warnings and Precautions)
-Past diseases (Contraindications, Warnings and Precautions)
-Reproductive issues (Contraindications, Warnings and Precautions)
-Anticipated medical procedures (Warnings and Precautions)
-Any allergies to this drug or its ingredients or components of the container (Contraindications)">Info</span>
+                     <span class="field-name"><%=seriousWarnings%></span>
+                     <span class="label label-info" title="<%=warningsInfo%>"><%=information%></span>
                   </label>  
          
                   <div class="col-sm-7">                                          
                       <textarea id="tbSeriousWarningsPrecautions" name="tbSeriousWarningsPrecautions" class="textarea form-control" ></textarea>  
                   </div>
                   <div class="col-sm-2 text-right"> 
-                      <input class="btn btn-default btn-xs" type="button" value="Add" onclick="AddSeriousWarningsPrecautions()" id="btnAddSeriousWarningsPrecautions" />
+                      <input class="btn btn-default btn-xs" type="button" value="<%=addButton%>" onclick="AddSeriousWarningsPrecautions()" id="btnAddSeriousWarningsPrecautions" />
                   </div>                                                         
         </div>       
         <div id="dvExtraSeriousWarningsPrecautions">
@@ -86,11 +90,11 @@ Any allergies to this drug or its ingredients or components of the container (Co
     </details>
 
 <details class="margin-top-medium">
-        <summary id="SUM_INTERACTIONS">Interactions with this medication</summary>
+        <summary id="SUM_INTERACTIONS" class="well well-sm"><%=sumInteractions%></summary>
         <div class="form-group row">
             <label for="tbInteractionWithMed" class="col-sm-3 control-label">
-                     <span class="field-name">Interactions with this medication</span>
-                     <span class="label label-info" title="Drugs that may interact with">Info</span>
+                     <span class="field-name"><%=interactions%></span>
+                     <span class="label label-info" title="Drugs that may interact with"><%=information%></span>
             </label>  
 
             <div class="col-sm-9">
@@ -100,22 +104,28 @@ Any allergies to this drug or its ingredients or components of the container (Co
     </details>
 
  <details class="margin-top-medium">
-        <summary id="SUM_PROPER_USE">Proper use of this medication</summary>        
+        <summary id="SUM_PROPER_USE" class="well well-sm"><%=sumProperUse%></summary>        
         <div class="form-group row">
-                <asp:Label ID="lblProperUse" AssociatedControlID="tbProperUseMed" CssClass="col-sm-3 control-label" runat="server">Proper use of this medication</asp:label> 
+                <Label ID="lblProperUse" for="tbProperUseMed" Class="col-sm-3 control-label">
+                     <span class="field-name"><%=properUse%></span>
+                </Label> 
                 <div class="col-sm-9">                    
                     <textarea id="tbProperUseMed" name="tbProperUseMed" runat="server" class="textarea form-control"></textarea>
                 </div>         
         </div>
         <div class="form-group row">
-                <asp:Label id="lblUsualDose" AssociatedControlID="tbUsualDose" CssClass="col-sm-3 control-label" runat="server">Usual dose</asp:Label>            
+                <Label id="lblUsualDose" for="tbUsualDose" Class="col-sm-3 control-label">
+                    <span class="field-name"><%=usualDose%></span>
+                </Label>            
                 <div class="col-sm-9">                    
                     <textarea id="tbUsualDose" name="tbUsualDose" runat="server" class="textarea form-control"></textarea>
                 </div>            
         </div>
         <div class="form-group">
             <div class="row">  
-                      <label for="fustrucform1" class="col-sm-3 control-label">Usual dose file</label>  
+                      <label for="fustrucform1" class="col-sm-3 control-label">
+                          <span class="field-name"><%=usualDoseFile%></span>
+                      </label>  
                     <div class="col-sm-9">               
                         <input type="file" id="fustrucform0" onchange="loadFile('fustrucform0', 'fuimage0','tbfuimagename0','tbfuimagebasesixtyfour0')"/>     
                     </div>           
@@ -133,8 +143,8 @@ Any allergies to this drug or its ingredients or components of the container (Co
         
         <div class="form-group row">              
                     <label for="tbOverdose" class="col-sm-3 control-label">
-                         <span class="field-name">Overdose</span>
-                         <span class="label label-info" title="The boxed message may be modified to provide the most appropriate advice according to current standards of care for this drug product">Info</span>
+                         <span class="field-name"><%=overdose%></span>
+                         <span class="label label-info" title="<%=overdoseInfo%>"><%=information%></span>
                     </label>  
                     <div class="col-sm-9">                               
                         <textarea id="tbOverdose" name="tbOverdose" runat="server" class="textarea form-control"></textarea>
@@ -142,7 +152,9 @@ Any allergies to this drug or its ingredients or components of the container (Co
          </div> 
          <div class="form-group">
             <div class="row">  
-                     <label for="fustrucform1" class="col-sm-3 control-label">Overdose file</label>  
+                     <label for="fustrucform1" class="col-sm-3 control-label">
+                         <span class="field-name"><%=overdoseFile%></span>
+                     </label>  
                      <div class="col-sm-9">  
                         <input type="file" id="fustrucform1" onchange="loadFile('fustrucform1','fuimage1','tbfuimagename1','tbfuimagebasesixtyfour1')" />
                      </div>
@@ -157,14 +169,18 @@ Any allergies to this drug or its ingredients or components of the container (Co
             </div>
         </div>
         <div class="form-group row">
-            <asp:label id="lblMissedDose" associatedcontrolid="tbMissedDose" cssclass="col-sm-3 control-label" runat="server">Missed dose</asp:label>
+            <Label id="lblMissedDose" for="tbMissedDose" Class="col-sm-3 control-label">
+                <span class="field-name"><%=missedDose%></span>
+            </Label>
             <div class="col-sm-9">
                 <textarea id="tbMissedDose" name="tbMissedDose" runat="server" class="textarea form-control"></textarea>
             </div>
         </div> 
         <div class="form-group">
             <div class="row">  
-                    <label for="fustrucform1" class="col-sm-3 control-label">Missed dose file</label>  
+                    <label for="fustrucform1" class="col-sm-3 control-label">
+                        <span class="field-name"><%=missedDoseFile%></span>
+                    </label>  
                     <div class="col-sm-9">  
                         <input type="file" id="fustrucform2" onchange="loadFile('fustrucform2','fuimage2','tbfuimagename2','tbfuimagebasesixtyfour2')" />
                     </div>
@@ -182,9 +198,11 @@ Any allergies to this drug or its ingredients or components of the container (Co
 </details>
 
 <details class="margin-top-medium">
-        <summary id="SUM_SIDE_EFFECTS">Side effects and what to do about them</summary>
+        <summary id="SUM_SIDE_EFFECTS" class="well well-sm"><%=sumSideEffects%></summary>
         <div class="form-group row ">
-            <label for="tbSideEffects" class="control-label col-sm-3" ><span class="field-name">Side effects</span></label>     
+            <label for="tbSideEffects" class="control-label col-sm-3" >
+                <span class="field-name"><%=sideEffects%></span>
+            </label>     
             <div class="col-sm-9">                  
                     <textarea id="tbSideEffects" name="tbSideEffects" runat="server" class="textarea form-control"></textarea>
             </div>
@@ -192,8 +210,8 @@ Any allergies to this drug or its ingredients or components of the container (Co
         <!--SideEffects Table -->              
         <section>
             <div class="wb-eqht row margin-top-medium">
-                <div class="hght-inhrt col-xs-2 brdr-tp brdr-lft brdr-bttm"><p>Frequency</p></div>
-                <div class="hght-inhrt col-xs-2 brdr-tp brdr-lft brdr-bttm"><p>Symptom</p></div>
+                <div class="hght-inhrt col-xs-2 brdr-tp brdr-lft brdr-bttm"><p><%=frequency%></p></div>
+                <div class="hght-inhrt col-xs-2 brdr-tp brdr-lft brdr-bttm"><p><%=symptom%></p></div>
                 <div class="hght-inhrt col-xs-2 brdr-tp brdr-lft brdr-bttm">
                     <asp:TextBox ID="tbTalkwithDocIfSever" runat="server" TextMode="MultiLine" Style="width: 100%; height: 100%">Talk with your doctor only if server</asp:TextBox>
                 </div>
@@ -208,13 +226,13 @@ Any allergies to this drug or its ingredients or components of the container (Co
 
         <section>
             <div class="wb-eqht row">
-                <div class="col-xs-2 brdr-lft brdr-bttm"><p>Common</p></div>
+                <div class="col-xs-2 brdr-lft brdr-bttm"><p><%=common%></p></div>
                 <div class="col-xs-2 brdr-bttm"></div>
                 <div class="col-xs-2 brdr-bttm"></div>
                 <div class="col-xs-2 brdr-bttm"></div>
                 <div class="col-xs-2 brdr-rght brdr-bttm"></div>
                 <div class="col-xs-2">
-                    <input class="btn btn-default btn-xs" type="button" value="Add" onclick="AddCommonSymptomsTextBox()" id="btnAddExtrCommonSymptoms" />
+                    <input class="btn btn-default btn-xs" type="button" value="<%=addButton%>" onclick="AddCommonSymptomsTextBox()" id="btnAddExtrCommonSymptoms" />
                 </div>
             </div>
         </section>
@@ -237,7 +255,7 @@ Any allergies to this drug or its ingredients or components of the container (Co
                     <input class="form-control" title="Common stop taking" type="checkbox" id="cbCommonStoptaking0" name="cbCommonStoptaking0" />
                 </div>
                 <div class="col-xs-2 wb-eqht">
-                    <input class="btn btn-default btn-xs" type="button" value="Remove" onclick="RemoveCommon(0)" id="btnRemoveCommon" />
+                    <input class="btn btn-default btn-xs" type="button" value="<%=removeButton %>" onclick="RemoveCommon(0)" id="btnRemoveCommon" />
                 </div>
             </div>
             <div id="dvExtraCommonSymptoms" >
@@ -245,13 +263,13 @@ Any allergies to this drug or its ingredients or components of the container (Co
         </section>
         <section>
             <div class="wb-eqht row">
-                <div class="col-xs-2 brdr-lft brdr-bttm"><p>Uncommon</p></div>
+                <div class="col-xs-2 brdr-lft brdr-bttm"><p><%=uncommon%></p></div>
                 <div class="col-xs-2 brdr-bttm"></div>
                 <div class="col-xs-2 brdr-bttm"></div>
                 <div class="col-xs-2 brdr-bttm"></div>
                 <div class="col-xs-2 brdr-rght brdr-bttm"></div>
                 <div class="col-xs-2">
-                    <input class="btn btn-default btn-xs" type="button" value="Add" onclick="AddUncommonSymptomsTextBox()" id="btnAddExtrUncommonSymptoms" />
+                    <input class="btn btn-default btn-xs" type="button" value="<%=addButton%>" onclick="AddUncommonSymptomsTextBox()" id="btnAddExtrUncommonSymptoms" />
                 </div>
             </div>
         </section>
@@ -274,7 +292,7 @@ Any allergies to this drug or its ingredients or components of the container (Co
                     <input type="checkbox" title="Uncommon stop taking" class="form-control" id="cbUncommonStoptaking0" name="cbUncommonStoptaking0" />
                 </div>
                 <div class="wb-eqht col-xs-2">
-                    <input class="btn btn-default btn-xs" type="button" value="Remove" onclick="RemoveUncommon(0)" id="btnRemoveUncommon" />
+                    <input class="btn btn-default btn-xs" type="button" value="<%=removeButton %>" onclick="RemoveUncommon(0)" id="btnRemoveUncommon" />
                 </div>
             </div>
             <div id="dvExtraUncommonSymptoms"></div>
@@ -282,13 +300,13 @@ Any allergies to this drug or its ingredients or components of the container (Co
 
         <section>
             <div class="row wb-eqht">
-                <div class="col-xs-2 brdr-lft brdr-bttm"><p>Rare</p></div>
+                <div class="col-xs-2 brdr-lft brdr-bttm"><p><%=rare%></p></div>
                 <div class="col-xs-2 brdr-bttm"></div>
                 <div class="col-xs-2 brdr-bttm"></div>
                 <div class="col-xs-2 brdr-bttm"></div>
                 <div class="col-xs-2 brdr-rght brdr-bttm"></div>
                 <div class="col-xs-2">
-                    <input class="btn btn-default btn-xs" type="button" value="Add" onclick="AddRareSymptomsTextBox()" id="btnAddExtrRareSymptoms" />
+                    <input class="btn btn-default btn-xs" type="button" value="<%=addButton%>" onclick="AddRareSymptomsTextBox()" id="btnAddExtrRareSymptoms" />
                 </div>
             </div>
         </section>
@@ -311,7 +329,7 @@ Any allergies to this drug or its ingredients or components of the container (Co
                     <input type="checkbox" title="Rare stop taking" class="form-control" id="cbRareStoptaking0" name="cbRareStoptaking0" />
                 </div>
                 <div class="col-xs-2">
-                    <input class="btn btn-default btn-xs" type="button" value="Remove" onclick="RemoveRare(0)" id="btnRemoveRare" />
+                    <input class="btn btn-default btn-xs" type="button" value="<%=removeButton %>" onclick="RemoveRare(0)" id="btnRemoveRare" />
                 </div>
             </div>
             <div id="dvExtraRareSymptoms"></div>
@@ -319,13 +337,13 @@ Any allergies to this drug or its ingredients or components of the container (Co
 
         <section>
             <div class="row wb-eqht">
-               <div class="col-xs-2 brdr-lft brdr-bttm"><p>Very rare</p></div>
+               <div class="col-xs-2 brdr-lft brdr-bttm"><p><%=veryRare%></p></div>
                 <div class="col-xs-2 brdr-bttm"></div>
                 <div class="col-xs-2 brdr-bttm"></div>
                 <div class="col-xs-2 brdr-bttm"></div>
                 <div class="col-xs-2 brdr-rght brdr-bttm"></div>
                 <div class="col-xs-2">
-                    <input class="btn btn-default btn-xs" type="button" value="Add" onclick="AddVeryRareSymptomsTextBox()" id="btnAddExtrVeryRareSymptoms" />
+                    <input class="btn btn-default btn-xs" type="button" value="<%=addButton%>" onclick="AddVeryRareSymptomsTextBox()" id="btnAddExtrVeryRareSymptoms" />
                 </div>
             </div>
         </section>
@@ -348,7 +366,7 @@ Any allergies to this drug or its ingredients or components of the container (Co
                     <input type="checkbox" title="Very rare stop taking" class="form-control" id="cbVeryRareStoptaking0" name="cbVeryRareStoptaking0" />
                 </div>
                 <div class="col-xs-2">
-                    <input class="btn btn-default btn-xs" type="button" value="Remove" onclick="RemoveVeryRare(0)" id="btnRemoveVeryRare" />
+                    <input class="btn btn-default btn-xs" type="button" value="<%=removeButton %>" onclick="RemoveVeryRare(0)" id="btnRemoveVeryRare" />
                 </div>
             </div>
             <div id="dvExtraVeryRareSymptoms"></div>
@@ -356,13 +374,13 @@ Any allergies to this drug or its ingredients or components of the container (Co
 
         <section>
             <div class="row wb-eqht">
-               <div class="col-xs-2 brdr-lft brdr-bttm"><p>Unknown</p></div>
+               <div class="col-xs-2 brdr-lft brdr-bttm"><p><%=unknown%></p></div>
                 <div class="col-xs-2 brdr-bttm"></div>
                 <div class="col-xs-2 brdr-bttm"></div>
                 <div class="col-xs-2 brdr-bttm"></div>
                 <div class="col-xs-2 brdr-rght brdr-bttm"></div>
                 <div class="col-xs-2">
-                    <input class="btn btn-default btn-xs" type="button" value="Add" onclick="AddUnknownSymptomsTextBox()" id="btnAddExtrUnkownSymptoms" />
+                    <input class="btn btn-default btn-xs" type="button" value="<%=addButton%>" onclick="AddUnknownSymptomsTextBox()" id="btnAddExtrUnkownSymptoms" />
                 </div>
             </div>
         </section>
@@ -385,7 +403,7 @@ Any allergies to this drug or its ingredients or components of the container (Co
                     <input type="checkbox" title="Unknown stop taking" class="form-control" id="cbUnknownStoptaking0" name="cbUnknownStoptaking0" />
                 </div>
                 <div class="col-xs-2">
-                    <input class="btn btn-default btn-xs" type="button" value="Remove" onclick="RemoveUnknown(0)" id="btnRemoveUnknown" />
+                    <input class="btn btn-default btn-xs" type="button" value="<%=removeButton %>" onclick="RemoveUnknown(0)" id="btnRemoveUnknown" />
                 </div>
             </div>
             <div id="dvExtraUnknownSymptoms"></div>
@@ -393,10 +411,12 @@ Any allergies to this drug or its ingredients or components of the container (Co
         <!--End of SideEffects -->
      <div class="clearfix"></div>     
      <div class="form-group margin-bottom-none">
-            <p>* This is not a complete list of side effects. For any unexpected effects while taking, contact your doctor or pharmacist.</p>          
+            <p>* <%=sideEffectContact%></p>          
          </div>     
          <div class="form-group row ">
-            <label for="tbSideEffectsWhatToDo" class="control-label col-sm-3" ><span class="field-name">Side effects and what to do</span></label>
+            <label for="tbSideEffectsWhatToDo" class="control-label col-sm-3" >
+                <span class="field-name"><%=whatToDo%></span>
+            </label>
             <div class="col-sm-9">                  
                   <textarea id="tbSideEffectsWhatToDo" name="tbSideEffectsWhatToDo" runat="server" class="textarea"></textarea>
             </div>
@@ -405,9 +425,11 @@ Any allergies to this drug or its ingredients or components of the container (Co
  </details>  
     
  <details class="margin-top-medium">
-        <summary id="SUM_HOW_TO_STORE-IT">How to store it</summary>
+        <summary id="SUM_HOW_TO_STORE-IT" class="well well-sm"><%=sumHowStore%></summary>
         <div class="form-group row">
-            <div class="col-sm-3"></div>           
+            <label for="tbSideEffectsWhatToDo" class="control-label col-sm-3" >
+                <span class="field-name"><%=sumHowStore%></span>
+            </label>      
             <div class="col-sm-9">
                 <textarea id="tbHowToStore" name="tbHowToStore" runat="server" class="textarea form-control"></textarea>
             </div>
@@ -415,9 +437,11 @@ Any allergies to this drug or its ingredients or components of the container (Co
 </details>
 
 <details class="margin-top-medium">
-        <summary id="SUM_REPORTING">Reporting supected side effects</summary>
+        <summary id="SUM_REPORTING" class="well well-sm"><%=sumReporting%></summary>
         <div class="form-group row">
-            <div class="col-sm-3"></div>
+            <label for="tbSideEffectsWhatToDo" class="control-label col-sm-3" >
+                <span class="field-name"><%=sumReporting%></span>
+            </label>   
             <div class="col-sm-9">                
                     <textarea id="tbReportingSuspectedSE" name="tbReportingSuspectedSE" runat="server" class="textarea form-control"></textarea>
             </div>
@@ -425,19 +449,22 @@ Any allergies to this drug or its ingredients or components of the container (Co
 </details>
 
 <details class="margin-top-medium">
-    <summary id="SUM_MORE_INFORMATION">More Information</summary>
+    <summary id="SUM_MORE_INFORMATION" class="well well-sm"><%=sumMoreInfo%></summary>
     <div class="form-group row">
-            <asp:Label ID="lblMoreInfo" AssociatedControlID="tbMoreInformation" CssClass="col-sm-3 control-label" runat="server"></asp:Label>           
+            <Label ID="lblMoreInfo" for="tbMoreInformation" Class="col-sm-3 control-label">
+                <span class="field-name"><%=sumMoreInfo%></span>
+            </Label>           
             <div class="col-sm-9">                
                 <textarea id="tbMoreInformation" name="tbMoreInformation" runat="server" class="textarea form-control"></textarea>
             </div>        
     </div>
 
-    <div class="form-group row">                
-            <asp:Label ID="lblLastRevised" AssociatedControlID="tbLastrRevised" CssClass="col-sm-3 control-label" runat="server">Last Modified
-                <span class="datepicker-format"> (<abbr title="Four digits year, dash, two digits month, dash, two digits day">YYYY-MM-DD</abbr>)</span>
-            </asp:Label>   
-             <div class="col-sm-9">                 
+    <div class="form-group row">   
+             <Label ID="lblLastRevised" for="tbLastrRevised" Class="col-sm-3 control-label">
+                <span class="field-name"><%=lastModified%></span>     
+                <span class="datepicker-format"> (<abbr title="Four digits year, dash, two digits month, dash, two digits day">YYYY-MM-DD</abbr>)</span> 
+            </Label> 
+             <div class="col-sm-9">
             <asp:TextBox runat="server" ID="tbLastrRevised" Width="250" name="tbLastrRevised" CssClass="form-control" type="date" data-rule-dateiso="true"></asp:TextBox>
             </div>
        

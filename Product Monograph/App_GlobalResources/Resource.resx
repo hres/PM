@@ -117,17 +117,188 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
+  <data name="addWarnings" xml:space="preserve">
+    <value>Additional warnings</value>
+    <comment>Part 1</comment>
+  </data>
+  <data name="administration" xml:space="preserve">
+    <value>Administration</value>
+    <comment>Part 1</comment>
+  </data>
+  <data name="adverseReaction" xml:space="preserve">
+    <value>Adverse drug reaction overview</value>
+    <comment>Part 1</comment>
+  </data>
+  <data name="analyteName" xml:space="preserve">
+    <value>Analyte name</value>
+  </data>
+  <data name="arithmeticMedian" xml:space="preserve">
+    <value>Expressed as either the arithmetic mean (CV%) or the median (range) only.</value>
+  </data>
+  <data name="arithmeticOnly" xml:space="preserve">
+    <value>Expressed as the arithmetic mean (CV%) only.</value>
+  </data>
+  <data name="auciUnit" xml:space="preserve">
+    <value>AUCI (units)</value>
+  </data>
+  <data name="auct24" xml:space="preserve">
+    <value>For drugs with a half-life greater than 24 hours AUCT should be replaced with AUC0-72.</value>
+  </data>
+  <data name="auctUnit" xml:space="preserve">
+    <value>AUCT ‡(units)</value>
+  </data>
+  <data name="availableVolume" xml:space="preserve">
+    <value>Approximate available volume</value>
+    <comment>Part 1</comment>
+  </data>
+  <data name="brandDosageForm" xml:space="preserve">
+    <value>Brand  dosage form</value>
+    <comment>Cover page</comment>
+  </data>
   <data name="brandName" xml:space="preserve">
     <value>Brand name</value>
   </data>
+  <data name="brandNameTitle" xml:space="preserve">
+    <value>Brand name </value>
+    <comment>Cover page</comment>
+  </data>
+  <data name="chemicalName" xml:space="preserve">
+    <value>Chemical name</value>
+  </data>
+  <data name="clinicalTrials" xml:space="preserve">
+    <value>Clinical trials</value>
+  </data>
+  <data name="cmaxUnit" xml:space="preserve">
+    <value>CMAX (units)</value>
+  </data>
+  <data name="compBioStudies" xml:space="preserve">
+    <value>Comparative bioavailability studies</value>
+  </data>
+  <data name="compositionPackaging" xml:space="preserve">
+    <value>Dosage forms, composition and packaging</value>
+    <comment>Part 1</comment>
+  </data>
+  <data name="concentration" xml:space="preserve">
+    <value>Nominal concentration per mL</value>
+    <comment>Part 1</comment>
+  </data>
+  <data name="confidenceInterval" xml:space="preserve">
+    <value>Indicate % Confidence Interval (i.e., 90% or 95%) in the column heading and list for the AUCT, AUCI and CMAX (if required).</value>
+  </data>
+  <data name="confInterval" xml:space="preserve">
+    <value>Confidence interval</value>
+  </data>
+  <data name="contraindications" xml:space="preserve">
+    <value>Contraindications</value>
+    <comment>Part 1</comment>
+  </data>
   <data name="coverPage" xml:space="preserve">
     <value>Cover Page</value>
+  </data>
+  <data name="datePreparation" xml:space="preserve">
+    <value>Date of preparation</value>
+    <comment>Cover page</comment>
+  </data>
+  <data name="dateRevision" xml:space="preserve">
+    <value>Date of revision</value>
+    <comment>Cover page</comment>
+  </data>
+  <data name="dosageForm" xml:space="preserve">
+    <value>Dosage form</value>
+    <comment>Part 1 and Cover page</comment>
+  </data>
+  <data name="dosingConsiderations" xml:space="preserve">
+    <value>Dosing considerations</value>
+    <comment>Part 1</comment>
+  </data>
+  <data name="drugSubstance" xml:space="preserve">
+    <value>Drug substance</value>
   </data>
   <data name="footnote" xml:space="preserve">
     <value>Footnote</value>
   </data>
   <data name="formInstruction" xml:space="preserve">
     <value>Form Instruction</value>
+  </data>
+  <data name="geriatrics" xml:space="preserve">
+    <value>Geriatrics</value>
+    <comment>Part 1</comment>
+  </data>
+  <data name="geriatricsAge" xml:space="preserve">
+    <value>years of age</value>
+    <comment>Part 1</comment>
+  </data>
+  <data name="halfLife" xml:space="preserve">
+    <value>T1/2 [](h)</value>
+  </data>
+  <data name="handlingInstruction" xml:space="preserve">
+    <value>Special handling instructions</value>
+    <comment>Part 1</comment>
+  </data>
+  <data name="headings" xml:space="preserve">
+    <value>Headings</value>
+    <comment>Part 1</comment>
+  </data>
+  <data name="idRefProduct" xml:space="preserve">
+    <value>Identity of the reference product, including the manufacturer, and origin (country of purchase).</value>
+  </data>
+  <data name="idTestProduct" xml:space="preserve">
+    <value>Identity of the test product.</value>
+  </data>
+  <data name="indicatedFor" xml:space="preserve">
+    <value> is indicated for:</value>
+    <comment>Part 1</comment>
+  </data>
+  <data name="information" xml:space="preserve">
+    <value>Info</value>
+    <comment>All</comment>
+  </data>
+  <data name="interactionOverview" xml:space="preserve">
+    <value>Drug interactions overview</value>
+    <comment>Part 1</comment>
+  </data>
+  <data name="interactions" xml:space="preserve">
+    <value>Interactions with this medication</value>
+    <comment>Part3</comment>
+  </data>
+  <data name="mechanismAction" xml:space="preserve">
+    <value>Mechanism of action</value>
+    <comment>Part 1</comment>
+  </data>
+  <data name="medicationUse" xml:space="preserve">
+    <value>What the medication is used for</value>
+  </data>
+  <data name="microbiology" xml:space="preserve">
+    <value>Microbiology</value>
+  </data>
+  <data name="missedDose" xml:space="preserve">
+    <value>Missed dose</value>
+    <comment>Part 1</comment>
+  </data>
+  <data name="molecularFormula" xml:space="preserve">
+    <value>Molecular formula</value>
+  </data>
+  <data name="molecularMass" xml:space="preserve">
+    <value>Molecular mass</value>
+  </data>
+  <data name="nonmedIngred" xml:space="preserve">
+    <value>Clinically relevant nonmedicinal ingredients</value>
+    <comment>Part 1</comment>
+  </data>
+  <data name="oralSolutions" xml:space="preserve">
+    <value>Oral solutions</value>
+    <comment>Part 1</comment>
+  </data>
+  <data name="overdosage" xml:space="preserve">
+    <value>Overdosage</value>
+    <comment>Part 1</comment>
+  </data>
+  <data name="parameter" xml:space="preserve">
+    <value>Parameter</value>
+  </data>
+  <data name="parenteralProd" xml:space="preserve">
+    <value>Parenteral products</value>
+    <comment>Part 1</comment>
   </data>
   <data name="partOne" xml:space="preserve">
     <value>Part I: Health professional information</value>
@@ -138,22 +309,379 @@
   <data name="partTwo" xml:space="preserve">
     <value>Part II: Scientific information</value>
   </data>
+  <data name="pediatrics" xml:space="preserve">
+    <value>Pediatrics</value>
+    <comment>Part 1</comment>
+  </data>
+  <data name="pediatricsAge" xml:space="preserve">
+    <value>years of age</value>
+    <comment>Part 1</comment>
+  </data>
+  <data name="pediatricsAgeX" xml:space="preserve">
+    <value>years of age or</value>
+    <comment>Part 1</comment>
+  </data>
+  <data name="pharmaceuticalStandard" xml:space="preserve">
+    <value>Pharmaceutical standard (if applicable)</value>
+    <comment>Cover page</comment>
+  </data>
+  <data name="pharmacodynamics" xml:space="preserve">
+    <value>Pharmacodynamics</value>
+    <comment>Part 1</comment>
+  </data>
+  <data name="pharmacology" xml:space="preserve">
+    <value>Detailed pharmacology</value>
+  </data>
+  <data name="physicochemicalProp" xml:space="preserve">
+    <value>Physicochemical properties</value>
+  </data>
+  <data name="populationsConditions" xml:space="preserve">
+    <value>Special Populations and Conditions</value>
+    <comment>Part 1</comment>
+  </data>
   <data name="properName" xml:space="preserve">
     <value>Proper name</value>
   </data>
+  <data name="properNameTitle" xml:space="preserve">
+    <value>Proper name </value>
+    <comment>Cover page</comment>
+  </data>
+  <data name="ratioGeoMeans" xml:space="preserve">
+    <value>Ratio of geometric means</value>
+  </data>
+  <data name="recommendedDose" xml:space="preserve">
+    <value>Recommended dose and dosage adjustment</value>
+    <comment>Part 1</comment>
+  </data>
+  <data name="reconstitution" xml:space="preserve">
+    <value>Reconstitution</value>
+    <comment>Part 1</comment>
+  </data>
+  <data name="reference" xml:space="preserve">
+    <value>Reference</value>
+  </data>
+  <data name="references" xml:space="preserve">
+    <value>References</value>
+  </data>
+  <data name="routeAdministration" xml:space="preserve">
+    <value>Route of administration</value>
+    <comment>Part 1</comment>
+  </data>
   <data name="schedulingSymbol" xml:space="preserve">
     <value>Scheduling symbol</value>
+    <comment>Cover page</comment>
+  </data>
+  <data name="seriousInteractions" xml:space="preserve">
+    <value>Serious drug interactions</value>
+    <comment>Part 1</comment>
+  </data>
+  <data name="seriousWarnings" xml:space="preserve">
+    <value>Serious warnings and precautions</value>
+    <comment>Part 1</comment>
   </data>
   <data name="sponsorAddress" xml:space="preserve">
     <value>Sponsor address</value>
+    <comment>Cover page</comment>
   </data>
   <data name="sponsorName" xml:space="preserve">
     <value>Sponsor name</value>
+    <comment>Cover page</comment>
+  </data>
+  <data name="storagestability" xml:space="preserve">
+    <value>Storage and stability</value>
+    <comment>Part 1</comment>
+  </data>
+  <data name="strength" xml:space="preserve">
+    <value>Strength</value>
+    <comment>Part 1</comment>
+  </data>
+  <data name="strengthDosageValue" xml:space="preserve">
+    <value>Strength per dosage&lt;br /&gt; Value | Unit</value>
+    <comment>Cover page</comment>
+  </data>
+  <data name="strengthValue" xml:space="preserve">
+    <value>Strength &lt;br /&gt;Value | Unit</value>
+    <comment>Cover page</comment>
   </data>
   <data name="submissionControlNumber" xml:space="preserve">
     <value>Submission control number</value>
+    <comment>Cover page</comment>
+  </data>
+  <data name="sumAdverseReactions" xml:space="preserve">
+    <value>Adverse reactions</value>
+    <comment>Part 1</comment>
+  </data>
+  <data name="sumClinicalPharmacology" xml:space="preserve">
+    <value>Action and clinical pharmacology</value>
+    <comment>Part 1</comment>
+  </data>
+  <data name="sumClinicalTrials" xml:space="preserve">
+    <value>Clinical trials</value>
+    <comment>Part 2</comment>
+  </data>
+  <data name="sumContraindications" xml:space="preserve">
+    <value>Contraindications</value>
+    <comment>Part 1</comment>
+  </data>
+  <data name="sumDosage" xml:space="preserve">
+    <value>Dosage and administration</value>
+    <comment>Part 1</comment>
+  </data>
+  <data name="sumDosageForm" xml:space="preserve">
+    <value>Dosage forms, composition and packaging</value>
+    <comment>Part 1</comment>
+  </data>
+  <data name="sumDrugInteractions" xml:space="preserve">
+    <value>Drug interactions</value>
+    <comment>Part 1</comment>
+  </data>
+  <data name="sumHowStore" xml:space="preserve">
+    <value>How to store it</value>
+  </data>
+  <data name="sumIndications" xml:space="preserve">
+    <value>Indications and clinical use</value>
+    <comment>Part 1</comment>
+  </data>
+  <data name="sumInteractions" xml:space="preserve">
+    <value>Interactions with this medication</value>
+  </data>
+  <data name="sumMedication" xml:space="preserve">
+    <value>About this medication</value>
+    <comment>Part 3 </comment>
+  </data>
+  <data name="sumMicrobiology" xml:space="preserve">
+    <value>Microbiology</value>
+    <comment>Part 2</comment>
+  </data>
+  <data name="sumMoreInfo" xml:space="preserve">
+    <value>More Information</value>
+  </data>
+  <data name="sumOverdosage" xml:space="preserve">
+    <value>Overdosage</value>
+    <comment>Part 1</comment>
+  </data>
+  <data name="sumPharmacology" xml:space="preserve">
+    <value>Detailed pharmacology</value>
+    <comment>Part 2</comment>
+  </data>
+  <data name="sumPharmInfo" xml:space="preserve">
+    <value>Pharmaceutical information</value>
+    <comment>Part 2</comment>
+  </data>
+  <data name="sumProdInfo" xml:space="preserve">
+    <value>Summary product information</value>
+    <comment>Part 1</comment>
+  </data>
+  <data name="sumProperUse" xml:space="preserve">
+    <value>Proper use of this medication</value>
+  </data>
+  <data name="sumReferences" xml:space="preserve">
+    <value>References</value>
+    <comment>Part 2</comment>
+  </data>
+  <data name="sumReporting" xml:space="preserve">
+    <value>Reporting supected side effects</value>
+  </data>
+  <data name="sumSideEffects" xml:space="preserve">
+    <value>Side effects and what to do about them</value>
+  </data>
+  <data name="sumSpecialHandling" xml:space="preserve">
+    <value>Special handling instructions</value>
+    <comment>Part 1</comment>
+  </data>
+  <data name="sumStorage" xml:space="preserve">
+    <value>Storage and stability</value>
+    <comment>Part 1</comment>
+  </data>
+  <data name="sumToxicology" xml:space="preserve">
+    <value>Toxicology</value>
+    <comment>Part 2</comment>
+  </data>
+  <data name="sumWarnings" xml:space="preserve">
+    <value>Warnings and precautions</value>
+    <comment>Part 1 &amp; Part 3</comment>
+  </data>
+  <data name="test" xml:space="preserve">
+    <value>Test</value>
   </data>
   <data name="therapeuticClassification" xml:space="preserve">
     <value>Therapeutic classification</value>
+    <comment>Cover page</comment>
+  </data>
+  <data name="tmax" xml:space="preserve">
+    <value>TMAX §(h)</value>
+  </data>
+  <data name="toxicology" xml:space="preserve">
+    <value>Toxicology</value>
+  </data>
+  <data name="vialSize" xml:space="preserve">
+    <value>Vial size</value>
+    <comment>Part 1</comment>
+  </data>
+  <data name="volumediluent" xml:space="preserve">
+    <value>Volume of diluent to be added to vial</value>
+    <comment>Part 1</comment>
+  </data>
+  <data name="medicationDoes" xml:space="preserve">
+    <value>What it does</value>
+    <comment>Part3</comment>
+  </data>
+  <data name="medIngredient" xml:space="preserve">
+    <value>What the medicinal ingredient is</value>
+    <comment>Part 3</comment>
+  </data>
+  <data name="nonMedIngredient" xml:space="preserve">
+    <value>What the nonmedicinal ingredients are</value>
+    <comment>Part 3</comment>
+  </data>
+  <data name="whatDosageForm" xml:space="preserve">
+    <value>What dosage forms it comes in</value>
+    <comment>Part3</comment>
+  </data>
+  <data name="whenNotUse" xml:space="preserve">
+    <value>When it should not be used</value>
+    <comment>Part 3</comment>
+  </data>
+  <data name="properUse" xml:space="preserve">
+    <value>Proper use of this medication</value>
+    <comment>Part3</comment>
+  </data>
+  <data name="usualDose" xml:space="preserve">
+    <value>Usual dose</value>
+  </data>
+  <data name="addButton" xml:space="preserve">
+    <value>Add</value>
+    <comment>All</comment>
+  </data>
+  <data name="adverseReactionInfo" xml:space="preserve">
+    <value>An overview of the ADR information that may affect prescribing decision, it should contain: serious and important ADRs; the most frequent ADRs and ADRs that most commonly result in clinical intervention.</value>
+    <comment>Part1</comment>
+  </data>
+  <data name="common" xml:space="preserve">
+    <value>Common</value>
+    <comment>Part3</comment>
+  </data>
+  <data name="compBioStudiesInfo" xml:space="preserve">
+    <value>narrative outlining the design of the bioequivalence study. The values in the table should be based on the measured data from the study; no potency correction should be applied.</value>
+    <comment>Part2</comment>
+  </data>
+  <data name="contraindicationsInfo" xml:space="preserve">
+    <value>Patients who are hypersensitive to this drug or to any ingredient in the formulation or component of the container. For a complete listing, see the Dosage Forms, Composition and Packaging section of the product monograph. [if applicable]</value>
+    <comment>Part1</comment>
+  </data>
+  <data name="dosingConsiderationsInfo" xml:space="preserve">
+    <value>Include all situations that may affect dosing of the drug</value>
+    <comment>Part1</comment>
+  </data>
+  <data name="frequency" xml:space="preserve">
+    <value>Frequency</value>
+    <comment>Part3</comment>
+  </data>
+  <data name="headingsInfo" xml:space="preserve">
+    <value>Headings to be included as applicable</value>
+    <comment>Part1</comment>
+  </data>
+  <data name="indicatedForInfo" xml:space="preserve">
+    <value>Brief discussion of any relevant clinical information - if applicable 
+Distribution restrictions - if applicable
+When the product is not recommended - if applicable</value>
+    <comment>Part1</comment>
+  </data>
+  <data name="interactionOverviewInfo" xml:space="preserve">
+    <value>It should include the following information: interactions suspected based on the pharmacokinetic or pharmacologic profile of the drug (forr example, cytochrome P45C); drug class statements if the interaction has not yet been documented, but would be clinically significant; potential interaction with alcohol.</value>
+    <comment>Part1</comment>
+  </data>
+  <data name="lastModified" xml:space="preserve">
+    <value>Last modified</value>
+    <comment>Part 3</comment>
+  </data>
+  <data name="mechanismActionInfo" xml:space="preserve">
+    <value>For anti-infective products: a brief description of action against micro-organisms</value>
+    <comment>Part1</comment>
+  </data>
+  <data name="missedDoseFile" xml:space="preserve">
+    <value>Missed dose file</value>
+    <comment>Part3</comment>
+  </data>
+  <data name="nonMedIngredientInfo" xml:space="preserve">
+    <value>For a full listing of nonmedicinal ingredients see Part 1 of the product monograph.</value>
+    <comment>Part3</comment>
+  </data>
+  <data name="overdose" xml:space="preserve">
+    <value>Overdose</value>
+    <comment>Part3</comment>
+  </data>
+  <data name="overdoseFile" xml:space="preserve">
+    <value>Overdose file</value>
+    <comment>Part3</comment>
+  </data>
+  <data name="overdoseInfo" xml:space="preserve">
+    <value>The boxed message may be modified to provide the most appropriate advice according to current standards of care for this drug product.</value>
+    <comment>Part3</comment>
+  </data>
+  <data name="parenteralProdInfo" xml:space="preserve">
+    <value>Any specific precautions, storage periods and incompatibilities</value>
+    <comment>Part1</comment>
+  </data>
+  <data name="rare" xml:space="preserve">
+    <value>Rare</value>
+    <comment>Part3</comment>
+  </data>
+  <data name="recommendedDoseInfo" xml:space="preserve">
+    <value>Include for each indication, route of administration or dosage form</value>
+    <comment>Part1</comment>
+  </data>
+  <data name="removeButton" xml:space="preserve">
+    <value>Remove</value>
+    <comment>All</comment>
+  </data>
+  <data name="seriousInteractionsInfo" xml:space="preserve">
+    <value>Serious, life-threatening drug interactions should be highlighted in this box. Not to exceed 20 lines.</value>
+    <comment>Part1</comment>
+  </data>
+  <data name="seriousWarningsInfo" xml:space="preserve">
+    <value>Clinically significant or serious life-threatening warnings should be placed in the warning box. Generally not to exceed 20 lines.</value>
+    <comment>Part1</comment>
+  </data>
+  <data name="sideEffectContact" xml:space="preserve">
+    <value>This is not a complete list of side effects. For any unexpected effects while taking, contact your doctor or pharmacist.</value>
+    <comment>Part3</comment>
+  </data>
+  <data name="sideEffects" xml:space="preserve">
+    <value>Side effects</value>
+    <comment>Part3</comment>
+  </data>
+  <data name="symptom" xml:space="preserve">
+    <value>Symptom</value>
+    <comment>Part3</comment>
+  </data>
+  <data name="uncommon" xml:space="preserve">
+    <value>Uncommon</value>
+    <comment>Part3</comment>
+  </data>
+  <data name="unknown" xml:space="preserve">
+    <value>Unknown</value>
+    <comment>Part3</comment>
+  </data>
+  <data name="usualDoseFile" xml:space="preserve">
+    <value>Usual dose file</value>
+    <comment>Part 3</comment>
+  </data>
+  <data name="veryRare" xml:space="preserve">
+    <value>Very rare</value>
+    <comment>Part3</comment>
+  </data>
+  <data name="warningsInfo" xml:space="preserve">
+    <value>Activities (Warnings and Precautions, e,g, under Occupational Hazards)
+Current conditions (Contraindications, Warnings and Precautions)
+Past diseases (Contraindications, Warnings and Precautions)
+Reproductive issues (Contraindications, Warnings and Precautions)
+Anticipated medical procedures (Warnings and Precautions)
+Any allergies to this drug or its ingredients or components of the container (Contraindications)</value>
+    <comment>Part3</comment>
+  </data>
+  <data name="whatToDo" xml:space="preserve">
+    <value>Side effects and what to do</value>
+    <comment>Part3</comment>
   </data>
 </root>

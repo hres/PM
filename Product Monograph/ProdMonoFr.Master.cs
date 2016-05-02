@@ -23,14 +23,12 @@ namespace Product_Monograph
 
             }
             this.pageTitle.Text = pageTitleValue;
-            //this.brandName.Text = SessionHelper.Current.brandName;
-            //this.properName.Text = SessionHelper.Current.properName;
         }
 
         protected void SwitchLanguageEnglish_Click(object sender, EventArgs e)
         {
-            SessionHelper.Current.selectedLanguage = "fr-CA";
-            SessionHelper.Current.masterPage = "ProdMonoFr.Master";
+            SessionHelper.Current.selectedLanguage = "en-CA";
+            SessionHelper.Current.masterPage = "ProdMono.Master";
             Server.Transfer(Request.Path);
         }
     }
