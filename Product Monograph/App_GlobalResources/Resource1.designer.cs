@@ -927,6 +927,15 @@ namespace Resources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Save a draft.
+        /// </summary>
+        internal static string saveButton {
+            get {
+                return ResourceManager.GetString("saveButton", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Scheduling symbol.
         /// </summary>
         internal static string schedulingSymbol {

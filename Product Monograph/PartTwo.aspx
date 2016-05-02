@@ -8,7 +8,7 @@
    <asp:ScriptManager id="ScriptManager1" runat="server" EnablePageMethods="true"></asp:ScriptManager>
     <div class="row">
         <div class="col-sm-9">
-             <p class="margin-bottom-none"><strong><span class="field-name"><%=brandNameTitle%>:</span><asp:Literal ID="brandName" runat="server"></asp:Literal></p>
+             <p class="margin-bottom-none"><strong><span class="field-name"><%=brandNameTitle%>:</span></strong><asp:Literal ID="brandName" runat="server"></asp:Literal></p>
              <p><strong><span class="field-name"><%=properNameTitle%>:</span></strong><asp:Literal ID="properName" runat="server"></asp:Literal><p>
          </div>
          <div class="col-sm-3 text-right">

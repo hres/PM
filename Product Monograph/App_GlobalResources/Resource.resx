@@ -684,4 +684,7 @@ Any allergies to this drug or its ingredients or components of the container (Co
     <value>Side effects and what to do</value>
     <comment>Part3</comment>
   </data>
+  <data name="saveButton" xml:space="preserve">
+    <value>Save a draft</value>
+  </data>
 </root>

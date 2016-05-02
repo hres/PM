@@ -452,7 +452,7 @@
     <value>Microbiologie</value>
   </data>
   <data name="sumMoreInfo" xml:space="preserve">
-    <value>Pour de Plus Amples Renseignements</value>
+    <value>Pour de plus amples renseignements</value>
   </data>
   <data name="sumOverdosage" xml:space="preserve">
     <value>Surdosage</value>
@@ -469,7 +469,7 @@
     <comment>Part1</comment>
   </data>
   <data name="sumProperUse" xml:space="preserve">
-    <value>Utilisation Appropriée de ce médicament</value>
+    <value>Utilisation appropriée de ce médicament</value>
     <comment>part3</comment>
   </data>
   <data name="sumReferences" xml:space="preserve">
@@ -541,7 +541,7 @@
     <comment>Part 3</comment>
   </data>
   <data name="properUse" xml:space="preserve">
-    <value>Utilisation Appropriée de ce médicament</value>
+    <value>Utilisation appropriée de ce médicament</value>
     <comment>part3</comment>
   </data>
   <data name="usualDose" xml:space="preserve">
@@ -680,5 +680,8 @@ Allergies quelconques à ce médicament, aux ingrédients ou aux composants du r
   <data name="whatToDo" xml:space="preserve">
     <value>Procédures à suivre en ce qui concerne les effets secondaires</value>
     <comment>Part3</comment>
+  </data>
+  <data name="saveButton" xml:space="preserve">
+    <value>Save a draft_fr</value>
   </data>
 </root>
