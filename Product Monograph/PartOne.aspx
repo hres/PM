@@ -66,6 +66,7 @@
                     <div class="row"> 
                         <label for="tbPediatrics" class="control-label col-sm-2"><span class="field-name"><%=pediatrics%></span></label>                        
                         <input type="number" id="tbPediatricsAgeX" name="tbPediatricsAge1" class="form-control col-sm-1" min="1" max="150" size="3" runat="server"/>
+                        <label class="control-label col-sm-1 text-center"> <span class="field-name"> - </span></label>  
                         <input type="number" id="tbPediatricsAgeY" name="tbPediatricsAge2" class="form-control col-sm-1" min="1" max="150" size="3" runat="server"/>
                         <label for="tbPediatricsAgeX" class="control-label pull-left"><span class="field-name"><%=periatricsAgeX%> </span></label>   
                         <label class="control-label col-sm-1 text-right"> <span class="field-name"> < </span></label>          
