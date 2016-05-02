@@ -1,5 +1,6 @@
 ﻿tinymce.init({
     //selector: "textarea",
+    forced_root_block: '',
     mode: "specific_textareas",
     editor_selector: "textarea",
     width: '100%',
@@ -58,6 +59,7 @@
 
 function setup() {
     tinymce.init({
+        forced_root_block: '',
         selector: "textarea",
         width: '100%',
         height: 0,
