@@ -60,7 +60,8 @@ namespace Product_Monograph
         protected static string overdoseInfo;
         protected static string addButton;
         protected static string removeButton;
-        protected static string saveButton;
+       
+        
         void Page_PreInit(Object sender, EventArgs e)
         {
             if (!string.IsNullOrWhiteSpace(SessionHelper.Current.masterPage))
@@ -125,7 +126,12 @@ namespace Product_Monograph
                 overdoseInfo = Resources.Resource.overdoseInfo;
                 addButton = Resources.Resource.addButton;
                 removeButton = Resources.Resource.removeButton;
-                
+                tbReportingSuspectedSE.Value= Resources.Resource.reportSuspectedSEInstruction;
+                tbTalkwithDocIfSever.Text = Resources.Resource.talkwithDocIfSever;
+                tbTalkwithDocAllCases.Text = Resources.Resource.talkwithDocAllCases;
+                tbStoptakingdrug.Text = Resources.Resource.stopTakingDrug;
+                btnSaveDraft.Text = Resources.Resource.saveButton;
+                btnSaveDraft.Attributes["Title"]= Resources.Resource.saveButtonTitle;
 
                 try
                 {

@@ -13,20 +13,20 @@
              <p><strong><span class="field-name"><%=properNameTitle%>:</span></strong><asp:Literal ID="properName" runat="server"></asp:Literal><p>
          </div>
          <div class="col-sm-3 text-right">
-            <asp:Button ID="btnSaveDraft" runat="server" cssclass="btn btn-primary " Text="Save a draft"  ToolTip="Please save your form data in a draft file." OnClick="btnSave_Click" ClientIDMode="Static"/> 
+            <asp:Button ID="btnSaveDraft" runat="server" cssclass="btn btn-primary " OnClick="btnSave_Click" ClientIDMode="Static"/> 
          </div> 
     </div>  
 <ul class="list-unstyled">
 	<li>
         <details class="margin-top-medium">
            <summary id="summaryProductInformation" class="well well-sm"><%=sumProdInfo%></summary>
-                <table id="dataTable1" class="table table-bordered table-striped table-hover" title="Summary product information form">
+                <table id="dataTable1" class="table table-bordered table-striped table-hover" title="<%=productInfoTableTitle%>">
                 <caption></caption>
                 <thead>
                 <tr>
                     <th><input class="btn btn-default btn-xs" type="button" value="<%=addButton %>" onclick="AddRouteOfAdminTextBox('dataTable1')" id="btnAddExtraRouteOfAdmin" /></th>
                     <th><span class="field-name"><%=routeAdministration%></span></th>
-                    <th><span class="field-name"><%=dosageForm%></span></th>
+                    <th><span class="field-name"><%=dosageForm%></span></th>=
                     <th><span class="field-name"><%=strength%></span></th>
                     <th><span class="field-name"><%=nonmedIngred%></span></th>
                 </tr>
@@ -231,7 +231,7 @@
                             </div>                   
                    </div>
                 <div>
-                    <table id="dataTable2" class="table table-bordered table-striped table-hover" title="Parenteral products">
+                    <table id="dataTable2" class="table table-bordered table-striped table-hover" title="<%=parenteralProdTitle%>Parenteral products">
                         <caption class="text-left"><span class="field-name"><%=parenteralProd%></span></caption>
                         <thead>
                         <tr>
@@ -266,7 +266,7 @@
                             <span class="field-name"><%=overdosage%></span>
                         </label>
                         <div class="col-sm-9"> 
-                            <textarea id="tbOverdosage" name="tbOverdosage" class="textarea form-control input-sm" runat="server">For management of a suspected drug overdose, contact your regional Poison Control Centre.</textarea>
+                            <textarea id="tbOverdosage" name="tbOverdosage" class="textarea form-control input-sm" runat="server"></textarea>
                         </div>                   
                     </div> 
                     

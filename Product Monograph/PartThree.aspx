@@ -13,7 +13,7 @@
              <p><strong><span class="field-name"><%=properNameTitle%>:</span></strong><asp:Literal ID="properName" runat="server"></asp:Literal><p>
          </div>
          <div class="col-sm-3 text-right">
-            <asp:Button ID="btnSaveDraft" runat="server" cssclass="btn btn-primary " Text="Save a draft" ToolTip="Please save your form data in a draft file." OnClick="btnSave_Click" ClientIDMode="Static"/> 
+            <asp:Button ID="btnSaveDraft" runat="server" cssclass="btn btn-primary " OnClick="btnSave_Click" ClientIDMode="Static"/> 
          </div> 
     </div> 
 <details class="margin-top-medium">
@@ -213,13 +213,13 @@
                 <div class="hght-inhrt col-xs-2 brdr-tp brdr-lft brdr-bttm"><p><%=frequency%></p></div>
                 <div class="hght-inhrt col-xs-2 brdr-tp brdr-lft brdr-bttm"><p><%=symptom%></p></div>
                 <div class="hght-inhrt col-xs-2 brdr-tp brdr-lft brdr-bttm">
-                    <asp:TextBox ID="tbTalkwithDocIfSever" runat="server" TextMode="MultiLine" Style="width: 100%; height: 100%">Talk with your doctor only if server</asp:TextBox>
+                    <asp:TextBox ID="tbTalkwithDocIfSever" runat="server" TextMode="MultiLine" Style="width: 100%; height: 100%"></asp:TextBox>
                 </div>
                 <div class="hght-inhrt col-xs-2 brdr-tp brdr-lft brdr-bttm">
-                    <asp:TextBox ID="tbTalkwithDocAllCases" runat="server" TextMode="MultiLine" Style="width: 100%; height: 100%">Talk with your doctor in all cases</asp:TextBox>
+                    <asp:TextBox ID="tbTalkwithDocAllCases" runat="server" TextMode="MultiLine" Style="width: 100%; height: 100%"></asp:TextBox>
                 </div>
                 <div class="hght-inhrt col-xs-2 brdr-tp brdr-rght brdr-lft brdr-bttm">
-                    <asp:TextBox ID="tbStoptakingdrug" runat="server" TextMode="MultiLine" Style="width: 100%; height: 100%">Stop taking drug</asp:TextBox>
+                    <asp:TextBox ID="tbStoptakingdrug" runat="server" TextMode="MultiLine" Style="width: 100%; height: 100%"></asp:TextBox>
                 </div>
             </div>
         </section>

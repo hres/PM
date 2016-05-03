@@ -123,6 +123,8 @@ namespace Product_Monograph
                 compBioStudiesInfo = Resources.Resource.compBioStudiesInfo;
                 addButton = Resources.Resource.addButton;
                 removeButton = Resources.Resource.removeButton;
+                btnSaveDraft.Text = Resources.Resource.saveButton;
+                btnSaveDraft.Attributes["Title"] = Resources.Resource.saveButtonTitle;
 
 
                 try

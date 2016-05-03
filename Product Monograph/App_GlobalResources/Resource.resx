@@ -454,7 +454,7 @@
     <comment>Part 2</comment>
   </data>
   <data name="sumMoreInfo" xml:space="preserve">
-    <value>More Information</value>
+    <value>More information</value>
   </data>
   <data name="sumOverdosage" xml:space="preserve">
     <value>Overdosage</value>
@@ -592,7 +592,7 @@ When the product is not recommended - if applicable</value>
     <comment>Part1</comment>
   </data>
   <data name="lastModified" xml:space="preserve">
-    <value>Last modified</value>
+    <value>Last revised</value>
     <comment>Part 3</comment>
   </data>
   <data name="mechanismActionInfo" xml:space="preserve">
@@ -686,5 +686,43 @@ Any allergies to this drug or its ingredients or components of the container (Co
   </data>
   <data name="saveButton" xml:space="preserve">
     <value>Save a draft</value>
+  </data>
+  <data name="overdoseInstruction" xml:space="preserve">
+    <value>For management of a suspected drug overdose, contact your regional Poison Control Centre.</value>
+    <comment>Part1</comment>
+  </data>
+  <data name="reportSuspectedSEInstruction" xml:space="preserve">
+    <value>You can report any suspected adverse reactions associated with the use of health products to the Canada Vigilance Program by one of the following 3 ways: 
+----------------------------------------------------------------------------------------
+Report online at www.healthcanada.gc.ca/medeffect
+Call toll-free at 1-866-234-2345
+Complete a Canada Vigilance Reporting Form and:
+• Fax toll-free to 1-866-678-6789, or
+• Mail to: Canada Vigilance Program
+Health Canada
+Postal Locator 0701D
+Ottawa, Ontario 
+K1A 0K9
+Postage paid labels, Canada Vigilance Reporting Form and the adverse reaction reporting guidelines are available on the MedEffect¿ Canada Web site at www.healthcanada.gc.ca/medeffect.
+
+NOTE: Should you require information related to the management of side effects, contact your health professional. The Canada Vigilance Program does not provide medical advice.</value>
+  </data>
+  <data name="parenteralProdTitle" xml:space="preserve">
+    <value />
+  </data>
+  <data name="productInfoTableTitle" xml:space="preserve">
+    <value>Summary product information form</value>
+  </data>
+  <data name="saveButtonTitle" xml:space="preserve">
+    <value>Please save your form data in a draft file.</value>
+  </data>
+  <data name="stopTakingDrug" xml:space="preserve">
+    <value>Stop taking drug</value>
+  </data>
+  <data name="talkwithDocAllCases" xml:space="preserve">
+    <value>Talk with your doctor in all cases</value>
+  </data>
+  <data name="talkwithDocIfSever" xml:space="preserve">
+    <value>Talk with your doctor only if server</value>
   </data>
 </root>

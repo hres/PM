@@ -522,7 +522,7 @@ namespace Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Last modified.
+        ///   Looks up a localized string similar to Last revised.
         /// </summary>
         internal static string lastModified {
             get {
@@ -693,6 +693,15 @@ namespace Resources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to For management of a suspected drug overdose, contact your regional Poison Control Centre..
+        /// </summary>
+        internal static string overdoseInstruction {
+            get {
+                return ResourceManager.GetString("overdoseInstruction", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Parameter.
         /// </summary>
         internal static string parameter {
@@ -716,6 +725,15 @@ namespace Resources {
         internal static string parenteralProdInfo {
             get {
                 return ResourceManager.GetString("parenteralProdInfo", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to .
+        /// </summary>
+        internal static string parenteralProdTitle {
+            get {
+                return ResourceManager.GetString("parenteralProdTitle", resourceCulture);
             }
         }
         
@@ -819,6 +837,15 @@ namespace Resources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Summary product information form.
+        /// </summary>
+        internal static string productInfoTableTitle {
+            get {
+                return ResourceManager.GetString("productInfoTableTitle", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Proper name.
         /// </summary>
         internal static string properName {
@@ -918,6 +945,25 @@ namespace Resources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to You can report any suspected adverse reactions associated with the use of health products to the Canada Vigilance Program by one of the following 3 ways: 
+        ///----------------------------------------------------------------------------------------
+        ///Report online at www.healthcanada.gc.ca/medeffect
+        ///Call toll-free at 1-866-234-2345
+        ///Complete a Canada Vigilance Reporting Form and:
+        ///• Fax toll-free to 1-866-678-6789, or
+        ///• Mail to: Canada Vigilance Program
+        ///Health Canada
+        ///Postal Locator 0701D
+        ///Ottawa, Ontario 
+        ///K [rest of string was truncated]&quot;;.
+        /// </summary>
+        internal static string reportSuspectedSEInstruction {
+            get {
+                return ResourceManager.GetString("reportSuspectedSEInstruction", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Route of administration.
         /// </summary>
         internal static string routeAdministration {
@@ -932,6 +978,15 @@ namespace Resources {
         internal static string saveButton {
             get {
                 return ResourceManager.GetString("saveButton", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Please save your form data in a draft file..
+        /// </summary>
+        internal static string saveButtonTitle {
+            get {
+                return ResourceManager.GetString("saveButtonTitle", resourceCulture);
             }
         }
         
@@ -1013,6 +1068,15 @@ namespace Resources {
         internal static string sponsorName {
             get {
                 return ResourceManager.GetString("sponsorName", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Stop taking drug.
+        /// </summary>
+        internal static string stopTakingDrug {
+            get {
+                return ResourceManager.GetString("stopTakingDrug", resourceCulture);
             }
         }
         
@@ -1170,7 +1234,7 @@ namespace Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to More Information.
+        ///   Looks up a localized string similar to More information.
         /// </summary>
         internal static string sumMoreInfo {
             get {
@@ -1292,6 +1356,24 @@ namespace Resources {
         internal static string symptom {
             get {
                 return ResourceManager.GetString("symptom", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Talk with your doctor in all cases.
+        /// </summary>
+        internal static string talkwithDocAllCases {
+            get {
+                return ResourceManager.GetString("talkwithDocAllCases", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Talk with your doctor only if server.
+        /// </summary>
+        internal static string talkwithDocIfSever {
+            get {
+                return ResourceManager.GetString("talkwithDocIfSever", resourceCulture);
             }
         }
         

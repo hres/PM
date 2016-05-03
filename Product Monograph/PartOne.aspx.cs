@@ -89,7 +89,9 @@ namespace Product_Monograph
         protected static string parenteralProdInfo;
         protected static string addButton;
         protected static string removeButton;
-
+        protected static string overdoseInstruction;
+        protected static string productInfoTableTitle;
+        protected static string parenteralProdTitle;
         void Page_PreInit(Object sender, EventArgs e)
         {
             if (!string.IsNullOrWhiteSpace(SessionHelper.Current.masterPage))
@@ -174,6 +176,15 @@ namespace Product_Monograph
                 parenteralProdInfo = Resources.Resource.parenteralProdInfo;
                 addButton = Resources.Resource.addButton;
                 removeButton = Resources.Resource.removeButton;
+                tbOverdosage.Value= Resources.Resource.overdoseInstruction;
+                btnSaveDraft.Text = Resources.Resource.saveButton;
+                btnSaveDraft.Attributes["Title"] = Resources.Resource.saveButtonTitle;
+                productInfoTableTitle = Resources.Resource.productInfoTableTitle;
+                parenteralProdTitle = Resources.Resource.parenteralProdTitle;
+
+
+
+
                 try
                 {
                     LoadFromXML();
