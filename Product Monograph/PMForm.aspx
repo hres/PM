@@ -78,7 +78,7 @@
                  </div>
                 <div class="panel-body">
                   <ul>
-                      <li>To save a file, press the "Save draft" button. The file name of the new file will always be "productmonograph" with the '.zip' extension.</li>
+                      <li>To save a file, press the "Save a draft" button. The file name of the new file will always be the brand name with the '.zip' extension.</li>
                         <li>To collapse and expand web form groups using the arrows shown on the top-left margin of collapsible groups. An arrow to the right (►) means a group is currently collapsed, click on it to expand the group. An arrow downward (▼) means the group is currently expanded and can be collapsed by clicking on this arrow.</li>
                         <li>Key information is displayed by hovering your cursor over the red help of message circle <span class="label label-info">Info</span></li>
                         <li>Navigate through the XML PM Web Form by clicking on the links located below the banner. Major sections will be indicated depending on the template type selected.</li>
