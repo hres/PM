@@ -707,7 +707,8 @@ REMARQUE : Pour obtenir des renseignements relatifs à la gestion des effets sec
     <comment>Part3</comment>
   </data>
   <data name="parenteralProdTitle" xml:space="preserve">
-    <value />
+    <value>Parenteral products</value>
+    <comment>Part1</comment>
   </data>
   <data name="productInfoTableTitle" xml:space="preserve">
     <value>Summary product information form_fr</value>

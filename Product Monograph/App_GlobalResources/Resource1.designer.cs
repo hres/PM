@@ -729,7 +729,7 @@ namespace Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to .
+        ///   Looks up a localized string similar to Parenteral products.
         /// </summary>
         internal static string parenteralProdTitle {
             get {

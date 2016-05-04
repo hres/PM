@@ -708,7 +708,8 @@ Postage paid labels, Canada Vigilance Reporting Form and the adverse reaction re
 NOTE: Should you require information related to the management of side effects, contact your health professional. The Canada Vigilance Program does not provide medical advice.</value>
   </data>
   <data name="parenteralProdTitle" xml:space="preserve">
-    <value />
+    <value>Parenteral products</value>
+    <comment>Part1</comment>
   </data>
   <data name="productInfoTableTitle" xml:space="preserve">
     <value>Summary product information form</value>

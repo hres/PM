@@ -38,16 +38,16 @@ function AddSeriousWarningsPrecautions() {
     identity.value = "SeriousWarningsPrecautions" + seriousCounter;
     div.setAttributeNode(identity);
     var tbSeriousWarningsPrecautions = "tbSeriousWarningsPrecautions" + seriousCounter.toString();
-    var returnString = "";
+    var returnString = "";   
     returnString = "<div class='form-group row'>" +
-                        "<label for='" + tbSeriousWarningsPrecautions + "' class='col-sm-3 control-label'></label>" +
-                        "<div class='col-sm-7'>" +
-                            "<textarea id='" + tbSeriousWarningsPrecautions + "' name='tbSeriousWarningsPrecautions' class='textarea form-control'></textarea>" +
-                         "</div>" +
-                         "<div class='col-sm-2 text-right'>" +
-                            '<input class="btn btn-default btn-xs" type="button" value="Remove" onclick="RemoveSeriousWarningsPrecautions(' + seriousCounter + ')" id="btnRemoveSeriousWarnings(' + seriousCounter + ')" />' +
-                        "</div>" +
-                "</div>";
+                           "<label for='" + tbSeriousWarningsPrecautions + "' class='col-sm-3 control-label'></label>" +
+                           "<div class='col-sm-7'>" +
+                               "<textarea id='" + tbSeriousWarningsPrecautions + "' name='tbSeriousWarningsPrecautions' class='textarea form-control'></textarea>" +
+                            "</div>" +
+                            "<div class='col-sm-2 text-right'>" +
+                               '<input class="btn btn-default btn-xs" type="button" value="Remove" onclick="RemoveSeriousWarningsPrecautions(' + seriousCounter + ')" id="btnRemoveSeriousWarnings(' + seriousCounter + ')" />' +
+                           "</div>" +
+                   "</div>";   
     div.innerHTML = returnString;
     document.getElementById("dvExtraSeriousWarningsPrecautions").appendChild(div);
     setup();
