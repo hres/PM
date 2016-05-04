@@ -26,7 +26,7 @@
                 <tr>
                     <th><input class="btn btn-default btn-xs" type="button" value="<%=addButton %>" onclick="AddRouteOfAdminTextBox('dataTable1')" id="btnAddExtraRouteOfAdmin" /></th>
                     <th><span class="field-name"><%=routeAdministration%></span></th>
-                    <th><span class="field-name"><%=dosageForm%></span></th>=
+                    <th><span class="field-name"><%=dosageForm%></span></th>
                     <th><span class="field-name"><%=strength%></span></th>
                     <th><span class="field-name"><%=nonmedIngred%></span></th>
                 </tr>
@@ -138,7 +138,7 @@
                         </div>                   
                    </div>              
             </details>
-           <details class="margin-top-medium">
+        <details class="margin-top-medium">
                     <summary id="adverseReactions" class="well well-sm"><%=sumAdverseReactions%></summary>
                     <div class="form-group row">                    
                         <label for="tbAdverseReactions" class="col-sm-3 control-label">
@@ -150,7 +150,7 @@
                         </div>                   
                     </div> 
             </details>
-            <details class="margin-top-medium">
+        <details class="margin-top-medium">
                     <summary id="drugInteractions" class="well well-sm"><%=sumDrugInteractions%></summary>
                      <div class="form-group row">                    
                         <label for="tbSeriousDrugInteractions" class="col-sm-3 control-label">
@@ -169,9 +169,26 @@
                         <div class="col-sm-9"> 
                             <textarea id="tbDrugInteractions" name="tbDrugInteractions" class="textarea form-control" runat="server"></textarea>
                         </div>                   
-                    </div> 
+                 </div>
+                 <div class="brdr-bttm" >
+                        <div class="form-group row">                    
+                             <label for="tbDrugHeadings" class="col-sm-3 control-label">
+                                     <span class="field-name"><%=headings%></span>
+                                     <span class="label label-info" title="<%=headingsInfo%>"><%=information%></span>
+                             </label>
+                             <div class="col-sm-7">
+                                <select id="dlDrugHeadings" name="dlDrugHeadings" class="form-control font-small input-sm"></select>
+                                <textarea id="tbDrugHeadings" name="tbDrugHeadings" class="textarea form-control" ></textarea>
+                             </div>
+                            <div class="col-sm-2 text-right"> 
+                                <input class="btn btn-default btn-xs" type="button" value="<%=addButton %>" onclick="AddDrugHeadings()" id="btnDrugHeadings" />
+                            </div>   
+                        </div> 
+                  </div>
+                 <div id="divExtratbDrugHeadings">
+                 </div> 
             </details>
-            <details class="margin-top-medium">
+        <details class="margin-top-medium">
                     <summary id="dosageAdministration" class="well well-sm"><%=sumDosage%></summary>
                     <div class="brdr-bttm" >
                         <div class="form-group row">                    
@@ -214,25 +231,23 @@
                                 <textarea id="tbDosageAdministration" name="tbDosageAdministration" class="textarea form-control" runat="server"></textarea>
                             </div>                   
                     </div> 
-                    <div class="form-group row">                    
-                            <label for="tbDosageReconstitution" class="col-sm-3 control-label">
-                                <span class="field-name"><%=reconstitution%></span>
-                            </label>
-                            <div class="col-sm-7"> 
-                                <textarea id="tbDosageReconstitution" name="tbDosageReconstitution" class="textarea form-control" runat="server"></textarea>
-                            </div>                   
+                    <div class="form-group row brdr-bttm">                    
+                            <p  class="col-sm-3">
+                                <span class="field-name"><strong><%=reconstitution%></strong></span>
+                            </p>
+                            <div class="clearfix"></div>                                              
                     </div>  
-                  <div class="form-group row">                    
+                <div class="form-group row">                    
                             <label for="tbDosageOral" class="col-sm-3 control-label">
-                                <span class="field-name"><%=oralSolutions%></span>
+                                <span class="field-name mrgn-lft-md"><%=oralSolutions%></span>
                             </label>
                             <div class="col-sm-7"> 
                                 <textarea id="tbDosageOral" name="tbDosageOral" class="textarea form-control" runat="server"></textarea>
                             </div>                   
                    </div>
                 <div>
-                    <table id="dataTable2" class="table table-bordered table-striped table-hover" title="<%=parenteralProdTitle%>Parenteral products">
-                        <caption class="text-left"><span class="field-name"><%=parenteralProd%></span></caption>
+                    <table id="dataTable2" class="table table-bordered table-striped table-hover" title="<%=parenteralProdTitle%>">
+                        <caption class="text-left mrgn-lft-md"><span class="field-name"><%=parenteralProd%></span></caption>
                         <thead>
                         <tr>
                             <th><input class="btn btn-default btn-xs" type="button" value="<%=addButton %>" onclick="AddParenteralProducts('dataTable2')" id="btnAddParenteralProducts" /></th>
@@ -252,14 +267,14 @@
                             </tr>
                         </tbody>
                     </table> 
-                    <p> <%=parenteralProdInfo%></p>         
-                       
+                    <div class="mrgn-bttm-0 mrgn-tp-0">
+                        <p> <%=parenteralProdInfo%></p> 
+                    </div>
                 </div> 
-                              
-                            
+    
              </details>
 
-            <details class="margin-top-medium">
+        <details class="margin-top-medium">
                     <summary id="overdosage" class="well well-sm"><%=sumOverdosage%></summary>
                     <div class="form-group row">                    
                         <label for="tbOverdosage" class="col-sm-3 control-label">
@@ -271,7 +286,7 @@
                     </div> 
                     
             </details>
-            <details class="margin-top-medium">
+        <details class="margin-top-medium">
                     <summary id="actionClinicalPharmacology" class="well well-sm"><%=sumClinicalPharmacology%></summary>
                      <div class="form-group row">                    
                         <label for="tbMechanismAction" class="col-sm-3 control-label">
@@ -297,12 +312,56 @@
                         <div class="col-sm-9"> 
                             <textarea id="tbSpecialPopulationsConditions" name="tbSpecialPopulationsConditions" class="textarea form-control" runat="server"></textarea>
                         </div>                   
-                    </div>  
+                    </div>
+                  <div class="form-group row brdr-bttm">                    
+                            <p  class="col-sm-3">
+                                <span class="field-name"><strong><%=pharmacokinetics%></strong></span>
+                            </p>
+                            <div class="clearfix"></div>                                              
+                    </div> 
+                    <div class="form-group row">                    
+                             <label for="tbActionHeadings" class="col-sm-3 control-label">
+                                     <span class="field-name mrgn-lft-md"><%=headings%></span>
+                                     <span class="label label-info" title="<%=headingsInfo%>"><%=information%></span>
+                             </label>
+                             <div class="col-sm-7">
+                                <select id="dlActionHeadings" name="dlActionHeadings" class="form-control font-small input-sm"></select>
+                                <textarea id="tbActionHeadings" name="tbActionHeadings" class="textarea form-control" ></textarea>
+                             </div>
+                            <div class="col-sm-2 text-right"> 
+                                <input class="btn btn-default btn-xs" type="button" value="<%=addButton %>" onclick="AddActionHeadings()" id="btnActionHeadings" />
+                            </div>   
+                        </div> 
+                 <div id="divExtratbActionHeadings"></div>               
+                 <table id="pharmacokineticsTable" class="table table-bordered table-striped table-hover" title="<%=PharmacokineticsTableTitle%>">
+                    <caption class="text-left mrgn-lft-md h5">Summary of (proper name)'s Pharmacokinetics Parameters in a (specific patient population)</caption>
+                    <thead>
+                    <tr>
+                        <th><input class="btn btn-default btn-xs" type="button" value="<%=addButton %>" onclick="AddPharmacokineticsTable('pharmacokineticsTable')" id="btnAddPharmacokineticsTable" /></th>
+                        <th><span class="field-name">C<sub>max</sub></span></th>
+                        <th><span class="field-name">T<sub>1/2</sub>(h)</span></th>
+                        <th><span class="field-name">AUC<sub>0-4</sub></span></th>
+                        <th><span class="field-name">Clearance</span></th>
+						<th><span class="h5">Volume of distribution</span></th>
+                    </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td><input id="btnPharmacokineticsTableRemove" type="button" onclick="deletePharmacokineticsTable(this)" name="btnDelete" value="<%=removeButton%>" class="btn btn-default btn-xs"/></td>   
+                            <td headers="thCmax"><textarea  id="tbCmax" name="tbCmax" ></textarea></td>
+                            <td headers="thT12h"><textarea  id="tbT12h" name="tbT12h" ></textarea></td>                                    
+                            <td headers="thAuc"><textarea  id="tbAuc" name="tbAuc" ></textarea></td>
+                            <td headers="thClearance"><textarea  id="tbClearance" name="tbClearance" ></textarea></td>
+							<td headers="thVolumnDis"><textarea  id="tbVolumeDis" name="tbVolumeDis" ></textarea></td>
+                        </tr>
+                    </tbody>
+                </table> 
+          
             </details>
 <%--            <details class="margin-top-medium">
                     <summary id="specialPopulationsConditions" class="well well-sm">Special Populations and Conditions</summary>
             </details>--%>
-            <details class="margin-top-medium">
+       <details class="margin-top-medium">
                     <summary id="storageStability" class="well well-sm"><%=sumStorage%></summary>
                     <div class="form-group row">                    
                         <label for="tbStorageStability" class="col-sm-3 control-label">
@@ -313,7 +372,7 @@
                         </div>                   
                     </div> 
             </details>
-            <details class="margin-top-medium">
+       <details class="margin-top-medium">
                     <summary id="specialHandling" class="well well-sm"><%=sumSpecialHandling%></summary>
                     <div class="form-group row">                    
                         <label for="tbSpecialHandling" class="col-sm-3 control-label">
@@ -324,7 +383,7 @@
                         </div>                   
                     </div> 
             </details>
-            <details class="margin-top-medium">
+       <details class="margin-top-medium">
                     <summary id="DosageCompositionPackaging" class="well well-sm"><%=sumDosageForm%></summary>
                     <div class="form-group row">                    
                         <label for="tbDosageCompositionPackaging" class="col-sm-3 control-label">

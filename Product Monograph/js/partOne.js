@@ -25,6 +25,19 @@ function AddRouteOfAdministrationDefaultRow() {
              $('<option>' + $option + '</option>').appendTo('#dlHeadings')
          });
      });
+     $.get('ControlledList.xml', function (xmlcontolledlist) {
+         $(xmlcontolledlist).find('interactions').each(function () {
+             var $option = $(this).text();
+             $('<option>' + $option + '</option>').appendTo('#dlDrugHeadings')
+         });
+     });
+     $.get('ControlledList.xml', function (xmlcontolledlist) {
+         $(xmlcontolledlist).find('kinetics').each(function () {
+             var $option = $(this).text();
+             $('<option>' + $option + '</option>').appendTo('#dlActionHeadings')
+         });
+     });
+     
 }
 
 
@@ -303,4 +316,146 @@ function deleteParenteralProduct(r) {
     }
     else
         document.getElementById("dataTable2").deleteRow(i);
+}
+
+
+var headingDrugCounter = 0;
+function AddDrugHeadings() {
+    headingDrugCounter = headingDrugCounter + 1;
+    var div = document.createElement('div');
+    var att = document.createAttribute("class");
+    att.value = "brdr-bttm";
+    div.setAttributeNode(att);
+    var identity = document.createAttribute("id");
+    identity.value = "DrugHeadings" + headingDrugCounter;
+    div.setAttributeNode(identity);
+    var dlDrugHeadings = "dlDrugHeadings" + headingDrugCounter.toString();
+    var tbDrugHeadings = "tbDrugHeadings" + headingDrugCounter.toString();
+    var returnString = "";
+    returnString = "<div class='form-group row'>" +
+                       "<label for='" + tbDrugHeadings + "' class='col-sm-3 control-label'></label>" +
+                       "<div class='col-sm-7'>" +
+                           '<select id="' + dlDrugHeadings + '" name="dlDrugHeadings" class="form-control font-small input-sm"></select>' +
+                           "<textarea id='" + tbDrugHeadings + "' name='tbDrugHeadings' class='textarea form-control'></textarea>" +
+                        "</div>" +
+                        "<div class='col-sm-2 text-right'>" +
+                           '<input class="btn btn-default btn-xs" type="button" value="Remove" onclick="RemoveDrugHeadings(' + headingDrugCounter + ')" id="btnRemoveDrugHeadings(' + headingDrugCounter + ')" />' +
+                       "</div>" +
+               "</div>";
+    div.innerHTML = returnString;
+    $.get('ControlledList.xml', function (xmlcontolledlist) {
+        $(xmlcontolledlist).find('interactions').each(function () {
+            var $option = $(this).text();
+            $('<option>' + $option + '</option>').appendTo('#dlDrugHeadings' + headingDrugCounter.toString())
+        });
+    });
+    document.getElementById("divExtratbDrugHeadings").appendChild(div);
+    setup();
+}
+
+function RemoveDrugHeadings(i) {
+    var rowid = "#DrugHeadings" + i;
+    $(rowid).remove();
+}
+
+var headingActionCounter = 0;
+function AddActionHeadings() {
+    headingActionCounter = headingActionCounter + 1;
+    var identity = document.createAttribute("id");
+    identity.value = "ActionHeadings" + headingActionCounter;
+    div.setAttributeNode(identity);
+    var dlActionHeadings = "dlActionHeadings" + headingActionCounter.toString();
+    var tbActionHeadings = "tbActionHeadings" + headingActionCounter.toString();
+    var returnString = "";
+    returnString = "<div class='form-group row'>" +
+                       "<label for='" + tbActionHeadings + "' class='col-sm-3 control-label'></label>" +
+                       "<div class='col-sm-7'>" +
+                           '<select id="' + dlActionHeadings + '" name="dlActionHeadings" class="form-control font-small input-sm"></select>' +
+                           "<textarea id='" + tbActionHeadings + "' name='tbActionHeadings' class='textarea form-control'></textarea>" +
+                        "</div>" +
+                        "<div class='col-sm-2 text-right'>" +
+                           '<input class="btn btn-default btn-xs" type="button" value="Remove" onclick="RemoveActionHeadings(' + headingActionCounter + ')" id="btnRemoveActionHeadings(' + headingActionCounter + ')" />' +
+                       "</div>" +
+               "</div>";
+    div.innerHTML = returnString;
+    $.get('ControlledList.xml', function (xmlcontolledlist) {
+        $(xmlcontolledlist).find('kinetics').each(function () {
+            var $option = $(this).text();
+            $('<option>' + $option + '</option>').appendTo('#dlActionHeadings' + headingActionCounter.toString())
+        });
+    });
+    document.getElementById("divExtratbActionHeadings").appendChild(div);
+    setup();
+}
+
+function RemoveActionHeadings(i) {
+    var rowid = "#ActionHeadings" + i;
+    $(rowid).remove();
+}
+
+var newPharRowCnt = 0;
+function AddPharmacokineticsTable(tableID) {
+    var table = document.getElementById(tableID);
+    var rowCount = table.rows.length;
+    var row = table.insertRow(rowCount);
+    var colCount = table.rows[1].cells.length;
+    var selectCount = 0;
+    try {
+        newPharRowCnt = newPharRowCnt + 1;
+        if (newPharRowCnt < 11) {
+            for (var i = 0; i < colCount; i++) {
+                var newcell = row.insertCell(i);
+                if (i == 1) {
+                    var newCmax = "tbCmax" + newPharRowCnt;
+                    var numCmaxHTML = "<textarea  id='" + newCmax + "' name='tbCmax'></textarea>";
+                    newcell.innerHTML = numCmaxHTML;
+                }
+                else if (i == 2) {
+                    var newT12h = "tbT12h" + newPharRowCnt;
+                    var numT12hHTML = "<textarea  id='" + newT12h + "' name='tbT12h'></textarea>";
+                    newcell.innerHTML = numT12hHTML;
+                }
+                else if (i == 3) {
+                    var newAuc = "tbAuc" + newPharRowCnt;
+                    var numAucHTML = "<textarea  id='" + newAuc + "' name='tbAuc'></textarea>";
+                    newcell.innerHTML = numAucHTML;
+                }
+                else if (i == 4) {
+                    var newClearance = "tbClearance" + newPharRowCnt;
+                    var numClearanceHTML = "<textarea  id='" + newClearance + "' name='tbClearance'></textarea>";
+                    newcell.innerHTML = numClearanceHTML;
+                }
+                else if (i == 5) {
+                    var newVolumeDis = "tbVolumeDis" + newPharRowCnt;
+                    var numVolumeDisHTML = "<textarea  id='" + newVolumeDis + "' name='tbVolumeDis'></textarea>";
+                    newcell.innerHTML = numVolumeDisHTML;
+                }
+                else {
+                    newcell.innerHTML = table.rows[1].cells[i].innerHTML;
+                    newcell.type = table.rows[1].cells[i].nodeType;
+                    switch (newcell.childNodes[0].type) {
+                        case "button":
+                            newcell.childNodes[0].clicked = false;
+                            break;
+                    }
+                }
+            }
+        }
+        else {
+            alert("You reach Max row number 20, thanks!");
+        }
+
+    } catch (e) {
+        alert(e);
+    }
+    setup();
+}
+function deletePharmacokineticsTable(r) {
+    var i = r.parentNode.parentNode.rowIndex;
+    var row = document.getElementById("pharmacokineticsTable").rows[i];
+    if (i <= 1) {
+        alert("Cannot delete all the rows.");
+    }
+    else
+        document.getElementById("pharmacokineticsTable").deleteRow(i);
 }

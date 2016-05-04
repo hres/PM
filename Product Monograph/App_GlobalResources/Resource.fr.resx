@@ -724,4 +724,7 @@ REMARQUE : Pour obtenir des renseignements relatifs à la gestion des effets sec
   <data name="talkwithDocIfSever" xml:space="preserve">
     <value>Talk with your doctor only if server_fr</value>
   </data>
+  <data name="pharmacokinetics" xml:space="preserve">
+    <value>Pharmacokinetics_fr</value>
+  </data>
 </root>

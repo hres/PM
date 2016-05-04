@@ -175,15 +175,6 @@ namespace Product_Monograph {
         protected global::System.Web.UI.HtmlControls.HtmlTextArea tbDosageAdministration;
         
         /// <summary>
-        /// tbDosageReconstitution control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlTextArea tbDosageReconstitution;
-        
-        /// <summary>
         /// tbDosageOral control.
         /// </summary>
         /// <remarks>

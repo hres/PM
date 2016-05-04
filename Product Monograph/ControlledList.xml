@@ -374,4 +374,11 @@
       <dosageform value="Wafer">Wafer</dosageform>
       <dosageform value="Wipe">Wipe</dosageform>
   </dosageforms>
+  <drugInteractions>
+    <interactions value="Select"></interactions>
+    <interactions>Drug-drug interactions</interactions>
+    <interactions>Drug-food interactions</interactions>
+    <interactions>Drug-herb interactions</interactions>
+    <interactions>Drug-laboratory interactions</interactions>
+  </drugInteractions>
 </controlledlist>

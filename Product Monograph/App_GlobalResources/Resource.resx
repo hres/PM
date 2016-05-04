@@ -725,4 +725,7 @@ NOTE: Should you require information related to the management of side effects, 
   <data name="talkwithDocIfSever" xml:space="preserve">
     <value>Talk with your doctor only if server</value>
   </data>
+  <data name="pharmacokinetics" xml:space="preserve">
+    <value>Pharmacokinetics</value>
+  </data>
 </root>

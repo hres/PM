@@ -92,6 +92,10 @@ namespace Product_Monograph
         protected static string overdoseInstruction;
         protected static string productInfoTableTitle;
         protected static string parenteralProdTitle;
+        protected static string pharmacokinetics;
+        protected static string PharmacokineticsTableTitle;
+
+
         void Page_PreInit(Object sender, EventArgs e)
         {
             if (!string.IsNullOrWhiteSpace(SessionHelper.Current.masterPage))
@@ -181,9 +185,8 @@ namespace Product_Monograph
                 btnSaveDraft.Attributes["Title"] = Resources.Resource.saveButtonTitle;
                 productInfoTableTitle = Resources.Resource.productInfoTableTitle;
                 parenteralProdTitle = Resources.Resource.parenteralProdTitle;
-
-
-
+                pharmacokinetics = Resources.Resource.pharmacokinetics;
+                PharmacokineticsTableTitle  = Resources.Resource.pharmacokinetics;
 
                 try
                 {
@@ -462,9 +465,7 @@ namespace Product_Monograph
                 //lblError.Text = error.ToString();
                 return null;
             }
-
-            helpers.Processes.ValidateAndSave(doc, rootnode, "AdditionalWarning", "", tbAdditionalwarnings.Value, false);
-
+            #endregion
             #region Warnings and Precautions Headings
             try
             {
@@ -534,7 +535,6 @@ namespace Product_Monograph
                 return null;
             }
             #endregion
-            #endregion
             #region Dosage and administration
             try
             {
@@ -589,7 +589,7 @@ namespace Product_Monograph
             helpers.Processes.ValidateAndSave(doc, rootnode, "DosageAdjustment", "", tbDosageAdjustment.Value, false);
             helpers.Processes.ValidateAndSave(doc, rootnode, "DosageMissed", "", tbDosageMissed.Value, false);
             helpers.Processes.ValidateAndSave(doc, rootnode, "DosageAdministration", "", tbDosageAdministration.Value, false);
-            helpers.Processes.ValidateAndSave(doc, rootnode, "DosageReconstitution", "", tbDosageReconstitution.Value, false);
+            //helpers.Processes.ValidateAndSave(doc, rootnode, "DosageReconstitution", "", tbDosageReconstitution.Value, false);
             helpers.Processes.ValidateAndSave(doc, rootnode, "DosageOral", "", tbDosageOral.Value, false);
             try
             {
@@ -695,7 +695,265 @@ namespace Product_Monograph
                 return null;
             }
             #endregion
+            #region Drug Interactions Headings
+            try
+            {
+                XmlNodeList wph = doc.GetElementsByTagName("DrugInteractionsHeadings");
+                ArrayList headingddarray = new ArrayList();
+                ArrayList headingtxtarray = new ArrayList();
+                if (HttpContext.Current.Request.Form.GetValues("dlDrugHeadings") != null &&
+                    HttpContext.Current.Request.Form.GetValues("tbDrugHeadings") != null)
+                {
+                    foreach (string swpitem in HttpContext.Current.Request.Form.GetValues("dlDrugHeadings"))
+                    {
+                        headingddarray.Add(swpitem);
+                    }
+                    foreach (string swpitem in HttpContext.Current.Request.Form.GetValues("tbDrugHeadings"))
+                    {
+                        headingtxtarray.Add(swpitem);
+                    }
+                }
 
+                if (wph.Count < 1)
+                {
+                    XmlNode xnode = doc.CreateElement("DrugInteractionsHeadings");
+                    rootnode.AppendChild(xnode);
+
+                    for (int ar = 0; ar < headingddarray.Count; ar++)
+                    {
+                        XmlNode subnode = doc.CreateElement("row");
+                        xnode.AppendChild(subnode);
+
+                        string col1 = headingddarray[ar].ToString();
+                        XmlNode subsubnode = doc.CreateElement("column");
+                        subsubnode.AppendChild(doc.CreateTextNode(col1));
+                        subnode.AppendChild(subsubnode);
+
+                        string col2 = headingtxtarray[ar].ToString();
+                        subsubnode = doc.CreateElement("column");
+                        subsubnode.AppendChild(doc.CreateTextNode(col2));
+                        subnode.AppendChild(subsubnode);
+                    }
+                }
+                else
+                {
+                    wph[0].RemoveAll();
+                    XmlNodeList xnode = doc.GetElementsByTagName("DrugInteractionsHeadings");
+                    rootnode.AppendChild(xnode[0]);
+
+                    for (int ar = 0; ar < headingddarray.Count; ar++)
+                    {
+                        XmlNode subnode = doc.CreateElement("row");
+                        xnode[0].AppendChild(subnode);
+
+                        string col1 = headingddarray[ar].ToString();
+                        XmlNode subsubnode = doc.CreateElement("column");
+                        subsubnode.AppendChild(doc.CreateTextNode(col1));
+                        subnode.AppendChild(subsubnode);
+
+                        string col2 = headingtxtarray[ar].ToString();
+                        subsubnode = doc.CreateElement("column");
+                        subsubnode.AppendChild(doc.CreateTextNode(col2));
+                        subnode.AppendChild(subsubnode);
+                    }
+                }
+            }
+            catch (Exception error)
+            {
+                // lblError.Text = error.ToString();
+                return null;
+            }
+            #endregion
+            #region Action and clinical pharmacology Headings
+            try
+            {
+                XmlNodeList wph = doc.GetElementsByTagName("PharmacokineticsHeadings");
+                ArrayList headingddarray = new ArrayList();
+                ArrayList headingtxtarray = new ArrayList();
+                if (HttpContext.Current.Request.Form.GetValues("dlActionHeadings") != null &&
+                    HttpContext.Current.Request.Form.GetValues("tbActionHeadings") != null)
+                {
+                    foreach (string swpitem in HttpContext.Current.Request.Form.GetValues("dlActionHeadings"))
+                    {
+                        headingddarray.Add(swpitem);
+                    }
+                    foreach (string swpitem in HttpContext.Current.Request.Form.GetValues("tbActionHeadings"))
+                    {
+                        headingtxtarray.Add(swpitem);
+                    }
+                }
+
+                if (wph.Count < 1)
+                {
+                    XmlNode xnode = doc.CreateElement("PharmacokineticsHeadings");
+                    rootnode.AppendChild(xnode);
+
+                    for (int ar = 0; ar < headingddarray.Count; ar++)
+                    {
+                        XmlNode subnode = doc.CreateElement("row");
+                        xnode.AppendChild(subnode);
+
+                        string col1 = headingddarray[ar].ToString();
+                        XmlNode subsubnode = doc.CreateElement("column");
+                        subsubnode.AppendChild(doc.CreateTextNode(col1));
+                        subnode.AppendChild(subsubnode);
+
+                        string col2 = headingtxtarray[ar].ToString();
+                        subsubnode = doc.CreateElement("column");
+                        subsubnode.AppendChild(doc.CreateTextNode(col2));
+                        subnode.AppendChild(subsubnode);
+                    }
+                }
+                else
+                {
+                    wph[0].RemoveAll();
+                    XmlNodeList xnode = doc.GetElementsByTagName("PharmacokineticsHeadings");
+                    rootnode.AppendChild(xnode[0]);
+
+                    for (int ar = 0; ar < headingddarray.Count; ar++)
+                    {
+                        XmlNode subnode = doc.CreateElement("row");
+                        xnode[0].AppendChild(subnode);
+
+                        string col1 = headingddarray[ar].ToString();
+                        XmlNode subsubnode = doc.CreateElement("column");
+                        subsubnode.AppendChild(doc.CreateTextNode(col1));
+                        subnode.AppendChild(subsubnode);
+
+                        string col2 = headingtxtarray[ar].ToString();
+                        subsubnode = doc.CreateElement("column");
+                        subsubnode.AppendChild(doc.CreateTextNode(col2));
+                        subnode.AppendChild(subsubnode);
+                    }
+                }
+            }
+            catch (Exception error)
+            {
+                // lblError.Text = error.ToString();
+                return null;
+            }
+
+            try
+            {
+                #region Pharmacokinetics Table
+                XmlNodeList roa = doc.GetElementsByTagName("Pharmacokinetics");
+                var cmaxList = new ArrayList();
+                var t12hList = new ArrayList();
+                var aucList = new ArrayList();
+                var clearanceList = new ArrayList();
+                var volumeDisList = new ArrayList();
+                if (HttpContext.Current.Request.Form.GetValues("tbCmax") != null &&
+                    HttpContext.Current.Request.Form.GetValues("tbT12h") != null &&
+                    HttpContext.Current.Request.Form.GetValues("tbAuc") != null &&
+                    HttpContext.Current.Request.Form.GetValues("tbClearance") != null &&
+                    HttpContext.Current.Request.Form.GetValues("tbVolumeDis") != null)
+                {
+                    foreach (string item in HttpContext.Current.Request.Form.GetValues("tbCmax"))
+                    {
+                        cmaxList.Add(item);
+                    }
+                    foreach (string item in HttpContext.Current.Request.Form.GetValues("tbT12h"))
+                    {
+                        t12hList.Add(item);
+                    }
+                    foreach (string item in HttpContext.Current.Request.Form.GetValues("tbAuc"))
+                    {
+                        aucList.Add(item);
+                    }
+                    foreach (string item in HttpContext.Current.Request.Form.GetValues("tbClearance"))
+                    {
+                        clearanceList.Add(item);
+                    }
+                    foreach (string item in HttpContext.Current.Request.Form.GetValues("tbVolumeDis"))
+                    {
+                        volumeDisList.Add(item);
+                    }
+                }
+
+                if (roa.Count < 1)
+                {
+                    XmlNode xnode = doc.CreateElement("Pharmacokinetics");
+                    rootnode.AppendChild(xnode);
+
+                    for (int ar = 0; ar < cmaxList.Count; ar++)
+                    {
+                        XmlNode subnode = doc.CreateElement("row");
+                        xnode.AppendChild(subnode);
+
+                        string col1 = cmaxList[ar].ToString();
+                        XmlNode subsubnode = doc.CreateElement("column");
+                        subsubnode.AppendChild(doc.CreateTextNode(col1));
+                        subnode.AppendChild(subsubnode);
+
+                        string col2 = t12hList[ar].ToString();
+                        subsubnode = doc.CreateElement("column");
+                        subsubnode.AppendChild(doc.CreateTextNode(col2));
+                        subnode.AppendChild(subsubnode);
+
+                        string col3 = aucList[ar].ToString();
+                        subsubnode = doc.CreateElement("column");
+                        subsubnode.AppendChild(doc.CreateTextNode(col3));
+                        subnode.AppendChild(subsubnode);
+
+                        string col4 = clearanceList[ar].ToString();
+                        subsubnode = doc.CreateElement("column");
+                        subsubnode.AppendChild(doc.CreateTextNode(col4));
+                        subnode.AppendChild(subsubnode);
+
+                        string col5 = volumeDisList[ar].ToString();
+                        subsubnode = doc.CreateElement("column");
+                        subsubnode.AppendChild(doc.CreateTextNode(col5));
+                        subnode.AppendChild(subsubnode);
+                    }
+                }
+                else
+                {
+                    roa[0].RemoveAll();
+
+                    XmlNodeList xnode = doc.GetElementsByTagName("Pharmacokinetics");
+                    rootnode.AppendChild(xnode[0]);
+
+                    for (int ar = 0; ar < cmaxList.Count; ar++)
+                    {
+                        XmlNode subnode = doc.CreateElement("row");
+                        xnode[0].AppendChild(subnode);
+
+                        string col1 = cmaxList[ar].ToString();
+                        XmlNode subsubnode = doc.CreateElement("column");
+                        subsubnode.AppendChild(doc.CreateTextNode(col1));
+                        subnode.AppendChild(subsubnode);
+
+                        string col2 = t12hList[ar].ToString();
+                        subsubnode = doc.CreateElement("column");
+                        subsubnode.AppendChild(doc.CreateTextNode(col2));
+                        subnode.AppendChild(subsubnode);
+
+                        string col3 = aucList[ar].ToString();
+                        subsubnode = doc.CreateElement("column");
+                        subsubnode.AppendChild(doc.CreateTextNode(col3));
+                        subnode.AppendChild(subsubnode);
+
+                        string col4 = clearanceList[ar].ToString();
+                        subsubnode = doc.CreateElement("column");
+                        subsubnode.AppendChild(doc.CreateTextNode(col4));
+                        subnode.AppendChild(subsubnode);
+
+                        string col5 = volumeDisList[ar].ToString();
+                        subsubnode = doc.CreateElement("column");
+                        subsubnode.AppendChild(doc.CreateTextNode(col5));
+                        subnode.AppendChild(subsubnode);
+                    }
+                }
+                #endregion
+            }
+            catch (Exception error)
+            {
+                // lblError.Text = error.ToString();
+                return null;
+            }
+
+            #endregion
+            helpers.Processes.ValidateAndSave(doc, rootnode, "AdditionalWarning", "", tbAdditionalwarnings.Value, false);
             helpers.Processes.ValidateAndSave(doc, rootnode, "Overdosage", "", tbOverdosage.Value, false);
             helpers.Processes.ValidateAndSave(doc, rootnode, "MechanismAction", "", tbMechanismAction.Value, false);
             helpers.Processes.ValidateAndSave(doc, rootnode, "Pharmacodynamics", "", tbPharmacodynamics.Value, false);
@@ -950,6 +1208,73 @@ namespace Product_Monograph
                 #endregion
             }
             #endregion
+            #region Drug interactions
+            XmlNodeList dih = xmldoc.GetElementsByTagName("DrugInteractionsHeadings");
+            if (dih.Count > 0)
+            {
+                #region Drug Interactions Headings
+                var rowsH = from rowcont in doc.Root.Elements("DrugInteractionsHeadings").Descendants("row")
+                            select new
+                            {
+                                columns = from column in rowcont.Elements("column")
+                                          select (string)column
+                            };
+
+                int rowcounterH = 0;
+                foreach (var row in rowsH)
+                {
+                    string[] colarray = "dlDrugHeadings;tbDrugHeadings".Split(';');
+                    int colcounter = 0;
+                    if (rowcounterH == 0)
+                    {
+                        foreach (string column in row.columns)
+                        {
+                            if (colarray[colcounter].Equals("dlDrugHeadings"))
+                            {
+                                strscript += "$.get('ControlledList.xml', function (xmlcontolledlist) {" +
+                                                  "$(xmlcontolledlist).find('interactions').each(function () {" +
+                                                      "var $option = $(this).text();" +
+                                                      "$('<option>' + $option + '</option>').appendTo('#dlDrugHeadings');" +
+                                                  "});" +
+                                                  "}).done(function () {" +
+                                                      "$('#dlDrugHeadings option').each(function () { if ($(this).html() == '" + column + "') { $(this).attr('selected', 'selected'); return; } });" +
+                                                  "});";
+                            }
+                            else
+                            {
+                                strscript += "$('#" + colarray[colcounter] + "').val(\"" + helpers.Processes.CleanString(column) + "\");";
+                            }
+                            colcounter++;
+                        }
+                    }
+                    else
+                    {
+                        strscript += "AddDrugHeadings();";
+                        foreach (string column in row.columns)
+                        {
+                            if (colarray[colcounter].Equals("dlDrugHeadings"))
+                            {
+                                strscript += "$.get('ControlledList.xml', function (xmlcontolledlist) {" +
+                                                   "$(xmlcontolledlist).find('interactions').each(function () {" +
+                                                       "var $option = $(this).text();" +
+                                                       "$('<option>' + $option + '</option>').appendTo('#dlDrugHeadings" + rowcounterH.ToString() + "');" +
+                                                   "});" +
+                                                   "}).done(function () {" +
+                                                       "$('#dlDrugHeadings" + rowcounterH.ToString() + " option').each(function () { if ($(this).html() == '" + column + "') { $(this).attr('selected', 'selected'); return; } });" +
+                                                   "});";
+                            }
+                            else
+                            {
+                                strscript += "$('#" + colarray[colcounter] + rowcounterH.ToString() + "').val(\"" + helpers.Processes.CleanString(column) + "\");";
+                            }
+                            colcounter++;
+                        }
+                    }
+                    rowcounterH++;
+                }
+                #endregion
+            }
+            #endregion
             #region DosageAdministration
             XmlNodeList dosage = xmldoc.GetElementsByTagName("DosageConsiderations");
             if (dosage.Count > 0)
@@ -996,7 +1321,7 @@ namespace Product_Monograph
             XmlNodeList dpp = xmldoc.GetElementsByTagName("DosageParenteralProducts");
             if (dpp.Count > 0)
             {
-                #region Headings
+                #region DosageParenteralProducts Tables
                 var dppRows = from rowcont in doc.Root.Elements("DosageParenteralProducts").Descendants("row")
                             select new
                             {
@@ -1030,6 +1355,111 @@ namespace Product_Monograph
                 }
                 #endregion
             }
+            #endregion
+            #region Action and clinical pharmacology
+            XmlNodeList ph = xmldoc.GetElementsByTagName("PharmacokineticsHeadings");
+            if (ph.Count > 0)
+            {
+                #region Pharmacokinetics Headings
+                var rowsH = from rowcont in doc.Root.Elements("PharmacokineticsHeadings").Descendants("row")
+                            select new
+                            {
+                                columns = from column in rowcont.Elements("column")
+                                          select (string)column
+                            };
+
+                int rowcounterH = 0;
+                foreach (var row in rowsH)
+                {
+                    string[] colarray = "dlActionHeadings;tbActionHeadings".Split(';');
+                    int colcounter = 0;
+                    if (rowcounterH == 0)
+                    {
+                        foreach (string column in row.columns)
+                        {
+                            if (colarray[colcounter].Equals("dlActionHeadings"))
+                            {
+                                strscript += "$.get('ControlledList.xml', function (xmlcontolledlist) {" +
+                                                  "$(xmlcontolledlist).find('kinetics').each(function () {" +
+                                                      "var $option = $(this).text();" +
+                                                      "$('<option>' + $option + '</option>').appendTo('#dlActionHeadings');" +
+                                                  "});" +
+                                                  "}).done(function () {" +
+                                                      "$('#dlActionHeadings option').each(function () { if ($(this).html() == '" + column + "') { $(this).attr('selected', 'selected'); return; } });" +
+                                                  "});";
+                            }
+                            else
+                            {
+                                strscript += "$('#" + colarray[colcounter] + "').val(\"" + helpers.Processes.CleanString(column) + "\");";
+                            }
+                            colcounter++;
+                        }
+                    }
+                    else
+                    {
+                        strscript += "AddActionHeadings();";
+                        foreach (string column in row.columns)
+                        {
+                            if (colarray[colcounter].Equals("dlActionHeadings"))
+                            {
+                                strscript += "$.get('ControlledList.xml', function (xmlcontolledlist) {" +
+                                                   "$(xmlcontolledlist).find('interactions').each(function () {" +
+                                                       "var $option = $(this).text();" +
+                                                       "$('<option>' + $option + '</option>').appendTo('#dlActionHeadings" + rowcounterH.ToString() + "');" +
+                                                   "});" +
+                                                   "}).done(function () {" +
+                                                       "$('#dlActionHeadings" + rowcounterH.ToString() + " option').each(function () { if ($(this).html() == '" + column + "') { $(this).attr('selected', 'selected'); return; } });" +
+                                                   "});";
+                            }
+                            else
+                            {
+                                strscript += "$('#" + colarray[colcounter] + rowcounterH.ToString() + "').val(\"" + helpers.Processes.CleanString(column) + "\");";
+                            }
+                            colcounter++;
+                        }
+                    }
+                    rowcounterH++;
+                }
+                #endregion
+            }
+            XmlNodeList phar = xmldoc.GetElementsByTagName("Pharmacokinetics");
+            if (phar.Count > 0)
+            {
+                #region Pharmacokinetics Tables
+                var pharRows = from rowcont in doc.Root.Elements("Pharmacokinetics").Descendants("row")
+                               select new
+                               {
+                                   columns = from column in rowcont.Elements("column")
+                                             select (string)column
+                               };
+
+                int pharRowCounter = 0;
+                foreach (var row in pharRows)
+                {
+                    string[] colarray = "tbCmax;tbT12h;tbAuc;tbClearance;tbVolumeDis".Split(';');
+                    int colcounter = 0;
+                    if (pharRowCounter == 0)
+                    {
+                        foreach (string column in row.columns)
+                        {
+                            strscript += "$('#" + colarray[colcounter] + "').val(\"" + helpers.Processes.CleanString(column) + "\");";
+                            colcounter++;
+                        }
+                    }
+                    else
+                    {
+                        strscript += "AddPharmacokineticsTable('pharmacokineticsTable');";
+                        foreach (string column in row.columns)
+                        {
+                            strscript += "$('#" + colarray[colcounter] + pharRowCounter.ToString() + "').val(\"" + helpers.Processes.CleanString(column) + "\");";
+                            colcounter++;
+                        }
+                    }
+                    pharRowCounter++;
+                }
+                #endregion
+            }
+
             #endregion
             ScriptManager.RegisterStartupScript(this.Page, this.GetType(), "LoadEventsScript", strscript.ToString(), true);
 
@@ -1071,7 +1501,7 @@ namespace Product_Monograph
                 tbPediatrics.Value = xmldataitem.Pediatrics;
                 tbAdditionalwarnings.Value = xmldataitem.AdditionalWarning;
                 tbDosageAdministration.Value = xmldataitem.DosageAdministration;
-                tbDosageReconstitution.Value = xmldataitem.DosageReconstitution;
+                //tbDosageReconstitution.Value = xmldataitem.DosageReconstitution;
                 tbDosageOral.Value = xmldataitem.DosageOral;
                 tbDosageMissed.Value = xmldataitem.DosageMissed;
                 tbDosageAdjustment.Value = xmldataitem.DosageAdjustment;

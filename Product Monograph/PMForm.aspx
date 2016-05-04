@@ -1,8 +1,11 @@
 ﻿<%@ Page Title="" Language="C#"   MasterPageFile="~/ProdMono.Master" AutoEventWireup="true" CodeBehind="PMForm.aspx.cs" Inherits="Product_Monograph.PMForm"  %>
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">    
 <script type="text/javascript">
-   $(document).ready(function () {
-        $("#linkForm").attr("disabled", "disabled");
+    $(document).ready(function () {
+        $("#linkCover").attr("disabled", "disabled");
+        $("#linkOne").attr("disabled", "disabled");
+        $("#linkTwo").attr("disabled", "disabled");
+        $("#linkThree").attr("disabled", "disabled");
         $('#btnLoadTemplate').click(function () {
             $('#fuXmlDraft').removeAttribute('required');
         });
