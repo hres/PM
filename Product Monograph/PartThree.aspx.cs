@@ -60,8 +60,9 @@ namespace Product_Monograph
         protected static string overdoseInfo;
         protected static string addButton;
         protected static string removeButton;
-       
-        
+        protected static string interactionsInfo;
+
+
         void Page_PreInit(Object sender, EventArgs e)
         {
             if (!string.IsNullOrWhiteSpace(SessionHelper.Current.masterPage))
@@ -126,12 +127,16 @@ namespace Product_Monograph
                 overdoseInfo = Resources.Resource.overdoseInfo;
                 addButton = Resources.Resource.addButton;
                 removeButton = Resources.Resource.removeButton;
-                tbReportingSuspectedSE.Value= Resources.Resource.reportSuspectedSEInstruction;
+                tbReportingSuspectedSE.Value = Resources.Resource.reportSuspectedSEInstruction;
+                tbMoreInformation.Value = Resources.Resource.moreInformationText1 + Resources.Resource.moreInformationText2;
+                tbOverdose.Value = Resources.Resource.overDoseText;
                 tbTalkwithDocIfSever.Text = Resources.Resource.talkwithDocIfSever;
                 tbTalkwithDocAllCases.Text = Resources.Resource.talkwithDocAllCases;
                 tbStoptakingdrug.Text = Resources.Resource.stopTakingDrug;
                 btnSaveDraft.Text = Resources.Resource.saveButton;
                 btnSaveDraft.Attributes["Title"]= Resources.Resource.saveButtonTitle;
+                tbInteractionWithMed.Attributes["Title"] = Resources.Resource.saveButtonTitle;
+                interactionsInfo = Resources.Resource.interactionsInfo;
 
                 try
                 {
@@ -588,7 +593,8 @@ namespace Product_Monograph
                     tbLastrRevised.Text = xmldataitem.LastrRevised;
                 if (xmldataitem.Overdose == null)
                 {
-                    tbOverdose.Value = "In case of drug overdose, contact a health care practitioner, hospital emergency department or regional Poison Control Centre immediately, even if there are no symptoms.";
+                    // tbOverdose.Value = "In case of drug overdose, contact a health care practitioner, hospital emergency department or regional Poison Control Centre immediately, even if there are no symptoms.";
+                    tbOverdose.Value = Resources.Resource.overDoseText;
                 }
                 else
                 {
@@ -598,17 +604,18 @@ namespace Product_Monograph
 
                 if (xmldataitem.ReportingSuspectedSE == null)
                 {
-                    tbReportingSuspectedSE.Value = "<p>You can report any suspected adverse reactions associated with the use of health products to the Canada Vigilance Program by one of the following 3 ways:</p>" +
-                                                    "<p>Report online at www.healthcanada.gc.ca/medeffect</p>" +
-                                                    "<p>Call toll-free at 1-866-234-2345</p>" +
-                                                    "<p>Complete a Canada Vigilance Reporting Form and:</p>" +
-                                                    "<p>&nbsp;&nbsp;&nbsp;Fax toll-free to 1-866-678-6789, or</p>" +
-                                                    "<p>&nbsp;&nbsp;&nbsp;Mail to: 	Canada Vigilance Program</p>" +
-                                                    "<p>Health Canada</p>" +
-                                                    "<p>Postal Locator 0701D</p>" +
-                                                    "<p>Ottawa, Ontario K1A 0K9</p>" +
-                                                    "<p>Postage paid labels, Canada Vigilance Reporting Form and the adverse reaction reporting guidelines are available on the MedEffect™ Canada Web site at www.healthcanada.gc.ca/medeffect.</p>" +
-                                                    "<p>NOTE: Should you require information related to the management of side effects, contact your health professional. The Canada Vigilance Program does not provide medical advice.</p>";
+                    //tbReportingSuspectedSE.Value = "<p>You can report any suspected adverse reactions associated with the use of health products to the Canada Vigilance Program by one of the following 3 ways:</p>" +
+                    //                                "<p>Report online at www.healthcanada.gc.ca/medeffect</p>" +
+                    //                                "<p>Call toll-free at 1-866-234-2345</p>" +
+                    //                                "<p>Complete a Canada Vigilance Reporting Form and:</p>" +
+                    //                                "<p>&nbsp;&nbsp;&nbsp;Fax toll-free to 1-866-678-6789, or</p>" +
+                    //                                "<p>&nbsp;&nbsp;&nbsp;Mail to: 	Canada Vigilance Program</p>" +
+                    //                                "<p>Health Canada</p>" +
+                    //                               "<p>Postal Locator 0701D</p>" +
+                    //                                "<p>Ottawa, Ontario K1A 0K9</p>" +
+                    //                                "<p>Postage paid labels, Canada Vigilance Reporting Form and the adverse reaction reporting guidelines are available on the MedEffect™ Canada Web site at www.healthcanada.gc.ca/medeffect.</p>" +
+                    //                                "<p>NOTE: Should you require information related to the management of side effects, contact your health professional. The Canada Vigilance Program does not provide medical advice.</p>";
+                    tbReportingSuspectedSE.Value = Resources.Resource.reportSuspectedSEInstruction;
                 }
                 else
                 {
@@ -617,8 +624,9 @@ namespace Product_Monograph
 
                 if (xmldataitem.MoreInformation == null)
                 {
-                    tbMoreInformation.Value = "<p>This document plus the full product monograph, prepared for thealth professionals can be found at: (website) or by contacting the sponsor,</p>" +
-                                          "<p>" + xmldataitem.Sponsorname + " at: 1-800-XXX-XXXX</p>";
+                    //tbMoreInformation.Value = "<p>This document plus the full product monograph, prepared for thealth professionals can be found at: (website) or by contacting the sponsor,</p>" +
+                    //                     "<p>" + xmldataitem.Sponsorname + " at: 1-800-XXX-XXXX</p>";
+                    tbMoreInformation.Value = Resources.Resource.moreInformationText1 + xmldataitem.Sponsorname + Resources.Resource.moreInformationText2;
                 }
                 else
                 {

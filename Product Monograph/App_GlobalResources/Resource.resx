@@ -139,13 +139,13 @@
     <value>Expressed as the arithmetic mean (CV%) only.</value>
   </data>
   <data name="auciUnit" xml:space="preserve">
-    <value>AUCI (units)</value>
+    <value>AUC&lt;sub&gt;I&lt;/sub&gt; (units)</value>
   </data>
   <data name="auct24" xml:space="preserve">
-    <value>For drugs with a half-life greater than 24 hours AUCT should be replaced with AUC0-72.</value>
+    <value>For drugs with a half-life greater than 24 hours AUC&lt;sub&gt;T&lt;/sub&gt; should be replaced with AUC&lt;sub&gt;0-72&lt;/sub&gt;.</value>
   </data>
   <data name="auctUnit" xml:space="preserve">
-    <value>AUCT ‡(units)</value>
+    <value>AUC&lt;sub&gt;T&lt;/sub&gt;&lt;sup&gt;‡&lt;/sup&gt; (units)</value>
   </data>
   <data name="availableVolume" xml:space="preserve">
     <value>Approximate available volume</value>
@@ -169,7 +169,7 @@
     <value>Clinical trials</value>
   </data>
   <data name="cmaxUnit" xml:space="preserve">
-    <value>CMAX (units)</value>
+    <value>C&lt;sub&gt;MAX&lt;/sub&gt; (h)</value>
   </data>
   <data name="compBioStudies" xml:space="preserve">
     <value>Comparative bioavailability studies</value>
@@ -183,7 +183,7 @@
     <comment>Part 1</comment>
   </data>
   <data name="confidenceInterval" xml:space="preserve">
-    <value>Indicate % Confidence Interval (i.e., 90% or 95%) in the column heading and list for the AUCT, AUCI and CMAX (if required).</value>
+    <value>Indicate % Confidence Interval (i.e., 90% or 95%) in the column heading and list for the AUC&lt;sub&gt;T&lt;/sub&gt;, AUC&lt;sub&gt;I&lt;/sub&gt;and C&lt;sub&gt;MAX&lt;/sub&gt; (if required).</value>
   </data>
   <data name="confInterval" xml:space="preserve">
     <value>Confidence interval</value>
@@ -229,7 +229,7 @@
     <comment>Part 1</comment>
   </data>
   <data name="halfLife" xml:space="preserve">
-    <value>T1/2 [](h)</value>
+    <value>T&lt;sub&gt;1/2&lt;/sub&gt; &lt;sup&gt;[]&lt;/sup&gt;(h)</value>
   </data>
   <data name="handlingInstruction" xml:space="preserve">
     <value>Special handling instructions</value>
@@ -509,7 +509,7 @@
     <comment>Cover page</comment>
   </data>
   <data name="tmax" xml:space="preserve">
-    <value>TMAX §(h)</value>
+    <value>T&lt;sub&gt;MAX&lt;/sub&gt;&lt;sup&gt;§ &lt;/sup&gt; (h)</value>
   </data>
   <data name="toxicology" xml:space="preserve">
     <value>Toxicology</value>
@@ -692,18 +692,18 @@ Any allergies to this drug or its ingredients or components of the container (Co
     <comment>Part1</comment>
   </data>
   <data name="reportSuspectedSEInstruction" xml:space="preserve">
-    <value>You can report any suspected adverse reactions associated with the use of health products to the Canada Vigilance Program by one of the following 3 ways: 
-----------------------------------------------------------------------------------------
-Report online at www.healthcanada.gc.ca/medeffect
-Call toll-free at 1-866-234-2345
-Complete a Canada Vigilance Reporting Form and:
-• Fax toll-free to 1-866-678-6789, or
-• Mail to: Canada Vigilance Program
-Health Canada
-Postal Locator 0701D
-Ottawa, Ontario 
-K1A 0K9
-Postage paid labels, Canada Vigilance Reporting Form and the adverse reaction reporting guidelines are available on the MedEffect¿ Canada Web site at www.healthcanada.gc.ca/medeffect.
+    <value>You can report any suspected adverse reactions associated with the use of health products to the Canada Vigilance Program by one of the following 3 ways: &lt;br/&gt;
+----------------------------------------------------------------------------------------&lt;br/&gt;
+Report online at www.healthcanada.gc.ca/medeffect&lt;br/&gt;
+Call toll-free at 1-866-234-2345&lt;br/&gt;
+Complete a Canada Vigilance Reporting Form and:&lt;br/&gt;
+• Fax toll-free to 1-866-678-6789, or&lt;br/&gt;
+• Mail to: Canada Vigilance Program&lt;br/&gt;
+Health Canada&lt;br/&gt;
+Postal Locator 0701D&lt;br/&gt;
+Ottawa, Ontario &lt;br/&gt;
+K1A 0K9&lt;br/&gt;
+Postage paid labels, Canada Vigilance Reporting Form and the adverse reaction reporting guidelines are available on the MedEffect &lt;sup&gt;TM&lt;/sup&gt; Canada Web site at www.healthcanada.gc.ca/medeffect.&lt;br/&gt;&lt;br/&gt;
 
 NOTE: Should you require information related to the management of side effects, contact your health professional. The Canada Vigilance Program does not provide medical advice.</value>
   </data>
@@ -728,5 +728,21 @@ NOTE: Should you require information related to the management of side effects, 
   </data>
   <data name="pharmacokinetics" xml:space="preserve">
     <value>Pharmacokinetics</value>
+  </data>
+  <data name="interactionsInfo" xml:space="preserve">
+    <value>Drugs that may interact with this medication</value>
+    <comment>Part3</comment>
+  </data>
+  <data name="moreInformationText1" xml:space="preserve">
+    <value>This document plus the full product monograph, prepared for health professionals can be found at:
+ http://www.website.document
+ or by contacting the sponsor,</value>
+    <comment>Part3</comment>
+  </data>
+  <data name="moreInformationText2" xml:space="preserve">
+    <value>at: 1-800-XXX-XXXX.</value>
+  </data>
+  <data name="overDoseText" xml:space="preserve">
+    <value>In case of drug overdose, contact a health care practitioner, hospital emergency department or regional Poison Control Centre immediately, even if there are no symptoms.</value>
   </data>
 </root>

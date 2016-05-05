@@ -61,6 +61,7 @@ namespace Product_Monograph
         protected static string compBioStudiesInfo;
         protected static string addButton;
         protected static string removeButton;
+       
 
         void Page_PreInit(Object sender, EventArgs e)
         {
@@ -124,7 +125,7 @@ namespace Product_Monograph
                 addButton = Resources.Resource.addButton;
                 removeButton = Resources.Resource.removeButton;
                 btnSaveDraft.Text = Resources.Resource.saveButton;
-                btnSaveDraft.Attributes["Title"] = Resources.Resource.saveButtonTitle;
+                btnSaveDraft.Attributes["Title"] = Resources.Resource.saveButtonTitle;               
 
 
                 try

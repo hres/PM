@@ -133,7 +133,7 @@ namespace Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to AUCI (units).
+        ///   Looks up a localized string similar to AUC&lt;sub&gt;I&lt;/sub&gt; (units).
         /// </summary>
         internal static string auciUnit {
             get {
@@ -142,7 +142,7 @@ namespace Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to For drugs with a half-life greater than 24 hours AUCT should be replaced with AUC0-72..
+        ///   Looks up a localized string similar to For drugs with a half-life greater than 24 hours AUC&lt;sub&gt;T&lt;/sub&gt; should be replaced with AUC&lt;sub&gt;0-72&lt;/sub&gt;..
         /// </summary>
         internal static string auct24 {
             get {
@@ -151,7 +151,7 @@ namespace Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to AUCT ‡(units).
+        ///   Looks up a localized string similar to AUC&lt;sub&gt;T&lt;/sub&gt;&lt;sup&gt;‡&lt;/sup&gt; (units).
         /// </summary>
         internal static string auctUnit {
             get {
@@ -214,7 +214,7 @@ namespace Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to CMAX (units).
+        ///   Looks up a localized string similar to C&lt;sub&gt;MAX&lt;/sub&gt; (h).
         /// </summary>
         internal static string cmaxUnit {
             get {
@@ -268,7 +268,7 @@ namespace Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Indicate % Confidence Interval (i.e., 90% or 95%) in the column heading and list for the AUCT, AUCI and CMAX (if required)..
+        ///   Looks up a localized string similar to Indicate % Confidence Interval (i.e., 90% or 95%) in the column heading and list for the AUC&lt;sub&gt;T&lt;/sub&gt;, AUC&lt;sub&gt;I&lt;/sub&gt;and C&lt;sub&gt;MAX&lt;/sub&gt; (if required)..
         /// </summary>
         internal static string confidenceInterval {
             get {
@@ -412,7 +412,7 @@ namespace Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to T1/2 [](h).
+        ///   Looks up a localized string similar to T&lt;sub&gt;1/2&lt;/sub&gt; &lt;sup&gt;[]&lt;/sup&gt;(h).
         /// </summary>
         internal static string halfLife {
             get {
@@ -522,6 +522,15 @@ namespace Resources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Drugs that may interact with this medication.
+        /// </summary>
+        internal static string interactionsInfo {
+            get {
+                return ResourceManager.GetString("interactionsInfo", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Last revised.
         /// </summary>
         internal static string lastModified {
@@ -621,6 +630,26 @@ namespace Resources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to This document plus the full product monograph, prepared for health professionals can be found at:
+        /// http://www.website.document
+        /// or by contacting the sponsor,.
+        /// </summary>
+        internal static string moreInformationText1 {
+            get {
+                return ResourceManager.GetString("moreInformationText1", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to at: 1-800-XXX-XXXX..
+        /// </summary>
+        internal static string moreInformationText2 {
+            get {
+                return ResourceManager.GetString("moreInformationText2", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Clinically relevant nonmedicinal ingredients.
         /// </summary>
         internal static string nonmedIngred {
@@ -698,6 +727,15 @@ namespace Resources {
         internal static string overdoseInstruction {
             get {
                 return ResourceManager.GetString("overdoseInstruction", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to In case of drug overdose, contact a health care practitioner, hospital emergency department or regional Poison Control Centre immediately, even if there are no symptoms..
+        /// </summary>
+        internal static string overDoseText {
+            get {
+                return ResourceManager.GetString("overDoseText", resourceCulture);
             }
         }
         
@@ -954,17 +992,15 @@ namespace Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to You can report any suspected adverse reactions associated with the use of health products to the Canada Vigilance Program by one of the following 3 ways: 
-        ///----------------------------------------------------------------------------------------
-        ///Report online at www.healthcanada.gc.ca/medeffect
-        ///Call toll-free at 1-866-234-2345
-        ///Complete a Canada Vigilance Reporting Form and:
-        ///• Fax toll-free to 1-866-678-6789, or
-        ///• Mail to: Canada Vigilance Program
-        ///Health Canada
-        ///Postal Locator 0701D
-        ///Ottawa, Ontario 
-        ///K [rest of string was truncated]&quot;;.
+        ///   Looks up a localized string similar to You can report any suspected adverse reactions associated with the use of health products to the Canada Vigilance Program by one of the following 3 ways: &lt;br/&gt;
+        ///----------------------------------------------------------------------------------------&lt;br/&gt;
+        ///Report online at www.healthcanada.gc.ca/medeffect&lt;br/&gt;
+        ///Call toll-free at 1-866-234-2345&lt;br/&gt;
+        ///Complete a Canada Vigilance Reporting Form and:&lt;br/&gt;
+        ///• Fax toll-free to 1-866-678-6789, or&lt;br/&gt;
+        ///• Mail to: Canada Vigilance Program&lt;br/&gt;
+        ///Health Canada&lt;br/&gt;
+        ///P [rest of string was truncated]&quot;;.
         /// </summary>
         internal static string reportSuspectedSEInstruction {
             get {
@@ -1405,7 +1441,7 @@ namespace Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to TMAX §(h).
+        ///   Looks up a localized string similar to T&lt;sub&gt;MAX&lt;/sub&gt;&lt;sup&gt;§ &lt;/sup&gt; (h).
         /// </summary>
         internal static string tmax {
             get {

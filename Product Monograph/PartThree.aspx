@@ -94,7 +94,7 @@
         <div class="form-group row">
             <label for="tbInteractionWithMed" class="col-sm-3 control-label">
                      <span class="field-name"><%=interactions%></span>
-                     <span class="label label-info" title="Drugs that may interact with"><%=information%></span>
+                     <span class="label label-info" title="<%=interactionsInfo%>"><%=information%></span>
             </label>  
 
             <div class="col-sm-9">
