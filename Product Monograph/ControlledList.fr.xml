@@ -26,7 +26,8 @@
   </pharmacokinetics>
   <warningsprecautions>
     <warning value="Select"></warning>
-    <warning>Carcinogenesis and mutagenesis</warning>
+    <warning>General</warning>
+    <warning>Carcinogenesis and Mutagenesis</warning>
     <warning>Cardiovascular</warning>
     <warning>Dependence/Tolerance</warning>
     <warning>Ear/Nose/Throat</warning>
@@ -34,12 +35,17 @@
     <warning>Gastrointestinal</warning>
     <warning>Genitourinary</warning>
     <warning>Hematologic</warning>
-    <warning>Special populations</warning>
-    <warning>Pregnant women</warning>
-    <warning>Nursing women</warning>
-    <warning>Pediatrics (x - y years of age)</warning>
-    <warning>Geriatrics (> x years of age)</warning>
-    <warning>Monitoring and laboratory tests</warning>
+    <warning>Hepatic/Biliary/Pancreatic</warning>
+    <warning>Immune</warning>
+    <warning>Neurologic</warning>
+    <warning>Ophthalmologic</warning>
+    <warning>Peri-Operative Considerations</warning>
+    <warning>Psychiatric</warning>
+    <warning>Renal</warning>
+    <warning>Respiratory</warning>
+    <warning>Sensitivity/Resistance></warning>
+    <warning>Sexual Function/Reproduction</warning>
+    <warning>Skin</warning>  
   </warningsprecautions>
   <schedulingsymbol>
     <schedule value="select"></schedule>

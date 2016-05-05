@@ -18,6 +18,7 @@
     </div>  
 <ul class="list-unstyled">
 	<li>
+        <!--Summary product information-->
         <details class="margin-top-medium">
            <summary id="summaryProductInformation" class="well well-sm"><%=sumProdInfo%></summary>
                 <table id="dataTable1" class="table table-bordered table-striped table-hover" title="<%=productInfoTableTitle%>">
@@ -42,6 +43,7 @@
                 </tbody>
                 </table> 
             </details>
+        <!--Indications and clinical use-->
         <details class="margin-top-medium">
                 <summary id="indicationsClinical" class="well well-sm"><%=sumIndications%></summary>
                 <div class="form-group"> 
@@ -76,6 +78,7 @@
                     <textarea id="tbPediatrics" name="tbPediatrics" runat="server" class="textarea form-control"></textarea>
                 </div>
                 </details>
+        <!--Contraindications-->
         <details class="margin-top-medium">
                     <summary id="contraindications" class="well well-sm"><%=sumContraindications%></summary>
                     <div class="brdr-bttm" >
@@ -95,6 +98,7 @@
                     <div id="divExtraContraindications">
                     </div>             
             </details>
+        <!--Warnings and precautions-->
         <details class="margin-top-medium">
                     <summary id="seriousWarnings" class="well well-sm"><%=sumWarnings%></summary>
                     <div class="brdr-bttm" >
@@ -113,8 +117,7 @@
                     </div>
                     <div id="divExtraSeriousWarnings">
                     </div>
-                    <div class="brdr-bttm" >
-                        <div class="form-group row">                    
+                    <div class="form-group row">                    
                              <label for="tbHeadings" class="col-sm-3 control-label">
                                      <span class="field-name"><%=headings%></span>
                                      <span class="label label-info" title="<%=headingsInfo%>"><%=information%></span>
@@ -126,18 +129,67 @@
                             <div class="col-sm-2 text-right"> 
                                 <input class="btn btn-default btn-xs" type="button" value="<%=addButton %>" onclick="AddHeadings()" id="btnHeadings" />
                             </div>   
-                        </div> 
-                    </div>
+                    </div> 
                     <div id="divExtratbHeadings">
                     </div>
-                    <div class="form-group row">                    
+<%--                    <div class="form-group row">                    
                         <label for="tbAdditionalwarnings" class="col-sm-3 control-label">
                             <span class="field-name"><%=addWarnings%></span></label>
                         <div class="col-sm-7"> 
                             <textarea id="tbAdditionalwarnings" name="tbAdditionalwarnings" class="textarea form-control" runat="server"></textarea>
                         </div>                   
-                   </div>              
+                   </div>  --%>   
+                   <div class="form-group row brdr-bttm">                    
+                            <p  class="col-sm-3">
+                                <span class="field-name"><strong>Special populations</strong></span>
+                            </p>
+                            <div class="clearfix"></div>                                              
+                    </div>
+                   <div class="form-group row">                    
+                            <label for="tbPregnant" class="col-sm-3 control-label">
+                                <span class="field-name mrgn-lft-md">Pregnant women</span>
+                            </label>
+                            <div class="col-sm-9"> 
+                                <textarea id="tbPregnant" name="tbPregnant" class="textarea form-control" runat="server"></textarea>
+                            </div>                   
+                   </div>
+                 <div class="form-group row">                    
+                                <label for="tbNursing" class="col-sm-3 control-label">
+                                    <span class="field-name mrgn-lft-md">Nursing women</span>
+                                </label>
+                                <div class="col-sm-9"> 
+                                    <textarea id="tbNursing" name="tbNursing" class="textarea form-control" runat="server"></textarea>
+                                </div>                   
+                 </div> 
+                 <div class="form-group mrgn-lft-md">                    
+                        <div class="row"> 
+                          <label for="tbSpecialPediatrics" class="control-label col-sm-2"><span class="field-name"><%=pediatrics%></span></label>                        
+                            <input type="number" id="tbSpecialPediatricsAgeX" name="tbSpecialPediatricsAgeX" class="form-control col-sm-1 input-sm" min="1" max="150" size="3" runat="server"/>
+                            <label for="tbSpecialPediatricsAgeX" class="control-label col-sm-1 text-center" > <span class="field-name"> &#45; </span></label>  
+                            <input type="number" id="tbSpecialPediatricsAgeY" name="tbSpecialPediatricsAgeY" class="form-control col-sm-1 input-sm" min="1" max="150" size="3" runat="server"/>
+                            <label for="tbSpecialPediatricsAgeY" class="control-label pull-left"><span class="field-name">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<%=pediatricsAge%></span></label>   
+                            <label class="control-label col-sm-1"> <span class="field-name"> &nbsp;or &nbsp; &#60; </span></label>          
+                            <input type="number" id="tbSpecialPediatricsAgeZ" name="tbSpecialPediatricsAgeZ" class="form-control col-sm-1 input-sm" min="1" max="150" size="3" runat="server"/> 
+                            <label for="tbSpecialPediatricsAgeZ" class="control-label col-sm-3 pull-left"><span class="field-name"><%=pediatricsAge%></span></label>    
+                         </div>                          <textarea id="tbSpecialPediatrics" name="tbSpecialPediatrics" class="textarea form-control" runat="server"></textarea>                
+                 </div>
+                <div class="form-group mrgn-lft-md"> 
+                        <div class="row">                         
+                              <label for="tbSpecialGeriatrics" class="control-label col-sm-1"><span class="field-name"><%=geriatrics%></span></label> 
+                              <label class="control-label col-sm-1 text-right"> <span class="field-name"> > </span></label> 
+                              <input type="number" id="tbSpecialGeriatricsAge" name="tbSpecialGeriatricsAge" class="form-control col-sm-1 input-sm" min="1" max="150" size="3"  runat="server"/>  
+                              <label for="tbSpecialGeriatricsAge" class="control-label col-sm-2 pull-left"><span class="field-name"><%=geriatricsAge%></span></label>    
+                        </div>
+                        <textarea id="tbSpecialGeriatrics" name="tbSpecialGeriatrics " class="textarea form-control" runat="server"></textarea> 
+                 </div>
+                <div class="form-group mrgn-lft-md">                    
+                                <label for="tbMonitoring" class="control-label">
+                                    <span class="field-name ">Monitoring and laboratory tests</span>
+                                </label>
+                                <textarea id="tbMonitoring" name="tbMonitoring " class="textarea form-control" runat="server"></textarea>
+                 </div>                  
             </details>
+        <!--Adverse reactions-->
         <details class="margin-top-medium">
                     <summary id="adverseReactions" class="well well-sm"><%=sumAdverseReactions%></summary>
                     <div class="form-group row">                    
@@ -150,6 +202,7 @@
                         </div>                   
                     </div> 
             </details>
+        <!--Drug interactions-->
         <details class="margin-top-medium">
                     <summary id="drugInteractions" class="well well-sm"><%=sumDrugInteractions%></summary>
                      <div class="form-group row">                    
@@ -170,8 +223,7 @@
                             <textarea id="tbDrugInteractions" name="tbDrugInteractions" class="textarea form-control" runat="server"></textarea>
                         </div>                   
                  </div>
-                 <div class="brdr-bttm" >
-                        <div class="form-group row">                    
+                <div class="form-group row">                    
                              <label for="tbDrugHeadings" class="col-sm-3 control-label">
                                      <span class="field-name"><%=headings%></span>
                                      <span class="label label-info" title="<%=headingsInfo%>"><%=information%></span>
@@ -183,11 +235,11 @@
                             <div class="col-sm-2 text-right"> 
                                 <input class="btn btn-default btn-xs" type="button" value="<%=addButton %>" onclick="AddDrugHeadings()" id="btnDrugHeadings" />
                             </div>   
-                        </div> 
-                  </div>
+                        </div>
                  <div id="divExtratbDrugHeadings">
                  </div> 
             </details>
+        <!--Dosage and administration-->
         <details class="margin-top-medium">
                     <summary id="dosageAdministration" class="well well-sm"><%=sumDosage%></summary>
                     <div class="brdr-bttm" >
@@ -273,7 +325,7 @@
                 </div> 
     
              </details>
-
+        <!--Overdosage-->
         <details class="margin-top-medium">
                     <summary id="overdosage" class="well well-sm"><%=sumOverdosage%></summary>
                     <div class="form-group row">                    
@@ -286,6 +338,7 @@
                     </div> 
                     
             </details>
+        <!--Action and clinical pharmacology-->      
         <details class="margin-top-medium">
                     <summary id="actionClinicalPharmacology" class="well well-sm"><%=sumClinicalPharmacology%></summary>
                      <div class="form-group row">                    
@@ -313,16 +366,9 @@
                             <textarea id="tbSpecialPopulationsConditions" name="tbSpecialPopulationsConditions" class="textarea form-control" runat="server"></textarea>
                         </div>                   
                     </div>
-                  <div class="form-group row brdr-bttm">                    
-                            <p  class="col-sm-3">
-                                <span class="field-name"><strong><%=pharmacokinetics%></strong></span>
-                            </p>
-                            <div class="clearfix"></div>                                              
-                    </div> 
                     <div class="form-group row">                    
                              <label for="tbActionHeadings" class="col-sm-3 control-label">
-                                     <span class="field-name mrgn-lft-md"><%=headings%></span>
-                                     <span class="label label-info" title="<%=headingsInfo%>"><%=information%></span>
+                                     <span class="field-name"><%=pharmacokinetics%></span>
                              </label>
                              <div class="col-sm-7">
                                 <select id="dlActionHeadings" name="dlActionHeadings" class="form-control font-small input-sm"></select>
@@ -334,7 +380,7 @@
                         </div> 
                  <div id="divExtratbActionHeadings"></div>               
                  <table id="pharmacokineticsTable" class="table table-bordered table-striped table-hover" title="<%=PharmacokineticsTableTitle%>">
-                    <caption class="text-left mrgn-lft-md h5">Summary of (proper name)'s Pharmacokinetics Parameters in a (specific patient population)</caption>
+                    <caption class="text-left h5">Summary of (proper name)'s pharmacokinetics parameters in a (specific patient population)</caption>
                     <thead>
                     <tr>
                         <th><input class="btn btn-default btn-xs" type="button" value="<%=addButton %>" onclick="AddPharmacokineticsTable('pharmacokineticsTable')" id="btnAddPharmacokineticsTable" /></th>
@@ -358,10 +404,8 @@
                 </table> 
           
             </details>
-<%--            <details class="margin-top-medium">
-                    <summary id="specialPopulationsConditions" class="well well-sm">Special Populations and Conditions</summary>
-            </details>--%>
-       <details class="margin-top-medium">
+       <!--Storage and stability--> 
+        <details class="margin-top-medium">
                     <summary id="storageStability" class="well well-sm"><%=sumStorage%></summary>
                     <div class="form-group row">                    
                         <label for="tbStorageStability" class="col-sm-3 control-label">
@@ -372,7 +416,8 @@
                         </div>                   
                     </div> 
             </details>
-       <details class="margin-top-medium">
+       <!--Special handling instructions--> 
+        <details class="margin-top-medium">
                     <summary id="specialHandling" class="well well-sm"><%=sumSpecialHandling%></summary>
                     <div class="form-group row">                    
                         <label for="tbSpecialHandling" class="col-sm-3 control-label">
@@ -383,7 +428,8 @@
                         </div>                   
                     </div> 
             </details>
-       <details class="margin-top-medium">
+       <!--Dosage forms, composition and packaging--> 
+        <details class="margin-top-medium">
                     <summary id="DosageCompositionPackaging" class="well well-sm"><%=sumDosageForm%></summary>
                     <div class="form-group row">                    
                         <label for="tbDosageCompositionPackaging" class="col-sm-3 control-label">

@@ -243,7 +243,7 @@ namespace Product_Monograph
             XmlDocument doc = SessionHelper.Current.draftForm;
             XmlNode rootnode = doc.SelectSingleNode("ProductMonographTemplate");
 
-            #region RouteOfAdministration
+            #region Summary product information - RouteOfAdministration
             try
             {
                 XmlNodeList roa = doc.GetElementsByTagName("RouteOfAdministration");
@@ -345,7 +345,6 @@ namespace Product_Monograph
                 return null;
             }
             #endregion
-        
             #region IndicationsClinicalUse
             helpers.Processes.ValidateAndSave(doc, rootnode, "BrandNameIndicatedFor", "", tbbrandName.Value, false);
             helpers.Processes.ValidateAndSave(doc, rootnode, "GeriatricsAge", "", tbGeriatricsAge.Value, false);
@@ -465,6 +464,17 @@ namespace Product_Monograph
                 //lblError.Text = error.ToString();
                 return null;
             }
+
+            helpers.Processes.ValidateAndSave(doc, rootnode, "WarningsPregnant", "", tbPregnant.Value, false);
+            helpers.Processes.ValidateAndSave(doc, rootnode, "WarningsNursing", "", tbNursing.Value, false);
+            helpers.Processes.ValidateAndSave(doc, rootnode, "SpecialPediatrics", "", tbSpecialPediatrics.Value, false);
+            helpers.Processes.ValidateAndSave(doc, rootnode, "SpecialPediatricsAgeX", "", tbSpecialPediatricsAgeX.Value, false);
+            helpers.Processes.ValidateAndSave(doc, rootnode, "SpecialPediatricsAgeY", "", tbSpecialPediatricsAgeY.Value, false);
+            helpers.Processes.ValidateAndSave(doc, rootnode, "SpecialPediatricsAgeZ", "", tbSpecialPediatricsAgeZ.Value, false);
+            helpers.Processes.ValidateAndSave(doc, rootnode, "SpecialGeriatrics", "", tbSpecialGeriatrics.Value, false);
+            helpers.Processes.ValidateAndSave(doc, rootnode, "SpecialGeriatricsAge", "", tbSpecialGeriatricsAge.Value, false);
+            helpers.Processes.ValidateAndSave(doc, rootnode, "WarningsMonitoring", "", tbMonitoring.Value, false);
+
             #endregion
             #region Warnings and Precautions Headings
             try
@@ -953,7 +963,7 @@ namespace Product_Monograph
             }
 
             #endregion
-            helpers.Processes.ValidateAndSave(doc, rootnode, "AdditionalWarning", "", tbAdditionalwarnings.Value, false);
+            //helpers.Processes.ValidateAndSave(doc, rootnode, "AdditionalWarning", "", tbAdditionalwarnings.Value, false);
             helpers.Processes.ValidateAndSave(doc, rootnode, "Overdosage", "", tbOverdosage.Value, false);
             helpers.Processes.ValidateAndSave(doc, rootnode, "MechanismAction", "", tbMechanismAction.Value, false);
             helpers.Processes.ValidateAndSave(doc, rootnode, "Pharmacodynamics", "", tbPharmacodynamics.Value, false);
@@ -970,7 +980,7 @@ namespace Product_Monograph
         {
             XmlDocument xmldoc = SessionHelper.Current.draftForm;
             XDocument doc = XDocument.Parse(xmldoc.OuterXml);
-            #region RouteOfAdmin
+            #region Summary product information -RouteOfAdmin
             XmlNodeList roa = xmldoc.GetElementsByTagName("RouteOfAdministration");
             if (roa.Count > 0)
             {
@@ -1473,7 +1483,7 @@ namespace Product_Monograph
                               PediatricsAgeY = (string)item.Element("PediatricsAgeY"),
                               PediatricsAgeZ = (string)item.Element("PediatricsAgeZ"),
                               Pediatrics = (string)item.Element("Pediatrics"),
-                              AdditionalWarning = (string)item.Element("AdditionalWarning"),
+                              //AdditionalWarning = (string)item.Element("AdditionalWarning"),
                               DosageAdjustment = (string)item.Element("DosageAdjustment"),
                               DosageMissed = (string)item.Element("DosageMissed"),
                               DosageAdministration = (string)item.Element("DosageAdministration"),
@@ -1489,6 +1499,15 @@ namespace Product_Monograph
                               AdverseReactions = (string)item.Element("AdverseReactions"),
                               DrugInteractions = (string)item.Element("DrugInteractions"),
                               SeriousDrugInteractions = (string)item.Element("SeriousDrugInteractions"),
+                              SpecialGeriatricsAge = (string)item.Element("SpecialGeriatricsAge"),
+                              SpecialGeriatrics = (string)item.Element("SpecialGeriatrics"),
+                              SpecialPediatricsAgeX = (string)item.Element("SpecialPediatricsAgeX"),
+                              SpecialPediatricsAgeY = (string)item.Element("SpecialPediatricsAgeY"),
+                              SpecialPediatricsAgeZ = (string)item.Element("SpecialPediatricsAgeZ"),
+                              SpecialPediatrics = (string)item.Element("SpecialPediatrics"),
+                              WarningsPregnant = (string)item.Element("WarningsPregnant"),
+                              WarningsNursing = (string)item.Element("WarningsNursing"),
+                              WarningsMonitoring = (string)item.Element("WarningsMonitoring"),
                           };
             foreach (var xmldataitem in xmldata)
             {
@@ -1499,9 +1518,7 @@ namespace Product_Monograph
                 tbPediatricsAgeY.Value = xmldataitem.PediatricsAgeY;
                 tbPediatricsAgeZ.Value = xmldataitem.PediatricsAgeZ;
                 tbPediatrics.Value = xmldataitem.Pediatrics;
-                tbAdditionalwarnings.Value = xmldataitem.AdditionalWarning;
                 tbDosageAdministration.Value = xmldataitem.DosageAdministration;
-                //tbDosageReconstitution.Value = xmldataitem.DosageReconstitution;
                 tbDosageOral.Value = xmldataitem.DosageOral;
                 tbDosageMissed.Value = xmldataitem.DosageMissed;
                 tbDosageAdjustment.Value = xmldataitem.DosageAdjustment;
@@ -1515,6 +1532,15 @@ namespace Product_Monograph
                 tbAdverseReactions.Value = xmldataitem.AdverseReactions;
                 tbDrugInteractions.Value = xmldataitem.DrugInteractions;
                 tbSeriousDrugInteractions.Value = xmldataitem.SeriousDrugInteractions;
+                tbSpecialGeriatricsAge.Value = xmldataitem.SpecialGeriatricsAge;
+                tbSpecialGeriatrics.Value = xmldataitem.SpecialGeriatrics;
+                tbSpecialPediatricsAgeX.Value = xmldataitem.SpecialPediatricsAgeX;
+                tbSpecialPediatricsAgeY.Value = xmldataitem.SpecialPediatricsAgeY;
+                tbSpecialPediatricsAgeZ.Value = xmldataitem.SpecialPediatricsAgeZ;
+                tbSpecialPediatrics.Value = xmldataitem.SpecialPediatrics;
+                tbPregnant.Value = xmldataitem.WarningsPregnant;
+                tbNursing.Value = xmldataitem.WarningsNursing;
+                tbMonitoring.Value = xmldataitem.WarningsMonitoring;
             }
         }
     }

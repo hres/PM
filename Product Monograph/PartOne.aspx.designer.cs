@@ -112,13 +112,85 @@ namespace Product_Monograph {
         protected global::System.Web.UI.HtmlControls.HtmlTextArea tbPediatrics;
         
         /// <summary>
-        /// tbAdditionalwarnings control.
+        /// tbPregnant control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlTextArea tbAdditionalwarnings;
+        protected global::System.Web.UI.HtmlControls.HtmlTextArea tbPregnant;
+        
+        /// <summary>
+        /// tbNursing control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.HtmlControls.HtmlTextArea tbNursing;
+        
+        /// <summary>
+        /// tbSpecialPediatricsAgeX control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.HtmlControls.HtmlInputGenericControl tbSpecialPediatricsAgeX;
+        
+        /// <summary>
+        /// tbSpecialPediatricsAgeY control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.HtmlControls.HtmlInputGenericControl tbSpecialPediatricsAgeY;
+        
+        /// <summary>
+        /// tbSpecialPediatricsAgeZ control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.HtmlControls.HtmlInputGenericControl tbSpecialPediatricsAgeZ;
+        
+        /// <summary>
+        /// tbSpecialPediatrics control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.HtmlControls.HtmlTextArea tbSpecialPediatrics;
+        
+        /// <summary>
+        /// tbSpecialGeriatricsAge control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.HtmlControls.HtmlInputGenericControl tbSpecialGeriatricsAge;
+        
+        /// <summary>
+        /// tbSpecialGeriatrics control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.HtmlControls.HtmlTextArea tbSpecialGeriatrics;
+        
+        /// <summary>
+        /// tbMonitoring control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.HtmlControls.HtmlTextArea tbMonitoring;
         
         /// <summary>
         /// tbAdverseReactions control.
