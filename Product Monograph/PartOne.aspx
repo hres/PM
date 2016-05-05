@@ -81,7 +81,6 @@
         <!--Contraindications-->
         <details class="margin-top-medium">
                     <summary id="contraindications" class="well well-sm"><%=sumContraindications%></summary>
-                    <div class="brdr-bttm" >
                         <div class="form-group row">                                                    
                              <label for="tbContraindications" class="col-sm-3 control-label">
                              <span class="field-name"><%=contraindications%></span>
@@ -94,14 +93,13 @@
                                 <input class="btn btn-default btn-xs" type="button" value="<%=addButton %>" onclick="AddContraindications()" id="btnContraindications" />
                             </div>   
                         </div> 
-                    </div>
+
                     <div id="divExtraContraindications">
                     </div>             
             </details>
         <!--Warnings and precautions-->
         <details class="margin-top-medium">
                     <summary id="seriousWarnings" class="well well-sm"><%=sumWarnings%></summary>
-                    <div class="brdr-bttm" >
                         <div class="form-group row">                    
                              <label for="tbSeriousWarnings" class="col-sm-3 control-label">
                              <span class="field-name"><%=seriousWarnings%></span>
@@ -114,7 +112,6 @@
                                 <input class="btn btn-default btn-xs" type="button" value="<%=addButton %>" onclick="AddSeriousWarnings()" id="btnAddSeriousWarnings" />
                             </div>   
                         </div> 
-                    </div>
                     <div id="divExtraSeriousWarnings">
                     </div>
                     <div class="form-group row">                    
@@ -242,7 +239,6 @@
         <!--Dosage and administration-->
         <details class="margin-top-medium">
                     <summary id="dosageAdministration" class="well well-sm"><%=sumDosage%></summary>
-                    <div class="brdr-bttm" >
                         <div class="form-group row">                    
                              <label for="tbDosageConsiderations" class="col-sm-3 control-label">
                                    <span class="field-name"><%=dosingConsiderations%></span>
@@ -254,8 +250,7 @@
                             <div class="col-sm-2 text-right"> 
                                 <input class="btn btn-default btn-xs" type="button" value="<%=addButton %>" onclick="AddDosageConsiderations()" id="btnDosageConsiderations" />
                             </div>   
-                        </div> 
-                    </div>
+                        </div>                 
                     <div id="divExtraDosageConsiderations">
                     </div>
                     <div class="form-group row">                    

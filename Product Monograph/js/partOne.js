@@ -130,9 +130,9 @@ var contraindicationsCounter = 0;
 function AddContraindications() {
     contraindicationsCounter = contraindicationsCounter + 1;
     var div = document.createElement('div');
-    var att = document.createAttribute("class");
-    att.value = "brdr-bttm";
-    div.setAttributeNode(att);
+    //var att = document.createAttribute("class");
+    //att.value = "brdr-bttm";
+    //div.setAttributeNode(att);
     var identity = document.createAttribute("id");
     identity.value = "Contraindications" + contraindicationsCounter;
     div.setAttributeNode(identity);
@@ -161,9 +161,9 @@ var seriousCounter = 0;
 function AddSeriousWarnings() {
     seriousCounter = seriousCounter + 1;
     var div = document.createElement('div');
-    var att = document.createAttribute("class");
-    att.value = "brdr-bttm";
-    div.setAttributeNode(att);
+    //var att = document.createAttribute("class");
+    //att.value = "brdr-bttm";
+    //div.setAttributeNode(att);
     var identity = document.createAttribute("id");
     identity.value = "SeriousWarnings" + seriousCounter;
     div.setAttributeNode(identity);
@@ -227,9 +227,9 @@ var dosingcounter = 0;
 function AddDosageConsiderations() {
     dosingcounter = dosingcounter + 1;
     var div = document.createElement('div');
-    var att = document.createAttribute("class");
-    att.value = "brdr-bttm";
-    div.setAttributeNode(att);
+    //var att = document.createAttribute("class");
+    //att.value = "brdr-bttm";
+    //div.setAttributeNode(att);
     var identity = document.createAttribute("id");
     identity.value = "DosageConsiderations" + dosingcounter;
     div.setAttributeNode(identity);
