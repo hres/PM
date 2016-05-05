@@ -191,9 +191,6 @@ var headingCounter = 0;
 function AddHeadings() {
     headingCounter = headingCounter + 1;
     var div = document.createElement('div');
-    var att = document.createAttribute("class");
-    att.value = "brdr-bttm";
-    div.setAttributeNode(att);
     var identity = document.createAttribute("id");
     identity.value = "Headings" + headingCounter;
     div.setAttributeNode(identity);
@@ -323,9 +320,6 @@ var headingDrugCounter = 0;
 function AddDrugHeadings() {
     headingDrugCounter = headingDrugCounter + 1;
     var div = document.createElement('div');
-    var att = document.createAttribute("class");
-    att.value = "brdr-bttm";
-    div.setAttributeNode(att);
     var identity = document.createAttribute("id");
     identity.value = "DrugHeadings" + headingDrugCounter;
     div.setAttributeNode(identity);
@@ -361,6 +355,7 @@ function RemoveDrugHeadings(i) {
 var headingActionCounter = 0;
 function AddActionHeadings() {
     headingActionCounter = headingActionCounter + 1;
+    var div = document.createElement('div');
     var identity = document.createAttribute("id");
     identity.value = "ActionHeadings" + headingActionCounter;
     div.setAttributeNode(identity);
