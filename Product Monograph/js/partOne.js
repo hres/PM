@@ -130,9 +130,6 @@ var contraindicationsCounter = 0;
 function AddContraindications() {
     contraindicationsCounter = contraindicationsCounter + 1;
     var div = document.createElement('div');
-    //var att = document.createAttribute("class");
-    //att.value = "brdr-bttm";
-    //div.setAttributeNode(att);
     var identity = document.createAttribute("id");
     identity.value = "Contraindications" + contraindicationsCounter;
     div.setAttributeNode(identity);
@@ -161,9 +158,6 @@ var seriousCounter = 0;
 function AddSeriousWarnings() {
     seriousCounter = seriousCounter + 1;
     var div = document.createElement('div');
-    //var att = document.createAttribute("class");
-    //att.value = "brdr-bttm";
-    //div.setAttributeNode(att);
     var identity = document.createAttribute("id");
     identity.value = "SeriousWarnings" + seriousCounter;
     div.setAttributeNode(identity);
@@ -227,9 +221,6 @@ var dosingcounter = 0;
 function AddDosageConsiderations() {
     dosingcounter = dosingcounter + 1;
     var div = document.createElement('div');
-    //var att = document.createAttribute("class");
-    //att.value = "brdr-bttm";
-    //div.setAttributeNode(att);
     var identity = document.createAttribute("id");
     identity.value = "DosageConsiderations" + dosingcounter;
     div.setAttributeNode(identity);
@@ -453,4 +444,61 @@ function deletePharmacokineticsTable(r) {
     }
     else
         document.getElementById("pharmacokineticsTable").deleteRow(i);
+}
+
+var newAdverseRowCnt = 0;
+function AddAdverseReactionsTable(tableID) {
+    var table = document.getElementById(tableID);
+    var rowCount = table.rows.length;
+    var row = table.insertRow(rowCount);
+    var colCount = table.rows[1].cells.length;
+    var selectCount = 0;
+    try {
+        newAdverseRowCnt = newAdverseRowCnt + 1;
+        if (newAdverseRowCnt < 11) {
+            for (var i = 0; i < colCount; i++) {
+                var newcell = row.insertCell(i);
+                if (i == 1) {
+                    var newClinicalTrial = "tbClinicalTrial" + newAdverseRowCnt;
+                    var numClinicalTrialHTML = "<input type='text'  id='" + newClinicalTrial + "' name='tbClinicalTrial' class='form-control input-sm' />";
+                    newcell.innerHTML = numClinicalTrialHTML;
+                }
+                else if (i == 2) {
+                    var newDrugName = "tbDrugName" + newAdverseRowCnt;
+                    var numDrugNameHTML = "<textarea  id='" + newDrugName + "' name='tbDrugName'></textarea>";
+                    newcell.innerHTML = numDrugNameHTML;
+                }
+                else if (i == 3) {
+                    var newPlacebo = "tbPlacebo" + newAdverseRowCnt;
+                    var numPlaceboHTML = "<textarea  id='" + newPlacebo + "' name='tbPlacebo'></textarea>";
+                    newcell.innerHTML = numPlaceboHTML;
+                }
+                else {
+                    newcell.innerHTML = table.rows[1].cells[i].innerHTML;
+                    newcell.type = table.rows[1].cells[i].nodeType;
+                    switch (newcell.childNodes[0].type) {
+                        case "button":
+                            newcell.childNodes[0].clicked = false;
+                            break;
+                    }
+                }
+            }
+        }
+        else {
+            alert("You reach Max row number 10, thanks!");
+        }
+
+    } catch (e) {
+        alert(e);
+    }
+    setup();
+}
+function DeleteAdverseReactionsTable(r) {
+    var i = r.parentNode.parentNode.rowIndex;
+    var row = document.getElementById("adverseReactionsTable").rows[i];
+    if (i <= 1) {
+        alert("Cannot delete all the rows.");
+    }
+    else
+        document.getElementById("adverseReactionsTable").deleteRow(i);
 }

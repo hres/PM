@@ -129,13 +129,6 @@
                     </div> 
                     <div id="divExtratbHeadings">
                     </div>
-<%--                    <div class="form-group row">                    
-                        <label for="tbAdditionalwarnings" class="col-sm-3 control-label">
-                            <span class="field-name"><%=addWarnings%></span></label>
-                        <div class="col-sm-7"> 
-                            <textarea id="tbAdditionalwarnings" name="tbAdditionalwarnings" class="textarea form-control" runat="server"></textarea>
-                        </div>                   
-                   </div>  --%>   
                    <div class="form-group row brdr-bttm">                    
                             <p  class="col-sm-3">
                                 <span class="field-name"><strong>Special populations</strong></span>
@@ -196,6 +189,64 @@
                         </label>
                         <div class="col-sm-9"> 
                             <textarea id="tbAdverseReactions" name="tbAdverseReactions" class="textarea form-control" runat="server"></textarea>
+                        </div>                   
+                    </div> 
+                    <div class="form-group row">                    
+                        <label for="tbAdverseDrugReactions" class="col-sm-3 control-label">
+                            <span class="field-name">Clinical trial adverse drug reactions</span>
+                            <span class="label label-info" title="Include description of data sources"><%=information%></span>
+                        </label>
+                        <div class="col-sm-9"> 
+                            <textarea id="tbAdverseDrugReactions" name="tbAdverseDrugReactions" class="textarea form-control" runat="server"></textarea>
+                        </div>                   
+                    </div> 
+                <div class="form-group row">                    
+                        <div class="row">                         
+                             <label for="tbReactionsTableNo" class="control-label col-sm-5 mrgn-lft-md"><span class="field-name">Clinical trial adverse drug reactions table #</span></label>
+                             <input type="text" id="tbReactionsTableNo" name="tbReactionsTableNo" class="form-control input-sm col-sm-1" runat="server" size="3"/>  
+							 <label for="tbReactionsTableTitle" class="control-label col-sm-1 text-center"> <span class="field-name"> - </span></label> 
+							 <div class="col-sm-5">
+                                <input type="text" id="tbReactionsTableTitle" name="tbReactionsTableTitle" class="form-control input-sm" size="30" runat="server"/>  	
+                             </div> 						  
+                        </div>
+                         <div class="mrgn-lft-md"> 
+                                <table id="adverseReactionsTable" class="table table-bordered table-striped table-hover">
+                                    <caption> </caption>                
+                                    <thead>
+                                    <tr>
+                                        <th><input class="btn btn-default btn-xs" type="button" value="<%=addButton %>" onclick="AddAdverseReactionsTable('adverseReactionsTable')" id="btnAdverseReactionsTable" /></th>
+                                        <th></th>
+                                        <th>
+                                               <input type="text" id="tbDrugnameTitle" name="tbDrugnameTitle" class="form-control input-sm col-sm-3" placeholder="Drug name" runat="server"/>
+                                               <label for="tbDrugnameTitle" class="control-label col-sm-1 mrgn-lft-0"><span class="field-name">n=</span></label>
+                                               <input type="text" id="tbDrugnameNo" name="tbDrugnameNo" class="form-control input-sm col-sm-1 mrgn-lft-md" size="3" runat="server" />
+                                               <label for="tbDrugnameNo" class="control-label col-sm-1"> <span class="field-name">(%)</span></label>
+                                        </th>
+                                        <th>  <input type="text" id="tbPalcebo" name="tbPalcebo" class="form-control input-sm col-sm-3" placeholder="Place bo" runat="server"/>
+                                               <label for="tbPalcebo" class="control-label col-sm-1 mrgn-lft-0"><span class="field-name">n=</span></label>
+                                               <input type="text" id="tbPalceboNo" name="tbPalceboNo" class="form-control input-sm col-sm-1 mrgn-lft-md" size="3" runat="server" />
+                                               <label for="tbPalceboNo" class="control-label col-sm-1"> <span class="field-name">(%)</span></label>
+                                        </th>
+                                    </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                            <td><input id="btnRemoveAdverseReactionsTable" type="button" onclick="DeleteAdverseReactionsTable(this)" name="btnDelete" value="<%=removeButton %>" class="btn btn-default btn-xs"/></td>   
+                                            <td><input type="text" id="tbClinicalTrial" name="tbClinicalTrial" class="form-control input-sm" /></td>
+                                            <td><textarea  id="tbDrugName" name="tbDrugName" ></textarea></td>                                    
+                                            <td><textarea  id="tbPlacebo" name="tbPlacebo" ></textarea></td>
+                                        </tr>
+                                    </tbody>
+                                </table> 
+                         </div>                  
+                 </div> 
+                    <div class="form-group row">                    
+                        <label for="tbAdverseReactionsSupplement" class="col-sm-3 control-label">
+                            <span class="field-name">Clinical trial adverse drug reactions supplement</span>
+                            <span class="label label-info" title="narrative to follow table to explain or supplement the information provided in the table"> <%=information%></span>
+                        </label>
+                        <div class="col-sm-9"> 
+                            <textarea id="tbAdverseReactionsSupplement" name="tbAdverseReactionsSupplement" class="textarea form-control" runat="server"></textarea>
                         </div>                   
                     </div> 
             </details>
@@ -317,8 +368,7 @@
                     <div class="mrgn-bttm-0 mrgn-tp-0">
                         <p> <%=parenteralProdInfo%></p> 
                     </div>
-                </div> 
-    
+                </div>     
              </details>
         <!--Overdosage-->
         <details class="margin-top-medium">
