@@ -466,15 +466,15 @@ namespace Product_Monograph
                 return null;
             }
 
-            helpers.Processes.ValidateAndSave(doc, rootnode, "WarningsPregnant", "", tbPregnant.Value, false);
-            helpers.Processes.ValidateAndSave(doc, rootnode, "WarningsNursing", "", tbNursing.Value, false);
-            helpers.Processes.ValidateAndSave(doc, rootnode, "SpecialPediatrics", "", tbSpecialPediatrics.Value, false);
-            helpers.Processes.ValidateAndSave(doc, rootnode, "SpecialPediatricsAgeX", "", tbSpecialPediatricsAgeX.Value, false);
-            helpers.Processes.ValidateAndSave(doc, rootnode, "SpecialPediatricsAgeY", "", tbSpecialPediatricsAgeY.Value, false);
-            helpers.Processes.ValidateAndSave(doc, rootnode, "SpecialPediatricsAgeZ", "", tbSpecialPediatricsAgeZ.Value, false);
-            helpers.Processes.ValidateAndSave(doc, rootnode, "SpecialGeriatrics", "", tbSpecialGeriatrics.Value, false);
-            helpers.Processes.ValidateAndSave(doc, rootnode, "SpecialGeriatricsAge", "", tbSpecialGeriatricsAge.Value, false);
-            helpers.Processes.ValidateAndSave(doc, rootnode, "WarningsMonitoring", "", tbMonitoring.Value, false);
+            //helpers.Processes.ValidateAndSave(doc, rootnode, "WarningsPregnant", "", tbPregnant.Value, false);
+            //helpers.Processes.ValidateAndSave(doc, rootnode, "WarningsNursing", "", tbNursing.Value, false);
+            //helpers.Processes.ValidateAndSave(doc, rootnode, "SpecialPediatrics", "", tbSpecialPediatrics.Value, false);
+            //helpers.Processes.ValidateAndSave(doc, rootnode, "SpecialPediatricsAgeX", "", tbSpecialPediatricsAgeX.Value, false);
+            //helpers.Processes.ValidateAndSave(doc, rootnode, "SpecialPediatricsAgeY", "", tbSpecialPediatricsAgeY.Value, false);
+            //helpers.Processes.ValidateAndSave(doc, rootnode, "SpecialPediatricsAgeZ", "", tbSpecialPediatricsAgeZ.Value, false);
+            //helpers.Processes.ValidateAndSave(doc, rootnode, "SpecialGeriatrics", "", tbSpecialGeriatrics.Value, false);
+            //helpers.Processes.ValidateAndSave(doc, rootnode, "SpecialGeriatricsAge", "", tbSpecialGeriatricsAge.Value, false);
+            //helpers.Processes.ValidateAndSave(doc, rootnode, "WarningsMonitoring", "", tbMonitoring.Value, false);
 
             #endregion
             #region Warnings and Precautions Headings
@@ -863,6 +863,108 @@ namespace Product_Monograph
                 return null;
             }
             #endregion
+            try
+            {
+                #region Drug-drug interaction Table
+                XmlNodeList roa = doc.GetElementsByTagName("DrugInteractionTable");
+                var properNameList = new ArrayList();
+                var refList = new ArrayList();
+                var effectList = new ArrayList();
+                var clinicaleList = new ArrayList();
+                if (HttpContext.Current.Request.Form.GetValues("tbProperName") != null &&
+                    HttpContext.Current.Request.Form.GetValues("tbRef") != null &&
+                    HttpContext.Current.Request.Form.GetValues("tbEffect") != null &&
+                    HttpContext.Current.Request.Form.GetValues("tbClinical") != null)
+                {
+                    foreach (string item in HttpContext.Current.Request.Form.GetValues("tbProperName"))
+                    {
+                        properNameList.Add(item);
+                    }
+                    foreach (string item in HttpContext.Current.Request.Form.GetValues("tbRef"))
+                    {
+                        refList.Add(item);
+                    }
+                    foreach (string item in HttpContext.Current.Request.Form.GetValues("tbEffect"))
+                    {
+                        effectList.Add(item);
+                    }
+                    foreach (string item in HttpContext.Current.Request.Form.GetValues("tbClinical"))
+                    {
+                        clinicaleList.Add(item);
+                    }
+                }
+
+                if (roa.Count < 1)
+                {
+                    XmlNode xnode = doc.CreateElement("DrugInteractionTable");
+                    rootnode.AppendChild(xnode);
+
+                    for (int ar = 0; ar < properNameList.Count; ar++)
+                    {
+                        XmlNode subnode = doc.CreateElement("row");
+                        xnode.AppendChild(subnode);
+
+                        string col1 = properNameList[ar].ToString();
+                        XmlNode subsubnode = doc.CreateElement("column");
+                        subsubnode.AppendChild(doc.CreateTextNode(col1));
+                        subnode.AppendChild(subsubnode);
+
+                        string col2 = refList[ar].ToString();
+                        subsubnode = doc.CreateElement("column");
+                        subsubnode.AppendChild(doc.CreateTextNode(col2));
+                        subnode.AppendChild(subsubnode);
+
+                        string col3 = effectList[ar].ToString();
+                        subsubnode = doc.CreateElement("column");
+                        subsubnode.AppendChild(doc.CreateTextNode(col3));
+                        subnode.AppendChild(subsubnode);
+
+                        string col4 = clinicaleList[ar].ToString();
+                        subsubnode = doc.CreateElement("column");
+                        subsubnode.AppendChild(doc.CreateTextNode(col4));
+                        subnode.AppendChild(subsubnode);
+                    }
+                }
+                else
+                {
+                    roa[0].RemoveAll();
+
+                    XmlNodeList xnode = doc.GetElementsByTagName("DrugInteractionTable");
+                    rootnode.AppendChild(xnode[0]);
+
+                    for (int ar = 0; ar < properNameList.Count; ar++)
+                    {
+                        XmlNode subnode = doc.CreateElement("row");
+                        xnode[0].AppendChild(subnode);
+
+                        string col1 = properNameList[ar].ToString();
+                        XmlNode subsubnode = doc.CreateElement("column");
+                        subsubnode.AppendChild(doc.CreateTextNode(col1));
+                        subnode.AppendChild(subsubnode);
+
+                        string col2 = refList[ar].ToString();
+                        subsubnode = doc.CreateElement("column");
+                        subsubnode.AppendChild(doc.CreateTextNode(col2));
+                        subnode.AppendChild(subsubnode);
+
+                        string col3 = effectList[ar].ToString();
+                        subsubnode = doc.CreateElement("column");
+                        subsubnode.AppendChild(doc.CreateTextNode(col3));
+                        subnode.AppendChild(subsubnode);
+
+                        string col4 = clinicaleList[ar].ToString();
+                        subsubnode = doc.CreateElement("column");
+                        subsubnode.AppendChild(doc.CreateTextNode(col4));
+                        subnode.AppendChild(subsubnode);
+                    }
+                }
+                #endregion
+            }
+            catch (Exception error)
+            {
+                // lblError.Text = error.ToString();
+                return null;
+            }
             #region Action and clinical pharmacology Headings
             try
             {
@@ -1050,6 +1152,8 @@ namespace Product_Monograph
                 // lblError.Text = error.ToString();
                 return null;
             }
+
+
 
             #endregion
             //helpers.Processes.ValidateAndSave(doc, rootnode, "AdditionalWarning", "", tbAdditionalwarnings.Value, false);
@@ -1418,6 +1522,44 @@ namespace Product_Monograph
                 }
                 #endregion
             }
+            XmlNodeList drug = xmldoc.GetElementsByTagName("DrugInteractionTable");
+            if (drug.Count > 0)
+            {
+                #region DrugInteractionTable Tables
+                var drugRows = from rowcont in doc.Root.Elements("DrugInteractionTable").Descendants("row")
+                               select new
+                               {
+                                   columns = from column in rowcont.Elements("column")
+                                             select (string)column
+                               };
+
+                int drugRowCounter = 0;
+                foreach (var row in drugRows)
+                {
+                    string[] colarray = "tbProperName;tbRef;tbEffect;tbClinical".Split(';');
+                    int colcounter = 0;
+                    if (drugRowCounter == 0)
+                    {
+                        foreach (string column in row.columns)
+                        {
+                            strscript += "$('#" + colarray[colcounter] + "').val(\"" + helpers.Processes.CleanString(column) + "\");";
+                            colcounter++;
+                        }
+                    }
+                    else
+                    {
+                        strscript += "AddDruginteractionTable('druginteractionTable');";
+                        foreach (string column in row.columns)
+                        {
+                            strscript += "$('#" + colarray[colcounter] + drugRowCounter.ToString() + "').val(\"" + helpers.Processes.CleanString(column) + "\");";
+                            colcounter++;
+                        }
+                    }
+                    drugRowCounter++;
+                }
+                #endregion
+            }
+
             #endregion
             #region DosageAdministration
             XmlNodeList dosage = xmldoc.GetElementsByTagName("DosageConsiderations");
@@ -1681,15 +1823,15 @@ namespace Product_Monograph
                 tbPalceboNo.Value = xmldataitem.AdverseTablePalceboNo;
                 tbDrugInteractions.Value = xmldataitem.DrugInteractions;
                 tbSeriousDrugInteractions.Value = xmldataitem.SeriousDrugInteractions;
-                tbSpecialGeriatricsAge.Value = xmldataitem.SpecialGeriatricsAge;
-                tbSpecialGeriatrics.Value = xmldataitem.SpecialGeriatrics;
-                tbSpecialPediatricsAgeX.Value = xmldataitem.SpecialPediatricsAgeX;
-                tbSpecialPediatricsAgeY.Value = xmldataitem.SpecialPediatricsAgeY;
-                tbSpecialPediatricsAgeZ.Value = xmldataitem.SpecialPediatricsAgeZ;
-                tbSpecialPediatrics.Value = xmldataitem.SpecialPediatrics;
-                tbPregnant.Value = xmldataitem.WarningsPregnant;
-                tbNursing.Value = xmldataitem.WarningsNursing;
-                tbMonitoring.Value = xmldataitem.WarningsMonitoring;
+                //tbSpecialGeriatricsAge.Value = xmldataitem.SpecialGeriatricsAge;
+                //tbSpecialGeriatrics.Value = xmldataitem.SpecialGeriatrics;
+                //tbSpecialPediatricsAgeX.Value = xmldataitem.SpecialPediatricsAgeX;
+                //tbSpecialPediatricsAgeY.Value = xmldataitem.SpecialPediatricsAgeY;
+                //tbSpecialPediatricsAgeZ.Value = xmldataitem.SpecialPediatricsAgeZ;
+                //tbSpecialPediatrics.Value = xmldataitem.SpecialPediatrics;
+                //tbPregnant.Value = xmldataitem.WarningsPregnant;
+                //tbNursing.Value = xmldataitem.WarningsNursing;
+                //tbMonitoring.Value = xmldataitem.WarningsMonitoring;
             }
         }
     }

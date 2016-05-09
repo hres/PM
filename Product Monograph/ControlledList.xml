@@ -45,7 +45,13 @@
     <warning>Respiratory</warning>
     <warning>Sensitivity/Resistance</warning>
     <warning>Sexual Function/Reproduction</warning>
-    <warning>Skin</warning>   
+    <warning>Skin</warning>
+    <warning>Special Populations</warning>
+    <warning>xxxPregnant Women</warning>
+    <warning>xxxNursing Women</warning>
+    <warning>xxxPediatrics &#40;x &#45; y years of age&#41;: or &#40;&#60; years of age&#41;:</warning>
+    <warning>xxxGeriatrics &#40;&#62; x years of age&#41;:</warning>
+    <warning>xxxMonitoring and Laboratory Tests</warning>
   </warningsprecautions>
   <schedulingsymbol>
     <schedule value="select"></schedule>
@@ -374,5 +380,6 @@
     <interactions>Drug-food interactions</interactions>
     <interactions>Drug-herb interactions</interactions>
     <interactions>Drug-laboratory interactions</interactions>
+    <interactions>Drug-lifestyle interactions</interactions>
   </drugInteractions>
 </controlledlist>

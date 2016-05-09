@@ -129,7 +129,7 @@
                     </div> 
                     <div id="divExtratbHeadings">
                     </div>
-                   <div class="form-group row brdr-bttm">                    
+                  <%-- <div class="form-group row brdr-bttm">                    
                             <p  class="col-sm-3">
                                 <span class="field-name"><strong>Special populations</strong></span>
                             </p>
@@ -177,7 +177,7 @@
                                     <span class="field-name ">Monitoring and laboratory tests</span>
                                 </label>
                                 <textarea id="tbMonitoring" name="tbMonitoring " class="textarea form-control" runat="server"></textarea>
-                 </div>                  
+                 </div>                  --%>
             </details>
         <!--Adverse reactions-->
         <details class="margin-top-medium">
@@ -284,8 +284,29 @@
                                 <input class="btn btn-default btn-xs" type="button" value="<%=addButton %>" onclick="AddDrugHeadings()" id="btnDrugHeadings" />
                             </div>   
                         </div>
-                 <div id="divExtratbDrugHeadings">
-                 </div> 
+                 <div id="divExtratbDrugHeadings"></div>
+                <table id="druginteractionTable" class="table table-bordered table-striped table-hover margin-bottom-none">
+                            <caption class="text-left h5 mrgn-tp-0">Established or potential drug-drug interaction</caption>
+                            <thead>
+                            <tr>
+                                <th><input class="btn btn-default btn-xs" type="button" value="<%=addButton %>" onclick="AddDruginteractionTable('druginteractionTable')" id="btnAddDruginteractionTable" /></th>
+                                <th><span class="field-name">Proper name</span></th>
+                                <th><span class="field-name">Ref</span>&nbsp;<span class="label label-info" title="level of evidence, see legend"><%=information%></span></th>
+                                <th><span class="field-name">Effect</span>&nbsp;<span class="label label-info" title="e.g. 9 <drug A> conc"><%=information%></span></th>
+                                <th><span class="field-name">Clinical comment</span>&nbsp;<span class="label label-info" title="Caution is warranted and therapeutic concentration monitoring is recommended"><%=information%></span></th>
+                            </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td><input id="btnDruginteractionTableRemove" type="button" onclick="deleteDruginteractionTable(this)" name="btnDelete" value="<%=removeButton%>" class="btn btn-default btn-xs"/></td>   
+                                    <td headers="thProperName"><textarea  id="tbProperName" name="tbProperName" ></textarea></td>
+                                    <td headers="thRef"><textarea  id="tbRef" name="tbRef" ></textarea></td>              
+                                    <td headers="thEffect"><textarea  id="tbEffect" name="tbEffect" ></textarea></td>
+							        <td headers="thClinical"><textarea  id="tbClinical" name="tbClinical" ></textarea></td>
+                                </tr>
+                            </tbody>
+                        </table>
+                       <div><span class="mrgn-tp-0">Legend: C = Case study; CT = Clinical trial; T=Theoretical</span></div>
             </details>
         <!--Dosage and administration-->
         <details class="margin-top-medium">
@@ -403,15 +424,7 @@
                             <textarea id="tbPharmacodynamics" name="tbPharmacodynamics" class="textarea form-control" runat="server"></textarea>
                         </div>                   
                     </div>
-                    <div class="form-group row">                    
-                        <label for="tbSpecialPopulationsConditions" class="col-sm-3 control-label">
-                            <span class="field-name"><%=populationsConditions%></span>
-                        </label>
-                        <div class="col-sm-9"> 
-                            <textarea id="tbSpecialPopulationsConditions" name="tbSpecialPopulationsConditions" class="textarea form-control" runat="server"></textarea>
-                        </div>                   
-                    </div>
-                    <div class="form-group row">                    
+                     <div class="form-group row">                    
                              <label for="tbActionHeadings" class="col-sm-3 control-label">
                                      <span class="field-name"><%=pharmacokinetics%></span>
                              </label>
@@ -423,9 +436,9 @@
                                 <input class="btn btn-default btn-xs" type="button" value="<%=addButton %>" onclick="AddActionHeadings()" id="btnActionHeadings" />
                             </div>   
                         </div> 
-                 <div id="divExtratbActionHeadings"></div>               
+                     <div id="divExtratbActionHeadings"></div>               
                  <table id="pharmacokineticsTable" class="table table-bordered table-striped table-hover" title="<%=PharmacokineticsTableTitle%>">
-                    <caption class="text-left h5">Summary of (proper name)'s pharmacokinetics parameters in a (specific patient population)</caption>
+                    <caption class="text-left h5 mrgn-tp-0">Summary of (proper name)'s pharmacokinetics parameters in a (specific patient population)</caption>
                     <thead>
                     <tr>
                         <th><input class="btn btn-default btn-xs" type="button" value="<%=addButton %>" onclick="AddPharmacokineticsTable('pharmacokineticsTable')" id="btnAddPharmacokineticsTable" /></th>
@@ -447,7 +460,14 @@
                         </tr>
                     </tbody>
                 </table> 
-          
+                <div class="form-group row">                    
+                        <label for="tbSpecialPopulationsConditions" class="col-sm-3 control-label">
+                            <span class="field-name"><%=populationsConditions%></span>
+                        </label>
+                        <div class="col-sm-9"> 
+                            <textarea id="tbSpecialPopulationsConditions" name="tbSpecialPopulationsConditions" class="textarea form-control" runat="server"></textarea>
+                        </div>                   
+                    </div>          
             </details>
        <!--Storage and stability--> 
         <details class="margin-top-medium">

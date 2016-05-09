@@ -22,7 +22,16 @@ function AddRouteOfAdministrationDefaultRow() {
      $.get('ControlledList.xml', function (xmlcontolledlist) {
          $(xmlcontolledlist).find('warning').each(function () {
              var $option = $(this).text();
-             $('<option>' + $option + '</option>').appendTo('#dlHeadings')
+             if ($option.toLowerCase() == 'special populations') {
+                 $('<option disabled="disabled">' + $option + '</option>').appendTo('#dlHeadings')
+             } 
+             else if ($option.indexOf('xxx') >= 0) {
+                 $option = $option.replace("xxx", "&nbsp;&nbsp;&nbsp;&nbsp;");
+                 $('<option>' + $option + '</option>').appendTo('#dlHeadings')
+             }
+             else {
+                 $('<option>' + $option + '</option>').appendTo('#dlHeadings')
+             }            
          });
      });
      $.get('ControlledList.xml', function (xmlcontolledlist) {
@@ -501,4 +510,66 @@ function DeleteAdverseReactionsTable(r) {
     }
     else
         document.getElementById("adverseReactionsTable").deleteRow(i);
+}
+
+var newDrugRowCnt = 0;
+function AddDruginteractionTable(tableID) {
+    var table = document.getElementById(tableID);
+    var rowCount = table.rows.length;
+    var row = table.insertRow(rowCount);
+    var colCount = table.rows[1].cells.length;
+    var selectCount = 0;
+    try {
+        newDrugRowCnt = newDrugRowCnt + 1;
+        if (newDrugRowCnt < 11) {
+            for (var i = 0; i < colCount; i++) {
+                var newcell = row.insertCell(i);
+                if (i == 1) {
+                    var newProperName = "tbProperName" + newDrugRowCnt;
+                    var numProperNameHTML = "<textarea  id='" + newProperName + "' name='tbProperName'></textarea>";
+                    newcell.innerHTML = numProperNameHTML;
+                }
+                else if (i == 2) {
+                    var newRef = "tbRef" + newDrugRowCnt;
+                    var numRefHTML = "<textarea  id='" + newRef + "' name='tbRef'></textarea>";
+                    newcell.innerHTML = numRefHTML;
+                }
+                else if (i == 3) {
+                    var newEffect = "tbEffect" + newDrugRowCnt;
+                    var numEffectHTML = "<textarea  id='" + newEffect + "' name='tbEffect'></textarea>";
+                    newcell.innerHTML = numEffectHTML;
+                }
+                else if (i == 4) {
+                    var newClinical = "tbClinical" + newDrugRowCnt;
+                    var numClinicalHTML = "<textarea  id='" + newClinical + "' name='tbClinical'></textarea>";
+                    newcell.innerHTML = numClinicalHTML;
+                }
+                else {
+                    newcell.innerHTML = table.rows[1].cells[i].innerHTML;
+                    newcell.type = table.rows[1].cells[i].nodeType;
+                    switch (newcell.childNodes[0].type) {
+                        case "button":
+                            newcell.childNodes[0].clicked = false;
+                            break;
+                    }
+                }
+            }
+        }
+        else {
+            alert("You reach Max row number 20, thanks!");
+        }
+
+    } catch (e) {
+        alert(e);
+    }
+    setup();
+}
+function deleteDruginteractionTable(r) {
+    var i = r.parentNode.parentNode.rowIndex;
+    var row = document.getElementById("druginteractionTable").rows[i];
+    if (i <= 1) {
+        alert("Cannot delete all the rows.");
+    }
+    else
+        document.getElementById("druginteractionTable").deleteRow(i);
 }
