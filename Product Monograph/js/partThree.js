@@ -3,7 +3,6 @@
 });
 
 var loadFile = function (fuid, imgid, txtname, txtdata) {
-
     //input file element
     var x = document.getElementById(fuid);
     //first item, only item
@@ -369,4 +368,46 @@ function RemoveVeryRare(i) {
 function RemoveUnknown(i) {
     var rowid = "#Unknown" + i;
     $(rowid).remove();
+}
+var properUseCounter = 0;
+function AddProperUseTextarea() {
+    properUseCounter = properUseCounter + 1;
+    var div = document.createElement('div');
+    var identity = document.createAttribute("id");
+    identity.value = "properUseDoc" + properUseCounter;
+    div.setAttributeNode(identity);
+
+    var properUseTextarea = "properUseTextarea" + properUseCounter.toString();
+    var returnString = "";
+    returnString = "<div class='form-group row'>" +
+               "<div class='col-sm-11'>" +                   
+                   "<textarea id='" + properUseTextarea + "' name='properUseTextarea' class='mceEditor'> Please create documentation</textarea>" +
+                "</div>" +            
+                "<div class='col-sm-1'>" +      
+                '<input class="btn btn-default btn-xs" type="button" value="Remove" onclick="RemoveProperUseTextarea(' + properUseCounter + ')" id="btnRemoveProperUseTextarea(' + properUseCounter + ')" />' +         
+                 "</div>" +           
+                "</div>" ;	
+				
+    div.innerHTML = returnString;
+    document.getElementById("divExtraProperUseTextarea").appendChild(div);
+    setupMceEditor();
+}
+function RemoveProperUseTextarea(i) {
+    var rowid = "#properUseDoc" + i;
+    $(rowid).remove();
+}
+
+function setupMceEditor() {
+    tinymce.init({
+        //selector: "textarea.mceEditor",
+        mode: "specific_textareas",
+        editor_selector: "mceEditor",
+        height: 300,
+        plugins: [
+          'advlist autolink lists link image charmap print preview anchor',
+          'searchreplace visualblocks code fullscreen',
+          'insertdatetime media table contextmenu paste code'
+        ],
+        toolbar: 'insertfile undo redo | styleselect | bold italic | alignleft aligncenter alignright alignjustify | bullist numlist outdent indent | link image'
+    });
 }

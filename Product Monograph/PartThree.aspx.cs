@@ -514,6 +514,48 @@ namespace Product_Monograph
                 #endregion
             }
 
+            #region ProperUseTextarea
+            XmlNodeList properUseNode = xmldoc.GetElementsByTagName("ProperUseTextarea");
+            if (properUseNode.Count > 0)
+            {
+                var rowsC = from rowcont in doc.Root.Elements("ProperUseTextarea").Descendants("row")
+                            select new
+                            {
+                                columns = from column in rowcont.Elements("column")
+                                          select (string)column
+                            };
+
+                bool ranC = false;
+                int rowcounterC = 0;
+                foreach (var rowC in rowsC)
+                {
+                    if (!ranC)
+                    {
+                        string[] colarray = "properUseTextarea".Split(';');
+                        int colcounter = 0;
+                        foreach (string columnC in rowC.columns)
+                        {
+                            strscript += "$('#" + colarray[colcounter] + "').val(\"" + helpers.Processes.CleanString(columnC) + "\");";
+                            colcounter++;
+                        }
+                        ranC = true;
+                    }
+                    else
+                    {
+                        strscript += "AddProperUseTextarea();";
+                        string[] colarray = "properUseTextarea".Split(';');
+                        int colcounter = 0;
+                        foreach (string columnC in rowC.columns)
+                        {
+                            strscript += "$('#" + colarray[colcounter] + rowcounterC.ToString() + "').val(\"" + helpers.Processes.CleanString(columnC) + "\");";
+                            colcounter++;
+                        }
+                    }
+
+                    rowcounterC++;
+                }
+            }
+            #endregion
 
             //followings are elements under root node
             var xmldata = from item in doc.Elements("ProductMonographTemplate")
@@ -594,7 +636,6 @@ namespace Product_Monograph
                     tbLastrRevised.Text = xmldataitem.LastrRevised;
                 if (xmldataitem.Overdose == null)
                 {
-                    // tbOverdose.Value = "In case of drug overdose, contact a health care practitioner, hospital emergency department or regional Poison Control Centre immediately, even if there are no symptoms.";
                     tbOverdose.Value = Resources.Resource.overDoseText;
                 }
                 else
@@ -605,17 +646,6 @@ namespace Product_Monograph
 
                 if (xmldataitem.ReportingSuspectedSE == null)
                 {
-                    //tbReportingSuspectedSE.Value = "<p>You can report any suspected adverse reactions associated with the use of health products to the Canada Vigilance Program by one of the following 3 ways:</p>" +
-                    //                                "<p>Report online at www.healthcanada.gc.ca/medeffect</p>" +
-                    //                                "<p>Call toll-free at 1-866-234-2345</p>" +
-                    //                                "<p>Complete a Canada Vigilance Reporting Form and:</p>" +
-                    //                                "<p>&nbsp;&nbsp;&nbsp;Fax toll-free to 1-866-678-6789, or</p>" +
-                    //                                "<p>&nbsp;&nbsp;&nbsp;Mail to: 	Canada Vigilance Program</p>" +
-                    //                                "<p>Health Canada</p>" +
-                    //                               "<p>Postal Locator 0701D</p>" +
-                    //                                "<p>Ottawa, Ontario K1A 0K9</p>" +
-                    //                                "<p>Postage paid labels, Canada Vigilance Reporting Form and the adverse reaction reporting guidelines are available on the MedEffect™ Canada Web site at www.healthcanada.gc.ca/medeffect.</p>" +
-                    //                                "<p>NOTE: Should you require information related to the management of side effects, contact your health professional. The Canada Vigilance Program does not provide medical advice.</p>";
                     tbReportingSuspectedSE.Value = Resources.Resource.reportSuspectedSEInstruction;
                 }
                 else
@@ -632,15 +662,15 @@ namespace Product_Monograph
                 {
                     tbMoreInformation.Value = xmldataitem.MoreInformation;
                 }
-                strscript += "$('#fuimage0').attr('src', " + "'" + xmldataitem.MedicationUsualDoseImagedata + "');";
-                strscript += "$('#tbfuimagename0').val(\"" + xmldataitem.MedicationUsualDoseImagename + "\");";
-                strscript += "$('#tbfuimagebasesixtyfour0').val(\"" + xmldataitem.MedicationMissedDoseImagedata + "\");";
-                strscript += "$('#fuimage1').attr('src', " + "'" + xmldataitem.MedicationOverdoseImagedata + "');";
-                strscript += "$('#tbfuimagename1').val(\"" + xmldataitem.MedicationOverdoseImagename + "\");";
-                strscript += "$('#tbfuimagebasesixtyfour1').val(\"" + xmldataitem.MedicationOverdoseImagedata + "\");";
-                strscript += "$('#fuimage2').attr('src', " + "'" + xmldataitem.MedicationMissedDoseImagedata + "');";
-                strscript += "$('#tbfuimagename2').val(\"" + xmldataitem.MedicationMissedDoseImagename + "\");";
-                strscript += "$('#tbfuimagebasesixtyfour2').val(\"" + xmldataitem.MedicationMissedDoseImagedata + "\");";
+                //strscript += "$('#fuimage0').attr('src', " + "'" + xmldataitem.MedicationUsualDoseImagedata + "');";
+                //strscript += "$('#tbfuimagename0').val(\"" + xmldataitem.MedicationUsualDoseImagename + "\");";
+                //strscript += "$('#tbfuimagebasesixtyfour0').val(\"" + xmldataitem.MedicationMissedDoseImagedata + "\");";
+                //strscript += "$('#fuimage1').attr('src', " + "'" + xmldataitem.MedicationOverdoseImagedata + "');";
+                //strscript += "$('#tbfuimagename1').val(\"" + xmldataitem.MedicationOverdoseImagename + "\");";
+                //strscript += "$('#tbfuimagebasesixtyfour1').val(\"" + xmldataitem.MedicationOverdoseImagedata + "\");";
+                //strscript += "$('#fuimage2').attr('src', " + "'" + xmldataitem.MedicationMissedDoseImagedata + "');";
+                //strscript += "$('#tbfuimagename2').val(\"" + xmldataitem.MedicationMissedDoseImagename + "\");";
+                //strscript += "$('#tbfuimagebasesixtyfour2').val(\"" + xmldataitem.MedicationMissedDoseImagedata + "\");";
             }
             ScriptManager.RegisterStartupScript(this.Page, this.GetType(), "LoadEventsScript", strscript.ToString(), true);
         }
@@ -753,8 +783,7 @@ namespace Product_Monograph
             #region  SideEffects
             helpers.Processes.ValidateAndSave(doc, rootnode, "SideEffects", "SideEffects", tbSideEffects.Value, true);
             helpers.Processes.ValidateAndSave(doc, rootnode, "SideEffectsWhatToDo", "SideEffectsWhatToDo", tbSideEffectsWhatToDo.Value, true);
-
-            #endregion
+           #endregion
 
             #region  HowToStore
             helpers.Processes.ValidateAndSave(doc, rootnode, "HowToStore", "HowToStore", tbHowToStore.Value, true);
@@ -769,54 +798,60 @@ namespace Product_Monograph
             helpers.Processes.ValidateAndSave(doc, rootnode, "LastrRevised", "LastrRevised", tbLastrRevised.Text, true);
             #endregion
 
-            ArrayList namearrayUsualDose = new ArrayList();
-            ArrayList imagearrayUsualDose = new ArrayList();
-            if (HttpContext.Current.Request.Form.GetValues("tbfuimagename0") != null &&
-                HttpContext.Current.Request.Form.GetValues("tbfuimagebasesixtyfour0") != null)
+            #region ProperUseTextarea
+            try
             {
-                foreach (string routeitem in HttpContext.Current.Request.Form.GetValues("tbfuimagename0"))
+                XmlNodeList properUseNode = doc.GetElementsByTagName("ProperUseTextarea");
+                var properUseList = new ArrayList();
+                if (HttpContext.Current.Request.Form.GetValues("properUseTextarea") != null)
                 {
-                    namearrayUsualDose.Add(routeitem);
+                    foreach (string useitem in HttpContext.Current.Request.Form.GetValues("properUseTextarea"))
+                    {
+                        properUseList.Add(useitem);
+                    }
                 }
-                foreach (string dosageitem in HttpContext.Current.Request.Form.GetValues("tbfuimagebasesixtyfour0"))
+
+                if (properUseNode.Count < 1)
                 {
-                    imagearrayUsualDose.Add(dosageitem);
+                    XmlNode xnode = doc.CreateElement("ProperUseTextarea");
+                    rootnode.AppendChild(xnode);
+
+                    for (int ar = 0; ar < properUseList.Count; ar++)
+                    {
+                        XmlNode subnode = doc.CreateElement("row");
+                        xnode.AppendChild(subnode);
+
+                        string col1 = properUseList[ar].ToString();
+                        XmlNode subsubnode = doc.CreateElement("column");
+                        subsubnode.AppendChild(doc.CreateTextNode(col1));
+                        subnode.AppendChild(subsubnode);
+                    }
+                }
+                else
+                {
+                    properUseNode[0].RemoveAll();
+
+                    XmlNodeList xnode = doc.GetElementsByTagName("ProperUseTextarea");
+                    rootnode.AppendChild(xnode[0]);
+
+                    for (int ar = 0; ar < properUseList.Count; ar++)
+                    {
+                        XmlNode subnode = doc.CreateElement("row");
+                        xnode[0].AppendChild(subnode);
+
+                        string col1 = properUseList[ar].ToString();
+                        XmlNode subsubnode = doc.CreateElement("column");
+                        subsubnode.AppendChild(doc.CreateTextNode(col1));
+                        subnode.AppendChild(subsubnode);
+                    }
                 }
             }
-            ArrayList namearrayOverdose = new ArrayList();
-            ArrayList imagearrayOverdose = new ArrayList();
-            if (HttpContext.Current.Request.Form.GetValues("tbfuimagename1") != null &&
-                HttpContext.Current.Request.Form.GetValues("tbfuimagebasesixtyfour1") != null)
+            catch (Exception error)
             {
-                foreach (string routeitem in HttpContext.Current.Request.Form.GetValues("tbfuimagename1"))
-                {
-                    namearrayOverdose.Add(routeitem);
-                }
-                foreach (string dosageitem in HttpContext.Current.Request.Form.GetValues("tbfuimagebasesixtyfour1"))
-                {
-                    imagearrayOverdose.Add(dosageitem);
-                }
+                // lblError.Text = error.ToString();
+                return null;
             }
-            ArrayList namearrayMissedDose = new ArrayList();
-            ArrayList imagearrayMissedDose = new ArrayList();
-            if (HttpContext.Current.Request.Form.GetValues("tbfuimagename2") != null &&
-                HttpContext.Current.Request.Form.GetValues("tbfuimagebasesixtyfour2") != null)
-            {
-                foreach (string routeitem in HttpContext.Current.Request.Form.GetValues("tbfuimagename2"))
-                {
-                    namearrayMissedDose.Add(routeitem);
-                }
-                foreach (string dosageitem in HttpContext.Current.Request.Form.GetValues("tbfuimagebasesixtyfour2"))
-                {
-                    imagearrayMissedDose.Add(dosageitem);
-                }
-            }
-            helpers.Processes.ValidateAndSave(doc, rootnode, "MedicationUsualDoseImagename", "", namearrayUsualDose[0].ToString(), false);
-            helpers.Processes.ValidateAndSave(doc, rootnode, "MedicationUsualDoseImagedata", "", imagearrayUsualDose[0].ToString(), false);
-            helpers.Processes.ValidateAndSave(doc, rootnode, "MedicationOverdoseImagename", "", namearrayOverdose[0].ToString(), false);
-            helpers.Processes.ValidateAndSave(doc, rootnode, "MedicationOverdoseImagedata", "", imagearrayOverdose[0].ToString(), false);
-            helpers.Processes.ValidateAndSave(doc, rootnode, "MedicationMissedDoseImagename", "", namearrayMissedDose[0].ToString(), false);
-            helpers.Processes.ValidateAndSave(doc, rootnode, "MedicationMissedDoseImagedata", "", imagearrayMissedDose[0].ToString(), false);
+            #endregion
 
 
             #region Common SideEffects

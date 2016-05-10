@@ -6,6 +6,20 @@
  <script>
      var removeButtonValue = '<%=removeButton%>';       
  </script>
+<script>
+      tinymce.init({
+          mode: "specific_textareas",
+          editor_selector: "mceEditor",
+          height: 300,
+          plugins: [
+            'advlist autolink lists link image charmap print preview anchor',
+            'searchreplace visualblocks code fullscreen',
+            'insertdatetime media table contextmenu paste code'
+          ],
+          toolbar: 'insertfile undo redo | styleselect | bold italic | alignleft aligncenter alignright alignjustify | bullist numlist outdent indent | link image',
+          images_upload_url: 'postAcceptor.php',
+      });
+  </script>
 </asp:Content>
 
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
@@ -19,6 +33,7 @@
             <asp:Button ID="btnSaveDraft" runat="server" cssclass="btn btn-primary " OnClick="btnSave_Click" ClientIDMode="Static"/> 
          </div> 
     </div> 
+<!--About this medication-->
 <details class="margin-top-medium">
         <summary id="SUM_ABOUT" class="well well-sm"><%=sumMedication%></summary>
         <div class="form-group row">
@@ -72,7 +87,7 @@
             </div>
         </div>
     </details>
-
+<!--Warnings and precautions-->
 <details class="margin-top-medium">
         <summary id="SUM_WARNINGS" class="well well-sm"><%=sumWarnings%></summary>
         <div class="form-group row"> 
@@ -91,7 +106,7 @@
         <div id="dvExtraSeriousWarningsPrecautions">
         </div>
     </details>
-
+<!--Interactions with this medication-->
 <details class="margin-top-medium">
         <summary id="SUM_INTERACTIONS" class="well well-sm"><%=sumInteractions%></summary>
         <div class="form-group row">
@@ -106,45 +121,25 @@
             </div>
         </div>
     </details>
-
+<!--Proper use of this medication-->
  <details class="margin-top-medium">
         <summary id="SUM_PROPER_USE" class="well well-sm"><%=sumProperUse%></summary>        
         <div class="form-group row">
-                <Label ID="lblProperUse" for="tbProperUseMed" Class="col-sm-3 control-label">
+                <label ID="lblProperUse" for="tbProperUseMed" Class="col-sm-3 control-label">
                      <span class="field-name"><%=properUse%></span>
-                </Label> 
+                </label> 
                 <div class="col-sm-9">                    
                     <textarea id="tbProperUseMed" name="tbProperUseMed" runat="server" class="textarea form-control"></textarea>
                 </div>         
         </div>
         <div class="form-group row">
-                <Label id="lblUsualDose" for="tbUsualDose" Class="col-sm-3 control-label">
+                <label id="lblUsualDose" for="tbUsualDose" Class="col-sm-3 control-label">
                     <span class="field-name"><%=usualDose%></span>
-                </Label>            
+                </label>            
                 <div class="col-sm-9">                    
                     <textarea id="tbUsualDose" name="tbUsualDose" runat="server" class="textarea form-control"></textarea>
                 </div>            
         </div>
-        <div class="form-group">
-            <div class="row">  
-                      <label for="fustrucform1" class="col-sm-3 control-label">
-                          <span class="field-name"><%=usualDoseFile%></span>
-                      </label>  
-                    <div class="col-sm-9">               
-                        <input type="file" id="fustrucform0" onchange="loadFile('fustrucform0', 'fuimage0','tbfuimagename0','tbfuimagebasesixtyfour0')"/>     
-                    </div>           
-            </div>             
-            <div class="row">             
-                   <div class="col-sm-3"></div>
-                   <div class="col-xs-3">
-                        <img id="fuimage0" src="./images/x.png" class="img-thumbnail"  alt=""/>
-                        <input type="text"  class="hidden" id="tbfuimagename0" name="tbfuimagename0" />
-                        <input type="text"  class="hidden" id="tbfuimagebasesixtyfour0" name="tbfuimagebasesixtyfour0"  />  
-                   </div>
-             </div> 
-        </div>
-        
-        
         <div class="form-group row">              
                     <label for="tbOverdose" class="col-sm-3 control-label">
                          <span class="field-name"><%=overdose%></span>
@@ -153,25 +148,7 @@
                     <div class="col-sm-9">                               
                         <textarea id="tbOverdose" name="tbOverdose" runat="server" class="textarea form-control"></textarea>
                     </div>
-         </div> 
-         <div class="form-group">
-            <div class="row">  
-                     <label for="fustrucform1" class="col-sm-3 control-label">
-                         <span class="field-name"><%=overdoseFile%></span>
-                     </label>  
-                     <div class="col-sm-9">  
-                        <input type="file" id="fustrucform1" onchange="loadFile('fustrucform1','fuimage1','tbfuimagename1','tbfuimagebasesixtyfour1')" />
-                     </div>
-            </div>
-               <div class="row">             
-                   <div class="col-sm-3"></div>
-                   <div class="col-xs-3">
-                        <img id="fuimage1" src="./images/x.png" class="img-thumbnail" alt=""/>
-                        <input type="text" class="hidden" id="tbfuimagename1" name="tbfuimagename1"/>
-                        <input type="text" class="hidden" id="tbfuimagebasesixtyfour1" name="tbfuimagebasesixtyfour1" />
-                   </div>
-            </div>
-        </div>
+         </div>
         <div class="form-group row">
             <Label id="lblMissedDose" for="tbMissedDose" Class="col-sm-3 control-label">
                 <span class="field-name"><%=missedDose%></span>
@@ -180,27 +157,21 @@
                 <textarea id="tbMissedDose" name="tbMissedDose" runat="server" class="textarea form-control"></textarea>
             </div>
         </div> 
-        <div class="form-group">
-            <div class="row">  
-                    <label for="fustrucform1" class="col-sm-3 control-label">
-                        <span class="field-name"><%=missedDoseFile%></span>
-                    </label>  
-                    <div class="col-sm-9">  
-                        <input type="file" id="fustrucform2" onchange="loadFile('fustrucform2','fuimage2','tbfuimagename2','tbfuimagebasesixtyfour2')" />
-                    </div>
-             </div>
-             <div class="row">             
-                   <div class="col-sm-3"></div>
-                   <div class="col-xs-3">
-                        <img id="fuimage2" src="./images/x.png" class="img-thumbnail" alt="" />
-                        <input type="text" id="tbfuimagename2" name="tbfuimagename2" class="hidden"/>
-                        <input type="text" id="tbfuimagebasesixtyfour2" name="tbfuimagebasesixtyfour2" class="hidden" />
-                   </div>
-            </div>
+       <div class="form-group">  
+                    <span class="field-name"><strong>Proper use documentation</strong></span>           
         </div>
-      
+        <div class="form-group row">
+                <div class="col-sm-11">                    
+                    <textarea id="properUseTextarea" name="properUseTextarea" class='mceEditor'>Please create documentation</textarea>
+                </div>             
+                <div class="col-sm-1">        
+                     <input class="btn btn-default btn-xs" type="button" value="<%=addButton %>" onclick="AddProperUseTextarea()" id="btnProperUseTextarea" />           
+                </div>            
+        </div>
+        <div id="divExtraProperUseTextarea">
+        </div>     
 </details>
-
+<!--Side effects and what to do about them-->
 <details class="margin-top-medium">
         <summary id="SUM_SIDE_EFFECTS" class="well well-sm"><%=sumSideEffects%></summary>
         <div class="form-group row ">
@@ -427,7 +398,7 @@
          </div>
      
  </details>  
-    
+<!--How to store it-->
  <details class="margin-top-medium">
         <summary id="SUM_HOW_TO_STORE-IT" class="well well-sm"><%=sumHowStore%></summary>
         <div class="form-group row">
@@ -439,7 +410,7 @@
             </div>
         </div>
 </details>
-
+<!--Reporting supected side effects-->
 <details class="margin-top-medium">
         <summary id="SUM_REPORTING" class="well well-sm"><%=sumReporting%></summary>
         <div class="form-group row">
@@ -451,7 +422,7 @@
             </div>
         </div>
 </details>
-
+<!--More information-->
 <details class="margin-top-medium">
     <summary id="SUM_MORE_INFORMATION" class="well well-sm"><%=sumMoreInfo%></summary>
     <div class="form-group row">
