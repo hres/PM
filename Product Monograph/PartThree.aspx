@@ -3,6 +3,9 @@
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
  <script src="./js/pmp.js"></script>
  <script src="./js/partThree.js"></script>
+ <script>
+     var removeButtonValue = '<%=removeButton%>';       
+ </script>
 </asp:Content>
 
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
@@ -95,6 +98,7 @@
             <label for="tbInteractionWithMed" class="col-sm-3 control-label">
                      <span class="field-name"><%=interactions%></span>
                      <span class="label label-info" title="<%=interactionsInfo%>"><%=information%></span>
+                     
             </label>  
 
             <div class="col-sm-9">

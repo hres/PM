@@ -25,8 +25,6 @@ var loadFile = function (fuid, imgid, txtname, txtdata) {
 };
 
 
-
-
 var seriousCounter = 0;
 function AddSeriousWarningsPrecautions() {
     seriousCounter = seriousCounter + 1;
@@ -38,14 +36,15 @@ function AddSeriousWarningsPrecautions() {
     identity.value = "SeriousWarningsPrecautions" + seriousCounter;
     div.setAttributeNode(identity);
     var tbSeriousWarningsPrecautions = "tbSeriousWarningsPrecautions" + seriousCounter.toString();
-    var returnString = "";   
+    var returnString = "";    
+    
     returnString = "<div class='form-group row'>" +
                            "<label for='" + tbSeriousWarningsPrecautions + "' class='col-sm-3 control-label'></label>" +
                            "<div class='col-sm-7'>" +
                                "<textarea id='" + tbSeriousWarningsPrecautions + "' name='tbSeriousWarningsPrecautions' class='textarea form-control'></textarea>" +
                             "</div>" +
                             "<div class='col-sm-2 text-right'>" +
-                               '<input class="btn btn-default btn-xs" type="button" value="Remove" onclick="RemoveSeriousWarningsPrecautions(' + seriousCounter + ')" id="btnRemoveSeriousWarnings(' + seriousCounter + ')" />' +
+                               '<input class="btn btn-default btn-xs" type="button" value="' + removeButtonValue +'" onclick="RemoveSeriousWarningsPrecautions(' + seriousCounter + ')" id="btnRemoveSeriousWarnings(' + seriousCounter + ')" />' +
                            "</div>" +
                    "</div>";   
     div.innerHTML = returnString;
@@ -56,14 +55,6 @@ function RemoveSeriousWarningsPrecautions(i) {
     var rowid = "#SeriousWarningsPrecautions" + i;
     $(rowid).remove();
 }
-
-
-
-
-
-
-
-
 
 
 function AddCommonSymptomsTextBox() {
@@ -104,7 +95,7 @@ function GetAddCommonSymptomsTextBoxDynamicTextBox(id) {
                  "<input type='checkbox' title='Common stop taking' class='form-control' id='" + cstop + "' name='" + cstop + "'/>" +
             "</div> " +
             " <div class='col-xs-2 wb-eqht'>" +
-                '<input class="btn btn-default btn-xs" type="button" value="Remove" onclick="RemoveCommon(' + id + ')" id="btnRemoveCommon(' + id + ')" />' +
+                '<input class="btn btn-default btn-xs" type="button" value="' + removeButtonValue + '" onclick="RemoveCommon(' + id + ')" id="btnRemoveCommon(' + id + ')" />' +
            "</div>";
 }
 
@@ -147,7 +138,7 @@ function GetAddUncommonSymptomsTextBoxDynamicTextBox(id) {
                  "<input type='checkbox' title='Uncommon stop taking' class='form-control' id='" + cstop + "' name='" + cstop + "'/>" +
             "</div> " +
             " <div class='wb-eqht col-xs-2'>" +
-                '<input class="btn btn-default btn-xs" type="button" value="Remove" onclick="RemoveUncommon(' + id + ')" id="btnRemoveUncommon(' + id + ')" />' +
+                '<input class="btn btn-default btn-xs" type="button" value="' + removeButtonValue + '" onclick="RemoveUncommon(' + id + ')" id="btnRemoveUncommon(' + id + ')" />' +
            "</div>";
 }
 
@@ -190,7 +181,7 @@ function GetAddRareSymptomsTextBoxDynamicTextBox(id) {
                  "<input type='checkbox' title='Rare stop taking' class='form-control' id='" + cstop + "' name='" + cstop + "'/>" +
             "</div> " +
             " <div class='col-xs-2'>" +
-            '<input class="btn btn-default btn-xs" type="button" value="Remove" onclick="RemoveRare(' + id + ')" id="btnRemoveRare(' + id + ')" />' +
+            '<input class="btn btn-default btn-xs" type="button" value="' + removeButtonValue + '" onclick="RemoveRare(' + id + ')" id="btnRemoveRare(' + id + ')" />' +
            "</div>";
 }
 
@@ -234,7 +225,7 @@ function GetAddVeryRareSymptomsTextBoxDynamicTextBox(id) {
                  "<input type='checkbox' title='Very rare stop taking' class='form-control'  id='" + cstop + "' name='" + cstop + "'/>" +
             "</div> " +
              "<div class='col-xs-2'>" +
-                '<input class="btn btn-default btn-xs" type="button" value="Remove" onclick="RemoveVeryRare(' + id + ')" id="btnRemoveVeryRare(' + id + ')" />' +
+                '<input class="btn btn-default btn-xs" type="button" value="' + removeButtonValue + '" onclick="RemoveVeryRare(' + id + ')" id="btnRemoveVeryRare(' + id + ')" />' +
            "</div>" +
            "</div>";
 }
@@ -279,7 +270,7 @@ function GetAddUnknownSymptomsTextBoxDynamicTextBox(id) {
                  "<input type='checkbox' title='Unknown stop taking' class='form-control' id='" + cstop + "' name='" + cstop + "'/>" +
             "</div> " +
             "<div class='col-xs-2'>" +
-                        '<input class="btn btn-default btn-xs" type="button" value="Remove" onclick="RemoveUnknown(' + id + ')" id="btnRemoveUnknown(' + id + ')" />' +
+                        '<input class="btn btn-default btn-xs" type="button" value="' + removeButtonValue + '" onclick="RemoveUnknown(' + id + ')" id="btnRemoveUnknown(' + id + ')" />' +
            "</div>" +
            "</div>";
 }

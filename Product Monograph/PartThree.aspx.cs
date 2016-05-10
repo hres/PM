@@ -61,6 +61,7 @@ namespace Product_Monograph
         protected static string addButton;
         protected static string removeButton;
         protected static string interactionsInfo;
+          
 
 
         void Page_PreInit(Object sender, EventArgs e)
@@ -82,7 +83,7 @@ namespace Product_Monograph
 
         protected void Page_Load(object sender, EventArgs e)
         {
-
+            
             if (!IsPostBack)
             {
                 sumMedication = Resources.Resource.sumMedication;
@@ -136,7 +137,7 @@ namespace Product_Monograph
                 btnSaveDraft.Text = Resources.Resource.saveButton;
                 btnSaveDraft.Attributes["Title"]= Resources.Resource.saveButtonTitle;
                 tbInteractionWithMed.Attributes["Title"] = Resources.Resource.saveButtonTitle;
-                interactionsInfo = Resources.Resource.interactionsInfo;
+                interactionsInfo = Resources.Resource.interactionsInfo;               
 
                 try
                 {
@@ -624,8 +625,7 @@ namespace Product_Monograph
 
                 if (xmldataitem.MoreInformation == null)
                 {
-                    //tbMoreInformation.Value = "<p>This document plus the full product monograph, prepared for thealth professionals can be found at: (website) or by contacting the sponsor,</p>" +
-                    //                     "<p>" + xmldataitem.Sponsorname + " at: 1-800-XXX-XXXX</p>";
+                   
                     tbMoreInformation.Value = Resources.Resource.moreInformationText1 + xmldataitem.Sponsorname + Resources.Resource.moreInformationText2;
                 }
                 else

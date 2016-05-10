@@ -2,6 +2,9 @@
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
  <script src="./js/pmp.js"></script>
  <script src="./js/partTwo.js"></script>
+ <script>
+     var removeButtonValue = '<%=removeButton%>';     
+ </script>
 </asp:Content>
 
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">

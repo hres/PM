@@ -41,7 +41,7 @@ function AddDrugSubstance() {
                 "<input type='text' id='" + tbDrugSub + "' name='tbDrugSub' class='form-control'/>" +
             "</div>" +
             "<div class='col-sm-2 text-right'>" +
-                '<input class="btn btn-default btn-xs" type="button" value="Remove" onclick="RemoveDrugSubstanceTextBox(' + drugCounter + ')" id="btnRemoveDrugSubstanceTextBox(' + drugCounter + ')" />' +
+                '<input class="btn btn-default btn-xs" type="button" value="' + removeButtonValue + '" onclick="RemoveDrugSubstanceTextBox(' + drugCounter + ')" id="btnRemoveDrugSubstanceTextBox(' + drugCounter + ')" />' +
              "</div>" +    
           "</div>" +
        "<div class='form-group row'>" +
@@ -154,7 +154,7 @@ function GetAnalyteNameDynamicTextBox(id) {
                          "<input type='number' id='" + AnalyteMultiplier + "' name='" + AnalyteMultiplier + "'/>&nbsp;mg)" +   
                         "</div>" +
                         "<div class='text-right  col-sm-2 margin-top-0'>" +  
-                        '<input class="btn btn-default btn-xs" type="button" value="Remove" onclick="RemoveAnalyteNameTextBox(' + id + ')" id="btnRemoveAnalyteNameTextBox(' + id + ')" />' +
+                        '<input class="btn btn-default btn-xs" type="button" value="' + removeButtonValue + '" onclick="RemoveAnalyteNameTextBox(' + id + ')" id="btnRemoveAnalyteNameTextBox(' + id + ')" />' +
                     "</div>" +
                 "</div>" +
                 "<div class='panel-body'>" +
