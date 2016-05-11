@@ -1,23 +1,27 @@
 ﻿var selectedschedulingsymbol;
 $(document).ready(function () {
-    $("#linkTwo").attr("disabled", "disabled");
-    $("#tbPharSchedulingSymbol").change(function () {
-        $('#imgSymbol').attr("src", "images/x.png");
-    });
-
-    //populate dropdown list
-    $.get('ControlledList.xml', function (xmlcontolledlist) {
-        $(xmlcontolledlist).find('schedule').each(function () {
-            var $option = $(this).text();
-            var $val = $(this).attr("value");
-            $('<option value="' + $val + '">' + $option + '</option>').appendTo('#tbPharSchedulingSymbol');
-        });
-    }).done(function () {
-        //if LoadFromXML assigned value to selectedschedulingsymbol
-        $('#tbPharSchedulingSymbol option').each(function () { if ($(this).html() == selectedschedulingsymbol) { $(this).attr('selected', 'selected'); return; } });
-    });
+    $("#linkTwo").attr("disabled", "disabled");   
 });
+var loadFile = function (fuid, imgid, txtname, txtdata) {
+    //input file element
+    var x = document.getElementById(fuid);
+    //first item, only item
+    var file = x.files[0];
 
+    var reader = new FileReader();
+    reader.onload = function () {
+        $('#' + imgid).each(function () {
+            $(this).attr("src", reader.result);
+            $("input[id='" + txtname + "']").each(function () {
+                $(this).val(file.name);
+            });
+            $("input[id='" + txtdata + "']").each(function () {
+                $(this).val(reader.result);
+            });
+        });
+    };
+    reader.readAsDataURL(event.target.files[0]);
+};
 var drugCounter = 0;
 function AddDrugSubstance() {
     drugCounter = drugCounter + 1;
@@ -34,9 +38,13 @@ function AddDrugSubstance() {
     var tbMolecular = "tbMolecular" + drugCounter.toString();
     var tbMass = "tbMass" + drugCounter.toString();
     var tbPhysicochemical = "tbPhysicochemical" + drugCounter.toString();
+    var tbPharSchedulingSymbol = "tbPharSchedulingSymbol" + drugCounter.toString();
+    var fuimage = "fuimage" + drugCounter.toString();
+    var tbfuimagename = "tbfuimagename" +drugCounter.toString();
+    var tbfuimagebasesixtyfour = "tbfuimagebasesixtyfour"  + drugCounter.toString();
     var drugString = "";
     drugString = "<div class='form-group row'>" +
-            "<label for='" + tbDrugSub + "' class='col-sm-3 control-label'>Drug substance</label>"  +                      
+            "<label for='" + tbDrugSub + "' class='col-sm-3 control-label'>Proper name</label>"  +                      
             "<div class='col-sm-7'>" + 
                 "<input type='text' id='" + tbDrugSub + "' name='tbDrugSub' class='form-control'/>" +
             "</div>" +
@@ -59,9 +67,27 @@ function AddDrugSubstance() {
        "<div class='form-group row'>" +
             "<label for='" + tbMass + "' class='col-sm-3 control-label'>Molecular mass</label>"  +        
              "<div class='col-sm-9'>" +
-                "<textarea id='" + tbMass + "' name='tbMass' class='textarea form-control'></textarea>" +
+                 "<input type='text' id='" + tbMass + "' name='tbMass' class='form-control'/>" +
               "</div>" +
           "</div>" +
+          "<div class='form-group'>" +
+            "<div class='row'>" +
+                      "<label for='" + tbPharSchedulingSymbol + "' class='col-sm-3 control-label'>" +
+                          "<span class='field-name'>Structural formula</span>" +
+                      "</label>" +
+                    "<div class='col-sm-9'>" +
+                        "<input type='file' id='" + tbPharSchedulingSymbol + "' onchange='loadFile('" + tbPharSchedulingSymbol + "', '" + fuimage + "','" + tbfuimagename + "','" + tbfuimagebasesixtyfour + "')'/>" +
+                     "</div>" +
+             "</div>" +
+             "<div class='row'>" +
+                    "<div class='col-sm-3'></div>"
+                    "<div class='col-sm-3'>" +
+                        "<img id='" + fuimage + "' src='./images/x.png' class='img-thumbnail' alt=''/>" +
+                        "<input type='text'  class='hidden' id='" + tbfuimagename + "' name='tbfuimagename' />" +
+                        "<input type='text'  class='hidden' id='" + tbfuimagebasesixtyfour + "' name='tbfuimagebasesixtyfour'  />" +
+                     "</div>" +
+                "</div>" +
+        "</div>" +
         "<div class='form-group row'>" +
              "<label for='" + tbPhysicochemical + "' class='col-sm-3 control-label'>Physicochemical properties</label>"  +        
              "<div class='col-sm-9'>" +

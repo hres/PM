@@ -103,6 +103,15 @@ namespace Product_Monograph {
         protected global::System.Web.UI.HtmlControls.HtmlTextArea tbMedicationDosageForm;
         
         /// <summary>
+        /// tbTalktodoctor control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.HtmlControls.HtmlTextArea tbTalktodoctor;
+        
+        /// <summary>
         /// tbInteractionWithMed control.
         /// </summary>
         /// <remarks>
@@ -220,13 +229,13 @@ namespace Product_Monograph {
         protected global::System.Web.UI.HtmlControls.HtmlTextArea tbMoreInformation;
         
         /// <summary>
-        /// tbLastrRevised control.
+        /// tbLastRevised control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox tbLastrRevised;
+        protected global::System.Web.UI.WebControls.TextBox tbLastRevised;
         
         /// <summary>
         /// hdUnknownSymptoms control.

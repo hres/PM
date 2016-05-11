@@ -123,5 +123,34 @@ $(function () {
 
 //var lang = document.getElementsByTagName("html")[0].getAttribute("lang");
 //console.log("selected lang :" + lang);
+var now = new Date();
+var day = (now.getDate() < 10 ? '0' : '') + now.getDate();
+var month = ((now.getMonth() + 1) < 10 ? '0' : '') + (now.getMonth() + 1);
+var year = now.getFullYear();
+var todayDate = year + "-" + month + "-" + day;
+
+window.addEventListener("load", function () {
+    var fix = function (el) {
+        el.setAttribute("name", el.getAttribute("id"));
+    };
+    var els = document.getElementsByTagName("input");
+    for (var i = 0; i < els.length; i++) {
+        var type =  els[i].getAttribute("type"); 
+        if( type = 'date')
+        {
+            fix(els[i]);
+        }
+    }
+    $('input[type="date"]').attr("max", todayDate);
+  
+    //els = document.getElementsByTagName("select");
+    //for (var i = 0; i < els.length; i++) {
+    //    fix(els[i]);
+    //}
+    //els = document.getElementsByTagName("textarea");
+    //for (var i = 0; i < els.length; i++) {
+    //    fix(els[i]);
+    //}
+});
 
 

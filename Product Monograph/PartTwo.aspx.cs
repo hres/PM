@@ -166,7 +166,7 @@ namespace Product_Monograph
                 int rowcounter = 0;
                 foreach (var row in rows)
                 {
-                    string[] colarray = "tbDrugSub;tbChemical;tbMolecular;tbMass;tbPhysicochemical;".Split(';');
+                    string[] colarray = "tbDrugSub;tbChemical;tbMolecular;tbMass;tbPhysicochemical;tbfuimagename;tbfuimagebasesixtyfour;".Split(';');
                     int colcounter = 0;
                     if (rowcounter == 0)
                     {
@@ -311,11 +311,15 @@ namespace Product_Monograph
                 var tbMolecular = new ArrayList();
                 var tbMass = new ArrayList();
                 var tbPhysicochemical = new ArrayList();
+                var tbfuimagename = new ArrayList();
+                var tbfuimagebasesixtyfour = new ArrayList();
                 if (HttpContext.Current.Request.Form.GetValues("tbDrugSub") != null &&
                    HttpContext.Current.Request.Form.GetValues("tbChemical") != null &&
                    HttpContext.Current.Request.Form.GetValues("tbMolecular") != null &&
                    HttpContext.Current.Request.Form.GetValues("tbMass") != null &&
-                   HttpContext.Current.Request.Form.GetValues("tbPhysicochemical") != null)
+                   HttpContext.Current.Request.Form.GetValues("tbPhysicochemical") != null &&
+                   HttpContext.Current.Request.Form.GetValues("tbfuimagename") != null &&
+                   HttpContext.Current.Request.Form.GetValues("tbfuimagebasesixtyfour") != null)
                 {
                     foreach (string item in HttpContext.Current.Request.Form.GetValues("tbDrugSub"))
                     {
@@ -336,6 +340,14 @@ namespace Product_Monograph
                     foreach (string item in HttpContext.Current.Request.Form.GetValues("tbPhysicochemical"))
                     {
                         tbPhysicochemical.Add(item);
+                    }
+                    foreach (string item in HttpContext.Current.Request.Form.GetValues("tbfuimagename"))
+                    {
+                        tbfuimagename.Add(item);
+                    }
+                    foreach (string item in HttpContext.Current.Request.Form.GetValues("tbfuimagebasesixtyfour"))
+                    {
+                        tbfuimagebasesixtyfour.Add(item);
                     }
                 }
 
@@ -368,9 +380,19 @@ namespace Product_Monograph
                         subsubnode.AppendChild(doc.CreateTextNode(col4));
                         subnode.AppendChild(subsubnode);
 
-                        string col5 = tbPhysicochemical[ar].ToString();
+                        string col5 = tbfuimagename[ar].ToString();
                         subsubnode = doc.CreateElement("column");
                         subsubnode.AppendChild(doc.CreateTextNode(col5));
+                        subnode.AppendChild(subsubnode);
+
+                        string col6 = tbfuimagename[ar].ToString();
+                        subsubnode = doc.CreateElement("column");
+                        subsubnode.AppendChild(doc.CreateTextNode(col6));
+                        subnode.AppendChild(subsubnode);
+
+                        string col7 = tbfuimagebasesixtyfour[ar].ToString();
+                        subsubnode = doc.CreateElement("column");
+                        subsubnode.AppendChild(doc.CreateTextNode(col7));
                         subnode.AppendChild(subsubnode);
                     }
                 }
@@ -409,6 +431,16 @@ namespace Product_Monograph
                         subsubnode = doc.CreateElement("column");
                         subsubnode.AppendChild(doc.CreateTextNode(col5));
                         subnode.AppendChild(subsubnode);
+
+                        string col6 = tbfuimagename[ar].ToString();
+                        subsubnode = doc.CreateElement("column");
+                        subsubnode.AppendChild(doc.CreateTextNode(col6));
+                        subnode.AppendChild(subsubnode);
+
+                        string col7 = tbfuimagebasesixtyfour[ar].ToString();
+                        subsubnode = doc.CreateElement("column");
+                        subsubnode.AppendChild(doc.CreateTextNode(col7));
+                        subnode.AppendChild(subsubnode);
                     }
                 }
             }
@@ -416,57 +448,44 @@ namespace Product_Monograph
             {
                 return null;
             }
-
-            
-            try
-            {
-                #region symbol
-                string symbolname = Request.Form["tbPharxmlimgnameSymbol"].ToString();
-                string symbolfilename = Request.Form["tbPharxmlimgfilenameSymbol"].ToString();
-
-                if (symbolfilename != string.Empty)
-                {
-                    System.Drawing.Image imageBmp = System.Drawing.Image.FromFile(Server.MapPath("~/scheduling symbol/" + symbolfilename));
-                    Bitmap bmp = new Bitmap(imageBmp);
-                    TypeConverter converter = TypeDescriptor.GetConverter(typeof(Bitmap));
-                    string base64 = "data:image/jpeg;base64," + Convert.ToBase64String((byte[])converter.ConvertTo(bmp, typeof(byte[])));
-
-
-                    XmlNodeList schedsymbol = doc.GetElementsByTagName("PharSchedulingSymbol");
-                    if (schedsymbol.Count < 1)
-                    {
-                        helpers.Processes.CreateXMLElement(doc, rootnode, "PharSchedulingSymbol", "", symbolname, false);
-                    }
-                    else
-                    {
-                        schedsymbol[0].InnerText = symbolname;
-                    }
-                    XmlNodeList schedsymbolname = doc.GetElementsByTagName("PharSchedulingSymbolImageName");
-                    if (schedsymbolname.Count < 1)
-                    {
-                        helpers.Processes.CreateXMLElement(doc, rootnode, "PharSchedulingSymbolImageName", "", symbolfilename, false);
-                    }
-                    else
-                    {
-                        schedsymbolname[0].InnerText = symbolfilename;
-                    }
-                    XmlNodeList schedsymboldata = doc.GetElementsByTagName("PharSchedulingSymbolImageData");
-                    if (schedsymboldata.Count < 1)
-                    {
-                        helpers.Processes.CreateXMLElement(doc, rootnode, "PharSchedulingSymbolImageData", "", base64, false);
-                    }
-                    else
-                    {
-                        schedsymboldata[0].InnerText = base64;
-                    }
-                }
-                #endregion
-            }
-            catch (Exception error)
-            {
-                //  lblError.Text = error.ToString();
-                return null;
-            }
+            //try
+            //{
+            //    //#region Structural formula
+            //    //XmlNodeList pharmaceuticalInfo = doc.GetElementsByTagName("DrugSubstanceImagename");
+            //    //ArrayList formulaArray = new ArrayList();
+            //    //ArrayList formulaImagearray = new ArrayList();
+            //    //if (HttpContext.Current.Request.Form.GetValues("tbfuimagename") != null &&
+            //    //    HttpContext.Current.Request.Form.GetValues("tbfuimagebasesixtyfour") != null)
+            //    //{
+            //    //    foreach (string nameItem in HttpContext.Current.Request.Form.GetValues("tbfuimagename"))
+            //    //    {
+            //    //        formulaArray.Add(nameItem);
+            //    //    }
+            //    //    foreach (string imageItem in HttpContext.Current.Request.Form.GetValues("tbfuimagebasesixtyfour"))
+            //    //    {
+            //    //        formulaImagearray.Add(imageItem);
+            //    //    }
+            //    //}
+            //    //if (formulaArray.Count < 1)
+            //    //{
+            //    //    helpers.Processes.ValidateAndSave(doc, rootnode, "DrugSubstanceImagename", "", formulaArray[0].ToString(), false);
+            //    //    helpers.Processes.ValidateAndSave(doc, rootnode, "DrugSubstanceImagedata", "", formulaImagearray[0].ToString(), false);
+            //    //}
+            //    //else
+            //    //{
+            //    //    for (int ar = 0; ar < formulaArray.Count; ar++)
+            //    //    {
+            //    //        helpers.Processes.ValidateAndSave(doc, rootnode, DrugSubstanceImagename", "", formulaArray[ar].ToString(), false);
+            //    //        helpers.Processes.ValidateAndSave(doc, rootnode, "DrugSubstanceImagedata", "", formulaImagearray[ar].ToString(), false);
+            //    //    }
+            //    //}
+            //    //#endregion
+            //}
+            //catch (Exception error)
+            //{
+            //    //  lblError.Text = error.ToString();
+            //    return null;
+            //}
            
             helpers.Processes.ValidateAndSave(doc, rootnode, "ClinicalTrials", "", tbClinicalTrials.Value, false);
             helpers.Processes.ValidateAndSave(doc, rootnode, "DetailedPharmacology", "", tbDetailedPharmacology.Value, false);

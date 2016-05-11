@@ -1,5 +1,5 @@
 ﻿$(document).ready(function () {
-    $("#linkThree").attr("disabled", "disabled");
+    $("#linkThree").attr("disabled", "disabled"); 
 });
 
 var loadFile = function (fuid, imgid, txtname, txtdata) {
@@ -207,8 +207,7 @@ function GetAddVeryRareSymptomsTextBoxDynamicTextBox(id) {
     var ccases = "cbVeryRareAllCases" + id.toString();
     var cstop = "cbVeryRareStoptaking" + id.toString();
 
-    return " <div class='row wb-eqht'> " +
-           " <div class='col-xs-2 brdr-lft brdr-bttm'>" +
+    return "<div class='col-xs-2 brdr-lft brdr-bttm'>" +
                  "<input type='text' title='Very rare frenquency' class='form-control' id='" + cfreq + "' name='" + cfreq + "'/> " +
             "</div>  " +
             "<div class='col-xs-2 brdr-lft brdr-bttm'>" +
@@ -225,7 +224,6 @@ function GetAddVeryRareSymptomsTextBoxDynamicTextBox(id) {
             "</div> " +
              "<div class='col-xs-2'>" +
                 '<input class="btn btn-default btn-xs" type="button" value="' + removeButtonValue + '" onclick="RemoveVeryRare(' + id + ')" id="btnRemoveVeryRare(' + id + ')" />' +
-           "</div>" +
            "</div>";
 }
 
@@ -252,8 +250,7 @@ function GetAddUnknownSymptomsTextBoxDynamicTextBox(id) {
     var ccases = "cbUnknownAllCases" + id.toString();
     var cstop = "cbUnknownStoptaking" + id.toString();
 
-    return " <div class='row wb-eqht'> " +
-           " <div class='col-xs-2 brdr-lft brdr-bttm'>" +
+    return  " <div class='col-xs-2 brdr-lft brdr-bttm'>" +
                  " <input type='text' title='Unknown frenquency' class='form-control' id='" + cfreq + "' name='" + cfreq + "'/> " +
             "</div>  " +
             "<div class='col-xs-2 brdr-lft brdr-bttm'>" +
@@ -270,7 +267,6 @@ function GetAddUnknownSymptomsTextBoxDynamicTextBox(id) {
             "</div> " +
             "<div class='col-xs-2'>" +
                         '<input class="btn btn-default btn-xs" type="button" value="' + removeButtonValue + '" onclick="RemoveUnknown(' + id + ')" id="btnRemoveUnknown(' + id + ')" />' +
-           "</div>" +
            "</div>";
 }
 

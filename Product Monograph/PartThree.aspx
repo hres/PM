@@ -4,10 +4,8 @@
  <script src="./js/pmp.js"></script>
  <script src="./js/partThree.js"></script>
  <script>
-     var removeButtonValue = '<%=removeButton%>';       
- </script>
-<script>
-      tinymce.init({
+     var removeButtonValue = '<%=removeButton%>';    
+     tinymce.init({
           mode: "specific_textareas",
           editor_selector: "mceEditor",
           height: 300,
@@ -96,14 +94,22 @@
                      <span class="label label-info" title="<%=warningsInfo%>"><%=information%></span>
                   </label>  
          
-                  <div class="col-sm-7">                                          
+                  <div class="col-sm-8">                                          
                       <textarea id="tbSeriousWarningsPrecautions" name="tbSeriousWarningsPrecautions" class="textarea form-control" ></textarea>  
                   </div>
-                  <div class="col-sm-2 text-right"> 
+                  <div class="col-sm-1 text-right"> 
                       <input class="btn btn-default btn-xs" type="button" value="<%=addButton%>" onclick="AddSeriousWarningsPrecautions()" id="btnAddSeriousWarningsPrecautions" />
                   </div>                                                         
         </div>       
         <div id="dvExtraSeriousWarningsPrecautions">
+        </div>
+        <div class="form-group row">
+            <Label for="tbTalktodoctor"  Class="col-sm-3 control-label">
+                <span class="field-name">Before you use &#60;brand name&#62; talk to your doctor or pharmacist if</span>
+            </Label>
+            <div class="col-sm-9">
+                <textarea id="tbTalktodoctor" name="tbTalktodoctor" runat="server" class="textarea form-control"></textarea>
+            </div>
         </div>
     </details>
 <!--Interactions with this medication-->
@@ -198,7 +204,6 @@
                 </div>
             </div>
         </section>
-
         <section>
             <div class="wb-eqht row">
                 <div class="col-xs-2 brdr-lft brdr-bttm"><p><%=common%></p></div>
@@ -211,7 +216,6 @@
                 </div>
             </div>
         </section>
-
         <section>
             <div id="Common0" class="wb-eqht row">
                 <div class="col-xs-2 brdr-lft brdr-bttm wb-eqht">
@@ -230,7 +234,7 @@
                     <input class="form-control" title="Common stop taking" type="checkbox" id="cbCommonStoptaking0" name="cbCommonStoptaking0" />
                 </div>
                 <div class="col-xs-2 wb-eqht">
-                    <input class="btn btn-default btn-xs" type="button" value="<%=removeButton %>" onclick="RemoveCommon(0)" id="btnRemoveCommon" />
+                    <input class="btn btn-default btn-xs" type="button" value="<%=removeButton %>" onclick="RemoveCommon(0)" id="btnRemoveCommon" disabled="disabled"/>
                 </div>
             </div>
             <div id="dvExtraCommonSymptoms" >
@@ -248,7 +252,6 @@
                 </div>
             </div>
         </section>
-
         <section>
             <div class="row wb-eqht">
                 <div class="wb-eqht col-xs-2 brdr-lft brdr-bttm">
@@ -267,12 +270,11 @@
                     <input type="checkbox" title="Uncommon stop taking" class="form-control" id="cbUncommonStoptaking0" name="cbUncommonStoptaking0" />
                 </div>
                 <div class="wb-eqht col-xs-2">
-                    <input class="btn btn-default btn-xs" type="button" value="<%=removeButton %>" onclick="RemoveUncommon(0)" id="btnRemoveUncommon" />
+                    <input class="btn btn-default btn-xs" type="button" value="<%=removeButton %>" onclick="RemoveUncommon(0)" id="btnRemoveUncommon"  disabled="disabled"/>
                 </div>
             </div>
             <div id="dvExtraUncommonSymptoms"></div>
         </section>
-
         <section>
             <div class="row wb-eqht">
                 <div class="col-xs-2 brdr-lft brdr-bttm"><p><%=rare%></p></div>
@@ -285,7 +287,6 @@
                 </div>
             </div>
         </section>
-
         <section>
             <div class="row wb-eqht">
                 <div class="col-xs-2 brdr-lft brdr-bttm">
@@ -304,12 +305,11 @@
                     <input type="checkbox" title="Rare stop taking" class="form-control" id="cbRareStoptaking0" name="cbRareStoptaking0" />
                 </div>
                 <div class="col-xs-2">
-                    <input class="btn btn-default btn-xs" type="button" value="<%=removeButton %>" onclick="RemoveRare(0)" id="btnRemoveRare" />
+                    <input class="btn btn-default btn-xs" type="button" value="<%=removeButton %>" onclick="RemoveRare(0)" id="btnRemoveRare"  disabled="disabled"/>
                 </div>
             </div>
             <div id="dvExtraRareSymptoms"></div>
         </section>
-
         <section>
             <div class="row wb-eqht">
                <div class="col-xs-2 brdr-lft brdr-bttm"><p><%=veryRare%></p></div>
@@ -321,32 +321,30 @@
                     <input class="btn btn-default btn-xs" type="button" value="<%=addButton%>" onclick="AddVeryRareSymptomsTextBox()" id="btnAddExtrVeryRareSymptoms" />
                 </div>
             </div>
-        </section>
-        
+        </section>        
         <section>
             <div class="row wb-eqht">
                 <div class="col-xs-2 brdr-lft brdr-bttm">                    
-                    <input type="text" title="Very rare frequency" class="form-control" id="tbVeryRareFrequency0" name="tbVeryRareFrequency0" />
+                    <input type="text"  class="form-control" id="tbVeryRareFrequency0" name="tbVeryRareFrequency0" />
                 </div>
                 <div class="col-xs-2 brdr-lft brdr-bttm">
-                    <input type="text" title="Very rare symptom" class="form-control" id="tbVeryRareSymptom0" name="tbVeryRareSymptom0" />
+                    <input type="text"  class="form-control" id="tbVeryRareSymptom0" name="tbVeryRareSymptom0" />
                 </div>
                 <div class="col-xs-2 brdr-lft brdr-bttm">                    
-                    <input type="checkbox" title="Very rare severe" class="form-control" id="cbVeryRareSevere0" name="cbVeryRareSevere0" />
+                    <input type="checkbox"  class="form-control" id="cbVeryRareSevere0" name="cbVeryRareSevere0" />
                 </div>
                 <div class="col-xs-2 brdr-lft brdr-bttm">                    
-                    <input type="checkbox" title="Very rare all cases" class="form-control" id="cbVeryRareAllCases0" name="cbVeryRareAllCases0" />
+                    <input type="checkbox"  class="form-control" id="cbVeryRareAllCases0" name="cbVeryRareAllCases0" />
                 </div>
                 <div class="col-xs-2 brdr-lft brdr-rght brdr-bttm">                    
-                    <input type="checkbox" title="Very rare stop taking" class="form-control" id="cbVeryRareStoptaking0" name="cbVeryRareStoptaking0" />
+                    <input type="checkbox"  class="form-control" id="cbVeryRareStoptaking0" name="cbVeryRareStoptaking0" />
                 </div>
                 <div class="col-xs-2">
-                    <input class="btn btn-default btn-xs" type="button" value="<%=removeButton %>" onclick="RemoveVeryRare(0)" id="btnRemoveVeryRare" />
+                    <input class="btn btn-default btn-xs" type="button" value="<%=removeButton %>" onclick="RemoveVeryRare(0)" id="btnRemoveVeryRare"  disabled="disabled"/>
                 </div>
             </div>
             <div id="dvExtraVeryRareSymptoms"></div>
         </section>
-
         <section>
             <div class="row wb-eqht">
                <div class="col-xs-2 brdr-lft brdr-bttm"><p><%=unknown%></p></div>
@@ -358,27 +356,26 @@
                     <input class="btn btn-default btn-xs" type="button" value="<%=addButton%>" onclick="AddUnknownSymptomsTextBox()" id="btnAddExtrUnkownSymptoms" />
                 </div>
             </div>
-        </section>
-    
+        </section>    
         <section>
             <div class="row wb-eqht" id="Unknown0">
                 <div class="col-xs-2 brdr-lft brdr-bttm">                   
-                    <input type="text" title="Unknown frequency" class="form-control" id="tbUnknownFrequency0" name="tbUnknownFrequency0" />
+                    <input type="text"  class="form-control" id="tbUnknownFrequency0" name="tbUnknownFrequency0" />
                 </div>
                 <div class="col-xs-2 brdr-lft brdr-bttm">
-                    <input type="text" title="Unknown symptom" class="form-control" id="tbUnknownSymptom0" name="tbUnknownSymptom0" />
+                    <input type="text"  class="form-control" id="tbUnknownSymptom0" name="tbUnknownSymptom0" />
                 </div>
                 <div class="col-xs-2 brdr-lft brdr-bttm">
-                    <input type="checkbox" title="Unknown severe" class="form-control" id="cbUnknownSevere0" name="cbUnknownSevere0" />
+                    <input type="checkbox"  class="form-control" id="cbUnknownSevere0" name="cbUnknownSevere0" />
                 </div>
                 <div class="col-xs-2 brdr-lft brdr-bttm">
-                    <input type="checkbox" title="Unknown all cases" class="form-control" id="cbUnknownAllCases0" name="cbUnknownAllCases0" />
+                    <input type="checkbox"  class="form-control" id="cbUnknownAllCases0" name="cbUnknownAllCases0" />
                 </div>
                 <div class="col-xs-2 brdr-lft brdr-rght brdr-bttm">
-                    <input type="checkbox" title="Unknown stop taking" class="form-control" id="cbUnknownStoptaking0" name="cbUnknownStoptaking0" />
+                    <input type="checkbox"  class="form-control" id="cbUnknownStoptaking0" name="cbUnknownStoptaking0" />
                 </div>
                 <div class="col-xs-2">
-                    <input class="btn btn-default btn-xs" type="button" value="<%=removeButton %>" onclick="RemoveUnknown(0)" id="btnRemoveUnknown" />
+                    <input class="btn btn-default btn-xs" type="button" value="<%=removeButton %>" onclick="RemoveUnknown(0)" id="btnRemoveUnknown" disabled="disabled" />
                 </div>
             </div>
             <div id="dvExtraUnknownSymptoms"></div>
@@ -414,7 +411,7 @@
 <details class="margin-top-medium">
         <summary id="SUM_REPORTING" class="well well-sm"><%=sumReporting%></summary>
         <div class="form-group row">
-            <label for="tbSideEffectsWhatToDo" class="control-label col-sm-3" >
+            <label for="tbReportingSuspectedSE" class="control-label col-sm-3" >
                 <span class="field-name"><%=sumReporting%></span>
             </label>   
             <div class="col-sm-9">                
@@ -426,22 +423,22 @@
 <details class="margin-top-medium">
     <summary id="SUM_MORE_INFORMATION" class="well well-sm"><%=sumMoreInfo%></summary>
     <div class="form-group row">
-            <Label ID="lblMoreInfo" for="tbMoreInformation" Class="col-sm-3 control-label">
+            <label  for="tbMoreInformation" class="col-sm-3 control-label">
                 <span class="field-name"><%=sumMoreInfo%></span>
-            </Label>           
+            </label>           
             <div class="col-sm-9">                
                 <textarea id="tbMoreInformation" name="tbMoreInformation" runat="server" class="textarea form-control"></textarea>
             </div>        
     </div>
 
     <div class="form-group row">   
-             <Label ID="lblLastRevised" for="tbLastrRevised" Class="col-sm-3 control-label">
+             <label  for="tbLastRevised" class="col-sm-3 control-label">
                 <span class="field-name"><%=lastModified%></span>     
                 <span class="datepicker-format"> (<abbr title="Four digits year, dash, two digits month, dash, two digits day">YYYY-MM-DD</abbr>)</span> 
-            </Label> 
+            </label> 
              <div class="col-sm-9">
-            <asp:TextBox runat="server" ID="tbLastrRevised" Width="250" name="tbLastrRevised" CssClass="form-control" type="date" data-rule-dateiso="true"></asp:TextBox>
-            </div>
+                <asp:TextBox runat="server" ID="tbLastRevised"  CssClass="form-control" type="date" data-rule-dateISO="true" ClientIDMode="Static" ></asp:TextBox>
+             </div>
        
     </div>
 </details> 

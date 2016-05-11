@@ -567,9 +567,7 @@ namespace Product_Monograph
                               MedicationIngredient = (string)item.Element("MedicationIngredient"),
                               MedicationNonmed = (string)item.Element("MedicationNonmed"),
                               MedicationDosageForm = (string)item.Element("MedicationDosageForm"),
-
                               InteractionWithMed = (string)item.Element("InteractionWithMed"),
-
                               ProperUseMed = (string)item.Element("ProperUseMed"),
                               UsualDose = (string)item.Element("UsualDose"),
                               Overdose = (string)item.Element("Overdose"),
@@ -579,7 +577,7 @@ namespace Product_Monograph
                               HowToStore = (string)item.Element("HowToStore"),
                               ReportingSuspectedSE = (string)item.Element("ReportingSuspectedSE"),
                               MoreInformation = (string)item.Element("MoreInformation"),
-                              LastrRevised = (string)item.Element("LastrRevised"),
+                              LastRevised = (string)item.Element("LastRevised"),
                               Sponsorname = (string)item.Element("Sponsorname"),
                               UsualDoseImageName = (string)item.Element("UsualDoseImageName"),
                               UsualDoseImageData = (string)item.Element("UsualDoseImageData"),
@@ -592,7 +590,8 @@ namespace Product_Monograph
                               MedicationOverdoseImagedata = (string)item.Element("MedicationOverdoseImagedata"),
                               MedicationMissedDose = (string)item.Element("MedicationMissedDose"),
                               MedicationMissedDoseImagename = (string)item.Element("MedicationMissedDoseImagename"),
-                              MedicationMissedDoseImagedata = (string)item.Element("MedicationMissedDoseImagedata")
+                              MedicationMissedDoseImagedata = (string)item.Element("MedicationMissedDoseImagedata"),
+                              WarningsTalktodoctor = (string)item.Element("WarningsTalktodoctor"),
                           };
 
             foreach (var xmldataitem in xmldata)
@@ -611,7 +610,6 @@ namespace Product_Monograph
                     tbMedicationDosageForm.Value = xmldataitem.MedicationDosageForm;
                 if (tbInteractionWithMed.Value != xmldataitem.InteractionWithMed)
                     tbInteractionWithMed.Value = xmldataitem.InteractionWithMed;
-
                 if (tbProperUseMed.Value != xmldataitem.ProperUseMed)
                     tbProperUseMed.Value = xmldataitem.ProperUseMed;
                 if (tbUsualDose.Value != xmldataitem.UsualDose)
@@ -632,8 +630,8 @@ namespace Product_Monograph
                     tbReportingSuspectedSE.Value = xmldataitem.ReportingSuspectedSE;
                 if (tbMoreInformation.Value != xmldataitem.MoreInformation)
                     tbMoreInformation.Value = xmldataitem.MoreInformation;
-                if (tbLastrRevised.Text != xmldataitem.LastrRevised)
-                    tbLastrRevised.Text = xmldataitem.LastrRevised;
+                if (tbLastRevised.Text != xmldataitem.LastRevised)
+                    tbLastRevised.Text = xmldataitem.LastRevised;
                 if (xmldataitem.Overdose == null)
                 {
                     tbOverdose.Value = Resources.Resource.overDoseText;
@@ -662,6 +660,9 @@ namespace Product_Monograph
                 {
                     tbMoreInformation.Value = xmldataitem.MoreInformation;
                 }
+
+                if (tbTalktodoctor.Value != xmldataitem.WarningsTalktodoctor)
+                    tbTalktodoctor.Value = xmldataitem.WarningsTalktodoctor;
                 //strscript += "$('#fuimage0').attr('src', " + "'" + xmldataitem.MedicationUsualDoseImagedata + "');";
                 //strscript += "$('#tbfuimagename0').val(\"" + xmldataitem.MedicationUsualDoseImagename + "\");";
                 //strscript += "$('#tbfuimagebasesixtyfour0').val(\"" + xmldataitem.MedicationMissedDoseImagedata + "\");";
@@ -766,6 +767,8 @@ namespace Product_Monograph
             {
                 return null;
             }
+
+            helpers.Processes.ValidateAndSave(doc, rootnode, "WarningsTalktodoctor", "WarningsTalktodoctor", tbTalktodoctor.Value, true);
             #endregion 
 
             #region MedicationInteractions
@@ -795,7 +798,7 @@ namespace Product_Monograph
 
             #region MoreInfo
             helpers.Processes.ValidateAndSave(doc, rootnode, "MoreInformation", "MoreInformation", tbMoreInformation.Value, true);
-            helpers.Processes.ValidateAndSave(doc, rootnode, "LastrRevised", "LastrRevised", tbLastrRevised.Text, true);
+            helpers.Processes.ValidateAndSave(doc, rootnode, "LastRevised", "LastRevised", tbLastRevised.Text, true);
             #endregion
 
             #region ProperUseTextarea

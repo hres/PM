@@ -17,13 +17,19 @@
          <div class="col-sm-3 text-right">
             <asp:Button ID="btnSaveDraft" runat="server" cssclass="btn btn-primary " OnClick="btnSave_Click" /> 
          </div> 
-</div> 
+</div>
+<!--Pharmaceutical information--> 
 <details class="margin-top-medium">
     <summary id="pharmInfo" class="well well-sm"><%=sumPharmInfo%></summary>
-    <div class="brdr-bttm" >
-        <div class="form-group row">
+    <div class="form-group row brdr-bttm">                    
+        <p  class="col-sm-3">
+            <span class="field-name"><strong><%=drugSubstance%></strong></span>
+        </p>
+        <div class="clearfix"></div>                                              
+    </div>  
+    <div class="form-group row">
             <label for="tbDrugSub" class="col-sm-3 control-label">
-                <span class="field-name"><%=drugSubstance%></span>
+                <span class="field-name">Proper name</span>
             </label>                        
             <div class="col-sm-7"> 
                 <input type="text" id="tbDrugSub" name="tbDrugSub" class="form-control"/>                     
@@ -53,8 +59,26 @@
                <span class="field-name"><%=molecularMass%></span>
             </label>      
             <div class="col-sm-9">
-                <textarea id="tbMass" name="tbMass" class="textarea form-control"></textarea>
+                <input type="text" id="tbMass" name="tbMass" class="form-control"/> 
             </div>
+        </div>
+         <div class="form-group">
+            <div class="row">  
+                      <label for="tbPharSchedulingSymbol" class="col-sm-3 control-label">
+                          <span class="field-name"><%=schedulingSymbol%></span>
+                      </label>  
+                    <div class="col-sm-9">               
+                        <input type="file" id="tbPharSchedulingSymbol" onchange="loadFile('tbPharSchedulingSymbol', 'fuimage','tbfuimagename','tbfuimagebasesixtyfour')"/>     
+                    </div>           
+            </div>             
+            <div class="row">             
+                   <div class="col-sm-3"></div>
+                   <div class="col-xs-3">
+                        <img id="fuimage" src="./images/x.png" class="img-thumbnail"  alt=""/>
+                        <input type="text"  class="hidden" id="tbfuimagename" name="tbfuimagename" />
+                        <input type="text"  class="hidden" id="tbfuimagebasesixtyfour" name="tbfuimagebasesixtyfour"  />  
+                   </div>
+             </div> 
         </div>
         <div class="form-group row">
             <label for="tbPhysicochemical" class="col-sm-3 control-label">
@@ -64,19 +88,11 @@
                 <textarea id="tbPhysicochemical" name="tbPhysicochemical" class="textarea form-control"></textarea>
             </div>
         </div>
-        <div class="form-group row">
-                <label for="tbPharSchedulingSymbol" class="col-sm-4 control-label" ><span class="field-name"><%=schedulingSymbol%></span> </label>     
-                <select id="tbPharSchedulingSymbol" onchange="ApplyPharSchedulingSymbol(this)" class="form-control col-sm-2"></select>                       
-                <div class="text-left col-sm-4">
-                        <img id="imgSymbol" src="./images/x.png" width="100" height="100" alt="Apply symbol"/>                     
-                        <input type="text" id="tbPharxmlimgnameSymbol" name="tbPharxmlimgnameSymbol" class="hidden" />
-                        <input type="text" id="tbPharxmlimgfilenameSymbol" name="tbPharxmlimgfilenameSymbol" class="hidden" /> 
-                </div>
-        </div> 
-     </div>
+
      <div id="divExtraDrugSubstance">
      </div>
 </details>
+<!--Clinical trials--> 
 <details class="margin-top-medium">
         <summary id="clinicalTrials" class="well well-sm"><%=sumClinicalTrials%></summary>
             <div class="form-group row">                    
@@ -232,6 +248,7 @@
         <div class="text-left"><p># <%=confidenceInterval%></p></div>
 </div>             
 </details>
+<!--Detailed pharmacology--> 
 <details class="margin-top-medium">
         <summary id="detailedPharmacology" class="well well-sm"><%=sumPharmacology%></summary>
         <div class="form-group row">                    
@@ -243,6 +260,7 @@
                         </div>                   
          </div>       
 </details>
+<!--Microbiology--> 
 <details class="margin-top-medium">
         <summary id="microbiology" class="well well-sm"><%=sumMicrobiology%></summary>
         <div class="form-group row">                    
@@ -254,6 +272,7 @@
                         </div>                   
          </div>   
 </details>
+<!--Toxicology--> 
 <details class="margin-top-medium">
         <summary id="toxicology" class="well well-sm"><%=sumToxicology%></summary>
        <div class="form-group row">                    
@@ -264,6 +283,7 @@
                         </div>                   
          </div>   
 </details>
+<!--References--> 
 <details class="margin-top-medium">
         <summary id="references" class="well well-sm"><%=sumReferences%></summary>
         <div class="form-group row">                    
