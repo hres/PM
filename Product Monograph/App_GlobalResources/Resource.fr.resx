@@ -193,7 +193,7 @@
     <comment>Cover page</comment>
   </data>
   <data name="tmax" xml:space="preserve">
-    <value>Tmax§ (h)</value>
+    <value>Tmax (h)</value>
   </data>
   <data name="toxicology" xml:space="preserve">
     <value>Toxicologie</value>
