@@ -41,6 +41,9 @@ namespace Product_Monograph
         protected static string strengthValue;
         protected static string strengthDosageValue;
         protected static string brandDosageForm;
+        protected static string addButton;
+        protected static string removeButton;
+        protected static string resetButton;
 
         void Page_PreInit(Object sender, EventArgs e)
         {
@@ -79,6 +82,12 @@ namespace Product_Monograph
                 strengthValue = Resources.Resource.strengthValue;
                 strengthDosageValue = Resources.Resource.strengthDosageValue;
                 brandDosageForm = Resources.Resource.brandDosageForm;
+                addButton = Resources.Resource.addButton;
+                removeButton = Resources.Resource.removeButton;
+                btnSaveDraft.Text = Resources.Resource.saveButton;
+                btnSaveDraft.Attributes["Title"] = Resources.Resource.saveButtonTitle;
+                resetButton = Resources.Resource.resetButton;
+
                 try
                 {
                     if (ValidateXmlDoc())

@@ -726,7 +726,8 @@ REMARQUE : Pour obtenir des renseignements relatifs à la gestion des effets sec
     <value>Talk with your doctor only if server_fr</value>
   </data>
   <data name="pharmacokinetics" xml:space="preserve">
-    <value>Pharmacokinetics_fr</value>
+    <value>Pharmacocinétique</value>
+    <comment>Part1</comment>
   </data>
   <data name="interactionsInfo" xml:space="preserve">
     <value>Drugs that may interact with this medication_fr</value>
@@ -744,5 +745,84 @@ ou en communiquant avec le promoteur,</value>
   <data name="overDoseText" xml:space="preserve">
     <value>En case de surdosage, communiquez immédiatement avec un professionnel de la santé, l’urgence d’un centre hospitalier ou le centre antipoison de votre région, même en l’absence de symptômes.</value>
     <comment>Part3</comment>
+  </data>
+  <data name="auc" xml:space="preserve">
+    <value>SSC&lt;sub&gt;0-∞&lt;/sub&gt;</value>
+    <comment>Part1</comment>
+  </data>
+  <data name="clearance" xml:space="preserve">
+    <value>Clairance</value>
+    <comment>Part1</comment>
+  </data>
+  <data name="clinicalComment" xml:space="preserve">
+    <value>Commentaire clinique</value>
+    <comment>Part1</comment>
+  </data>
+  <data name="clinicalCommentInfo" xml:space="preserve">
+    <value>La prudence s’impose et la surveillance de concentration thérapeutique est recommandée</value>
+    <comment>Part1</comment>
+  </data>
+  <data name="cmax" xml:space="preserve">
+    <value>C&lt;sub&gt;max&lt;/sub&gt;</value>
+    <comment>Part1</comment>
+  </data>
+  <data name="CTAdReactSupplement" xml:space="preserve">
+    <value>Clinical trial adverse drug reactions supplement_fr</value>
+    <comment>Part1</comment>
+  </data>
+  <data name="CTAdReactSupplementInfo" xml:space="preserve">
+    <value>Un exposé de faits suivra le tableau afin d’expliquer ou de compléter les renseignements présentés dans le tableau.</value>
+    <comment>Part1</comment>
+  </data>
+  <data name="CTAdverseReaction" xml:space="preserve">
+    <value>Effets indésirables à un médicament déterminés au cours des essais cliniques</value>
+    <comment>Part1</comment>
+  </data>
+  <data name="CTAdverseReactionInfo" xml:space="preserve">
+    <value>Inclure la description des sources de données.</value>
+    <comment>Part1</comment>
+  </data>
+  <data name="CTAdverseReactionTable" xml:space="preserve">
+    <value>Clinical trial adverse drug reactions table #_fr</value>
+    <comment>Part1</comment>
+  </data>
+  <data name="drugDrugInteraction" xml:space="preserve">
+    <value>Interactions médicament-médicament établies ou possibles</value>
+    <comment>Part1</comment>
+  </data>
+  <data name="effect" xml:space="preserve">
+    <value>Effet</value>
+    <comment>Part1</comment>
+  </data>
+  <data name="effectInfo" xml:space="preserve">
+    <value>la concentration du &lt;Médicament A&gt;</value>
+    <comment>Part1</comment>
+  </data>
+  <data name="halfLifeTitle" xml:space="preserve">
+    <value>T&lt;sub&gt;1/2&lt;/sub&gt;(h)</value>
+    <comment>Part1</comment>
+  </data>
+  <data name="legendInfo" xml:space="preserve">
+    <value>Études de cas = É, Essai clinique = EC, Théorique = T</value>
+    <comment>Part1</comment>
+  </data>
+  <data name="pharmacokineticParameters" xml:space="preserve">
+    <value>Résumé des paramètres pharmacocinétiques de ( Nom propre ) dans une  (Population particulière de patients )</value>
+    <comment>Part1</comment>
+  </data>
+  <data name="refInfo" xml:space="preserve">
+    <value>Qualité des preuves, voir la légende</value>
+    <comment>Part1</comment>
+  </data>
+  <data name="refTitle" xml:space="preserve">
+    <value>Réf</value>
+    <comment>Part1</comment>
+  </data>
+  <data name="volDistribution" xml:space="preserve">
+    <value>Volume de distribution</value>
+    <comment>Part1</comment>
+  </data>
+  <data name="resetButton" xml:space="preserve">
+    <value>Réinitialiser</value>
   </data>
 </root>
