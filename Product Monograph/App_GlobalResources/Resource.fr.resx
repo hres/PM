@@ -825,4 +825,7 @@ ou en communiquant avec le promoteur,</value>
   <data name="resetButton" xml:space="preserve">
     <value>Réinitialiser</value>
   </data>
+  <data name="String1" xml:space="preserve">
+    <value>Réinitialiser</value>
+  </data>
 </root>
