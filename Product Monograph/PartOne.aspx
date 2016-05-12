@@ -2,9 +2,6 @@
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
  <script src="./js/pmp.js"></script>
  <script src="./js/partOne.js"></script>
- <script>
-     var removeButtonValue = '<%=removeButton%>';     
- </script>
 </asp:Content>
 
 
@@ -88,10 +85,13 @@
                              <label for="tbContraindications" class="col-sm-3 control-label">
                              <span class="field-name"><%=contraindications%></span>
                              <span class="label label-info" title="<%=contraindicationsInfo%>"><%=information%></span>
-                             </label>
-                             <div class="col-sm-9"> 
+                        </label>
+                             <div class="col-sm-7"> 
                                 <textarea id="tbContraindications" name="tbContraindications" class="textarea form-control" ></textarea>
-                             </div>                           
+                             </div>
+                            <div class="col-sm-2 text-right"> 
+                                <input class="btn btn-default btn-xs" type="button" value="<%=addButton %>" onclick="AddContraindications()" id="btnContraindications" />
+                            </div>   
                         </div> 
 
                     <div id="divExtraContraindications">
@@ -193,8 +193,8 @@
                     </div> 
                     <div class="form-group row">                    
                         <label for="tbAdverseDrugReactions" class="col-sm-3 control-label">
-                            <span class="field-name"><%=CTAdverseReaction%></span>
-                            <span class="label label-info" title="<%=CTAdverseReactionInfo%>"><%=information%></span>
+                            <span class="field-name">Clinical trial adverse drug reactions</span>
+                            <span class="label label-info" title="Include description of data sources"><%=information%></span>
                         </label>
                         <div class="col-sm-9"> 
                             <textarea id="tbAdverseDrugReactions" name="tbAdverseDrugReactions" class="textarea form-control" runat="server"></textarea>
@@ -202,7 +202,7 @@
                     </div> 
                 <div class="form-group row">                    
                         <div class="row">                         
-                             <label for="tbReactionsTableNo" class="control-label col-sm-5 mrgn-lft-md"><span class="field-name"><%=CTAdverseReactionTable%></span></label>
+                             <label for="tbReactionsTableNo" class="control-label col-sm-5 mrgn-lft-md"><span class="field-name">Clinical trial adverse drug reactions table #</span></label>
                              <input type="text" id="tbReactionsTableNo" name="tbReactionsTableNo" class="form-control input-sm col-sm-1" runat="server" size="3"/>  
 							 <label for="tbReactionsTableTitle" class="control-label col-sm-1 text-center"> <span class="field-name"> - </span></label> 
 							 <div class="col-sm-5">
@@ -242,8 +242,8 @@
                  </div> 
                     <div class="form-group row">                    
                         <label for="tbAdverseReactionsSupplement" class="col-sm-3 control-label">
-                            <span class="field-name"><%=CTAdReactSupplement%></span>
-                            <span class="label label-info" title="<%=CTAdReactSupplementInfo%>"> <%=information%></span>
+                            <span class="field-name">Clinical trial adverse drug reactions supplement</span>
+                            <span class="label label-info" title="narrative to follow table to explain or supplement the information provided in the table"> <%=information%></span>
                         </label>
                         <div class="col-sm-9"> 
                             <textarea id="tbAdverseReactionsSupplement" name="tbAdverseReactionsSupplement" class="textarea form-control" runat="server"></textarea>
@@ -286,14 +286,14 @@
                         </div>
                  <div id="divExtratbDrugHeadings"></div>
                 <table id="druginteractionTable" class="table table-bordered table-striped table-hover margin-bottom-none">
-                            <caption class="text-left h5 mrgn-tp-0"><%=drugDrugInteraction%></caption>
+                            <caption class="text-left h5 mrgn-tp-0">Established or potential drug-drug interaction</caption>
                             <thead>
                             <tr>
                                 <th><input class="btn btn-default btn-xs" type="button" value="<%=addButton %>" onclick="AddDruginteractionTable('druginteractionTable')" id="btnAddDruginteractionTable" /></th>
-                                <th><span class="field-name"><%=properNameTitle%></span></th>
-                                <th><span class="field-name"><%=refTitle%></span>&nbsp;<span class="label label-info" title="<%=refInfo%>"><%=information%></span></th>
-                                <th><span class="field-name"><%=effect%></span>&nbsp;<span class="label label-info" title="<%=effectInfo%>"><%=information%></span></th>
-                                <th><span class="field-name"><%=clinicalComment%></span>&nbsp;<span class="label label-info" title="<%=clinicalCommentInfo%>"><%=information%></span></th>
+                                <th><span class="field-name">Proper name</span></th>
+                                <th><span class="field-name">Ref</span>&nbsp;<span class="label label-info" title="level of evidence, see legend"><%=information%></span></th>
+                                <th><span class="field-name">Effect</span>&nbsp;<span class="label label-info" title="e.g. 9 <drug A> conc"><%=information%></span></th>
+                                <th><span class="field-name">Clinical comment</span>&nbsp;<span class="label label-info" title="Caution is warranted and therapeutic concentration monitoring is recommended"><%=information%></span></th>
                             </tr>
                             </thead>
                             <tbody>
@@ -306,7 +306,7 @@
                                 </tr>
                             </tbody>
                         </table>
-                       <div><span class="mrgn-tp-0"><%=legendInfo%></span></div>
+                       <div><span class="mrgn-tp-0">Legend: C = Case study; CT = Clinical trial; T=Theoretical</span></div>
             </details>
         <!--Dosage and administration-->
         <details class="margin-top-medium">
@@ -353,7 +353,6 @@
                     <div class="form-group row brdr-bttm">                    
                             <p  class="col-sm-3">
                                 <span class="field-name"><strong><%=reconstitution%></strong></span>
-                                <span class="label label-info" title="<%=parenteralProdInfo%>"><%=information%></span> 
                             </p>
                             <div class="clearfix"></div>                                              
                     </div>  
@@ -387,7 +386,9 @@
                             </tr>
                         </tbody>
                     </table> 
-                    
+                    <div class="mrgn-bttm-0 mrgn-tp-0">
+                        <p> <%=parenteralProdInfo%></p> 
+                    </div>
                 </div>     
              </details>
         <!--Overdosage-->
@@ -437,15 +438,15 @@
                         </div> 
                      <div id="divExtratbActionHeadings"></div>               
                  <table id="pharmacokineticsTable" class="table table-bordered table-striped table-hover" title="<%=PharmacokineticsTableTitle%>">
-                    <caption class="text-left h5 mrgn-tp-0"><%=pharmacokineticParameters %></caption>
+                    <caption class="text-left h5 mrgn-tp-0">Summary of (proper name)'s pharmacokinetics parameters in a (specific patient population)</caption>
                     <thead>
                     <tr>
                         <th><input class="btn btn-default btn-xs" type="button" value="<%=addButton %>" onclick="AddPharmacokineticsTable('pharmacokineticsTable')" id="btnAddPharmacokineticsTable" /></th>
-                        <th><span class="field-name"><%=cmax %></span></th>
-                        <th><span class="field-name"><%=halfLifeTitle %></span></th>
-                        <th><span class="field-name"><%=auc%></span></th>
-                        <th><span class="field-name"><%=clearance %></span></th>
-						<th><span class="h5"><%=volDistribution %></span></th>
+                        <th><span class="field-name">C<sub>max</sub></span></th>
+                        <th><span class="field-name">T<sub>1/2</sub>(h)</span></th>
+                        <th><span class="field-name">AUC<sub>0-4</sub></span></th>
+                        <th><span class="field-name">Clearance</span></th>
+						<th><span class="h5">Volume of distribution</span></th>
                     </tr>
                     </thead>
                     <tbody>

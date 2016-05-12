@@ -588,7 +588,7 @@ When the product is not recommended - if applicable</value>
     <comment>Part1</comment>
   </data>
   <data name="interactionOverviewInfo" xml:space="preserve">
-    <value>It should include the following information: interactions suspected based on the pharmacokinetic or pharmacologic profile of the drug (for example, cytochrome P450 interactions); drug class statements if the interaction has not yet been documented, but would be clinically significant; potential interaction with alcohol.</value>
+    <value>It should include the following information: interactions suspected based on the pharmacokinetic or pharmacologic profile of the drug (forr example, cytochrome P45C); drug class statements if the interaction has not yet been documented, but would be clinically significant; potential interaction with alcohol.</value>
     <comment>Part1</comment>
   </data>
   <data name="lastModified" xml:space="preserve">
@@ -744,84 +744,5 @@ NOTE: Should you require information related to the management of side effects, 
   </data>
   <data name="overDoseText" xml:space="preserve">
     <value>In case of drug overdose, contact a health care practitioner, hospital emergency department or regional Poison Control Centre immediately, even if there are no symptoms.</value>
-  </data>
-  <data name="auc" xml:space="preserve">
-    <value>AUC&lt;sub&gt;0-∞&lt;/sub&gt;</value>
-    <comment>Part1</comment>
-  </data>
-  <data name="clearance" xml:space="preserve">
-    <value>Clearance</value>
-    <comment>Part1</comment>
-  </data>
-  <data name="clinicalComment" xml:space="preserve">
-    <value>Clinical comment</value>
-    <comment>Part1</comment>
-  </data>
-  <data name="clinicalCommentInfo" xml:space="preserve">
-    <value>Caution is warranted and therapeutic concentration monitoring is recommended</value>
-    <comment>Part1</comment>
-  </data>
-  <data name="cmax" xml:space="preserve">
-    <value>C&lt;sub&gt;max&lt;/sub&gt;</value>
-    <comment>Part1</comment>
-  </data>
-  <data name="CTAdReactSupplement" xml:space="preserve">
-    <value>Clinical trial adverse drug reactions supplement</value>
-    <comment>Part1</comment>
-  </data>
-  <data name="CTAdReactSupplementInfo" xml:space="preserve">
-    <value>Narrative to follow table to explain or supplement the information provided in the table</value>
-    <comment>Part1</comment>
-  </data>
-  <data name="CTAdverseReaction" xml:space="preserve">
-    <value>Clinical trial adverse drug reactions</value>
-    <comment>Part1</comment>
-  </data>
-  <data name="CTAdverseReactionInfo" xml:space="preserve">
-    <value>Include description of data sources</value>
-    <comment>Part 1</comment>
-  </data>
-  <data name="CTAdverseReactionTable" xml:space="preserve">
-    <value>Clinical trial adverse drug reactions table #</value>
-    <comment>Part1</comment>
-  </data>
-  <data name="drugDrugInteraction" xml:space="preserve">
-    <value>Established or Potential Drug-Drug Interactions</value>
-    <comment>Part1</comment>
-  </data>
-  <data name="effect" xml:space="preserve">
-    <value>Effect</value>
-    <comment>Part1</comment>
-  </data>
-  <data name="effectInfo" xml:space="preserve">
-    <value>e.g. 9 &lt;drug A&gt; conc</value>
-    <comment>Part1</comment>
-  </data>
-  <data name="halfLifeTitle" xml:space="preserve">
-    <value>T&lt;sub&gt;1/2&lt;/sub&gt;(h)</value>
-    <comment>Part1</comment>
-  </data>
-  <data name="legendInfo" xml:space="preserve">
-    <value>Legend: C = Case study; CT = Clinical trial; T=Theoretical</value>
-    <comment>Part1</comment>
-  </data>
-  <data name="pharmacokineticParameters" xml:space="preserve">
-    <value>Summary of ( proper name )’s Pharmacokinetic Parameters in a ( specific patient population )</value>
-    <comment>Part1</comment>
-  </data>
-  <data name="refInfo" xml:space="preserve">
-    <value>level of evidence, see legend</value>
-    <comment>Part1</comment>
-  </data>
-  <data name="refTitle" xml:space="preserve">
-    <value>Ref</value>
-    <comment>Part1</comment>
-  </data>
-  <data name="volDistribution" xml:space="preserve">
-    <value>Volume of distribution</value>
-    <comment>Part1</comment>
-  </data>
-  <data name="resetButton" xml:space="preserve">
-    <value>Reset</value>
   </data>
 </root>

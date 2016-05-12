@@ -151,7 +151,7 @@ function AddContraindications() {
                             "<textarea id='" + tbContraindications + "' name='tbContraindications' class='textarea form-control'></textarea>" +
                          "</div>" +
                          "<div class='col-sm-2 text-right'>" +
-                            '<input class="btn btn-default btn-xs" type="button" value="' + removeButtonValue + '" onclick="RemoveContraindications(' + contraindicationsCounter + ')" id="btnRemoveContraindications(' + contraindicationsCounter + ')" />' +
+                            '<input class="btn btn-default btn-xs" type="button" value="Remove" onclick="RemoveContraindications(' + contraindicationsCounter + ')" id="btnRemoveContraindications(' + contraindicationsCounter + ')" />' +
                         "</div>" +
                 "</div>";
     div.innerHTML = returnString;
@@ -178,7 +178,7 @@ function AddSeriousWarnings() {
                             "<textarea id='" + tbSeriousWarnings + "' name='tbSeriousWarnings' class='textarea form-control'></textarea>" +
                          "</div>" +
                          "<div class='col-sm-2 text-right'>" +
-                            '<input class="btn btn-default btn-xs" type="button" value="' + removeButtonValue + '" onclick="RemoveSeriousWarnings(' + seriousCounter + ')" id="btnRemoveSeriousWarnings(' + seriousCounter + ')" />' +
+                            '<input class="btn btn-default btn-xs" type="button" value="Remove" onclick="RemoveSeriousWarnings(' + seriousCounter + ')" id="btnRemoveSeriousWarnings(' + seriousCounter + ')" />' +
                         "</div>" +
                 "</div>";
     div.innerHTML = returnString;
@@ -207,7 +207,7 @@ function AddHeadings() {
                            "<textarea id='" + tbHeadings + "' name='tbHeadings' class='textarea form-control'></textarea>" +
                         "</div>" +
                         "<div class='col-sm-2 text-right'>" +
-                           '<input class="btn btn-default btn-xs" type="button" value="' + removeButtonValue + '" onclick="RemoveHeadings(' + headingCounter + ')" id="btnRemoveHeadings(' + headingCounter + ')" />' +
+                           '<input class="btn btn-default btn-xs" type="button" value="Remove" onclick="RemoveHeadings(' + headingCounter + ')" id="btnRemoveHeadings(' + headingCounter + ')" />' +
                        "</div>" +
                "</div>";  
     div.innerHTML = returnString;
@@ -241,7 +241,7 @@ function AddDosageConsiderations() {
                             "<textarea id='" + tbDosageConsiderations + "' name='tbDosageConsiderations' class='textarea form-control'></textarea>" +
                          "</div>" +
                          "<div class='col-sm-2 text-right'>" +
-                            '<input class="btn btn-default btn-xs" type="button" value="' + removeButtonValue + '" onclick="RemoveDosageConsiderations(' + dosingcounter + ')" id="btnRemoveDosageConsiderations(' + dosingcounter + ')" />' +
+                            '<input class="btn btn-default btn-xs" type="button" value="Remove" onclick="RemoveDosageConsiderations(' + dosingcounter + ')" id="btnRemoveDosageConsiderations(' + dosingcounter + ')" />' +
                         "</div>" +
                 "</div>";
     div.innerHTML = returnString;
@@ -333,7 +333,7 @@ function AddDrugHeadings() {
                            "<textarea id='" + tbDrugHeadings + "' name='tbDrugHeadings' class='textarea form-control'></textarea>" +
                         "</div>" +
                         "<div class='col-sm-2 text-right'>" +
-                           '<input class="btn btn-default btn-xs" type="button" value="' + removeButtonValue + '" onclick="RemoveDrugHeadings(' + headingDrugCounter + ')" id="btnRemoveDrugHeadings(' + headingDrugCounter + ')" />' +
+                           '<input class="btn btn-default btn-xs" type="button" value="Remove" onclick="RemoveDrugHeadings(' + headingDrugCounter + ')" id="btnRemoveDrugHeadings(' + headingDrugCounter + ')" />' +
                        "</div>" +
                "</div>";
     div.innerHTML = returnString;
@@ -369,7 +369,7 @@ function AddActionHeadings() {
                            "<textarea id='" + tbActionHeadings + "' name='tbActionHeadings' class='textarea form-control'></textarea>" +
                         "</div>" +
                         "<div class='col-sm-2 text-right'>" +
-                           '<input class="btn btn-default btn-xs" type="button" value="' + removeButtonValue + '" onclick="RemoveActionHeadings(' + headingActionCounter + ')" id="btnRemoveActionHeadings(' + headingActionCounter + ')" />' +
+                           '<input class="btn btn-default btn-xs" type="button" value="Remove" onclick="RemoveActionHeadings(' + headingActionCounter + ')" id="btnRemoveActionHeadings(' + headingActionCounter + ')" />' +
                        "</div>" +
                "</div>";
     div.innerHTML = returnString;

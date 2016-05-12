@@ -94,25 +94,7 @@ namespace Product_Monograph
         protected static string parenteralProdTitle;
         protected static string pharmacokinetics;
         protected static string PharmacokineticsTableTitle;
-        protected static string CTAdverseReaction;
-        protected static string CTAdverseReactionInfo;
-        protected static string CTAdverseReactionTable;
-        protected static string CTAdReactSupplement;
-        protected static string CTAdReactSupplementInfo;
-        protected static string drugDrugInteraction;
-        protected static string refTitle;
-        protected static string refInfo;
-        protected static string effect;
-        protected static string effectInfo;
-        protected static string clinicalComment;
-        protected static string clinicalCommentInfo;
-        protected static string legendInfo;
-        protected static string cmax;
-        protected static string halfLifeTitle;
-        protected static string auc;
-        protected static string clearance;
-        protected static string volDistribution;
-        protected static string pharmacokineticParameters;
+
 
         void Page_PreInit(Object sender, EventArgs e)
         {
@@ -205,26 +187,6 @@ namespace Product_Monograph
                 parenteralProdTitle = Resources.Resource.parenteralProdTitle;
                 pharmacokinetics = Resources.Resource.pharmacokinetics;
                 PharmacokineticsTableTitle  = Resources.Resource.pharmacokinetics;
-                CTAdverseReaction = Resources.Resource.CTAdverseReaction;
-                CTAdverseReactionInfo = Resources.Resource.CTAdverseReactionInfo;
-                CTAdverseReactionTable = Resources.Resource.CTAdverseReactionTable;
-                CTAdReactSupplement = Resources.Resource.CTAdReactSupplement;
-                CTAdReactSupplementInfo = Resources.Resource.CTAdReactSupplementInfo;
-                drugDrugInteraction = Resources.Resource.drugDrugInteraction;
-                refTitle = Resources.Resource.refTitle;
-                refInfo = Resources.Resource.refInfo;
-                effect = Resources.Resource.effect;
-                effectInfo = Resources.Resource.effectInfo;
-                clinicalComment = Resources.Resource.clinicalComment;
-                clinicalCommentInfo = Resources.Resource.clinicalCommentInfo;
-                legendInfo = Resources.Resource.legendInfo;
-                cmax = Resources.Resource.cmax;
-                halfLifeTitle = Resources.Resource.halfLifeTitle;
-                auc = Resources.Resource.auc;
-                clearance = Resources.Resource.clearance;
-                volDistribution = Resources.Resource.volDistribution;
-                pharmacokineticParameters = Resources.Resource.pharmacokineticParameters;
-
 
                 try
                 {
