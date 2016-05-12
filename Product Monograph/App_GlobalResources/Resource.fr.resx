@@ -235,81 +235,16 @@ Allergies quelconques à ce médicament, aux ingrédients ou aux composants du r
 </value>
     <comment>Part3</comment>
   </data>
-<<<<<<< HEAD
   <data name="whatDosageForm" xml:space="preserve">
     <value>Les formes posologiques sont</value>
-=======
-  <data name="whatToDo" xml:space="preserve">
-    <value>Procédures à suivre en ce qui concerne les effets secondaires</value>
-    <comment>Part3</comment>
-  </data>
-  <data name="saveButton" xml:space="preserve">
-    <value>Save a draft_fr</value>
-  </data>
-  <data name="overdoseInstruction" xml:space="preserve">
-    <value>Pour traiter une surdose présumée, communiquez avec le centre antipoison de votre région.</value>
-    <comment>Part1</comment>
-  </data>
-  <data name="reportSuspectedSEInstruction" xml:space="preserve">
-    <value>Vous pouvez déclarer les effets indésirables soupçonnés associés à l’utilisation des produits de santé au Programme Canada Vigilance de l’une des 3 façons suivantes :&lt;br/&gt;
-
-En ligne www.santecanada.gc.ca/medeffet&lt;br/&gt;
-Par téléphone, en composant le numéro sans frais 1-866-234-2345&lt;br/&gt;
-En remplissant un formulaire de déclaration de Canada Vigilance et en le faisant parvenir
-par télécopieur, au numéro sans frais 1-866-678-6789&lt;br/&gt;
-par la poste au :&lt;br/&gt;
-Programme Canada Vigilance&lt;br/&gt;
-Santé Canada&lt;br/&gt;
-Indice de l’adresse 0701D&lt;br/&gt;
-Ottawa (Ontario)&lt;br/&gt;
-K1A 0K9&lt;br/&gt;
-Les étiquettes préaffranchies, le formulaire de déclaration de Canada Vigilance ainsi que les lignes directrices concernant la déclaration d’effets indésirables sont disponibles sur le site Web de MedEffet &lt;sup&gt;MC&lt;/sup&gt; Canada à www.santecanada.gc.ca/medeffet.&lt;br/&gt;&lt;br/&gt;
-
-REMARQUE : Pour obtenir des renseignements relatifs à la gestion des effets secondaires, veuillez communiquer avec votre professionnel de la santé. Le Programme Canada Vigilance ne fournit pas de conseils médicaux.</value>
-    <comment>Part3</comment>
-  </data>
-  <data name="parenteralProdTitle" xml:space="preserve">
-    <value>Parenteral products</value>
-    <comment>Part1</comment>
-  </data>
-  <data name="productInfoTableTitle" xml:space="preserve">
-    <value>Summary product information form_fr</value>
-  </data>
-  <data name="saveButtonTitle" xml:space="preserve">
-    <value>Please save your form data in a draft file._fr</value>
-  </data>
-  <data name="stopTakingDrug" xml:space="preserve">
-    <value>Stop taking drug_fr</value>
-  </data>
-  <data name="talkwithDocAllCases" xml:space="preserve">
-    <value>Talk with your doctor in all cases_fr</value>
-  </data>
-  <data name="talkwithDocIfSever" xml:space="preserve">
-    <value>Talk with your doctor only if server_fr</value>
-  </data>
-  <data name="pharmacokinetics" xml:space="preserve">
-    <value>Pharmacokinetics_fr</value>
-  </data>
-  <data name="interactionsInfo" xml:space="preserve">
-    <value>Drugs that may interact with this medication_fr</value>
-    <comment>Part3</comment>
-  </data>
-  <data name="moreInformationText1" xml:space="preserve">
-    <value>On peut trouver ce document et la monographie complète du produit, rédigés pour les professionnels de la santé, à l’adresse suivante :
-http://www.website.document
-ou en communiquant avec le promoteur,</value>
->>>>>>> parent of bf365f6... Minjin_Fixed Coverpage and Part 1
     <comment>Part3</comment>
   </data>
   <data name="whatToDo" xml:space="preserve">
     <value>Procédures à suivre en ce qui concerne les effets secondaires</value>
     <comment>Part3</comment>
   </data>
-<<<<<<< HEAD
   <data name="whenNotUse" xml:space="preserve">
     <value>Les circonstances oû il est déconseillé d’utiliser ce médicament</value>
     <comment>Part 3</comment>
   </data>
-=======
->>>>>>> parent of bf365f6... Minjin_Fixed Coverpage and Part 1
 </root>
