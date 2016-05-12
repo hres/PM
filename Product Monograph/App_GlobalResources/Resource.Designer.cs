@@ -133,6 +133,15 @@ namespace Resources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to AUC&lt;sub&gt;0-∞&lt;/sub&gt;.
+        /// </summary>
+        internal static string auc {
+            get {
+                return ResourceManager.GetString("auc", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to AUC&lt;sub&gt;I&lt;/sub&gt; (units).
         /// </summary>
         internal static string auciUnit {
@@ -205,11 +214,47 @@ namespace Resources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Clearance.
+        /// </summary>
+        internal static string clearance {
+            get {
+                return ResourceManager.GetString("clearance", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Clinical comment.
+        /// </summary>
+        internal static string clinicalComment {
+            get {
+                return ResourceManager.GetString("clinicalComment", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Caution is warranted and therapeutic concentration monitoring is recommended.
+        /// </summary>
+        internal static string clinicalCommentInfo {
+            get {
+                return ResourceManager.GetString("clinicalCommentInfo", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Clinical trials.
         /// </summary>
         internal static string clinicalTrials {
             get {
                 return ResourceManager.GetString("clinicalTrials", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to C&lt;sub&gt;max&lt;/sub&gt;.
+        /// </summary>
+        internal static string cmax {
+            get {
+                return ResourceManager.GetString("cmax", resourceCulture);
             }
         }
         
@@ -313,6 +358,51 @@ namespace Resources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Clinical trial adverse drug reactions supplement.
+        /// </summary>
+        internal static string CTAdReactSupplement {
+            get {
+                return ResourceManager.GetString("CTAdReactSupplement", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Narrative to follow table to explain or supplement the information provided in the table.
+        /// </summary>
+        internal static string CTAdReactSupplementInfo {
+            get {
+                return ResourceManager.GetString("CTAdReactSupplementInfo", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Clinical trial adverse drug reactions.
+        /// </summary>
+        internal static string CTAdverseReaction {
+            get {
+                return ResourceManager.GetString("CTAdverseReaction", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Include description of data sources.
+        /// </summary>
+        internal static string CTAdverseReactionInfo {
+            get {
+                return ResourceManager.GetString("CTAdverseReactionInfo", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Clinical trial adverse drug reactions table #.
+        /// </summary>
+        internal static string CTAdverseReactionTable {
+            get {
+                return ResourceManager.GetString("CTAdverseReactionTable", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Date of preparation.
         /// </summary>
         internal static string datePreparation {
@@ -358,11 +448,38 @@ namespace Resources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Established or Potential Drug-Drug Interactions.
+        /// </summary>
+        internal static string drugDrugInteraction {
+            get {
+                return ResourceManager.GetString("drugDrugInteraction", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Drug substance.
         /// </summary>
         internal static string drugSubstance {
             get {
                 return ResourceManager.GetString("drugSubstance", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Effect.
+        /// </summary>
+        internal static string effect {
+            get {
+                return ResourceManager.GetString("effect", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to e.g. 9 &lt;drug A&gt; conc.
+        /// </summary>
+        internal static string effectInfo {
+            get {
+                return ResourceManager.GetString("effectInfo", resourceCulture);
             }
         }
         
@@ -417,6 +534,15 @@ namespace Resources {
         internal static string halfLife {
             get {
                 return ResourceManager.GetString("halfLife", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to T&lt;sub&gt;1/2&lt;/sub&gt;(h).
+        /// </summary>
+        internal static string halfLifeTitle {
+            get {
+                return ResourceManager.GetString("halfLifeTitle", resourceCulture);
             }
         }
         
@@ -504,7 +630,7 @@ namespace Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to It should include the following information: interactions suspected based on the pharmacokinetic or pharmacologic profile of the drug (forr example, cytochrome P45C); drug class statements if the interaction has not yet been documented, but would be clinically significant; potential interaction with alcohol..
+        ///   Looks up a localized string similar to It should include the following information: interactions suspected based on the pharmacokinetic or pharmacologic profile of the drug (for example, cytochrome P450 interactions); drug class statements if the interaction has not yet been documented, but would be clinically significant; potential interaction with alcohol..
         /// </summary>
         internal static string interactionOverviewInfo {
             get {
@@ -536,6 +662,15 @@ namespace Resources {
         internal static string lastModified {
             get {
                 return ResourceManager.GetString("lastModified", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Legend: C = Case study; CT = Clinical trial; T=Theoretical.
+        /// </summary>
+        internal static string legendInfo {
+            get {
+                return ResourceManager.GetString("legendInfo", resourceCulture);
             }
         }
         
@@ -848,6 +983,15 @@ namespace Resources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Summary of ( proper name )’s Pharmacokinetic Parameters in a ( specific patient population ).
+        /// </summary>
+        internal static string pharmacokineticParameters {
+            get {
+                return ResourceManager.GetString("pharmacokineticParameters", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Pharmacokinetics.
         /// </summary>
         internal static string pharmacokinetics {
@@ -983,6 +1127,24 @@ namespace Resources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to level of evidence, see legend.
+        /// </summary>
+        internal static string refInfo {
+            get {
+                return ResourceManager.GetString("refInfo", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Ref.
+        /// </summary>
+        internal static string refTitle {
+            get {
+                return ResourceManager.GetString("refTitle", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Remove.
         /// </summary>
         internal static string removeButton {
@@ -1005,6 +1167,15 @@ namespace Resources {
         internal static string reportSuspectedSEInstruction {
             get {
                 return ResourceManager.GetString("reportSuspectedSEInstruction", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Reset.
+        /// </summary>
+        internal static string resetButton {
+            get {
+                return ResourceManager.GetString("resetButton", resourceCulture);
             }
         }
         
@@ -1509,6 +1680,15 @@ namespace Resources {
         internal static string vialSize {
             get {
                 return ResourceManager.GetString("vialSize", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Volume of distribution.
+        /// </summary>
+        internal static string volDistribution {
+            get {
+                return ResourceManager.GetString("volDistribution", resourceCulture);
             }
         }
         
