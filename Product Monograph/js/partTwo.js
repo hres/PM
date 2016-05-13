@@ -1,10 +1,12 @@
 ﻿var selectedschedulingsymbol;
 $(document).ready(function () {
-    $("#linkTwo").attr("disabled", "disabled");   
+    $("#linkTwo").attr("disabled", "disabled");
 });
+
 var loadFile = function (fuid, imgid, txtname, txtdata) {
     //input file element
     var x = document.getElementById(fuid);
+    console.log(x);
     //first item, only item
     var file = x.files[0];
 
@@ -38,7 +40,7 @@ function AddDrugSubstance() {
     var tbMolecular = "tbMolecular" + drugCounter.toString();
     var tbMass = "tbMass" + drugCounter.toString();
     var tbPhysicochemical = "tbPhysicochemical" + drugCounter.toString();
-    var tbPharSchedulingSymbol = "tbPharSchedulingSymbol" + drugCounter.toString();
+    var fustrucform = "fustrucform" + drugCounter.toString();
     var fuimage = "fuimage" + drugCounter.toString();
     var tbfuimagename = "tbfuimagename" +drugCounter.toString();
     var tbfuimagebasesixtyfour = "tbfuimagebasesixtyfour"  + drugCounter.toString();
@@ -72,20 +74,21 @@ function AddDrugSubstance() {
           "</div>" +
           "<div class='form-group'>" +
             "<div class='row'>" +
-                      "<label for='" + tbPharSchedulingSymbol + "' class='col-sm-3 control-label'>" +
+                      "<label for='" + fustrucform + "' class='col-sm-3 control-label'>" +
                           "<span class='field-name'>Structural formula</span>" +
                       "</label>" +
                     "<div class='col-sm-9'>" +
-                        "<input type='file' id='" + tbPharSchedulingSymbol + "' onchange='loadFile('" + tbPharSchedulingSymbol + "', '" + fuimage + "','" + tbfuimagename + "','" + tbfuimagebasesixtyfour + "')'/>" +
-                     "</div>" +
+                      "<input type=\"file\" id='" + fustrucform + "' onchange=\"loadFile('" + fustrucform + "', '"+ fuimage + "','"+ tbfuimagename +"','"+ tbfuimagebasesixtyfour +"')\" />" + 
+                "</div>" +
              "</div>" +
              "<div class='row'>" +
-                    "<div class='col-sm-3'></div>"
+                    "<div class='col-sm-3'></div>" +
                     "<div class='col-sm-3'>" +
                         "<img id='" + fuimage + "' src='./images/x.png' class='img-thumbnail' alt=''/>" +
-                        "<input type='text'  class='hidden' id='" + tbfuimagename + "' name='tbfuimagename' />" +
-                        "<input type='text'  class='hidden' id='" + tbfuimagebasesixtyfour + "' name='tbfuimagebasesixtyfour'  />" +
-                     "</div>" +
+                        "<input type='text'  class='hidden' id='" + tbfuimagename + "'  name='tbfuimagename' />" +
+                        "<input type='text'  class='hidden' id='" + tbfuimagebasesixtyfour + "'  name='tbfuimagebasesixtyfour'  />" +
+                        "</div>" +
+                    "</div>" +
                 "</div>" +
         "</div>" +
         "<div class='form-group row'>" +

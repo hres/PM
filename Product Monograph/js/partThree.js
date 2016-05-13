@@ -1,5 +1,13 @@
 ﻿$(document).ready(function () {
-    $("#linkThree").attr("disabled", "disabled"); 
+    var now = new Date();
+    var day = (now.getDate() < 10 ? '0' : '') + now.getDate();
+    var month = ((now.getMonth() + 1) < 10 ? '0' : '') + (now.getMonth() + 1);
+    var year = now.getFullYear();
+    var todayDate = year + "-" + month + "-" + day;
+
+    $("#linkThree").attr("disabled", "disabled");
+    $("#tbLastRevised").attr("name", "tbLastRevised");
+    $("#tbLastRevised").attr("max", todayDate);
 });
 
 var loadFile = function (fuid, imgid, txtname, txtdata) {
@@ -24,36 +32,36 @@ var loadFile = function (fuid, imgid, txtname, txtdata) {
 };
 
 
-var seriousCounter = 0;
-function AddSeriousWarningsPrecautions() {
-    seriousCounter = seriousCounter + 1;
-    var div = document.createElement('div');
-    var att = document.createAttribute("class");
-    att.value = "brdr-bttm";
-    div.setAttributeNode(att);
-    var identity = document.createAttribute("id");
-    identity.value = "SeriousWarningsPrecautions" + seriousCounter;
-    div.setAttributeNode(identity);
-    var tbSeriousWarningsPrecautions = "tbSeriousWarningsPrecautions" + seriousCounter.toString();
-    var returnString = "";    
+//var seriousCounter = 0;
+//function AddSeriousWarningsPrecautions() {
+//    seriousCounter = seriousCounter + 1;
+//    var div = document.createElement('div');
+//    var att = document.createAttribute("class");
+//    att.value = "brdr-bttm";
+//    div.setAttributeNode(att);
+//    var identity = document.createAttribute("id");
+//    identity.value = "SeriousWarningsPrecautions" + seriousCounter;
+//    div.setAttributeNode(identity);
+//    var tbSeriousWarningsPrecautions = "tbSeriousWarningsPrecautions" + seriousCounter.toString();
+//    var returnString = "";    
     
-    returnString = "<div class='form-group row'>" +
-                           "<label for='" + tbSeriousWarningsPrecautions + "' class='col-sm-3 control-label'></label>" +
-                           "<div class='col-sm-7'>" +
-                               "<textarea id='" + tbSeriousWarningsPrecautions + "' name='tbSeriousWarningsPrecautions' class='textarea form-control'></textarea>" +
-                            "</div>" +
-                            "<div class='col-sm-2 text-right'>" +
-                               '<input class="btn btn-default btn-xs" type="button" value="' + removeButtonValue +'" onclick="RemoveSeriousWarningsPrecautions(' + seriousCounter + ')" id="btnRemoveSeriousWarnings(' + seriousCounter + ')" />' +
-                           "</div>" +
-                   "</div>";   
-    div.innerHTML = returnString;
-    document.getElementById("dvExtraSeriousWarningsPrecautions").appendChild(div);
-    setup();
-}
-function RemoveSeriousWarningsPrecautions(i) {
-    var rowid = "#SeriousWarningsPrecautions" + i;
-    $(rowid).remove();
-}
+//    returnString = "<div class='form-group row'>" +
+//                           "<label for='" + tbSeriousWarningsPrecautions + "' class='col-sm-3 control-label'></label>" +
+//                           "<div class='col-sm-7'>" +
+//                               "<textarea id='" + tbSeriousWarningsPrecautions + "' name='tbSeriousWarningsPrecautions' class='textarea form-control'></textarea>" +
+//                            "</div>" +
+//                            "<div class='col-sm-2 text-right'>" +
+//                               '<input class="btn btn-default btn-xs" type="button" value="' + removeButtonValue +'" onclick="RemoveSeriousWarningsPrecautions(' + seriousCounter + ')" id="btnRemoveSeriousWarnings(' + seriousCounter + ')" />' +
+//                           "</div>" +
+//                   "</div>";   
+//    div.innerHTML = returnString;
+//    document.getElementById("dvExtraSeriousWarningsPrecautions").appendChild(div);
+//    setup();
+//}
+//function RemoveSeriousWarningsPrecautions(i) {
+//    var rowid = "#SeriousWarningsPrecautions" + i;
+//    $(rowid).remove();
+//}
 
 
 function AddCommonSymptomsTextBox() {
@@ -270,74 +278,74 @@ function GetAddUnknownSymptomsTextBoxDynamicTextBox(id) {
            "</div>";
 }
 
-function RemoveMedicationForItemsTextBox(i) {
-    var rowid = "#MedicationForItems" + i;
-    $(rowid).remove();
-}
+//function RemoveMedicationForItemsTextBox(i) {
+//    var rowid = "#MedicationForItems" + i;
+//    $(rowid).remove();
+//}
 
-var MedicationForItemsCounter = 0;
+//var MedicationForItemsCounter = 0;
 
-function AddMedicationForItemsTextBox() {
+//function AddMedicationForItemsTextBox() {
 
-    MedicationForItemsCounter = MedicationForItemsCounter + 1;
-    counter = MedicationForItemsCounter;
+//    MedicationForItemsCounter = MedicationForItemsCounter + 1;
+//    counter = MedicationForItemsCounter;
 
-    var div = document.createElement('DIV');
-    var att = document.createAttribute("class");
-    var identity = document.createAttribute("id");
-    att.value = "roadynarow";
-    identity.value = "MedicationForItems" + counter;
-    div.setAttributeNode(att);
-    div.setAttributeNode(identity);
-    div.innerHTML = GetAddMedicationForItemsTextBoxDynamicTextBox(counter);
-    document.getElementById("dvExtraMedicationForItems").appendChild(div);
+//    var div = document.createElement('DIV');
+//    var att = document.createAttribute("class");
+//    var identity = document.createAttribute("id");
+//    att.value = "roadynarow";
+//    identity.value = "MedicationForItems" + counter;
+//    div.setAttributeNode(att);
+//    div.setAttributeNode(identity);
+//    div.innerHTML = GetAddMedicationForItemsTextBoxDynamicTextBox(counter);
+//    document.getElementById("dvExtraMedicationForItems").appendChild(div);
 
-    setup();
-}
+//    setup();
+//}
 
-function GetAddMedicationForItemsTextBoxDynamicTextBox(id) {
-    var swp = "tbMedicationForItems" + id.toString();
-    return "<div class='row margin-top-medium'>" +
-           "<div class='col-xs-10 text-left'><textarea id='" + swp + "' name='tbMedicationForItems' class='textarea'></textarea></div>" +
-           "<div class='col-xs-2 text-left'>" +
-                '<img style="cursor:pointer !important;" src="images/minus_icon.png" onclick="RemoveMedicationForItemsTextBox(' + id + ')" width="22" height="22" alt="Remove"/>' +
-           "</div>" + "</div>";
-}
+//function GetAddMedicationForItemsTextBoxDynamicTextBox(id) {
+//    var swp = "tbMedicationForItems" + id.toString();
+//    return "<div class='row margin-top-medium'>" +
+//           "<div class='col-xs-10 text-left'><textarea id='" + swp + "' name='tbMedicationForItems' class='textarea'></textarea></div>" +
+//           "<div class='col-xs-2 text-left'>" +
+//                '<img style="cursor:pointer !important;" src="images/minus_icon.png" onclick="RemoveMedicationForItemsTextBox(' + id + ')" width="22" height="22" alt="Remove"/>' +
+//           "</div>" + "</div>";
+//}
 
-function RemoveSeriousWarningsPrecautionsTextBox(i) {
-    var rowid = "#SeriousWarningsPrecautions" + i;
-    $(rowid).remove();
-}
+//function RemoveSeriousWarningsPrecautionsTextBox(i) {
+//    var rowid = "#SeriousWarningsPrecautions" + i;
+//    $(rowid).remove();
+//}
 
-var SeriousWarningsPrecautionsCounter = 0;
+//var SeriousWarningsPrecautionsCounter = 0;
 
-function AddSeriousWarningsPrecautionsTextBox() {
+//function AddSeriousWarningsPrecautionsTextBox() {
 
-    SeriousWarningsPrecautionsCounter = SeriousWarningsPrecautionsCounter + 1;
-    counter = SeriousWarningsPrecautionsCounter;
+//    SeriousWarningsPrecautionsCounter = SeriousWarningsPrecautionsCounter + 1;
+//    counter = SeriousWarningsPrecautionsCounter;
 
-    var div = document.createElement('DIV');
-    var att = document.createAttribute("class");
-    var identity = document.createAttribute("id");
-    att.value = "roadynarow";
-    identity.value = "SeriousWarningsPrecautions" + counter;
-    div.setAttributeNode(att);
-    div.setAttributeNode(identity);
-    div.innerHTML = GetAddSeriousWarningsPrecautionsTextBoxDynamicTextBox(counter);
-    document.getElementById("dvExtraSeriousWarningsPrecautions").appendChild(div);
+//    var div = document.createElement('DIV');
+//    var att = document.createAttribute("class");
+//    var identity = document.createAttribute("id");
+//    att.value = "roadynarow";
+//    identity.value = "SeriousWarningsPrecautions" + counter;
+//    div.setAttributeNode(att);
+//    div.setAttributeNode(identity);
+//    div.innerHTML = GetAddSeriousWarningsPrecautionsTextBoxDynamicTextBox(counter);
+//    document.getElementById("dvExtraSeriousWarningsPrecautions").appendChild(div);
 
-    setup();
-}
+//    setup();
+//}
 
-function GetAddSeriousWarningsPrecautionsTextBoxDynamicTextBox(id) {
-    var swp = "tbSeriousWarningsPrecautions" + id.toString();
-    return "<div class='row margin-top-medium'>" +
-           "<div class='col-xs-10 text-left'><textarea id='" + swp + "' name='tbSeriousWarningsPrecautions' class='textarea'></textarea></div>" +
-           "<div class='col-xs-2'>" +
-                '<img style="cursor:pointer !important;" src="images/minus_icon.png" onclick="RemoveSeriousWarningsPrecautionsTextBox(' + id + ')" width="22" height="22" alt="Remove"/>' +
-           "</div>" +
-           "</div>";
-}
+//function GetAddSeriousWarningsPrecautionsTextBoxDynamicTextBox(id) {
+//    var swp = "tbSeriousWarningsPrecautions" + id.toString();
+//    return "<div class='row margin-top-medium'>" +
+//           "<div class='col-xs-10 text-left'><textarea id='" + swp + "' name='tbSeriousWarningsPrecautions' class='textarea'></textarea></div>" +
+//           "<div class='col-xs-2'>" +
+//                '<img style="cursor:pointer !important;" src="images/minus_icon.png" onclick="RemoveSeriousWarningsPrecautionsTextBox(' + id + ')" width="22" height="22" alt="Remove"/>' +
+//           "</div>" +
+//           "</div>";
+//}
 
 var CommonCounter = 0;
 var UncommonCounter = 0;
@@ -365,45 +373,45 @@ function RemoveUnknown(i) {
     var rowid = "#Unknown" + i;
     $(rowid).remove();
 }
-var properUseCounter = 0;
-function AddProperUseTextarea() {
-    properUseCounter = properUseCounter + 1;
-    var div = document.createElement('div');
-    var identity = document.createAttribute("id");
-    identity.value = "properUseDoc" + properUseCounter;
-    div.setAttributeNode(identity);
+//var properUseCounter = 0;
+//function AddProperUseTextarea() {
+//    properUseCounter = properUseCounter + 1;
+//    var div = document.createElement('div');
+//    var identity = document.createAttribute("id");
+//    identity.value = "properUseDoc" + properUseCounter;
+//    div.setAttributeNode(identity);
 
-    var properUseTextarea = "properUseTextarea" + properUseCounter.toString();
-    var returnString = "";
-    returnString = "<div class='form-group row'>" +
-               "<div class='col-sm-11'>" +                   
-                   "<textarea id='" + properUseTextarea + "' name='properUseTextarea' class='mceEditor'> Please create documentation</textarea>" +
-                "</div>" +            
-                "<div class='col-sm-1'>" +      
-                '<input class="btn btn-default btn-xs" type="button" value="Remove" onclick="RemoveProperUseTextarea(' + properUseCounter + ')" id="btnRemoveProperUseTextarea(' + properUseCounter + ')" />' +         
-                 "</div>" +           
-                "</div>" ;	
+//    var properUseTextarea = "properUseTextarea" + properUseCounter.toString();
+//    var returnString = "";
+//    returnString = "<div class='form-group row'>" +
+//               "<div class='col-sm-11'>" +                   
+//                   "<textarea id='" + properUseTextarea + "' name='properUseTextarea' class='mceEditor'> Please create documentation</textarea>" +
+//                "</div>" +            
+//                "<div class='col-sm-1'>" +      
+//                '<input class="btn btn-default btn-xs" type="button" value="Remove" onclick="RemoveProperUseTextarea(' + properUseCounter + ')" id="btnRemoveProperUseTextarea(' + properUseCounter + ')" />' +         
+//                 "</div>" +           
+//                "</div>" ;	
 				
-    div.innerHTML = returnString;
-    document.getElementById("divExtraProperUseTextarea").appendChild(div);
-    setupMceEditor();
-}
-function RemoveProperUseTextarea(i) {
-    var rowid = "#properUseDoc" + i;
-    $(rowid).remove();
-}
+//    div.innerHTML = returnString;
+//    document.getElementById("divExtraProperUseTextarea").appendChild(div);
+//    setupMceEditor();
+//}
+//function RemoveProperUseTextarea(i) {
+//    var rowid = "#properUseDoc" + i;
+//    $(rowid).remove();
+//}
 
-function setupMceEditor() {
-    tinymce.init({
-        //selector: "textarea.mceEditor",
-        mode: "specific_textareas",
-        editor_selector: "mceEditor",
-        height: 300,
-        plugins: [
-          'advlist autolink lists link image charmap print preview anchor',
-          'searchreplace visualblocks code fullscreen',
-          'insertdatetime media table contextmenu paste code'
-        ],
-        toolbar: 'insertfile undo redo | styleselect | bold italic | alignleft aligncenter alignright alignjustify | bullist numlist outdent indent | link image'
-    });
-}
+//function setupMceEditor() {
+//    tinymce.init({
+//        //selector: "textarea.mceEditor",
+//        mode: "specific_textareas",
+//        editor_selector: "mceEditor",
+//        height: 300,
+//        plugins: [
+//          'advlist autolink lists link image charmap print preview anchor',
+//          'searchreplace visualblocks code fullscreen',
+//          'insertdatetime media table contextmenu paste code'
+//        ],
+//        toolbar: 'insertfile undo redo | styleselect | bold italic | alignleft aligncenter alignright alignjustify | bullist numlist outdent indent | link image'
+//    });
+//}

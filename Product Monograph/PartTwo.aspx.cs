@@ -147,6 +147,9 @@ namespace Product_Monograph
             }
         }
 
+        //strscript += "$('#tbfuimagename0').val(\"" + xmldataitem.PharmaceuticalInfoImagename + "\");";
+        //strscript += "$('#fuimage0').attr('src', " + "'" + xmldataitem.PharmaceuticalInfoImagedata + "');";
+        //strscript += "$('#tbfuimagebasesixtyfour0').val(\"" + xmldataitem.PharmaceuticalInfoImagedata + "\");";
 
         private void LoadFromXML()
         {
@@ -172,7 +175,16 @@ namespace Product_Monograph
                     {
                         foreach (string column in row.columns)
                         {
-                            strscript += "$('#" + colarray[colcounter] + "').val(\"" + helpers.Processes.CleanString(column) + "\");";
+                            if (colarray[colcounter].Equals("tbfuimagebasesixtyfour"))
+                            {
+                                strscript += "$('#tbfuimagebasesixtyfour').val(\"" + helpers.Processes.CleanString(column) + "\");";
+                                strscript += "$('#fuimage').attr('src', " + "'" + helpers.Processes.CleanString(column) + "');";
+                            }
+                            else
+                            { 
+                                strscript += "$('#" + colarray[colcounter] + "').val(\"" + helpers.Processes.CleanString(column) + "\");";
+
+                            }
                             colcounter++;
                         }
                     }
@@ -181,7 +193,15 @@ namespace Product_Monograph
                         strscript += "AddDrugSubstance();";  
                         foreach (string column in row.columns)
                         {
-                             strscript += "$('#" + colarray[colcounter] + rowcounter.ToString() + "').val(\"" + helpers.Processes.CleanString(column) + "\");";
+                            if (colarray[colcounter].Equals("tbfuimagebasesixtyfour"))
+                            {
+                                strscript += "$('#" + colarray[colcounter] + rowcounter.ToString() + "').val(\"" + helpers.Processes.CleanString(column) + "\");";
+                                strscript += "$('#fuimage" + rowcounter.ToString() + "' ).attr('src', " + "'" + helpers.Processes.CleanString(column) + "');";
+                            }
+                            else
+                            {
+                                strscript += "$('#" + colarray[colcounter] + rowcounter.ToString() + "').val(\"" + helpers.Processes.CleanString(column) + "\");";
+                            }
                             colcounter++;
                         }
                     }
@@ -241,14 +261,14 @@ namespace Product_Monograph
             var xmldata = from item in doc.Elements("ProductMonographTemplate")
                           select new
                           {
-                              PharSchedulingSymbol = (string)item.Element("PharSchedulingSymbol"),
-                              PharSchedulingSymbolImageName = (string)item.Element("PharSchedulingSymbolImageName"),
-                              PharSchedulingSymbolImageData = (string)item.Element("PharSchedulingSymbolImageData"),
+ 
                               ClinicalTrials = (string)item.Element("ClinicalTrials"),
                               DetailedPharmacology = (string)item.Element("DetailedPharmacology"),
                               Microbiology = (string)item.Element("Microbiology"),
                               Toxicology = (string)item.Element("Toxicology"),
-                              References = (string)item.Element("References"),                             
+                              References = (string)item.Element("References"),
+                              //PharmaceuticalInfoImagename = (string)item.Element("PharmaceuticalInfoImagename"),
+                              //PharmaceuticalInfoImagedata = (string)item.Element("PharmaceuticalInfoImagedata"),
                           };
             foreach (var xmldataitem in xmldata)
             {
@@ -257,18 +277,23 @@ namespace Product_Monograph
                 tbMicrobiology.Value = xmldataitem.Microbiology;
                 tbToxicology.Value = xmldataitem.Toxicology;
                 tbReferences.Value = xmldataitem.References;
-                if (xmldataitem.PharSchedulingSymbolImageData != null)
-                    strscript += "$('#imgSymbol').attr('src', " + "'" + xmldataitem.PharSchedulingSymbolImageData + "');";
+                //if (xmldataitem.PharSchedulingSymbolImageData != null)
+                //    strscript += "$('#imgSymbol').attr('src', " + "'" + xmldataitem.PharSchedulingSymbolImageData + "');";
 
-                if (xmldataitem.PharSchedulingSymbol != null)
-                    strscript += "selectedschedulingsymbol = '" + xmldataitem.PharSchedulingSymbol + "';";
+                //if (xmldataitem.PharSchedulingSymbol != null)
+                //    strscript += "selectedschedulingsymbol = '" + xmldataitem.PharSchedulingSymbol + "';";
 
-                if (xmldataitem.PharSchedulingSymbolImageName != null)
-                    strscript += "$('#tbPharxmlimgfilenameSymbol').val('" + xmldataitem.PharSchedulingSymbolImageName + "');";
+                //if (xmldataitem.PharSchedulingSymbolImageName != null)
+                //    strscript += "$('#tbPharxmlimgfilenameSymbol').val('" + xmldataitem.PharSchedulingSymbolImageName + "');";
 
-                if (xmldataitem.PharSchedulingSymbol != null)
-                    strscript += "$('#tbPharxmlimgnameSymbol').val('" + xmldataitem.PharSchedulingSymbol + "');";
+                //if (xmldataitem.PharSchedulingSymbol != null)
+                //    strscript += "$('#tbPharxmlimgnameSymbol').val('" + xmldataitem.PharSchedulingSymbol + "');";
+
+                //strscript += "$('#tbfuimagename0').val(\"" + xmldataitem.PharmaceuticalInfoImagename + "\");";
+                //strscript += "$('#fuimage0').attr('src', " + "'" + xmldataitem.PharmaceuticalInfoImagedata + "');";
+                //strscript += "$('#tbfuimagebasesixtyfour0').val(\"" + xmldataitem.PharmaceuticalInfoImagedata + "\");";
             }
+
             ScriptManager.RegisterStartupScript(this.Page, this.GetType(), "LoadEventsScript", strscript.ToString(), true);
         }
 
@@ -318,8 +343,8 @@ namespace Product_Monograph
                    HttpContext.Current.Request.Form.GetValues("tbMolecular") != null &&
                    HttpContext.Current.Request.Form.GetValues("tbMass") != null &&
                    HttpContext.Current.Request.Form.GetValues("tbPhysicochemical") != null &&
-                   HttpContext.Current.Request.Form.GetValues("tbfuimagename") != null &&
-                   HttpContext.Current.Request.Form.GetValues("tbfuimagebasesixtyfour") != null)
+                    HttpContext.Current.Request.Form.GetValues("tbfuimagename") != null &&
+                    HttpContext.Current.Request.Form.GetValues("tbfuimagebasesixtyfour") != null)
                 {
                     foreach (string item in HttpContext.Current.Request.Form.GetValues("tbDrugSub"))
                     {
@@ -380,7 +405,7 @@ namespace Product_Monograph
                         subsubnode.AppendChild(doc.CreateTextNode(col4));
                         subnode.AppendChild(subsubnode);
 
-                        string col5 = tbfuimagename[ar].ToString();
+                        string col5 = tbPhysicochemical[ar].ToString();
                         subsubnode = doc.CreateElement("column");
                         subsubnode.AppendChild(doc.CreateTextNode(col5));
                         subnode.AppendChild(subsubnode);
@@ -450,43 +475,39 @@ namespace Product_Monograph
             }
             //try
             //{
-            //    //#region Structural formula
-            //    //XmlNodeList pharmaceuticalInfo = doc.GetElementsByTagName("DrugSubstanceImagename");
-            //    //ArrayList formulaArray = new ArrayList();
-            //    //ArrayList formulaImagearray = new ArrayList();
-            //    //if (HttpContext.Current.Request.Form.GetValues("tbfuimagename") != null &&
-            //    //    HttpContext.Current.Request.Form.GetValues("tbfuimagebasesixtyfour") != null)
-            //    //{
-            //    //    foreach (string nameItem in HttpContext.Current.Request.Form.GetValues("tbfuimagename"))
-            //    //    {
-            //    //        formulaArray.Add(nameItem);
-            //    //    }
-            //    //    foreach (string imageItem in HttpContext.Current.Request.Form.GetValues("tbfuimagebasesixtyfour"))
-            //    //    {
-            //    //        formulaImagearray.Add(imageItem);
-            //    //    }
-            //    //}
-            //    //if (formulaArray.Count < 1)
-            //    //{
-            //    //    helpers.Processes.ValidateAndSave(doc, rootnode, "DrugSubstanceImagename", "", formulaArray[0].ToString(), false);
-            //    //    helpers.Processes.ValidateAndSave(doc, rootnode, "DrugSubstanceImagedata", "", formulaImagearray[0].ToString(), false);
-            //    //}
-            //    //else
-            //    //{
-            //    //    for (int ar = 0; ar < formulaArray.Count; ar++)
-            //    //    {
-            //    //        helpers.Processes.ValidateAndSave(doc, rootnode, DrugSubstanceImagename", "", formulaArray[ar].ToString(), false);
-            //    //        helpers.Processes.ValidateAndSave(doc, rootnode, "DrugSubstanceImagedata", "", formulaImagearray[ar].ToString(), false);
-            //    //    }
-            //    //}
-            //    //#endregion
+            //    #region Structural formula - PharmaceuticalInfoImagename
+
+            //    ArrayList formulaNameList = new ArrayList();
+            //    ArrayList formulaImageList = new ArrayList();
+            //    if (HttpContext.Current.Request.Form.GetValues("tbfuimagename") != null &&
+            //        HttpContext.Current.Request.Form.GetValues("tbfuimagebasesixtyfour") != null)
+            //    {
+            //        foreach (string routeitem in HttpContext.Current.Request.Form.GetValues("tbfuimagename"))
+            //        {
+            //            formulaNameList.Add(routeitem);
+            //        }
+            //        foreach (string dosageitem in HttpContext.Current.Request.Form.GetValues("tbfuimagebasesixtyfour"))
+            //        {
+            //            formulaImageList.Add(dosageitem);
+            //        }
+            //    }
+            //    if (formulaNameList.Count > 0)
+            //    {
+            //        for (int i = 0; i < formulaNameList.Count; i++)
+            //        {
+            //            helpers.Processes.ValidateAndSave(doc, rootnode, "PharmaceuticalInfoImagename" + i, "", formulaNameList[i].ToString(), false);
+            //            helpers.Processes.ValidateAndSave(doc, rootnode, "PharmaceuticalInfoImagedata" + i, "", formulaImageList[i].ToString(), false);
+            //        }
+            //    }
+
+            //    #endregion
             //}
             //catch (Exception error)
             //{
             //    //  lblError.Text = error.ToString();
             //    return null;
             //}
-           
+
             helpers.Processes.ValidateAndSave(doc, rootnode, "ClinicalTrials", "", tbClinicalTrials.Value, false);
             helpers.Processes.ValidateAndSave(doc, rootnode, "DetailedPharmacology", "", tbDetailedPharmacology.Value, false);
             helpers.Processes.ValidateAndSave(doc, rootnode, "Microbiology", "", tbMicrobiology.Value, false);

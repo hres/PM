@@ -167,38 +167,38 @@ namespace Product_Monograph
             XmlNodeList WarningPrecausion = xmldoc.GetElementsByTagName("WarningPrecausion");
 
             #region WarningPrecausion
-            var rows = from row in doc.Root.Elements("WarningPrecausion").Descendants("row")
-                       select new
-                       {
-                           columns = from column in row.Elements("column")
-                                     select (string)column
-                       };
+            //var rows = from row in doc.Root.Elements("WarningPrecausion").Descendants("row")
+            //           select new
+            //           {
+            //               columns = from column in row.Elements("column")
+            //                         select (string)column
+            //           };
 
-            int rowcounter = 0;
-            foreach (var row in rows)
-            {
-                string[] colarray = "tbSeriousWarningsPrecautions".Split(';');
-                int colcounter = 0;
-                if (rowcounter == 0)
-                {
-                    foreach (string column in row.columns)
-                    {
-                        strscript += "$('#" + colarray[colcounter] + "').val(\"" + helpers.Processes.CleanString(column) + "\");";
-                        colcounter++;
-                    }
-                }
-                else
-                {
-                    strscript += "AddSeriousWarningsPrecautions();";
-                    foreach (string column in row.columns)
-                    {
-                        strscript += "$('#" + colarray[colcounter] + rowcounter.ToString() + "').val(\"" + helpers.Processes.CleanString(column) + "\");";
-                        colcounter++;
-                    }
-                }
+            //int rowcounter = 0;
+            //foreach (var row in rows)
+            //{
+            //    string[] colarray = "tbSeriousWarningsPrecautions".Split(';');
+            //    int colcounter = 0;
+            //    if (rowcounter == 0)
+            //    {
+            //        foreach (string column in row.columns)
+            //        {
+            //            strscript += "$('#" + colarray[colcounter] + "').val(\"" + helpers.Processes.CleanString(column) + "\");";
+            //            colcounter++;
+            //        }
+            //    }
+            //    else
+            //    {
+            //        strscript += "AddSeriousWarningsPrecautions();";
+            //        foreach (string column in row.columns)
+            //        {
+            //            strscript += "$('#" + colarray[colcounter] + rowcounter.ToString() + "').val(\"" + helpers.Processes.CleanString(column) + "\");";
+            //            colcounter++;
+            //        }
+            //    }
 
-                rowcounter++;
-            }
+            //    rowcounter++;
+            //}
             #endregion
             XmlNodeList cse = xmldoc.GetElementsByTagName("CommonSideEffects");
             if (cse.Count > 0)
@@ -515,46 +515,46 @@ namespace Product_Monograph
             }
 
             #region ProperUseTextarea
-            XmlNodeList properUseNode = xmldoc.GetElementsByTagName("ProperUseTextarea");
-            if (properUseNode.Count > 0)
-            {
-                var rowsC = from rowcont in doc.Root.Elements("ProperUseTextarea").Descendants("row")
-                            select new
-                            {
-                                columns = from column in rowcont.Elements("column")
-                                          select (string)column
-                            };
+            //XmlNodeList properUseNode = xmldoc.GetElementsByTagName("ProperUseTextarea");
+            //if (properUseNode.Count > 0)
+            //{
+            //    var rowsC = from rowcont in doc.Root.Elements("ProperUseTextarea").Descendants("row")
+            //                select new
+            //                {
+            //                    columns = from column in rowcont.Elements("column")
+            //                              select (string)column
+            //                };
 
-                bool ranC = false;
-                int rowcounterC = 0;
-                foreach (var rowC in rowsC)
-                {
-                    if (!ranC)
-                    {
-                        string[] colarray = "properUseTextarea".Split(';');
-                        int colcounter = 0;
-                        foreach (string columnC in rowC.columns)
-                        {
-                            strscript += "$('#" + colarray[colcounter] + "').val(\"" + helpers.Processes.CleanString(columnC) + "\");";
-                            colcounter++;
-                        }
-                        ranC = true;
-                    }
-                    else
-                    {
-                        strscript += "AddProperUseTextarea();";
-                        string[] colarray = "properUseTextarea".Split(';');
-                        int colcounter = 0;
-                        foreach (string columnC in rowC.columns)
-                        {
-                            strscript += "$('#" + colarray[colcounter] + rowcounterC.ToString() + "').val(\"" + helpers.Processes.CleanString(columnC) + "\");";
-                            colcounter++;
-                        }
-                    }
+            //    bool ranC = false;
+            //    int rowcounterC = 0;
+            //    foreach (var rowC in rowsC)
+            //    {
+            //        if (!ranC)
+            //        {
+            //            string[] colarray = "properUseTextarea".Split(';');
+            //            int colcounter = 0;
+            //            foreach (string columnC in rowC.columns)
+            //            {
+            //                strscript += "$('#" + colarray[colcounter] + "').val(\"" + helpers.Processes.CleanString(columnC) + "\");";
+            //                colcounter++;
+            //            }
+            //            ranC = true;
+            //        }
+            //        else
+            //        {
+            //            strscript += "AddProperUseTextarea();";
+            //            string[] colarray = "properUseTextarea".Split(';');
+            //            int colcounter = 0;
+            //            foreach (string columnC in rowC.columns)
+            //            {
+            //                strscript += "$('#" + colarray[colcounter] + rowcounterC.ToString() + "').val(\"" + helpers.Processes.CleanString(columnC) + "\");";
+            //                colcounter++;
+            //            }
+            //        }
 
-                    rowcounterC++;
-                }
-            }
+            //        rowcounterC++;
+            //    }
+            //}
             #endregion
 
             //followings are elements under root node
@@ -592,6 +592,7 @@ namespace Product_Monograph
                               MedicationMissedDoseImagename = (string)item.Element("MedicationMissedDoseImagename"),
                               MedicationMissedDoseImagedata = (string)item.Element("MedicationMissedDoseImagedata"),
                               WarningsTalktodoctor = (string)item.Element("WarningsTalktodoctor"),
+                              WarningPrecausion = (string)item.Element("WarningPrecausion"),
                           };
 
             foreach (var xmldataitem in xmldata)
@@ -663,6 +664,9 @@ namespace Product_Monograph
 
                 if (tbTalktodoctor.Value != xmldataitem.WarningsTalktodoctor)
                     tbTalktodoctor.Value = xmldataitem.WarningsTalktodoctor;
+
+                if (tbSeriousWarningsPrecautions.Value != xmldataitem.WarningPrecausion)
+                    tbSeriousWarningsPrecautions.Value = xmldataitem.WarningPrecausion;
                 //strscript += "$('#fuimage0').attr('src', " + "'" + xmldataitem.MedicationUsualDoseImagedata + "');";
                 //strscript += "$('#tbfuimagename0').val(\"" + xmldataitem.MedicationUsualDoseImagename + "\");";
                 //strscript += "$('#tbfuimagebasesixtyfour0').val(\"" + xmldataitem.MedicationMissedDoseImagedata + "\");";
@@ -715,59 +719,59 @@ namespace Product_Monograph
             #endregion
 
             #region WarningPrecausion
-            try
-            {
-                XmlNodeList Warnings = doc.GetElementsByTagName("WarningPrecausion");
-                var tbSeriousWarningsPrecautions = new ArrayList();
-                
-                if (HttpContext.Current.Request.Form.GetValues("tbSeriousWarningsPrecautions") != null )
-                {
-                    foreach (string item in HttpContext.Current.Request.Form.GetValues("tbSeriousWarningsPrecautions"))
-                    {
-                        tbSeriousWarningsPrecautions.Add(item);                    }
-                    
-                }
+            //try
+            //{
+            //    XmlNodeList Warnings = doc.GetElementsByTagName("WarningPrecausion");
+            //    var tbSeriousWarningsPrecautions = new ArrayList();
 
-                if (Warnings.Count < 1)
-                {
-                    XmlNode xnode = doc.CreateElement("WarningPrecausion");
-                    rootnode.AppendChild(xnode);
-                    for (int ar = 0; ar < tbSeriousWarningsPrecautions.Count; ar++)
-                    {
-                        XmlNode subnode = doc.CreateElement("row");
-                        xnode.AppendChild(subnode);
+            //    if (HttpContext.Current.Request.Form.GetValues("tbSeriousWarningsPrecautions") != null )
+            //    {
+            //        foreach (string item in HttpContext.Current.Request.Form.GetValues("tbSeriousWarningsPrecautions"))
+            //        {
+            //            tbSeriousWarningsPrecautions.Add(item);                    }
 
-                        string col1 = tbSeriousWarningsPrecautions[ar].ToString();
-                        XmlNode subsubnode = doc.CreateElement("column");
-                        subsubnode.AppendChild(doc.CreateTextNode(col1));
-                        subnode.AppendChild(subsubnode);
-                        
-                    }
-                }
-                else
-                {
-                    Warnings[0].RemoveAll();
-                    XmlNodeList xnode = doc.GetElementsByTagName("WarningPrecausion");
-                    rootnode.AppendChild(xnode[0]);
+            //    }
 
-                    for (int ar = 0; ar < tbSeriousWarningsPrecautions.Count; ar++)
-                    {
-                        XmlNode subnode = doc.CreateElement("row");
-                        xnode[0].AppendChild(subnode);
+            //    if (Warnings.Count < 1)
+            //    {
+            //        XmlNode xnode = doc.CreateElement("WarningPrecausion");
+            //        rootnode.AppendChild(xnode);
+            //        for (int ar = 0; ar < tbSeriousWarningsPrecautions.Count; ar++)
+            //        {
+            //            XmlNode subnode = doc.CreateElement("row");
+            //            xnode.AppendChild(subnode);
 
-                        string col1 = tbSeriousWarningsPrecautions[ar].ToString();
-                        XmlNode subsubnode = doc.CreateElement("column");
-                        subsubnode.AppendChild(doc.CreateTextNode(col1));
-                        subnode.AppendChild(subsubnode);
-                       
-                    }
-                }
-            }
-            catch (Exception error)
-            {
-                return null;
-            }
+            //            string col1 = tbSeriousWarningsPrecautions[ar].ToString();
+            //            XmlNode subsubnode = doc.CreateElement("column");
+            //            subsubnode.AppendChild(doc.CreateTextNode(col1));
+            //            subnode.AppendChild(subsubnode);
 
+            //        }
+            //    }
+            //    else
+            //    {
+            //        Warnings[0].RemoveAll();
+            //        XmlNodeList xnode = doc.GetElementsByTagName("WarningPrecausion");
+            //        rootnode.AppendChild(xnode[0]);
+
+            //        for (int ar = 0; ar < tbSeriousWarningsPrecautions.Count; ar++)
+            //        {
+            //            XmlNode subnode = doc.CreateElement("row");
+            //            xnode[0].AppendChild(subnode);
+
+            //            string col1 = tbSeriousWarningsPrecautions[ar].ToString();
+            //            XmlNode subsubnode = doc.CreateElement("column");
+            //            subsubnode.AppendChild(doc.CreateTextNode(col1));
+            //            subnode.AppendChild(subsubnode);
+
+            //        }
+            //    }
+            //}
+            //catch (Exception error)
+            //{
+            //    return null;
+            //}
+            helpers.Processes.ValidateAndSave(doc, rootnode, "WarningPrecausion", "WarningPrecausion", tbSeriousWarningsPrecautions.Value, true);
             helpers.Processes.ValidateAndSave(doc, rootnode, "WarningsTalktodoctor", "WarningsTalktodoctor", tbTalktodoctor.Value, true);
             #endregion 
 
@@ -802,58 +806,58 @@ namespace Product_Monograph
             #endregion
 
             #region ProperUseTextarea
-            try
-            {
-                XmlNodeList properUseNode = doc.GetElementsByTagName("ProperUseTextarea");
-                var properUseList = new ArrayList();
-                if (HttpContext.Current.Request.Form.GetValues("properUseTextarea") != null)
-                {
-                    foreach (string useitem in HttpContext.Current.Request.Form.GetValues("properUseTextarea"))
-                    {
-                        properUseList.Add(useitem);
-                    }
-                }
+            //try
+            //{
+            //    XmlNodeList properUseNode = doc.GetElementsByTagName("ProperUseTextarea");
+            //    var properUseList = new ArrayList();
+            //    if (HttpContext.Current.Request.Form.GetValues("properUseTextarea") != null)
+            //    {
+            //        foreach (string useitem in HttpContext.Current.Request.Form.GetValues("properUseTextarea"))
+            //        {
+            //            properUseList.Add(useitem);
+            //        }
+            //    }
 
-                if (properUseNode.Count < 1)
-                {
-                    XmlNode xnode = doc.CreateElement("ProperUseTextarea");
-                    rootnode.AppendChild(xnode);
+            //    if (properUseNode.Count < 1)
+            //    {
+            //        XmlNode xnode = doc.CreateElement("ProperUseTextarea");
+            //        rootnode.AppendChild(xnode);
 
-                    for (int ar = 0; ar < properUseList.Count; ar++)
-                    {
-                        XmlNode subnode = doc.CreateElement("row");
-                        xnode.AppendChild(subnode);
+            //        for (int ar = 0; ar < properUseList.Count; ar++)
+            //        {
+            //            XmlNode subnode = doc.CreateElement("row");
+            //            xnode.AppendChild(subnode);
 
-                        string col1 = properUseList[ar].ToString();
-                        XmlNode subsubnode = doc.CreateElement("column");
-                        subsubnode.AppendChild(doc.CreateTextNode(col1));
-                        subnode.AppendChild(subsubnode);
-                    }
-                }
-                else
-                {
-                    properUseNode[0].RemoveAll();
+            //            string col1 = properUseList[ar].ToString();
+            //            XmlNode subsubnode = doc.CreateElement("column");
+            //            subsubnode.AppendChild(doc.CreateTextNode(col1));
+            //            subnode.AppendChild(subsubnode);
+            //        }
+            //    }
+            //    else
+            //    {
+            //        properUseNode[0].RemoveAll();
 
-                    XmlNodeList xnode = doc.GetElementsByTagName("ProperUseTextarea");
-                    rootnode.AppendChild(xnode[0]);
+            //        XmlNodeList xnode = doc.GetElementsByTagName("ProperUseTextarea");
+            //        rootnode.AppendChild(xnode[0]);
 
-                    for (int ar = 0; ar < properUseList.Count; ar++)
-                    {
-                        XmlNode subnode = doc.CreateElement("row");
-                        xnode[0].AppendChild(subnode);
+            //        for (int ar = 0; ar < properUseList.Count; ar++)
+            //        {
+            //            XmlNode subnode = doc.CreateElement("row");
+            //            xnode[0].AppendChild(subnode);
 
-                        string col1 = properUseList[ar].ToString();
-                        XmlNode subsubnode = doc.CreateElement("column");
-                        subsubnode.AppendChild(doc.CreateTextNode(col1));
-                        subnode.AppendChild(subsubnode);
-                    }
-                }
-            }
-            catch (Exception error)
-            {
-                // lblError.Text = error.ToString();
-                return null;
-            }
+            //            string col1 = properUseList[ar].ToString();
+            //            XmlNode subsubnode = doc.CreateElement("column");
+            //            subsubnode.AppendChild(doc.CreateTextNode(col1));
+            //            subnode.AppendChild(subsubnode);
+            //        }
+            //    }
+            //}
+            //catch (Exception error)
+            //{
+            //    // lblError.Text = error.ToString();
+            //    return null;
+            //}
             #endregion
 
 

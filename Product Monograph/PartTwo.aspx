@@ -16,6 +16,7 @@
          </div>
          <div class="col-sm-3 text-right">
             <asp:Button ID="btnSaveDraft" runat="server" cssclass="btn btn-primary " OnClick="btnSave_Click" /> 
+              <input type="reset" value="Reset" class="btn btn-default mrgn-lft-md">
          </div> 
 </div>
 <!--Pharmaceutical information--> 
@@ -64,17 +65,17 @@
         </div>
          <div class="form-group">
             <div class="row">  
-                      <label for="tbPharSchedulingSymbol" class="col-sm-3 control-label">
-                          <span class="field-name"><%=schedulingSymbol%></span>
+                      <label for="fustrucform" class="col-sm-3 control-label">
+                          <span class="field-name">Structural formula</span>
                       </label>  
                     <div class="col-sm-9">               
-                        <input type="file" id="tbPharSchedulingSymbol" onchange="loadFile('tbPharSchedulingSymbol', 'fuimage','tbfuimagename','tbfuimagebasesixtyfour')"/>     
+                        <input type="file" id="fustrucform" onchange="loadFile('fustrucform', 'fuimage','tbfuimagename','tbfuimagebasesixtyfour')"/>       
                     </div>           
             </div>             
             <div class="row">             
                    <div class="col-sm-3"></div>
                    <div class="col-xs-3">
-                        <img id="fuimage" src="./images/x.png" class="img-thumbnail"  alt=""/>
+                        <img id="fuimage" src="./images/x.png" class="img-thumbnail"  alt="" />
                         <input type="text"  class="hidden" id="tbfuimagename" name="tbfuimagename" />
                         <input type="text"  class="hidden" id="tbfuimagebasesixtyfour" name="tbfuimagebasesixtyfour"  />  
                    </div>

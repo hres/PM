@@ -94,7 +94,25 @@ namespace Product_Monograph
         protected static string parenteralProdTitle;
         protected static string pharmacokinetics;
         protected static string PharmacokineticsTableTitle;
-
+        protected static string CTAdverseReaction;
+        protected static string CTAdverseReactionInfo;
+        protected static string CTAdverseReactionTable;
+        protected static string CTAdReactSupplement;
+        protected static string CTAdReactSupplementInfo;
+        protected static string drugDrugInteraction;
+        protected static string refTitle;
+        protected static string refInfo;
+        protected static string effect;
+        protected static string effectInfo;
+        protected static string clinicalComment;
+        protected static string clinicalCommentInfo;
+        protected static string legendInfo;
+        protected static string cmax;
+        protected static string halfLifeTitle;
+        protected static string auc;
+        protected static string clearance;
+        protected static string volDistribution;
+        protected static string pharmacokineticParameters;
 
         void Page_PreInit(Object sender, EventArgs e)
         {
@@ -187,6 +205,26 @@ namespace Product_Monograph
                 parenteralProdTitle = Resources.Resource.parenteralProdTitle;
                 pharmacokinetics = Resources.Resource.pharmacokinetics;
                 PharmacokineticsTableTitle  = Resources.Resource.pharmacokinetics;
+                CTAdverseReaction = Resources.Resource.CTAdverseReaction;
+                CTAdverseReactionInfo = Resources.Resource.CTAdverseReactionInfo;
+                CTAdverseReactionTable = Resources.Resource.CTAdverseReactionTable;
+                CTAdReactSupplement = Resources.Resource.CTAdReactSupplement;
+                CTAdReactSupplementInfo = Resources.Resource.CTAdReactSupplementInfo;
+                drugDrugInteraction = Resources.Resource.drugDrugInteraction;
+                refTitle = Resources.Resource.refTitle;
+                refInfo = Resources.Resource.refInfo;
+                effect = Resources.Resource.effect;
+                effectInfo = Resources.Resource.effectInfo;
+                clinicalComment = Resources.Resource.clinicalComment;
+                clinicalCommentInfo = Resources.Resource.clinicalCommentInfo;
+                legendInfo = Resources.Resource.legendInfo;
+                cmax = Resources.Resource.cmax;
+                halfLifeTitle = Resources.Resource.halfLifeTitle;
+                auc = Resources.Resource.auc;
+                clearance = Resources.Resource.clearance;
+                volDistribution = Resources.Resource.volDistribution;
+                pharmacokineticParameters = Resources.Resource.pharmacokineticParameters;
+
 
                 try
                 {
@@ -360,121 +398,113 @@ namespace Product_Monograph
             helpers.Processes.ValidateAndSave(doc, rootnode, "SeriousDrugInteractions", "", tbSeriousDrugInteractions.Value, false);
             #endregion
             #region Contraindications
-            try
-            {
-                XmlNodeList con = doc.GetElementsByTagName("Contraindications");
+            //try
+            //{
+            //    XmlNodeList con = doc.GetElementsByTagName("Contraindications");
 
-                ArrayList contraarray = new ArrayList();
-                if (HttpContext.Current.Request.Form.GetValues("tbContraindications") != null)
-                {
-                    foreach (string routeitem in HttpContext.Current.Request.Form.GetValues("tbContraindications"))
-                    {
-                        contraarray.Add(routeitem);
-                    }
-                }
+            //    ArrayList contraarray = new ArrayList();
+            //    if (HttpContext.Current.Request.Form.GetValues("tbContraindications") != null)
+            //    {
+            //        foreach (string routeitem in HttpContext.Current.Request.Form.GetValues("tbContraindications"))
+            //        {
+            //            contraarray.Add(routeitem);
+            //        }
+            //    }
 
-                if (con.Count < 1)
-                {
-                    XmlNode xnode = doc.CreateElement("Contraindications");
-                    rootnode.AppendChild(xnode);
+            //    if (con.Count < 1)
+            //    {
+            //        XmlNode xnode = doc.CreateElement("Contraindications");
+            //        rootnode.AppendChild(xnode);
 
-                    for (int ar = 0; ar < contraarray.Count; ar++)
-                    {
-                        XmlNode subnode = doc.CreateElement("row");
-                        xnode.AppendChild(subnode);
+            //        for (int ar = 0; ar < contraarray.Count; ar++)
+            //        {
+            //            XmlNode subnode = doc.CreateElement("row");
+            //            xnode.AppendChild(subnode);
 
-                        string col1 = contraarray[ar].ToString();
-                        XmlNode subsubnode = doc.CreateElement("column");
-                        subsubnode.AppendChild(doc.CreateTextNode(col1));
-                        subnode.AppendChild(subsubnode);
-                    }
-                }
-                else
-                {
-                    con[0].RemoveAll();
+            //            string col1 = contraarray[ar].ToString();
+            //            XmlNode subsubnode = doc.CreateElement("column");
+            //            subsubnode.AppendChild(doc.CreateTextNode(col1));
+            //            subnode.AppendChild(subsubnode);
+            //        }
+            //    }
+            //    else
+            //    {
+            //        con[0].RemoveAll();
 
-                    XmlNodeList xnode = doc.GetElementsByTagName("Contraindications");
-                    rootnode.AppendChild(xnode[0]);
+            //        XmlNodeList xnode = doc.GetElementsByTagName("Contraindications");
+            //        rootnode.AppendChild(xnode[0]);
 
-                    for (int ar = 0; ar < contraarray.Count; ar++)
-                    {
-                        XmlNode subnode = doc.CreateElement("row");
-                        xnode[0].AppendChild(subnode);
+            //        for (int ar = 0; ar < contraarray.Count; ar++)
+            //        {
+            //            XmlNode subnode = doc.CreateElement("row");
+            //            xnode[0].AppendChild(subnode);
 
-                        string col1 = contraarray[ar].ToString();
-                        XmlNode subsubnode = doc.CreateElement("column");
-                        subsubnode.AppendChild(doc.CreateTextNode(col1));
-                        subnode.AppendChild(subsubnode);
-                    }
-                }
-            }
-            catch (Exception error)
-            {
-               // lblError.Text = error.ToString();
-                return null;
-            }
+            //            string col1 = contraarray[ar].ToString();
+            //            XmlNode subsubnode = doc.CreateElement("column");
+            //            subsubnode.AppendChild(doc.CreateTextNode(col1));
+            //            subnode.AppendChild(subsubnode);
+            //        }
+            //    }
+            //}
+            //catch (Exception error)
+            //{
+            //   // lblError.Text = error.ToString();
+            //    return null;
+            //}
             #endregion
             #region Warnings and precautions
-            try
-            {
-                XmlNodeList swp = doc.GetElementsByTagName("SeriousWarningsandPrecautions");
-                ArrayList swparray = new ArrayList();
-                if (HttpContext.Current.Request.Form.GetValues("tbSeriousWarnings") != null)
-                {
-                    foreach (string swpitem in HttpContext.Current.Request.Form.GetValues("tbSeriousWarnings"))
-                    {
-                        swparray.Add(swpitem);
-                    }
-                }
+            //try
+            //{
+            //    XmlNodeList swp = doc.GetElementsByTagName("SeriousWarningsandPrecautions");
+            //    ArrayList swparray = new ArrayList();
+            //    if (HttpContext.Current.Request.Form.GetValues("tbSeriousWarnings") != null)
+            //    {
+            //        foreach (string swpitem in HttpContext.Current.Request.Form.GetValues("tbSeriousWarnings"))
+            //        {
+            //            swparray.Add(swpitem);
+            //        }
+            //    }
 
-                if (swp.Count < 1)
-                {
-                    XmlNode xnode = doc.CreateElement("SeriousWarningsandPrecautions");
-                    rootnode.AppendChild(xnode);
+            //    if (swp.Count < 1)
+            //    {
+            //        XmlNode xnode = doc.CreateElement("SeriousWarningsandPrecautions");
+            //        rootnode.AppendChild(xnode);
 
-                    for (int ar = 0; ar < swparray.Count; ar++)
-                    {
-                        XmlNode subnode = doc.CreateElement("row");
-                        xnode.AppendChild(subnode);
+            //        for (int ar = 0; ar < swparray.Count; ar++)
+            //        {
+            //            XmlNode subnode = doc.CreateElement("row");
+            //            xnode.AppendChild(subnode);
 
-                        string col1 = swparray[ar].ToString();
-                        XmlNode subsubnode = doc.CreateElement("column");
-                        subsubnode.AppendChild(doc.CreateTextNode(col1));
-                        subnode.AppendChild(subsubnode);
-                    }
-                }
-                else
-                {
-                    swp[0].RemoveAll();
-                    XmlNodeList xnode = doc.GetElementsByTagName("SeriousWarningsandPrecautions");
-                    rootnode.AppendChild(xnode[0]);
-                    for (int ar = 0; ar < swparray.Count; ar++)
-                    {
-                        XmlNode subnode = doc.CreateElement("row");
-                        xnode[0].AppendChild(subnode);
+            //            string col1 = swparray[ar].ToString();
+            //            XmlNode subsubnode = doc.CreateElement("column");
+            //            subsubnode.AppendChild(doc.CreateTextNode(col1));
+            //            subnode.AppendChild(subsubnode);
+            //        }
+            //    }
+            //    else
+            //    {
+            //        swp[0].RemoveAll();
+            //        XmlNodeList xnode = doc.GetElementsByTagName("SeriousWarningsandPrecautions");
+            //        rootnode.AppendChild(xnode[0]);
+            //        for (int ar = 0; ar < swparray.Count; ar++)
+            //        {
+            //            XmlNode subnode = doc.CreateElement("row");
+            //            xnode[0].AppendChild(subnode);
 
-                        string col1 = swparray[ar].ToString();
-                        XmlNode subsubnode = doc.CreateElement("column");
-                        subsubnode.AppendChild(doc.CreateTextNode(col1));
-                        subnode.AppendChild(subsubnode);
-                    }
-                }
-            }
-            catch (Exception error)
-            {
-                //lblError.Text = error.ToString();
-                return null;
-            }
+            //            string col1 = swparray[ar].ToString();
+            //            XmlNode subsubnode = doc.CreateElement("column");
+            //            subsubnode.AppendChild(doc.CreateTextNode(col1));
+            //            subnode.AppendChild(subsubnode);
+            //        }
+            //    }
+            //}
+            //catch (Exception error)
+            //{
+            //    //lblError.Text = error.ToString();
+            //    return null;
+            //}
 
-            //helpers.Processes.ValidateAndSave(doc, rootnode, "WarningsPregnant", "", tbPregnant.Value, false);
-            //helpers.Processes.ValidateAndSave(doc, rootnode, "WarningsNursing", "", tbNursing.Value, false);
-            //helpers.Processes.ValidateAndSave(doc, rootnode, "SpecialPediatrics", "", tbSpecialPediatrics.Value, false);
-            //helpers.Processes.ValidateAndSave(doc, rootnode, "SpecialPediatricsAgeX", "", tbSpecialPediatricsAgeX.Value, false);
-            //helpers.Processes.ValidateAndSave(doc, rootnode, "SpecialPediatricsAgeY", "", tbSpecialPediatricsAgeY.Value, false);
-            //helpers.Processes.ValidateAndSave(doc, rootnode, "SpecialPediatricsAgeZ", "", tbSpecialPediatricsAgeZ.Value, false);
-            //helpers.Processes.ValidateAndSave(doc, rootnode, "SpecialGeriatrics", "", tbSpecialGeriatrics.Value, false);
-            //helpers.Processes.ValidateAndSave(doc, rootnode, "SpecialGeriatricsAge", "", tbSpecialGeriatricsAge.Value, false);
-            //helpers.Processes.ValidateAndSave(doc, rootnode, "WarningsMonitoring", "", tbMonitoring.Value, false);
+            helpers.Processes.ValidateAndSave(doc, rootnode, "SeriousWarningsandPrecautions", "", tbSeriousWarnings.Value, false);         
 
             #endregion
             #region Warnings and Precautions Headings
@@ -1156,7 +1186,7 @@ namespace Product_Monograph
 
 
             #endregion
-            //helpers.Processes.ValidateAndSave(doc, rootnode, "AdditionalWarning", "", tbAdditionalwarnings.Value, false);
+            helpers.Processes.ValidateAndSave(doc, rootnode, "Contraindications", "", tbContraindications.Value, false);
             helpers.Processes.ValidateAndSave(doc, rootnode, "Overdosage", "", tbOverdosage.Value, false);
             helpers.Processes.ValidateAndSave(doc, rootnode, "MechanismAction", "", tbMechanismAction.Value, false);
             helpers.Processes.ValidateAndSave(doc, rootnode, "Pharmacodynamics", "", tbPharmacodynamics.Value, false);
@@ -1268,88 +1298,88 @@ namespace Product_Monograph
             }
             #endregion
             #region Contraindications
-            XmlNodeList con = xmldoc.GetElementsByTagName("Contraindications");
-            if (con.Count > 0)
-            {
-                var rowsC = from rowcont in doc.Root.Elements("Contraindications").Descendants("row")
-                            select new
-                            {
-                                columns = from column in rowcont.Elements("column")
-                                          select (string)column
-                            };
+            //XmlNodeList con = xmldoc.GetElementsByTagName("Contraindications");
+            //if (con.Count > 0)
+            //{
+            //    var rowsC = from rowcont in doc.Root.Elements("Contraindications").Descendants("row")
+            //                select new
+            //                {
+            //                    columns = from column in rowcont.Elements("column")
+            //                              select (string)column
+            //                };
 
-                bool ranC = false;
-                int rowcounterC = 0;
-                foreach (var rowC in rowsC)
-                {
-                    if (!ranC)
-                    {
-                        string[] colarray = "tbContraindications".Split(';');
-                        int colcounter = 0;
-                        foreach (string columnC in rowC.columns)
-                        {
-                            strscript += "$('#" + colarray[colcounter] + "').val(\"" + helpers.Processes.CleanString(columnC) + "\");";
-                            colcounter++;
-                        }
-                        ranC = true;
-                    }
-                    else
-                    {
-                        strscript += "AddContraindications();";
-                        string[] colarray = "tbContraindications".Split(';');
-                        int colcounter = 0;
-                        foreach (string columnC in rowC.columns)
-                        {
-                            strscript += "$('#" + colarray[colcounter] + rowcounterC.ToString() + "').val(\"" + helpers.Processes.CleanString(columnC) + "\");";
-                            colcounter++;
-                        }
-                    }
+            //    bool ranC = false;
+            //    int rowcounterC = 0;
+            //    foreach (var rowC in rowsC)
+            //    {
+            //        if (!ranC)
+            //        {
+            //            string[] colarray = "tbContraindications".Split(';');
+            //            int colcounter = 0;
+            //            foreach (string columnC in rowC.columns)
+            //            {
+            //                strscript += "$('#" + colarray[colcounter] + "').val(\"" + helpers.Processes.CleanString(columnC) + "\");";
+            //                colcounter++;
+            //            }
+            //            ranC = true;
+            //        }
+            //        else
+            //        {
+            //            strscript += "AddContraindications();";
+            //            string[] colarray = "tbContraindications".Split(';');
+            //            int colcounter = 0;
+            //            foreach (string columnC in rowC.columns)
+            //            {
+            //                strscript += "$('#" + colarray[colcounter] + rowcounterC.ToString() + "').val(\"" + helpers.Processes.CleanString(columnC) + "\");";
+            //                colcounter++;
+            //            }
+            //        }
 
-                    rowcounterC++;
-                }                
-            }
+            //        rowcounterC++;
+            //    }                
+            //}
             #endregion
             #region Warnings and precautions
-            XmlNodeList swp = xmldoc.GetElementsByTagName("SeriousWarningsandPrecautions");
-            if (swp.Count > 0)
-            {
-                var rowsC = from rowcont in doc.Root.Elements("SeriousWarningsandPrecautions").Descendants("row")
-                            select new
-                            {
-                                columns = from column in rowcont.Elements("column")
-                                          select (string)column
-                            };
+            //XmlNodeList swp = xmldoc.GetElementsByTagName("SeriousWarningsandPrecautions");
+            //if (swp.Count > 0)
+            //{
+            //    var rowsC = from rowcont in doc.Root.Elements("SeriousWarningsandPrecautions").Descendants("row")
+            //                select new
+            //                {
+            //                    columns = from column in rowcont.Elements("column")
+            //                              select (string)column
+            //                };
 
-                bool ranC = false;
-                int rowcounterC = 0;
+            //    bool ranC = false;
+            //    int rowcounterC = 0;
 
-                foreach (var rowC in rowsC)
-                {
-                    if (!ranC)
-                    {
-                        string[] colarray = "tbSeriousWarnings".Split(';');
-                        int colcounter = 0;
-                        foreach (string columnC in rowC.columns)
-                        {
-                            strscript += "$('#" + colarray[colcounter] + "').val(\"" + helpers.Processes.CleanString(columnC) + "\");";
-                            colcounter++;
-                        }
-                        ranC = true;
-                    }
-                    else
-                    {
-                        strscript += "AddSeriousWarnings();";
-                        string[] colarray = "tbSeriousWarnings".Split(';');
-                        int colcounter = 0;
-                        foreach (string columnC in rowC.columns)
-                        {
-                            strscript += "$('#" + colarray[colcounter] + rowcounterC.ToString() + "').val(\"" + helpers.Processes.CleanString(columnC) + "\");";
-                            colcounter++;
-                        }
-                    }
-                    rowcounterC++;
-                }
-            }
+            //    foreach (var rowC in rowsC)
+            //    {
+            //        if (!ranC)
+            //        {
+            //            string[] colarray = "tbSeriousWarnings".Split(';');
+            //            int colcounter = 0;
+            //            foreach (string columnC in rowC.columns)
+            //            {
+            //                strscript += "$('#" + colarray[colcounter] + "').val(\"" + helpers.Processes.CleanString(columnC) + "\");";
+            //                colcounter++;
+            //            }
+            //            ranC = true;
+            //        }
+            //        else
+            //        {
+            //            strscript += "AddSeriousWarnings();";
+            //            string[] colarray = "tbSeriousWarnings".Split(';');
+            //            int colcounter = 0;
+            //            foreach (string columnC in rowC.columns)
+            //            {
+            //                strscript += "$('#" + colarray[colcounter] + rowcounterC.ToString() + "').val(\"" + helpers.Processes.CleanString(columnC) + "\");";
+            //                colcounter++;
+            //            }
+            //        }
+            //        rowcounterC++;
+            //    }
+            //}
 
             XmlNodeList wph = xmldoc.GetElementsByTagName("WarningHeadings");
             if (wph.Count > 0)
@@ -1791,6 +1821,8 @@ namespace Product_Monograph
                               WarningsPregnant = (string)item.Element("WarningsPregnant"),
                               WarningsNursing = (string)item.Element("WarningsNursing"),
                               WarningsMonitoring = (string)item.Element("WarningsMonitoring"),
+                              SeriousWarningsandPrecautions = (string)item.Element("SeriousWarningsandPrecautions"),
+                              Contraindications = (string)item.Element("Contraindications"),
                           };
             foreach (var xmldataitem in xmldata)
             {
@@ -1823,8 +1855,8 @@ namespace Product_Monograph
                 tbPalceboNo.Value = xmldataitem.AdverseTablePalceboNo;
                 tbDrugInteractions.Value = xmldataitem.DrugInteractions;
                 tbSeriousDrugInteractions.Value = xmldataitem.SeriousDrugInteractions;
-                //tbSpecialGeriatricsAge.Value = xmldataitem.SpecialGeriatricsAge;
-                //tbSpecialGeriatrics.Value = xmldataitem.SpecialGeriatrics;
+                tbSeriousWarnings.Value = xmldataitem.SeriousWarningsandPrecautions;
+                tbContraindications.Value = xmldataitem.Contraindications;
                 //tbSpecialPediatricsAgeX.Value = xmldataitem.SpecialPediatricsAgeX;
                 //tbSpecialPediatricsAgeY.Value = xmldataitem.SpecialPediatricsAgeY;
                 //tbSpecialPediatricsAgeZ.Value = xmldataitem.SpecialPediatricsAgeZ;

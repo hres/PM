@@ -28,8 +28,17 @@ function AddBrandProperDosageDefaultRow() {
 
 var selectedschedulingsymbol;
 $(document).ready(function () {
-
     $("#linkCover").attr("disabled", "disabled");
+    var now = new Date();
+    var day = (now.getDate() < 10 ? '0' : '') + now.getDate();
+    var month = ((now.getMonth() + 1) < 10 ? '0' : '') + (now.getMonth() + 1);
+    var year = now.getFullYear();
+    var todayDate = year + "-" + month + "-" + day;
+    $("#tbDatePrep").attr("name", "tbDatePrep");
+    $("#tbDatePrep").attr("max", todayDate);
+    $("#tbDateRev").attr("name", "tbDatePrep");
+    $("#tbDateRev").attr("max", todayDate);
+
     $("#tbSchedulingSymbol").change(function () {
         $('#imgSymbol').attr("src", "images/x.png");
     });

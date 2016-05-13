@@ -1,22 +1,10 @@
 ﻿<%@ Page Title="" Language="C#" MasterPageFile="~/ProdMono.Master" AutoEventWireup="true" CodeBehind="PartThree.aspx.cs" Inherits="Product_Monograph.PartThree" ValidateRequest="false" %>
 
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
- <script src="./js/pmp.js"></script>
+ <script src="./js/pmpNew.js"></script>
  <script src="./js/partThree.js"></script>
  <script>
-     var removeButtonValue = '<%=removeButton%>';    
-     tinymce.init({
-          mode: "specific_textareas",
-          editor_selector: "mceEditor",
-          height: 300,
-          plugins: [
-            'advlist autolink lists link image charmap print preview anchor',
-            'searchreplace visualblocks code fullscreen',
-            'insertdatetime media table contextmenu paste code'
-          ],
-          toolbar: 'insertfile undo redo | styleselect | bold italic | alignleft aligncenter alignright alignjustify | bullist numlist outdent indent | link image',
-          images_upload_url: 'postAcceptor.php',
-      });
+     var removeButtonValue = '<%=removeButton%>';  
   </script>
 </asp:Content>
 
@@ -29,6 +17,7 @@
          </div>
          <div class="col-sm-3 text-right">
             <asp:Button ID="btnSaveDraft" runat="server" cssclass="btn btn-primary " OnClick="btnSave_Click" ClientIDMode="Static"/> 
+            <input type="reset" value="Reset" class="btn btn-default mrgn-lft-md">
          </div> 
     </div> 
 <!--About this medication-->
@@ -91,21 +80,22 @@
         <div class="form-group row"> 
                   <label for="tbSeriousWarningsPrecautions" class="col-sm-3 control-label">
                      <span class="field-name"><%=seriousWarnings%></span>
-                     <span class="label label-info" title="<%=warningsInfo%>"><%=information%></span>
+                    
                   </label>  
          
-                  <div class="col-sm-8">                                          
-                      <textarea id="tbSeriousWarningsPrecautions" name="tbSeriousWarningsPrecautions" class="textarea form-control" ></textarea>  
+                  <div class="col-sm-9">                                          
+                      <textarea id="tbSeriousWarningsPrecautions" name="tbSeriousWarningsPrecautions" class="textarea form-control" runat="server" ></textarea>  
                   </div>
-                  <div class="col-sm-1 text-right"> 
+<%--                  <div class="col-sm-1 text-right"> 
                       <input class="btn btn-default btn-xs" type="button" value="<%=addButton%>" onclick="AddSeriousWarningsPrecautions()" id="btnAddSeriousWarningsPrecautions" />
-                  </div>                                                         
+                  </div>       --%>                                                  
         </div>       
-        <div id="dvExtraSeriousWarningsPrecautions">
-        </div>
+<%--        <div id="dvExtraSeriousWarningsPrecautions">
+        </div>--%>
         <div class="form-group row">
             <Label for="tbTalktodoctor"  Class="col-sm-3 control-label">
-                <span class="field-name">Before you use &#60;brand name&#62; talk to your doctor or pharmacist if</span>
+                <span class="field-name">Before you use &#60;brand name&#62; talk to your doctor or pharmacist if:</span>
+                <span class="label label-info" title="<%=warningsInfo%>"><%=information%></span>
             </Label>
             <div class="col-sm-9">
                 <textarea id="tbTalktodoctor" name="tbTalktodoctor" runat="server" class="textarea form-control"></textarea>
@@ -163,7 +153,7 @@
                 <textarea id="tbMissedDose" name="tbMissedDose" runat="server" class="textarea form-control"></textarea>
             </div>
         </div> 
-       <div class="form-group">  
+      <%-- <div class="form-group">  
                     <span class="field-name"><strong>Proper use documentation</strong></span>           
         </div>
         <div class="form-group row">
@@ -175,7 +165,7 @@
                 </div>            
         </div>
         <div id="divExtraProperUseTextarea">
-        </div>     
+        </div>     --%>
 </details>
 <!--Side effects and what to do about them-->
 <details class="margin-top-medium">
