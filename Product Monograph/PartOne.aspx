@@ -93,9 +93,7 @@
                              <div class="col-sm-9"> 
                                 <textarea id="tbContraindications" name="tbContraindications" class="textarea form-control"  runat="server"></textarea>
                              </div>                           
-                        </div>
-<%--                    <div id="divExtraContraindications">
-                    </div>     --%>        
+                        </div>     
             </details>
         <!--Warnings and precautions-->
         <details class="margin-top-medium">
@@ -108,12 +106,7 @@
                              <div class="col-sm-9"> 
                                 <textarea id="tbSeriousWarnings" name="tbSeriousWarnings" class="textarea form-control" runat="server" ></textarea>
                              </div>
-<%--                            <div class="col-sm-2 text-right"> 
-                                <input class="btn btn-default btn-xs" type="button" value="<%=addButton %>" onclick="AddSeriousWarnings()" id="btnAddSeriousWarnings" />
-                            </div>  --%> 
                         </div> 
-<%--                    <div id="divExtraSeriousWarnings">
-                    </div>--%>
                     <div class="form-group row">                    
                              <label for="tbHeadings" class="col-sm-3 control-label">
                                      <span class="field-name"><%=headings%></span>
@@ -129,56 +122,6 @@
                     </div> 
                     <div id="divExtratbHeadings">
                     </div>
-                  <%-- <div class="form-group row brdr-bttm">                    
-                            <p  class="col-sm-3">
-                                <span class="field-name"><strong>Special populations</strong></span>
-                            </p>
-                            <div class="clearfix"></div>                                              
-                    </div>
-                   <div class="form-group row">                    
-                            <label for="tbPregnant" class="col-sm-3 control-label">
-                                <span class="field-name mrgn-lft-md">Pregnant women</span>
-                            </label>
-                            <div class="col-sm-9"> 
-                                <textarea id="tbPregnant" name="tbPregnant" class="textarea form-control" runat="server"></textarea>
-                            </div>                   
-                   </div>
-                 <div class="form-group row">                    
-                                <label for="tbNursing" class="col-sm-3 control-label">
-                                    <span class="field-name mrgn-lft-md">Nursing women</span>
-                                </label>
-                                <div class="col-sm-9"> 
-                                    <textarea id="tbNursing" name="tbNursing" class="textarea form-control" runat="server"></textarea>
-                                </div>                   
-                 </div> 
-                 <div class="form-group mrgn-lft-md">                    
-                        <div class="row"> 
-                          <label for="tbSpecialPediatrics" class="control-label col-sm-2"><span class="field-name"><%=pediatrics%></span></label>                        
-                            <input type="number" id="tbSpecialPediatricsAgeX" name="tbSpecialPediatricsAgeX" class="form-control col-sm-1 input-sm" min="1" max="150" size="3" runat="server"/>
-                            <label for="tbSpecialPediatricsAgeX" class="control-label col-sm-1 text-center" > <span class="field-name"> &#45; </span></label>  
-                            <input type="number" id="tbSpecialPediatricsAgeY" name="tbSpecialPediatricsAgeY" class="form-control col-sm-1 input-sm" min="1" max="150" size="3" runat="server"/>
-                            <label for="tbSpecialPediatricsAgeY" class="control-label pull-left"><span class="field-name">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<%=pediatricsAge%></span></label>   
-                            <label class="control-label col-sm-1"> <span class="field-name"> &nbsp;or &nbsp; &#60; </span></label>          
-                            <input type="number" id="tbSpecialPediatricsAgeZ" name="tbSpecialPediatricsAgeZ" class="form-control col-sm-1 input-sm" min="1" max="150" size="3" runat="server"/> 
-                            <label for="tbSpecialPediatricsAgeZ" class="control-label col-sm-3 pull-left"><span class="field-name"><%=pediatricsAge%></span></label>    
-                         </div> 
-                         <textarea id="tbSpecialPediatrics" name="tbSpecialPediatrics" class="textarea form-control" runat="server"></textarea>                
-                 </div>
-                <div class="form-group mrgn-lft-md"> 
-                        <div class="row">                         
-                              <label for="tbSpecialGeriatrics" class="control-label col-sm-1"><span class="field-name"><%=geriatrics%></span></label> 
-                              <label class="control-label col-sm-1 text-right"> <span class="field-name"> > </span></label> 
-                              <input type="number" id="tbSpecialGeriatricsAge" name="tbSpecialGeriatricsAge" class="form-control col-sm-1 input-sm" min="1" max="150" size="3"  runat="server"/>  
-                              <label for="tbSpecialGeriatricsAge" class="control-label col-sm-2 pull-left"><span class="field-name"><%=geriatricsAge%></span></label>    
-                        </div>
-                        <textarea id="tbSpecialGeriatrics" name="tbSpecialGeriatrics " class="textarea form-control" runat="server"></textarea> 
-                 </div>
-                <div class="form-group mrgn-lft-md">                    
-                                <label for="tbMonitoring" class="control-label">
-                                    <span class="field-name ">Monitoring and laboratory tests</span>
-                                </label>
-                                <textarea id="tbMonitoring" name="tbMonitoring " class="textarea form-control" runat="server"></textarea>
-                 </div>                  --%>
             </details>
         <!--Adverse reactions-->
         <details class="margin-top-medium">
@@ -286,7 +229,7 @@
                             </div>   
                         </div>
                  <div id="divExtratbDrugHeadings"></div>
-                <table id="druginteractionTable" class="table table-bordered table-striped table-hover margin-bottom-none">
+<%--                <table id="druginteractionTable" class="table table-bordered table-striped table-hover margin-bottom-none">
                             <caption class="text-left h5 mrgn-tp-0"><%=drugDrugInteraction%></caption>
                             <thead>
                             <tr>
@@ -307,7 +250,7 @@
                                 </tr>
                             </tbody>
                         </table>
-                       <div><span class="mrgn-tp-0"><%=legendInfo%></span></div>
+                <div><span class="mrgn-tp-0"><%=legendInfo%></span></div>--%>
             </details>
         <!--Dosage and administration-->
         <details class="margin-top-medium">

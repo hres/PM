@@ -1,5 +1,4 @@
 ﻿tinymce.init({
-    //selector: "textarea",
     forced_root_block: '',
     mode: "specific_textareas",
     editor_selector: "textarea",
@@ -41,18 +40,7 @@
                     ed.preventDefault();
                     ed.stopPropagation();
                 }
-            }
-        }),
-        theEditor.on('paste', function (ed, e) {
-            tinymax = 1500;
-            tinylen = theEditor.getContent().replace(/(<([^>]+)>)/ig, "").length;
-            clipboardlen = window.clipboardData.getData('Text').replace(/(<([^>]+)>)/ig, "").length;
-            totallen = tinylen + clipboardlen
-            if (totallen > tinymax) {
-                alert("Maximum " + tinymax + " characters");
-                ed.preventDefault();
-                ed.stopPropagation();
-            }
+            }     
         });
     }
 });
@@ -95,17 +83,6 @@ function setup() {
                         ed.preventDefault();
                         ed.stopPropagation();
                     }
-                }
-            }),
-            theEditor.on('paste', function (ed, e) {
-                tinymax = 1500;
-                tinylen = theEditor.getContent().replace(/(<([^>]+)>)/ig, "").length;
-                clipboardlen = window.clipboardData.getData('Text').replace(/(<([^>]+)>)/ig, "").length;
-                totallen = tinylen + clipboardlen
-                if (totallen > tinymax) {
-                    alert("Maximum " + tinymax + " characters");
-                    ed.preventDefault();
-                    ed.stopPropagation();
                 }
             });
         }
