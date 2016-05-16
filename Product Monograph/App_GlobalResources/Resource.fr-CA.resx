@@ -117,8 +117,579 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
-  <data name="resetButton" xml:space="preserve">
-    <value>Réinitialiser</value>
+  <data name="addButton" xml:space="preserve">
+    <value>Ajouter</value>
+  </data>
+  <data name="addWarnings" xml:space="preserve">
+    <value>Additional warnings_fr</value>
+    <comment>Part1</comment>
+  </data>
+  <data name="administration" xml:space="preserve">
+    <value>Administration</value>
+    <comment>Part1</comment>
+  </data>
+  <data name="adverseReaction" xml:space="preserve">
+    <value>Aperçu des effets indésirables au médicament</value>
+    <comment>Part1</comment>
+  </data>
+  <data name="adverseReactionInfo" xml:space="preserve">
+    <value>Un résumé des renseignements sur les effets indésirables à un médicament (EIM) qui peuvent affecter les décisions quant aux ordonnances. Ces renseignements devraient contenir les EIM graves et importantes, les EIM les plus fréquentes et les EIM qui nécessitent le plus souvent le recours à une intervention clinique.</value>
+    <comment>Part1</comment>
+  </data>
+  <data name="analyteName" xml:space="preserve">
+    <value>Nom de la substance à analyser</value>
+  </data>
+  <data name="arithmeticMedian" xml:space="preserve">
+    <value>Représenté soit sous forme de moyenne arithmétique (Coefficient de variation (CV) %), soit sous forme de médiane (étendue) seulement.</value>
+  </data>
+  <data name="arithmeticOnly" xml:space="preserve">
+    <value>Représenté sous forme de moyenne arithmétique seulement (CV %).</value>
+  </data>
+  <data name="auc" xml:space="preserve">
+    <value>SSC&lt;sub&gt;0-∞&lt;/sub&gt;</value>
+    <comment>Part1</comment>
+  </data>
+  <data name="auciUnit" xml:space="preserve">
+    <value>SSC&lt;sub&gt;I&lt;/sub&gt; (unités)</value>
+  </data>
+  <data name="auct24" xml:space="preserve">
+    <value>On recommande de remplacer les médicaments, surface sous la courbe de la dernière concentration quantifiable (SSC&lt;sub&gt;T&lt;/sub&gt;) qui ont une demi-vie supérieure à vingt-quatre heures par des médicaments SSC&lt;sub&gt;0-72&lt;/sub&gt;.</value>
+  </data>
+  <data name="auctUnit" xml:space="preserve">
+    <value>SSC&lt;sub&gt;T&lt;/sub&gt;&lt;sup&gt;‡&lt;/sup&gt; (unités)</value>
+  </data>
+  <data name="availableVolume" xml:space="preserve">
+    <value>Volume approximatif du mélange obtenu</value>
+    <comment>Part1</comment>
+  </data>
+  <data name="brandDosageForm" xml:space="preserve">
+    <value>Brand  dosage form_fr</value>
+    <comment>Cover page</comment>
+  </data>
+  <data name="brandName" xml:space="preserve">
+    <value>Marque nominative</value>
+  </data>
+  <data name="brandNameTitle" xml:space="preserve">
+    <value>Marque nominative</value>
+    <comment>Cover page</comment>
+  </data>
+  <data name="chemicalName" xml:space="preserve">
+    <value>Nom chimique</value>
+  </data>
+  <data name="clearance" xml:space="preserve">
+    <value>Clairance</value>
+    <comment>Part1</comment>
+  </data>
+  <data name="clinicalComment" xml:space="preserve">
+    <value>Commentaire clinique</value>
+    <comment>Part1</comment>
+  </data>
+  <data name="clinicalCommentInfo" xml:space="preserve">
+    <value>La prudence s’impose et la surveillance de concentration thérapeutique est recommandée</value>
+    <comment>Part1</comment>
+  </data>
+  <data name="clinicalTrials" xml:space="preserve">
+    <value>Essais cliniques</value>
+  </data>
+  <data name="cmax" xml:space="preserve">
+    <value>C&lt;sub&gt;max&lt;/sub&gt;</value>
+    <comment>Part1</comment>
+  </data>
+  <data name="cmaxUnit" xml:space="preserve">
+    <value>C&lt;sub&gt;max&lt;/sub&gt; (unités)</value>
+  </data>
+  <data name="common" xml:space="preserve">
+    <value>Fréquent</value>
+    <comment>Part3</comment>
+  </data>
+  <data name="compBioStudies" xml:space="preserve">
+    <value>Études comparatives de biodisponibilité</value>
+  </data>
+  <data name="compBioStudiesInfo" xml:space="preserve">
+    <value>L’exposé des faits présente l’organisation de l’étude sur la bioéquivalence. Les valeurs présentes dans le tableau devraient être fondées sur les données mesurées de l’étude. Aucune correction ne doit être apportée aux puissances.</value>
+    <comment>Part2</comment>
+  </data>
+  <data name="compositionPackaging" xml:space="preserve">
+    <value>Formes posologiques, composition et conditionnement</value>
+    <comment>Part1</comment>
+  </data>
+  <data name="concentration" xml:space="preserve">
+    <value>Concentration nominale par millitre</value>
+    <comment>Part1</comment>
+  </data>
+  <data name="confidenceInterval" xml:space="preserve">
+    <value>Indique le pourcentage de l’intervalle de confiance (c.-à-d., 90 p. 100 ou 95 p. 100) à l’en-tête de la colonne et la liste pour la SSC&lt;sub&gt;T&lt;/sub&gt;, la surface sous la courbe à l’infini (SSC&lt;sub&gt;I&lt;/sub&gt;) et la concentration maximale observée (C&lt;sub&gt;max&lt;/sub&gt;) (au besoin).</value>
+  </data>
+  <data name="confInterval" xml:space="preserve">
+    <value>Intervalle de confiance</value>
+  </data>
+  <data name="contraindications" xml:space="preserve">
+    <value>Contre-indications</value>
+    <comment>Part1</comment>
+  </data>
+  <data name="contraindicationsInfo" xml:space="preserve">
+    <value>Les patients qui présentent une hypersensibilité à ce médicament ou à l’un des ingrédients de la formulation de ce dernier ou des composants du récipient. Pour obtenir une liste complète, veuillez consulter la section sur les Formes posologiques, la Composition et le Conditionnement de la monographie de produit. [s’il y a lieu]</value>
+    <comment>Part1</comment>
+  </data>
+  <data name="coverPage" xml:space="preserve">
+    <value>Page de couverture</value>
+  </data>
+  <data name="CTAdReactSupplement" xml:space="preserve">
+    <value>Clinical trial adverse drug reactions supplement_fr</value>
+    <comment>Part1</comment>
+  </data>
+  <data name="CTAdReactSupplementInfo" xml:space="preserve">
+    <value>Un exposé de faits suivra le tableau afin d’expliquer ou de compléter les renseignements présentés dans le tableau.</value>
+    <comment>Part1</comment>
+  </data>
+  <data name="CTAdverseReaction" xml:space="preserve">
+    <value>Effets indésirables à un médicament déterminés au cours des essais cliniques</value>
+    <comment>Part1</comment>
+  </data>
+  <data name="CTAdverseReactionInfo" xml:space="preserve">
+    <value>Inclure la description des sources de données.</value>
+    <comment>Part1</comment>
+  </data>
+  <data name="CTAdverseReactionTable" xml:space="preserve">
+    <value>Clinical trial adverse drug reactions table #_fr</value>
+    <comment>Part1</comment>
+  </data>
+  <data name="datePreparation" xml:space="preserve">
+    <value>Date de rédaction</value>
+    <comment>Cover page</comment>
+  </data>
+  <data name="dateRevision" xml:space="preserve">
+    <value>Date de révision</value>
+    <comment>Cover page</comment>
+  </data>
+  <data name="dosageForm" xml:space="preserve">
+    <value>Forme posologique</value>
+    <comment>Part1</comment>
+  </data>
+  <data name="dosingConsiderations" xml:space="preserve">
+    <value>Considérations posologiques</value>
+    <comment>Part1</comment>
+  </data>
+  <data name="dosingConsiderationsInfo" xml:space="preserve">
+    <value>Inclure toutes les situations qui peuvent affecter la posologie au médicament.</value>
+    <comment>Part1</comment>
+  </data>
+  <data name="drugDrugInteraction" xml:space="preserve">
+    <value>Interactions médicament-médicament établies ou possibles</value>
+    <comment>Part1</comment>
+  </data>
+  <data name="drugSubstance" xml:space="preserve">
+    <value>Substance pharmaceutique</value>
+  </data>
+  <data name="effect" xml:space="preserve">
+    <value>Effet</value>
+    <comment>Part1</comment>
+  </data>
+  <data name="effectInfo" xml:space="preserve">
+    <value>la concentration du &lt;Médicament A&gt;</value>
+    <comment>Part1</comment>
+  </data>
+  <data name="footnote" xml:space="preserve">
+    <value>Référence</value>
+  </data>
+  <data name="formInstruction" xml:space="preserve">
+    <value>Instructions de formulaire</value>
+  </data>
+  <data name="frequency" xml:space="preserve">
+    <value>Frequency</value>
+    <comment>Part3</comment>
+  </data>
+  <data name="geriatrics" xml:space="preserve">
+    <value>Gériatrie</value>
+    <comment>Part1</comment>
+  </data>
+  <data name="geriatricsAge" xml:space="preserve">
+    <value>ans</value>
+    <comment>Part1</comment>
+  </data>
+  <data name="halfLife" xml:space="preserve">
+    <value>T&lt;sub&gt;½&lt;/sub&gt;&lt;sup&gt; []&lt;/sup&gt; (h)</value>
+  </data>
+  <data name="halfLifeTitle" xml:space="preserve">
+    <value>T&lt;sub&gt;1/2&lt;/sub&gt;(h)</value>
+    <comment>Part1</comment>
+  </data>
+  <data name="handlingInstruction" xml:space="preserve">
+    <value>Instructions particulières de manipulation</value>
+    <comment>Part1</comment>
+  </data>
+  <data name="headings" xml:space="preserve">
+    <value>Les titres</value>
+    <comment>Part1</comment>
+  </data>
+  <data name="headingsInfo" xml:space="preserve">
+    <value>Les titres seront ajoutés, le cas échéant</value>
+    <comment>Part1</comment>
+  </data>
+  <data name="idRefProduct" xml:space="preserve">
+    <value>Identification du produit de référence, notamment le fabricant et la provenance (pays d’achat).</value>
+  </data>
+  <data name="idTestProduct" xml:space="preserve">
+    <value>Identification du produit à tester.</value>
+  </data>
+  <data name="indicatedFor" xml:space="preserve">
+    <value>est indiqué pour :</value>
+    <comment>Part1</comment>
+  </data>
+  <data name="indicatedForInfo" xml:space="preserve">
+    <value>Brève discussion portant sur des renseignements cliniques pertinents, s’il y a lieu.
+Restrictions concernant la distribution, s’il y a lieu.
+Lorsque le produit n’est pas recommandé, s’il y a lieu.</value>
+    <comment>Part1</comment>
+  </data>
+  <data name="information" xml:space="preserve">
+    <value>Info</value>
+  </data>
+  <data name="interactionOverview" xml:space="preserve">
+    <value>Drug interactions overview_fr</value>
+    <comment>Part1</comment>
+  </data>
+  <data name="interactionOverviewInfo" xml:space="preserve">
+    <value>Les renseignements suivants doivent être présentés : les interactions soupçonnées en fonction du profil pharmacocinétique ou pharmacologique au médicament en question (par exemple [p. ex.] interactions avec le cytrochrome P450), des énoncés sur la catégorie de médicament bien que l’interaction n’ait pas encore été étayée mais qui peut s’avérer importante sur le plan clinique et l’interaction potentielle avec l’alcool.</value>
+    <comment>Part1</comment>
+  </data>
+  <data name="interactions" xml:space="preserve">
+    <value>Interactions médicamenteuses</value>
+    <comment>part3</comment>
+  </data>
+  <data name="interactionsInfo" xml:space="preserve">
+    <value>Drugs that may interact with this medication_fr</value>
+    <comment>Part3</comment>
+  </data>
+  <data name="lastModified" xml:space="preserve">
+    <value>Dernière révision</value>
+    <comment>Part3</comment>
+  </data>
+  <data name="legendInfo" xml:space="preserve">
+    <value>Études de cas = É, Essai clinique = EC, Théorique = T</value>
+    <comment>Part1</comment>
+  </data>
+  <data name="mechanismAction" xml:space="preserve">
+    <value>Mode d’action</value>
+    <comment>Part1</comment>
+  </data>
+  <data name="mechanismActionInfo" xml:space="preserve">
+    <value>En ce qui concerne les produits antiinfectueux : une brève description du mode d’action contre les micro-organismes.</value>
+    <comment>Part1</comment>
+  </data>
+  <data name="medicationDoes" xml:space="preserve">
+    <value>Les effets de ce médicament</value>
+    <comment>Part 3</comment>
+  </data>
+  <data name="medicationUse" xml:space="preserve">
+    <value>Les raisons d’utiliser ce médicament</value>
+  </data>
+  <data name="medIngredient" xml:space="preserve">
+    <value>L’ingrédient médicinal est</value>
+    <comment>Part 3</comment>
+  </data>
+  <data name="microbiology" xml:space="preserve">
+    <value>Microbiologie</value>
+  </data>
+  <data name="missedDose" xml:space="preserve">
+    <value>Dose oubliée</value>
+    <comment>Part1</comment>
+  </data>
+  <data name="missedDoseFile" xml:space="preserve">
+    <value>Missed dose file_fr</value>
+    <comment>Part3</comment>
+  </data>
+  <data name="molecularFormula" xml:space="preserve">
+    <value>Formule moléculaire</value>
+  </data>
+  <data name="molecularMass" xml:space="preserve">
+    <value>Masse moléculaire</value>
+  </data>
+  <data name="moreInformationText1" xml:space="preserve">
+    <value>On peut trouver ce document et la monographie complète du produit, rédigés pour les professionnels de la santé, à l’adresse suivante :
+http://www.website.document
+ou en communiquant avec le promoteur,</value>
+    <comment>Part3</comment>
+  </data>
+  <data name="moreInformationText2" xml:space="preserve">
+    <value>au : 1 (800) XXX-XXXX.</value>
+  </data>
+  <data name="nonmedIngred" xml:space="preserve">
+    <value>Ingrédients non médicamenteux cliniquement importants</value>
+    <comment>Part1</comment>
+  </data>
+  <data name="nonMedIngredient" xml:space="preserve">
+    <value>Les ingrédients non médicinaux importants sont</value>
+    <comment>Part 3</comment>
+  </data>
+  <data name="nonMedIngredientInfo" xml:space="preserve">
+    <value>Pour obtenir une liste complète des ingrédients non médicinaux, consulter la partie 1 de la monographie de produit.</value>
+    <comment>Part 3</comment>
+  </data>
+  <data name="oralSolutions" xml:space="preserve">
+    <value>Solutions orales</value>
+    <comment>Part1</comment>
+  </data>
+  <data name="overdosage" xml:space="preserve">
+    <value>Surdosage</value>
+    <comment>Part1</comment>
+  </data>
+  <data name="overdose" xml:space="preserve">
+    <value>Surdose</value>
+    <comment>Part3</comment>
+  </data>
+  <data name="overdoseFile" xml:space="preserve">
+    <value>Overdose file_fr</value>
+    <comment>Part3</comment>
+  </data>
+  <data name="overdoseInfo" xml:space="preserve">
+    <value>Le texte de l’encadré peut être modifié afin de fournir les conseils les plus appropriés, selon les normes de soins les plus récentes pour ce produit pharmaceutique.</value>
+    <comment>Part3</comment>
+  </data>
+  <data name="overdoseInstruction" xml:space="preserve">
+    <value>Pour traiter une surdose présumée, communiquez avec le centre antipoison de votre région.</value>
+    <comment>Part1</comment>
+  </data>
+  <data name="overDoseText" xml:space="preserve">
+    <value>En case de surdosage, communiquez immédiatement avec un professionnel de la santé, l’urgence d’un centre hospitalier ou le centre antipoison de votre région, même en l’absence de symptômes.</value>
+    <comment>Part3</comment>
+  </data>
+  <data name="parameter" xml:space="preserve">
+    <value>Paramètre</value>
+  </data>
+  <data name="parenteralProd" xml:space="preserve">
+    <value>Produits parentéraux</value>
+    <comment>Part1</comment>
+  </data>
+  <data name="parenteralProdInfo" xml:space="preserve">
+    <value>Toute précaution particulière, période d’entreposage et incompatibilité</value>
+    <comment>Part1</comment>
+  </data>
+  <data name="parenteralProdTitle" xml:space="preserve">
+    <value>Parenteral products</value>
+    <comment>Part1</comment>
+  </data>
+  <data name="partOne" xml:space="preserve">
+    <value>Partie I: Information sur la santé professionnelle</value>
+  </data>
+  <data name="partThree" xml:space="preserve">
+    <value>Partie III : Renseignements pour le consommateur</value>
+  </data>
+  <data name="partTwo" xml:space="preserve">
+    <value>Partie II : Renseignements scientifiques</value>
+  </data>
+  <data name="pediatrics" xml:space="preserve">
+    <value>Pédiatrie</value>
+    <comment>Part1</comment>
+  </data>
+  <data name="pediatricsAge" xml:space="preserve">
+    <value>ans</value>
+    <comment>Part1</comment>
+  </data>
+  <data name="pediatricsAgeX" xml:space="preserve">
+    <value>ans ou</value>
+    <comment>Part1</comment>
+  </data>
+  <data name="pharmaceuticalStandard" xml:space="preserve">
+    <value>Norme pharmaceutique (s’il y a lieu)</value>
+    <comment>Cover page</comment>
+  </data>
+  <data name="pharmacodynamics" xml:space="preserve">
+    <value>Pharmacodynamique</value>
+    <comment>Part1</comment>
+  </data>
+  <data name="pharmacokineticParameters" xml:space="preserve">
+    <value>Résumé des paramètres pharmacocinétiques de ( Nom propre ) dans une  (Population particulière de patients )</value>
+    <comment>Part1</comment>
+  </data>
+  <data name="pharmacokinetics" xml:space="preserve">
+    <value>Pharmacocinétique</value>
+    <comment>Part1</comment>
+  </data>
+  <data name="pharmacology" xml:space="preserve">
+    <value>Pharmacologie détaillée</value>
+  </data>
+  <data name="physicochemicalProp" xml:space="preserve">
+    <value>Propriétés physicochimiques</value>
+  </data>
+  <data name="populationsConditions" xml:space="preserve">
+    <value>Populations particulières et états pathologiques</value>
+    <comment>Part1</comment>
+  </data>
+  <data name="productInfoTableTitle" xml:space="preserve">
+    <value>Summary product information form_fr</value>
+  </data>
+  <data name="properName" xml:space="preserve">
+    <value>Nom propre</value>
+  </data>
+  <data name="properNameTitle" xml:space="preserve">
+    <value>Nom propre</value>
+    <comment>Cover page</comment>
+  </data>
+  <data name="properUse" xml:space="preserve">
+    <value>Utilisation appropriée de ce médicament</value>
+    <comment>part3</comment>
+  </data>
+  <data name="rare" xml:space="preserve">
+    <value>Rare</value>
+    <comment>Part3</comment>
+  </data>
+  <data name="ratioGeoMeans" xml:space="preserve">
+    <value>Rapport des moyennes géométriques</value>
+  </data>
+  <data name="recommendedDose" xml:space="preserve">
+    <value>Posologie recommandée et modification posologique</value>
+    <comment>Part1</comment>
+  </data>
+  <data name="recommendedDoseInfo" xml:space="preserve">
+    <value>Inclure pour chaque indication, voie d’administration ou forme posologique.</value>
+    <comment>Part1</comment>
+  </data>
+  <data name="reconstitution" xml:space="preserve">
+    <value>Reconstitution</value>
+    <comment>Part1</comment>
+  </data>
+  <data name="reference" xml:space="preserve">
+    <value>Référence</value>
+  </data>
+  <data name="references" xml:space="preserve">
+    <value>Références</value>
+  </data>
+  <data name="refInfo" xml:space="preserve">
+    <value>Qualité des preuves, voir la légende</value>
+    <comment>Part1</comment>
+  </data>
+  <data name="refTitle" xml:space="preserve">
+    <value>Réf</value>
+    <comment>Part1</comment>
+  </data>
+  <data name="removeButton" xml:space="preserve">
+    <value>Enlever</value>
+  </data>
+  <data name="reportSuspectedSEInstruction" xml:space="preserve">
+    <value>Vous pouvez déclarer les effets indésirables soupçonnés associés à l’utilisation des produits de santé au Programme Canada Vigilance de l’une des 3 façons suivantes :&lt;br/&gt;
+
+En ligne www.santecanada.gc.ca/medeffet&lt;br/&gt;
+Par téléphone, en composant le numéro sans frais 1-866-234-2345&lt;br/&gt;
+En remplissant un formulaire de déclaration de Canada Vigilance et en le faisant parvenir
+par télécopieur, au numéro sans frais 1-866-678-6789&lt;br/&gt;
+par la poste au :&lt;br/&gt;
+Programme Canada Vigilance&lt;br/&gt;
+Santé Canada&lt;br/&gt;
+Indice de l’adresse 0701D&lt;br/&gt;
+Ottawa (Ontario)&lt;br/&gt;
+K1A 0K9&lt;br/&gt;
+Les étiquettes préaffranchies, le formulaire de déclaration de Canada Vigilance ainsi que les lignes directrices concernant la déclaration d’effets indésirables sont disponibles sur le site Web de MedEffet &lt;sup&gt;MC&lt;/sup&gt; Canada à www.santecanada.gc.ca/medeffet.&lt;br/&gt;&lt;br/&gt;
+
+REMARQUE : Pour obtenir des renseignements relatifs à la gestion des effets secondaires, veuillez communiquer avec votre professionnel de la santé. Le Programme Canada Vigilance ne fournit pas de conseils médicaux.</value>
+    <comment>Part3</comment>
+  </data>
+  <data name="routeAdministration" xml:space="preserve">
+    <value>Voie d’administration</value>
+    <comment>Part1</comment>
+  </data>
+  <data name="saveButton" xml:space="preserve">
+    <value>Save a draft_fr</value>
+  </data>
+  <data name="saveButtonTitle" xml:space="preserve">
+    <value>Please save your form data in a draft file._fr</value>
+  </data>
+  <data name="schedulingSymbol" xml:space="preserve">
+    <value>Symbole de classification</value>
+    <comment>Cover page</comment>
+  </data>
+  <data name="seriousInteractions" xml:space="preserve">
+    <value>Interactions médicamenteuses pouvant entraîner des conséquences graves</value>
+    <comment>Part1</comment>
+  </data>
+  <data name="seriousInteractionsInfo" xml:space="preserve">
+    <value>Les interactions médicamenteuses graves constituant un danger de mort doivent être mises en évidence dans cet encadré, sans toutefois dépasser 20 lignes.</value>
+    <comment>Part1</comment>
+  </data>
+  <data name="seriousWarnings" xml:space="preserve">
+    <value>Mises en garde et précautions</value>
+    <comment>Part1</comment>
+  </data>
+  <data name="seriousWarningsInfo" xml:space="preserve">
+    <value>Les dangers importants sur le plan clinique ou mortels qu’entraînent l’administration au médicament doivent être mis en évidence dans l’encadré Mises en garde. Le texte ne doit généralement pas dépasser 20 lignes.</value>
+    <comment>Part1</comment>
+  </data>
+  <data name="sideEffectContact" xml:space="preserve">
+    <value>Cette liste d’effets secondaires n’est pas exhaustive. Pour tout effet inattendu ressenti lors de la prise de &lt;marque nominative&gt;, veuillez communiquer avec votre médecin ou votre pharmacien.</value>
+    <comment>Part3</comment>
+  </data>
+  <data name="sideEffects" xml:space="preserve">
+    <value>Effets secondaires graves</value>
+    <comment>Part3 </comment>
+  </data>
+  <data name="sponsorAddress" xml:space="preserve">
+    <value>Adresse du promoteur</value>
+    <comment>Cover page</comment>
+  </data>
+  <data name="sponsorName" xml:space="preserve">
+    <value>Nom du promoteur</value>
+    <comment>Cover page</comment>
+  </data>
+  <data name="stopTakingDrug" xml:space="preserve">
+    <value>Stop taking drug_fr</value>
+  </data>
+  <data name="storagestability" xml:space="preserve">
+    <value>Entreposage et stabilité</value>
+    <comment>Part1</comment>
+  </data>
+  <data name="strength" xml:space="preserve">
+    <value> Concentration</value>
+    <comment>Part1</comment>
+  </data>
+  <data name="strengthDosageValue" xml:space="preserve">
+    <value>Strength per dosage&lt;br /&gt; Value | Unit_fr</value>
+    <comment>Cover page</comment>
+  </data>
+  <data name="strengthValue" xml:space="preserve">
+    <value>Strength &lt;br /&gt;Value | Unit_fr</value>
+    <comment>Cover page</comment>
+  </data>
+  <data name="submissionControlNumber" xml:space="preserve">
+    <value>Numéro de contrôle de la présentation</value>
+    <comment>Cover page</comment>
+  </data>
+  <data name="sumAdverseReactions" xml:space="preserve">
+    <value>Effets indésirables</value>
+    <comment>Part1</comment>
+  </data>
+  <data name="sumClinicalPharmacology" xml:space="preserve">
+    <value>Mode d’action et pharmacologie clinique</value>
+    <comment>Part1</comment>
+  </data>
+  <data name="sumClinicalTrials" xml:space="preserve">
+    <value>Essais cliniques</value>
+  </data>
+  <data name="sumContraindications" xml:space="preserve">
+    <value>Contre-indications</value>
+    <comment>Part1</comment>
+  </data>
+  <data name="sumDosage" xml:space="preserve">
+    <value>Posologie et administration</value>
+    <comment>Part1</comment>
+  </data>
+  <data name="sumDosageForm" xml:space="preserve">
+    <value>Formes posologiques, composition et conditionnement</value>
+    <comment>Part1</comment>
+  </data>
+  <data name="sumDrugInteractions" xml:space="preserve">
+    <value>Interactions médicamenteuses</value>
+    <comment>Part1</comment>
+  </data>
+  <data name="sumHowStore" xml:space="preserve">
+    <value>Comment conserver le médicament</value>
+    <comment>part3</comment>
+  </data>
+  <data name="sumIndications" xml:space="preserve">
+    <value>Indications et utilisation clinique</value>
+    <comment>Part1</comment>
+  </data>
+  <data name="sumInteractions" xml:space="preserve">
+    <value>Interactions médicamenteuses</value>
   </data>
   <data name="sumMedication" xml:space="preserve">
     <value>Au sujet de ce médicament</value>
@@ -193,7 +764,7 @@
     <comment>Cover page</comment>
   </data>
   <data name="tmax" xml:space="preserve">
-    <value>Tmax (h)</value>
+    <value>T&lt;sub&gt;max&lt;/sub&gt;&lt;sup&gt;§ &lt;/sup&gt; (h)</value>
   </data>
   <data name="toxicology" xml:space="preserve">
     <value>Toxicologie</value>
@@ -219,6 +790,10 @@
   </data>
   <data name="vialSize" xml:space="preserve">
     <value>Volume de l’ampoule</value>
+    <comment>Part1</comment>
+  </data>
+  <data name="volDistribution" xml:space="preserve">
+    <value>Volume de distribution</value>
     <comment>Part1</comment>
   </data>
   <data name="volumediluent" xml:space="preserve">
