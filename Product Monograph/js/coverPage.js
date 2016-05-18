@@ -1,34 +1,18 @@
 ﻿//Setup default values on first row of Dosage Form --- created by Ching Chang on Feb 8, 2016
-var countTBL = 0
-function AddBrandProperDosageDefaultRow() {
-    //first row of table - start
-    $.get('ControlledList.xml', function (xmlcontolledlist) {
-        $(xmlcontolledlist).find('dosageform').each(function () {
-            var $option = $(this).text();
-            $('<option>' + $option + '</option>').appendTo('#tbDosage');
-        });
-    });
-    //get strength Unit
-    $.get('ControlledList.xml', function (xmlcontolledlist) {
-        $(xmlcontolledlist).find('unit').each(function () {
-            var $option = $(this).text();
-            $('<option>' + $option + '</option>').appendTo('#tbStrengthUnit');
-        });
-    });
-    //get strength per Dosage Unit
-    $.get('ControlledList.xml', function (xmlcontolledlist) {
-        $(xmlcontolledlist).find('unit').each(function () {
-            var $option = $(this).text();
-            $('<option>' + $option + '</option>').appendTo('#tbStrengthperDosageUnit');
-        });
-    });
-
-}
-
-
 var selectedschedulingsymbol;
 $(document).ready(function () {
-    $("#linkCover").attr("disabled", "disabled");
+
+    $("#brandNameHidden").attr("name", "brandNameHidden");
+    var brandName = $.trim($("#brandNameHidden").val());
+    if (brandName.length > 0) {
+        $("#linkCover").attr("disabled", "disabled");
+    }
+    else
+    {
+        $("#linkOne").attr("disabled", "disabled");
+        $("#linkTwo").attr("disabled", "disabled");
+        $("#linkThree").attr("disabled", "disabled");
+    }
     var now = new Date();
     var day = (now.getDate() < 10 ? '0' : '') + now.getDate();
     var month = ((now.getMonth() + 1) < 10 ? '0' : '') + (now.getMonth() + 1);
@@ -59,6 +43,36 @@ $(document).ready(function () {
     AddBrandProperDosageDefaultRow();
 
 });
+
+
+var countTBL = 0
+function AddBrandProperDosageDefaultRow() {
+    //first row of table - start
+    $.get('ControlledList.xml', function (xmlcontolledlist) {
+        $(xmlcontolledlist).find('dosageform').each(function () {
+            var $option = $(this).text();
+            $('<option>' + $option + '</option>').appendTo('#tbDosage');
+        });
+    });
+    //get strength Unit
+    $.get('ControlledList.xml', function (xmlcontolledlist) {
+        $(xmlcontolledlist).find('unit').each(function () {
+            var $option = $(this).text();
+            $('<option>' + $option + '</option>').appendTo('#tbStrengthUnit');
+        });
+    });
+    //get strength per Dosage Unit
+    $.get('ControlledList.xml', function (xmlcontolledlist) {
+        $(xmlcontolledlist).find('unit').each(function () {
+            var $option = $(this).text();
+            $('<option>' + $option + '</option>').appendTo('#tbStrengthperDosageUnit');
+        });
+    });
+
+}
+
+
+
 
 function ApplySchedulingSymbol() {
     var selectedsymbol = $('#tbSchedulingSymbol').val();

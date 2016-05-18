@@ -49,15 +49,6 @@ namespace Product_Monograph {
         protected global::System.Web.UI.WebControls.Button btnSaveDraft;
         
         /// <summary>
-        /// btnAppendRow control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlInputButton btnAppendRow;
-        
-        /// <summary>
         /// tbPharmaceuticalStandard control.
         /// </summary>
         /// <remarks>
@@ -128,5 +119,14 @@ namespace Product_Monograph {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.HtmlControls.HtmlTextArea tbFootnote;
+        
+        /// <summary>
+        /// brandNameHidden control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.HiddenField brandNameHidden;
     }
 }

@@ -3,7 +3,25 @@
  <script src="./js/pmp.js"></script>
  <script src="./js/partTwo.js"></script>
  <script>
-     var removeButtonValue = '<%=removeButton%>';     
+     var removeButtonValue = '<%=removeButton%>';
+     var properNameTitle = '<%=properNameTitle%>';
+     var chemicalName = '<%=chemicalName%>';
+     var molecularFormula ='<%=molecularFormula%>';
+     var molecularMass ='<%=molecularMass%>';
+     var physicochemicalProp = '<%=physicochemicalProp%>';
+     var structuralFormula = '<%=structuralFormula%>';
+     var analyteName = '<%=analyteName%>';
+     var parameter = '<%=parameter%>';
+     var test = '<%=test%>';
+     var reference = '<%=reference%>';
+     var ratioGeoMeans = '<%=ratioGeoMeans%>';
+     var confInterval = '<%=confInterval%>';
+     var auctUnit = '<%=auctUnit%>';
+     var auciUnit = '<%=auciUnit%>';
+     var cmaxUnit = '<%=cmaxUnit%>';
+     var tmax = '<%=tmax%>';
+     var halfLife = '<%=halfLife%>';
+
  </script>
 </asp:Content>
 
@@ -16,7 +34,7 @@
          </div>
          <div class="col-sm-3 text-right">
             <asp:Button ID="btnSaveDraft" runat="server" cssclass="btn btn-primary " OnClick="btnSave_Click" /> 
-              <input type="reset" value="Reset" class="btn btn-default mrgn-lft-md">
+              <input type="reset" value="<%=resetButton%>" class="btn btn-default mrgn-lft-md">
          </div> 
 </div>
 <!--Pharmaceutical information--> 
@@ -30,7 +48,7 @@
     </div>  
     <div class="form-group row">
             <label for="tbDrugSub" class="col-sm-3 control-label">
-                <span class="field-name">Proper name</span>
+                <span class="field-name"><%=properNameTitle%></span>
             </label>                        
             <div class="col-sm-7"> 
                 <input type="text" id="tbDrugSub" name="tbDrugSub" class="form-control"/>                     
@@ -66,7 +84,7 @@
          <div class="form-group">
             <div class="row">  
                       <label for="fustrucform" class="col-sm-3 control-label">
-                          <span class="field-name">Structural formula</span>
+                          <span class="field-name"><%=structuralFormula%></span>
                       </label>  
                     <div class="col-sm-9">               
                         <input type="file" id="fustrucform" onchange="loadFile('fustrucform', 'fuimage','tbfuimagename','tbfuimagebasesixtyfour')"/>       

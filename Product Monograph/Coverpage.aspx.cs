@@ -1,24 +1,13 @@
 ﻿using System;
-using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 using System.Web.UI;
-using System.Web.UI.WebControls;
 using System.Data;
-using System.IO;
-using System.Xml.Serialization;
 using System.Xml;
 using System.Drawing;
 using System.ComponentModel;
-using System.Text;
-using System.Net;
 using System.Xml.Linq;
-using System.Configuration;
 using System.Collections;
-using System.IO.Compression;
-using System.Text.RegularExpressions;
-using System.Threading;
-using System.Globalization;
 using Product_Monograph.helpers;
 
 namespace Product_Monograph
@@ -41,6 +30,9 @@ namespace Product_Monograph
         protected static string strengthValue;
         protected static string strengthDosageValue;
         protected static string brandDosageForm;
+        protected static string addButton;
+        protected static string removeButton;
+        protected static string resetButton;
 
         void Page_PreInit(Object sender, EventArgs e)
         {
@@ -79,6 +71,12 @@ namespace Product_Monograph
                 strengthValue = Resources.Resource.strengthValue;
                 strengthDosageValue = Resources.Resource.strengthDosageValue;
                 brandDosageForm = Resources.Resource.brandDosageForm;
+                addButton = Resources.Resource.addButton;
+                removeButton = Resources.Resource.removeButton;
+                btnSaveDraft.Text = Resources.Resource.saveButton;
+                btnSaveDraft.Attributes["Title"] = Resources.Resource.saveButtonTitle;
+                resetButton = Resources.Resource.resetButton;
+
                 try
                 {
                     if (ValidateXmlDoc())
@@ -87,6 +85,7 @@ namespace Product_Monograph
                     if (!string.IsNullOrEmpty(SessionHelper.Current.brandName))
                     {
                         this.brandName.Text = SessionHelper.Current.brandName;
+                        this.brandNameHidden.Value = SessionHelper.Current.brandName;
                     }
                     if (!string.IsNullOrEmpty(SessionHelper.Current.properName))
                     {

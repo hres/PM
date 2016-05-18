@@ -113,6 +113,7 @@ namespace Product_Monograph
         protected static string clearance;
         protected static string volDistribution;
         protected static string pharmacokineticParameters;
+        protected static string resetButton;
 
         void Page_PreInit(Object sender, EventArgs e)
         {
@@ -224,6 +225,7 @@ namespace Product_Monograph
                 clearance = Resources.Resource.clearance;
                 volDistribution = Resources.Resource.volDistribution;
                 pharmacokineticParameters = Resources.Resource.pharmacokineticParameters;
+                resetButton = Resources.Resource.resetButton;
 
 
                 try

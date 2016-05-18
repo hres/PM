@@ -2,6 +2,7 @@
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">    
  <script src="./js/pmp.js"></script>
  <script src="./js/coverPage.js"></script>
+}
 </asp:Content>
 
 <asp:Content id="Content2" contentPlaceHolderID="ContentPlaceHolder1" runat="server">
@@ -13,10 +14,11 @@
     <div class="row brdr-bttm">
         <div class="col-sm-9">
              <p class="margin-bottom-none"><strong><span class="field-name"><%=brandNameTitle%>:</span></strong><asp:Literal ID="brandName" runat="server"></asp:Literal></p>
-             <p><strong><span class="field-name"><%=properNameTitle%>:</span></strong><asp:Literal ID="properName" runat="server"></asp:Literal><p>
+             <p><strong><span class="field-name"><%=properNameTitle%>:</span></strong><asp:Literal ID="properName" runat="server" ></asp:Literal><p>
          </div>
          <div class="col-sm-3 text-right">
-            <asp:Button ID="btnSaveDraft" runat="server" cssclass="btn btn-primary" Text="Save a draft"  ToolTip="Please save your form data in a draft file." OnClick="btnSaveDraft_Click" /> 
+            <asp:Button ID="btnSaveDraft" runat="server" cssclass="btn btn-primary"  ToolTip="Please save your form data in a draft file." OnClick="btnSaveDraft_Click"  ClientIDMode="Static"/> 
+              <input type="reset" value="Reset" class="btn btn-default mrgn-lft-md">
          </div> 
     </div>
      <div class="form-group row margin-top-medium">
@@ -34,9 +36,9 @@
                     <caption class="text-left"><span class="field-name"><%=brandDosageForm%></span></caption>
                     <thead>
                         <tr>           
-                            <th><input class="btn btn-default btn-xs" type="button" runat="server" id="btnAppendRow" onclick="addRow('dataTable')" value="Add" /></th>
-                            <th><span class="field-name"><%=brandNameTitle%></span></th>
-                            <th><span class="field-name"><%=properNameTitle%></span></th>
+                            <th><input class="btn btn-default btn-xs" type="button" id="btnAppendRow" onclick="addRow('dataTable')" value="<% =addButton %>" /></th>
+                            <th><label for="tbBrandname" class="required"><span class="field-name"><%=brandNameTitle%></span></label></th>
+                            <th><label for="tbPropername" class="required"><span class="field-name"><%=properNameTitle%></span></label></th>
                             <th><span class="field-name"><%=dosageForm%></span></th>
                             <th><span class="field-name"><%=strengthValue%></span></th>
                             <th><span class="field-name"><%=strengthDosageValue%></span></th>
@@ -44,19 +46,19 @@
                     </thead>
                     <tbody>
                         <tr>                                                
-                            <td><input id="tbBtnRemove" type="button" onclick="deleteRowBtnRow(this)" name="btnDelete" value="Remove" class="btn btn-default btn-xs"  disabled="disabled");/></td>   
-                            <td headers="thBrandName" data-required="true"><input type="text" id="tbBrandname" name="tbBrandname" class="form-control input-sm" /></td>
-                            <td headers="thProperName"><input type="text" id="tbPropername" name="tbPropername" class="form-control input-sm" /></td>
+                            <td><input id="tbBtnRemove" type="button" onclick="deleteRowBtnRow(this)" name="btnDelete" value="<% =removeButton %>" class="btn btn-default btn-xs"  disabled="disabled");/></td>   
+                            <td headers="thBrandName"><input type="text" id="tbBrandname" name="tbBrandname" class="form-control input-sm" required="required" /></td>
+                            <td headers="thProperName"><input type="text" id="tbPropername" name="tbPropername" class="form-control input-sm"  required="required"/></td>
                             <td headers="thDosageForm">
-                                <select id="tbDosage" name="tbDosage" class="form-control input-sm"></select></td>                
+                                <select id="tbDosage" name="tbDosage" class="form-control input-sm" ></select></td>                
                             <td headers="thStrength">
-                                <input type="number" id="tbStrengthValue" name="tbStrengthValue" value="0" min="0" max="1000" class="form-control font-small input-sm" />                                                  
+                                <input type="number" id="tbStrengthValue" name="tbStrengthValue" value="0" min="0" max="1000" class="form-control font-small input-sm"  />                                                  
                                 <div>
-                                    <select id="tbStrengthUnit" name="tbStrengthUnit" class="form-control font-small input-sm"> </select> 
+                                    <select id="tbStrengthUnit" name="tbStrengthUnit" class="form-control font-small input-sm" > </select> 
                                 </div>           
                             </td>
                             <td headers="thStrengthPerDosage">
-                                <input type="number" id="tbStrengthperDosageValue" name="tbStrengthperDosageValue" value="0" min="0" max="1000" class="form-control font-small input-sm" /> 
+                                <input type="number" id="tbStrengthperDosageValue" name="tbStrengthperDosageValue" value="0" min="0" max="1000" class="form-control font-small input-sm"  /> 
                                 <div>                        
                                     <select id="tbStrengthperDosageUnit" name="tbStrengthperDosageUnit" class="form-control input-sm font-small" ></select>  
                                 </div>                             
@@ -90,7 +92,7 @@
                 <textarea id="tbSponsorAddress" name="tbSponsorAddress" runat="server" class="textarea form-control"  ClientIDMode="Static"></textarea>
             </div>
         </div>
-        <div class="form-group  row">
+ <div class="form-group  row">
              <label for="tbDatePrep" class="control-label col-sm-3" >
                 <span class="field-name"><%=datePreparation%></span><br />
                 <span class="datepicker-format"> (<abbr title="Four digits year, dash, two digits month, dash, two digits day">YYYY-MM-DD</abbr>)</span>
@@ -120,7 +122,7 @@
                     <textarea id="tbFootnote" name="tbFootnote" runat="server" class="textarea form-control"  ClientIDMode="Static"></textarea>               
             </div> 
         </div>
-  
+        <asp:HiddenField  runat="server" ID="brandNameHidden" ClientIDMode="Static"  />
 </asp:Content>
 
 

@@ -17,7 +17,7 @@
          </div>
          <div class="col-sm-3 text-right">
             <asp:Button ID="btnSaveDraft" runat="server" cssclass="btn btn-primary " OnClick="btnSave_Click" ClientIDMode="Static"/> 
-            <input type="reset" value="Reset" class="btn btn-default mrgn-lft-md">
+            <input type="reset" value="<%=resetButton%>" class="btn btn-default mrgn-lft-md">
          </div> 
     </div> 
 <!--About this medication-->

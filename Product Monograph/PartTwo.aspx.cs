@@ -61,7 +61,10 @@ namespace Product_Monograph
         protected static string compBioStudiesInfo;
         protected static string addButton;
         protected static string removeButton;
-       
+        protected static string structuralFormula;
+        protected static string resetButton;
+
+
 
         void Page_PreInit(Object sender, EventArgs e)
         {
@@ -96,6 +99,7 @@ namespace Product_Monograph
                 drugSubstance = Resources.Resource.drugSubstance;
                 chemicalName = Resources.Resource.chemicalName;
                 molecularFormula = Resources.Resource.molecularFormula;
+                structuralFormula = Resources.Resource.structuralFormula;
                 molecularMass = Resources.Resource.molecularMass;
                 physicochemicalProp= Resources.Resource.physicochemicalProp;
                 clinicalTrials = Resources.Resource.clinicalTrials;
@@ -125,7 +129,8 @@ namespace Product_Monograph
                 addButton = Resources.Resource.addButton;
                 removeButton = Resources.Resource.removeButton;
                 btnSaveDraft.Text = Resources.Resource.saveButton;
-                btnSaveDraft.Attributes["Title"] = Resources.Resource.saveButtonTitle;               
+                btnSaveDraft.Attributes["Title"] = Resources.Resource.saveButtonTitle;
+                resetButton = Resources.Resource.resetButton;
 
 
                 try

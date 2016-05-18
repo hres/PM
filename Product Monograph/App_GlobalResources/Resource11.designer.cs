@@ -8,10 +8,11 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace Resources {
+namespace Resources
+{
     using System;
-    
-    
+
+
     /// <summary>
     ///   A strongly-typed resource class, for looking up localized strings, etc.
     /// </summary>
@@ -22,1137 +23,2722 @@ namespace Resources {
     [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.VisualStudio.Web.Application.StronglyTypedResourceProxyBuilder", "14.0.0.0")]
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
     [global::System.Runtime.CompilerServices.CompilerGeneratedAttribute()]
-    internal class Resource {
-        
+    internal class Resource
+    {
+
         private static global::System.Resources.ResourceManager resourceMan;
-        
+
         private static global::System.Globalization.CultureInfo resourceCulture;
-        
+
         [global::System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1811:AvoidUncalledPrivateCode")]
-        internal Resource() {
+        internal Resource()
+        {
         }
-        
+
         /// <summary>
         ///   Returns the cached ResourceManager instance used by this class.
         /// </summary>
         [global::System.ComponentModel.EditorBrowsableAttribute(global::System.ComponentModel.EditorBrowsableState.Advanced)]
-        internal static global::System.Resources.ResourceManager ResourceManager {
-            get {
-                if (object.ReferenceEquals(resourceMan, null)) {
+        internal static global::System.Resources.ResourceManager ResourceManager
+        {
+            get
+            {
+                if (object.ReferenceEquals(resourceMan, null))
+                {
                     global::System.Resources.ResourceManager temp = new global::System.Resources.ResourceManager("Resources.Resource", global::System.Reflection.Assembly.Load("App_GlobalResources"));
                     resourceMan = temp;
                 }
                 return resourceMan;
             }
         }
-        
+
         /// <summary>
         ///   Overrides the current thread's CurrentUICulture property for all
         ///   resource lookups using this strongly typed resource class.
         /// </summary>
         [global::System.ComponentModel.EditorBrowsableAttribute(global::System.ComponentModel.EditorBrowsableState.Advanced)]
-        internal static global::System.Globalization.CultureInfo Culture {
-            get {
+        internal static global::System.Globalization.CultureInfo Culture
+        {
+            get
+            {
                 return resourceCulture;
             }
-            set {
+            set
+            {
                 resourceCulture = value;
             }
         }
-        
+
         /// <summary>
         ///   Looks up a localized string similar to Add.
         /// </summary>
-        internal static string addButton {
-            get {
+        internal static string addButton
+        {
+            get
+            {
                 return ResourceManager.GetString("addButton", resourceCulture);
             }
         }
-        
+
+        /// <summary>
+        ///   Looks up a localized string similar to Add.
+        /// </summary>
+        internal static string addButton1
+        {
+            get
+            {
+                return ResourceManager.GetString("addButton1", resourceCulture);
+            }
+        }
+
         /// <summary>
         ///   Looks up a localized string similar to Additional warnings.
         /// </summary>
-        internal static string addWarnings {
-            get {
+        internal static string addWarnings
+        {
+            get
+            {
                 return ResourceManager.GetString("addWarnings", resourceCulture);
             }
         }
-        
+
+        /// <summary>
+        ///   Looks up a localized string similar to Additional warnings.
+        /// </summary>
+        internal static string addWarnings1
+        {
+            get
+            {
+                return ResourceManager.GetString("addWarnings1", resourceCulture);
+            }
+        }
+
         /// <summary>
         ///   Looks up a localized string similar to Administration.
         /// </summary>
-        internal static string administration {
-            get {
+        internal static string administration
+        {
+            get
+            {
                 return ResourceManager.GetString("administration", resourceCulture);
             }
         }
-        
+
+        /// <summary>
+        ///   Looks up a localized string similar to Administration.
+        /// </summary>
+        internal static string administration1
+        {
+            get
+            {
+                return ResourceManager.GetString("administration1", resourceCulture);
+            }
+        }
+
         /// <summary>
         ///   Looks up a localized string similar to Adverse drug reaction overview.
         /// </summary>
-        internal static string adverseReaction {
-            get {
+        internal static string adverseReaction
+        {
+            get
+            {
                 return ResourceManager.GetString("adverseReaction", resourceCulture);
             }
         }
-        
+
+        /// <summary>
+        ///   Looks up a localized string similar to Adverse drug reaction overview.
+        /// </summary>
+        internal static string adverseReaction1
+        {
+            get
+            {
+                return ResourceManager.GetString("adverseReaction1", resourceCulture);
+            }
+        }
+
         /// <summary>
         ///   Looks up a localized string similar to An overview of the ADR information that may affect prescribing decision, it should contain: serious and important ADRs; the most frequent ADRs and ADRs that most commonly result in clinical intervention..
         /// </summary>
-        internal static string adverseReactionInfo {
-            get {
+        internal static string adverseReactionInfo
+        {
+            get
+            {
                 return ResourceManager.GetString("adverseReactionInfo", resourceCulture);
             }
         }
-        
+
+        /// <summary>
+        ///   Looks up a localized string similar to An overview of the ADR information that may affect prescribing decision, it should contain: serious and important ADRs; the most frequent ADRs and ADRs that most commonly result in clinical intervention..
+        /// </summary>
+        internal static string adverseReactionInfo1
+        {
+            get
+            {
+                return ResourceManager.GetString("adverseReactionInfo1", resourceCulture);
+            }
+        }
+
         /// <summary>
         ///   Looks up a localized string similar to Analyte name.
         /// </summary>
-        internal static string analyteName {
-            get {
+        internal static string analyteName
+        {
+            get
+            {
                 return ResourceManager.GetString("analyteName", resourceCulture);
             }
         }
-        
+
+        /// <summary>
+        ///   Looks up a localized string similar to Analyte name.
+        /// </summary>
+        internal static string analyteName1
+        {
+            get
+            {
+                return ResourceManager.GetString("analyteName1", resourceCulture);
+            }
+        }
+
         /// <summary>
         ///   Looks up a localized string similar to Expressed as either the arithmetic mean (CV%) or the median (range) only..
         /// </summary>
-        internal static string arithmeticMedian {
-            get {
+        internal static string arithmeticMedian
+        {
+            get
+            {
                 return ResourceManager.GetString("arithmeticMedian", resourceCulture);
             }
         }
-        
+
+        /// <summary>
+        ///   Looks up a localized string similar to Expressed as either the arithmetic mean (CV%) or the median (range) only..
+        /// </summary>
+        internal static string arithmeticMedian1
+        {
+            get
+            {
+                return ResourceManager.GetString("arithmeticMedian1", resourceCulture);
+            }
+        }
+
         /// <summary>
         ///   Looks up a localized string similar to Expressed as the arithmetic mean (CV%) only..
         /// </summary>
-        internal static string arithmeticOnly {
-            get {
+        internal static string arithmeticOnly
+        {
+            get
+            {
                 return ResourceManager.GetString("arithmeticOnly", resourceCulture);
             }
         }
-        
+
+        /// <summary>
+        ///   Looks up a localized string similar to Expressed as the arithmetic mean (CV%) only..
+        /// </summary>
+        internal static string arithmeticOnly1
+        {
+            get
+            {
+                return ResourceManager.GetString("arithmeticOnly1", resourceCulture);
+            }
+        }
+
         /// <summary>
         ///   Looks up a localized string similar to AUC&lt;sub&gt;0-∞&lt;/sub&gt;.
         /// </summary>
-        internal static string auc {
-            get {
+        internal static string auc
+        {
+            get
+            {
                 return ResourceManager.GetString("auc", resourceCulture);
             }
         }
-        
+
+        /// <summary>
+        ///   Looks up a localized string similar to AUC&lt;sub&gt;0-∞&lt;/sub&gt;.
+        /// </summary>
+        internal static string auc1
+        {
+            get
+            {
+                return ResourceManager.GetString("auc1", resourceCulture);
+            }
+        }
+
         /// <summary>
         ///   Looks up a localized string similar to AUC&lt;sub&gt;I&lt;/sub&gt; (units).
         /// </summary>
-        internal static string auciUnit {
-            get {
+        internal static string auciUnit
+        {
+            get
+            {
                 return ResourceManager.GetString("auciUnit", resourceCulture);
             }
         }
-        
+
+        /// <summary>
+        ///   Looks up a localized string similar to AUC&lt;sub&gt;I&lt;/sub&gt; (units).
+        /// </summary>
+        internal static string auciUnit1
+        {
+            get
+            {
+                return ResourceManager.GetString("auciUnit1", resourceCulture);
+            }
+        }
+
         /// <summary>
         ///   Looks up a localized string similar to For drugs with a half-life greater than 24 hours AUC&lt;sub&gt;T&lt;/sub&gt; should be replaced with AUC&lt;sub&gt;0-72&lt;/sub&gt;..
         /// </summary>
-        internal static string auct24 {
-            get {
+        internal static string auct24
+        {
+            get
+            {
                 return ResourceManager.GetString("auct24", resourceCulture);
             }
         }
-        
+
+        /// <summary>
+        ///   Looks up a localized string similar to For drugs with a half-life greater than 24 hours AUC&lt;sub&gt;T&lt;/sub&gt; should be replaced with AUC&lt;sub&gt;0-72&lt;/sub&gt;..
+        /// </summary>
+        internal static string auct241
+        {
+            get
+            {
+                return ResourceManager.GetString("auct241", resourceCulture);
+            }
+        }
+
         /// <summary>
         ///   Looks up a localized string similar to AUC&lt;sub&gt;T&lt;/sub&gt;&lt;sup&gt;‡&lt;/sup&gt; (units).
         /// </summary>
-        internal static string auctUnit {
-            get {
+        internal static string auctUnit
+        {
+            get
+            {
                 return ResourceManager.GetString("auctUnit", resourceCulture);
             }
         }
-        
+
+        /// <summary>
+        ///   Looks up a localized string similar to AUC&lt;sub&gt;T&lt;/sub&gt;&lt;sup&gt;‡&lt;/sup&gt; (units).
+        /// </summary>
+        internal static string auctUnit1
+        {
+            get
+            {
+                return ResourceManager.GetString("auctUnit1", resourceCulture);
+            }
+        }
+
         /// <summary>
         ///   Looks up a localized string similar to Approximate available volume.
         /// </summary>
-        internal static string availableVolume {
-            get {
+        internal static string availableVolume
+        {
+            get
+            {
                 return ResourceManager.GetString("availableVolume", resourceCulture);
             }
         }
-        
+
+        /// <summary>
+        ///   Looks up a localized string similar to Approximate available volume.
+        /// </summary>
+        internal static string availableVolume1
+        {
+            get
+            {
+                return ResourceManager.GetString("availableVolume1", resourceCulture);
+            }
+        }
+
         /// <summary>
         ///   Looks up a localized string similar to Brand  dosage form.
         /// </summary>
-        internal static string brandDosageForm {
-            get {
+        internal static string brandDosageForm
+        {
+            get
+            {
                 return ResourceManager.GetString("brandDosageForm", resourceCulture);
             }
         }
-        
+
+        /// <summary>
+        ///   Looks up a localized string similar to Brand  dosage form.
+        /// </summary>
+        internal static string brandDosageForm1
+        {
+            get
+            {
+                return ResourceManager.GetString("brandDosageForm1", resourceCulture);
+            }
+        }
+
         /// <summary>
         ///   Looks up a localized string similar to Brand name.
         /// </summary>
-        internal static string brandName {
-            get {
+        internal static string brandName
+        {
+            get
+            {
                 return ResourceManager.GetString("brandName", resourceCulture);
             }
         }
-        
+
+        /// <summary>
+        ///   Looks up a localized string similar to Brand name.
+        /// </summary>
+        internal static string brandName1
+        {
+            get
+            {
+                return ResourceManager.GetString("brandName1", resourceCulture);
+            }
+        }
+
         /// <summary>
         ///   Looks up a localized string similar to Brand name .
         /// </summary>
-        internal static string brandNameTitle {
-            get {
+        internal static string brandNameTitle
+        {
+            get
+            {
                 return ResourceManager.GetString("brandNameTitle", resourceCulture);
             }
         }
-        
+
+        /// <summary>
+        ///   Looks up a localized string similar to Brand name .
+        /// </summary>
+        internal static string brandNameTitle1
+        {
+            get
+            {
+                return ResourceManager.GetString("brandNameTitle1", resourceCulture);
+            }
+        }
+
         /// <summary>
         ///   Looks up a localized string similar to Chemical name.
         /// </summary>
-        internal static string chemicalName {
-            get {
+        internal static string chemicalName
+        {
+            get
+            {
                 return ResourceManager.GetString("chemicalName", resourceCulture);
             }
         }
-        
+
+        /// <summary>
+        ///   Looks up a localized string similar to Chemical name.
+        /// </summary>
+        internal static string chemicalName1
+        {
+            get
+            {
+                return ResourceManager.GetString("chemicalName1", resourceCulture);
+            }
+        }
+
         /// <summary>
         ///   Looks up a localized string similar to Clearance.
         /// </summary>
-        internal static string clearance {
-            get {
+        internal static string clearance
+        {
+            get
+            {
                 return ResourceManager.GetString("clearance", resourceCulture);
             }
         }
-        
+
+        /// <summary>
+        ///   Looks up a localized string similar to Clearance.
+        /// </summary>
+        internal static string clearance1
+        {
+            get
+            {
+                return ResourceManager.GetString("clearance1", resourceCulture);
+            }
+        }
+
         /// <summary>
         ///   Looks up a localized string similar to Clinical comment.
         /// </summary>
-        internal static string clinicalComment {
-            get {
+        internal static string clinicalComment
+        {
+            get
+            {
                 return ResourceManager.GetString("clinicalComment", resourceCulture);
             }
         }
-        
+
+        /// <summary>
+        ///   Looks up a localized string similar to Clinical comment.
+        /// </summary>
+        internal static string clinicalComment1
+        {
+            get
+            {
+                return ResourceManager.GetString("clinicalComment1", resourceCulture);
+            }
+        }
+
         /// <summary>
         ///   Looks up a localized string similar to Caution is warranted and therapeutic concentration monitoring is recommended.
         /// </summary>
-        internal static string clinicalCommentInfo {
-            get {
+        internal static string clinicalCommentInfo
+        {
+            get
+            {
                 return ResourceManager.GetString("clinicalCommentInfo", resourceCulture);
             }
         }
-        
+
+        /// <summary>
+        ///   Looks up a localized string similar to Caution is warranted and therapeutic concentration monitoring is recommended.
+        /// </summary>
+        internal static string clinicalCommentInfo1
+        {
+            get
+            {
+                return ResourceManager.GetString("clinicalCommentInfo1", resourceCulture);
+            }
+        }
+
         /// <summary>
         ///   Looks up a localized string similar to Clinical trials.
         /// </summary>
-        internal static string clinicalTrials {
-            get {
+        internal static string clinicalTrials
+        {
+            get
+            {
                 return ResourceManager.GetString("clinicalTrials", resourceCulture);
             }
         }
-        
+
+        /// <summary>
+        ///   Looks up a localized string similar to Clinical trials.
+        /// </summary>
+        internal static string clinicalTrials1
+        {
+            get
+            {
+                return ResourceManager.GetString("clinicalTrials1", resourceCulture);
+            }
+        }
+
         /// <summary>
         ///   Looks up a localized string similar to C&lt;sub&gt;max&lt;/sub&gt;.
         /// </summary>
-        internal static string cmax {
-            get {
+        internal static string cmax
+        {
+            get
+            {
                 return ResourceManager.GetString("cmax", resourceCulture);
             }
         }
-        
+
+        /// <summary>
+        ///   Looks up a localized string similar to C&lt;sub&gt;max&lt;/sub&gt;.
+        /// </summary>
+        internal static string cmax1
+        {
+            get
+            {
+                return ResourceManager.GetString("cmax1", resourceCulture);
+            }
+        }
+
         /// <summary>
         ///   Looks up a localized string similar to C&lt;sub&gt;MAX&lt;/sub&gt; (h).
         /// </summary>
-        internal static string cmaxUnit {
-            get {
+        internal static string cmaxUnit
+        {
+            get
+            {
                 return ResourceManager.GetString("cmaxUnit", resourceCulture);
             }
         }
-        
+
+        /// <summary>
+        ///   Looks up a localized string similar to C&lt;sub&gt;MAX&lt;/sub&gt; (h).
+        /// </summary>
+        internal static string cmaxUnit1
+        {
+            get
+            {
+                return ResourceManager.GetString("cmaxUnit1", resourceCulture);
+            }
+        }
+
         /// <summary>
         ///   Looks up a localized string similar to Common.
         /// </summary>
-        internal static string common {
-            get {
+        internal static string common
+        {
+            get
+            {
                 return ResourceManager.GetString("common", resourceCulture);
             }
         }
-        
+
+        /// <summary>
+        ///   Looks up a localized string similar to Common.
+        /// </summary>
+        internal static string common1
+        {
+            get
+            {
+                return ResourceManager.GetString("common1", resourceCulture);
+            }
+        }
+
         /// <summary>
         ///   Looks up a localized string similar to Comparative bioavailability studies.
         /// </summary>
-        internal static string compBioStudies {
-            get {
+        internal static string compBioStudies
+        {
+            get
+            {
                 return ResourceManager.GetString("compBioStudies", resourceCulture);
             }
         }
-        
+
+        /// <summary>
+        ///   Looks up a localized string similar to Comparative bioavailability studies.
+        /// </summary>
+        internal static string compBioStudies1
+        {
+            get
+            {
+                return ResourceManager.GetString("compBioStudies1", resourceCulture);
+            }
+        }
+
         /// <summary>
         ///   Looks up a localized string similar to narrative outlining the design of the bioequivalence study. The values in the table should be based on the measured data from the study; no potency correction should be applied..
         /// </summary>
-        internal static string compBioStudiesInfo {
-            get {
+        internal static string compBioStudiesInfo
+        {
+            get
+            {
                 return ResourceManager.GetString("compBioStudiesInfo", resourceCulture);
             }
         }
-        
+
+        /// <summary>
+        ///   Looks up a localized string similar to narrative outlining the design of the bioequivalence study. The values in the table should be based on the measured data from the study; no potency correction should be applied..
+        /// </summary>
+        internal static string compBioStudiesInfo1
+        {
+            get
+            {
+                return ResourceManager.GetString("compBioStudiesInfo1", resourceCulture);
+            }
+        }
+
         /// <summary>
         ///   Looks up a localized string similar to Dosage forms, composition and packaging.
         /// </summary>
-        internal static string compositionPackaging {
-            get {
+        internal static string compositionPackaging
+        {
+            get
+            {
                 return ResourceManager.GetString("compositionPackaging", resourceCulture);
             }
         }
-        
+
+        /// <summary>
+        ///   Looks up a localized string similar to Dosage forms, composition and packaging.
+        /// </summary>
+        internal static string compositionPackaging1
+        {
+            get
+            {
+                return ResourceManager.GetString("compositionPackaging1", resourceCulture);
+            }
+        }
+
         /// <summary>
         ///   Looks up a localized string similar to Nominal concentration per mL.
         /// </summary>
-        internal static string concentration {
-            get {
+        internal static string concentration
+        {
+            get
+            {
                 return ResourceManager.GetString("concentration", resourceCulture);
             }
         }
-        
+
+        /// <summary>
+        ///   Looks up a localized string similar to Nominal concentration per mL.
+        /// </summary>
+        internal static string concentration1
+        {
+            get
+            {
+                return ResourceManager.GetString("concentration1", resourceCulture);
+            }
+        }
+
         /// <summary>
         ///   Looks up a localized string similar to Indicate % Confidence Interval (i.e., 90% or 95%) in the column heading and list for the AUC&lt;sub&gt;T&lt;/sub&gt;, AUC&lt;sub&gt;I&lt;/sub&gt;and C&lt;sub&gt;MAX&lt;/sub&gt; (if required)..
         /// </summary>
-        internal static string confidenceInterval {
-            get {
+        internal static string confidenceInterval
+        {
+            get
+            {
                 return ResourceManager.GetString("confidenceInterval", resourceCulture);
             }
         }
-        
+
+        /// <summary>
+        ///   Looks up a localized string similar to Indicate % Confidence Interval (i.e., 90% or 95%) in the column heading and list for the AUC&lt;sub&gt;T&lt;/sub&gt;, AUC&lt;sub&gt;I&lt;/sub&gt;and C&lt;sub&gt;MAX&lt;/sub&gt; (if required)..
+        /// </summary>
+        internal static string confidenceInterval1
+        {
+            get
+            {
+                return ResourceManager.GetString("confidenceInterval1", resourceCulture);
+            }
+        }
+
         /// <summary>
         ///   Looks up a localized string similar to Confidence interval.
         /// </summary>
-        internal static string confInterval {
-            get {
+        internal static string confInterval
+        {
+            get
+            {
                 return ResourceManager.GetString("confInterval", resourceCulture);
             }
         }
-        
+
+        /// <summary>
+        ///   Looks up a localized string similar to Confidence interval.
+        /// </summary>
+        internal static string confInterval1
+        {
+            get
+            {
+                return ResourceManager.GetString("confInterval1", resourceCulture);
+            }
+        }
+
         /// <summary>
         ///   Looks up a localized string similar to Contraindications.
         /// </summary>
-        internal static string contraindications {
-            get {
+        internal static string contraindications
+        {
+            get
+            {
                 return ResourceManager.GetString("contraindications", resourceCulture);
             }
         }
-        
+
+        /// <summary>
+        ///   Looks up a localized string similar to Contraindications.
+        /// </summary>
+        internal static string contraindications1
+        {
+            get
+            {
+                return ResourceManager.GetString("contraindications1", resourceCulture);
+            }
+        }
+
         /// <summary>
         ///   Looks up a localized string similar to Patients who are hypersensitive to this drug or to any ingredient in the formulation or component of the container. For a complete listing, see the Dosage Forms, Composition and Packaging section of the product monograph. [if applicable].
         /// </summary>
-        internal static string contraindicationsInfo {
-            get {
+        internal static string contraindicationsInfo
+        {
+            get
+            {
                 return ResourceManager.GetString("contraindicationsInfo", resourceCulture);
             }
         }
-        
+
+        /// <summary>
+        ///   Looks up a localized string similar to Patients who are hypersensitive to this drug or to any ingredient in the formulation or component of the container. For a complete listing, see the Dosage Forms, Composition and Packaging section of the product monograph. [if applicable].
+        /// </summary>
+        internal static string contraindicationsInfo1
+        {
+            get
+            {
+                return ResourceManager.GetString("contraindicationsInfo1", resourceCulture);
+            }
+        }
+
         /// <summary>
         ///   Looks up a localized string similar to Cover Page.
         /// </summary>
-        internal static string coverPage {
-            get {
+        internal static string coverPage
+        {
+            get
+            {
                 return ResourceManager.GetString("coverPage", resourceCulture);
             }
         }
-        
+
+        /// <summary>
+        ///   Looks up a localized string similar to Cover Page.
+        /// </summary>
+        internal static string coverPage1
+        {
+            get
+            {
+                return ResourceManager.GetString("coverPage1", resourceCulture);
+            }
+        }
+
         /// <summary>
         ///   Looks up a localized string similar to Clinical trial adverse drug reactions supplement.
         /// </summary>
-        internal static string CTAdReactSupplement {
-            get {
+        internal static string CTAdReactSupplement
+        {
+            get
+            {
                 return ResourceManager.GetString("CTAdReactSupplement", resourceCulture);
             }
         }
-        
+
+        /// <summary>
+        ///   Looks up a localized string similar to Clinical trial adverse drug reactions supplement.
+        /// </summary>
+        internal static string CTAdReactSupplement1
+        {
+            get
+            {
+                return ResourceManager.GetString("CTAdReactSupplement1", resourceCulture);
+            }
+        }
+
         /// <summary>
         ///   Looks up a localized string similar to Narrative to follow table to explain or supplement the information provided in the table.
         /// </summary>
-        internal static string CTAdReactSupplementInfo {
-            get {
+        internal static string CTAdReactSupplementInfo
+        {
+            get
+            {
                 return ResourceManager.GetString("CTAdReactSupplementInfo", resourceCulture);
             }
         }
-        
+
+        /// <summary>
+        ///   Looks up a localized string similar to Narrative to follow table to explain or supplement the information provided in the table.
+        /// </summary>
+        internal static string CTAdReactSupplementInfo1
+        {
+            get
+            {
+                return ResourceManager.GetString("CTAdReactSupplementInfo1", resourceCulture);
+            }
+        }
+
         /// <summary>
         ///   Looks up a localized string similar to Clinical trial adverse drug reactions.
         /// </summary>
-        internal static string CTAdverseReaction {
-            get {
+        internal static string CTAdverseReaction
+        {
+            get
+            {
                 return ResourceManager.GetString("CTAdverseReaction", resourceCulture);
             }
         }
-        
+
+        /// <summary>
+        ///   Looks up a localized string similar to Clinical trial adverse drug reactions.
+        /// </summary>
+        internal static string CTAdverseReaction1
+        {
+            get
+            {
+                return ResourceManager.GetString("CTAdverseReaction1", resourceCulture);
+            }
+        }
+
         /// <summary>
         ///   Looks up a localized string similar to Include description of data sources.
         /// </summary>
-        internal static string CTAdverseReactionInfo {
-            get {
+        internal static string CTAdverseReactionInfo
+        {
+            get
+            {
                 return ResourceManager.GetString("CTAdverseReactionInfo", resourceCulture);
             }
         }
-        
+
+        /// <summary>
+        ///   Looks up a localized string similar to Include description of data sources.
+        /// </summary>
+        internal static string CTAdverseReactionInfo1
+        {
+            get
+            {
+                return ResourceManager.GetString("CTAdverseReactionInfo1", resourceCulture);
+            }
+        }
+
         /// <summary>
         ///   Looks up a localized string similar to Clinical trial adverse drug reactions table #.
         /// </summary>
-        internal static string CTAdverseReactionTable {
-            get {
+        internal static string CTAdverseReactionTable
+        {
+            get
+            {
                 return ResourceManager.GetString("CTAdverseReactionTable", resourceCulture);
             }
         }
-        
+
+        /// <summary>
+        ///   Looks up a localized string similar to Clinical trial adverse drug reactions table #.
+        /// </summary>
+        internal static string CTAdverseReactionTable1
+        {
+            get
+            {
+                return ResourceManager.GetString("CTAdverseReactionTable1", resourceCulture);
+            }
+        }
+
         /// <summary>
         ///   Looks up a localized string similar to Date of preparation.
         /// </summary>
-        internal static string datePreparation {
-            get {
+        internal static string datePreparation
+        {
+            get
+            {
                 return ResourceManager.GetString("datePreparation", resourceCulture);
             }
         }
-        
+
+        /// <summary>
+        ///   Looks up a localized string similar to Date of preparation.
+        /// </summary>
+        internal static string datePreparation1
+        {
+            get
+            {
+                return ResourceManager.GetString("datePreparation1", resourceCulture);
+            }
+        }
+
         /// <summary>
         ///   Looks up a localized string similar to Date of revision.
         /// </summary>
-        internal static string dateRevision {
-            get {
+        internal static string dateRevision
+        {
+            get
+            {
                 return ResourceManager.GetString("dateRevision", resourceCulture);
             }
         }
-        
+
+        /// <summary>
+        ///   Looks up a localized string similar to Date of revision.
+        /// </summary>
+        internal static string dateRevision1
+        {
+            get
+            {
+                return ResourceManager.GetString("dateRevision1", resourceCulture);
+            }
+        }
+
         /// <summary>
         ///   Looks up a localized string similar to Dosage form.
         /// </summary>
-        internal static string dosageForm {
-            get {
+        internal static string dosageForm
+        {
+            get
+            {
                 return ResourceManager.GetString("dosageForm", resourceCulture);
             }
         }
-        
+
+        /// <summary>
+        ///   Looks up a localized string similar to Dosage form.
+        /// </summary>
+        internal static string dosageForm1
+        {
+            get
+            {
+                return ResourceManager.GetString("dosageForm1", resourceCulture);
+            }
+        }
+
         /// <summary>
         ///   Looks up a localized string similar to Dosing considerations.
         /// </summary>
-        internal static string dosingConsiderations {
-            get {
+        internal static string dosingConsiderations
+        {
+            get
+            {
                 return ResourceManager.GetString("dosingConsiderations", resourceCulture);
             }
         }
-        
+
+        /// <summary>
+        ///   Looks up a localized string similar to Dosing considerations.
+        /// </summary>
+        internal static string dosingConsiderations1
+        {
+            get
+            {
+                return ResourceManager.GetString("dosingConsiderations1", resourceCulture);
+            }
+        }
+
         /// <summary>
         ///   Looks up a localized string similar to Include all situations that may affect dosing of the drug.
         /// </summary>
-        internal static string dosingConsiderationsInfo {
-            get {
+        internal static string dosingConsiderationsInfo
+        {
+            get
+            {
                 return ResourceManager.GetString("dosingConsiderationsInfo", resourceCulture);
             }
         }
-        
+
+        /// <summary>
+        ///   Looks up a localized string similar to Include all situations that may affect dosing of the drug.
+        /// </summary>
+        internal static string dosingConsiderationsInfo1
+        {
+            get
+            {
+                return ResourceManager.GetString("dosingConsiderationsInfo1", resourceCulture);
+            }
+        }
+
         /// <summary>
         ///   Looks up a localized string similar to Established or Potential Drug-Drug Interactions.
         /// </summary>
-        internal static string drugDrugInteraction {
-            get {
+        internal static string drugDrugInteraction
+        {
+            get
+            {
                 return ResourceManager.GetString("drugDrugInteraction", resourceCulture);
             }
         }
-        
+
+        /// <summary>
+        ///   Looks up a localized string similar to Established or Potential Drug-Drug Interactions.
+        /// </summary>
+        internal static string drugDrugInteraction1
+        {
+            get
+            {
+                return ResourceManager.GetString("drugDrugInteraction1", resourceCulture);
+            }
+        }
+
         /// <summary>
         ///   Looks up a localized string similar to Drug substance.
         /// </summary>
-        internal static string drugSubstance {
-            get {
+        internal static string drugSubstance
+        {
+            get
+            {
                 return ResourceManager.GetString("drugSubstance", resourceCulture);
             }
         }
-        
+
+        /// <summary>
+        ///   Looks up a localized string similar to Drug substance.
+        /// </summary>
+        internal static string drugSubstance1
+        {
+            get
+            {
+                return ResourceManager.GetString("drugSubstance1", resourceCulture);
+            }
+        }
+
         /// <summary>
         ///   Looks up a localized string similar to Effect.
         /// </summary>
-        internal static string effect {
-            get {
+        internal static string effect
+        {
+            get
+            {
                 return ResourceManager.GetString("effect", resourceCulture);
             }
         }
-        
+
+        /// <summary>
+        ///   Looks up a localized string similar to Effect.
+        /// </summary>
+        internal static string effect1
+        {
+            get
+            {
+                return ResourceManager.GetString("effect1", resourceCulture);
+            }
+        }
+
         /// <summary>
         ///   Looks up a localized string similar to e.g. 9 &lt;drug A&gt; conc.
         /// </summary>
-        internal static string effectInfo {
-            get {
+        internal static string effectInfo
+        {
+            get
+            {
                 return ResourceManager.GetString("effectInfo", resourceCulture);
             }
         }
-        
+
+        /// <summary>
+        ///   Looks up a localized string similar to e.g. 9 &lt;drug A&gt; conc.
+        /// </summary>
+        internal static string effectInfo1
+        {
+            get
+            {
+                return ResourceManager.GetString("effectInfo1", resourceCulture);
+            }
+        }
+
         /// <summary>
         ///   Looks up a localized string similar to Footnote.
         /// </summary>
-        internal static string footnote {
-            get {
+        internal static string footnote
+        {
+            get
+            {
                 return ResourceManager.GetString("footnote", resourceCulture);
             }
         }
-        
+
+        /// <summary>
+        ///   Looks up a localized string similar to Footnote.
+        /// </summary>
+        internal static string footnote1
+        {
+            get
+            {
+                return ResourceManager.GetString("footnote1", resourceCulture);
+            }
+        }
+
         /// <summary>
         ///   Looks up a localized string similar to Form Instruction.
         /// </summary>
-        internal static string formInstruction {
-            get {
+        internal static string formInstruction
+        {
+            get
+            {
                 return ResourceManager.GetString("formInstruction", resourceCulture);
             }
         }
-        
+
+        /// <summary>
+        ///   Looks up a localized string similar to Form Instruction.
+        /// </summary>
+        internal static string formInstruction1
+        {
+            get
+            {
+                return ResourceManager.GetString("formInstruction1", resourceCulture);
+            }
+        }
+
         /// <summary>
         ///   Looks up a localized string similar to Frequency.
         /// </summary>
-        internal static string frequency {
-            get {
+        internal static string frequency
+        {
+            get
+            {
                 return ResourceManager.GetString("frequency", resourceCulture);
             }
         }
-        
+
+        /// <summary>
+        ///   Looks up a localized string similar to Frequency.
+        /// </summary>
+        internal static string frequency1
+        {
+            get
+            {
+                return ResourceManager.GetString("frequency1", resourceCulture);
+            }
+        }
+
         /// <summary>
         ///   Looks up a localized string similar to Geriatrics.
         /// </summary>
-        internal static string geriatrics {
-            get {
+        internal static string geriatrics
+        {
+            get
+            {
                 return ResourceManager.GetString("geriatrics", resourceCulture);
             }
         }
-        
+
+        /// <summary>
+        ///   Looks up a localized string similar to Geriatrics.
+        /// </summary>
+        internal static string geriatrics1
+        {
+            get
+            {
+                return ResourceManager.GetString("geriatrics1", resourceCulture);
+            }
+        }
+
         /// <summary>
         ///   Looks up a localized string similar to years of age.
         /// </summary>
-        internal static string geriatricsAge {
-            get {
+        internal static string geriatricsAge
+        {
+            get
+            {
                 return ResourceManager.GetString("geriatricsAge", resourceCulture);
             }
         }
-        
+
+        /// <summary>
+        ///   Looks up a localized string similar to years of age.
+        /// </summary>
+        internal static string geriatricsAge1
+        {
+            get
+            {
+                return ResourceManager.GetString("geriatricsAge1", resourceCulture);
+            }
+        }
+
         /// <summary>
         ///   Looks up a localized string similar to T&lt;sub&gt;1/2&lt;/sub&gt; &lt;sup&gt;[]&lt;/sup&gt;(h).
         /// </summary>
-        internal static string halfLife {
-            get {
+        internal static string halfLife
+        {
+            get
+            {
                 return ResourceManager.GetString("halfLife", resourceCulture);
             }
         }
-        
+
+        /// <summary>
+        ///   Looks up a localized string similar to T&lt;sub&gt;1/2&lt;/sub&gt; &lt;sup&gt;[]&lt;/sup&gt;(h).
+        /// </summary>
+        internal static string halfLife1
+        {
+            get
+            {
+                return ResourceManager.GetString("halfLife1", resourceCulture);
+            }
+        }
+
         /// <summary>
         ///   Looks up a localized string similar to T&lt;sub&gt;1/2&lt;/sub&gt;(h).
         /// </summary>
-        internal static string halfLifeTitle {
-            get {
+        internal static string halfLifeTitle
+        {
+            get
+            {
                 return ResourceManager.GetString("halfLifeTitle", resourceCulture);
             }
         }
-        
+
+        /// <summary>
+        ///   Looks up a localized string similar to T&lt;sub&gt;1/2&lt;/sub&gt;(h).
+        /// </summary>
+        internal static string halfLifeTitle1
+        {
+            get
+            {
+                return ResourceManager.GetString("halfLifeTitle1", resourceCulture);
+            }
+        }
+
         /// <summary>
         ///   Looks up a localized string similar to Special handling instructions.
         /// </summary>
-        internal static string handlingInstruction {
-            get {
+        internal static string handlingInstruction
+        {
+            get
+            {
                 return ResourceManager.GetString("handlingInstruction", resourceCulture);
             }
         }
-        
+
+        /// <summary>
+        ///   Looks up a localized string similar to Special handling instructions.
+        /// </summary>
+        internal static string handlingInstruction1
+        {
+            get
+            {
+                return ResourceManager.GetString("handlingInstruction1", resourceCulture);
+            }
+        }
+
         /// <summary>
         ///   Looks up a localized string similar to Headings.
         /// </summary>
-        internal static string headings {
-            get {
+        internal static string headings
+        {
+            get
+            {
                 return ResourceManager.GetString("headings", resourceCulture);
             }
         }
-        
+
+        /// <summary>
+        ///   Looks up a localized string similar to Headings.
+        /// </summary>
+        internal static string headings1
+        {
+            get
+            {
+                return ResourceManager.GetString("headings1", resourceCulture);
+            }
+        }
+
         /// <summary>
         ///   Looks up a localized string similar to Headings to be included as applicable.
         /// </summary>
-        internal static string headingsInfo {
-            get {
+        internal static string headingsInfo
+        {
+            get
+            {
                 return ResourceManager.GetString("headingsInfo", resourceCulture);
             }
         }
-        
+
+        /// <summary>
+        ///   Looks up a localized string similar to Headings to be included as applicable.
+        /// </summary>
+        internal static string headingsInfo1
+        {
+            get
+            {
+                return ResourceManager.GetString("headingsInfo1", resourceCulture);
+            }
+        }
+
         /// <summary>
         ///   Looks up a localized string similar to Identity of the reference product, including the manufacturer, and origin (country of purchase)..
         /// </summary>
-        internal static string idRefProduct {
-            get {
+        internal static string idRefProduct
+        {
+            get
+            {
                 return ResourceManager.GetString("idRefProduct", resourceCulture);
             }
         }
-        
+
+        /// <summary>
+        ///   Looks up a localized string similar to Identity of the reference product, including the manufacturer, and origin (country of purchase)..
+        /// </summary>
+        internal static string idRefProduct1
+        {
+            get
+            {
+                return ResourceManager.GetString("idRefProduct1", resourceCulture);
+            }
+        }
+
         /// <summary>
         ///   Looks up a localized string similar to Identity of the test product..
         /// </summary>
-        internal static string idTestProduct {
-            get {
+        internal static string idTestProduct
+        {
+            get
+            {
                 return ResourceManager.GetString("idTestProduct", resourceCulture);
             }
         }
-        
+
+        /// <summary>
+        ///   Looks up a localized string similar to Identity of the test product..
+        /// </summary>
+        internal static string idTestProduct1
+        {
+            get
+            {
+                return ResourceManager.GetString("idTestProduct1", resourceCulture);
+            }
+        }
+
         /// <summary>
         ///   Looks up a localized string similar to  is indicated for:.
         /// </summary>
-        internal static string indicatedFor {
-            get {
+        internal static string indicatedFor
+        {
+            get
+            {
                 return ResourceManager.GetString("indicatedFor", resourceCulture);
             }
         }
-        
+
+        /// <summary>
+        ///   Looks up a localized string similar to  is indicated for:.
+        /// </summary>
+        internal static string indicatedFor1
+        {
+            get
+            {
+                return ResourceManager.GetString("indicatedFor1", resourceCulture);
+            }
+        }
+
         /// <summary>
         ///   Looks up a localized string similar to Brief discussion of any relevant clinical information - if applicable 
         ///Distribution restrictions - if applicable
         ///When the product is not recommended - if applicable.
         /// </summary>
-        internal static string indicatedForInfo {
-            get {
+        internal static string indicatedForInfo
+        {
+            get
+            {
                 return ResourceManager.GetString("indicatedForInfo", resourceCulture);
             }
         }
-        
+
+        /// <summary>
+        ///   Looks up a localized string similar to Brief discussion of any relevant clinical information - if applicable 
+        ///Distribution restrictions - if applicable
+        ///When the product is not recommended - if applicable.
+        /// </summary>
+        internal static string indicatedForInfo1
+        {
+            get
+            {
+                return ResourceManager.GetString("indicatedForInfo1", resourceCulture);
+            }
+        }
+
         /// <summary>
         ///   Looks up a localized string similar to Info.
         /// </summary>
-        internal static string information {
-            get {
+        internal static string information
+        {
+            get
+            {
                 return ResourceManager.GetString("information", resourceCulture);
             }
         }
-        
+
+        /// <summary>
+        ///   Looks up a localized string similar to Info.
+        /// </summary>
+        internal static string information1
+        {
+            get
+            {
+                return ResourceManager.GetString("information1", resourceCulture);
+            }
+        }
+
         /// <summary>
         ///   Looks up a localized string similar to Drug interactions overview.
         /// </summary>
-        internal static string interactionOverview {
-            get {
+        internal static string interactionOverview
+        {
+            get
+            {
                 return ResourceManager.GetString("interactionOverview", resourceCulture);
             }
         }
-        
+
+        /// <summary>
+        ///   Looks up a localized string similar to Drug interactions overview.
+        /// </summary>
+        internal static string interactionOverview1
+        {
+            get
+            {
+                return ResourceManager.GetString("interactionOverview1", resourceCulture);
+            }
+        }
+
         /// <summary>
         ///   Looks up a localized string similar to It should include the following information: interactions suspected based on the pharmacokinetic or pharmacologic profile of the drug (for example, cytochrome P450 interactions); drug class statements if the interaction has not yet been documented, but would be clinically significant; potential interaction with alcohol..
         /// </summary>
-        internal static string interactionOverviewInfo {
-            get {
+        internal static string interactionOverviewInfo
+        {
+            get
+            {
                 return ResourceManager.GetString("interactionOverviewInfo", resourceCulture);
             }
         }
-        
+
+        /// <summary>
+        ///   Looks up a localized string similar to It should include the following information: interactions suspected based on the pharmacokinetic or pharmacologic profile of the drug (for example, cytochrome P450 interactions); drug class statements if the interaction has not yet been documented, but would be clinically significant; potential interaction with alcohol..
+        /// </summary>
+        internal static string interactionOverviewInfo1
+        {
+            get
+            {
+                return ResourceManager.GetString("interactionOverviewInfo1", resourceCulture);
+            }
+        }
+
         /// <summary>
         ///   Looks up a localized string similar to Interactions with this medication.
         /// </summary>
-        internal static string interactions {
-            get {
+        internal static string interactions
+        {
+            get
+            {
                 return ResourceManager.GetString("interactions", resourceCulture);
             }
         }
-        
+
+        /// <summary>
+        ///   Looks up a localized string similar to Interactions with this medication.
+        /// </summary>
+        internal static string interactions1
+        {
+            get
+            {
+                return ResourceManager.GetString("interactions1", resourceCulture);
+            }
+        }
+
         /// <summary>
         ///   Looks up a localized string similar to Drugs that may interact with this medication.
         /// </summary>
-        internal static string interactionsInfo {
-            get {
+        internal static string interactionsInfo
+        {
+            get
+            {
                 return ResourceManager.GetString("interactionsInfo", resourceCulture);
             }
         }
-        
+
+        /// <summary>
+        ///   Looks up a localized string similar to Drugs that may interact with this medication.
+        /// </summary>
+        internal static string interactionsInfo1
+        {
+            get
+            {
+                return ResourceManager.GetString("interactionsInfo1", resourceCulture);
+            }
+        }
+
         /// <summary>
         ///   Looks up a localized string similar to Last revised.
         /// </summary>
-        internal static string lastModified {
-            get {
+        internal static string lastModified
+        {
+            get
+            {
                 return ResourceManager.GetString("lastModified", resourceCulture);
             }
         }
-        
+
+        /// <summary>
+        ///   Looks up a localized string similar to Last revised.
+        /// </summary>
+        internal static string lastModified1
+        {
+            get
+            {
+                return ResourceManager.GetString("lastModified1", resourceCulture);
+            }
+        }
+
         /// <summary>
         ///   Looks up a localized string similar to Legend: C = Case study; CT = Clinical trial; T=Theoretical.
         /// </summary>
-        internal static string legendInfo {
-            get {
+        internal static string legendInfo
+        {
+            get
+            {
                 return ResourceManager.GetString("legendInfo", resourceCulture);
             }
         }
-        
+
+        /// <summary>
+        ///   Looks up a localized string similar to Legend: C = Case study; CT = Clinical trial; T=Theoretical.
+        /// </summary>
+        internal static string legendInfo1
+        {
+            get
+            {
+                return ResourceManager.GetString("legendInfo1", resourceCulture);
+            }
+        }
+
         /// <summary>
         ///   Looks up a localized string similar to Mechanism of action.
         /// </summary>
-        internal static string mechanismAction {
-            get {
+        internal static string mechanismAction
+        {
+            get
+            {
                 return ResourceManager.GetString("mechanismAction", resourceCulture);
             }
         }
-        
+
+        /// <summary>
+        ///   Looks up a localized string similar to Mechanism of action.
+        /// </summary>
+        internal static string mechanismAction1
+        {
+            get
+            {
+                return ResourceManager.GetString("mechanismAction1", resourceCulture);
+            }
+        }
+
         /// <summary>
         ///   Looks up a localized string similar to For anti-infective products: a brief description of action against micro-organisms.
         /// </summary>
-        internal static string mechanismActionInfo {
-            get {
+        internal static string mechanismActionInfo
+        {
+            get
+            {
                 return ResourceManager.GetString("mechanismActionInfo", resourceCulture);
             }
         }
-        
+
+        /// <summary>
+        ///   Looks up a localized string similar to For anti-infective products: a brief description of action against micro-organisms.
+        /// </summary>
+        internal static string mechanismActionInfo1
+        {
+            get
+            {
+                return ResourceManager.GetString("mechanismActionInfo1", resourceCulture);
+            }
+        }
+
         /// <summary>
         ///   Looks up a localized string similar to What it does.
         /// </summary>
-        internal static string medicationDoes {
-            get {
+        internal static string medicationDoes
+        {
+            get
+            {
                 return ResourceManager.GetString("medicationDoes", resourceCulture);
             }
         }
-        
+
+        /// <summary>
+        ///   Looks up a localized string similar to What it does.
+        /// </summary>
+        internal static string medicationDoes1
+        {
+            get
+            {
+                return ResourceManager.GetString("medicationDoes1", resourceCulture);
+            }
+        }
+
         /// <summary>
         ///   Looks up a localized string similar to What the medication is used for.
         /// </summary>
-        internal static string medicationUse {
-            get {
+        internal static string medicationUse
+        {
+            get
+            {
                 return ResourceManager.GetString("medicationUse", resourceCulture);
             }
         }
-        
+
+        /// <summary>
+        ///   Looks up a localized string similar to What the medication is used for.
+        /// </summary>
+        internal static string medicationUse1
+        {
+            get
+            {
+                return ResourceManager.GetString("medicationUse1", resourceCulture);
+            }
+        }
+
         /// <summary>
         ///   Looks up a localized string similar to What the medicinal ingredient is.
         /// </summary>
-        internal static string medIngredient {
-            get {
+        internal static string medIngredient
+        {
+            get
+            {
                 return ResourceManager.GetString("medIngredient", resourceCulture);
             }
         }
-        
+
+        /// <summary>
+        ///   Looks up a localized string similar to What the medicinal ingredient is.
+        /// </summary>
+        internal static string medIngredient1
+        {
+            get
+            {
+                return ResourceManager.GetString("medIngredient1", resourceCulture);
+            }
+        }
+
         /// <summary>
         ///   Looks up a localized string similar to Microbiology.
         /// </summary>
-        internal static string microbiology {
-            get {
+        internal static string microbiology
+        {
+            get
+            {
                 return ResourceManager.GetString("microbiology", resourceCulture);
             }
         }
-        
+
+        /// <summary>
+        ///   Looks up a localized string similar to Microbiology.
+        /// </summary>
+        internal static string microbiology1
+        {
+            get
+            {
+                return ResourceManager.GetString("microbiology1", resourceCulture);
+            }
+        }
+
         /// <summary>
         ///   Looks up a localized string similar to Missed dose.
         /// </summary>
-        internal static string missedDose {
-            get {
+        internal static string missedDose
+        {
+            get
+            {
                 return ResourceManager.GetString("missedDose", resourceCulture);
             }
         }
-        
+
+        /// <summary>
+        ///   Looks up a localized string similar to Missed dose.
+        /// </summary>
+        internal static string missedDose1
+        {
+            get
+            {
+                return ResourceManager.GetString("missedDose1", resourceCulture);
+            }
+        }
+
         /// <summary>
         ///   Looks up a localized string similar to Missed dose file.
         /// </summary>
-        internal static string missedDoseFile {
-            get {
+        internal static string missedDoseFile
+        {
+            get
+            {
                 return ResourceManager.GetString("missedDoseFile", resourceCulture);
             }
         }
-        
+
+        /// <summary>
+        ///   Looks up a localized string similar to Missed dose file.
+        /// </summary>
+        internal static string missedDoseFile1
+        {
+            get
+            {
+                return ResourceManager.GetString("missedDoseFile1", resourceCulture);
+            }
+        }
+
         /// <summary>
         ///   Looks up a localized string similar to Molecular formula.
         /// </summary>
-        internal static string molecularFormula {
-            get {
+        internal static string molecularFormula
+        {
+            get
+            {
                 return ResourceManager.GetString("molecularFormula", resourceCulture);
             }
         }
-        
+
+        /// <summary>
+        ///   Looks up a localized string similar to Molecular formula.
+        /// </summary>
+        internal static string molecularFormula1
+        {
+            get
+            {
+                return ResourceManager.GetString("molecularFormula1", resourceCulture);
+            }
+        }
+
         /// <summary>
         ///   Looks up a localized string similar to Molecular mass.
         /// </summary>
-        internal static string molecularMass {
-            get {
+        internal static string molecularMass
+        {
+            get
+            {
                 return ResourceManager.GetString("molecularMass", resourceCulture);
             }
         }
-        
+
+        /// <summary>
+        ///   Looks up a localized string similar to Molecular mass.
+        /// </summary>
+        internal static string molecularMass1
+        {
+            get
+            {
+                return ResourceManager.GetString("molecularMass1", resourceCulture);
+            }
+        }
+
         /// <summary>
         ///   Looks up a localized string similar to This document plus the full product monograph, prepared for health professionals can be found at:
         /// http://www.website.document
         /// or by contacting the sponsor,.
         /// </summary>
-        internal static string moreInformationText1 {
-            get {
+        internal static string moreInformationText1
+        {
+            get
+            {
                 return ResourceManager.GetString("moreInformationText1", resourceCulture);
             }
         }
-        
+
+        /// <summary>
+        ///   Looks up a localized string similar to This document plus the full product monograph, prepared for health professionals can be found at:
+        /// http://www.website.document
+        /// or by contacting the sponsor,.
+        /// </summary>
+        internal static string moreInformationText11
+        {
+            get
+            {
+                return ResourceManager.GetString("moreInformationText11", resourceCulture);
+            }
+        }
+
         /// <summary>
         ///   Looks up a localized string similar to at: 1-800-XXX-XXXX..
         /// </summary>
-        internal static string moreInformationText2 {
-            get {
+        internal static string moreInformationText2
+        {
+            get
+            {
                 return ResourceManager.GetString("moreInformationText2", resourceCulture);
             }
         }
-        
+
+        /// <summary>
+        ///   Looks up a localized string similar to at: 1-800-XXX-XXXX..
+        /// </summary>
+        internal static string moreInformationText21
+        {
+            get
+            {
+                return ResourceManager.GetString("moreInformationText21", resourceCulture);
+            }
+        }
+
         /// <summary>
         ///   Looks up a localized string similar to Clinically relevant nonmedicinal ingredients.
         /// </summary>
-        internal static string nonmedIngred {
-            get {
+        internal static string nonmedIngred
+        {
+            get
+            {
                 return ResourceManager.GetString("nonmedIngred", resourceCulture);
             }
         }
-        
+
+        /// <summary>
+        ///   Looks up a localized string similar to Clinically relevant nonmedicinal ingredients.
+        /// </summary>
+        internal static string nonmedIngred1
+        {
+            get
+            {
+                return ResourceManager.GetString("nonmedIngred1", resourceCulture);
+            }
+        }
+
         /// <summary>
         ///   Looks up a localized string similar to What the nonmedicinal ingredients are.
         /// </summary>
-        internal static string nonMedIngredient {
-            get {
+        internal static string nonMedIngredient
+        {
+            get
+            {
                 return ResourceManager.GetString("nonMedIngredient", resourceCulture);
             }
         }
-        
+
+        /// <summary>
+        ///   Looks up a localized string similar to What the nonmedicinal ingredients are.
+        /// </summary>
+        internal static string nonMedIngredient1
+        {
+            get
+            {
+                return ResourceManager.GetString("nonMedIngredient1", resourceCulture);
+            }
+        }
+
         /// <summary>
         ///   Looks up a localized string similar to For a full listing of nonmedicinal ingredients see Part 1 of the product monograph..
         /// </summary>
-        internal static string nonMedIngredientInfo {
-            get {
+        internal static string nonMedIngredientInfo
+        {
+            get
+            {
                 return ResourceManager.GetString("nonMedIngredientInfo", resourceCulture);
             }
         }
-        
+
+        /// <summary>
+        ///   Looks up a localized string similar to For a full listing of nonmedicinal ingredients see Part 1 of the product monograph..
+        /// </summary>
+        internal static string nonMedIngredientInfo1
+        {
+            get
+            {
+                return ResourceManager.GetString("nonMedIngredientInfo1", resourceCulture);
+            }
+        }
+
         /// <summary>
         ///   Looks up a localized string similar to Oral solutions.
         /// </summary>
-        internal static string oralSolutions {
-            get {
+        internal static string oralSolutions
+        {
+            get
+            {
                 return ResourceManager.GetString("oralSolutions", resourceCulture);
             }
         }
-        
+
+        /// <summary>
+        ///   Looks up a localized string similar to Oral solutions.
+        /// </summary>
+        internal static string oralSolutions1
+        {
+            get
+            {
+                return ResourceManager.GetString("oralSolutions1", resourceCulture);
+            }
+        }
+
         /// <summary>
         ///   Looks up a localized string similar to Overdosage.
         /// </summary>
-        internal static string overdosage {
-            get {
+        internal static string overdosage
+        {
+            get
+            {
                 return ResourceManager.GetString("overdosage", resourceCulture);
             }
         }
-        
+
+        /// <summary>
+        ///   Looks up a localized string similar to Overdosage.
+        /// </summary>
+        internal static string overdosage1
+        {
+            get
+            {
+                return ResourceManager.GetString("overdosage1", resourceCulture);
+            }
+        }
+
         /// <summary>
         ///   Looks up a localized string similar to Overdose.
         /// </summary>
-        internal static string overdose {
-            get {
+        internal static string overdose
+        {
+            get
+            {
                 return ResourceManager.GetString("overdose", resourceCulture);
             }
         }
-        
+
+        /// <summary>
+        ///   Looks up a localized string similar to Overdose.
+        /// </summary>
+        internal static string overdose1
+        {
+            get
+            {
+                return ResourceManager.GetString("overdose1", resourceCulture);
+            }
+        }
+
         /// <summary>
         ///   Looks up a localized string similar to Overdose file.
         /// </summary>
-        internal static string overdoseFile {
-            get {
+        internal static string overdoseFile
+        {
+            get
+            {
                 return ResourceManager.GetString("overdoseFile", resourceCulture);
             }
         }
-        
+
+        /// <summary>
+        ///   Looks up a localized string similar to Overdose file.
+        /// </summary>
+        internal static string overdoseFile1
+        {
+            get
+            {
+                return ResourceManager.GetString("overdoseFile1", resourceCulture);
+            }
+        }
+
         /// <summary>
         ///   Looks up a localized string similar to The boxed message may be modified to provide the most appropriate advice according to current standards of care for this drug product..
         /// </summary>
-        internal static string overdoseInfo {
-            get {
+        internal static string overdoseInfo
+        {
+            get
+            {
                 return ResourceManager.GetString("overdoseInfo", resourceCulture);
             }
         }
-        
+
+        /// <summary>
+        ///   Looks up a localized string similar to The boxed message may be modified to provide the most appropriate advice according to current standards of care for this drug product..
+        /// </summary>
+        internal static string overdoseInfo1
+        {
+            get
+            {
+                return ResourceManager.GetString("overdoseInfo1", resourceCulture);
+            }
+        }
+
         /// <summary>
         ///   Looks up a localized string similar to For management of a suspected drug overdose, contact your regional Poison Control Centre..
         /// </summary>
-        internal static string overdoseInstruction {
-            get {
+        internal static string overdoseInstruction
+        {
+            get
+            {
                 return ResourceManager.GetString("overdoseInstruction", resourceCulture);
             }
         }
-        
+
+        /// <summary>
+        ///   Looks up a localized string similar to For management of a suspected drug overdose, contact your regional Poison Control Centre..
+        /// </summary>
+        internal static string overdoseInstruction1
+        {
+            get
+            {
+                return ResourceManager.GetString("overdoseInstruction1", resourceCulture);
+            }
+        }
+
         /// <summary>
         ///   Looks up a localized string similar to In case of drug overdose, contact a health care practitioner, hospital emergency department or regional Poison Control Centre immediately, even if there are no symptoms..
         /// </summary>
-        internal static string overDoseText {
-            get {
+        internal static string overDoseText
+        {
+            get
+            {
                 return ResourceManager.GetString("overDoseText", resourceCulture);
             }
         }
-        
+
+        /// <summary>
+        ///   Looks up a localized string similar to In case of drug overdose, contact a health care practitioner, hospital emergency department or regional Poison Control Centre immediately, even if there are no symptoms..
+        /// </summary>
+        internal static string overDoseText1
+        {
+            get
+            {
+                return ResourceManager.GetString("overDoseText1", resourceCulture);
+            }
+        }
+
         /// <summary>
         ///   Looks up a localized string similar to Parameter.
         /// </summary>
-        internal static string parameter {
-            get {
+        internal static string parameter
+        {
+            get
+            {
                 return ResourceManager.GetString("parameter", resourceCulture);
             }
         }
-        
+
+        /// <summary>
+        ///   Looks up a localized string similar to Parameter.
+        /// </summary>
+        internal static string parameter1
+        {
+            get
+            {
+                return ResourceManager.GetString("parameter1", resourceCulture);
+            }
+        }
+
         /// <summary>
         ///   Looks up a localized string similar to Parenteral products.
         /// </summary>
-        internal static string parenteralProd {
-            get {
+        internal static string parenteralProd
+        {
+            get
+            {
                 return ResourceManager.GetString("parenteralProd", resourceCulture);
             }
         }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to Any specific precautions, storage periods and incompatibilities.
-        /// </summary>
-        internal static string parenteralProdInfo {
-            get {
-                return ResourceManager.GetString("parenteralProdInfo", resourceCulture);
-            }
-        }
-        
+
         /// <summary>
         ///   Looks up a localized string similar to Parenteral products.
         /// </summary>
-        internal static string parenteralProdTitle {
-            get {
+        internal static string parenteralProd1
+        {
+            get
+            {
+                return ResourceManager.GetString("parenteralProd1", resourceCulture);
+            }
+        }
+
+        /// <summary>
+        ///   Looks up a localized string similar to Any specific precautions, storage periods and incompatibilities.
+        /// </summary>
+        internal static string parenteralProdInfo
+        {
+            get
+            {
+                return ResourceManager.GetString("parenteralProdInfo", resourceCulture);
+            }
+        }
+
+        /// <summary>
+        ///   Looks up a localized string similar to Any specific precautions, storage periods and incompatibilities.
+        /// </summary>
+        internal static string parenteralProdInfo1
+        {
+            get
+            {
+                return ResourceManager.GetString("parenteralProdInfo1", resourceCulture);
+            }
+        }
+
+        /// <summary>
+        ///   Looks up a localized string similar to Parenteral products.
+        /// </summary>
+        internal static string parenteralProdTitle
+        {
+            get
+            {
                 return ResourceManager.GetString("parenteralProdTitle", resourceCulture);
             }
         }
-        
+
+        /// <summary>
+        ///   Looks up a localized string similar to Parenteral products.
+        /// </summary>
+        internal static string parenteralProdTitle1
+        {
+            get
+            {
+                return ResourceManager.GetString("parenteralProdTitle1", resourceCulture);
+            }
+        }
+
         /// <summary>
         ///   Looks up a localized string similar to Part I: Health professional information.
         /// </summary>
-        internal static string partOne {
-            get {
+        internal static string partOne
+        {
+            get
+            {
                 return ResourceManager.GetString("partOne", resourceCulture);
             }
         }
-        
+
+        /// <summary>
+        ///   Looks up a localized string similar to Part I: Health professional information.
+        /// </summary>
+        internal static string partOne1
+        {
+            get
+            {
+                return ResourceManager.GetString("partOne1", resourceCulture);
+            }
+        }
+
         /// <summary>
         ///   Looks up a localized string similar to Part III: Consumer information.
         /// </summary>
-        internal static string partThree {
-            get {
+        internal static string partThree
+        {
+            get
+            {
                 return ResourceManager.GetString("partThree", resourceCulture);
             }
         }
-        
+
+        /// <summary>
+        ///   Looks up a localized string similar to Part III: Consumer information.
+        /// </summary>
+        internal static string partThree1
+        {
+            get
+            {
+                return ResourceManager.GetString("partThree1", resourceCulture);
+            }
+        }
+
         /// <summary>
         ///   Looks up a localized string similar to Part II: Scientific information.
         /// </summary>
-        internal static string partTwo {
-            get {
+        internal static string partTwo
+        {
+            get
+            {
                 return ResourceManager.GetString("partTwo", resourceCulture);
             }
         }
-        
+
+        /// <summary>
+        ///   Looks up a localized string similar to Part II: Scientific information.
+        /// </summary>
+        internal static string partTwo1
+        {
+            get
+            {
+                return ResourceManager.GetString("partTwo1", resourceCulture);
+            }
+        }
+
         /// <summary>
         ///   Looks up a localized string similar to Pediatrics.
         /// </summary>
-        internal static string pediatrics {
-            get {
+        internal static string pediatrics
+        {
+            get
+            {
                 return ResourceManager.GetString("pediatrics", resourceCulture);
             }
         }
-        
+
+        /// <summary>
+        ///   Looks up a localized string similar to Pediatrics.
+        /// </summary>
+        internal static string pediatrics1
+        {
+            get
+            {
+                return ResourceManager.GetString("pediatrics1", resourceCulture);
+            }
+        }
+
         /// <summary>
         ///   Looks up a localized string similar to years of age.
         /// </summary>
-        internal static string pediatricsAge {
-            get {
+        internal static string pediatricsAge
+        {
+            get
+            {
                 return ResourceManager.GetString("pediatricsAge", resourceCulture);
             }
         }
-        
+
+        /// <summary>
+        ///   Looks up a localized string similar to years of age.
+        /// </summary>
+        internal static string pediatricsAge1
+        {
+            get
+            {
+                return ResourceManager.GetString("pediatricsAge1", resourceCulture);
+            }
+        }
+
         /// <summary>
         ///   Looks up a localized string similar to years of age or.
         /// </summary>
-        internal static string pediatricsAgeX {
-            get {
+        internal static string pediatricsAgeX
+        {
+            get
+            {
                 return ResourceManager.GetString("pediatricsAgeX", resourceCulture);
             }
         }
-        
+
+        /// <summary>
+        ///   Looks up a localized string similar to years of age or.
+        /// </summary>
+        internal static string pediatricsAgeX1
+        {
+            get
+            {
+                return ResourceManager.GetString("pediatricsAgeX1", resourceCulture);
+            }
+        }
+
         /// <summary>
         ///   Looks up a localized string similar to Pharmaceutical standard (if applicable).
         /// </summary>
-        internal static string pharmaceuticalStandard {
-            get {
+        internal static string pharmaceuticalStandard
+        {
+            get
+            {
                 return ResourceManager.GetString("pharmaceuticalStandard", resourceCulture);
             }
         }
-        
+
+        /// <summary>
+        ///   Looks up a localized string similar to Pharmaceutical standard (if applicable).
+        /// </summary>
+        internal static string pharmaceuticalStandard1
+        {
+            get
+            {
+                return ResourceManager.GetString("pharmaceuticalStandard1", resourceCulture);
+            }
+        }
+
         /// <summary>
         ///   Looks up a localized string similar to Pharmacodynamics.
         /// </summary>
-        internal static string pharmacodynamics {
-            get {
+        internal static string pharmacodynamics
+        {
+            get
+            {
                 return ResourceManager.GetString("pharmacodynamics", resourceCulture);
             }
         }
-        
+
+        /// <summary>
+        ///   Looks up a localized string similar to Pharmacodynamics.
+        /// </summary>
+        internal static string pharmacodynamics1
+        {
+            get
+            {
+                return ResourceManager.GetString("pharmacodynamics1", resourceCulture);
+            }
+        }
+
         /// <summary>
         ///   Looks up a localized string similar to Summary of ( proper name )’s Pharmacokinetic Parameters in a ( specific patient population ).
         /// </summary>
-        internal static string pharmacokineticParameters {
-            get {
+        internal static string pharmacokineticParameters
+        {
+            get
+            {
                 return ResourceManager.GetString("pharmacokineticParameters", resourceCulture);
             }
         }
-        
+
+        /// <summary>
+        ///   Looks up a localized string similar to Summary of ( proper name )’s Pharmacokinetic Parameters in a ( specific patient population ).
+        /// </summary>
+        internal static string pharmacokineticParameters1
+        {
+            get
+            {
+                return ResourceManager.GetString("pharmacokineticParameters1", resourceCulture);
+            }
+        }
+
         /// <summary>
         ///   Looks up a localized string similar to Pharmacokinetics.
         /// </summary>
-        internal static string pharmacokinetics {
-            get {
+        internal static string pharmacokinetics
+        {
+            get
+            {
                 return ResourceManager.GetString("pharmacokinetics", resourceCulture);
             }
         }
-        
+
+        /// <summary>
+        ///   Looks up a localized string similar to Pharmacokinetics.
+        /// </summary>
+        internal static string pharmacokinetics1
+        {
+            get
+            {
+                return ResourceManager.GetString("pharmacokinetics1", resourceCulture);
+            }
+        }
+
         /// <summary>
         ///   Looks up a localized string similar to Detailed pharmacology.
         /// </summary>
-        internal static string pharmacology {
-            get {
+        internal static string pharmacology
+        {
+            get
+            {
                 return ResourceManager.GetString("pharmacology", resourceCulture);
             }
         }
-        
+
+        /// <summary>
+        ///   Looks up a localized string similar to Detailed pharmacology.
+        /// </summary>
+        internal static string pharmacology1
+        {
+            get
+            {
+                return ResourceManager.GetString("pharmacology1", resourceCulture);
+            }
+        }
+
         /// <summary>
         ///   Looks up a localized string similar to Physicochemical properties.
         /// </summary>
-        internal static string physicochemicalProp {
-            get {
+        internal static string physicochemicalProp
+        {
+            get
+            {
                 return ResourceManager.GetString("physicochemicalProp", resourceCulture);
             }
         }
-        
+
+        /// <summary>
+        ///   Looks up a localized string similar to Physicochemical properties.
+        /// </summary>
+        internal static string physicochemicalProp1
+        {
+            get
+            {
+                return ResourceManager.GetString("physicochemicalProp1", resourceCulture);
+            }
+        }
+
         /// <summary>
         ///   Looks up a localized string similar to Special Populations and Conditions.
         /// </summary>
-        internal static string populationsConditions {
-            get {
+        internal static string populationsConditions
+        {
+            get
+            {
                 return ResourceManager.GetString("populationsConditions", resourceCulture);
             }
         }
-        
+
+        /// <summary>
+        ///   Looks up a localized string similar to Special Populations and Conditions.
+        /// </summary>
+        internal static string populationsConditions1
+        {
+            get
+            {
+                return ResourceManager.GetString("populationsConditions1", resourceCulture);
+            }
+        }
+
         /// <summary>
         ///   Looks up a localized string similar to Summary product information form.
         /// </summary>
-        internal static string productInfoTableTitle {
-            get {
+        internal static string productInfoTableTitle
+        {
+            get
+            {
                 return ResourceManager.GetString("productInfoTableTitle", resourceCulture);
             }
         }
-        
+
+        /// <summary>
+        ///   Looks up a localized string similar to Summary product information form.
+        /// </summary>
+        internal static string productInfoTableTitle1
+        {
+            get
+            {
+                return ResourceManager.GetString("productInfoTableTitle1", resourceCulture);
+            }
+        }
+
         /// <summary>
         ///   Looks up a localized string similar to Proper name.
         /// </summary>
-        internal static string properName {
-            get {
+        internal static string properName
+        {
+            get
+            {
                 return ResourceManager.GetString("properName", resourceCulture);
             }
         }
-        
+
+        /// <summary>
+        ///   Looks up a localized string similar to Proper name.
+        /// </summary>
+        internal static string properName1
+        {
+            get
+            {
+                return ResourceManager.GetString("properName1", resourceCulture);
+            }
+        }
+
         /// <summary>
         ///   Looks up a localized string similar to Proper name .
         /// </summary>
-        internal static string properNameTitle {
-            get {
+        internal static string properNameTitle
+        {
+            get
+            {
                 return ResourceManager.GetString("properNameTitle", resourceCulture);
             }
         }
-        
+
+        /// <summary>
+        ///   Looks up a localized string similar to Proper name .
+        /// </summary>
+        internal static string properNameTitle1
+        {
+            get
+            {
+                return ResourceManager.GetString("properNameTitle1", resourceCulture);
+            }
+        }
+
         /// <summary>
         ///   Looks up a localized string similar to Proper use of this medication.
         /// </summary>
-        internal static string properUse {
-            get {
+        internal static string properUse
+        {
+            get
+            {
                 return ResourceManager.GetString("properUse", resourceCulture);
             }
         }
-        
+
+        /// <summary>
+        ///   Looks up a localized string similar to Proper use of this medication.
+        /// </summary>
+        internal static string properUse1
+        {
+            get
+            {
+                return ResourceManager.GetString("properUse1", resourceCulture);
+            }
+        }
+
         /// <summary>
         ///   Looks up a localized string similar to Rare.
         /// </summary>
-        internal static string rare {
-            get {
+        internal static string rare
+        {
+            get
+            {
                 return ResourceManager.GetString("rare", resourceCulture);
             }
         }
-        
+
+        /// <summary>
+        ///   Looks up a localized string similar to Rare.
+        /// </summary>
+        internal static string rare1
+        {
+            get
+            {
+                return ResourceManager.GetString("rare1", resourceCulture);
+            }
+        }
+
         /// <summary>
         ///   Looks up a localized string similar to Ratio of geometric means.
         /// </summary>
-        internal static string ratioGeoMeans {
-            get {
+        internal static string ratioGeoMeans
+        {
+            get
+            {
                 return ResourceManager.GetString("ratioGeoMeans", resourceCulture);
             }
         }
-        
+
+        /// <summary>
+        ///   Looks up a localized string similar to Ratio of geometric means.
+        /// </summary>
+        internal static string ratioGeoMeans1
+        {
+            get
+            {
+                return ResourceManager.GetString("ratioGeoMeans1", resourceCulture);
+            }
+        }
+
         /// <summary>
         ///   Looks up a localized string similar to Recommended dose and dosage adjustment.
         /// </summary>
-        internal static string recommendedDose {
-            get {
+        internal static string recommendedDose
+        {
+            get
+            {
                 return ResourceManager.GetString("recommendedDose", resourceCulture);
             }
         }
-        
+
+        /// <summary>
+        ///   Looks up a localized string similar to Recommended dose and dosage adjustment.
+        /// </summary>
+        internal static string recommendedDose1
+        {
+            get
+            {
+                return ResourceManager.GetString("recommendedDose1", resourceCulture);
+            }
+        }
+
         /// <summary>
         ///   Looks up a localized string similar to Include for each indication, route of administration or dosage form.
         /// </summary>
-        internal static string recommendedDoseInfo {
-            get {
+        internal static string recommendedDoseInfo
+        {
+            get
+            {
                 return ResourceManager.GetString("recommendedDoseInfo", resourceCulture);
             }
         }
-        
+
+        /// <summary>
+        ///   Looks up a localized string similar to Include for each indication, route of administration or dosage form.
+        /// </summary>
+        internal static string recommendedDoseInfo1
+        {
+            get
+            {
+                return ResourceManager.GetString("recommendedDoseInfo1", resourceCulture);
+            }
+        }
+
         /// <summary>
         ///   Looks up a localized string similar to Reconstitution.
         /// </summary>
-        internal static string reconstitution {
-            get {
+        internal static string reconstitution
+        {
+            get
+            {
                 return ResourceManager.GetString("reconstitution", resourceCulture);
             }
         }
-        
+
+        /// <summary>
+        ///   Looks up a localized string similar to Reconstitution.
+        /// </summary>
+        internal static string reconstitution1
+        {
+            get
+            {
+                return ResourceManager.GetString("reconstitution1", resourceCulture);
+            }
+        }
+
         /// <summary>
         ///   Looks up a localized string similar to Reference.
         /// </summary>
-        internal static string reference {
-            get {
+        internal static string reference
+        {
+            get
+            {
                 return ResourceManager.GetString("reference", resourceCulture);
             }
         }
-        
+
+        /// <summary>
+        ///   Looks up a localized string similar to Reference.
+        /// </summary>
+        internal static string reference1
+        {
+            get
+            {
+                return ResourceManager.GetString("reference1", resourceCulture);
+            }
+        }
+
         /// <summary>
         ///   Looks up a localized string similar to References.
         /// </summary>
-        internal static string references {
-            get {
+        internal static string references
+        {
+            get
+            {
                 return ResourceManager.GetString("references", resourceCulture);
             }
         }
-        
+
+        /// <summary>
+        ///   Looks up a localized string similar to References.
+        /// </summary>
+        internal static string references1
+        {
+            get
+            {
+                return ResourceManager.GetString("references1", resourceCulture);
+            }
+        }
+
         /// <summary>
         ///   Looks up a localized string similar to level of evidence, see legend.
         /// </summary>
-        internal static string refInfo {
-            get {
+        internal static string refInfo
+        {
+            get
+            {
                 return ResourceManager.GetString("refInfo", resourceCulture);
             }
         }
-        
+
+        /// <summary>
+        ///   Looks up a localized string similar to level of evidence, see legend.
+        /// </summary>
+        internal static string refInfo1
+        {
+            get
+            {
+                return ResourceManager.GetString("refInfo1", resourceCulture);
+            }
+        }
+
         /// <summary>
         ///   Looks up a localized string similar to Ref.
         /// </summary>
-        internal static string refTitle {
-            get {
+        internal static string refTitle
+        {
+            get
+            {
                 return ResourceManager.GetString("refTitle", resourceCulture);
             }
         }
-        
+
+        /// <summary>
+        ///   Looks up a localized string similar to Ref.
+        /// </summary>
+        internal static string refTitle1
+        {
+            get
+            {
+                return ResourceManager.GetString("refTitle1", resourceCulture);
+            }
+        }
+
         /// <summary>
         ///   Looks up a localized string similar to Remove.
         /// </summary>
-        internal static string removeButton {
-            get {
+        internal static string removeButton
+        {
+            get
+            {
                 return ResourceManager.GetString("removeButton", resourceCulture);
             }
         }
-        
+
+        /// <summary>
+        ///   Looks up a localized string similar to Remove.
+        /// </summary>
+        internal static string removeButton1
+        {
+            get
+            {
+                return ResourceManager.GetString("removeButton1", resourceCulture);
+            }
+        }
+
         /// <summary>
         ///   Looks up a localized string similar to You can report any suspected adverse reactions associated with the use of health products to the Canada Vigilance Program by one of the following 3 ways: &lt;br/&gt;
         ///----------------------------------------------------------------------------------------&lt;br/&gt;
@@ -1164,543 +2750,1342 @@ namespace Resources {
         ///Health Canada&lt;br/&gt;
         ///P [rest of string was truncated]&quot;;.
         /// </summary>
-        internal static string reportSuspectedSEInstruction {
-            get {
+        internal static string reportSuspectedSEInstruction
+        {
+            get
+            {
                 return ResourceManager.GetString("reportSuspectedSEInstruction", resourceCulture);
             }
         }
-        
+
+        /// <summary>
+        ///   Looks up a localized string similar to You can report any suspected adverse reactions associated with the use of health products to the Canada Vigilance Program by one of the following 3 ways: &lt;br/&gt;
+        ///----------------------------------------------------------------------------------------&lt;br/&gt;
+        ///Report online at www.healthcanada.gc.ca/medeffect&lt;br/&gt;
+        ///Call toll-free at 1-866-234-2345&lt;br/&gt;
+        ///Complete a Canada Vigilance Reporting Form and:&lt;br/&gt;
+        ///• Fax toll-free to 1-866-678-6789, or&lt;br/&gt;
+        ///• Mail to: Canada Vigilance Program&lt;br/&gt;
+        ///Health Canada&lt;br/&gt;
+        ///Postal Lo [rest of string was truncated]&quot;;.
+        /// </summary>
+        internal static string reportSuspectedSEInstruction1
+        {
+            get
+            {
+                return ResourceManager.GetString("reportSuspectedSEInstruction1", resourceCulture);
+            }
+        }
+
         /// <summary>
         ///   Looks up a localized string similar to Reset.
         /// </summary>
-        internal static string resetButton {
-            get {
+        internal static string resetButton
+        {
+            get
+            {
                 return ResourceManager.GetString("resetButton", resourceCulture);
             }
         }
-        
+
+        /// <summary>
+        ///   Looks up a localized string similar to Reset.
+        /// </summary>
+        internal static string resetButton1
+        {
+            get
+            {
+                return ResourceManager.GetString("resetButton1", resourceCulture);
+            }
+        }
+
         /// <summary>
         ///   Looks up a localized string similar to Route of administration.
         /// </summary>
-        internal static string routeAdministration {
-            get {
+        internal static string routeAdministration
+        {
+            get
+            {
                 return ResourceManager.GetString("routeAdministration", resourceCulture);
             }
         }
-        
+
+        /// <summary>
+        ///   Looks up a localized string similar to Route of administration.
+        /// </summary>
+        internal static string routeAdministration1
+        {
+            get
+            {
+                return ResourceManager.GetString("routeAdministration1", resourceCulture);
+            }
+        }
+
         /// <summary>
         ///   Looks up a localized string similar to Save a draft.
         /// </summary>
-        internal static string saveButton {
-            get {
+        internal static string saveButton
+        {
+            get
+            {
                 return ResourceManager.GetString("saveButton", resourceCulture);
             }
         }
-        
+
+        /// <summary>
+        ///   Looks up a localized string similar to Save a draft.
+        /// </summary>
+        internal static string saveButton1
+        {
+            get
+            {
+                return ResourceManager.GetString("saveButton1", resourceCulture);
+            }
+        }
+
         /// <summary>
         ///   Looks up a localized string similar to Please save your form data in a draft file..
         /// </summary>
-        internal static string saveButtonTitle {
-            get {
+        internal static string saveButtonTitle
+        {
+            get
+            {
                 return ResourceManager.GetString("saveButtonTitle", resourceCulture);
             }
         }
-        
+
+        /// <summary>
+        ///   Looks up a localized string similar to Please save your form data in a draft file..
+        /// </summary>
+        internal static string saveButtonTitle1
+        {
+            get
+            {
+                return ResourceManager.GetString("saveButtonTitle1", resourceCulture);
+            }
+        }
+
         /// <summary>
         ///   Looks up a localized string similar to Scheduling symbol.
         /// </summary>
-        internal static string schedulingSymbol {
-            get {
+        internal static string schedulingSymbol
+        {
+            get
+            {
                 return ResourceManager.GetString("schedulingSymbol", resourceCulture);
             }
         }
-        
+
+        /// <summary>
+        ///   Looks up a localized string similar to Scheduling symbol.
+        /// </summary>
+        internal static string schedulingSymbol1
+        {
+            get
+            {
+                return ResourceManager.GetString("schedulingSymbol1", resourceCulture);
+            }
+        }
+
         /// <summary>
         ///   Looks up a localized string similar to Serious drug interactions.
         /// </summary>
-        internal static string seriousInteractions {
-            get {
+        internal static string seriousInteractions
+        {
+            get
+            {
                 return ResourceManager.GetString("seriousInteractions", resourceCulture);
             }
         }
-        
+
+        /// <summary>
+        ///   Looks up a localized string similar to Serious drug interactions.
+        /// </summary>
+        internal static string seriousInteractions1
+        {
+            get
+            {
+                return ResourceManager.GetString("seriousInteractions1", resourceCulture);
+            }
+        }
+
         /// <summary>
         ///   Looks up a localized string similar to Serious, life-threatening drug interactions should be highlighted in this box. Not to exceed 20 lines..
         /// </summary>
-        internal static string seriousInteractionsInfo {
-            get {
+        internal static string seriousInteractionsInfo
+        {
+            get
+            {
                 return ResourceManager.GetString("seriousInteractionsInfo", resourceCulture);
             }
         }
-        
+
+        /// <summary>
+        ///   Looks up a localized string similar to Serious, life-threatening drug interactions should be highlighted in this box. Not to exceed 20 lines..
+        /// </summary>
+        internal static string seriousInteractionsInfo1
+        {
+            get
+            {
+                return ResourceManager.GetString("seriousInteractionsInfo1", resourceCulture);
+            }
+        }
+
         /// <summary>
         ///   Looks up a localized string similar to Serious warnings and precautions.
         /// </summary>
-        internal static string seriousWarnings {
-            get {
+        internal static string seriousWarnings
+        {
+            get
+            {
                 return ResourceManager.GetString("seriousWarnings", resourceCulture);
             }
         }
-        
+
+        /// <summary>
+        ///   Looks up a localized string similar to Serious warnings and precautions.
+        /// </summary>
+        internal static string seriousWarnings1
+        {
+            get
+            {
+                return ResourceManager.GetString("seriousWarnings1", resourceCulture);
+            }
+        }
+
         /// <summary>
         ///   Looks up a localized string similar to Clinically significant or serious life-threatening warnings should be placed in the warning box. Generally not to exceed 20 lines..
         /// </summary>
-        internal static string seriousWarningsInfo {
-            get {
+        internal static string seriousWarningsInfo
+        {
+            get
+            {
                 return ResourceManager.GetString("seriousWarningsInfo", resourceCulture);
             }
         }
-        
+
+        /// <summary>
+        ///   Looks up a localized string similar to Clinically significant or serious life-threatening warnings should be placed in the warning box. Generally not to exceed 20 lines..
+        /// </summary>
+        internal static string seriousWarningsInfo1
+        {
+            get
+            {
+                return ResourceManager.GetString("seriousWarningsInfo1", resourceCulture);
+            }
+        }
+
         /// <summary>
         ///   Looks up a localized string similar to This is not a complete list of side effects. For any unexpected effects while taking, contact your doctor or pharmacist..
         /// </summary>
-        internal static string sideEffectContact {
-            get {
+        internal static string sideEffectContact
+        {
+            get
+            {
                 return ResourceManager.GetString("sideEffectContact", resourceCulture);
             }
         }
-        
+
+        /// <summary>
+        ///   Looks up a localized string similar to This is not a complete list of side effects. For any unexpected effects while taking, contact your doctor or pharmacist..
+        /// </summary>
+        internal static string sideEffectContact1
+        {
+            get
+            {
+                return ResourceManager.GetString("sideEffectContact1", resourceCulture);
+            }
+        }
+
         /// <summary>
         ///   Looks up a localized string similar to Side effects.
         /// </summary>
-        internal static string sideEffects {
-            get {
+        internal static string sideEffects
+        {
+            get
+            {
                 return ResourceManager.GetString("sideEffects", resourceCulture);
             }
         }
-        
+
+        /// <summary>
+        ///   Looks up a localized string similar to Side effects.
+        /// </summary>
+        internal static string sideEffects1
+        {
+            get
+            {
+                return ResourceManager.GetString("sideEffects1", resourceCulture);
+            }
+        }
+
         /// <summary>
         ///   Looks up a localized string similar to Sponsor address.
         /// </summary>
-        internal static string sponsorAddress {
-            get {
+        internal static string sponsorAddress
+        {
+            get
+            {
                 return ResourceManager.GetString("sponsorAddress", resourceCulture);
             }
         }
-        
+
+        /// <summary>
+        ///   Looks up a localized string similar to Sponsor address.
+        /// </summary>
+        internal static string sponsorAddress1
+        {
+            get
+            {
+                return ResourceManager.GetString("sponsorAddress1", resourceCulture);
+            }
+        }
+
         /// <summary>
         ///   Looks up a localized string similar to Sponsor name.
         /// </summary>
-        internal static string sponsorName {
-            get {
+        internal static string sponsorName
+        {
+            get
+            {
                 return ResourceManager.GetString("sponsorName", resourceCulture);
             }
         }
-        
+
+        /// <summary>
+        ///   Looks up a localized string similar to Sponsor name.
+        /// </summary>
+        internal static string sponsorName1
+        {
+            get
+            {
+                return ResourceManager.GetString("sponsorName1", resourceCulture);
+            }
+        }
+
         /// <summary>
         ///   Looks up a localized string similar to Stop taking drug.
         /// </summary>
-        internal static string stopTakingDrug {
-            get {
+        internal static string stopTakingDrug
+        {
+            get
+            {
                 return ResourceManager.GetString("stopTakingDrug", resourceCulture);
             }
         }
-        
+
+        /// <summary>
+        ///   Looks up a localized string similar to Stop taking drug.
+        /// </summary>
+        internal static string stopTakingDrug1
+        {
+            get
+            {
+                return ResourceManager.GetString("stopTakingDrug1", resourceCulture);
+            }
+        }
+
         /// <summary>
         ///   Looks up a localized string similar to Storage and stability.
         /// </summary>
-        internal static string storagestability {
-            get {
+        internal static string storagestability
+        {
+            get
+            {
                 return ResourceManager.GetString("storagestability", resourceCulture);
             }
         }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to Strength.
-        /// </summary>
-        internal static string strength {
-            get {
-                return ResourceManager.GetString("strength", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to Strength per dosage&lt;br /&gt; Value | Unit.
-        /// </summary>
-        internal static string strengthDosageValue {
-            get {
-                return ResourceManager.GetString("strengthDosageValue", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to Strength &lt;br /&gt;Value | Unit.
-        /// </summary>
-        internal static string strengthValue {
-            get {
-                return ResourceManager.GetString("strengthValue", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to Submission control number.
-        /// </summary>
-        internal static string submissionControlNumber {
-            get {
-                return ResourceManager.GetString("submissionControlNumber", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to Adverse reactions.
-        /// </summary>
-        internal static string sumAdverseReactions {
-            get {
-                return ResourceManager.GetString("sumAdverseReactions", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to Action and clinical pharmacology.
-        /// </summary>
-        internal static string sumClinicalPharmacology {
-            get {
-                return ResourceManager.GetString("sumClinicalPharmacology", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to Clinical trials.
-        /// </summary>
-        internal static string sumClinicalTrials {
-            get {
-                return ResourceManager.GetString("sumClinicalTrials", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to Contraindications.
-        /// </summary>
-        internal static string sumContraindications {
-            get {
-                return ResourceManager.GetString("sumContraindications", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to Dosage and administration.
-        /// </summary>
-        internal static string sumDosage {
-            get {
-                return ResourceManager.GetString("sumDosage", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to Dosage forms, composition and packaging.
-        /// </summary>
-        internal static string sumDosageForm {
-            get {
-                return ResourceManager.GetString("sumDosageForm", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to Drug interactions.
-        /// </summary>
-        internal static string sumDrugInteractions {
-            get {
-                return ResourceManager.GetString("sumDrugInteractions", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to How to store it.
-        /// </summary>
-        internal static string sumHowStore {
-            get {
-                return ResourceManager.GetString("sumHowStore", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to Indications and clinical use.
-        /// </summary>
-        internal static string sumIndications {
-            get {
-                return ResourceManager.GetString("sumIndications", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to Interactions with this medication.
-        /// </summary>
-        internal static string sumInteractions {
-            get {
-                return ResourceManager.GetString("sumInteractions", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to About this medication.
-        /// </summary>
-        internal static string sumMedication {
-            get {
-                return ResourceManager.GetString("sumMedication", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to Microbiology.
-        /// </summary>
-        internal static string sumMicrobiology {
-            get {
-                return ResourceManager.GetString("sumMicrobiology", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to More information.
-        /// </summary>
-        internal static string sumMoreInfo {
-            get {
-                return ResourceManager.GetString("sumMoreInfo", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to Overdosage.
-        /// </summary>
-        internal static string sumOverdosage {
-            get {
-                return ResourceManager.GetString("sumOverdosage", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to Detailed pharmacology.
-        /// </summary>
-        internal static string sumPharmacology {
-            get {
-                return ResourceManager.GetString("sumPharmacology", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to Pharmaceutical information.
-        /// </summary>
-        internal static string sumPharmInfo {
-            get {
-                return ResourceManager.GetString("sumPharmInfo", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to Summary product information.
-        /// </summary>
-        internal static string sumProdInfo {
-            get {
-                return ResourceManager.GetString("sumProdInfo", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to Proper use of this medication.
-        /// </summary>
-        internal static string sumProperUse {
-            get {
-                return ResourceManager.GetString("sumProperUse", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to References.
-        /// </summary>
-        internal static string sumReferences {
-            get {
-                return ResourceManager.GetString("sumReferences", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to Reporting supected side effects.
-        /// </summary>
-        internal static string sumReporting {
-            get {
-                return ResourceManager.GetString("sumReporting", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to Side effects and what to do about them.
-        /// </summary>
-        internal static string sumSideEffects {
-            get {
-                return ResourceManager.GetString("sumSideEffects", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to Special handling instructions.
-        /// </summary>
-        internal static string sumSpecialHandling {
-            get {
-                return ResourceManager.GetString("sumSpecialHandling", resourceCulture);
-            }
-        }
-        
+
         /// <summary>
         ///   Looks up a localized string similar to Storage and stability.
         /// </summary>
-        internal static string sumStorage {
-            get {
+        internal static string storagestability1
+        {
+            get
+            {
+                return ResourceManager.GetString("storagestability1", resourceCulture);
+            }
+        }
+
+        /// <summary>
+        ///   Looks up a localized string similar to Strength.
+        /// </summary>
+        internal static string strength
+        {
+            get
+            {
+                return ResourceManager.GetString("strength", resourceCulture);
+            }
+        }
+
+        /// <summary>
+        ///   Looks up a localized string similar to Strength.
+        /// </summary>
+        internal static string strength1
+        {
+            get
+            {
+                return ResourceManager.GetString("strength1", resourceCulture);
+            }
+        }
+
+        /// <summary>
+        ///   Looks up a localized string similar to Strength per dosage&lt;br /&gt; Value | Unit.
+        /// </summary>
+        internal static string strengthDosageValue
+        {
+            get
+            {
+                return ResourceManager.GetString("strengthDosageValue", resourceCulture);
+            }
+        }
+
+        /// <summary>
+        ///   Looks up a localized string similar to Strength per dosage&lt;br /&gt; Value | Unit.
+        /// </summary>
+        internal static string strengthDosageValue1
+        {
+            get
+            {
+                return ResourceManager.GetString("strengthDosageValue1", resourceCulture);
+            }
+        }
+
+        /// <summary>
+        ///   Looks up a localized string similar to Strength &lt;br /&gt;Value | Unit.
+        /// </summary>
+        internal static string strengthValue
+        {
+            get
+            {
+                return ResourceManager.GetString("strengthValue", resourceCulture);
+            }
+        }
+
+        /// <summary>
+        ///   Looks up a localized string similar to Strength &lt;br /&gt;Value | Unit.
+        /// </summary>
+        internal static string strengthValue1
+        {
+            get
+            {
+                return ResourceManager.GetString("strengthValue1", resourceCulture);
+            }
+        }
+
+        /// <summary>
+        ///   Looks up a localized string similar to Structural formula.
+        /// </summary>
+        internal static string structuralFormula
+        {
+            get
+            {
+                return ResourceManager.GetString("structuralFormula", resourceCulture);
+            }
+        }
+
+        /// <summary>
+        ///   Looks up a localized string similar to Submission control number.
+        /// </summary>
+        internal static string submissionControlNumber
+        {
+            get
+            {
+                return ResourceManager.GetString("submissionControlNumber", resourceCulture);
+            }
+        }
+
+        /// <summary>
+        ///   Looks up a localized string similar to Submission control number.
+        /// </summary>
+        internal static string submissionControlNumber1
+        {
+            get
+            {
+                return ResourceManager.GetString("submissionControlNumber1", resourceCulture);
+            }
+        }
+
+        /// <summary>
+        ///   Looks up a localized string similar to Adverse reactions.
+        /// </summary>
+        internal static string sumAdverseReactions
+        {
+            get
+            {
+                return ResourceManager.GetString("sumAdverseReactions", resourceCulture);
+            }
+        }
+
+        /// <summary>
+        ///   Looks up a localized string similar to Adverse reactions.
+        /// </summary>
+        internal static string sumAdverseReactions1
+        {
+            get
+            {
+                return ResourceManager.GetString("sumAdverseReactions1", resourceCulture);
+            }
+        }
+
+        /// <summary>
+        ///   Looks up a localized string similar to Action and clinical pharmacology.
+        /// </summary>
+        internal static string sumClinicalPharmacology
+        {
+            get
+            {
+                return ResourceManager.GetString("sumClinicalPharmacology", resourceCulture);
+            }
+        }
+
+        /// <summary>
+        ///   Looks up a localized string similar to Action and clinical pharmacology.
+        /// </summary>
+        internal static string sumClinicalPharmacology1
+        {
+            get
+            {
+                return ResourceManager.GetString("sumClinicalPharmacology1", resourceCulture);
+            }
+        }
+
+        /// <summary>
+        ///   Looks up a localized string similar to Clinical trials.
+        /// </summary>
+        internal static string sumClinicalTrials
+        {
+            get
+            {
+                return ResourceManager.GetString("sumClinicalTrials", resourceCulture);
+            }
+        }
+
+        /// <summary>
+        ///   Looks up a localized string similar to Clinical trials.
+        /// </summary>
+        internal static string sumClinicalTrials1
+        {
+            get
+            {
+                return ResourceManager.GetString("sumClinicalTrials1", resourceCulture);
+            }
+        }
+
+        /// <summary>
+        ///   Looks up a localized string similar to Contraindications.
+        /// </summary>
+        internal static string sumContraindications
+        {
+            get
+            {
+                return ResourceManager.GetString("sumContraindications", resourceCulture);
+            }
+        }
+
+        /// <summary>
+        ///   Looks up a localized string similar to Contraindications.
+        /// </summary>
+        internal static string sumContraindications1
+        {
+            get
+            {
+                return ResourceManager.GetString("sumContraindications1", resourceCulture);
+            }
+        }
+
+        /// <summary>
+        ///   Looks up a localized string similar to Dosage and administration.
+        /// </summary>
+        internal static string sumDosage
+        {
+            get
+            {
+                return ResourceManager.GetString("sumDosage", resourceCulture);
+            }
+        }
+
+        /// <summary>
+        ///   Looks up a localized string similar to Dosage and administration.
+        /// </summary>
+        internal static string sumDosage1
+        {
+            get
+            {
+                return ResourceManager.GetString("sumDosage1", resourceCulture);
+            }
+        }
+
+        /// <summary>
+        ///   Looks up a localized string similar to Dosage forms, composition and packaging.
+        /// </summary>
+        internal static string sumDosageForm
+        {
+            get
+            {
+                return ResourceManager.GetString("sumDosageForm", resourceCulture);
+            }
+        }
+
+        /// <summary>
+        ///   Looks up a localized string similar to Dosage forms, composition and packaging.
+        /// </summary>
+        internal static string sumDosageForm1
+        {
+            get
+            {
+                return ResourceManager.GetString("sumDosageForm1", resourceCulture);
+            }
+        }
+
+        /// <summary>
+        ///   Looks up a localized string similar to Drug interactions.
+        /// </summary>
+        internal static string sumDrugInteractions
+        {
+            get
+            {
+                return ResourceManager.GetString("sumDrugInteractions", resourceCulture);
+            }
+        }
+
+        /// <summary>
+        ///   Looks up a localized string similar to Drug interactions.
+        /// </summary>
+        internal static string sumDrugInteractions1
+        {
+            get
+            {
+                return ResourceManager.GetString("sumDrugInteractions1", resourceCulture);
+            }
+        }
+
+        /// <summary>
+        ///   Looks up a localized string similar to How to store it.
+        /// </summary>
+        internal static string sumHowStore
+        {
+            get
+            {
+                return ResourceManager.GetString("sumHowStore", resourceCulture);
+            }
+        }
+
+        /// <summary>
+        ///   Looks up a localized string similar to How to store it.
+        /// </summary>
+        internal static string sumHowStore1
+        {
+            get
+            {
+                return ResourceManager.GetString("sumHowStore1", resourceCulture);
+            }
+        }
+
+        /// <summary>
+        ///   Looks up a localized string similar to Indications and clinical use.
+        /// </summary>
+        internal static string sumIndications
+        {
+            get
+            {
+                return ResourceManager.GetString("sumIndications", resourceCulture);
+            }
+        }
+
+        /// <summary>
+        ///   Looks up a localized string similar to Indications and clinical use.
+        /// </summary>
+        internal static string sumIndications1
+        {
+            get
+            {
+                return ResourceManager.GetString("sumIndications1", resourceCulture);
+            }
+        }
+
+        /// <summary>
+        ///   Looks up a localized string similar to Interactions with this medication.
+        /// </summary>
+        internal static string sumInteractions
+        {
+            get
+            {
+                return ResourceManager.GetString("sumInteractions", resourceCulture);
+            }
+        }
+
+        /// <summary>
+        ///   Looks up a localized string similar to Interactions with this medication.
+        /// </summary>
+        internal static string sumInteractions1
+        {
+            get
+            {
+                return ResourceManager.GetString("sumInteractions1", resourceCulture);
+            }
+        }
+
+        /// <summary>
+        ///   Looks up a localized string similar to About this medication.
+        /// </summary>
+        internal static string sumMedication
+        {
+            get
+            {
+                return ResourceManager.GetString("sumMedication", resourceCulture);
+            }
+        }
+
+        /// <summary>
+        ///   Looks up a localized string similar to About this medication.
+        /// </summary>
+        internal static string sumMedication1
+        {
+            get
+            {
+                return ResourceManager.GetString("sumMedication1", resourceCulture);
+            }
+        }
+
+        /// <summary>
+        ///   Looks up a localized string similar to Microbiology.
+        /// </summary>
+        internal static string sumMicrobiology
+        {
+            get
+            {
+                return ResourceManager.GetString("sumMicrobiology", resourceCulture);
+            }
+        }
+
+        /// <summary>
+        ///   Looks up a localized string similar to Microbiology.
+        /// </summary>
+        internal static string sumMicrobiology1
+        {
+            get
+            {
+                return ResourceManager.GetString("sumMicrobiology1", resourceCulture);
+            }
+        }
+
+        /// <summary>
+        ///   Looks up a localized string similar to More information.
+        /// </summary>
+        internal static string sumMoreInfo
+        {
+            get
+            {
+                return ResourceManager.GetString("sumMoreInfo", resourceCulture);
+            }
+        }
+
+        /// <summary>
+        ///   Looks up a localized string similar to More information.
+        /// </summary>
+        internal static string sumMoreInfo1
+        {
+            get
+            {
+                return ResourceManager.GetString("sumMoreInfo1", resourceCulture);
+            }
+        }
+
+        /// <summary>
+        ///   Looks up a localized string similar to Overdosage.
+        /// </summary>
+        internal static string sumOverdosage
+        {
+            get
+            {
+                return ResourceManager.GetString("sumOverdosage", resourceCulture);
+            }
+        }
+
+        /// <summary>
+        ///   Looks up a localized string similar to Overdosage.
+        /// </summary>
+        internal static string sumOverdosage1
+        {
+            get
+            {
+                return ResourceManager.GetString("sumOverdosage1", resourceCulture);
+            }
+        }
+
+        /// <summary>
+        ///   Looks up a localized string similar to Detailed pharmacology.
+        /// </summary>
+        internal static string sumPharmacology
+        {
+            get
+            {
+                return ResourceManager.GetString("sumPharmacology", resourceCulture);
+            }
+        }
+
+        /// <summary>
+        ///   Looks up a localized string similar to Detailed pharmacology.
+        /// </summary>
+        internal static string sumPharmacology1
+        {
+            get
+            {
+                return ResourceManager.GetString("sumPharmacology1", resourceCulture);
+            }
+        }
+
+        /// <summary>
+        ///   Looks up a localized string similar to Pharmaceutical information.
+        /// </summary>
+        internal static string sumPharmInfo
+        {
+            get
+            {
+                return ResourceManager.GetString("sumPharmInfo", resourceCulture);
+            }
+        }
+
+        /// <summary>
+        ///   Looks up a localized string similar to Pharmaceutical information.
+        /// </summary>
+        internal static string sumPharmInfo1
+        {
+            get
+            {
+                return ResourceManager.GetString("sumPharmInfo1", resourceCulture);
+            }
+        }
+
+        /// <summary>
+        ///   Looks up a localized string similar to Summary product information.
+        /// </summary>
+        internal static string sumProdInfo
+        {
+            get
+            {
+                return ResourceManager.GetString("sumProdInfo", resourceCulture);
+            }
+        }
+
+        /// <summary>
+        ///   Looks up a localized string similar to Summary product information.
+        /// </summary>
+        internal static string sumProdInfo1
+        {
+            get
+            {
+                return ResourceManager.GetString("sumProdInfo1", resourceCulture);
+            }
+        }
+
+        /// <summary>
+        ///   Looks up a localized string similar to Proper use of this medication.
+        /// </summary>
+        internal static string sumProperUse
+        {
+            get
+            {
+                return ResourceManager.GetString("sumProperUse", resourceCulture);
+            }
+        }
+
+        /// <summary>
+        ///   Looks up a localized string similar to Proper use of this medication.
+        /// </summary>
+        internal static string sumProperUse1
+        {
+            get
+            {
+                return ResourceManager.GetString("sumProperUse1", resourceCulture);
+            }
+        }
+
+        /// <summary>
+        ///   Looks up a localized string similar to References.
+        /// </summary>
+        internal static string sumReferences
+        {
+            get
+            {
+                return ResourceManager.GetString("sumReferences", resourceCulture);
+            }
+        }
+
+        /// <summary>
+        ///   Looks up a localized string similar to References.
+        /// </summary>
+        internal static string sumReferences1
+        {
+            get
+            {
+                return ResourceManager.GetString("sumReferences1", resourceCulture);
+            }
+        }
+
+        /// <summary>
+        ///   Looks up a localized string similar to Reporting supected side effects.
+        /// </summary>
+        internal static string sumReporting
+        {
+            get
+            {
+                return ResourceManager.GetString("sumReporting", resourceCulture);
+            }
+        }
+
+        /// <summary>
+        ///   Looks up a localized string similar to Reporting supected side effects.
+        /// </summary>
+        internal static string sumReporting1
+        {
+            get
+            {
+                return ResourceManager.GetString("sumReporting1", resourceCulture);
+            }
+        }
+
+        /// <summary>
+        ///   Looks up a localized string similar to Side effects and what to do about them.
+        /// </summary>
+        internal static string sumSideEffects
+        {
+            get
+            {
+                return ResourceManager.GetString("sumSideEffects", resourceCulture);
+            }
+        }
+
+        /// <summary>
+        ///   Looks up a localized string similar to Side effects and what to do about them.
+        /// </summary>
+        internal static string sumSideEffects1
+        {
+            get
+            {
+                return ResourceManager.GetString("sumSideEffects1", resourceCulture);
+            }
+        }
+
+        /// <summary>
+        ///   Looks up a localized string similar to Special handling instructions.
+        /// </summary>
+        internal static string sumSpecialHandling
+        {
+            get
+            {
+                return ResourceManager.GetString("sumSpecialHandling", resourceCulture);
+            }
+        }
+
+        /// <summary>
+        ///   Looks up a localized string similar to Special handling instructions.
+        /// </summary>
+        internal static string sumSpecialHandling1
+        {
+            get
+            {
+                return ResourceManager.GetString("sumSpecialHandling1", resourceCulture);
+            }
+        }
+
+        /// <summary>
+        ///   Looks up a localized string similar to Storage and stability.
+        /// </summary>
+        internal static string sumStorage
+        {
+            get
+            {
                 return ResourceManager.GetString("sumStorage", resourceCulture);
             }
         }
-        
+
+        /// <summary>
+        ///   Looks up a localized string similar to Storage and stability.
+        /// </summary>
+        internal static string sumStorage1
+        {
+            get
+            {
+                return ResourceManager.GetString("sumStorage1", resourceCulture);
+            }
+        }
+
         /// <summary>
         ///   Looks up a localized string similar to Toxicology.
         /// </summary>
-        internal static string sumToxicology {
-            get {
+        internal static string sumToxicology
+        {
+            get
+            {
                 return ResourceManager.GetString("sumToxicology", resourceCulture);
             }
         }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to Warnings and precautions.
-        /// </summary>
-        internal static string sumWarnings {
-            get {
-                return ResourceManager.GetString("sumWarnings", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to Symptom.
-        /// </summary>
-        internal static string symptom {
-            get {
-                return ResourceManager.GetString("symptom", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to Talk with your doctor in all cases.
-        /// </summary>
-        internal static string talkwithDocAllCases {
-            get {
-                return ResourceManager.GetString("talkwithDocAllCases", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to Talk with your doctor only if server.
-        /// </summary>
-        internal static string talkwithDocIfSever {
-            get {
-                return ResourceManager.GetString("talkwithDocIfSever", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to Test.
-        /// </summary>
-        internal static string test {
-            get {
-                return ResourceManager.GetString("test", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to Therapeutic classification.
-        /// </summary>
-        internal static string therapeuticClassification {
-            get {
-                return ResourceManager.GetString("therapeuticClassification", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to T&lt;sub&gt;MAX&lt;/sub&gt;&lt;sup&gt;§ &lt;/sup&gt; (h).
-        /// </summary>
-        internal static string tmax {
-            get {
-                return ResourceManager.GetString("tmax", resourceCulture);
-            }
-        }
-        
+
         /// <summary>
         ///   Looks up a localized string similar to Toxicology.
         /// </summary>
-        internal static string toxicology {
-            get {
+        internal static string sumToxicology1
+        {
+            get
+            {
+                return ResourceManager.GetString("sumToxicology1", resourceCulture);
+            }
+        }
+
+        /// <summary>
+        ///   Looks up a localized string similar to Warnings and precautions.
+        /// </summary>
+        internal static string sumWarnings
+        {
+            get
+            {
+                return ResourceManager.GetString("sumWarnings", resourceCulture);
+            }
+        }
+
+        /// <summary>
+        ///   Looks up a localized string similar to Warnings and precautions.
+        /// </summary>
+        internal static string sumWarnings1
+        {
+            get
+            {
+                return ResourceManager.GetString("sumWarnings1", resourceCulture);
+            }
+        }
+
+        /// <summary>
+        ///   Looks up a localized string similar to Symptom.
+        /// </summary>
+        internal static string symptom
+        {
+            get
+            {
+                return ResourceManager.GetString("symptom", resourceCulture);
+            }
+        }
+
+        /// <summary>
+        ///   Looks up a localized string similar to Symptom.
+        /// </summary>
+        internal static string symptom1
+        {
+            get
+            {
+                return ResourceManager.GetString("symptom1", resourceCulture);
+            }
+        }
+
+        /// <summary>
+        ///   Looks up a localized string similar to Talk with your doctor in all cases.
+        /// </summary>
+        internal static string talkwithDocAllCases
+        {
+            get
+            {
+                return ResourceManager.GetString("talkwithDocAllCases", resourceCulture);
+            }
+        }
+
+        /// <summary>
+        ///   Looks up a localized string similar to Talk with your doctor in all cases.
+        /// </summary>
+        internal static string talkwithDocAllCases1
+        {
+            get
+            {
+                return ResourceManager.GetString("talkwithDocAllCases1", resourceCulture);
+            }
+        }
+
+        /// <summary>
+        ///   Looks up a localized string similar to Talk with your doctor only if server.
+        /// </summary>
+        internal static string talkwithDocIfSever
+        {
+            get
+            {
+                return ResourceManager.GetString("talkwithDocIfSever", resourceCulture);
+            }
+        }
+
+        /// <summary>
+        ///   Looks up a localized string similar to Talk with your doctor only if server.
+        /// </summary>
+        internal static string talkwithDocIfSever1
+        {
+            get
+            {
+                return ResourceManager.GetString("talkwithDocIfSever1", resourceCulture);
+            }
+        }
+
+        /// <summary>
+        ///   Looks up a localized string similar to Test.
+        /// </summary>
+        internal static string test
+        {
+            get
+            {
+                return ResourceManager.GetString("test", resourceCulture);
+            }
+        }
+
+        /// <summary>
+        ///   Looks up a localized string similar to Test.
+        /// </summary>
+        internal static string test1
+        {
+            get
+            {
+                return ResourceManager.GetString("test1", resourceCulture);
+            }
+        }
+
+        /// <summary>
+        ///   Looks up a localized string similar to Therapeutic classification.
+        /// </summary>
+        internal static string therapeuticClassification
+        {
+            get
+            {
+                return ResourceManager.GetString("therapeuticClassification", resourceCulture);
+            }
+        }
+
+        /// <summary>
+        ///   Looks up a localized string similar to Therapeutic classification.
+        /// </summary>
+        internal static string therapeuticClassification1
+        {
+            get
+            {
+                return ResourceManager.GetString("therapeuticClassification1", resourceCulture);
+            }
+        }
+
+        /// <summary>
+        ///   Looks up a localized string similar to T&lt;sub&gt;MAX&lt;/sub&gt;&lt;sup&gt;§ &lt;/sup&gt; (h).
+        /// </summary>
+        internal static string tmax
+        {
+            get
+            {
+                return ResourceManager.GetString("tmax", resourceCulture);
+            }
+        }
+
+        /// <summary>
+        ///   Looks up a localized string similar to T&lt;sub&gt;MAX&lt;/sub&gt;&lt;sup&gt;§ &lt;/sup&gt; (h).
+        /// </summary>
+        internal static string tmax1
+        {
+            get
+            {
+                return ResourceManager.GetString("tmax1", resourceCulture);
+            }
+        }
+
+        /// <summary>
+        ///   Looks up a localized string similar to Toxicology.
+        /// </summary>
+        internal static string toxicology
+        {
+            get
+            {
                 return ResourceManager.GetString("toxicology", resourceCulture);
             }
         }
-        
+
+        /// <summary>
+        ///   Looks up a localized string similar to Toxicology.
+        /// </summary>
+        internal static string toxicology1
+        {
+            get
+            {
+                return ResourceManager.GetString("toxicology1", resourceCulture);
+            }
+        }
+
         /// <summary>
         ///   Looks up a localized string similar to Uncommon.
         /// </summary>
-        internal static string uncommon {
-            get {
+        internal static string uncommon
+        {
+            get
+            {
                 return ResourceManager.GetString("uncommon", resourceCulture);
             }
         }
-        
+
+        /// <summary>
+        ///   Looks up a localized string similar to Uncommon.
+        /// </summary>
+        internal static string uncommon1
+        {
+            get
+            {
+                return ResourceManager.GetString("uncommon1", resourceCulture);
+            }
+        }
+
         /// <summary>
         ///   Looks up a localized string similar to Unknown.
         /// </summary>
-        internal static string unknown {
-            get {
+        internal static string unknown
+        {
+            get
+            {
                 return ResourceManager.GetString("unknown", resourceCulture);
             }
         }
-        
+
+        /// <summary>
+        ///   Looks up a localized string similar to Unknown.
+        /// </summary>
+        internal static string unknown1
+        {
+            get
+            {
+                return ResourceManager.GetString("unknown1", resourceCulture);
+            }
+        }
+
         /// <summary>
         ///   Looks up a localized string similar to Usual dose.
         /// </summary>
-        internal static string usualDose {
-            get {
+        internal static string usualDose
+        {
+            get
+            {
                 return ResourceManager.GetString("usualDose", resourceCulture);
             }
         }
-        
+
+        /// <summary>
+        ///   Looks up a localized string similar to Usual dose.
+        /// </summary>
+        internal static string usualDose1
+        {
+            get
+            {
+                return ResourceManager.GetString("usualDose1", resourceCulture);
+            }
+        }
+
         /// <summary>
         ///   Looks up a localized string similar to Usual dose file.
         /// </summary>
-        internal static string usualDoseFile {
-            get {
+        internal static string usualDoseFile
+        {
+            get
+            {
                 return ResourceManager.GetString("usualDoseFile", resourceCulture);
             }
         }
-        
+
+        /// <summary>
+        ///   Looks up a localized string similar to Usual dose file.
+        /// </summary>
+        internal static string usualDoseFile1
+        {
+            get
+            {
+                return ResourceManager.GetString("usualDoseFile1", resourceCulture);
+            }
+        }
+
         /// <summary>
         ///   Looks up a localized string similar to Very rare.
         /// </summary>
-        internal static string veryRare {
-            get {
+        internal static string veryRare
+        {
+            get
+            {
                 return ResourceManager.GetString("veryRare", resourceCulture);
             }
         }
-        
+
+        /// <summary>
+        ///   Looks up a localized string similar to Very rare.
+        /// </summary>
+        internal static string veryRare1
+        {
+            get
+            {
+                return ResourceManager.GetString("veryRare1", resourceCulture);
+            }
+        }
+
         /// <summary>
         ///   Looks up a localized string similar to Vial size.
         /// </summary>
-        internal static string vialSize {
-            get {
+        internal static string vialSize
+        {
+            get
+            {
                 return ResourceManager.GetString("vialSize", resourceCulture);
             }
         }
-        
+
+        /// <summary>
+        ///   Looks up a localized string similar to Vial size.
+        /// </summary>
+        internal static string vialSize1
+        {
+            get
+            {
+                return ResourceManager.GetString("vialSize1", resourceCulture);
+            }
+        }
+
         /// <summary>
         ///   Looks up a localized string similar to Volume of distribution.
         /// </summary>
-        internal static string volDistribution {
-            get {
+        internal static string volDistribution
+        {
+            get
+            {
                 return ResourceManager.GetString("volDistribution", resourceCulture);
             }
         }
-        
+
+        /// <summary>
+        ///   Looks up a localized string similar to Volume of distribution.
+        /// </summary>
+        internal static string volDistribution1
+        {
+            get
+            {
+                return ResourceManager.GetString("volDistribution1", resourceCulture);
+            }
+        }
+
         /// <summary>
         ///   Looks up a localized string similar to Volume of diluent to be added to vial.
         /// </summary>
-        internal static string volumediluent {
-            get {
+        internal static string volumediluent
+        {
+            get
+            {
                 return ResourceManager.GetString("volumediluent", resourceCulture);
             }
         }
-        
+
+        /// <summary>
+        ///   Looks up a localized string similar to Volume of diluent to be added to vial.
+        /// </summary>
+        internal static string volumediluent1
+        {
+            get
+            {
+                return ResourceManager.GetString("volumediluent1", resourceCulture);
+            }
+        }
+
         /// <summary>
         ///   Looks up a localized string similar to Activities (Warnings and Precautions, e,g, under Occupational Hazards)
         ///Current conditions (Contraindications, Warnings and Precautions)
@@ -1709,36 +4094,93 @@ namespace Resources {
         ///Anticipated medical procedures (Warnings and Precautions)
         ///Any allergies to this drug or its ingredients or components of the container (Contraindications).
         /// </summary>
-        internal static string warningsInfo {
-            get {
+        internal static string warningsInfo
+        {
+            get
+            {
                 return ResourceManager.GetString("warningsInfo", resourceCulture);
             }
         }
-        
+
+        /// <summary>
+        ///   Looks up a localized string similar to Activities (Warnings and Precautions, e,g, under Occupational Hazards)
+        ///Current conditions (Contraindications, Warnings and Precautions)
+        ///Past diseases (Contraindications, Warnings and Precautions)
+        ///Reproductive issues (Contraindications, Warnings and Precautions)
+        ///Anticipated medical procedures (Warnings and Precautions)
+        ///Any allergies to this drug or its ingredients or components of the container (Contraindications).
+        /// </summary>
+        internal static string warningsInfo1
+        {
+            get
+            {
+                return ResourceManager.GetString("warningsInfo1", resourceCulture);
+            }
+        }
+
         /// <summary>
         ///   Looks up a localized string similar to What dosage forms it comes in.
         /// </summary>
-        internal static string whatDosageForm {
-            get {
+        internal static string whatDosageForm
+        {
+            get
+            {
                 return ResourceManager.GetString("whatDosageForm", resourceCulture);
             }
         }
-        
+
+        /// <summary>
+        ///   Looks up a localized string similar to What dosage forms it comes in.
+        /// </summary>
+        internal static string whatDosageForm1
+        {
+            get
+            {
+                return ResourceManager.GetString("whatDosageForm1", resourceCulture);
+            }
+        }
+
         /// <summary>
         ///   Looks up a localized string similar to Side effects and what to do.
         /// </summary>
-        internal static string whatToDo {
-            get {
+        internal static string whatToDo
+        {
+            get
+            {
                 return ResourceManager.GetString("whatToDo", resourceCulture);
             }
         }
-        
+
+        /// <summary>
+        ///   Looks up a localized string similar to Side effects and what to do.
+        /// </summary>
+        internal static string whatToDo1
+        {
+            get
+            {
+                return ResourceManager.GetString("whatToDo1", resourceCulture);
+            }
+        }
+
         /// <summary>
         ///   Looks up a localized string similar to When it should not be used.
         /// </summary>
-        internal static string whenNotUse {
-            get {
+        internal static string whenNotUse
+        {
+            get
+            {
                 return ResourceManager.GetString("whenNotUse", resourceCulture);
+            }
+        }
+
+        /// <summary>
+        ///   Looks up a localized string similar to When it should not be used.
+        /// </summary>
+        internal static string whenNotUse1
+        {
+            get
+            {
+                return ResourceManager.GetString("whenNotUse1", resourceCulture);
             }
         }
     }

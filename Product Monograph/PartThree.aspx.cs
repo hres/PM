@@ -61,7 +61,7 @@ namespace Product_Monograph
         protected static string addButton;
         protected static string removeButton;
         protected static string interactionsInfo;
-          
+        protected static string resetButton;
 
 
         void Page_PreInit(Object sender, EventArgs e)
@@ -137,7 +137,8 @@ namespace Product_Monograph
                 btnSaveDraft.Text = Resources.Resource.saveButton;
                 btnSaveDraft.Attributes["Title"]= Resources.Resource.saveButtonTitle;
                 tbInteractionWithMed.Attributes["Title"] = Resources.Resource.saveButtonTitle;
-                interactionsInfo = Resources.Resource.interactionsInfo;               
+                interactionsInfo = Resources.Resource.interactionsInfo;
+                resetButton = Resources.Resource.resetButton;
 
                 try
                 {
