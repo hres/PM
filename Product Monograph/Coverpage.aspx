@@ -2,7 +2,6 @@
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">    
  <script src="./js/pmp.js"></script>
  <script src="./js/coverPage.js"></script>
-}
 </asp:Content>
 
 <asp:Content id="Content2" contentPlaceHolderID="ContentPlaceHolder1" runat="server">
