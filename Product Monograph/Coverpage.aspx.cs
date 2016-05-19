@@ -9,6 +9,7 @@ using System.ComponentModel;
 using System.Xml.Linq;
 using System.Collections;
 using Product_Monograph.helpers;
+using System.Text;
 
 namespace Product_Monograph
 {
@@ -53,7 +54,7 @@ namespace Product_Monograph
 
         protected void Page_Load(object sender, EventArgs e)
         {
-
+          //  ScriptManager.RegisterStartupScript(this, this.GetType(), "ShowStatus", "javascript:alert('Record is not updated');", true);
             if (!IsPostBack)
             {
                 sponsorName = Resources.Resource.sponsorName;
@@ -85,7 +86,6 @@ namespace Product_Monograph
                     if (!string.IsNullOrEmpty(SessionHelper.Current.brandName))
                     {
                         this.brandName.Text = SessionHelper.Current.brandName;
-                        this.brandNameHidden.Value = SessionHelper.Current.brandName;
                     }
                     if (!string.IsNullOrEmpty(SessionHelper.Current.properName))
                     {
@@ -546,6 +546,17 @@ namespace Product_Monograph
 
         protected void btnSaveDraft_Click(object sender, EventArgs e)
         {
+
+            //var sb = new StringBuilder();
+            //sb.Append("<script language='javascript' type='text/javascript'>");
+            //sb.Append("function GoToPartOnePage() {");
+            //sb.Append("alert('Function called successfully!');");
+            //sb.Append("window.location.href = 'PartOne.aspx';");
+            //sb.Append("return false;");
+            //sb.Append("}");
+            //sb.Append("</script>");
+            //ScriptManager.RegisterStartupScript(this.Page, this.GetType(), Guid.NewGuid().ToString(), sb.ToString(), false);
+
             try
             {
                 XmlDocument doc = SaveInMemory();
@@ -559,16 +570,21 @@ namespace Product_Monograph
                     {
                         var common = new helpers.Common(SessionHelper.Current.brandName);
                         common.SaveXmlFile(doc);
-                        SessionHelper.Current.draftForm = doc;
+                        SessionHelper.Current.draftForm = doc;                        
                     }
                 }
             }
-            catch (Exception error)
+            catch (System.Threading.ThreadAbortException thr)
             {
+                var strMessage = string.Format("{0}-{1}", "Coverpage", "btnSaveDraft_Click");
+                ExceptionHelper.LogException(thr, strMessage);
+            }
+            catch (Exception ex)
+            {
+                var strMessage = string.Format("{0}-{1}", "Coverpage", "btnSaveDraft_Click");
+                ExceptionHelper.LogException(ex, strMessage);
             }
         }
-        protected void Button1_Click(object sender, EventArgs e)
-        {
-        }
+
     }
 }

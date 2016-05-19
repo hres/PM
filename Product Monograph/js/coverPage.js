@@ -2,17 +2,7 @@
 var selectedschedulingsymbol;
 $(document).ready(function () {
 
-    $("#brandNameHidden").attr("name", "brandNameHidden");
-    var brandName = $.trim($("#brandNameHidden").val());
-    if (brandName.length > 0) {
-        $("#linkCover").attr("disabled", "disabled");
-    }
-    else
-    {
-        $("#linkOne").attr("disabled", "disabled");
-        $("#linkTwo").attr("disabled", "disabled");
-        $("#linkThree").attr("disabled", "disabled");
-    }
+    $("#linkCover").attr("disabled", "disabled");
     var now = new Date();
     var day = (now.getDate() < 10 ? '0' : '') + now.getDate();
     var month = ((now.getMonth() + 1) < 10 ? '0' : '') + (now.getMonth() + 1);
@@ -41,7 +31,6 @@ $(document).ready(function () {
 
     //ching created table default row
     AddBrandProperDosageDefaultRow();
-
 });
 
 

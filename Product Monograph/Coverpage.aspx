@@ -2,11 +2,11 @@
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">    
  <script src="./js/pmp.js"></script>
  <script src="./js/coverPage.js"></script>
-</asp:Content>
+ </asp:Content>
 
 <asp:Content id="Content2" contentPlaceHolderID="ContentPlaceHolder1" runat="server">
   <asp:ScriptManager id="ScriptManager1" runat="server" EnablePageMethods="true"></asp:ScriptManager>
-     <div class="row hidden">       
+    <div class="row hidden">       
         <input id="Button3" type="button" value="Hide" />
         <input id="Button4" type="button" value="Show" />
     </div>
@@ -16,8 +16,8 @@
              <p><strong><span class="field-name"><%=properNameTitle%>:</span></strong><asp:Literal ID="properName" runat="server" ></asp:Literal><p>
          </div>
          <div class="col-sm-3 text-right">
-            <asp:Button ID="btnSaveDraft" runat="server" cssclass="btn btn-primary"  ToolTip="Please save your form data in a draft file." OnClick="btnSaveDraft_Click"  ClientIDMode="Static"/> 
-              <input type="reset" value="Reset" class="btn btn-default mrgn-lft-md">
+            <asp:Button ID="btnSaveDraft" runat="server" cssclass="btn btn-primary"  ToolTip="Please save your form data in a draft file." OnClick="btnSaveDraft_Click"  /> 
+             <input type="reset" value="Reset" class="btn btn-default mrgn-lft-md">
          </div> 
     </div>
      <div class="form-group row margin-top-medium">
@@ -121,7 +121,7 @@
                     <textarea id="tbFootnote" name="tbFootnote" runat="server" class="textarea form-control"  ClientIDMode="Static"></textarea>               
             </div> 
         </div>
-        <asp:HiddenField  runat="server" ID="brandNameHidden" ClientIDMode="Static"  />
+
 </asp:Content>
 
 

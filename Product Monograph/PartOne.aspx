@@ -450,5 +450,5 @@
             </details>
      </li>	
 </ul>
-
+<asp:HiddenField  runat="server" ID="brandNameHidden" ClientIDMode="Static"  />
 </asp:Content>
