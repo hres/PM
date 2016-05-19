@@ -4,7 +4,7 @@
     $("#brandNameHidden").attr("name", "brandNameHidden");
     var brandName = $.trim($("#brandNameHidden").val());
     if (brandName.length > 0) {
-        $("#btnSaveDraft").removeAttribute("disabled", "disabled");
+        $("#btnSaveDraft").removeAttr("disabled");
     }
     else {
         $("#btnSaveDraft").attr("disabled", "disabled");
