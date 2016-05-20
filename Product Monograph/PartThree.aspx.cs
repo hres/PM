@@ -62,6 +62,7 @@ namespace Product_Monograph
         protected static string removeButton;
         protected static string interactionsInfo;
         protected static string resetButton;
+        protected static string warningsBrandName;
 
 
         void Page_PreInit(Object sender, EventArgs e)
@@ -139,6 +140,7 @@ namespace Product_Monograph
                 tbInteractionWithMed.Attributes["Title"] = Resources.Resource.saveButtonTitle;
                 interactionsInfo = Resources.Resource.interactionsInfo;
                 resetButton = Resources.Resource.resetButton;
+                warningsBrandName = string.Format("Before you use &#60;{0}&#62; talk to your doctor or pharmacist if:", "brand name");
 
                 try
                 {
@@ -146,6 +148,8 @@ namespace Product_Monograph
                     if (!string.IsNullOrEmpty(SessionHelper.Current.brandName))
                     {
                         this.brandName.Text = SessionHelper.Current.brandName;
+                        this.brandNameHidden.Value = SessionHelper.Current.brandName;
+                        warningsBrandName = string.Format("Before you use &#60;{0}&#62; talk to your doctor or pharmacist if:", SessionHelper.Current.brandName);
                     }
                     if (!string.IsNullOrEmpty(SessionHelper.Current.properName))
                     {
@@ -803,7 +807,11 @@ namespace Product_Monograph
 
             #region MoreInfo
             helpers.Processes.ValidateAndSave(doc, rootnode, "MoreInformation", "MoreInformation", tbMoreInformation.Value, true);
-            helpers.Processes.ValidateAndSave(doc, rootnode, "LastRevised", "LastRevised", tbLastRevised.Text, true);
+
+            if (Request.Form["tbLastRevised"] != null)
+            {
+                helpers.Processes.ValidateAndSave(doc, rootnode, "LastRevised", "LastRevised", Request.Form["tbLastRevised"], false);
+            }
             #endregion
 
             #region ProperUseTextarea

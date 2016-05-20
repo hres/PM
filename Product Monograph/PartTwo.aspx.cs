@@ -139,6 +139,7 @@ namespace Product_Monograph
                     if (!string.IsNullOrEmpty(SessionHelper.Current.brandName))
                     {
                         this.brandName.Text = SessionHelper.Current.brandName;
+                        this.brandNameHidden.Value = SessionHelper.Current.brandName;
                     }
                     if (!string.IsNullOrEmpty(SessionHelper.Current.properName))
                     {

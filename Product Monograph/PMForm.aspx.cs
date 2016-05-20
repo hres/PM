@@ -29,7 +29,7 @@ namespace Product_Monograph
         {
             if (!Page.IsPostBack)
             {
-                if( lang.Equals("fr"))
+                if ( lang.Equals("fr"))
                 {
                     sectionEng.Visible = false;
                     sectionFra.Visible = true;
@@ -74,7 +74,11 @@ namespace Product_Monograph
                     {
                         return;
                     }
-
+                    if(fi.FullName.Contains("©"))
+                    {
+                        errorSection.Visible = true;
+                        return;
+                    }
                 }
                 else
                 {

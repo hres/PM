@@ -1,6 +1,15 @@
 ﻿var selectedschedulingsymbol;
 $(document).ready(function () {
     $("#linkTwo").attr("disabled", "disabled");
+
+    $("#brandNameHidden").attr("name", "brandNameHidden");
+    var brandName = $.trim($("#brandNameHidden").val());
+    if (brandName.length > 0) {
+        $("#btnSaveDraft").removeAttr("disabled");
+    }
+    else {
+        $("#btnSaveDraft").attr("disabled", "disabled");
+    }
 });
 
 var loadFile = function (fuid, imgid, txtname, txtdata) {

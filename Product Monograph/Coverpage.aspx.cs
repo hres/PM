@@ -530,11 +530,15 @@ namespace Product_Monograph
 
             #region Revision and Preparation dates
 
-            string tbDatePrepVal = Request.Form[tbDatePrep.UniqueID];
-            string tbDateRevVal = Request.Form[tbDateRev.UniqueID];
-            helpers.Processes.ValidateAndSave(doc, rootnode, "DateofPreparation", "", tbDatePrepVal, false);
-            helpers.Processes.ValidateAndSave(doc, rootnode, "DateofRevision", "", tbDateRevVal, false);
+            if (Request.Form["tbDatePrep"] != null)
+            {
+                helpers.Processes.ValidateAndSave(doc, rootnode, "DateofPreparation", "", Request.Form["tbDatePrep"], false);
+            }
 
+            if (Request.Form["tbDateRev"] != null)
+            {
+                helpers.Processes.ValidateAndSave(doc, rootnode, "DateofRevision", "", Request.Form["tbDateRev"], false);
+            }       
             #endregion
 
             helpers.Processes.ValidateAndSave(doc, rootnode, "SubmissionControlNumber", "Submission Control Number", tbControNum.Text, true);

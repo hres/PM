@@ -10,7 +10,7 @@ $(document).ready(function () {
     var todayDate = year + "-" + month + "-" + day;
     $("#tbDatePrep").attr("name", "tbDatePrep");
     $("#tbDatePrep").attr("max", todayDate);
-    $("#tbDateRev").attr("name", "tbDatePrep");
+    $("#tbDateRev").attr("name", "tbDateRev");
     $("#tbDateRev").attr("max", todayDate);
 
     $("#tbSchedulingSymbol").change(function () {
@@ -29,7 +29,10 @@ $(document).ready(function () {
         $('#tbSchedulingSymbol option').each(function () { if ($(this).html() == selectedschedulingsymbol) { $(this).attr('selected', 'selected'); return; } });
     });
 
-    //ching created table default row
+    $(".editableBox").change(function () {
+        $(".timeTextBox").val($(".editableBox option:selected").html());
+    });
+
     AddBrandProperDosageDefaultRow();
 });
 

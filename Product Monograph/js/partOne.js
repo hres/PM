@@ -1,6 +1,6 @@
-﻿$(document).ready(function () {
+﻿
+$(document).ready(function () {
     $("#linkOne").attr("disabled", "disabled");
-
     $("#brandNameHidden").attr("name", "brandNameHidden");
     var brandName = $.trim($("#brandNameHidden").val());
     if (brandName.length > 0) {
@@ -13,7 +13,23 @@
 
     AddRouteOfAdministrationDefaultRow();
     setup();
+    DrugHeadingsChange(0);
 });
+
+
+function DrugHeadingsChange(i) {
+    $('#dlDrugHeadings' + i.toString()).change(function () {
+        var selected = $(this).val();
+        if (selected == 'Other') {
+        //    console.log("im here" + i);
+            $('#dlDrugHeadingsOther' + i.toString()).removeClass("hidden");
+        }
+        else {
+            $('#dlDrugHeadingsOther' + i.toString()).addClass("hidden");
+        }
+    });
+}
+
 
 function AddRouteOfAdministrationDefaultRow() {
     $.get('ControlledList.xml', function (xmlcontolledlist) {
@@ -48,7 +64,7 @@ function AddRouteOfAdministrationDefaultRow() {
      $.get('ControlledList.xml', function (xmlcontolledlist) {
          $(xmlcontolledlist).find('interactions').each(function () {
              var $option = $(this).text();
-             $('<option>' + $option + '</option>').appendTo('#dlDrugHeadings')
+             $('<option>' + $option + '</option>').appendTo('#dlDrugHeadings0')
          });
      });
      $.get('ControlledList.xml', function (xmlcontolledlist) {
@@ -329,6 +345,7 @@ function deleteParenteralProduct(r) {
 
 var headingDrugCounter = 0;
 function AddDrugHeadings() {
+
     headingDrugCounter = headingDrugCounter + 1;
     var div = document.createElement('div');
     var identity = document.createAttribute("id");
@@ -336,11 +353,13 @@ function AddDrugHeadings() {
     div.setAttributeNode(identity);
     var dlDrugHeadings = "dlDrugHeadings" + headingDrugCounter.toString();
     var tbDrugHeadings = "tbDrugHeadings" + headingDrugCounter.toString();
+    var dlDrugHeadingsOther = "dlDrugHeadingsOther"+ headingDrugCounter.toString();
     var returnString = "";
     returnString = "<div class='form-group row'>" +
                        "<label for='" + tbDrugHeadings + "' class='col-sm-3 control-label'></label>" +
                        "<div class='col-sm-7'>" +
                            '<select id="' + dlDrugHeadings + '" name="dlDrugHeadings" class="form-control font-small input-sm"></select>' +
+                           '<input type="text" id="' + dlDrugHeadingsOther + '" name="dlDrugHeadingsOther" class="form-control input-sm hidden"/>' +
                            "<textarea id='" + tbDrugHeadings + "' name='tbDrugHeadings' class='textarea form-control'></textarea>" +
                         "</div>" +
                         "<div class='col-sm-2 text-right'>" +
@@ -354,9 +373,12 @@ function AddDrugHeadings() {
             $('<option>' + $option + '</option>').appendTo('#dlDrugHeadings' + headingDrugCounter.toString())
         });
     });
+
     document.getElementById("divExtratbDrugHeadings").appendChild(div);
     setup();
+    DrugHeadingsChange(headingDrugCounter);
 }
+
 
 function RemoveDrugHeadings(i) {
     var rowid = "#DrugHeadings" + i;

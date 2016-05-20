@@ -833,6 +833,7 @@ namespace Product_Monograph
                 XmlNodeList wph = doc.GetElementsByTagName("DrugInteractionsHeadings");
                 ArrayList headingddarray = new ArrayList();
                 ArrayList headingtxtarray = new ArrayList();
+                var headingOther = new ArrayList();
                 if (HttpContext.Current.Request.Form.GetValues("dlDrugHeadings") != null &&
                     HttpContext.Current.Request.Form.GetValues("tbDrugHeadings") != null)
                 {
@@ -843,6 +844,14 @@ namespace Product_Monograph
                     foreach (string swpitem in HttpContext.Current.Request.Form.GetValues("tbDrugHeadings"))
                     {
                         headingtxtarray.Add(swpitem);
+                    }
+
+                    if (HttpContext.Current.Request.Form.GetValues("dlDrugHeadingsOther") != null)
+                    {
+                        foreach (string swpitem in HttpContext.Current.Request.Form.GetValues("dlDrugHeadingsOther"))
+                        {
+                            headingOther.Add(swpitem);
+                        }
                     }
                 }
 
@@ -865,6 +874,11 @@ namespace Product_Monograph
                         subsubnode = doc.CreateElement("column");
                         subsubnode.AppendChild(doc.CreateTextNode(col2));
                         subnode.AppendChild(subsubnode);
+
+                        string col3 = headingOther[ar].ToString();
+                        subsubnode = doc.CreateElement("column");
+                        subsubnode.AppendChild(doc.CreateTextNode(col3));
+                        subnode.AppendChild(subsubnode);
                     }
                 }
                 else
@@ -886,6 +900,11 @@ namespace Product_Monograph
                         string col2 = headingtxtarray[ar].ToString();
                         subsubnode = doc.CreateElement("column");
                         subsubnode.AppendChild(doc.CreateTextNode(col2));
+                        subnode.AppendChild(subsubnode);
+
+                        string col3 = headingOther[ar].ToString();
+                        subsubnode = doc.CreateElement("column");
+                        subsubnode.AppendChild(doc.CreateTextNode(col3));
                         subnode.AppendChild(subsubnode);
                     }
                 }
@@ -1504,52 +1523,44 @@ namespace Product_Monograph
                 int rowcounterH = 0;
                 foreach (var row in rowsH)
                 {
-                    string[] colarray = "dlDrugHeadings;tbDrugHeadings".Split(';');
+                    string[] colarray = "dlDrugHeadings;tbDrugHeadings;dlDrugHeadingsOther".Split(';');
                     int colcounter = 0;
                     if (rowcounterH == 0)
                     {
-                        foreach (string column in row.columns)
-                        {
-                            if (colarray[colcounter].Equals("dlDrugHeadings"))
-                            {
-                                strscript += "$.get('ControlledList.xml', function (xmlcontolledlist) {" +
-                                                  "$(xmlcontolledlist).find('interactions').each(function () {" +
-                                                      "var $option = $(this).text();" +
-                                                      "$('<option>' + $option + '</option>').appendTo('#dlDrugHeadings');" +
-                                                  "});" +
-                                                  "}).done(function () {" +
-                                                      "$('#dlDrugHeadings option').each(function () { if ($(this).html() == '" + column + "') { $(this).attr('selected', 'selected'); return; } });" +
-                                                  "});";
-                            }
-                            else
-                            {
-                                strscript += "$('#" + colarray[colcounter] + "').val(\"" + helpers.Processes.CleanString(column) + "\");";
-                            }
-                            colcounter++;
-                        }
+                        strscript += "DrugHeadingsChange(0);";                        
                     }
                     else
                     {
-                        strscript += "AddDrugHeadings();";
-                        foreach (string column in row.columns)
+                        strscript += "AddDrugHeadings();";                      
+                    }
+
+                    foreach (string column in row.columns)
+                    {
+                        if (colarray[colcounter].Equals("dlDrugHeadings"))
                         {
-                            if (colarray[colcounter].Equals("dlDrugHeadings"))
+                            strscript += "$.get('ControlledList.xml', function (xmlcontolledlist) {" +
+                                          "$(xmlcontolledlist).find('interactions').each(function () {" +
+                                              "var $option = $(this).text();" +
+                                              "$('<option>' + $option + '</option>').appendTo('#dlDrugHeadings0');" +
+                                          "});" +
+                                          "}).done(function () {" +
+                                              "$('#dlDrugHeadings0 option').each(function () { if ($(this).html() == '" + column + "') { $(this).attr('selected', 'selected'); return; } });" +
+                                          "});";
+
+                            if (column.Equals("Other"))
                             {
-                                strscript += "$.get('ControlledList.xml', function (xmlcontolledlist) {" +
-                                                   "$(xmlcontolledlist).find('interactions').each(function () {" +
-                                                       "var $option = $(this).text();" +
-                                                       "$('<option>' + $option + '</option>').appendTo('#dlDrugHeadings" + rowcounterH.ToString() + "');" +
-                                                   "});" +
-                                                   "}).done(function () {" +
-                                                       "$('#dlDrugHeadings" + rowcounterH.ToString() + " option').each(function () { if ($(this).html() == '" + column + "') { $(this).attr('selected', 'selected'); return; } });" +
-                                                   "});";
+                                strscript += "$('#dlDrugHeadingsOther"+ rowcounterH.ToString() + "').removeClass('hidden');";
                             }
                             else
                             {
-                                strscript += "$('#" + colarray[colcounter] + rowcounterH.ToString() + "').val(\"" + helpers.Processes.CleanString(column) + "\");";
+                                strscript += "$('#dlDrugHeadingsOther" + rowcounterH.ToString() + "').addClass('hidden');";
                             }
-                            colcounter++;
                         }
+                        else
+                        {
+                            strscript += "$('#" + colarray[colcounter] + rowcounterH.ToString() + "').val(\"" + helpers.Processes.CleanString(column) + "\");";
+                        }
+                        colcounter++;
                     }
                     rowcounterH++;
                 }
@@ -1848,7 +1859,7 @@ namespace Product_Monograph
                 tbSpecialHandling.Value = xmldataitem.SpecialHandling;
                 tbDosageCompositionPackaging.Value = xmldataitem.DosageCompositionPackaging;
                 tbAdverseReactions.Value = xmldataitem.AdverseReactions;
-                tbAdverseReactions.Value = xmldataitem.AdverseDrugReactions;
+                tbAdverseDrugReactions.Value = xmldataitem.AdverseDrugReactions;
                 tbAdverseReactionsSupplement.Value = xmldataitem.AdverseReactionsSupplement;
                 tbReactionsTableNo.Value = xmldataitem.AdverseTableReactionsTableNo;
                 tbReactionsTableTitle.Value = xmldataitem.AdverseTableReactionsTableTitle;

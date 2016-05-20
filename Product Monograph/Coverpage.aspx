@@ -106,7 +106,7 @@
                 <span class="datepicker-format"> (<abbr title="Four digits year, dash, two digits month, dash, two digits day">YYYY-MM-DD</abbr>)</span>
             </label>
             <div class="col-sm-9">  
-                <asp:TextBox runat="server" id="tbDateRev" CssClass="form-control" type="date" data-rule-dateISO="true"  ClientIDMode="Static"></asp:TextBox>
+                <asp:TextBox runat="server" id="tbDateRev"  CssClass="form-control" type="date" data-rule-dateISO="true"  ClientIDMode="Static"></asp:TextBox>
             </div>
         </div>
         <div class="form-group  row">

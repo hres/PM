@@ -94,7 +94,7 @@
         </div>--%>
         <div class="form-group row">
             <Label for="tbTalktodoctor"  Class="col-sm-3 control-label">
-                <span class="field-name">Before you use &#60;brand name&#62; talk to your doctor or pharmacist if:</span>
+                <span class="field-name"><%=warningsBrandName%></span>
                 <span class="label label-info" title="<%=warningsInfo%>"><%=information%></span>
             </Label>
             <div class="col-sm-9">
@@ -437,4 +437,5 @@
 <asp:HiddenField runat="server" ID="hdRareSymptoms" ClientIDMode="Static" />
 <asp:HiddenField runat="server" ID="hdCommonSymptoms" ClientIDMode="Static" />
 <asp:HiddenField runat="server" ID="hdUncommonSymptoms" ClientIDMode="Static" />
+<asp:HiddenField  runat="server" ID="brandNameHidden" ClientIDMode="Static"  />
 </asp:Content>

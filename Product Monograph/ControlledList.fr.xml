@@ -381,5 +381,6 @@
     <interactions>Drug-herb interactions</interactions>
     <interactions>Drug-laboratory interactions</interactions>
     <interactions>Drug-lifestyle interactions</interactions>
+    <interactions>Other</interactions>
   </drugInteractions>
 </controlledlist>

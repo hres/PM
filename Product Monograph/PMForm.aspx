@@ -1,29 +1,36 @@
 ﻿<%@ Page Title="" Language="C#"   MasterPageFile="~/ProdMono.Master" AutoEventWireup="true" CodeBehind="PMForm.aspx.cs" Inherits="Product_Monograph.PMForm"  %>
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">    
 <script type="text/javascript">
-    $(document).ready(function () {
-        $("#linkCover").attr("disabled", "disabled");
-        $("#linkOne").attr("disabled", "disabled");
-        $("#linkTwo").attr("disabled", "disabled");
-        $("#linkThree").attr("disabled", "disabled");
-        $('#btnLoadTemplate').click(function () {
-            $('#fuXmlDraft').removeAttribute('required');
-        });
-        $('#btnLoadXml').click(function () {
-            $('#ddlTemplate').removeAttribute('required');
-        });
+   $(document).ready(function () {
+           $("#linkCover").attr("disabled", "disabled");
+           $("#linkOne").attr("disabled", "disabled");
+           $("#linkTwo").attr("disabled", "disabled");
+           $("#linkThree").attr("disabled", "disabled");
+           $('#btnLoadTemplate').click(function () {
+               $('#fuXmlDraft').removeAttribute('required');
+           });
+           $('#btnLoadXml').click(function () {
+               $('#ddlTemplate').removeAttribute('required');
+           });
 
-        $('#btnLoadTemplateFra').click(function () {
-            $('#fuXmlDraftFra').removeAttribute('required');
-        });
+           $('#btnLoadTemplateFra').click(function () {
+               $('#fuXmlDraftFra').removeAttribute('required');
+           });
 
-        $('#btnLoadXmlFra').click(function () {
-            $('#ddlTemplateFra').removeAttribute('required');
-        });
+           $('#btnLoadXmlFra').click(function () {
+               $('#ddlTemplateFra').removeAttribute('required');
+           });
     });
 </script>
 </asp:Content>
 <asp:Content id="Content2" contentPlaceHolderID="ContentPlaceHolder1" runat="server">
+    <section class="alert alert-danger" tabindex="-1" runat="server" id="errorSection" visible="false">
+      <h2>The form could not be submitted because 1 error was found.</h2>
+      <ul>
+        <li>Error 1: Xml file contains a copyright symbol(©) and it cannot be re-loaded.</li>
+      </ul>
+    </section>
+    
     <section class="mrgn-tp-lg" runat="server" id="sectionEng">
                 <div class="panel panel-default">
                     <div class="panel-heading">
@@ -78,7 +85,7 @@
                  </div>
                 <div class="panel-body">
                   <ul>
-                      <li>To save a file, press the "Save a draft" button. The file name of the new file will always be the brand name with the '.zip' extension.</li>
+                      <li>To save a file, press the "Save draft" button. The file name of the new file will always be "productmonograph" with the '.zip' extension.</li>
                         <li>To collapse and expand web form groups using the arrows shown on the top-left margin of collapsible groups. An arrow to the right (►) means a group is currently collapsed, click on it to expand the group. An arrow downward (▼) means the group is currently expanded and can be collapsed by clicking on this arrow.</li>
                         <li>Key information is displayed by hovering your cursor over the red help of message circle <span class="label label-info">Info</span></li>
                         <li>Navigate through the XML PM Web Form by clicking on the links located below the banner. Major sections will be indicated depending on the template type selected.</li>

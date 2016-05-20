@@ -33,8 +33,8 @@
              <p><strong><span class="field-name"><%=properNameTitle%>:</span></strong><asp:Literal ID="properName" runat="server"></asp:Literal><p>
          </div>
          <div class="col-sm-3 text-right">
-            <asp:Button ID="btnSaveDraft" runat="server" cssclass="btn btn-primary " OnClick="btnSave_Click" /> 
-              <input type="reset" value="<%=resetButton%>" class="btn btn-default mrgn-lft-md">
+            <asp:Button ID="btnSaveDraft" runat="server" cssclass="btn btn-primary " OnClick="btnSave_Click" ClientIDMode="Static"/> 
+              <input type="reset" value="<%=resetButton%>" class="btn btn-default mrgn-l ft-md">
          </div> 
 </div>
 <!--Pharmaceutical information--> 
@@ -314,5 +314,6 @@
                         </div>                   
          </div> 
 </details>
+    <asp:HiddenField  runat="server" ID="brandNameHidden" ClientIDMode="Static"  />
 </asp:Content>
 

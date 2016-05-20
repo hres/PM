@@ -3,7 +3,7 @@
  <script src="./js/pmp.js"></script>
  <script src="./js/partOne.js"></script>
  <script>
-     var removeButtonValue = '<%=removeButton%>';     
+     var removeButtonValue = '<%=removeButton%>'; 
  </script>
 </asp:Content>
 
@@ -113,8 +113,8 @@
                                      <span class="label label-info" title="<%=headingsInfo%>"><%=information%></span>
                              </label>
                              <div class="col-sm-7">
-                                <select id="dlHeadings" name="dlHeadings" class="form-control font-small input-sm"></select>
-                                <textarea id="tbHeadings" name="tbHeadings" class="textarea form-control"  ></textarea>
+                                <select id="dlHeadings" name="dlHeadings"  class="form-control font-small input-sm"></select>
+                                <textarea id="tbHeadings" name="tbHeadings" class="textarea form-control"></textarea>
                              </div>
                             <div class="col-sm-2 text-right"> 
                                 <input class="btn btn-default btn-xs" type="button" value="<%=addButton %>" onclick="AddHeadings()" id="btnHeadings" />
@@ -216,13 +216,14 @@
                         </div>                   
                  </div>
                 <div class="form-group row">                    
-                             <label for="tbDrugHeadings" class="col-sm-3 control-label">
+                             <label for="tbDrugHeadings0" class="col-sm-3 control-label">
                                      <span class="field-name"><%=headings%></span>
                                      <span class="label label-info" title="<%=headingsInfo%>"><%=information%></span>
                              </label>
                              <div class="col-sm-7">
-                                <select id="dlDrugHeadings" name="dlDrugHeadings" class="form-control font-small input-sm"></select>
-                                <textarea id="tbDrugHeadings" name="tbDrugHeadings" class="textarea form-control" ></textarea>
+                                <select id="dlDrugHeadings0" name="dlDrugHeadings" class="form-control font-small input-sm"></select>
+                                <input type="text" id="dlDrugHeadingsOther0" name="dlDrugHeadingsOther" class="form-control input-sm hidden"/>
+                                <textarea id="tbDrugHeadings0" name="tbDrugHeadings" class="textarea form-control" ></textarea>
                              </div>
                             <div class="col-sm-2 text-right"> 
                                 <input class="btn btn-default btn-xs" type="button" value="<%=addButton %>" onclick="AddDrugHeadings()" id="btnDrugHeadings" />
