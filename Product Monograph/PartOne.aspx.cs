@@ -516,6 +516,7 @@ namespace Product_Monograph
                 XmlNodeList wph = doc.GetElementsByTagName("WarningHeadings");
                 ArrayList headingddarray = new ArrayList();
                 ArrayList headingtxtarray = new ArrayList();
+                var headingsOther = new ArrayList();
                 if (HttpContext.Current.Request.Form.GetValues("dlHeadings") != null &&
                     HttpContext.Current.Request.Form.GetValues("tbHeadings") != null)
                 {
@@ -526,6 +527,13 @@ namespace Product_Monograph
                     foreach (string swpitem in HttpContext.Current.Request.Form.GetValues("tbHeadings"))
                     {
                         headingtxtarray.Add(swpitem);
+                    }
+                    if (HttpContext.Current.Request.Form.GetValues("dlHeadingsOther") != null)
+                    {
+                        foreach (string swpitem in HttpContext.Current.Request.Form.GetValues("dlHeadingsOther"))
+                        {
+                            headingsOther.Add(swpitem);
+                        }
                     }
                 }
 
@@ -548,6 +556,11 @@ namespace Product_Monograph
                         subsubnode = doc.CreateElement("column");
                         subsubnode.AppendChild(doc.CreateTextNode(col2));
                         subnode.AppendChild(subsubnode);
+
+                        string col3 = headingsOther[ar].ToString();
+                        subsubnode = doc.CreateElement("column");
+                        subsubnode.AppendChild(doc.CreateTextNode(col3));
+                        subnode.AppendChild(subsubnode);
                     }
                 }
                 else
@@ -569,6 +582,11 @@ namespace Product_Monograph
                         string col2 = headingtxtarray[ar].ToString();
                         subsubnode = doc.CreateElement("column");
                         subsubnode.AppendChild(doc.CreateTextNode(col2));
+                        subnode.AppendChild(subsubnode);
+
+                        string col3 = headingsOther[ar].ToString();
+                        subsubnode = doc.CreateElement("column");
+                        subsubnode.AppendChild(doc.CreateTextNode(col3));
                         subnode.AppendChild(subsubnode);
                     }
                 }
@@ -1023,6 +1041,7 @@ namespace Product_Monograph
                 XmlNodeList wph = doc.GetElementsByTagName("PharmacokineticsHeadings");
                 ArrayList headingddarray = new ArrayList();
                 ArrayList headingtxtarray = new ArrayList();
+                var headingsActionOther =  new ArrayList();
                 if (HttpContext.Current.Request.Form.GetValues("dlActionHeadings") != null &&
                     HttpContext.Current.Request.Form.GetValues("tbActionHeadings") != null)
                 {
@@ -1033,6 +1052,13 @@ namespace Product_Monograph
                     foreach (string swpitem in HttpContext.Current.Request.Form.GetValues("tbActionHeadings"))
                     {
                         headingtxtarray.Add(swpitem);
+                    }
+                    if (HttpContext.Current.Request.Form.GetValues("dlActionHeadingsOther") != null )
+                    {
+                        foreach (string swpitem in HttpContext.Current.Request.Form.GetValues("dlActionHeadingsOther"))
+                        {
+                            headingsActionOther.Add(swpitem);
+                        }
                     }
                 }
 
@@ -1055,6 +1081,11 @@ namespace Product_Monograph
                         subsubnode = doc.CreateElement("column");
                         subsubnode.AppendChild(doc.CreateTextNode(col2));
                         subnode.AppendChild(subsubnode);
+
+                        string col3 = headingsActionOther[ar].ToString();
+                        subsubnode = doc.CreateElement("column");
+                        subsubnode.AppendChild(doc.CreateTextNode(col3));
+                        subnode.AppendChild(subsubnode);
                     }
                 }
                 else
@@ -1076,6 +1107,11 @@ namespace Product_Monograph
                         string col2 = headingtxtarray[ar].ToString();
                         subsubnode = doc.CreateElement("column");
                         subsubnode.AppendChild(doc.CreateTextNode(col2));
+                        subnode.AppendChild(subsubnode);
+
+                        string col3 = headingsActionOther[ar].ToString();
+                        subsubnode = doc.CreateElement("column");
+                        subsubnode.AppendChild(doc.CreateTextNode(col3));
                         subnode.AppendChild(subsubnode);
                     }
                 }
@@ -1417,54 +1453,56 @@ namespace Product_Monograph
                 int rowcounterH = 0;
                 foreach (var row in rowsH)
                 {
-                    string[] colarray = "dlHeadings;tbHeadings".Split(';');
+                    string[] colarray = "dlHeadings;tbHeadings;dlHeadingsOther".Split(';');
                     int colcounter = 0;
                     if (rowcounterH == 0)
                     {
-                        foreach (string column in row.columns)
-                        {
-                            if (colarray[colcounter].Equals("dlHeadings"))
-                            {
-                                strscript += "$.get('ControlledList.xml', function (xmlcontolledlist) {" +
-                                                  "$(xmlcontolledlist).find('warning').each(function () {" +
-                                                      "var $option = $(this).text();" +
-                                                      "$('<option>' + $option + '</option>').appendTo('#dlHeadings');" +
-                                                  "});" +
-                                                  "}).done(function () {" +
-                                                      "$('#dlHeadings option').each(function () { if ($(this).html() == '" + column + "') { $(this).attr('selected', 'selected'); return; } });" +
-                                                  "});";
-                            }
-                            else
-                            {
-                                strscript += "$('#" + colarray[colcounter] + "').val(\"" + helpers.Processes.CleanString(column) + "\");";
-                            }
-                            colcounter++;
-                        }
+                        strscript += "changeHeadings(0);";
                     }
                     else
                     {
-                        strscript += "AddHeadings();";
-                        foreach (string column in row.columns)
+                        strscript += "AddHeadings(false);";
+                    }
+
+                    foreach (string column in row.columns)
+                    {
+                        if (colarray[colcounter].Equals("dlHeadings"))
                         {
-                            if (colarray[colcounter].Equals("dlHeadings"))
+                            strscript += "$.get('ControlledList.xml', function (xmlcontolledlist) {" +
+                                                "$(xmlcontolledlist).find('warning').each(function () {" +
+                                                    "var $option = $(this).text();" +                                                     
+                                                    "if ($option.toLowerCase() == 'special populations') { " +
+                                                    "$('<option disabled=\"disabled\">' + $option + '</option>').appendTo('#dlHeadings" + rowcounterH.ToString() + "');" +
+                                                    "}" +
+                                                    "else if ($option.indexOf('xxx') >= 0) {" +
+                                                        "$option = $option.replace('xxx', '&nbsp;&nbsp;&nbsp;&nbsp;');" +
+                                                        " $('<option>' + $option + '</option>').appendTo('#dlHeadings" + rowcounterH.ToString() + "');" +
+                                                    " }" +
+                                                    "else {" +
+                                                        " $('<option>' + $option + '</option>').appendTo('#dlHeadings" + rowcounterH.ToString() + "');" +
+                                                    " }" +
+                                                "});" +
+                                                "}).done(function () {" +
+                                                    "$('#dlHeadings" + rowcounterH.ToString() + " option').each(function () { if ($(this).html() == '" + column + "') { $(this).attr('selected', 'selected'); return; } });" +
+                                                "});";
+
+                            if (column.Equals("Other"))
                             {
-                                strscript += "$.get('ControlledList.xml', function (xmlcontolledlist) {" +
-                                                   "$(xmlcontolledlist).find('warning').each(function () {" +
-                                                       "var $option = $(this).text();" +
-                                                       "$('<option>' + $option + '</option>').appendTo('#dlHeadings" + rowcounterH.ToString() + "');" +
-                                                   "});" +
-                                                   "}).done(function () {" +
-                                                       "$('#dlHeadings" + rowcounterH.ToString() + " option').each(function () { if ($(this).html() == '" + column + "') { $(this).attr('selected', 'selected'); return; } });" +
-                                                   "});";
+                                strscript += "$('#dlHeadingsOther" + rowcounterH.ToString() + "').removeClass('hidden');";
                             }
                             else
                             {
-                                strscript += "$('#" + colarray[colcounter] + rowcounterH.ToString() + "').val(\"" + helpers.Processes.CleanString(column) + "\");";
+                                strscript += "$('#dlHeadingsOther" + rowcounterH.ToString() + "').addClass('hidden');";
                             }
-                            colcounter++;
                         }
+                        else
+                        {
+                            strscript += "$('#" + colarray[colcounter] + rowcounterH.ToString() + "').val(\"" + helpers.Processes.CleanString(column) + "\");";
+                        }
+                        colcounter++;
                     }
-                   rowcounterH++;
+   
+                rowcounterH++;
                 }
                 #endregion
             }
@@ -1520,18 +1558,20 @@ namespace Product_Monograph
                                           select (string)column
                             };
 
-                int rowcounterH = 0;
+                int rowcounterD = 0;
                 foreach (var row in rowsH)
                 {
                     string[] colarray = "dlDrugHeadings;tbDrugHeadings;dlDrugHeadingsOther".Split(';');
                     int colcounter = 0;
-                    if (rowcounterH == 0)
+
+                  
+                    if (rowcounterD == 0)
                     {
-                        strscript += "DrugHeadingsChange(0);";                        
+                        strscript += "changeDrugHeadings(0);";
                     }
                     else
                     {
-                        strscript += "AddDrugHeadings();";                      
+                        strscript += "AddDrugHeadings(false);";
                     }
 
                     foreach (string column in row.columns)
@@ -1541,28 +1581,28 @@ namespace Product_Monograph
                             strscript += "$.get('ControlledList.xml', function (xmlcontolledlist) {" +
                                           "$(xmlcontolledlist).find('interactions').each(function () {" +
                                               "var $option = $(this).text();" +
-                                              "$('<option>' + $option + '</option>').appendTo('#dlDrugHeadings0');" +
+                                              "$('<option>' + $option + '</option>').appendTo('#dlDrugHeadings"+ rowcounterD.ToString() + "');" +
                                           "});" +
                                           "}).done(function () {" +
-                                              "$('#dlDrugHeadings0 option').each(function () { if ($(this).html() == '" + column + "') { $(this).attr('selected', 'selected'); return; } });" +
-                                          "});";
+                                              "$('#dlDrugHeadings" + rowcounterD.ToString() + " option').each(function () { if ($(this).html() == '" + column + "') { $(this).attr('selected', 'selected'); return; } });" +
+                                         "});";
 
                             if (column.Equals("Other"))
                             {
-                                strscript += "$('#dlDrugHeadingsOther"+ rowcounterH.ToString() + "').removeClass('hidden');";
+                                strscript += "$('#dlDrugHeadingsOther"+ rowcounterD.ToString() + "').removeClass('hidden');";
                             }
                             else
                             {
-                                strscript += "$('#dlDrugHeadingsOther" + rowcounterH.ToString() + "').addClass('hidden');";
+                                strscript += "$('#dlDrugHeadingsOther" + rowcounterD.ToString() + "').addClass('hidden');";
                             }
                         }
                         else
                         {
-                            strscript += "$('#" + colarray[colcounter] + rowcounterH.ToString() + "').val(\"" + helpers.Processes.CleanString(column) + "\");";
+                            strscript += "$('#" + colarray[colcounter] + rowcounterD.ToString() + "').val(\"" + helpers.Processes.CleanString(column) + "\");";
                         }
                         colcounter++;
                     }
-                    rowcounterH++;
+                    rowcounterD++;
                 }
                 #endregion
             }
@@ -1698,57 +1738,48 @@ namespace Product_Monograph
                                           select (string)column
                             };
 
-                int rowcounterH = 0;
+                int rowcounterA = 0;
                 foreach (var row in rowsH)
                 {
-                    string[] colarray = "dlActionHeadings;tbActionHeadings".Split(';');
+                    string[] colarray = "dlActionHeadings;tbActionHeadings;dlActionHeadingsOther".Split(';');
                     int colcounter = 0;
-                    if (rowcounterH == 0)
+                    if (rowcounterA == 0)
                     {
-                        foreach (string column in row.columns)
-                        {
-                            if (colarray[colcounter].Equals("dlActionHeadings"))
-                            {
-                                strscript += "$.get('ControlledList.xml', function (xmlcontolledlist) {" +
-                                                  "$(xmlcontolledlist).find('kinetics').each(function () {" +
-                                                      "var $option = $(this).text();" +
-                                                      "$('<option>' + $option + '</option>').appendTo('#dlActionHeadings');" +
-                                                  "});" +
-                                                  "}).done(function () {" +
-                                                      "$('#dlActionHeadings option').each(function () { if ($(this).html() == '" + column + "') { $(this).attr('selected', 'selected'); return; } });" +
-                                                  "});";
-                            }
-                            else
-                            {
-                                strscript += "$('#" + colarray[colcounter] + "').val(\"" + helpers.Processes.CleanString(column) + "\");";
-                            }
-                            colcounter++;
-                        }
+                        strscript += "changeActionHeadings(0);";
                     }
                     else
                     {
-                        strscript += "AddActionHeadings();";
-                        foreach (string column in row.columns)
+                        strscript += "AddActionHeadings(false);";
+                    }
+
+                    foreach (string column in row.columns)
+                    {
+                        if (colarray[colcounter].Equals("dlActionHeadings"))
                         {
-                            if (colarray[colcounter].Equals("dlActionHeadings"))
+                            strscript += "$.get('ControlledList.xml', function (xmlcontolledlist) {" +
+                                               "$(xmlcontolledlist).find('kinetics').each(function () {" +
+                                                   "var $option = $(this).text();" +
+                                                   "$('<option>' + $option + '</option>').appendTo('#dlActionHeadings" + rowcounterA.ToString() + "');" +
+                                               "});" +
+                                               "}).done(function () {" +
+                                                   "$('#dlActionHeadings" + rowcounterA.ToString() + " option').each(function () { if ($(this).html() == '" + column + "') { $(this).attr('selected', 'selected'); return; } });" +
+                                               "});";
+                            if (column.Equals("Other"))
                             {
-                                strscript += "$.get('ControlledList.xml', function (xmlcontolledlist) {" +
-                                                   "$(xmlcontolledlist).find('interactions').each(function () {" +
-                                                       "var $option = $(this).text();" +
-                                                       "$('<option>' + $option + '</option>').appendTo('#dlActionHeadings" + rowcounterH.ToString() + "');" +
-                                                   "});" +
-                                                   "}).done(function () {" +
-                                                       "$('#dlActionHeadings" + rowcounterH.ToString() + " option').each(function () { if ($(this).html() == '" + column + "') { $(this).attr('selected', 'selected'); return; } });" +
-                                                   "});";
+                                strscript += "$('#dlActionHeadingsOther" + rowcounterA.ToString() + "').removeClass('hidden');";
                             }
                             else
                             {
-                                strscript += "$('#" + colarray[colcounter] + rowcounterH.ToString() + "').val(\"" + helpers.Processes.CleanString(column) + "\");";
-                            }
-                            colcounter++;
+                                strscript += "$('#dlActionHeadingsOther" + rowcounterA.ToString() + "').addClass('hidden');";
+                            }                          
                         }
+                        else
+                        {
+                            strscript += "$('#" + colarray[colcounter] + rowcounterA.ToString() + "').val(\"" + helpers.Processes.CleanString(column) + "\");";
+                        }
+                        colcounter++;
                     }
-                    rowcounterH++;
+                    rowcounterA++;
                 }
                 #endregion
             }

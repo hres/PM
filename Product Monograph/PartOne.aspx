@@ -113,11 +113,12 @@
                                      <span class="label label-info" title="<%=headingsInfo%>"><%=information%></span>
                              </label>
                              <div class="col-sm-7">
-                                <select id="dlHeadings" name="dlHeadings"  class="form-control font-small input-sm"></select>
-                                <textarea id="tbHeadings" name="tbHeadings" class="textarea form-control"></textarea>
+                                <select id="dlHeadings0" name="dlHeadings"  class="form-control font-small input-sm"></select>
+                                <input type="text" id="dlHeadingsOther0" name="dlHeadingsOther" class="form-control input-sm hidden"/>
+                                <textarea id="tbHeadings0" name="tbHeadings" class="textarea form-control"></textarea>
                              </div>
                             <div class="col-sm-2 text-right"> 
-                                <input class="btn btn-default btn-xs" type="button" value="<%=addButton %>" onclick="AddHeadings()" id="btnHeadings" />
+                                <input class="btn btn-default btn-xs" type="button" value="<%=addButton %>" onclick="AddHeadings(true)" id="btnHeadings" />
                             </div>   
                     </div> 
                     <div id="divExtratbHeadings">
@@ -226,7 +227,7 @@
                                 <textarea id="tbDrugHeadings0" name="tbDrugHeadings" class="textarea form-control" ></textarea>
                              </div>
                             <div class="col-sm-2 text-right"> 
-                                <input class="btn btn-default btn-xs" type="button" value="<%=addButton %>" onclick="AddDrugHeadings()" id="btnDrugHeadings" />
+                                <input class="btn btn-default btn-xs" type="button" value="<%=addButton %>" onclick="AddDrugHeadings(true)" id="btnDrugHeadings" />
                             </div>   
                         </div>
                  <div id="divExtratbDrugHeadings"></div>
@@ -373,11 +374,12 @@
                                      <span class="field-name"><%=pharmacokinetics%></span>
                              </label>
                              <div class="col-sm-7">
-                                <select id="dlActionHeadings" name="dlActionHeadings" class="form-control font-small input-sm"></select>
-                                <textarea id="tbActionHeadings" name="tbActionHeadings" class="textarea form-control" ></textarea>
+                                <select id="dlActionHeadings0" name="dlActionHeadings" class="form-control font-small input-sm"></select>
+                                <input type="text" id="dlActionHeadingsOther0" name="dlActionHeadingsOther" class="form-control input-sm hidden"/>
+                                <textarea id="tbActionHeadings0" name="tbActionHeadings" class="textarea form-control" ></textarea>
                              </div>
                             <div class="col-sm-2 text-right"> 
-                                <input class="btn btn-default btn-xs" type="button" value="<%=addButton %>" onclick="AddActionHeadings()" id="btnActionHeadings" />
+                                <input class="btn btn-default btn-xs" type="button" value="<%=addButton %>" onclick="AddActionHeadings(true)" id="btnActionHeadings" />
                             </div>   
                         </div> 
                      <div id="divExtratbActionHeadings"></div>               

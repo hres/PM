@@ -1,4 +1,5 @@
 ﻿
+
 $(document).ready(function () {
     $("#linkOne").attr("disabled", "disabled");
     $("#brandNameHidden").attr("name", "brandNameHidden");
@@ -8,24 +9,88 @@ $(document).ready(function () {
     }
     else {
         $("#btnSaveDraft").attr("disabled", "disabled");
+        AddRouteOfAdministrationDefaultRow();
+        populateHeadings(0);
+        changeHeadings(0);
+        populateActionHeadings(0);
+        changeActionHeadings(0);
+        populateDrugHeadings(0);
+        changeDrugHeadings(0);
+        setup();
     }
-
-
-    AddRouteOfAdministrationDefaultRow();
-    setup();
-    DrugHeadingsChange(0);
 });
 
 
-function DrugHeadingsChange(i) {
+function populateHeadings(num)
+{
+    $.get('ControlledList.xml', function (xmlcontolledlist) {
+        $(xmlcontolledlist).find('warning').each(function () {
+            var $option = $(this).text();
+            if ($option.toLowerCase() == 'special populations') {
+                $('<option disabled="disabled">' + $option + '</option>').appendTo('#dlHeadings' + num.toString());
+            }
+            else if ($option.indexOf('xxx') >= 0) {
+                $option = $option.replace("xxx", "&nbsp;&nbsp;&nbsp;&nbsp;");
+                $('<option>' + $option + '</option>').appendTo('#dlHeadings' + num.toString());
+            }
+            else {
+                $('<option>' + $option + '</option>').appendTo('#dlHeadings' + num.toString());
+            }
+        });
+    });
+}
+
+function populateActionHeadings(num)
+{
+     $.get('ControlledList.xml', function (xmlcontolledlist) {
+         $(xmlcontolledlist).find('kinetics').each(function () {
+             var $option = $(this).text();
+             $('<option>' + $option + '</option>').appendTo('#dlActionHeadings' + num.toString());
+         });
+     });
+}
+
+function populateDrugHeadings(num) {
+    $.get('ControlledList.xml', function (xmlcontolledlist) {
+        $(xmlcontolledlist).find('interactions').each(function () {
+            var $option = $(this).text();
+            $('<option>' + $option + '</option>').appendTo('#dlDrugHeadings' + num.toString());
+        });
+    });
+}
+
+function changeDrugHeadings(i) {
     $('#dlDrugHeadings' + i.toString()).change(function () {
         var selected = $(this).val();
         if (selected == 'Other') {
-        //    console.log("im here" + i);
             $('#dlDrugHeadingsOther' + i.toString()).removeClass("hidden");
         }
         else {
             $('#dlDrugHeadingsOther' + i.toString()).addClass("hidden");
+        }
+    });
+}
+function changeActionHeadings(i) {
+    console.log("im herex" + i);
+    $('#dlActionHeadings' + i.toString()).change(function () {
+        console.log("im herexx" + i);
+        var selected = $(this).val();
+        if (selected == 'Other') {
+            $('#dlActionHeadingsOther' + i.toString()).removeClass("hidden");
+        }
+        else {
+            $('#dlActionHeadingsOther' + i.toString()).addClass("hidden");
+        }
+    });
+}
+function changeHeadings(i) {
+    $('#dlHeadings' + i.toString()).change(function () {
+        var selected = $(this).val();
+        if (selected == 'Other') {
+            $('#dlHeadingsOther' + i.toString()).removeClass("hidden");
+        }
+        else {
+            $('#dlHeadingsOther' + i.toString()).addClass("hidden");
         }
     });
 }
@@ -44,36 +109,7 @@ function AddRouteOfAdministrationDefaultRow() {
             var $option = $(this).text();
             $('<option>' + $option + '</option>').appendTo('#tbDosageFormDynamic');
         });
-     });
-
-     $.get('ControlledList.xml', function (xmlcontolledlist) {
-         $(xmlcontolledlist).find('warning').each(function () {
-             var $option = $(this).text();
-             if ($option.toLowerCase() == 'special populations') {
-                 $('<option disabled="disabled">' + $option + '</option>').appendTo('#dlHeadings')
-             } 
-             else if ($option.indexOf('xxx') >= 0) {
-                 $option = $option.replace("xxx", "&nbsp;&nbsp;&nbsp;&nbsp;");
-                 $('<option>' + $option + '</option>').appendTo('#dlHeadings')
-             }
-             else {
-                 $('<option>' + $option + '</option>').appendTo('#dlHeadings')
-             }            
-         });
-     });
-     $.get('ControlledList.xml', function (xmlcontolledlist) {
-         $(xmlcontolledlist).find('interactions').each(function () {
-             var $option = $(this).text();
-             $('<option>' + $option + '</option>').appendTo('#dlDrugHeadings0')
-         });
-     });
-     $.get('ControlledList.xml', function (xmlcontolledlist) {
-         $(xmlcontolledlist).find('kinetics').each(function () {
-             var $option = $(this).text();
-             $('<option>' + $option + '</option>').appendTo('#dlActionHeadings')
-         });
-     });
-     
+     });  
 }
 
 
@@ -218,7 +254,7 @@ function RemoveContraindications(i) {
 //}
 
 var headingCounter = 0;
-function AddHeadings() {
+function AddHeadings(flag) {
     headingCounter = headingCounter + 1;
     var div = document.createElement('div');
     var identity = document.createAttribute("id");
@@ -226,11 +262,13 @@ function AddHeadings() {
     div.setAttributeNode(identity);
     var dlHeadings = "dlHeadings" + headingCounter.toString();
     var tbHeadings = "tbHeadings" + headingCounter.toString();
+    var dlHeadingsOther = "dlHeadingsOther" + headingCounter.toString();
     var returnString = "";
     returnString = "<div class='form-group row'>" +
                        "<label for='" + tbHeadings + "' class='col-sm-3 control-label'></label>" +
                        "<div class='col-sm-7'>" +
-                           '<select id="'+ dlHeadings + '" name="dlHeadings" class="form-control font-small input-sm"></select>' +
+                           '<select id="' + dlHeadings + '" name="dlHeadings" class="form-control font-small input-sm"></select>' +
+                           '<input type="text" id="' + dlHeadingsOther + '" name="dlHeadingsOther" class="form-control input-sm hidden"/>' +
                            "<textarea id='" + tbHeadings + "' name='tbHeadings' class='textarea form-control'></textarea>" +
                         "</div>" +
                         "<div class='col-sm-2 text-right'>" +
@@ -238,14 +276,13 @@ function AddHeadings() {
                        "</div>" +
                "</div>";  
     div.innerHTML = returnString;
-    $.get('ControlledList.xml', function (xmlcontolledlist) {
-        $(xmlcontolledlist).find('warning').each(function () {
-            var $option = $(this).text();
-            $('<option>' + $option + '</option>').appendTo('#dlHeadings' + headingCounter.toString())
-        });
-    });
+    if (flag)
+    {
+        populateHeadings(headingCounter);
+    }
     document.getElementById("divExtratbHeadings").appendChild(div);
     setup();
+    changeHeadings(headingCounter);
 }
 
 function RemoveHeadings(i) {
@@ -344,7 +381,7 @@ function deleteParenteralProduct(r) {
 
 
 var headingDrugCounter = 0;
-function AddDrugHeadings() {
+function AddDrugHeadings(flag) {
 
     headingDrugCounter = headingDrugCounter + 1;
     var div = document.createElement('div');
@@ -367,17 +404,17 @@ function AddDrugHeadings() {
                        "</div>" +
                "</div>";
     div.innerHTML = returnString;
-    $.get('ControlledList.xml', function (xmlcontolledlist) {
-        $(xmlcontolledlist).find('interactions').each(function () {
-            var $option = $(this).text();
-            $('<option>' + $option + '</option>').appendTo('#dlDrugHeadings' + headingDrugCounter.toString())
-        });
-    });
+
+    if (flag)
+    {
+        populateDrugHeadings(headingDrugCounter);
+    }
 
     document.getElementById("divExtratbDrugHeadings").appendChild(div);
     setup();
-    DrugHeadingsChange(headingDrugCounter);
+    changeDrugHeadings(headingDrugCounter);
 }
+
 
 
 function RemoveDrugHeadings(i) {
@@ -386,19 +423,21 @@ function RemoveDrugHeadings(i) {
 }
 
 var headingActionCounter = 0;
-function AddActionHeadings() {
+function AddActionHeadings(flag) {
     headingActionCounter = headingActionCounter + 1;
     var div = document.createElement('div');
     var identity = document.createAttribute("id");
     identity.value = "ActionHeadings" + headingActionCounter;
     div.setAttributeNode(identity);
     var dlActionHeadings = "dlActionHeadings" + headingActionCounter.toString();
+    var dlActionHeadingsOther = "dlActionHeadingsOther" + headingActionCounter.toString();
     var tbActionHeadings = "tbActionHeadings" + headingActionCounter.toString();
     var returnString = "";
     returnString = "<div class='form-group row'>" +
                        "<label for='" + tbActionHeadings + "' class='col-sm-3 control-label'></label>" +
                        "<div class='col-sm-7'>" +
                            '<select id="' + dlActionHeadings + '" name="dlActionHeadings" class="form-control font-small input-sm"></select>' +
+                           '<input type="text" id="' + dlActionHeadingsOther + '" name="dlActionHeadingsOther" class="form-control input-sm hidden"/>' +
                            "<textarea id='" + tbActionHeadings + "' name='tbActionHeadings' class='textarea form-control'></textarea>" +
                         "</div>" +
                         "<div class='col-sm-2 text-right'>" +
@@ -406,14 +445,15 @@ function AddActionHeadings() {
                        "</div>" +
                "</div>";
     div.innerHTML = returnString;
-    $.get('ControlledList.xml', function (xmlcontolledlist) {
-        $(xmlcontolledlist).find('kinetics').each(function () {
-            var $option = $(this).text();
-            $('<option>' + $option + '</option>').appendTo('#dlActionHeadings' + headingActionCounter.toString())
-        });
-    });
+
+    if (flag)
+    {
+        populateActionHeadings(headingActionCounter);
+    }
+    
     document.getElementById("divExtratbActionHeadings").appendChild(div);
     setup();
+    changeActionHeadings(headingActionCounter);
 }
 
 function RemoveActionHeadings(i) {

@@ -22,7 +22,8 @@
     <kinetics>Absorption</kinetics>
     <kinetics>Distribution</kinetics>
     <kinetics>Metabolism</kinetics>
-    <kinetics>Excretion</kinetics>    
+    <kinetics>Excretion</kinetics>   
+    <kinetics>Other</kinetics>   
   </pharmacokinetics>
   <warningsprecautions>
     <warning value="Select"></warning>
@@ -52,6 +53,7 @@
     <warning>xxxPediatrics &#40;x &#45; y years of age&#41;: or &#40;&#60; years of age&#41;:</warning>
     <warning>xxxGeriatrics &#40;&#62; x years of age&#41;:</warning>
     <warning>xxxMonitoring and Laboratory Tests</warning>
+   <warning>Other</warning>
   </warningsprecautions>
   <schedulingsymbol>
     <schedule value="select"></schedule>
