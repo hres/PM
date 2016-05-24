@@ -71,9 +71,7 @@ function changeDrugHeadings(i) {
     });
 }
 function changeActionHeadings(i) {
-    console.log("im herex" + i);
     $('#dlActionHeadings' + i.toString()).change(function () {
-        console.log("im herexx" + i);
         var selected = $(this).val();
         if (selected == 'Other') {
             $('#dlActionHeadingsOther' + i.toString()).removeClass("hidden");
