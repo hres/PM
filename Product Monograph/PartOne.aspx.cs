@@ -1190,7 +1190,7 @@ namespace Product_Monograph
                     int colcounter = 0;
                     if (rowcounter > 0)
                     {
-                        strscript += "AddRouteOfAdminTextBox('dataTable1');";
+                        strscript += "AddRouteOfAdminTextBox('dataTable1', false);";
                     }
                     foreach (string column in row.columns)
                     {

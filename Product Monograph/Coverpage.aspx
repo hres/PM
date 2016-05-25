@@ -35,7 +35,7 @@
                     <caption class="text-left"><span class="field-name"><%=brandDosageForm%></span></caption>
                     <thead>
                         <tr>           
-                            <th><input class="btn btn-default btn-xs" type="button" id="btnAppendRow" onclick="addRow('dataTable')" value="<% =addButton %>" /></th>
+                            <th><input class="btn btn-default btn-xs" type="button" id="btnAppendRow" onclick="addRow('dataTable', true)" value="<% =addButton %>" /></th>
                             <th><label for="tbBrandname" class="required"><span class="field-name"><%=brandNameTitle%></span></label></th>
                             <th><label for="tbPropername" class="required"><span class="field-name"><%=properNameTitle%></span></label></th>
                             <th><span class="field-name"><%=dosageForm%></span></th>

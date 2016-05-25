@@ -29,7 +29,7 @@
                 <caption></caption>
                 <thead>
                 <tr>
-                    <th><input class="btn btn-default btn-xs" type="button" value="<%=addButton %>" onclick="AddRouteOfAdminTextBox('dataTable1')" id="btnAddExtraRouteOfAdmin" /></th>
+                    <th><input class="btn btn-default btn-xs" type="button" value="<%=addButton %>" onclick="AddRouteOfAdminTextBox('dataTable1', true)" id="btnAddExtraRouteOfAdmin" /></th>
                     <th><span class="field-name"><%=routeAdministration%></span></th>
                     <th><span class="field-name"><%=dosageForm%></span></th>
                     <th><span class="field-name"><%=strength%></span></th>

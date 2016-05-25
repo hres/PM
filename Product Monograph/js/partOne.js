@@ -10,18 +10,22 @@ $(document).ready(function () {
         $("#btnSaveDraft").attr("disabled", "disabled");
     }
 
+
     var existXmlFile = $.trim($("#existXmlFile").val());
-    if (existXmlFile === 'True') {
+    var brandName = $.trim($("#brandNameHidden").val());
+    if (existXmlFile === 'True')
+    {
     }
     else {
-        AddRouteOfAdministrationDefaultRow();
-        populateHeadings(0);
-        changeHeadings(0);
-        populateActionHeadings(0);
-        changeActionHeadings(0);
-        populateDrugHeadings(0);
-        changeDrugHeadings(0);
-        setup();
+            AddRouteOfAdministration(0);
+            AddDosageForm(0);
+            populateHeadings(0);
+            changeHeadings(0);
+            populateActionHeadings(0);
+            changeActionHeadings(0);
+            populateDrugHeadings(0);
+            changeDrugHeadings(0);
+            setup();
     }
 });
 
@@ -99,18 +103,19 @@ function changeHeadings(i) {
 }
 
 
-function AddRouteOfAdministrationDefaultRow() {
+function AddRouteOfAdministration(i) {
     $.get('ControlledList.xml', function (xmlcontolledlist) {
         $(xmlcontolledlist).find('route').each(function () {
             var $option = $(this).text();
-            $('<option>' + $option + '</option>').appendTo('#tbRouteOfAdminDynamic0');
+            $('<option>' + $option + '</option>').appendTo('#tbRouteOfAdminDynamic' + i.toString());
         });
     });
-
-     $.get('ControlledList.xml', function (xmlcontolledlist) {
+}
+function AddDosageForm(i) {
+$.get('ControlledList.xml', function (xmlcontolledlist) {
         $(xmlcontolledlist).find('dosageform').each(function () {
             var $option = $(this).text();
-            $('<option>' + $option + '</option>').appendTo('#tbDosageFormDynamic0');
+            $('<option>' + $option + '</option>').appendTo('#tbDosageFormDynamic' + i.toString());
         });
      });  
 }
@@ -118,7 +123,7 @@ function AddRouteOfAdministrationDefaultRow() {
 
 var selectedschedulingsymbol;
 var newRowCount = 0;
-function AddRouteOfAdminTextBox(tableID) {
+function AddRouteOfAdminTextBox(tableID, flag) {
     var table = document.getElementById(tableID);
     var rowCount = table.rows.length;
     var row = table.insertRow(rowCount);
@@ -139,6 +144,13 @@ function AddRouteOfAdminTextBox(tableID) {
                             $('<option>' + $option + '</option>').appendTo(newRouteOfAdminDynamicID_query);
                         });
                     });
+                    if (flag)
+                    {
+                        AddRouteOfAdministration(newRowCount);
+                    }
+                    if (flag) {
+                        AddDosageForm(newRowCount);
+                    }
                 }
                 else if (i == 2) {
                     var newDosageID = "tbDosageFormDynamic" + newRowCount;

@@ -164,7 +164,7 @@ namespace Product_Monograph
                     colarray = strTemp.Split(';');
                     if (rowcounter > 0)
                     {
-                        strscript += "addRow('dataTable');";
+                        strscript += "addRow('dataTable', false);";
                     }
                     foreach (string column in row.columns)
                     {

@@ -30,45 +30,45 @@ $(document).ready(function () {
 
     var existXmlFile = $.trim($("#existXmlFile").val());
     var brandName = $.trim($("#brandNameHidden").val());
-    //console.log("file" +existXmlFile);
-    //console.log("name" +brandName);
-
     if (existXmlFile === 'True' || brandName.length > 0 )
     {
-        //console.log("ok1");
     }
     else
     {
-        //console.log("ok2");
-       AddBrandProperDosageDefaultRow();
+        AddDosageFormSelect(0);
+        AddStrengthSelect(0);
+        AddStrengthDosageSelect(0);
     }
 });
 
 
 var countTBL = 0
-function AddBrandProperDosageDefaultRow() {
+function AddDosageFormSelect(i) {
     //first row of table - start
     $.get('ControlledList.xml', function (xmlcontolledlist) {
         $(xmlcontolledlist).find('dosageform').each(function () {
             var $option = $(this).text();
-            $('<option>' + $option + '</option>').appendTo('#tbDosage0');
+            $('<option>' + $option + '</option>').appendTo('#tbDosage' + i.toString());
         });
     });
+}
+function AddStrengthSelect(i) {
     //get strength Unit
     $.get('ControlledList.xml', function (xmlcontolledlist) {
         $(xmlcontolledlist).find('unit').each(function () {
             var $option = $(this).text();
-            $('<option>' + $option + '</option>').appendTo('#tbStrengthUnit0');
+            $('<option>' + $option + '</option>').appendTo('#tbStrengthUnit' + i.toString());
         });
     });
+}
+function AddStrengthDosageSelect(i) {
     //get strength per Dosage Unit
     $.get('ControlledList.xml', function (xmlcontolledlist) {
         $(xmlcontolledlist).find('unit').each(function () {
             var $option = $(this).text();
-            $('<option>' + $option + '</option>').appendTo('#tbStrengthperDosageUnit0');
+            $('<option>' + $option + '</option>').appendTo('#tbStrengthperDosageUnit' + i.toString());
         });
     });
-
 }
 
 
@@ -85,7 +85,7 @@ function ApplySchedulingSymbol() {
     });
 }
 var newRowCount = 0;
-function addRow(tableID) {
+function addRow(tableID, flag) {
     $("#tbBtnRemove").removeAttr("disabled");
     var table = document.getElementById(tableID);
     var rowCount = table.rows.length;
@@ -101,12 +101,9 @@ function addRow(tableID) {
                     var newDosageID = "tbDosage" + newRowCount;
                     var newDosageID_query = "#tbDosage" + newRowCount;
                     newcell.innerHTML = "<select id='" + newDosageID + "' name='tbDosage' class='form-control font-small input-sm'></select>";
-                    $.get('ControlledList.xml', function (xmlcontolledlist) {
-                        $(xmlcontolledlist).find('dosageform').each(function () {
-                            var $option = $(this).text();
-                            $('<option>' + $option + '</option>').appendTo(newDosageID_query);
-                        });
-                    });
+                    if (flag) {
+                        AddDosageFormSelect(newRowCount);
+                    }
                 }
                 else if (i == 4) {                    
                     var newStrengthValueID = "tbStrengthValue" + newRowCount;                  
@@ -116,12 +113,9 @@ function addRow(tableID) {
                     var numStrengthValueHTML = "<input type='number' id='" + newStrengthValueID + "' name='tbStrengthValue' value='0' min='0' max='1000' class='form-control font-small input-sm'/>";
                     var listStrengthUnitHTML = "<div><select id='" + newStrengthUnitID + "' name='tbStrengthUnit' class='form-control font-small input-sm'></select></div>";
                     newcell.innerHTML = numStrengthValueHTML + listStrengthUnitHTML;
-                    $.get('ControlledList.xml', function (xmlcontolledlist) {
-                        $(xmlcontolledlist).find('unit').each(function () {
-                            var $option = $(this).text();
-                            $('<option>' + $option + '</option>').appendTo(newStrengthUnitID_query);
-                        });
-                    });
+                    if (flag) {
+                        AddStrengthSelect(newRowCount);
+                    }
                 }
                 else if (i == 5) {
                     var newStrengthperDosageValueID = "tbStrengthperDosageValue" + newRowCount;
@@ -132,13 +126,9 @@ function addRow(tableID) {
                     var numStrengthperDosageValueHTML = "<input type='number' id='" + newStrengthperDosageValueID + "' name='tbStrengthperDosageValue' value='0' min='0' max='1000' class='form-control font-small input-sm'/>";
                     var listStrengthperDosageUnitHTML = "<div><select id='" + newStrengthperDosageUnitID + "' name='tbStrengthperDosageUnit' class='form-control font-small input-sm'></select></div>";
                     newcell.innerHTML = numStrengthperDosageValueHTML + listStrengthperDosageUnitHTML;
-
-                    $.get('ControlledList.xml', function (xmlcontolledlist) {
-                        $(xmlcontolledlist).find('unit').each(function () {
-                            var $option = $(this).text();
-                            $('<option>' + $option + '</option>').appendTo(newStrengthperDosageUnitID_query);
-                        });
-                    });
+                    if (flag) {
+                        AddStrengthDosageSelect(newRowCount);
+                    }
                 }
                 else
                     newcell.innerHTML = table.rows[1].cells[i].innerHTML;
