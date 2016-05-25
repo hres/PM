@@ -2,13 +2,18 @@
 
 $(document).ready(function () {
     $("#linkOne").attr("disabled", "disabled");
-    $("#brandNameHidden").attr("name", "brandNameHidden");
     var brandName = $.trim($("#brandNameHidden").val());
     if (brandName.length > 0) {
         $("#btnSaveDraft").removeAttr("disabled");
     }
     else {
         $("#btnSaveDraft").attr("disabled", "disabled");
+    }
+
+    var existXmlFile = $.trim($("#existXmlFile").val());
+    if (existXmlFile === 'True') {
+    }
+    else {
         AddRouteOfAdministrationDefaultRow();
         populateHeadings(0);
         changeHeadings(0);

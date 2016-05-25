@@ -34,6 +34,8 @@ namespace Product_Monograph
         protected static string addButton;
         protected static string removeButton;
         protected static string resetButton;
+        protected static string existXmlFile;
+        protected static string brandNameHidden;
 
         void Page_PreInit(Object sender, EventArgs e)
         {
@@ -80,17 +82,20 @@ namespace Product_Monograph
 
                 try
                 {
-                    if (ValidateXmlDoc())
+                   // if (ValidateXmlDoc())
                         LoadFromXML();
 
                     if (!string.IsNullOrEmpty(SessionHelper.Current.brandName))
                     {
                         this.brandName.Text = SessionHelper.Current.brandName;
+                        brandNameHidden = SessionHelper.Current.brandName;
                     }
                     if (!string.IsNullOrEmpty(SessionHelper.Current.properName))
                     {
                         this.properName.Text = SessionHelper.Current.properName;
                     }
+
+                    existXmlFile = SessionHelper.Current.existXmlFile.ToString();
                 }
                 catch
                 {
@@ -98,38 +103,38 @@ namespace Product_Monograph
                 }
             }
         }
-        private bool ValidateXmlDoc()
-        {
+        //private bool ValidateXmlDoc()
+        //{
 
-            try
-            {
-                XmlDocument xmldoc = SessionHelper.Current.draftForm;
-                if (xmldoc == null)  //maybe dameged, or not exist, or empty --- waiting for client requirements
-                {
-                    return false;
-                }
-                else
-                {
-                    if (xmldoc.ChildNodes[1].HasChildNodes == false)  //having two elements, but it still contains empty data, it is new XML file
-                    {
-                        return false;
-                    }
-                    else
-                    {
-                        return true;     //it is a xml file which was loaded by client 
-                    }
+        //    try
+        //    {
+        //        XmlDocument xmldoc = SessionHelper.Current.draftForm;
+        //        if (xmldoc == null)  //maybe dameged, or not exist, or empty --- waiting for client requirements
+        //        {
+        //            return false;
+        //        }
+        //        else
+        //        {
+        //            if (xmldoc.ChildNodes[1].HasChildNodes == false)  //having two elements, but it still contains empty data, it is new XML file
+        //            {
+        //                return false;
+        //            }
+        //            else
+        //            {
+        //                return true;     //it is a xml file which was loaded by client 
+        //            }
 
-                }
+        //        }
 
 
-            }
-            catch (XmlException e)
-            {
-                //  lblError.Text = "No XMLDocument file to load: " + e.Message;  //project stops -- note by ching
-                return false;
-            }
+        //    }
+        //    catch (XmlException e)
+        //    {
+        //        //  lblError.Text = "No XMLDocument file to load: " + e.Message;  //project stops -- note by ching
+        //        return false;
+        //    }
 
-        }
+        //}
         private void LoadFromXML()
         {
             XmlDocument xmldoc = SessionHelper.Current.draftForm;
@@ -167,7 +172,7 @@ namespace Product_Monograph
                                                 "});" +
                                                 "}).done(function () {" +
                                                     "$('#tbDosage option').each(function () { if ($(this).html() == '" + column + "') { $(this).attr('selected', 'selected'); return; } });" +
-                                                "});";
+                                                "});";      
                             }
                             else if (colarray[colcounter].Equals("tbStrengthUnit"))
                             {

@@ -114,6 +114,8 @@ namespace Product_Monograph
         protected static string volDistribution;
         protected static string pharmacokineticParameters;
         protected static string resetButton;
+        protected static string existXmlFile;
+        protected static string brandNameHidden;
 
         void Page_PreInit(Object sender, EventArgs e)
         {
@@ -234,12 +236,14 @@ namespace Product_Monograph
                     if (!string.IsNullOrEmpty(SessionHelper.Current.brandName))
                     {
                         this.brandName.Text = SessionHelper.Current.brandName;
-                        this.brandNameHidden.Value = SessionHelper.Current.brandName;
+                        brandNameHidden = SessionHelper.Current.brandName;
                     }
                     if (!string.IsNullOrEmpty(SessionHelper.Current.properName))
                     {
                         this.properName.Text = SessionHelper.Current.properName;
                     }
+
+                    existXmlFile = SessionHelper.Current.existXmlFile.ToString();
                 }
                 catch
                 {
@@ -1902,13 +1906,6 @@ namespace Product_Monograph
                 tbSeriousDrugInteractions.Value = xmldataitem.SeriousDrugInteractions;
                 tbSeriousWarnings.Value = xmldataitem.SeriousWarningsandPrecautions;
                 tbContraindications.Value = xmldataitem.Contraindications;
-                //tbSpecialPediatricsAgeX.Value = xmldataitem.SpecialPediatricsAgeX;
-                //tbSpecialPediatricsAgeY.Value = xmldataitem.SpecialPediatricsAgeY;
-                //tbSpecialPediatricsAgeZ.Value = xmldataitem.SpecialPediatricsAgeZ;
-                //tbSpecialPediatrics.Value = xmldataitem.SpecialPediatrics;
-                //tbPregnant.Value = xmldataitem.WarningsPregnant;
-                //tbNursing.Value = xmldataitem.WarningsNursing;
-                //tbMonitoring.Value = xmldataitem.WarningsMonitoring;
             }
         }
     }

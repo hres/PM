@@ -453,5 +453,6 @@
             </details>
      </li>	
 </ul>
-<asp:HiddenField  runat="server" ID="brandNameHidden" ClientIDMode="Static"  />
+<input type="text" id="brandNameHidden" name="brandNameHidden" class="hidden" value="<%=brandNameHidden%>" />
+<input type="text" id="existXmlFile" name="existXmlFile" class="hidden" value="<%=existXmlFile%>" />
 </asp:Content>

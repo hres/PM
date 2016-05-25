@@ -37,6 +37,7 @@ namespace Product_Monograph.helpers
         public string brandName { get; set; }
         public string properName { get; set; }
         public XmlDocument draftForm { get; set; }
+        public bool existXmlFile { get; set; }
     }
 
 }

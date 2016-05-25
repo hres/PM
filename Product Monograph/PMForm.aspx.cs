@@ -58,6 +58,7 @@ namespace Product_Monograph
             SessionHelper.Current.draftForm = doc;
             SessionHelper.Current.brandName = string.Empty;
             SessionHelper.Current.properName = string.Empty;
+            SessionHelper.Current.existXmlFile = false;
             Response.Redirect("Coverpage.aspx");
         }
 
@@ -88,6 +89,7 @@ namespace Product_Monograph
                 XmlDocument doc = new XmlDocument();
                 doc.Load(fuXmlDraft.PostedFile.InputStream);
                 SessionHelper.Current.draftForm = doc;
+                SessionHelper.Current.existXmlFile = true;
                 Response.Redirect("Coverpage.aspx");
             }
             catch (Exception err)

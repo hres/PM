@@ -1,7 +1,6 @@
 ﻿//Setup default values on first row of Dosage Form --- created by Ching Chang on Feb 8, 2016
 var selectedschedulingsymbol;
 $(document).ready(function () {
-
     $("#linkCover").attr("disabled", "disabled");
     var now = new Date();
     var day = (now.getDate() < 10 ? '0' : '') + now.getDate();
@@ -29,11 +28,15 @@ $(document).ready(function () {
         $('#tbSchedulingSymbol option').each(function () { if ($(this).html() == selectedschedulingsymbol) { $(this).attr('selected', 'selected'); return; } });
     });
 
-    $(".editableBox").change(function () {
-        $(".timeTextBox").val($(".editableBox option:selected").html());
-    });
+    var existXmlFile = $.trim($("#existXmlFile").val());
+    if( existXmlFile === 'True')
+    {
+    }
+    else
+    {
+        AddBrandProperDosageDefaultRow();
+    }
 
-    AddBrandProperDosageDefaultRow();
 });
 
 
