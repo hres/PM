@@ -544,7 +544,7 @@ namespace Product_Monograph
                     {
                         var common = new helpers.Common(SessionHelper.Current.brandName);
                         common.SaveXmlFile(doc);
-                        SessionHelper.Current.draftForm = doc;                        
+                        SessionHelper.Current.draftForm = doc;
                     }
                 }
             }

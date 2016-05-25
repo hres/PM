@@ -8,15 +8,19 @@ $(document).ready(function () {
     }
     else {
         $("#btnSaveDraft").attr("disabled", "disabled");
+        AddRouteOfAdministration(0);
+        AddDosageForm(0);
+        populateHeadings(0);
+        changeHeadings(0);
+        populateActionHeadings(0);
+        changeActionHeadings(0);
+        populateDrugHeadings(0);
+        changeDrugHeadings(0);
     }
-
-
     var existXmlFile = $.trim($("#existXmlFile").val());
-    var brandName = $.trim($("#brandNameHidden").val());
-    if (existXmlFile === 'True')
-    {
-    }
-    else {
+    if (brandName.length > 0) {
+        if( existXmlFile === 'False')
+        {
             AddRouteOfAdministration(0);
             AddDosageForm(0);
             populateHeadings(0);
@@ -25,8 +29,10 @@ $(document).ready(function () {
             changeActionHeadings(0);
             populateDrugHeadings(0);
             changeDrugHeadings(0);
-            setup();
+        }        
     }
+   
+    setup();
 });
 
 
@@ -138,30 +144,18 @@ function AddRouteOfAdminTextBox(tableID, flag) {
                     var newRouteOfAdminDynamicID = "tbRouteOfAdminDynamic" + newRowCount;
                     var newRouteOfAdminDynamicID_query = "#tbRouteOfAdminDynamic" + newRowCount;
                     newcell.innerHTML = "<select id='" + newRouteOfAdminDynamicID + "' name='tbRouteOfAdminDynamic' class='form-control font-small input-sm'></select>";
-                    $.get('ControlledList.xml', function (xmlcontolledlist) {
-                        $(xmlcontolledlist).find('route').each(function () {
-                            var $option = $(this).text();
-                            $('<option>' + $option + '</option>').appendTo(newRouteOfAdminDynamicID_query);
-                        });
-                    });
                     if (flag)
                     {
                         AddRouteOfAdministration(newRowCount);
-                    }
-                    if (flag) {
-                        AddDosageForm(newRowCount);
                     }
                 }
                 else if (i == 2) {
                     var newDosageID = "tbDosageFormDynamic" + newRowCount;
                     var newDosageID_query = "#tbDosageFormDynamic" + newRowCount;
                     newcell.innerHTML = "<select id='" + newDosageID + "' name='tbDosageFormDynamic' class='form-control font-small input-sm'></select>";
-                    $.get('ControlledList.xml', function (xmlcontolledlist) {
-                        $(xmlcontolledlist).find('dosageform').each(function () {
-                            var $option = $(this).text();
-                            $('<option>' + $option + '</option>').appendTo(newDosageID_query);
-                        });
-                    });
+                    if (flag) {
+                        AddDosageForm(newRowCount);
+                    }
                 }
                 else if (i == 3) {
                     var newStrengthDynamicID = "tbStrengthDynamic" + newRowCount;
