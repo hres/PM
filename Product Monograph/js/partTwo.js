@@ -15,7 +15,6 @@ $(document).ready(function () {
 var loadFile = function (fuid, imgid, txtname, txtdata) {
     //input file element
     var x = document.getElementById(fuid);
-    console.log(x);
     //first item, only item
     var file = x.files[0];
 
@@ -188,8 +187,8 @@ function GetAnalyteNameDynamicTextBox(id) {
                 "<div class='row'> " +   
                      "<div class='text-center col-sm-10'>" +                      
                          "<label for='"+AnalyteMultiplicand+"' class='control-label'>Analyte name</label>" +  
-                         "<input type='number' id='" + AnalyteMultiplicand + "' name='" + AnalyteMultiplier + "'/> &nbsp;X" +     
-                         "<input type='number' id='" + AnalyteMultiplier + "' name='" + AnalyteMultiplier + "'/>&nbsp;mg)" +   
+                         "<input type='number' id='" + AnalyteMultiplicand + "' name='tbAnalyteMultiplicand'/> &nbsp;X" +
+                         "<input type='number' id='" + AnalyteMultiplier + "' name='tbAnalyteMultiplier'/>&nbsp;mg)" +
                         "</div>" +
                         "<div class='text-right  col-sm-2 margin-top-0'>" +  
                         '<input class="btn btn-default btn-xs" type="button" value="' + removeButtonValue + '" onclick="RemoveAnalyteNameTextBox(' + id + ')" id="btnRemoveAnalyteNameTextBox(' + id + ')" />' +
@@ -219,16 +218,16 @@ function GetAnalyteNameDynamicTextBox(id) {
                                     "AUCT +-(units)" +
                             "</div>" +
                             "<div class='col-xs-2 brdr-tp brdr-lft'>" +
-                                 "<textarea id='" + AUCTTest + "' name='" + AUCTTest + "'></textarea>" +
+                                 "<textarea id='" + AUCTTest + "' name='tbAUCTTest'></textarea>" +
                             "</div>" +
                            "<div class='col-xs-2 brdr-tp brdr-lft'>" +
-                                "<textarea id='" + AUCTRefe + "' name='" + AUCTRefe + "'></textarea>" +
+                                "<textarea id='" + AUCTRefe + "' name='tbAUCTReference'></textarea>" +
                            "</div>" +
                            "<div class='col-xs-3 brdr-tp brdr-lft'>" +
-                                "<textarea id='" + AUCTPerc + "' name='" + AUCTPerc + "'></textarea>" +
+                                "<textarea id='" + AUCTPerc + "' name='tbAUCTPercentRatio'></textarea>" +
                            "</div>" +
                            "<div class='col-xs-3 brdr-tp brdr-lft'>" +
-                                "<textarea id='" + AUCTConf + "' name='" + AUCTConf + "'></textarea>" +
+                                "<textarea id='" + AUCTConf + "' name='tbAUCTConfidenceInterval'></textarea>" +
                            "</div>" +
                     "</div>" +
                     "<div class='row'>" +
@@ -236,16 +235,16 @@ function GetAnalyteNameDynamicTextBox(id) {
                                 "AUCI (units)" +
                             "</div>" +
                             "<div class='col-xs-2 brdr-tp brdr-lft'>" +
-                                "<textarea id='" + AUCITest + "' name='" + AUCITest + "'></textarea>" +
+                                "<textarea id='" + AUCITest + "' name='tbAUCITest'></textarea>" +
                             "</div>" +
                             "<div class='col-xs-2 brdr-tp brdr-lft'>" +
-                                "<textarea id='" + AUCIRefe + "' name='" + AUCIRefe + "'></textarea>" +
+                                "<textarea id='" + AUCIRefe + "' name='tbAUCIReference'></textarea>" +
                             "</div>" +
                             "<div class='col-xs-3 brdr-tp brdr-lft'>" +
-                                "<textarea id='" + AUCIPerc + "' name='" + AUCIPerc + "'></textarea>" +
+                                "<textarea id='" + AUCIPerc + "' name='tbAUCIPercentRatio'></textarea>" +
                             "</div>" +
                             "<div class='col-xs-3 brdr-tp brdr-lft'>" +
-                                "<textarea id='" + AUCIConf + "' name='" + AUCIConf + "'></textarea>" +
+                                "<textarea id='" + AUCIConf + "' name='tbAUCIConfidenceInterval'></textarea>" +
                             "</div>" +
                    "</div>" +
 
@@ -254,16 +253,16 @@ function GetAnalyteNameDynamicTextBox(id) {
                                  "CMAX (units)" +
                            "</div>" +
                            "<div class='col-xs-2 brdr-tp brdr-lft'>" +
-                                 "<textarea id='" + CMAXTest + "' name='" + CMAXTest + "'></textarea>" +
+                                 "<textarea id='" + CMAXTest + "' name='tbCMAXTest'></textarea>" +
                            "</div>" +
                            "<div class='col-xs-2 brdr-tp brdr-lft'>" +
-                                "<textarea id='" + CMAXRefe + "' name='" + CMAXRefe + "'></textarea>" +
+                                "<textarea id='" + CMAXRefe + "' name='tbCMAXReference'></textarea>" +
                            "</div>" +
                            "<div class='col-xs-3 brdr-tp brdr-lft'>" +
-                                "<textarea id='" + CMAXPerc + "' name='" + CMAXPerc + "'></textarea>" +
+                                "<textarea id='" + CMAXPerc + "' name='tbCMAXPercentRatio'></textarea>" +
                            "</div>" +
                            "<div class='col-xs-3 brdr-tp brdr-lft'>" +
-                                "<textarea id='" + CMAXConf + "' name='" + CMAXConf + "'></textarea>" +
+                                "<textarea id='" + CMAXConf + "' name='tbCMAXConfidenceInterval'></textarea>" +
                            "</div>" +
                     "</div>" +
 
@@ -272,16 +271,16 @@ function GetAnalyteNameDynamicTextBox(id) {
                                 "TMAX (h)" +
                            "</div>" +
                            "<div class='col-xs-2 brdr-tp brdr-lft'>" +
-                                "<textarea id='" + TMAXTest + "' name='" + TMAXTest + "'></textarea>" +
+                                "<textarea id='" + TMAXTest + "' name='tbTMAXTest'></textarea>" +
                            "</div>" +
                            "<div class='col-xs-2 brdr-tp brdr-lft'>" +
-                                "<textarea id='" + TMAXRefe + "' name='" + TMAXRefe + "'></textarea>" +
+                                "<textarea id='" + TMAXRefe + "' name='tbTMAXReference'></textarea>" +
                            "</div>" +
                            "<div class='col-xs-3 brdr-tp brdr-lft'>" +
-                                "<textarea id='" + TMAXPerc + "' name='" + TMAXPerc + "'></textarea>" +
+                                "<textarea id='" + TMAXPerc + "' name='tbTMAXPercentRatio'></textarea>" +
                            "</div>" +
                            "<div class='col-xs-3 brdr-tp brdr-lft'>" +
-                                "<textarea id='" + TMAXConf + "' name='" + TMAXConf + "'></textarea>" +
+                                "<textarea id='" + TMAXConf + "' name='tbTMAXConfidenceInterval'></textarea>" +
                             "</div>" +
                     "</div>" +
 
@@ -290,16 +289,16 @@ function GetAnalyteNameDynamicTextBox(id) {
                                 "T1/2 (h)" +
                            "</div>" +
                             "<div class='col-xs-2 brdr-tp brdr-lft brdr-bttm'>" +
-                                 "<textarea id='" + THalfTest + "' name='" + THalfTest + "'></textarea>" +
+                                 "<textarea id='" + THalfTest + "' name='tbTHalfTest'></textarea>" +
                             "</div>" +
                            "<div class='col-xs-2 brdr-tp brdr-lft brdr-bttm'>" +
-                                 "<textarea id='" + THalfRefe + "' name='" + THalfRefe + "'></textarea>" +
+                                 "<textarea id='" + THalfRefe + "' name='tbTHalfReference'></textarea>" +
                             "</div>" +
                            "<div class='col-xs-3 brdr-tp brdr-lft brdr-bttm'>" +
-                                 "<textarea id='" + THalfPerc + "' name='" + THalfPerc + "'></textarea>" +
+                                 "<textarea id='" + THalfPerc + "' name='tbTHalfPercentRatio'></textarea>" +
                             "</div>" +
                             "<div class='col-xs-3 brdr-tp brdr-lft brdr-bttm'>" +
-                                 "<textarea id='" + THalfConf + "' name='" + THalfConf + "'></textarea>" +
+                                 "<textarea id='" + THalfConf + "' name='tbTHalfConfidenceInterval'></textarea>" +
                             "</div>" +
                   "</div>" +
                "</div>";

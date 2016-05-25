@@ -405,112 +405,8 @@ namespace Product_Monograph
             helpers.Processes.ValidateAndSave(doc, rootnode, "SeriousDrugInteractions", "", tbSeriousDrugInteractions.Value, false);
             #endregion
             #region Contraindications
-            //try
-            //{
-            //    XmlNodeList con = doc.GetElementsByTagName("Contraindications");
-
-            //    ArrayList contraarray = new ArrayList();
-            //    if (HttpContext.Current.Request.Form.GetValues("tbContraindications") != null)
-            //    {
-            //        foreach (string routeitem in HttpContext.Current.Request.Form.GetValues("tbContraindications"))
-            //        {
-            //            contraarray.Add(routeitem);
-            //        }
-            //    }
-
-            //    if (con.Count < 1)
-            //    {
-            //        XmlNode xnode = doc.CreateElement("Contraindications");
-            //        rootnode.AppendChild(xnode);
-
-            //        for (int ar = 0; ar < contraarray.Count; ar++)
-            //        {
-            //            XmlNode subnode = doc.CreateElement("row");
-            //            xnode.AppendChild(subnode);
-
-            //            string col1 = contraarray[ar].ToString();
-            //            XmlNode subsubnode = doc.CreateElement("column");
-            //            subsubnode.AppendChild(doc.CreateTextNode(col1));
-            //            subnode.AppendChild(subsubnode);
-            //        }
-            //    }
-            //    else
-            //    {
-            //        con[0].RemoveAll();
-
-            //        XmlNodeList xnode = doc.GetElementsByTagName("Contraindications");
-            //        rootnode.AppendChild(xnode[0]);
-
-            //        for (int ar = 0; ar < contraarray.Count; ar++)
-            //        {
-            //            XmlNode subnode = doc.CreateElement("row");
-            //            xnode[0].AppendChild(subnode);
-
-            //            string col1 = contraarray[ar].ToString();
-            //            XmlNode subsubnode = doc.CreateElement("column");
-            //            subsubnode.AppendChild(doc.CreateTextNode(col1));
-            //            subnode.AppendChild(subsubnode);
-            //        }
-            //    }
-            //}
-            //catch (Exception error)
-            //{
-            //   // lblError.Text = error.ToString();
-            //    return null;
-            //}
             #endregion
             #region Warnings and precautions
-            //try
-            //{
-            //    XmlNodeList swp = doc.GetElementsByTagName("SeriousWarningsandPrecautions");
-            //    ArrayList swparray = new ArrayList();
-            //    if (HttpContext.Current.Request.Form.GetValues("tbSeriousWarnings") != null)
-            //    {
-            //        foreach (string swpitem in HttpContext.Current.Request.Form.GetValues("tbSeriousWarnings"))
-            //        {
-            //            swparray.Add(swpitem);
-            //        }
-            //    }
-
-            //    if (swp.Count < 1)
-            //    {
-            //        XmlNode xnode = doc.CreateElement("SeriousWarningsandPrecautions");
-            //        rootnode.AppendChild(xnode);
-
-            //        for (int ar = 0; ar < swparray.Count; ar++)
-            //        {
-            //            XmlNode subnode = doc.CreateElement("row");
-            //            xnode.AppendChild(subnode);
-
-            //            string col1 = swparray[ar].ToString();
-            //            XmlNode subsubnode = doc.CreateElement("column");
-            //            subsubnode.AppendChild(doc.CreateTextNode(col1));
-            //            subnode.AppendChild(subsubnode);
-            //        }
-            //    }
-            //    else
-            //    {
-            //        swp[0].RemoveAll();
-            //        XmlNodeList xnode = doc.GetElementsByTagName("SeriousWarningsandPrecautions");
-            //        rootnode.AppendChild(xnode[0]);
-            //        for (int ar = 0; ar < swparray.Count; ar++)
-            //        {
-            //            XmlNode subnode = doc.CreateElement("row");
-            //            xnode[0].AppendChild(subnode);
-
-            //            string col1 = swparray[ar].ToString();
-            //            XmlNode subsubnode = doc.CreateElement("column");
-            //            subsubnode.AppendChild(doc.CreateTextNode(col1));
-            //            subnode.AppendChild(subsubnode);
-            //        }
-            //    }
-            //}
-            //catch (Exception error)
-            //{
-            //    //lblError.Text = error.ToString();
-            //    return null;
-            //}
-
             helpers.Processes.ValidateAndSave(doc, rootnode, "SeriousWarningsandPrecautions", "", tbSeriousWarnings.Value, false);         
 
             #endregion
@@ -1288,161 +1184,55 @@ namespace Product_Monograph
                 {
                     string[] colarray = "tbRouteOfAdminDynamic;tbDosageFormDynamic;tbStrengthDynamic;tbClinicallyRelevant".Split(';');
                     int colcounter = 0;
-                    if (rowcounter == 0)
+                    if (rowcounter > 0)
                     {
-                        foreach (string column in row.columns)
+                        strscript += "AddRouteOfAdminTextBox('dataTable1');";
+                    }
+                    foreach (string column in row.columns)
+                    {
+                        if (colarray[colcounter].Equals("tbRouteOfAdminDynamic"))
                         {
-                            if (colarray[colcounter].Equals("tbRouteOfAdminDynamic"))
-                            {
-                                strscript += "$.get('ControlledList.xml', function (xmlcontolledlist) {" +
-                                                "$(xmlcontolledlist).find('route').each(function () {" +
-                                                    "var $option = $(this).text();" +
-                                                    "$('<option>' + $option + '</option>').appendTo('#tbRouteOfAdminDynamic');" +
-                                                "});" +
-                                                "}).done(function () {" +
-                                                    "$('#tbRouteOfAdminDynamic option').each(function () { if ($(this).html() == '" + column + "') { $(this).attr('selected', 'selected'); return; } });" +
-                                                "});";
-                            }
-                            else if (colarray[colcounter].Equals("tbDosageFormDynamic"))
-                            {
-                                strscript += "$.get('ControlledList.xml', function (xmlcontolledlist) {" +
-                                                "$(xmlcontolledlist).find('dosageform').each(function () {" +
-                                                    "var $option = $(this).text();" +
-                                                    "$('<option>' + $option + '</option>').appendTo('#tbDosageFormDynamic');" +
-                                                "});" +
-                                                "}).done(function () {" +
-                                                    "$('#tbDosageFormDynamic option').each(function () { if ($(this).html() == '" + column + "') { $(this).attr('selected', 'selected'); return; } });" +
-                                                "});";
-                            }
-                            else
+                            strscript += "$.get('ControlledList.xml', function (xmlcontolledlist) {" +
+                                            "$(xmlcontolledlist).find('route').each(function () {" +
+                                                "var $option = $(this).text();" +
+                                                "$('<option>' + $option + '</option>').appendTo('#tbRouteOfAdminDynamic" + rowcounter.ToString() + "');" +
+                                            "});" +
+                                            "}).done(function () {" +
+                                                "$('#tbRouteOfAdminDynamic" + rowcounter.ToString() + " option').each(function () { if ($(this).html() == '" + column + "') { $(this).attr('selected', 'selected'); return; } });" +
+                                            "});";
+                        }
+                        else if (colarray[colcounter].Equals("tbDosageFormDynamic"))
+                        {
+                            strscript += "$.get('ControlledList.xml', function (xmlcontolledlist) {" +
+                                            "$(xmlcontolledlist).find('dosageform').each(function () {" +
+                                                "var $option = $(this).text();" +
+                                                "$('<option>' + $option + '</option>').appendTo('#tbDosageFormDynamic" + rowcounter.ToString() + "');" +
+                                            "});" +
+                                            "}).done(function () {" +
+                                                "$('#tbDosageFormDynamic" + rowcounter.ToString() + " option').each(function () { if ($(this).html() == '" + column + "') { $(this).attr('selected', 'selected'); return; } });" +
+                                            "});";
+                        }
+                        else
+                        {
+                            if (rowcounter == 0)
                             {
                                 strscript += "$('#" + colarray[colcounter] + "').val(\"" + helpers.Processes.CleanString(column) + "\");";
                             }
-                            colcounter++;
-                        }
-                    }
-                    else
-                    {
-                        strscript += "AddRouteOfAdminTextBox('dataTable1');";
-                        foreach (string column in row.columns)
-                        {
-                            if (colarray[colcounter].Equals("tbRouteOfAdminDynamic"))
-                            {
-                                strscript += "$.get('ControlledList.xml', function (xmlcontolledlist) {" +
-                                                "$(xmlcontolledlist).find('route').each(function () {" +
-                                                    "var $option = $(this).text();" +
-                                                    "$('<option>' + $option + '</option>').appendTo('#tbRouteOfAdminDynamic" + rowcounter.ToString() + "');" +
-                                                "});" +
-                                                "}).done(function () {" +
-                                                    "$('#tbRouteOfAdminDynamic" + rowcounter.ToString() + " option').each(function () { if ($(this).html() == '" + column + "') { $(this).attr('selected', 'selected'); return; } });" +
-                                                "});";
-                            }
-                            else if (colarray[colcounter].Equals("tbDosageFormDynamic"))
-                            {
-                                strscript += "$.get('ControlledList.xml', function (xmlcontolledlist) {" +
-                                                "$(xmlcontolledlist).find('dosageform').each(function () {" +
-                                                    "var $option = $(this).text();" +
-                                                    "$('<option>' + $option + '</option>').appendTo('#tbDosageFormDynamic" + rowcounter.ToString() + "');" +
-                                                "});" +
-                                                "}).done(function () {" +
-                                                    "$('#tbDosageFormDynamic" + rowcounter.ToString() + " option').each(function () { if ($(this).html() == '" + column + "') { $(this).attr('selected', 'selected'); return; } });" +
-                                                "});";
-                            }
                             else
-                            {
+                            { 
                                 strscript += "$('#" + colarray[colcounter] + rowcounter.ToString() + "').val(\"" + helpers.Processes.CleanString(column) + "\");";
-                             }
-                            colcounter++;
+                            }
                         }
-                    }
-                    rowcounter++;
+                        colcounter++;
+                    }                    
+                rowcounter++;
                 }                         
             }
             #endregion
             #region Contraindications
-            //XmlNodeList con = xmldoc.GetElementsByTagName("Contraindications");
-            //if (con.Count > 0)
-            //{
-            //    var rowsC = from rowcont in doc.Root.Elements("Contraindications").Descendants("row")
-            //                select new
-            //                {
-            //                    columns = from column in rowcont.Elements("column")
-            //                              select (string)column
-            //                };
-
-            //    bool ranC = false;
-            //    int rowcounterC = 0;
-            //    foreach (var rowC in rowsC)
-            //    {
-            //        if (!ranC)
-            //        {
-            //            string[] colarray = "tbContraindications".Split(';');
-            //            int colcounter = 0;
-            //            foreach (string columnC in rowC.columns)
-            //            {
-            //                strscript += "$('#" + colarray[colcounter] + "').val(\"" + helpers.Processes.CleanString(columnC) + "\");";
-            //                colcounter++;
-            //            }
-            //            ranC = true;
-            //        }
-            //        else
-            //        {
-            //            strscript += "AddContraindications();";
-            //            string[] colarray = "tbContraindications".Split(';');
-            //            int colcounter = 0;
-            //            foreach (string columnC in rowC.columns)
-            //            {
-            //                strscript += "$('#" + colarray[colcounter] + rowcounterC.ToString() + "').val(\"" + helpers.Processes.CleanString(columnC) + "\");";
-            //                colcounter++;
-            //            }
-            //        }
-
-            //        rowcounterC++;
-            //    }                
-            //}
             #endregion
             #region Warnings and precautions
-            //XmlNodeList swp = xmldoc.GetElementsByTagName("SeriousWarningsandPrecautions");
-            //if (swp.Count > 0)
-            //{
-            //    var rowsC = from rowcont in doc.Root.Elements("SeriousWarningsandPrecautions").Descendants("row")
-            //                select new
-            //                {
-            //                    columns = from column in rowcont.Elements("column")
-            //                              select (string)column
-            //                };
-
-            //    bool ranC = false;
-            //    int rowcounterC = 0;
-
-            //    foreach (var rowC in rowsC)
-            //    {
-            //        if (!ranC)
-            //        {
-            //            string[] colarray = "tbSeriousWarnings".Split(';');
-            //            int colcounter = 0;
-            //            foreach (string columnC in rowC.columns)
-            //            {
-            //                strscript += "$('#" + colarray[colcounter] + "').val(\"" + helpers.Processes.CleanString(columnC) + "\");";
-            //                colcounter++;
-            //            }
-            //            ranC = true;
-            //        }
-            //        else
-            //        {
-            //            strscript += "AddSeriousWarnings();";
-            //            string[] colarray = "tbSeriousWarnings".Split(';');
-            //            int colcounter = 0;
-            //            foreach (string columnC in rowC.columns)
-            //            {
-            //                strscript += "$('#" + colarray[colcounter] + rowcounterC.ToString() + "').val(\"" + helpers.Processes.CleanString(columnC) + "\");";
-            //                colcounter++;
-            //            }
-            //        }
-            //        rowcounterC++;
-            //    }
-            //}
-
+          
             XmlNodeList wph = xmldoc.GetElementsByTagName("WarningHeadings");
             if (wph.Count > 0)
             {

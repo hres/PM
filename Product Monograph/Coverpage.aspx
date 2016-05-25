@@ -49,17 +49,17 @@
                             <td headers="thBrandName"><input type="text" id="tbBrandname" name="tbBrandname" class="form-control input-sm" required="required" /></td>
                             <td headers="thProperName"><input type="text" id="tbPropername" name="tbPropername" class="form-control input-sm"  required="required"/></td>
                             <td headers="thDosageForm">
-                                <select id="tbDosage" name="tbDosage" class="form-control input-sm" ></select></td>                
+                                <select id="tbDosage0" name="tbDosage" class="form-control input-sm" ></select></td>                
                             <td headers="thStrength">
                                 <input type="number" id="tbStrengthValue" name="tbStrengthValue" value="0" min="0" max="1000" class="form-control font-small input-sm"  />                                                  
                                 <div>
-                                    <select id="tbStrengthUnit" name="tbStrengthUnit" class="form-control font-small input-sm" > </select> 
+                                    <select id="tbStrengthUnit0" name="tbStrengthUnit" class="form-control font-small input-sm" > </select> 
                                 </div>           
                             </td>
                             <td headers="thStrengthPerDosage">
                                 <input type="number" id="tbStrengthperDosageValue" name="tbStrengthperDosageValue" value="0" min="0" max="1000" class="form-control font-small input-sm"  /> 
                                 <div>                        
-                                    <select id="tbStrengthperDosageUnit" name="tbStrengthperDosageUnit" class="form-control input-sm font-small" ></select>  
+                                    <select id="tbStrengthperDosageUnit0" name="tbStrengthperDosageUnit" class="form-control input-sm font-small" ></select>  
                                 </div>                             
                             </td>
                         </tr>

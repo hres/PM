@@ -39,8 +39,8 @@
                 <tbody>
                     <tr>
                         <td><input id="tbBtnRemove" type="button" onclick="deleteRowBtnRow(this)" name="btnDelete" value="<%=removeButton %>" class="btn btn-default btn-xs"/></td>   
-                        <td headers="thRouteOfAdminDynamic" data-required="true"><select id="tbRouteOfAdminDynamic" name="tbRouteOfAdminDynamic" class="form-control font-small input-sm"></select></td>
-                        <td headers="thDosageForm"><select id="tbDosageFormDynamic" name="tbDosageFormDynamic" class="form-control font-small input-sm"></select></td>                                    
+                        <td headers="thRouteOfAdminDynamic" data-required="true"><select id="tbRouteOfAdminDynamic0" name="tbRouteOfAdminDynamic" class="form-control font-small input-sm"></select></td>
+                        <td headers="thDosageForm"><select id="tbDosageFormDynamic0" name="tbDosageFormDynamic" class="form-control font-small input-sm"></select></td>                                    
                         <td headers="thStrength"><textarea  id="tbStrengthDynamic" name="tbStrengthDynamic" ></textarea></td>
                         <td headers="thClinicallyRelevant"><textarea  id="tbClinicallyRelevant" name="tbClinicallyRelevant" ></textarea></td>
                     </tr>

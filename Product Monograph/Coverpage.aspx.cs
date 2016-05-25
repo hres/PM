@@ -158,45 +158,48 @@ namespace Product_Monograph
                 {
                     int colcounter = 0;
                     colarray = strTemp.Split(';');
-                    if (rowcounter == 0)
+                    if (rowcounter > 0)
                     {
-
-                        foreach (string column in row.columns)
+                        strscript += "addRow('dataTable');";
+                    }
+                    foreach (string column in row.columns)
+                    {
+                        if (colarray[colcounter].Equals("tbDosage"))
                         {
-                            if (colarray[colcounter].Equals("tbDosage"))
-                            {
-                                strscript += "$.get('ControlledList.xml', function (xmlcontolledlist) {" +
-                                                "$(xmlcontolledlist).find('dosageform').each(function () {" +
+                            strscript += "$.get('ControlledList.xml', function (xmlcontolledlist) {" +
+                                            "$(xmlcontolledlist).find('dosageform').each(function () {" +
+                                                "var $option = $(this).text();" +
+                                                "$('<option>' + $option + '</option>').appendTo('#tbDosage" + rowcounter.ToString() + "');" +
+                                            "});" +
+                                            "}).done(function () {" +
+                                                "$('#tbDosage" + rowcounter.ToString() + " option').each(function () { if ($(this).html() == '" + column + "') { $(this).attr('selected', 'selected'); return; } });" +
+                                            "});";
+                        }
+                        else if (colarray[colcounter].Equals("tbStrengthUnit"))
+                        {
+                            strscript += "$.get('ControlledList.xml', function (xmlcontolledlist) {" +
+                                                "$(xmlcontolledlist).find('unit').each(function () {" +
                                                     "var $option = $(this).text();" +
-                                                    "$('<option>' + $option + '</option>').appendTo('#tbDosage');" +
+                                                    "$('<option>' + $option + '</option>').appendTo('#tbStrengthUnit" + rowcounter.ToString() + "');" +
                                                 "});" +
                                                 "}).done(function () {" +
-                                                    "$('#tbDosage option').each(function () { if ($(this).html() == '" + column + "') { $(this).attr('selected', 'selected'); return; } });" +
-                                                "});";      
-                            }
-                            else if (colarray[colcounter].Equals("tbStrengthUnit"))
-                            {
-                                strscript += "$.get('ControlledList.xml', function (xmlcontolledlist) {" +
-                                                    "$(xmlcontolledlist).find('unit').each(function () {" +
-                                                        "var $option = $(this).text();" +
-                                                        "$('<option>' + $option + '</option>').appendTo('#tbStrengthUnit');" +
-                                                    "});" +
-                                                    "}).done(function () {" +
-                                                        "$('#tbStrengthUnit option').each(function () { if ($(this).html() == '" + column + "') { $(this).attr('selected', 'selected'); return; } });" +
-                                                    "});";
-                            }
-                            else if (colarray[colcounter].Equals("tbStrengthperDosageUnit"))
-                            {
-                                strscript += "$.get('ControlledList.xml', function (xmlcontolledlist) {" +
-                                                    "$(xmlcontolledlist).find('unit').each(function () {" +
-                                                        "var $option = $(this).text();" +
-                                                        "$('<option>' + $option + '</option>').appendTo('#tbStrengthperDosageUnit');" +
-                                                    "});" +
-                                                    "}).done(function () {" +
-                                                        "$('#tbStrengthperDosageUnit option').each(function () { if ($(this).html() == '" + column + "') { $(this).attr('selected', 'selected'); return; } });" +
-                                                    "});";
-                            }
-                            else
+                                                    "$('#tbStrengthUnit" + rowcounter.ToString() + " option').each(function () { if ($(this).html() == '" + column + "') { $(this).attr('selected', 'selected'); return; } });" +
+                                                "});";
+                        }
+                        else if (colarray[colcounter].Equals("tbStrengthperDosageUnit"))
+                        {
+                            strscript += "$.get('ControlledList.xml', function (xmlcontolledlist) {" +
+                                                "$(xmlcontolledlist).find('unit').each(function () {" +
+                                                    "var $option = $(this).text();" +
+                                                    "$('<option>' + $option + '</option>').appendTo('#tbStrengthperDosageUnit" + rowcounter.ToString() + "');" +
+                                                "});" +
+                                                "}).done(function () {" +
+                                                    "$('#tbStrengthperDosageUnit" + rowcounter.ToString() + " option').each(function () { if ($(this).html() == '" + column + "') { $(this).attr('selected', 'selected'); return; } });" +
+                                                "});";
+                        }
+                        else
+                        {
+                            if (rowcounter == 0)
                             {
                                 strscript += "$('#" + colarray[colcounter] + "').val(\"" + helpers.Processes.CleanString(column) + "\");";
                                 if (colcounter == 0)
@@ -208,55 +211,13 @@ namespace Product_Monograph
                                     SessionHelper.Current.properName = helpers.Processes.CleanString(column);
                                 }
                             }
-                            colcounter++;
-                        }
-                    }
-                    else
-                    {
-                        strscript += "addRow('dataTable');";
-
-                        foreach (string column in row.columns)
-                        {
-                            if (colarray[colcounter].Equals("tbDosage"))
-                            {
-                                strscript += "$.get('ControlledList.xml', function (xmlcontolledlist) {" +
-                                                "$(xmlcontolledlist).find('dosageform').each(function () {" +
-                                                    "var $option = $(this).text();" +
-                                                    "$('<option>' + $option + '</option>').appendTo('#tbDosage" + rowcounter.ToString() + "');" +
-                                                "});" +
-                                                "}).done(function () {" +
-                                                    "$('#tbDosage" + rowcounter.ToString() + " option').each(function () { if ($(this).html() == '" + column + "') { $(this).attr('selected', 'selected'); return; } });" +
-                                                "});";
-                            }
-                            else if (colarray[colcounter].Equals("tbStrengthUnit"))
-                            {
-                                strscript += "$.get('ControlledList.xml', function (xmlcontolledlist) {" +
-                                                    "$(xmlcontolledlist).find('unit').each(function () {" +
-                                                        "var $option = $(this).text();" +
-                                                        "$('<option>' + $option + '</option>').appendTo('#tbStrengthUnit" + rowcounter.ToString() + "');" +
-                                                    "});" +
-                                                    "}).done(function () {" +
-                                                        "$('#tbStrengthUnit" + rowcounter.ToString() + " option').each(function () { if ($(this).html() == '" + column + "') { $(this).attr('selected', 'selected'); return; } });" +
-                                                    "});";
-                            }
-                            else if (colarray[colcounter].Equals("tbStrengthperDosageUnit"))
-                            {
-                                strscript += "$.get('ControlledList.xml', function (xmlcontolledlist) {" +
-                                                    "$(xmlcontolledlist).find('unit').each(function () {" +
-                                                        "var $option = $(this).text();" +
-                                                        "$('<option>' + $option + '</option>').appendTo('#tbStrengthperDosageUnit" + rowcounter.ToString() + "');" +
-                                                    "});" +
-                                                    "}).done(function () {" +
-                                                        "$('#tbStrengthperDosageUnit" + rowcounter.ToString() + " option').each(function () { if ($(this).html() == '" + column + "') { $(this).attr('selected', 'selected'); return; } });" +
-                                                    "});";
-                            }
                             else
                             {
                                 strscript += "$('#" + colarray[colcounter] + rowcounter.ToString() + "').val(\"" + helpers.Processes.CleanString(column) + "\");";
                             }
-
-                            colcounter++;
                         }
+
+                        colcounter++;
                     }
                     rowcounter++;
                 }
