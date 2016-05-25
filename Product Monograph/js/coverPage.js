@@ -29,10 +29,8 @@ $(document).ready(function () {
     });
 
     var existXmlFile = $.trim($("#existXmlFile").val());
-    if( existXmlFile === 'True')
-    {
-    }
-    else
+    var brandName = $.trim($("#brandNameHidden").val());
+    if (existXmlFile === 'False' || brandName.length == 0 )
     {
         AddBrandProperDosageDefaultRow();
     }
