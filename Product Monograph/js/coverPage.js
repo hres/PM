@@ -30,11 +30,18 @@ $(document).ready(function () {
 
     var existXmlFile = $.trim($("#existXmlFile").val());
     var brandName = $.trim($("#brandNameHidden").val());
-    if (existXmlFile === 'False' || brandName.length == 0 )
-    {
-        AddBrandProperDosageDefaultRow();
-    }
+    //console.log("file" +existXmlFile);
+    //console.log("name" +brandName);
 
+    if (existXmlFile === 'True' || brandName.length > 0 )
+    {
+        //console.log("ok1");
+    }
+    else
+    {
+        //console.log("ok2");
+       AddBrandProperDosageDefaultRow();
+    }
 });
 
 
@@ -44,21 +51,21 @@ function AddBrandProperDosageDefaultRow() {
     $.get('ControlledList.xml', function (xmlcontolledlist) {
         $(xmlcontolledlist).find('dosageform').each(function () {
             var $option = $(this).text();
-            $('<option>' + $option + '</option>').appendTo('#tbDosage');
+            $('<option>' + $option + '</option>').appendTo('#tbDosage0');
         });
     });
     //get strength Unit
     $.get('ControlledList.xml', function (xmlcontolledlist) {
         $(xmlcontolledlist).find('unit').each(function () {
             var $option = $(this).text();
-            $('<option>' + $option + '</option>').appendTo('#tbStrengthUnit');
+            $('<option>' + $option + '</option>').appendTo('#tbStrengthUnit0');
         });
     });
     //get strength per Dosage Unit
     $.get('ControlledList.xml', function (xmlcontolledlist) {
         $(xmlcontolledlist).find('unit').each(function () {
             var $option = $(this).text();
-            $('<option>' + $option + '</option>').appendTo('#tbStrengthperDosageUnit');
+            $('<option>' + $option + '</option>').appendTo('#tbStrengthperDosageUnit0');
         });
     });
 

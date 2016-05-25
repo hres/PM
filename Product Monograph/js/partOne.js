@@ -103,14 +103,14 @@ function AddRouteOfAdministrationDefaultRow() {
     $.get('ControlledList.xml', function (xmlcontolledlist) {
         $(xmlcontolledlist).find('route').each(function () {
             var $option = $(this).text();
-            $('<option>' + $option + '</option>').appendTo('#tbRouteOfAdminDynamic');
+            $('<option>' + $option + '</option>').appendTo('#tbRouteOfAdminDynamic0');
         });
     });
 
      $.get('ControlledList.xml', function (xmlcontolledlist) {
         $(xmlcontolledlist).find('dosageform').each(function () {
             var $option = $(this).text();
-            $('<option>' + $option + '</option>').appendTo('#tbDosageFormDynamic');
+            $('<option>' + $option + '</option>').appendTo('#tbDosageFormDynamic0');
         });
      });  
 }
