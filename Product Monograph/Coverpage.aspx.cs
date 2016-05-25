@@ -85,7 +85,11 @@ namespace Product_Monograph
                    // if (ValidateXmlDoc())
                         LoadFromXML();
 
-                    if (!string.IsNullOrEmpty(SessionHelper.Current.brandName))
+                    if (string.IsNullOrEmpty(SessionHelper.Current.brandName))
+                    {
+                        brandNameHidden = string.Empty;
+                    }
+                    else
                     {
                         this.brandName.Text = SessionHelper.Current.brandName;
                         brandNameHidden = SessionHelper.Current.brandName;
