@@ -1162,12 +1162,12 @@
     <Content Include="tinymce\tests\js\qunit\QUnit.LICENSE" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="App_GlobalResources\Resource.fr.designer.cs">
+    <Compile Include="App_GlobalResources\Resource.fr-CA.designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>Resource.fr.resx</DependentUpon>
     </Compile>
-    <Compile Include="App_GlobalResources\Resource1.designer.cs">
+    <Compile Include="App_GlobalResources\Resource11.designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>Resource.resx</DependentUpon>
@@ -1316,7 +1316,7 @@
       </FlavorProperties>
     </VisualStudio>
   </ProjectExtensions>
-  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it.
        Other similar extension points exist, see Microsoft.Common.targets.
   <Target Name="BeforeBuild">
   </Target>
