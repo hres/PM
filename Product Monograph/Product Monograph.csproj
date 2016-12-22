@@ -1184,6 +1184,7 @@
     </Compile>
     <Compile Include="helpers\SessionHelper.cs" />
     <Compile Include="helpers\Common.cs" />
+    <Compile Include="helpers\ExceptionHelper.cs" />
     <Compile Include="helpers\Processes.cs" />
     <Compile Include="PartOne.aspx.cs">
       <DependentUpon>PartOne.aspx</DependentUpon>
